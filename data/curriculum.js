@@ -200,6 +200,32 @@ const NORTHSTAR_CURRICULUM = [
           "Which information could be exposed without disk encryption?",
           "Which security controls remain effective if the attacker has physical possession?",
           "What evidence would show whether the device was encrypted?"
+        ],
+        "why": "Why this matters: What Is a Computer? is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat What Is a Computer? as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is hardware, operating systems, data representation and digital boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break What Is a Computer? into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to What Is a Computer? changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about What Is a Computer? should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
         ]
       },
       {
@@ -367,6 +393,32 @@ const NORTHSTAR_CURRICULUM = [
         "caseQuestions": [
           "Which boundary is being created?",
           "What evidence would show which account a process is using?"
+        ],
+        "why": "Why this matters: Operating Systems: The Computer's Manager is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Operating Systems: The Computer's Manager as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is hardware, operating systems, data representation and digital boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Operating Systems: The Computer's Manager into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Operating Systems: The Computer's Manager changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Operating Systems: The Computer's Manager should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
         ]
       },
       {
@@ -538,6 +590,32 @@ const NORTHSTAR_CURRICULUM = [
           "Which copies are known versus assumed?",
           "Which system owns each copy?",
           "What evidence confirms retention or deletion?"
+        ],
+        "why": "Why this matters: Files, Folders & Storage is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Files, Folders & Storage as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is hardware, operating systems, data representation and digital boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Files, Folders & Storage into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Files, Folders & Storage changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Files, Folders & Storage should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
         ]
       },
       {
@@ -705,6 +783,32 @@ const NORTHSTAR_CURRICULUM = [
           "Which user and integrity level are involved?",
           "What command or file was executed?",
           "Was the behavior expected for this application?"
+        ],
+        "why": "Why this matters: Programs, Processes & Memory is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Programs, Processes & Memory as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is hardware, operating systems, data representation and digital boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Programs, Processes & Memory into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Programs, Processes & Memory changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Programs, Processes & Memory should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
         ]
       },
       {
@@ -880,6 +984,32 @@ const NORTHSTAR_CURRICULUM = [
           "What domain or service corresponds to the destination?",
           "Is the destination expected for the business application?",
           "What changed before the traffic started?"
+        ],
+        "why": "Why this matters: How the Internet Works is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat How the Internet Works as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is hardware, operating systems, data representation and digital boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break How the Internet Works into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to How the Internet Works changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about How the Internet Works should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
         ]
       },
       {
@@ -1046,6 +1176,32 @@ const NORTHSTAR_CURRICULUM = [
           "Who needs to access them?",
           "From which networks?",
           "What authentication and monitoring exist?"
+        ],
+        "why": "Why this matters: DNS, IP Addresses & Ports is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat DNS, IP Addresses & Ports as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is hardware, operating systems, data representation and digital boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break DNS, IP Addresses & Ports into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to DNS, IP Addresses & Ports changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about DNS, IP Addresses & Ports should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
         ]
       },
       {
@@ -1221,6 +1377,32 @@ const NORTHSTAR_CURRICULUM = [
           "Which threat does TLS address?",
           "Which control is missing at the application layer?",
           "What evidence would demonstrate the authorization flaw?"
+        ],
+        "why": "Why this matters: Websites, HTTP & HTTPS is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Websites, HTTP & HTTPS as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is hardware, operating systems, data representation and digital boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Websites, HTTP & HTTPS into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Websites, HTTP & HTTPS changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Websites, HTTP & HTTPS should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
         ]
       },
       {
@@ -1387,6 +1569,32 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Yes.",
             "why": "Authentication establishes identity confidence; authorization controls permitted actions."
           }
+        ],
+        "why": "Why this matters: Accounts, Passwords & Multi-Factor Authentication is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Accounts, Passwords & Multi-Factor Authentication as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is hardware, operating systems, data representation and digital boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Accounts, Passwords & Multi-Factor Authentication into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Accounts, Passwords & Multi-Factor Authentication changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Accounts, Passwords & Multi-Factor Authentication should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
         ]
       },
       {
@@ -1550,6 +1758,32 @@ const NORTHSTAR_CURRICULUM = [
             "a": "No.",
             "why": "Fast reporting can reduce impact and provide useful evidence."
           }
+        ],
+        "why": "Why this matters: Digital Safety: Downloads, Links & Social Engineering is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Digital Safety: Downloads, Links & Social Engineering as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is hardware, operating systems, data representation and digital boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Digital Safety: Downloads, Links & Social Engineering into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Digital Safety: Downloads, Links & Social Engineering changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Digital Safety: Downloads, Links & Social Engineering should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
         ]
       },
       {
@@ -1724,6 +1958,32 @@ const NORTHSTAR_CURRICULUM = [
             "a": "No.",
             "why": "Missing means the value was not observed or recorded; zero is an actual value."
           }
+        ],
+        "why": "Why this matters: Data Basics: Tables, Fields, Records & Datasets is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Data Basics: Tables, Fields, Records & Datasets as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is hardware, operating systems, data representation and digital boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Data Basics: Tables, Fields, Records & Datasets into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Data Basics: Tables, Fields, Records & Datasets changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Data Basics: Tables, Fields, Records & Datasets should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
         ]
       }
     ]
@@ -1768,7 +2028,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Asset → Threat → Vulnerability → Control → Risk",
           "why": "The chain moves from what has value, through a harmful scenario and enabling weakness, to a safeguard and the resulting risk decision."
-        }
+        },
+        "why": "Why this matters: Security Mental Models is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Mental Models as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is assets, identity, threats, vulnerabilities, risk, controls and trust boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Mental Models into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Mental Models changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Mental Models should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Mental Models scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Mental Models in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Mental Models was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Mental Models?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sf-02",
@@ -1803,7 +2132,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Integrity",
           "why": "Unauthorized modification changes the correctness or trustworthiness of information, which is an integrity concern."
-        }
+        },
+        "why": "Why this matters: CIA Triad & Security Objectives is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat CIA Triad & Security Objectives as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is assets, identity, threats, vulnerabilities, risk, controls and trust boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break CIA Triad & Security Objectives into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to CIA Triad & Security Objectives changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about CIA Triad & Security Objectives should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this CIA Triad & Security Objectives scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain CIA Triad & Security Objectives in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of CIA Triad & Security Objectives was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind CIA Triad & Security Objectives?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sf-03",
@@ -1839,7 +2237,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "What are you allowed to do?",
           "why": "Authorization evaluates the permissions or actions available to an already identified and authenticated identity."
-        }
+        },
+        "why": "Why this matters: Identity & Access Fundamentals is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Identity & Access Fundamentals as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is assets, identity, threats, vulnerabilities, risk, controls and trust boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Identity & Access Fundamentals into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Identity & Access Fundamentals changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Identity & Access Fundamentals should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Identity & Access Fundamentals scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Identity & Access Fundamentals in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Identity & Access Fundamentals was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Identity & Access Fundamentals?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sf-04",
@@ -1875,7 +2342,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Trust boundaries",
           "why": "Trust boundaries show where assumptions about identity, data or control change and therefore where security controls deserve explicit attention."
-        }
+        },
+        "why": "Why this matters: Threat Modeling Basics is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Threat Modeling Basics as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is assets, identity, threats, vulnerabilities, risk, controls and trust boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Threat Modeling Basics into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Threat Modeling Basics changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Threat Modeling Basics should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Threat Modeling Basics scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Threat Modeling Basics in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Threat Modeling Basics was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Threat Modeling Basics?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sf-05",
@@ -1911,13 +2447,82 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Supporting an investigation or conclusion",
           "why": "Evidence gives an investigation a defensible basis for observations, conclusions and decisions."
-        }
+        },
+        "why": "Why this matters: Security Operations Vocabulary is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Operations Vocabulary as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is assets, identity, threats, vulnerabilities, risk, controls and trust boundaries."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Operations Vocabulary into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Operations Vocabulary changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Operations Vocabulary should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Operations Vocabulary scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Operations Vocabulary in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Operations Vocabulary was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Operations Vocabulary?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
       "level": "Foundation / Core",
       "load": "10–12 hours",
-      "focus": "Security vocabulary, risk thinking, identity, access and threat modeling.",
+      "focus": "Build the common language of cybersecurity: objectives, identity, threats, vulnerabilities, risk, controls, trust boundaries and governance.",
       "outcomes": [
         "Frame security problems using assets, threats, vulnerabilities and controls.",
         "Apply CIA, authentication, authorization and least privilege to business scenarios.",
@@ -1925,12 +2530,15 @@ const NORTHSTAR_CURRICULUM = [
         "Distinguish events, alerts, incidents, findings and evidence."
       ],
       "topics": [
-        "Security mental models",
-        "CIA triad",
-        "Identity & access management",
-        "Least privilege",
+        "CIA and security objectives",
+        "AAA and IAM",
+        "Assets and attack surface",
+        "Threats and vulnerabilities",
+        "Risk and controls",
         "Threat modeling",
-        "Security operations vocabulary"
+        "Defense in depth",
+        "Zero trust concepts",
+        "NIST CSF 2.0"
       ],
       "case": "Case: customer portal exposure — identify business assets, trust boundaries, likely threats and control gaps.",
       "assessment": "Concept checks + threat-model exercise + short case analysis",
@@ -1960,7 +2568,66 @@ const NORTHSTAR_CURRICULUM = [
             "FIN → SYN → ACK"
           ],
           "answer": "SYN → SYN/ACK → ACK"
-        }
+        },
+        "why": "Why this matters: TCP/IP Mental Model is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat TCP/IP Mental Model as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is protocols, addressing, routing, transport, segmentation and observable traffic."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break TCP/IP Mental Model into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to TCP/IP Mental Model changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about TCP/IP Mental Model should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this TCP/IP Mental Model scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain TCP/IP Mental Model in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of TCP/IP Mental Model was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind TCP/IP Mental Model?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ns-02",
@@ -1978,7 +2645,66 @@ const NORTHSTAR_CURRICULUM = [
             "32"
           ],
           "answer": "24"
-        }
+        },
+        "why": "Why this matters: IPv4 Addressing & Subnets is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat IPv4 Addressing & Subnets as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is protocols, addressing, routing, transport, segmentation and observable traffic."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break IPv4 Addressing & Subnets into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to IPv4 Addressing & Subnets changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about IPv4 Addressing & Subnets should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this IPv4 Addressing & Subnets scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain IPv4 Addressing & Subnets in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of IPv4 Addressing & Subnets was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind IPv4 Addressing & Subnets?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ns-03",
@@ -1996,7 +2722,66 @@ const NORTHSTAR_CURRICULUM = [
             "ARP"
           ],
           "answer": "TCP"
-        }
+        },
+        "why": "Why this matters: TCP, UDP & Ports is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat TCP, UDP & Ports as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is protocols, addressing, routing, transport, segmentation and observable traffic."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break TCP, UDP & Ports into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to TCP, UDP & Ports changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about TCP, UDP & Ports should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this TCP, UDP & Ports scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain TCP, UDP & Ports in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of TCP, UDP & Ports was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind TCP, UDP & Ports?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ns-04",
@@ -2014,7 +2799,66 @@ const NORTHSTAR_CURRICULUM = [
             "To remove all logging"
           ],
           "answer": "To reduce unnecessary trust and lateral movement"
-        }
+        },
+        "why": "Why this matters: Firewalls & Network Segmentation is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Firewalls & Network Segmentation as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is protocols, addressing, routing, transport, segmentation and observable traffic."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Firewalls & Network Segmentation into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Firewalls & Network Segmentation changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Firewalls & Network Segmentation should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Firewalls & Network Segmentation scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Firewalls & Network Segmentation in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Firewalls & Network Segmentation was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Firewalls & Network Segmentation?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ns-05",
@@ -2032,13 +2876,72 @@ const NORTHSTAR_CURRICULUM = [
             "Assume compromise"
           ],
           "answer": "Establish scope and baseline"
-        }
+        },
+        "why": "Why this matters: Packet Analysis Workflow is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Packet Analysis Workflow as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is protocols, addressing, routing, transport, segmentation and observable traffic."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Packet Analysis Workflow into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Packet Analysis Workflow changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Packet Analysis Workflow should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Packet Analysis Workflow scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Packet Analysis Workflow in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Packet Analysis Workflow was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Packet Analysis Workflow?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
       "level": "Core Technical",
       "load": "12–14 hours",
-      "focus": "Network architecture, protocols, segmentation, firewall policy and packet analysis.",
+      "focus": "Move from packet fundamentals to segmentation, protocol security and observable network behavior.",
       "outcomes": [
         "Interpret IP addresses, ports, protocols and TCP behavior.",
         "Explain subnet boundaries and basic network segmentation.",
@@ -2046,12 +2949,15 @@ const NORTHSTAR_CURRICULUM = [
         "Perform a disciplined packet-analysis workflow using controlled evidence."
       ],
       "topics": [
-        "TCP/IP",
-        "IPv4 & CIDR",
+        "Ethernet and ARP",
+        "IPv4/IPv6",
+        "Subnetting",
+        "Routing and NAT",
         "TCP/UDP",
-        "Ports & services",
+        "DNS/DHCP",
+        "HTTP/TLS",
         "Firewalls",
-        "Segmentation",
+        "VPNs",
         "Packet analysis"
       ],
       "case": "Case: enterprise network redesign — separate user, application and database trust zones and justify controls.",
@@ -2148,7 +3054,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Give the application a dedicated low-privilege identity with only the required file access",
           "why": "Least privilege limits the application's authority to what it actually needs. If the application is compromised, this reduces the amount of the system and data that the compromised process can directly access."
-        }
+        },
+        "why": "Why this matters: Linux Security Fundamentals is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Linux Security Fundamentals as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is processes, permissions, services, isolation, configuration and cloud responsibility."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Linux Security Fundamentals into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Linux Security Fundamentals changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Linux Security Fundamentals should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Linux Security Fundamentals scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Linux Security Fundamentals in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Linux Security Fundamentals was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Linux Security Fundamentals?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sc-02",
@@ -2166,7 +3131,66 @@ const NORTHSTAR_CURRICULUM = [
             "To hide logs"
           ],
           "answer": "To reduce attack surface"
-        }
+        },
+        "why": "Why this matters: Processes & Services is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Processes & Services as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is processes, permissions, services, isolation, configuration and cloud responsibility."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Processes & Services into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Processes & Services changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Processes & Services should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Processes & Services scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Processes & Services in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Processes & Services was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Processes & Services?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sc-03",
@@ -2184,7 +3208,66 @@ const NORTHSTAR_CURRICULUM = [
             "The browser vendor"
           ],
           "answer": "The customer/workload owner"
-        }
+        },
+        "why": "Why this matters: Cloud Shared Responsibility is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Cloud Shared Responsibility as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is processes, permissions, services, isolation, configuration and cloud responsibility."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Cloud Shared Responsibility into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Cloud Shared Responsibility changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Cloud Shared Responsibility should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Cloud Shared Responsibility scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Cloud Shared Responsibility in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Cloud Shared Responsibility was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Cloud Shared Responsibility?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sc-04",
@@ -2202,7 +3285,66 @@ const NORTHSTAR_CURRICULUM = [
             "Unrelated to risk"
           ],
           "answer": "Measurable and verifiable"
-        }
+        },
+        "why": "Why this matters: Secure Configuration & Hardening is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Secure Configuration & Hardening as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is processes, permissions, services, isolation, configuration and cloud responsibility."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Secure Configuration & Hardening into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Secure Configuration & Hardening changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Secure Configuration & Hardening should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Secure Configuration & Hardening scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Secure Configuration & Hardening in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Secure Configuration & Hardening was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Secure Configuration & Hardening?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sc-05",
@@ -2220,7 +3362,66 @@ const NORTHSTAR_CURRICULUM = [
             "A README"
           ],
           "answer": "A protected server-side secret store"
-        }
+        },
+        "why": "Why this matters: Cloud Identity & Secrets is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Cloud Identity & Secrets as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is processes, permissions, services, isolation, configuration and cloud responsibility."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Cloud Identity & Secrets into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Cloud Identity & Secrets changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Cloud Identity & Secrets should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Cloud Identity & Secrets scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Cloud Identity & Secrets in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Cloud Identity & Secrets was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Cloud Identity & Secrets?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
@@ -2269,7 +3470,66 @@ const NORTHSTAR_CURRICULUM = [
             "Only storage capacity"
           ],
           "answer": "The security questions you need to answer"
-        }
+        },
+        "why": "Why this matters: Logging for Detection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Logging for Detection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry, detection, triage, investigation, response and evidence."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Logging for Detection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Logging for Detection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Logging for Detection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Logging for Detection scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Logging for Detection in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Logging for Detection was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Logging for Detection?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ds-02",
@@ -2287,7 +3547,66 @@ const NORTHSTAR_CURRICULUM = [
             "Independent of evidence"
           ],
           "answer": "Testable against observable telemetry"
-        }
+        },
+        "why": "Why this matters: Detection Engineering Basics is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Detection Engineering Basics as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry, detection, triage, investigation, response and evidence."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Detection Engineering Basics into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Detection Engineering Basics changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Detection Engineering Basics should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Detection Engineering Basics scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Detection Engineering Basics in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Detection Engineering Basics was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Detection Engineering Basics?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ds-03",
@@ -2305,7 +3624,66 @@ const NORTHSTAR_CURRICULUM = [
             "To increase false positives"
           ],
           "answer": "To establish context and reduce isolated-event ambiguity"
-        }
+        },
+        "why": "Why this matters: SIEM Investigation Workflow is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat SIEM Investigation Workflow as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry, detection, triage, investigation, response and evidence."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break SIEM Investigation Workflow into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to SIEM Investigation Workflow changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about SIEM Investigation Workflow should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this SIEM Investigation Workflow scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain SIEM Investigation Workflow in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of SIEM Investigation Workflow was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind SIEM Investigation Workflow?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ds-04",
@@ -2323,7 +3701,66 @@ const NORTHSTAR_CURRICULUM = [
             "Browser theme"
           ],
           "answer": "Business impact"
-        }
+        },
+        "why": "Why this matters: Incident Triage & Severity is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Incident Triage & Severity as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry, detection, triage, investigation, response and evidence."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Incident Triage & Severity into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Incident Triage & Severity changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Incident Triage & Severity should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Incident Triage & Severity scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Incident Triage & Severity in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Incident Triage & Severity was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Incident Triage & Severity?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ds-05",
@@ -2341,13 +3778,72 @@ const NORTHSTAR_CURRICULUM = [
             "Change the source"
           ],
           "answer": "Record the uncertainty"
-        }
+        },
+        "why": "Why this matters: Evidence & Incident Timeline is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Evidence & Incident Timeline as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry, detection, triage, investigation, response and evidence."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Evidence & Incident Timeline into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Evidence & Incident Timeline changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Evidence & Incident Timeline should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Evidence & Incident Timeline scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Evidence & Incident Timeline in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Evidence & Incident Timeline was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Evidence & Incident Timeline?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
       "level": "Core / SOC",
       "load": "14–16 hours",
-      "focus": "Security telemetry, detection engineering, SIEM investigation and incident response.",
+      "focus": "Build an analyst workflow from telemetry through detection, triage, response, evidence and recovery.",
       "outcomes": [
         "Design telemetry around questions an analyst must answer.",
         "Write testable detection hypotheses from observable behavior.",
@@ -2356,12 +3852,16 @@ const NORTHSTAR_CURRICULUM = [
         "Construct defensible incident timelines."
       ],
       "topics": [
-        "Security logging",
+        "Logging",
+        "Telemetry quality",
         "Detection engineering",
-        "SIEM investigation",
-        "Incident triage",
-        "Evidence handling",
-        "Timeline reconstruction"
+        "SIEM",
+        "Triage",
+        "Incident response",
+        "Forensics",
+        "Threat intelligence",
+        "Hunting",
+        "Recovery"
       ],
       "case": "Case: suspicious authentication sequence — correlate telemetry and decide what evidence is required before escalation.",
       "assessment": "Detection rule + investigation narrative + incident timeline",
@@ -2391,7 +3891,76 @@ const NORTHSTAR_CURRICULUM = [
             "A production credential"
           ],
           "answer": "A defined scope and rules of engagement"
-        }
+        },
+        "why": "Why this matters: Offensive Security Methodology is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Offensive Security Methodology as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is authorized assessment, attack surface, secure design, validation and remediation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Offensive Security Methodology into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Offensive Security Methodology changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Offensive Security Methodology should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "OWASP Top 10:2025",
+            "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Offensive Security Methodology scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Offensive Security Methodology in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Offensive Security Methodology was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Offensive Security Methodology?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "os-02",
@@ -2409,7 +3978,76 @@ const NORTHSTAR_CURRICULUM = [
             "Keyboard color"
           ],
           "answer": "API endpoints"
-        }
+        },
+        "why": "Why this matters: Web Application Attack Surface is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Web Application Attack Surface as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is authorized assessment, attack surface, secure design, validation and remediation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Web Application Attack Surface into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Web Application Attack Surface changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Web Application Attack Surface should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "OWASP Top 10:2025",
+            "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Web Application Attack Surface scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Web Application Attack Surface in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Web Application Attack Surface was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Web Application Attack Surface?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "os-03",
@@ -2427,7 +4065,76 @@ const NORTHSTAR_CURRICULUM = [
             "Longer URLs"
           ],
           "answer": "Parameterized queries"
-        }
+        },
+        "why": "Why this matters: Input Validation & Injection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Input Validation & Injection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is authorized assessment, attack surface, secure design, validation and remediation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Input Validation & Injection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Input Validation & Injection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Input Validation & Injection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "OWASP Top 10:2025",
+            "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Input Validation & Injection scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Input Validation & Injection in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Input Validation & Injection was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Input Validation & Injection?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "os-04",
@@ -2445,7 +4152,76 @@ const NORTHSTAR_CURRICULUM = [
             "To disable authorization"
           ],
           "answer": "To reduce the lifetime of stolen session material"
-        }
+        },
+        "why": "Why this matters: Authentication & Session Testing is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Authentication & Session Testing as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is authorized assessment, attack surface, secure design, validation and remediation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Authentication & Session Testing into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Authentication & Session Testing changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Authentication & Session Testing should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "OWASP Top 10:2025",
+            "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Authentication & Session Testing scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Authentication & Session Testing in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Authentication & Session Testing was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Authentication & Session Testing?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "os-05",
@@ -2463,7 +4239,76 @@ const NORTHSTAR_CURRICULUM = [
             "No remediation context"
           ],
           "answer": "Evidence and reproducible conditions"
-        }
+        },
+        "why": "Why this matters: Reporting Security Findings is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Reporting Security Findings as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is authorized assessment, attack surface, secure design, validation and remediation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Reporting Security Findings into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Reporting Security Findings changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Reporting Security Findings should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "OWASP Top 10:2025",
+            "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Reporting Security Findings scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Reporting Security Findings in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Reporting Security Findings was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Reporting Security Findings?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
@@ -2514,7 +4359,76 @@ const NORTHSTAR_CURRICULUM = [
             "To avoid documentation"
           ],
           "answer": "To identify and reduce risk before it becomes expensive to change"
-        }
+        },
+        "why": "Why this matters: Secure Software Lifecycle is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Secure Software Lifecycle as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is security requirements, architecture, secure development, automation and measurable controls."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Secure Software Lifecycle into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Secure Software Lifecycle changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Secure Software Lifecycle should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Secure Software Lifecycle scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Secure Software Lifecycle in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Secure Software Lifecycle was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Secure Software Lifecycle?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "se-02",
@@ -2532,7 +4446,76 @@ const NORTHSTAR_CURRICULUM = [
             "Random results"
           ],
           "answer": "A clear rule and auditable output"
-        }
+        },
+        "why": "Why this matters: Security Automation is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Automation as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is security requirements, architecture, secure development, automation and measurable controls."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Automation into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Automation changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Automation should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Automation scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Automation in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Automation was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Automation?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "se-03",
@@ -2550,7 +4533,76 @@ const NORTHSTAR_CURRICULUM = [
             "Only perimeter security"
           ],
           "answer": "Multiple complementary security controls"
-        }
+        },
+        "why": "Why this matters: Security Architecture is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Architecture as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is security requirements, architecture, secure development, automation and measurable controls."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Architecture into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Architecture changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Architecture should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Architecture scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Architecture in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Architecture was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Architecture?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "se-04",
@@ -2568,7 +4620,76 @@ const NORTHSTAR_CURRICULUM = [
             "Stop collecting evidence"
           ],
           "answer": "Verify the fix"
-        }
+        },
+        "why": "Why this matters: Vulnerability Management is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Vulnerability Management as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is security requirements, architecture, secure development, automation and measurable controls."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Vulnerability Management into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Vulnerability Management changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Vulnerability Management should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Vulnerability Management scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Vulnerability Management in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Vulnerability Management was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Vulnerability Management?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "se-05",
@@ -2586,13 +4707,82 @@ const NORTHSTAR_CURRICULUM = [
             "Change meaning each week"
           ],
           "answer": "Connect measurement to an outcome or decision"
-        }
+        },
+        "why": "Why this matters: Security Metrics & Evidence is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Metrics & Evidence as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is security requirements, architecture, secure development, automation and measurable controls."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Metrics & Evidence into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Metrics & Evidence changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Metrics & Evidence should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Metrics & Evidence scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Metrics & Evidence in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Metrics & Evidence was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Metrics & Evidence?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
       "level": "Advanced Integration",
       "load": "14–16 hours",
-      "focus": "Secure SDLC, automation, architecture, vulnerability management and security metrics.",
+      "focus": "Engineer security into software and infrastructure through architecture, secure development, automation and measurable controls.",
       "outcomes": [
         "Integrate security controls throughout software delivery.",
         "Design auditable security automation.",
@@ -2601,13 +4791,16 @@ const NORTHSTAR_CURRICULUM = [
         "Define metrics that support security decisions and governance."
       ],
       "topics": [
-        "Secure SDLC",
-        "Security automation",
-        "Defense in depth",
-        "Security architecture",
-        "Vulnerability management",
-        "Security metrics",
-        "Governance & evidence"
+        "Security requirements",
+        "Threat modeling",
+        "Secure design",
+        "SSDF",
+        "Secure coding",
+        "SAST/DAST/SCA",
+        "CI/CD",
+        "IaC",
+        "SBOM",
+        "Vulnerability management"
       ],
       "case": "Case: security transformation roadmap — prioritize controls, investments, metrics and verification across a growing digital business.",
       "assessment": "Secure-SDLC design + control roadmap + executive security scorecard",
@@ -2715,7 +4908,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Define the problem, inputs, rules and expected output",
           "why": "Clear problem definition reduces ambiguity and makes the resulting program testable."
-        }
+        },
+        "why": "Why this matters: How Programmers Think: Inputs → Rules → Outputs is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat How Programmers Think: Inputs → Rules → Outputs as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break How Programmers Think: Inputs → Rules → Outputs into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to How Programmers Think: Inputs → Rules → Outputs changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about How Programmers Think: Inputs → Rules → Outputs should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this How Programmers Think: Inputs → Rules → Outputs scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain How Programmers Think: Inputs → Rules → Outputs in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of How Programmers Think: Inputs → Rules → Outputs was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind How Programmers Think: Inputs → Rules → Outputs?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "pro-02",
@@ -2781,7 +5043,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Integer",
           "why": "A count is a whole number, so an integer represents it directly."
-        }
+        },
+        "why": "Why this matters: Variables & Data Types is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Variables & Data Types as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Variables & Data Types into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Variables & Data Types changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Variables & Data Types should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Variables & Data Types scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Variables & Data Types in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Variables & Data Types was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Variables & Data Types?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "pro-03",
@@ -2848,7 +5179,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Both A and B must be true",
           "why": "AND is true only when every required condition is true."
-        }
+        },
+        "why": "Why this matters: Conditions & Boolean Logic is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Conditions & Boolean Logic as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Conditions & Boolean Logic into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Conditions & Boolean Logic changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Conditions & Boolean Logic should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Conditions & Boolean Logic scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Conditions & Boolean Logic in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Conditions & Boolean Logic was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Conditions & Boolean Logic?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "pro-04",
@@ -2909,7 +5309,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Repeat an operation for items in a collection",
           "why": "A for loop is designed to iterate through items in a sequence or other iterable."
-        }
+        },
+        "why": "Why this matters: Loops: Repeating Work Safely is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Loops: Repeating Work Safely as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Loops: Repeating Work Safely into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Loops: Repeating Work Safely changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Loops: Repeating Work Safely should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Loops: Repeating Work Safely scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Loops: Repeating Work Safely in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Loops: Repeating Work Safely was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Loops: Repeating Work Safely?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "pro-05",
@@ -2970,7 +5439,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "It makes logic easier to understand, test and reuse",
           "why": "Decomposition improves structure and testability, but it does not guarantee correctness."
-        }
+        },
+        "why": "Why this matters: Functions & Decomposition is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Functions & Decomposition as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Functions & Decomposition into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Functions & Decomposition changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Functions & Decomposition should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Functions & Decomposition scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Functions & Decomposition in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Functions & Decomposition was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Functions & Decomposition?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "pro-06",
@@ -3035,7 +5573,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Set",
           "why": "A set is designed to represent unique values."
-        }
+        },
+        "why": "Why this matters: Python Collections: Lists, Dictionaries & Sets is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Python Collections: Lists, Dictionaries & Sets as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Python Collections: Lists, Dictionaries & Sets into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Python Collections: Lists, Dictionaries & Sets changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Python Collections: Lists, Dictionaries & Sets should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Python Collections: Lists, Dictionaries & Sets scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Python Collections: Lists, Dictionaries & Sets in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Python Collections: Lists, Dictionaries & Sets was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Python Collections: Lists, Dictionaries & Sets?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "pro-07",
@@ -3101,7 +5708,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Validate its structure, fields, values and provenance",
           "why": "Parsing tells you the format can be read; validation asks whether the contents are suitable for the intended analysis."
-        }
+        },
+        "why": "Why this matters: CSV & JSON: Working With Real Data is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat CSV & JSON: Working With Real Data as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break CSV & JSON: Working With Real Data into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to CSV & JSON: Working With Real Data changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about CSV & JSON: Working With Real Data should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this CSV & JSON: Working With Real Data scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain CSV & JSON: Working With Real Data in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of CSV & JSON: Working With Real Data was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind CSV & JSON: Working With Real Data?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "pro-08",
@@ -3166,7 +5842,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Rules often change behavior at boundaries",
           "why": "Threshold-based logic can be wrong exactly where the decision changes."
-        }
+        },
+        "why": "Why this matters: Errors, Validation & Testing is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Errors, Validation & Testing as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Errors, Validation & Testing into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Errors, Validation & Testing changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Errors, Validation & Testing should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Errors, Validation & Testing scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Errors, Validation & Testing in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Errors, Validation & Testing was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Errors, Validation & Testing?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "pro-09",
@@ -3232,7 +5977,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Filter rows according to a condition",
           "why": "WHERE restricts the rows returned by a query based on a condition."
-        }
+        },
+        "why": "Why this matters: SQL Fundamentals: Ask Questions of Tables is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat SQL Fundamentals: Ask Questions of Tables as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break SQL Fundamentals: Ask Questions of Tables into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to SQL Fundamentals: Ask Questions of Tables changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about SQL Fundamentals: Ask Questions of Tables should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this SQL Fundamentals: Ask Questions of Tables scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain SQL Fundamentals: Ask Questions of Tables in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of SQL Fundamentals: Ask Questions of Tables was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind SQL Fundamentals: Ask Questions of Tables?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "pro-10",
@@ -3298,7 +6112,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "One record can match multiple related records",
           "why": "A one-to-many or many-to-many relationship can produce multiple joined rows for one original record."
-        }
+        },
+        "why": "Why this matters: SQL Filtering, Joins & Aggregation is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat SQL Filtering, Joins & Aggregation as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break SQL Filtering, Joins & Aggregation into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to SQL Filtering, Joins & Aggregation changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about SQL Filtering, Joins & Aggregation should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this SQL Filtering, Joins & Aggregation scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain SQL Filtering, Joins & Aggregation in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of SQL Filtering, Joins & Aggregation was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind SQL Filtering, Joins & Aggregation?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "pro-11",
@@ -3359,7 +6242,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "A bounded, read-only, repeatable analysis",
           "why": "Read-only automation allows the learner to prove correctness before introducing operational impact."
-        }
+        },
+        "why": "Why this matters: Security Automation with Python is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Automation with Python as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Automation with Python into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Automation with Python changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Automation with Python should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Automation with Python scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Automation with Python in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Automation with Python was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Automation with Python?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "pro-12",
@@ -3421,7 +6373,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "The data shows 40 failures from this IP; additional context is required to determine why",
           "why": "A defensible analyst separates observed facts from hypotheses that require additional evidence."
-        }
+        },
+        "why": "Why this matters: Mini Project: Authentication Log Analyzer is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Mini Project: Authentication Log Analyzer as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is computational thinking, program behavior, data structures, querying and automation."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Mini Project: Authentication Log Analyzer into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Mini Project: Authentication Log Analyzer changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Mini Project: Authentication Log Analyzer should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Mini Project: Authentication Log Analyzer scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Mini Project: Authentication Log Analyzer in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Mini Project: Authentication Log Analyzer was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Mini Project: Authentication Log Analyzer?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ]
   },
@@ -3491,7 +6512,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Data Thinking is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Data Thinking as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Data Thinking into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Data Thinking changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Data Thinking should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Data Thinking scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Data Thinking in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Data Thinking was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Data Thinking?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "dat-02",
@@ -3551,7 +6641,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Population, Sample & Bias is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Population, Sample & Bias as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Population, Sample & Bias into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Population, Sample & Bias changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Population, Sample & Bias should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Population, Sample & Bias scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Population, Sample & Bias in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Population, Sample & Bias was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Population, Sample & Bias?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "dat-03",
@@ -3611,7 +6770,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Mean, Median & Percentiles is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Mean, Median & Percentiles as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Mean, Median & Percentiles into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Mean, Median & Percentiles changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Mean, Median & Percentiles should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Mean, Median & Percentiles scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Mean, Median & Percentiles in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Mean, Median & Percentiles was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Mean, Median & Percentiles?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "dat-04",
@@ -3671,7 +6899,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Variation & Standard Deviation is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Variation & Standard Deviation as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Variation & Standard Deviation into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Variation & Standard Deviation changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Variation & Standard Deviation should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Variation & Standard Deviation scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Variation & Standard Deviation in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Variation & Standard Deviation was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Variation & Standard Deviation?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "dat-05",
@@ -3731,7 +7028,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Distributions & Histograms is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Distributions & Histograms as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Distributions & Histograms into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Distributions & Histograms changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Distributions & Histograms should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Distributions & Histograms scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Distributions & Histograms in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Distributions & Histograms was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Distributions & Histograms?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "dat-06",
@@ -3791,7 +7157,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Probability Fundamentals is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Probability Fundamentals as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Probability Fundamentals into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Probability Fundamentals changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Probability Fundamentals should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Probability Fundamentals scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Probability Fundamentals in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Probability Fundamentals was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Probability Fundamentals?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "dat-07",
@@ -3851,7 +7286,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Conditional Probability & Bayes Intuition is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Conditional Probability & Bayes Intuition as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Conditional Probability & Bayes Intuition into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Conditional Probability & Bayes Intuition changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Conditional Probability & Bayes Intuition should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Conditional Probability & Bayes Intuition scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Conditional Probability & Bayes Intuition in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Conditional Probability & Bayes Intuition was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Conditional Probability & Bayes Intuition?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "dat-08",
@@ -3911,7 +7415,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Correlation vs Causation is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Correlation vs Causation as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Correlation vs Causation into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Correlation vs Causation changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Correlation vs Causation should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Correlation vs Causation scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Correlation vs Causation in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Correlation vs Causation was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Correlation vs Causation?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "dat-09",
@@ -3971,7 +7544,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Sampling & Confidence is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Sampling & Confidence as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Sampling & Confidence into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Sampling & Confidence changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Sampling & Confidence should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Sampling & Confidence scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Sampling & Confidence in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Sampling & Confidence was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Sampling & Confidence?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "dat-10",
@@ -4031,7 +7673,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Data Cleaning & Missing Values is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Data Cleaning & Missing Values as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Data Cleaning & Missing Values into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Data Cleaning & Missing Values changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Data Cleaning & Missing Values should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Data Cleaning & Missing Values scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Data Cleaning & Missing Values in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Data Cleaning & Missing Values was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Data Cleaning & Missing Values?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "dat-11",
@@ -4091,7 +7802,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Visualization for Security Data is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Visualization for Security Data as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Visualization for Security Data into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Visualization for Security Data changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Visualization for Security Data should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Visualization for Security Data scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Visualization for Security Data in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Visualization for Security Data was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Visualization for Security Data?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "dat-12",
@@ -4151,13 +7931,82 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Mini Project: Security Operations Analysis is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Mini Project: Security Operations Analysis as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is measurement, sampling, probability, inference, uncertainty and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Mini Project: Security Operations Analysis into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Mini Project: Security Operations Analysis changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Mini Project: Security Operations Analysis should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
+          },
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Mini Project: Security Operations Analysis scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Mini Project: Security Operations Analysis in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Mini Project: Security Operations Analysis was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Mini Project: Security Operations Analysis?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
       "level": "Applied Analytics",
       "load": "22–26 hours",
-      "focus": "Build statistical intuition before formulas, then turn messy data into defensible analytical conclusions.",
+      "focus": "Build statistical reasoning across measurement, probability, inference, regression, causality, uncertainty and reproducible analysis.",
       "outcomes": [
         "Describe distributions, averages and variation correctly.",
         "Reason about probability, samples, uncertainty and correlation.",
@@ -4166,16 +8015,17 @@ const NORTHSTAR_CURRICULUM = [
         "Use statistical evidence to support security and business decisions."
       ],
       "topics": [
-        "Data literacy",
-        "Descriptive statistics",
-        "Probability",
+        "Measurement",
         "Sampling",
+        "Bias",
+        "Probability",
         "Distributions",
-        "Correlation",
         "Inference",
-        "Data cleaning",
-        "Visualization",
-        "Analytical communication"
+        "Confidence intervals",
+        "Hypothesis testing",
+        "Regression",
+        "Causality",
+        "Visualization"
       ],
       "case": "Case: security operations data contains login failures, response times and alert volumes; determine what changed and what the evidence can actually support.",
       "assessment": "Data-quality review + statistical analysis + executive interpretation",
@@ -4248,7 +8098,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: What Machine Learning Is is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat What Machine Learning Is as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break What Machine Learning Is into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to What Machine Learning Is changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about What Machine Learning Is should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this What Machine Learning Is scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain What Machine Learning Is in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of What Machine Learning Is was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind What Machine Learning Is?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "mac-02",
@@ -4308,7 +8227,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Features, Labels & Datasets is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Features, Labels & Datasets as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Features, Labels & Datasets into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Features, Labels & Datasets changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Features, Labels & Datasets should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Features, Labels & Datasets scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Features, Labels & Datasets in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Features, Labels & Datasets was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Features, Labels & Datasets?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "mac-03",
@@ -4368,7 +8356,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Train, Validation & Test Sets is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Train, Validation & Test Sets as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Train, Validation & Test Sets into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Train, Validation & Test Sets changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Train, Validation & Test Sets should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Train, Validation & Test Sets scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Train, Validation & Test Sets in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Train, Validation & Test Sets was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Train, Validation & Test Sets?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "mac-04",
@@ -4428,7 +8485,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Linear Regression is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Linear Regression as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Linear Regression into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Linear Regression changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Linear Regression should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Linear Regression scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Linear Regression in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Linear Regression was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Linear Regression?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "mac-05",
@@ -4488,7 +8614,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Classification Fundamentals is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Classification Fundamentals as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Classification Fundamentals into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Classification Fundamentals changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Classification Fundamentals should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Classification Fundamentals scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Classification Fundamentals in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Classification Fundamentals was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Classification Fundamentals?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "mac-06",
@@ -4548,7 +8743,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Decision Trees & Rules is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Decision Trees & Rules as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Decision Trees & Rules into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Decision Trees & Rules changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Decision Trees & Rules should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Decision Trees & Rules scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Decision Trees & Rules in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Decision Trees & Rules was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Decision Trees & Rules?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "mac-07",
@@ -4608,7 +8872,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Nearest Neighbors & Similarity is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Nearest Neighbors & Similarity as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Nearest Neighbors & Similarity into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Nearest Neighbors & Similarity changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Nearest Neighbors & Similarity should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Nearest Neighbors & Similarity scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Nearest Neighbors & Similarity in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Nearest Neighbors & Similarity was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Nearest Neighbors & Similarity?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "mac-08",
@@ -4668,7 +9001,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Clustering & Anomaly Thinking is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Clustering & Anomaly Thinking as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Clustering & Anomaly Thinking into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Clustering & Anomaly Thinking changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Clustering & Anomaly Thinking should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Clustering & Anomaly Thinking scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Clustering & Anomaly Thinking in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Clustering & Anomaly Thinking was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Clustering & Anomaly Thinking?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "mac-09",
@@ -4728,7 +9130,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Precision, Recall & Confusion Matrix is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Precision, Recall & Confusion Matrix as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Precision, Recall & Confusion Matrix into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Precision, Recall & Confusion Matrix changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Precision, Recall & Confusion Matrix should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Precision, Recall & Confusion Matrix scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Precision, Recall & Confusion Matrix in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Precision, Recall & Confusion Matrix was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Precision, Recall & Confusion Matrix?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "mac-10",
@@ -4788,7 +9259,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Overfitting & Generalization is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Overfitting & Generalization as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Overfitting & Generalization into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Overfitting & Generalization changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Overfitting & Generalization should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Overfitting & Generalization scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Overfitting & Generalization in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Overfitting & Generalization was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Overfitting & Generalization?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "mac-11",
@@ -4848,7 +9388,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Feature Leakage, Bias & Drift is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Feature Leakage, Bias & Drift as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Feature Leakage, Bias & Drift into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Feature Leakage, Bias & Drift changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Feature Leakage, Bias & Drift should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Feature Leakage, Bias & Drift scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Feature Leakage, Bias & Drift in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Feature Leakage, Bias & Drift was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Feature Leakage, Bias & Drift?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "mac-12",
@@ -4908,13 +9517,82 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Mini Project: Suspicious Login Classifier is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Mini Project: Suspicious Login Classifier as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is problem formulation, features, training, evaluation, generalization and responsible deployment."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Mini Project: Suspicious Login Classifier into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Mini Project: Suspicious Login Classifier changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Mini Project: Suspicious Login Classifier should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Stanford Statistics/Data Science",
+            "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Mini Project: Suspicious Login Classifier scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Mini Project: Suspicious Login Classifier in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Mini Project: Suspicious Login Classifier was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Mini Project: Suspicious Login Classifier?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
       "level": "Advanced Analytics",
       "load": "24–30 hours",
-      "focus": "Understand machine learning from the ground up, including data preparation, model behavior, evaluation, limitations and security use cases.",
+      "focus": "Build mathematical and practical foundations for training, evaluating, debugging and responsibly deploying ML models.",
       "outcomes": [
         "Explain what a model learns from data.",
         "Prepare features and labels without leakage.",
@@ -4924,18 +9602,21 @@ const NORTHSTAR_CURRICULUM = [
         "Build a small security-focused ML workflow."
       ],
       "topics": [
-        "ML mental model",
-        "Features & labels",
+        "Problem formulation",
+        "Features/labels",
         "Regression",
         "Classification",
-        "Decision trees",
-        "Nearest neighbors",
+        "Trees",
+        "Ensembles",
         "Clustering",
-        "Train/test split",
+        "Anomaly detection",
         "Metrics",
-        "Overfitting",
-        "Feature leakage",
-        "Model monitoring"
+        "Cross-validation",
+        "Regularization",
+        "Optimization",
+        "Neural networks",
+        "Deep learning",
+        "Drift"
       ],
       "case": "Case: classify suspicious login events while controlling false positives, leakage and changing attacker behavior.",
       "assessment": "Model comparison + evaluation report + security limitations review",
@@ -5008,7 +9689,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Security Telemetry is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Telemetry as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Telemetry into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Telemetry changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Telemetry should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Telemetry scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Telemetry in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Telemetry was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Telemetry?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sec-02",
@@ -5068,7 +9808,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Events, Logs & Fields is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Events, Logs & Fields as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Events, Logs & Fields into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Events, Logs & Fields changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Events, Logs & Fields should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Events, Logs & Fields scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Events, Logs & Fields in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Events, Logs & Fields was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Events, Logs & Fields?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sec-03",
@@ -5128,7 +9927,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Normalization & Enrichment is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Normalization & Enrichment as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Normalization & Enrichment into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Normalization & Enrichment changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Normalization & Enrichment should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Normalization & Enrichment scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Normalization & Enrichment in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Normalization & Enrichment was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Normalization & Enrichment?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sec-04",
@@ -5188,7 +10046,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Detection Hypotheses is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Detection Hypotheses as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Detection Hypotheses into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Detection Hypotheses changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Detection Hypotheses should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Detection Hypotheses scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Detection Hypotheses in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Detection Hypotheses was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Detection Hypotheses?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sec-05",
@@ -5248,7 +10165,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Rule Logic & Thresholds is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Rule Logic & Thresholds as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Rule Logic & Thresholds into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Rule Logic & Thresholds changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Rule Logic & Thresholds should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Rule Logic & Thresholds scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Rule Logic & Thresholds in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Rule Logic & Thresholds was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Rule Logic & Thresholds?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sec-06",
@@ -5308,7 +10284,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Authentication Analytics is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Authentication Analytics as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Authentication Analytics into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Authentication Analytics changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Authentication Analytics should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Authentication Analytics scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Authentication Analytics in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Authentication Analytics was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Authentication Analytics?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sec-07",
@@ -5368,7 +10403,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Endpoint & Process Telemetry is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Endpoint & Process Telemetry as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Endpoint & Process Telemetry into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Endpoint & Process Telemetry changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Endpoint & Process Telemetry should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Endpoint & Process Telemetry scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Endpoint & Process Telemetry in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Endpoint & Process Telemetry was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Endpoint & Process Telemetry?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sec-08",
@@ -5428,7 +10522,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Network Detection Concepts is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Network Detection Concepts as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Network Detection Concepts into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Network Detection Concepts changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Network Detection Concepts should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Network Detection Concepts scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Network Detection Concepts in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Network Detection Concepts was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Network Detection Concepts?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sec-09",
@@ -5488,7 +10641,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: SIEM Investigation Workflow is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat SIEM Investigation Workflow as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break SIEM Investigation Workflow into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to SIEM Investigation Workflow changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about SIEM Investigation Workflow should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this SIEM Investigation Workflow scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain SIEM Investigation Workflow in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of SIEM Investigation Workflow was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind SIEM Investigation Workflow?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sec-10",
@@ -5548,7 +10760,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Detection Testing & False Positives is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Detection Testing & False Positives as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Detection Testing & False Positives into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Detection Testing & False Positives changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Detection Testing & False Positives should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Detection Testing & False Positives scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Detection Testing & False Positives in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Detection Testing & False Positives was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Detection Testing & False Positives?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sec-11",
@@ -5608,7 +10879,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Threat-Informed Detection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Threat-Informed Detection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Threat-Informed Detection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Threat-Informed Detection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Threat-Informed Detection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Threat-Informed Detection scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Threat-Informed Detection in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Threat-Informed Detection was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Threat-Informed Detection?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "sec-12",
@@ -5668,7 +10998,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Mini Project: Build an Investigation Playbook is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Mini Project: Build an Investigation Playbook as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is telemetry schemas, detection hypotheses, correlation, testing and operational feedback."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Mini Project: Build an Investigation Playbook into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Mini Project: Build an Investigation Playbook changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Mini Project: Build an Investigation Playbook should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Mini Project: Build an Investigation Playbook scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Mini Project: Build an Investigation Playbook in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Mini Project: Build an Investigation Playbook was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Mini Project: Build an Investigation Playbook?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
@@ -5766,7 +11155,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Cloud Mental Model is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Cloud Mental Model as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Cloud Mental Model into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Cloud Mental Model changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Cloud Mental Model should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Cloud Mental Model scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Cloud Mental Model in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Cloud Mental Model was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Cloud Mental Model?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "clo-02",
@@ -5826,7 +11274,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Shared Responsibility is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Shared Responsibility as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Shared Responsibility into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Shared Responsibility changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Shared Responsibility should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Shared Responsibility scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Shared Responsibility in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Shared Responsibility was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Shared Responsibility?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "clo-03",
@@ -5886,7 +11393,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Cloud Identity & Least Privilege is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Cloud Identity & Least Privilege as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Cloud Identity & Least Privilege into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Cloud Identity & Least Privilege changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Cloud Identity & Least Privilege should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Cloud Identity & Least Privilege scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Cloud Identity & Least Privilege in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Cloud Identity & Least Privilege was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Cloud Identity & Least Privilege?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "clo-04",
@@ -5946,7 +11512,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Network Segmentation in Cloud is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Network Segmentation in Cloud as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Network Segmentation in Cloud into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Network Segmentation in Cloud changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Network Segmentation in Cloud should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Network Segmentation in Cloud scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Network Segmentation in Cloud in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Network Segmentation in Cloud was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Network Segmentation in Cloud?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "clo-05",
@@ -6006,7 +11631,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Storage & Data Protection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Storage & Data Protection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Storage & Data Protection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Storage & Data Protection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Storage & Data Protection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Storage & Data Protection scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Storage & Data Protection in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Storage & Data Protection was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Storage & Data Protection?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "clo-06",
@@ -6066,7 +11750,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Secrets & Key Management is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Secrets & Key Management as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Secrets & Key Management into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Secrets & Key Management changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Secrets & Key Management should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Secrets & Key Management scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Secrets & Key Management in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Secrets & Key Management was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Secrets & Key Management?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "clo-07",
@@ -6126,7 +11869,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Workload Security is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Workload Security as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Workload Security into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Workload Security changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Workload Security should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Workload Security scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Workload Security in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Workload Security was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Workload Security?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "clo-08",
@@ -6186,7 +11988,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Secure CI/CD is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Secure CI/CD as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Secure CI/CD into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Secure CI/CD changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Secure CI/CD should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Secure CI/CD scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Secure CI/CD in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Secure CI/CD was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Secure CI/CD?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "clo-09",
@@ -6246,7 +12107,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Security Testing in Pipelines is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Testing in Pipelines as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Testing in Pipelines into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Testing in Pipelines changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Testing in Pipelines should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Testing in Pipelines scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Testing in Pipelines in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Testing in Pipelines was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Testing in Pipelines?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "clo-10",
@@ -6306,7 +12226,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Infrastructure as Code Security is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Infrastructure as Code Security as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Infrastructure as Code Security into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Infrastructure as Code Security changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Infrastructure as Code Security should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Infrastructure as Code Security scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Infrastructure as Code Security in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Infrastructure as Code Security was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Infrastructure as Code Security?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "clo-11",
@@ -6366,7 +12345,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Cloud Monitoring & Incident Response is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Cloud Monitoring & Incident Response as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Cloud Monitoring & Incident Response into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Cloud Monitoring & Incident Response changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Cloud Monitoring & Incident Response should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Cloud Monitoring & Incident Response scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Cloud Monitoring & Incident Response in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Cloud Monitoring & Incident Response was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Cloud Monitoring & Incident Response?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "clo-12",
@@ -6426,7 +12464,66 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Mini Project: Secure Cloud Application is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Mini Project: Secure Cloud Application as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is cloud architecture, IAM, data protection, workloads, CI/CD, IaC and resilience."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Mini Project: Secure Cloud Application into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Mini Project: Secure Cloud Application changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Mini Project: Secure Cloud Application should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "caseQuestions": [
+          "What is the objective in this Mini Project: Secure Cloud Application scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Mini Project: Secure Cloud Application in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Mini Project: Secure Cloud Application was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Mini Project: Secure Cloud Application?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
@@ -6525,7 +12622,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Security as a Business Function is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security as a Business Function as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security as a Business Function into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security as a Business Function changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security as a Business Function should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security as a Business Function scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security as a Business Function in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security as a Business Function was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security as a Business Function?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "cyb-02",
@@ -6585,7 +12751,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Risk Vocabulary is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Risk Vocabulary as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Risk Vocabulary into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Risk Vocabulary changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Risk Vocabulary should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Risk Vocabulary scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Risk Vocabulary in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Risk Vocabulary was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Risk Vocabulary?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "cyb-03",
@@ -6645,7 +12880,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Asset & Business Impact is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Asset & Business Impact as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Asset & Business Impact into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Asset & Business Impact changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Asset & Business Impact should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Asset & Business Impact scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Asset & Business Impact in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Asset & Business Impact was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Asset & Business Impact?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "cyb-04",
@@ -6705,7 +13009,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Threat, Vulnerability & Control is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Threat, Vulnerability & Control as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Threat, Vulnerability & Control into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Threat, Vulnerability & Control changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Threat, Vulnerability & Control should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Threat, Vulnerability & Control scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Threat, Vulnerability & Control in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Threat, Vulnerability & Control was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Threat, Vulnerability & Control?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "cyb-05",
@@ -6765,7 +13138,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Risk Assessment is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Risk Assessment as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Risk Assessment into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Risk Assessment changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Risk Assessment should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Risk Assessment scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Risk Assessment in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Risk Assessment was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Risk Assessment?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "cyb-06",
@@ -6825,7 +13267,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Risk Treatment & Acceptance is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Risk Treatment & Acceptance as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Risk Treatment & Acceptance into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Risk Treatment & Acceptance changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Risk Treatment & Acceptance should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Risk Treatment & Acceptance scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Risk Treatment & Acceptance in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Risk Treatment & Acceptance was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Risk Treatment & Acceptance?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "cyb-07",
@@ -6885,7 +13396,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Control Design & Effectiveness is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Control Design & Effectiveness as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Control Design & Effectiveness into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Control Design & Effectiveness changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Control Design & Effectiveness should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Control Design & Effectiveness scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Control Design & Effectiveness in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Control Design & Effectiveness was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Control Design & Effectiveness?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "cyb-08",
@@ -6945,7 +13525,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Policies & Standards is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Policies & Standards as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Policies & Standards into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Policies & Standards changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Policies & Standards should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Policies & Standards scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Policies & Standards in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Policies & Standards was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Policies & Standards?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "cyb-09",
@@ -7005,7 +13654,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Compliance & Evidence is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Compliance & Evidence as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Compliance & Evidence into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Compliance & Evidence changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Compliance & Evidence should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Compliance & Evidence scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Compliance & Evidence in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Compliance & Evidence was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Compliance & Evidence?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "cyb-10",
@@ -7065,7 +13783,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Third-Party Risk is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Third-Party Risk as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Third-Party Risk into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Third-Party Risk changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Third-Party Risk should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Third-Party Risk scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Third-Party Risk in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Third-Party Risk was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Third-Party Risk?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "cyb-11",
@@ -7125,7 +13912,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Security Metrics for Leaders is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Metrics for Leaders as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Metrics for Leaders into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Metrics for Leaders changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Metrics for Leaders should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Metrics for Leaders scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Metrics for Leaders in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Metrics for Leaders was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Metrics for Leaders?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "cyb-12",
@@ -7185,13 +14041,82 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Mini Project: Enterprise Cyber Risk Register is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Mini Project: Enterprise Cyber Risk Register as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is governance, enterprise risk, controls, assurance, third parties, metrics and decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Mini Project: Enterprise Cyber Risk Register into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Mini Project: Enterprise Cyber Risk Register changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Mini Project: Enterprise Cyber Risk Register should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Mini Project: Enterprise Cyber Risk Register scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Mini Project: Enterprise Cyber Risk Register in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Mini Project: Enterprise Cyber Risk Register was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Mini Project: Enterprise Cyber Risk Register?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
       "level": "Management & Governance",
       "load": "20–26 hours",
-      "focus": "Translate technical security into risk, governance, investment and executive decisions.",
+      "focus": "Develop management capability across governance, enterprise risk, controls, compliance, privacy, resilience, third-party risk and executive decisions.",
       "outcomes": [
         "Distinguish risk, threat, vulnerability, control and residual risk.",
         "Build practical risk registers and treatment plans.",
@@ -7201,17 +14126,19 @@ const NORTHSTAR_CURRICULUM = [
         "Communicate security decisions to technical and executive audiences."
       ],
       "topics": [
-        "Risk management",
         "Governance",
-        "GRC",
-        "Policies",
+        "Risk appetite",
+        "Enterprise risk",
         "Controls",
-        "Risk registers",
         "Compliance",
+        "Privacy",
+        "Audit evidence",
+        "BCP/DR",
         "Third-party risk",
+        "C-SCRM",
         "Metrics",
-        "Business communication",
-        "Incident governance"
+        "Budgets",
+        "Board reporting"
       ],
       "case": "Case: a growing digital business must prioritize security investments across identity, cloud, applications and workforce risk.",
       "assessment": "Enterprise risk register + control assessment + executive briefing",
@@ -7284,7 +14211,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Capstone Brief & Problem Framing is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Capstone Brief & Problem Framing as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Capstone Brief & Problem Framing into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Capstone Brief & Problem Framing changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Capstone Brief & Problem Framing should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Capstone Brief & Problem Framing scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Capstone Brief & Problem Framing in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Capstone Brief & Problem Framing was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Capstone Brief & Problem Framing?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ent-02",
@@ -7344,7 +14340,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Enterprise Asset Model is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Enterprise Asset Model as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Enterprise Asset Model into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Enterprise Asset Model changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Enterprise Asset Model should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Enterprise Asset Model scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Enterprise Asset Model in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Enterprise Asset Model was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Enterprise Asset Model?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ent-03",
@@ -7404,7 +14469,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Threat & Trust-Boundary Mapping is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Threat & Trust-Boundary Mapping as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Threat & Trust-Boundary Mapping into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Threat & Trust-Boundary Mapping changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Threat & Trust-Boundary Mapping should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Threat & Trust-Boundary Mapping scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Threat & Trust-Boundary Mapping in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Threat & Trust-Boundary Mapping was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Threat & Trust-Boundary Mapping?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ent-04",
@@ -7464,7 +14598,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Data & Evidence Plan is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Data & Evidence Plan as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Data & Evidence Plan into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Data & Evidence Plan changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Data & Evidence Plan should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Data & Evidence Plan scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Data & Evidence Plan in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Data & Evidence Plan was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Data & Evidence Plan?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ent-05",
@@ -7524,7 +14727,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Security Architecture is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Architecture as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Architecture into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Architecture changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Architecture should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Architecture scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Architecture in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Architecture was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Architecture?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ent-06",
@@ -7584,7 +14856,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Identity & Access Strategy is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Identity & Access Strategy as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Identity & Access Strategy into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Identity & Access Strategy changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Identity & Access Strategy should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Identity & Access Strategy scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Identity & Access Strategy in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Identity & Access Strategy was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Identity & Access Strategy?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ent-07",
@@ -7644,7 +14985,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Detection & Response Strategy is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Detection & Response Strategy as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Detection & Response Strategy into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Detection & Response Strategy changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Detection & Response Strategy should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Detection & Response Strategy scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Detection & Response Strategy in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Detection & Response Strategy was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Detection & Response Strategy?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ent-08",
@@ -7704,7 +15114,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Security Analytics Plan is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Analytics Plan as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Analytics Plan into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Analytics Plan changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Analytics Plan should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Analytics Plan scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Analytics Plan in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Analytics Plan was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Analytics Plan?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ent-09",
@@ -7764,7 +15243,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Cloud & DevSecOps Controls is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Cloud & DevSecOps Controls as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Cloud & DevSecOps Controls into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Cloud & DevSecOps Controls changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Cloud & DevSecOps Controls should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Cloud & DevSecOps Controls scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Cloud & DevSecOps Controls in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Cloud & DevSecOps Controls was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Cloud & DevSecOps Controls?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ent-10",
@@ -7824,7 +15372,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Risk & Investment Prioritization is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Risk & Investment Prioritization as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Risk & Investment Prioritization into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Risk & Investment Prioritization changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Risk & Investment Prioritization should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Risk & Investment Prioritization scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Risk & Investment Prioritization in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Risk & Investment Prioritization was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Risk & Investment Prioritization?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ent-11",
@@ -7884,7 +15501,76 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Executive Communication is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Executive Communication as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Executive Communication into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Executive Communication changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Executive Communication should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Executive Communication scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Executive Communication in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Executive Communication was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Executive Communication?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       },
       {
         "id": "ent-12",
@@ -7944,13 +15630,82 @@ const NORTHSTAR_CURRICULUM = [
           ],
           "answer": "Apply the concept to a scoped problem and justify the result",
           "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        }
+        },
+        "why": "Why this matters: Final Defense & Reflection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Final Defense & Reflection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Final Defense & Reflection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Final Defense & Reflection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Final Defense & Reflection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Final Defense & Reflection scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Final Defense & Reflection in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Final Defense & Reflection was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Final Defense & Reflection?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ]
       }
     ],
     "meta": {
       "level": "Capstone / Integration",
       "load": "18–24 hours",
-      "focus": "Combine technical foundations, data science, security analytics and management into one defensible enterprise decision.",
+      "focus": "Integrate technical, analytical and management capabilities into an evidence-based enterprise security transformation.",
       "outcomes": [
         "Frame a real enterprise security problem.",
         "Collect and validate technical and business evidence.",
@@ -7961,23 +15716,2004 @@ const NORTHSTAR_CURRICULUM = [
       ],
       "topics": [
         "Problem framing",
+        "Assets",
+        "Trust boundaries",
         "Architecture",
+        "IAM",
         "Telemetry",
-        "Analytics",
-        "Risk",
-        "Controls",
         "Detection",
-        "Cloud",
+        "Incident response",
+        "Security analytics",
+        "Cloud/DevSecOps",
+        "Risk",
         "Governance",
+        "Investment",
         "Executive communication"
       ],
       "case": "Capstone: design a security transformation for a mid-sized digital enterprise with identity, cloud, application, data and operational constraints.",
       "assessment": "Portfolio-grade enterprise security transformation dossier + presentation",
       "lab": "NorthStar Enterprise Simulation"
     }
+  },
+  {
+    "id": "cryptography-privacy",
+    "code": "14",
+    "title": "Cryptography, Privacy & Digital Trust",
+    "category": "Security Core",
+    "description": "Build cryptographic intuition, protocol literacy, privacy engineering and key-management capability.",
+    "meta": {
+      "level": "Intermediate → Advanced",
+      "load": "18–22 hours",
+      "focus": "Understand cryptographic mechanisms, protocol trust, key lifecycle and privacy engineering.",
+      "outcomes": [
+        "Explain hashes, MACs, symmetric and asymmetric cryptography.",
+        "Understand key exchange, digital signatures, certificates, PKI and TLS.",
+        "Reason about randomness, key lifecycle and cryptographic failure modes.",
+        "Distinguish security objectives from privacy objectives.",
+        "Evaluate cryptographic designs using evidence."
+      ],
+      "topics": [
+        "Hash functions",
+        "MACs",
+        "Symmetric encryption",
+        "Public-key cryptography",
+        "Randomness",
+        "Key exchange",
+        "Digital signatures",
+        "PKI",
+        "TLS",
+        "Key management",
+        "Privacy engineering"
+      ],
+      "case": "A customer portal must protect credentials, sessions, stored records and service-to-service traffic while keeping keys manageable.",
+      "assessment": "Cryptographic design review + protocol walkthrough + privacy risk analysis",
+      "lab": "Crypto & Trust Design Lab"
+    },
+    "lessons": [
+      {
+        "id": "ct-01",
+        "title": "Cryptographic Goals & Threat Models",
+        "objective": "Build first-principles understanding of cryptographic goals & threat models and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Cryptographic Goals & Threat Models is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Cryptographic Goals & Threat Models",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Cryptographic Goals & Threat Models",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Cryptographic Goals & Threat Models",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate cryptographic goals & threat models in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply cryptographic goals & threat models to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about cryptographic goals & threat models?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of cryptographic goals & threat models?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Cryptographic Goals & Threat Models is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Cryptographic Goals & Threat Models as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Cryptographic Goals & Threat Models into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Cryptographic Goals & Threat Models changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Cryptographic Goals & Threat Models should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Cryptographic Goals & Threat Models was wrong?"
+      },
+      {
+        "id": "ct-02",
+        "title": "Hash Functions, Integrity & Password Storage",
+        "objective": "Build first-principles understanding of hash functions, integrity & password storage and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Hash Functions, Integrity & Password Storage is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Hash Functions, Integrity & Password Storage",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Hash Functions, Integrity & Password Storage",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Hash Functions, Integrity & Password Storage",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate hash functions, integrity & password storage in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply hash functions, integrity & password storage to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about hash functions, integrity & password storage?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of hash functions, integrity & password storage?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Hash Functions, Integrity & Password Storage is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Hash Functions, Integrity & Password Storage as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Hash Functions, Integrity & Password Storage into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Hash Functions, Integrity & Password Storage changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Hash Functions, Integrity & Password Storage should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Hash Functions, Integrity & Password Storage was wrong?"
+      },
+      {
+        "id": "ct-03",
+        "title": "Symmetric Encryption & Authenticated Encryption",
+        "objective": "Build first-principles understanding of symmetric encryption & authenticated encryption and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Symmetric Encryption & Authenticated Encryption is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Symmetric Encryption & Authenticated Encryption",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Symmetric Encryption & Authenticated Encryption",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Symmetric Encryption & Authenticated Encryption",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate symmetric encryption & authenticated encryption in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply symmetric encryption & authenticated encryption to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about symmetric encryption & authenticated encryption?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of symmetric encryption & authenticated encryption?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Symmetric Encryption & Authenticated Encryption is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Symmetric Encryption & Authenticated Encryption as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Symmetric Encryption & Authenticated Encryption into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Symmetric Encryption & Authenticated Encryption changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Symmetric Encryption & Authenticated Encryption should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Symmetric Encryption & Authenticated Encryption was wrong?"
+      },
+      {
+        "id": "ct-04",
+        "title": "Public-Key Cryptography & Key Exchange",
+        "objective": "Build first-principles understanding of public-key cryptography & key exchange and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Public-Key Cryptography & Key Exchange is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Public-Key Cryptography & Key Exchange",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Public-Key Cryptography & Key Exchange",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Public-Key Cryptography & Key Exchange",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate public-key cryptography & key exchange in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply public-key cryptography & key exchange to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about public-key cryptography & key exchange?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of public-key cryptography & key exchange?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Public-Key Cryptography & Key Exchange is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Public-Key Cryptography & Key Exchange as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Public-Key Cryptography & Key Exchange into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Public-Key Cryptography & Key Exchange changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Public-Key Cryptography & Key Exchange should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Public-Key Cryptography & Key Exchange was wrong?"
+      },
+      {
+        "id": "ct-05",
+        "title": "Digital Signatures, Certificates & PKI",
+        "objective": "Build first-principles understanding of digital signatures, certificates & pki and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Digital Signatures, Certificates & PKI is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Digital Signatures, Certificates & PKI",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Digital Signatures, Certificates & PKI",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Digital Signatures, Certificates & PKI",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate digital signatures, certificates & pki in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply digital signatures, certificates & pki to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about digital signatures, certificates & pki?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of digital signatures, certificates & pki?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Digital Signatures, Certificates & PKI is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Digital Signatures, Certificates & PKI as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Digital Signatures, Certificates & PKI into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Digital Signatures, Certificates & PKI changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Digital Signatures, Certificates & PKI should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Digital Signatures, Certificates & PKI was wrong?"
+      },
+      {
+        "id": "ct-06",
+        "title": "TLS and Secure Communication",
+        "objective": "Build first-principles understanding of tls and secure communication and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "TLS and Secure Communication is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "TLS and Secure Communication",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "TLS and Secure Communication",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "TLS and Secure Communication",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate tls and secure communication in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply tls and secure communication to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about tls and secure communication?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of tls and secure communication?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: TLS and Secure Communication is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat TLS and Secure Communication as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break TLS and Secure Communication into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to TLS and Secure Communication changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about TLS and Secure Communication should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of TLS and Secure Communication was wrong?"
+      },
+      {
+        "id": "ct-07",
+        "title": "Key Management & Cryptographic Failure Modes",
+        "objective": "Build first-principles understanding of key management & cryptographic failure modes and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Key Management & Cryptographic Failure Modes is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Key Management & Cryptographic Failure Modes",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Key Management & Cryptographic Failure Modes",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Key Management & Cryptographic Failure Modes",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate key management & cryptographic failure modes in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply key management & cryptographic failure modes to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about key management & cryptographic failure modes?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of key management & cryptographic failure modes?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Key Management & Cryptographic Failure Modes is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Key Management & Cryptographic Failure Modes as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Key Management & Cryptographic Failure Modes into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Key Management & Cryptographic Failure Modes changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Key Management & Cryptographic Failure Modes should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Key Management & Cryptographic Failure Modes was wrong?"
+      },
+      {
+        "id": "ct-08",
+        "title": "Privacy Engineering & Data Protection",
+        "objective": "Build first-principles understanding of privacy engineering & data protection and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Privacy Engineering & Data Protection is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Privacy Engineering & Data Protection",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Privacy Engineering & Data Protection",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Privacy Engineering & Data Protection",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate privacy engineering & data protection in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply privacy engineering & data protection to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about privacy engineering & data protection?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of privacy engineering & data protection?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Privacy Engineering & Data Protection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Privacy Engineering & Data Protection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Privacy Engineering & Data Protection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Privacy Engineering & Data Protection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Privacy Engineering & Data Protection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Privacy Engineering & Data Protection was wrong?"
+      }
+    ]
+  },
+  {
+    "id": "ai-emerging-security",
+    "code": "15",
+    "title": "AI Security, Privacy & Emerging Technology",
+    "category": "Advanced Security",
+    "description": "Connect cybersecurity, data science and management through adversarial ML, GenAI security, responsible AI, IoT/OT and supply-chain risk.",
+    "meta": {
+      "level": "Advanced / Applied",
+      "load": "18–22 hours",
+      "focus": "Assess AI and emerging technology risk across models, data, agents, devices and supply chains.",
+      "outcomes": [
+        "Explain common AI attack and failure modes.",
+        "Assess model, prompt, tool and agent trust boundaries.",
+        "Apply responsible-AI and privacy principles.",
+        "Recognize IoT/OT constraints and resilience needs.",
+        "Assess emerging technology and supply-chain risk."
+      ],
+      "topics": [
+        "Adversarial ML",
+        "Poisoning",
+        "Evasion",
+        "Model theft",
+        "LLM security",
+        "Prompt injection",
+        "AI agents",
+        "Responsible AI",
+        "Privacy",
+        "IoT",
+        "OT/ICS",
+        "Supply chain"
+      ],
+      "case": "An enterprise introduces a generative-AI assistant that can search internal data and call business tools.",
+      "assessment": "AI security threat model + governance memo + emerging-technology risk register",
+      "lab": "AI & Emerging Technology Security Lab"
+    },
+    "lessons": [
+      {
+        "id": "ae-01",
+        "title": "AI Security Mental Models",
+        "objective": "Build first-principles understanding of ai security mental models and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "AI Security Mental Models is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "AI Security Mental Models",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "AI Security Mental Models",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "AI Security Mental Models",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate ai security mental models in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply ai security mental models to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about ai security mental models?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of ai security mental models?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: AI Security Mental Models is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat AI Security Mental Models as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break AI Security Mental Models into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to AI Security Mental Models changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about AI Security Mental Models should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of AI Security Mental Models was wrong?"
+      },
+      {
+        "id": "ae-02",
+        "title": "Adversarial Machine Learning",
+        "objective": "Build first-principles understanding of adversarial machine learning and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "Adversarial Machine Learning is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Adversarial Machine Learning",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Adversarial Machine Learning",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Adversarial Machine Learning",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate adversarial machine learning in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply adversarial machine learning to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about adversarial machine learning?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of adversarial machine learning?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Adversarial Machine Learning is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Adversarial Machine Learning as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Adversarial Machine Learning into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Adversarial Machine Learning changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Adversarial Machine Learning should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Adversarial Machine Learning was wrong?"
+      },
+      {
+        "id": "ae-03",
+        "title": "Data Poisoning, Evasion & Model Theft",
+        "objective": "Build first-principles understanding of data poisoning, evasion & model theft and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "Data Poisoning, Evasion & Model Theft is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Data Poisoning, Evasion & Model Theft",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Data Poisoning, Evasion & Model Theft",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Data Poisoning, Evasion & Model Theft",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate data poisoning, evasion & model theft in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply data poisoning, evasion & model theft to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about data poisoning, evasion & model theft?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of data poisoning, evasion & model theft?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Data Poisoning, Evasion & Model Theft is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Data Poisoning, Evasion & Model Theft as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Data Poisoning, Evasion & Model Theft into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Data Poisoning, Evasion & Model Theft changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Data Poisoning, Evasion & Model Theft should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Data Poisoning, Evasion & Model Theft was wrong?"
+      },
+      {
+        "id": "ae-04",
+        "title": "LLM Security & Prompt Injection",
+        "objective": "Build first-principles understanding of llm security & prompt injection and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "LLM Security & Prompt Injection is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "LLM Security & Prompt Injection",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "LLM Security & Prompt Injection",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "LLM Security & Prompt Injection",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate llm security & prompt injection in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply llm security & prompt injection to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about llm security & prompt injection?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of llm security & prompt injection?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: LLM Security & Prompt Injection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat LLM Security & Prompt Injection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break LLM Security & Prompt Injection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to LLM Security & Prompt Injection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about LLM Security & Prompt Injection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of LLM Security & Prompt Injection was wrong?"
+      },
+      {
+        "id": "ae-05",
+        "title": "AI Agents, Tools & Trust Boundaries",
+        "objective": "Build first-principles understanding of ai agents, tools & trust boundaries and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "AI Agents, Tools & Trust Boundaries is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "AI Agents, Tools & Trust Boundaries",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "AI Agents, Tools & Trust Boundaries",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "AI Agents, Tools & Trust Boundaries",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate ai agents, tools & trust boundaries in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply ai agents, tools & trust boundaries to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about ai agents, tools & trust boundaries?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of ai agents, tools & trust boundaries?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: AI Agents, Tools & Trust Boundaries is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat AI Agents, Tools & Trust Boundaries as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break AI Agents, Tools & Trust Boundaries into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to AI Agents, Tools & Trust Boundaries changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about AI Agents, Tools & Trust Boundaries should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of AI Agents, Tools & Trust Boundaries was wrong?"
+      },
+      {
+        "id": "ae-06",
+        "title": "Responsible AI, Privacy & Governance",
+        "objective": "Build first-principles understanding of responsible ai, privacy & governance and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "Responsible AI, Privacy & Governance is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Responsible AI, Privacy & Governance",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Responsible AI, Privacy & Governance",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Responsible AI, Privacy & Governance",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate responsible ai, privacy & governance in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply responsible ai, privacy & governance to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about responsible ai, privacy & governance?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of responsible ai, privacy & governance?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Responsible AI, Privacy & Governance is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Responsible AI, Privacy & Governance as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Responsible AI, Privacy & Governance into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Responsible AI, Privacy & Governance changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Responsible AI, Privacy & Governance should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Responsible AI, Privacy & Governance was wrong?"
+      },
+      {
+        "id": "ae-07",
+        "title": "IoT, OT/ICS & Cyber-Physical Resilience",
+        "objective": "Build first-principles understanding of iot, ot/ics & cyber-physical resilience and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "IoT, OT/ICS & Cyber-Physical Resilience is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "IoT, OT/ICS & Cyber-Physical Resilience",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "IoT, OT/ICS & Cyber-Physical Resilience",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "IoT, OT/ICS & Cyber-Physical Resilience",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate iot, ot/ics & cyber-physical resilience in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply iot, ot/ics & cyber-physical resilience to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about iot, ot/ics & cyber-physical resilience?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of iot, ot/ics & cyber-physical resilience?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: IoT, OT/ICS & Cyber-Physical Resilience is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat IoT, OT/ICS & Cyber-Physical Resilience as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break IoT, OT/ICS & Cyber-Physical Resilience into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to IoT, OT/ICS & Cyber-Physical Resilience changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about IoT, OT/ICS & Cyber-Physical Resilience should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of IoT, OT/ICS & Cyber-Physical Resilience was wrong?"
+      },
+      {
+        "id": "ae-08",
+        "title": "Supply Chain & Emerging Technology Risk",
+        "objective": "Build first-principles understanding of supply chain & emerging technology risk and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "Supply Chain & Emerging Technology Risk is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Supply Chain & Emerging Technology Risk",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Supply Chain & Emerging Technology Risk",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Supply Chain & Emerging Technology Risk",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate supply chain & emerging technology risk in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply supply chain & emerging technology risk to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about supply chain & emerging technology risk?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of supply chain & emerging technology risk?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Supply Chain & Emerging Technology Risk is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Supply Chain & Emerging Technology Risk as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Supply Chain & Emerging Technology Risk into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Supply Chain & Emerging Technology Risk changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Supply Chain & Emerging Technology Risk should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Supply Chain & Emerging Technology Risk was wrong?"
+      }
+    ]
   }
 ];
 
-
-// Public data contract consumed by the NorthStar application shell.
 window.NORTHSTAR_CURRICULUM = NORTHSTAR_CURRICULUM;
