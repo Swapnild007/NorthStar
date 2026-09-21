@@ -6460,7 +6460,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand data thinking and apply it to a realistic data & analytics problem.",
         "time": "1.75–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Data Thinking is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Data Thinking",
           "Inputs and outputs",
@@ -6581,6 +6581,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Data Thinking. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Data Thinking. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Data Thinking as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Data Thinking without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -6589,7 +6635,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand population, sample & bias and apply it to a realistic data & analytics problem.",
         "time": "1.75–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Population, Sample & Bias is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Population, Sample & Bias",
           "Inputs and outputs",
@@ -6710,6 +6756,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Population, Sample & Bias. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Population, Sample & Bias. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Population, Sample & Bias as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Population, Sample & Bias without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -6718,7 +6810,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand mean, median & percentiles and apply it to a realistic data & analytics problem.",
         "time": "1.75–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Mean, Median & Percentiles is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Mean, Median & Percentiles",
           "Inputs and outputs",
@@ -6839,6 +6931,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Mean, Median & Percentiles. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Mean, Median & Percentiles. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Mean, Median & Percentiles as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Mean, Median & Percentiles without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -6847,7 +6985,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand variation & standard deviation and apply it to a realistic data & analytics problem.",
         "time": "1.75–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Variation & Standard Deviation is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Variation & Standard Deviation",
           "Inputs and outputs",
@@ -6968,6 +7106,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Variation & Standard Deviation. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Variation & Standard Deviation. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Variation & Standard Deviation as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Variation & Standard Deviation without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -6976,7 +7160,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand distributions & histograms and apply it to a realistic data & analytics problem.",
         "time": "1.75–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Distributions & Histograms is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Distributions & Histograms",
           "Inputs and outputs",
@@ -7097,6 +7281,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Distributions & Histograms. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Distributions & Histograms. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Distributions & Histograms as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Distributions & Histograms without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -7105,7 +7335,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand probability fundamentals and apply it to a realistic data & analytics problem.",
         "time": "1.75–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Probability Fundamentals is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Probability Fundamentals",
           "Inputs and outputs",
@@ -7226,6 +7456,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Probability Fundamentals. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Probability Fundamentals. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Probability Fundamentals as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Probability Fundamentals without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -7234,7 +7510,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand conditional probability & bayes intuition and apply it to a realistic data & analytics problem.",
         "time": "1.75–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Conditional Probability & Bayes Intuition is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Conditional Probability & Bayes Intuition",
           "Inputs and outputs",
@@ -7355,6 +7631,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Conditional Probability & Bayes Intuition. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Conditional Probability & Bayes Intuition. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Conditional Probability & Bayes Intuition as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Conditional Probability & Bayes Intuition without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -7363,7 +7685,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand correlation vs causation and apply it to a realistic data & analytics problem.",
         "time": "1.75–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Correlation vs Causation is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Correlation vs Causation",
           "Inputs and outputs",
@@ -7484,6 +7806,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Correlation vs Causation. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Correlation vs Causation. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Correlation vs Causation as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Correlation vs Causation without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -7492,7 +7860,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand sampling & confidence and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Sampling & Confidence is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Sampling & Confidence",
           "Inputs and outputs",
@@ -7613,6 +7981,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Sampling & Confidence. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Sampling & Confidence. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Sampling & Confidence as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Sampling & Confidence without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -7621,7 +8035,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand data cleaning & missing values and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Data Cleaning & Missing Values is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Data Cleaning & Missing Values",
           "Inputs and outputs",
@@ -7742,6 +8156,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Data Cleaning & Missing Values. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Data Cleaning & Missing Values. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Data Cleaning & Missing Values as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Data Cleaning & Missing Values without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -7750,7 +8210,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand visualization for security data and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Visualization for Security Data is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Visualization for Security Data",
           "Inputs and outputs",
@@ -7871,6 +8331,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Visualization for Security Data. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Visualization for Security Data. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Visualization for Security Data as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Visualization for Security Data without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -7879,7 +8385,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand mini project: security operations analysis and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Mini Project: Security Operations Analysis is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant.\n\nBuild the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data.\n\nStudy assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct.\n\nApply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish.\n\nConnect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it.",
         "concepts": [
           "Mini Project: Security Operations Analysis",
           "Inputs and outputs",
@@ -8000,6 +8506,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with the statistical question, not the formula. Define the population, unit of observation, variable, measurement process and decision you want the data to support. A number without a well-defined question can be precise but irrelevant."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mathematical intuition. Compare center, spread, probability and sampling using small concrete datasets before introducing notation. Every formula should answer a question about observable data."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study assumptions and uncertainty explicitly. Sampling bias, missingness, measurement error, dependence and selection effects can change conclusions even when calculations are arithmetically correct."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to security telemetry. Define what is being measured, inspect distributions and outliers, calculate or visualize the relevant quantity, and state what the data cannot establish."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect the result to decision-making. Distinguish association from causation, statistical evidence from operational evidence, and model output from business impact. Document uncertainty rather than hiding it."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Mini Project: Security Operations Analysis. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Mini Project: Security Operations Analysis. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Mini Project: Security Operations Analysis as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Mini Project: Security Operations Analysis without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       }
     ],
@@ -8046,7 +8598,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand what machine learning is and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: What Machine Learning Is is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "What Machine Learning Is",
           "Inputs and outputs",
@@ -8167,6 +8719,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving What Machine Learning Is. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for What Machine Learning Is. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand What Machine Learning Is as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain What Machine Learning Is without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -8175,7 +8773,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand features, labels & datasets and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Features, Labels & Datasets is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "Features, Labels & Datasets",
           "Inputs and outputs",
@@ -8296,6 +8894,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Features, Labels & Datasets. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Features, Labels & Datasets. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Features, Labels & Datasets as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Features, Labels & Datasets without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -8304,7 +8948,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand train, validation & test sets and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Train, Validation & Test Sets is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "Train, Validation & Test Sets",
           "Inputs and outputs",
@@ -8425,6 +9069,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Train, Validation & Test Sets. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Train, Validation & Test Sets. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Train, Validation & Test Sets as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Train, Validation & Test Sets without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -8433,7 +9123,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand linear regression and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Linear Regression is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "Linear Regression",
           "Inputs and outputs",
@@ -8554,6 +9244,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Linear Regression. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Linear Regression. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Linear Regression as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Linear Regression without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -8562,7 +9298,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand classification fundamentals and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Classification Fundamentals is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "Classification Fundamentals",
           "Inputs and outputs",
@@ -8683,6 +9419,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Classification Fundamentals. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Classification Fundamentals. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Classification Fundamentals as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Classification Fundamentals without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -8691,7 +9473,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand decision trees & rules and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Decision Trees & Rules is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "Decision Trees & Rules",
           "Inputs and outputs",
@@ -8812,6 +9594,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Decision Trees & Rules. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Decision Trees & Rules. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Decision Trees & Rules as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Decision Trees & Rules without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -8820,7 +9648,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand nearest neighbors & similarity and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Nearest Neighbors & Similarity is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "Nearest Neighbors & Similarity",
           "Inputs and outputs",
@@ -8941,6 +9769,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Nearest Neighbors & Similarity. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Nearest Neighbors & Similarity. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Nearest Neighbors & Similarity as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Nearest Neighbors & Similarity without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -8949,7 +9823,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand clustering & anomaly thinking and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Clustering & Anomaly Thinking is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "Clustering & Anomaly Thinking",
           "Inputs and outputs",
@@ -9070,6 +9944,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Clustering & Anomaly Thinking. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Clustering & Anomaly Thinking. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Clustering & Anomaly Thinking as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Clustering & Anomaly Thinking without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -9078,7 +9998,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand precision, recall & confusion matrix and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Precision, Recall & Confusion Matrix is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "Precision, Recall & Confusion Matrix",
           "Inputs and outputs",
@@ -9199,6 +10119,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Precision, Recall & Confusion Matrix. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Precision, Recall & Confusion Matrix. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Precision, Recall & Confusion Matrix as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Precision, Recall & Confusion Matrix without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -9207,7 +10173,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand overfitting & generalization and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Overfitting & Generalization is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "Overfitting & Generalization",
           "Inputs and outputs",
@@ -9328,6 +10294,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Overfitting & Generalization. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Overfitting & Generalization. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Overfitting & Generalization as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Overfitting & Generalization without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -9336,7 +10348,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand feature leakage, bias & drift and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Feature Leakage, Bias & Drift is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "Feature Leakage, Bias & Drift",
           "Inputs and outputs",
@@ -9457,6 +10469,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Feature Leakage, Bias & Drift. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Feature Leakage, Bias & Drift. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Feature Leakage, Bias & Drift as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Feature Leakage, Bias & Drift without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -9465,7 +10523,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand mini project: suspicious login classifier and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Mini Project: Suspicious Login Classifier is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem.\n\nBuild the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting.\n\nStudy failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production.\n\nUse a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally.\n\nConnect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras.",
         "concepts": [
           "Mini Project: Suspicious Login Classifier",
           "Inputs and outputs",
@@ -9586,6 +10644,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Frame the problem before choosing an algorithm. Specify the unit of prediction, target, available information at prediction time, error costs and deployment context. A technically accurate model can still solve the wrong problem."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the mechanism from data to model: features represent observations, parameters are learned from training data, a loss or objective guides learning, and evaluation estimates performance on data not used for fitting."
+          },
+          {
+            "title": "Security implications",
+            "body": "Study failure modes systematically. Overfitting, leakage, class imbalance, distribution shift, biased labels and unstable features can produce impressive validation results that fail in production."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Use a security case to compare models and error types. Inspect the confusion matrix, threshold trade-offs, false positives and false negatives, then decide which errors matter operationally."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect ML to responsible deployment: monitoring, drift detection, explainability where appropriate, privacy, adversarial behavior and human review are part of the system rather than optional extras."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Mini Project: Suspicious Login Classifier. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Mini Project: Suspicious Login Classifier. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Mini Project: Suspicious Login Classifier as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Mini Project: Suspicious Login Classifier without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       }
     ],
@@ -9637,7 +10741,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand security telemetry and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Security Telemetry is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "Security Telemetry",
           "Inputs and outputs",
@@ -9748,6 +10852,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Security Telemetry. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Security Telemetry. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Security Telemetry as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Security Telemetry without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -9756,7 +10906,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand events, logs & fields and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Events, Logs & Fields is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "Events, Logs & Fields",
           "Inputs and outputs",
@@ -9867,6 +11017,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Events, Logs & Fields. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Events, Logs & Fields. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Events, Logs & Fields as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Events, Logs & Fields without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -9875,7 +11071,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand normalization & enrichment and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Normalization & Enrichment is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "Normalization & Enrichment",
           "Inputs and outputs",
@@ -9986,6 +11182,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Normalization & Enrichment. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Normalization & Enrichment. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Normalization & Enrichment as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Normalization & Enrichment without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -9994,7 +11236,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand detection hypotheses and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Detection Hypotheses is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "Detection Hypotheses",
           "Inputs and outputs",
@@ -10105,6 +11347,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Detection Hypotheses. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Detection Hypotheses. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Detection Hypotheses as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Detection Hypotheses without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -10113,7 +11401,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand rule logic & thresholds and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Rule Logic & Thresholds is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "Rule Logic & Thresholds",
           "Inputs and outputs",
@@ -10224,6 +11512,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Rule Logic & Thresholds. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Rule Logic & Thresholds. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Rule Logic & Thresholds as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Rule Logic & Thresholds without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -10232,7 +11566,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand authentication analytics and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Authentication Analytics is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "Authentication Analytics",
           "Inputs and outputs",
@@ -10343,6 +11677,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Authentication Analytics. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Authentication Analytics. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Authentication Analytics as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Authentication Analytics without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -10351,7 +11731,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand endpoint & process telemetry and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Endpoint & Process Telemetry is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "Endpoint & Process Telemetry",
           "Inputs and outputs",
@@ -10462,6 +11842,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Endpoint & Process Telemetry. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Endpoint & Process Telemetry. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Endpoint & Process Telemetry as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Endpoint & Process Telemetry without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -10470,7 +11896,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand network detection concepts and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Network Detection Concepts is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "Network Detection Concepts",
           "Inputs and outputs",
@@ -10581,6 +12007,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Network Detection Concepts. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Network Detection Concepts. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Network Detection Concepts as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Network Detection Concepts without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -10589,7 +12061,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand siem investigation workflow and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: SIEM Investigation Workflow is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "SIEM Investigation Workflow",
           "Inputs and outputs",
@@ -10700,6 +12172,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving SIEM Investigation Workflow. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for SIEM Investigation Workflow. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand SIEM Investigation Workflow as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain SIEM Investigation Workflow without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -10708,7 +12226,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand detection testing & false positives and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Detection Testing & False Positives is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "Detection Testing & False Positives",
           "Inputs and outputs",
@@ -10819,6 +12337,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Detection Testing & False Positives. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Detection Testing & False Positives. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Detection Testing & False Positives as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Detection Testing & False Positives without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -10827,7 +12391,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand threat-informed detection and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Threat-Informed Detection is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "Threat-Informed Detection",
           "Inputs and outputs",
@@ -10938,6 +12502,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Threat-Informed Detection. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Threat-Informed Detection. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Threat-Informed Detection as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Threat-Informed Detection without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -10946,7 +12556,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand mini project: build an investigation playbook and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Mini Project: Build an Investigation Playbook is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable.\n\nTurn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious.\n\nTranslate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented.\n\nTest the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails.\n\nClose the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design.",
         "concepts": [
           "Mini Project: Build an Investigation Playbook",
           "Inputs and outputs",
@@ -11057,6 +12667,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with the event model. Identify the source, timestamp, actor, asset, action, outcome and context. Detection quality depends on telemetry quality; missing or inconsistent fields can make a sophisticated rule unreliable."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Turn a threat idea into a detection hypothesis. State the behavior you expect, the evidence that should appear, the normal baseline, and the conditions that would make the observation suspicious."
+          },
+          {
+            "title": "Security implications",
+            "body": "Translate the hypothesis into logic using joins, sequences, thresholds, windows or correlations as appropriate. Every condition should have a reason, and every exclusion should be documented."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Test the detection against representative benign and suspicious examples. Measure false positives, false negatives, coverage, latency and operational cost. Tune only after understanding why the rule fails."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Close the loop with investigation and response. A detection is useful when an analyst can interpret it, gather supporting evidence, make a decision and feed lessons back into telemetry and rule design."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Mini Project: Build an Investigation Playbook. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Mini Project: Build an Investigation Playbook. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Mini Project: Build an Investigation Playbook as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Mini Project: Build an Investigation Playbook without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       }
     ],
@@ -11103,7 +12759,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand cloud mental model and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Cloud Mental Model is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Cloud Mental Model",
           "Inputs and outputs",
@@ -11214,6 +12870,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Cloud Mental Model. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Cloud Mental Model. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Cloud Mental Model as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Cloud Mental Model without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -11222,7 +12924,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand shared responsibility and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Shared Responsibility is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Shared Responsibility",
           "Inputs and outputs",
@@ -11333,6 +13035,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Shared Responsibility. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Shared Responsibility. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Shared Responsibility as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Shared Responsibility without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -11341,7 +13089,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand cloud identity & least privilege and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Cloud Identity & Least Privilege is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Cloud Identity & Least Privilege",
           "Inputs and outputs",
@@ -11452,6 +13200,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Cloud Identity & Least Privilege. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Cloud Identity & Least Privilege. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Cloud Identity & Least Privilege as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Cloud Identity & Least Privilege without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -11460,7 +13254,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand network segmentation in cloud and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Network Segmentation in Cloud is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Network Segmentation in Cloud",
           "Inputs and outputs",
@@ -11571,6 +13365,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Network Segmentation in Cloud. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Network Segmentation in Cloud. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Network Segmentation in Cloud as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Network Segmentation in Cloud without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -11579,7 +13419,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand storage & data protection and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Storage & Data Protection is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Storage & Data Protection",
           "Inputs and outputs",
@@ -11690,6 +13530,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Storage & Data Protection. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Storage & Data Protection. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Storage & Data Protection as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Storage & Data Protection without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -11698,7 +13584,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand secrets & key management and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Secrets & Key Management is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Secrets & Key Management",
           "Inputs and outputs",
@@ -11809,6 +13695,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Secrets & Key Management. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Secrets & Key Management. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Secrets & Key Management as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Secrets & Key Management without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -11817,7 +13749,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand workload security and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Workload Security is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Workload Security",
           "Inputs and outputs",
@@ -11928,6 +13860,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Workload Security. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Workload Security. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Workload Security as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Workload Security without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -11936,7 +13914,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand secure ci/cd and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Secure CI/CD is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Secure CI/CD",
           "Inputs and outputs",
@@ -12047,6 +14025,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Secure CI/CD. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Secure CI/CD. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Secure CI/CD as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Secure CI/CD without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -12055,7 +14079,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand security testing in pipelines and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Security Testing in Pipelines is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Security Testing in Pipelines",
           "Inputs and outputs",
@@ -12166,6 +14190,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Security Testing in Pipelines. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Security Testing in Pipelines. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Security Testing in Pipelines as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Security Testing in Pipelines without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -12174,7 +14244,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand infrastructure as code security and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Infrastructure as Code Security is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Infrastructure as Code Security",
           "Inputs and outputs",
@@ -12285,6 +14355,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Infrastructure as Code Security. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Infrastructure as Code Security. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Infrastructure as Code Security as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Infrastructure as Code Security without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -12293,7 +14409,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand cloud monitoring & incident response and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Cloud Monitoring & Incident Response is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Cloud Monitoring & Incident Response",
           "Inputs and outputs",
@@ -12404,6 +14520,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Cloud Monitoring & Incident Response. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Cloud Monitoring & Incident Response. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Cloud Monitoring & Incident Response as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Cloud Monitoring & Incident Response without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -12412,7 +14574,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand mini project: secure cloud application and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Mini Project: Secure Cloud Application is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform.\n\nSeparate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk.\n\nTrace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls.\n\nApply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working.\n\nConnect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements.",
         "concepts": [
           "Mini Project: Secure Cloud Application",
           "Inputs and outputs",
@@ -12523,6 +14685,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Model the cloud system as a collection of identities, control planes, workloads, networks, data stores and delivery pipelines. Security depends on the boundaries between these components, not only on the provider's platform."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Separate provider responsibilities from customer responsibilities and identify which controls are configuration-dependent. A managed service can remove infrastructure work without removing identity, data or application risk."
+          },
+          {
+            "title": "Security implications",
+            "body": "Trace a change from source code through build, dependency resolution, artifact creation, deployment and runtime monitoring. Each stage creates opportunities for integrity, secrets, authorization and supply-chain controls."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a small cloud application. Define identities, network paths, data classifications, secrets, logs and recovery assumptions. Identify what evidence would prove the intended control is working."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect engineering and governance. Secure defaults, policy-as-code, vulnerability management, SBOM/provenance, monitoring and incident response must fit delivery speed and business requirements."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Mini Project: Secure Cloud Application. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Mini Project: Secure Cloud Application. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Mini Project: Secure Cloud Application as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Mini Project: Secure Cloud Application without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       }
     ],
@@ -12570,7 +14778,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand security as a business function and apply it to a realistic management & governance problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Security as a Business Function is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Security as a Business Function",
           "Inputs and outputs",
@@ -12691,6 +14899,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Security as a Business Function. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Security as a Business Function. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Security as a Business Function as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Security as a Business Function without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -12699,7 +14953,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand risk vocabulary and apply it to a realistic management & governance problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Risk Vocabulary is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Risk Vocabulary",
           "Inputs and outputs",
@@ -12820,6 +15074,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Risk Vocabulary. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Risk Vocabulary. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Risk Vocabulary as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Risk Vocabulary without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -12828,7 +15128,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand asset & business impact and apply it to a realistic management & governance problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Asset & Business Impact is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Asset & Business Impact",
           "Inputs and outputs",
@@ -12949,6 +15249,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Asset & Business Impact. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Asset & Business Impact. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Asset & Business Impact as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Asset & Business Impact without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -12957,7 +15303,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand threat, vulnerability & control and apply it to a realistic management & governance problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Threat, Vulnerability & Control is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Threat, Vulnerability & Control",
           "Inputs and outputs",
@@ -13078,6 +15424,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Threat, Vulnerability & Control. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Threat, Vulnerability & Control. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Threat, Vulnerability & Control as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Threat, Vulnerability & Control without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -13086,7 +15478,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand risk assessment and apply it to a realistic management & governance problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Risk Assessment is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Risk Assessment",
           "Inputs and outputs",
@@ -13207,6 +15599,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Risk Assessment. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Risk Assessment. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Risk Assessment as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Risk Assessment without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -13215,7 +15653,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand risk treatment & acceptance and apply it to a realistic management & governance problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Risk Treatment & Acceptance is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Risk Treatment & Acceptance",
           "Inputs and outputs",
@@ -13336,6 +15774,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Risk Treatment & Acceptance. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Risk Treatment & Acceptance. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Risk Treatment & Acceptance as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Risk Treatment & Acceptance without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -13344,7 +15828,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand control design & effectiveness and apply it to a realistic management & governance problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Control Design & Effectiveness is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Control Design & Effectiveness",
           "Inputs and outputs",
@@ -13465,6 +15949,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Control Design & Effectiveness. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Control Design & Effectiveness. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Control Design & Effectiveness as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Control Design & Effectiveness without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -13473,7 +16003,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand policies & standards and apply it to a realistic management & governance problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Policies & Standards is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Policies & Standards",
           "Inputs and outputs",
@@ -13594,6 +16124,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Policies & Standards. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Policies & Standards. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Policies & Standards as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Policies & Standards without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -13602,7 +16178,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand compliance & evidence and apply it to a realistic management & governance problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Compliance & Evidence is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Compliance & Evidence",
           "Inputs and outputs",
@@ -13723,6 +16299,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Compliance & Evidence. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Compliance & Evidence. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Compliance & Evidence as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Compliance & Evidence without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -13731,7 +16353,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand third-party risk and apply it to a realistic management & governance problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Third-Party Risk is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Third-Party Risk",
           "Inputs and outputs",
@@ -13852,6 +16474,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Third-Party Risk. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Third-Party Risk. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Third-Party Risk as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Third-Party Risk without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -13860,7 +16528,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand security metrics for leaders and apply it to a realistic management & governance problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Security Metrics for Leaders is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Security Metrics for Leaders",
           "Inputs and outputs",
@@ -13981,6 +16649,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Security Metrics for Leaders. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Security Metrics for Leaders. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Security Metrics for Leaders as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Security Metrics for Leaders without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -13989,7 +16703,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand mini project: enterprise cyber risk register and apply it to a realistic management & governance problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Mini Project: Enterprise Cyber Risk Register is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline.\n\nDistinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions.\n\nTreat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective.\n\nApply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk.\n\nConnect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts.",
         "concepts": [
           "Mini Project: Enterprise Cyber Risk Register",
           "Inputs and outputs",
@@ -14110,6 +16824,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Start with organizational context. Identify mission, critical services, stakeholders, risk appetite, regulatory obligations and dependencies before discussing controls. Cybersecurity is an enterprise risk function as well as a technical discipline."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Distinguish threat, vulnerability, likelihood, impact, control and residual risk. A risk statement should describe a condition and consequence clearly enough that another person can challenge its assumptions."
+          },
+          {
+            "title": "Security implications",
+            "body": "Treat controls as mechanisms with owners, evidence, frequency and expected outcomes. A policy statement is not proof that a control operates, and a control that exists on paper may not be effective."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Apply the lesson to a management case. Compare options using risk reduction, cost, feasibility, dependencies and business impact. Record uncertainty and identify who has authority to accept or treat the risk."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Connect technical evidence to executive communication. Leaders need the decision, business consequence, confidence level, investment choices and residual risk—not a pile of disconnected alerts."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Mini Project: Enterprise Cyber Risk Register. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Mini Project: Enterprise Cyber Risk Register. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Mini Project: Enterprise Cyber Risk Register as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Mini Project: Enterprise Cyber Risk Register without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       }
     ],
@@ -14159,7 +16919,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand capstone brief & problem framing and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Capstone Brief & Problem Framing is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Capstone Brief & Problem Framing",
           "Inputs and outputs",
@@ -14280,6 +17040,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Capstone Brief & Problem Framing. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Capstone Brief & Problem Framing. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Capstone Brief & Problem Framing as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Capstone Brief & Problem Framing without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -14288,7 +17094,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand enterprise asset model and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Enterprise Asset Model is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Enterprise Asset Model",
           "Inputs and outputs",
@@ -14409,6 +17215,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Enterprise Asset Model. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Enterprise Asset Model. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Enterprise Asset Model as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Enterprise Asset Model without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -14417,7 +17269,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand threat & trust-boundary mapping and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Threat & Trust-Boundary Mapping is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Threat & Trust-Boundary Mapping",
           "Inputs and outputs",
@@ -14538,6 +17390,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Threat & Trust-Boundary Mapping. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Threat & Trust-Boundary Mapping. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Threat & Trust-Boundary Mapping as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Threat & Trust-Boundary Mapping without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -14546,7 +17444,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand data & evidence plan and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Data & Evidence Plan is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Data & Evidence Plan",
           "Inputs and outputs",
@@ -14667,6 +17565,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Data & Evidence Plan. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Data & Evidence Plan. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Data & Evidence Plan as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Data & Evidence Plan without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -14675,7 +17619,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand security architecture and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Security Architecture is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Security Architecture",
           "Inputs and outputs",
@@ -14796,6 +17740,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Security Architecture. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Security Architecture. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Security Architecture as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Security Architecture without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -14804,7 +17794,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand identity & access strategy and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Identity & Access Strategy is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Identity & Access Strategy",
           "Inputs and outputs",
@@ -14925,6 +17915,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Identity & Access Strategy. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Identity & Access Strategy. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Identity & Access Strategy as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Identity & Access Strategy without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -14933,7 +17969,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand detection & response strategy and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Detection & Response Strategy is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Detection & Response Strategy",
           "Inputs and outputs",
@@ -15054,6 +18090,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Detection & Response Strategy. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Detection & Response Strategy. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Detection & Response Strategy as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Detection & Response Strategy without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -15062,7 +18144,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand security analytics plan and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Security Analytics Plan is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Security Analytics Plan",
           "Inputs and outputs",
@@ -15183,6 +18265,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Security Analytics Plan. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Security Analytics Plan. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Security Analytics Plan as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Security Analytics Plan without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -15191,7 +18319,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand cloud & devsecops controls and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Cloud & DevSecOps Controls is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Cloud & DevSecOps Controls",
           "Inputs and outputs",
@@ -15312,6 +18440,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Cloud & DevSecOps Controls. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Cloud & DevSecOps Controls. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Cloud & DevSecOps Controls as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Cloud & DevSecOps Controls without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -15320,7 +18494,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand risk & investment prioritization and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Risk & Investment Prioritization is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Risk & Investment Prioritization",
           "Inputs and outputs",
@@ -15441,6 +18615,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Risk & Investment Prioritization. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Risk & Investment Prioritization. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Risk & Investment Prioritization as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Risk & Investment Prioritization without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -15449,7 +18669,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand executive communication and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Executive Communication is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Executive Communication",
           "Inputs and outputs",
@@ -15570,6 +18790,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Executive Communication. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Executive Communication. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Executive Communication as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Executive Communication without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       },
       {
@@ -15578,7 +18844,7 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand final defense & reflection and apply it to a realistic integration problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "This lesson starts with the idea in plain language: Final Defense & Reflection is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
         "concepts": [
           "Final Defense & Reflection",
           "Inputs and outputs",
@@ -15699,6 +18965,52 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Final Defense & Reflection. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Final Defense & Reflection. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Final Defense & Reflection as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Final Defense & Reflection without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
         ]
       }
     ],
