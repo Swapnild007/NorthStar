@@ -120,7 +120,7 @@ const views={
   return `<section class="fade">
    <span class="eyebrow">Academic learning path</span>
    <h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">Build real capability.</h1>
-   <p class="subtitle">${curriculum.length} pathways · ${totalLessons()} active lessons · case analysis · applied practice · assessment evidence.</p>
+   <p class="subtitle">${curriculum.length} pathways · ${totalLessons()} active lessons · ${curriculum.filter(c=>c.status==="planned").length} roadmap pathways · case analysis · applied practice · assessment evidence.</p>
    <div class="tabs">${categories.map(x=>`<button class="chip ${state.filter===x?"active":""}" data-filter="${x}">${x}</button>`).join("")}</div>
    <div class="list section">${filtered.map(c=>{
      const i=curriculum.indexOf(c),p=courseProgress(i),next=(c.lessons||[]).findIndex(l=>!state.completedLessons.includes(l.id)),m=c.meta||{};
