@@ -1,4 +1,4 @@
-const VERSION="0.2.1";
+const VERSION="0.3.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 
 function readStoredJSON(key,fallback){
@@ -67,7 +67,16 @@ function render(){
     <nav class="nav" aria-label="Primary navigation">${nav.map(n=>`<button class="${active(n[0])?"active":""}" data-route="${n[0]}" aria-label="${n[1]}"><span class="nav-icon">${n[2]}</span>${n[1]}</button>`).join("")}</nav>
    </main>
  </div>`;
- document.querySelector("#view").innerHTML=(views[state.route]||views.home)();bind();
+ const viewRenderer=views[state.route]||views.home;
+ let viewHTML="";
+ try{
+  viewHTML=viewRenderer();
+ }catch(error){
+  console.error("NorthStar view render failure:",error);
+  viewHTML=`<section class="fade"><div class="card glass" style="padding:28px"><span class="eyebrow">NorthStar recovery</span><h1 class="title">Learning is still here.</h1><p class="subtitle">The lesson data loaded, but this screen encountered a rendering error. Refreshing with the new application bundle should restore the learning view.</p><button class="cta" onclick="location.reload()">Reload NorthStar</button></div></section>`;
+ }
+ document.querySelector("#view").innerHTML=viewHTML;
+ bind();
 }
 
 const views={
