@@ -160,6 +160,7 @@ const views={
  lesson:()=>{
   const c=curriculum[state.selectedCourse],l=c?.lessons?.[state.selectedLesson];
   if(!c||!l)return `<div class="empty card glass">Lesson unavailable.</div>`;
+  const done=state.completedLessons.includes(l.id);
   const list=a=>Array.isArray(a)?a.filter(Boolean):[];
   const paragraphs=String(l.read||"").split(/\\n\\n|\n\n/).filter(Boolean);
   const highlights=list(l.highlights), sections=list(l.sections), notes=list(l.notes), takeaways=list(l.takeaways);
