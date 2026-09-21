@@ -66,3 +66,6 @@ const NORTHSTAR_CURRICULUM = [
     ]
   }
 ];
+
+// Public data contract consumed by the NorthStar application shell.
+window.NORTHSTAR_CURRICULUM = NORTHSTAR_CURRICULUM;
