@@ -16906,6 +16906,1985 @@ const NORTHSTAR_CURRICULUM = [
     }
   },
   {
+    "id": "cryptography-privacy",
+    "code": "14",
+    "title": "Cryptography, Privacy & Digital Trust",
+    "category": "Security Core",
+    "description": "Build cryptographic intuition, protocol literacy, privacy engineering and key-management capability.",
+    "meta": {
+      "level": "Intermediate → Advanced",
+      "load": "16–22 hours",
+      "focus": "Understand cryptographic mechanisms, protocol trust, key lifecycle and privacy engineering.",
+      "outcomes": [
+        "Explain hashes, MACs, symmetric and asymmetric cryptography.",
+        "Understand key exchange, digital signatures, certificates, PKI and TLS.",
+        "Reason about randomness, key lifecycle and cryptographic failure modes.",
+        "Distinguish security objectives from privacy objectives.",
+        "Evaluate cryptographic designs using evidence."
+      ],
+      "topics": [
+        "Hash functions",
+        "MACs",
+        "Symmetric encryption",
+        "Public-key cryptography",
+        "Randomness",
+        "Key exchange",
+        "Digital signatures",
+        "PKI",
+        "TLS",
+        "Key management",
+        "Privacy engineering"
+      ],
+      "case": "A customer portal must protect credentials, sessions, stored records and service-to-service traffic while keeping keys manageable.",
+      "assessment": "Cryptographic design review + protocol walkthrough + privacy risk analysis",
+      "lab": "Crypto & Trust Design Lab"
+    },
+    "lessons": [
+      {
+        "id": "ct-01",
+        "title": "Cryptographic Goals & Threat Models",
+        "objective": "Build first-principles understanding of cryptographic goals & threat models and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Cryptographic Goals & Threat Models is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Cryptographic Goals & Threat Models",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Cryptographic Goals & Threat Models",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Cryptographic Goals & Threat Models",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate cryptographic goals & threat models in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply cryptographic goals & threat models to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about cryptographic goals & threat models?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of cryptographic goals & threat models?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Cryptographic Goals & Threat Models is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Cryptographic Goals & Threat Models as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Cryptographic Goals & Threat Models into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Cryptographic Goals & Threat Models changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Cryptographic Goals & Threat Models should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Cryptographic Goals & Threat Models was wrong?"
+      },
+      {
+        "id": "ct-02",
+        "title": "Hash Functions, Integrity & Password Storage",
+        "objective": "Build first-principles understanding of hash functions, integrity & password storage and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Hash Functions, Integrity & Password Storage is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Hash Functions, Integrity & Password Storage",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Hash Functions, Integrity & Password Storage",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Hash Functions, Integrity & Password Storage",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate hash functions, integrity & password storage in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply hash functions, integrity & password storage to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about hash functions, integrity & password storage?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of hash functions, integrity & password storage?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Hash Functions, Integrity & Password Storage is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Hash Functions, Integrity & Password Storage as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Hash Functions, Integrity & Password Storage into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Hash Functions, Integrity & Password Storage changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Hash Functions, Integrity & Password Storage should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Hash Functions, Integrity & Password Storage was wrong?"
+      },
+      {
+        "id": "ct-03",
+        "title": "Symmetric Encryption & Authenticated Encryption",
+        "objective": "Build first-principles understanding of symmetric encryption & authenticated encryption and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Symmetric Encryption & Authenticated Encryption is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Symmetric Encryption & Authenticated Encryption",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Symmetric Encryption & Authenticated Encryption",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Symmetric Encryption & Authenticated Encryption",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate symmetric encryption & authenticated encryption in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply symmetric encryption & authenticated encryption to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about symmetric encryption & authenticated encryption?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of symmetric encryption & authenticated encryption?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Symmetric Encryption & Authenticated Encryption is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Symmetric Encryption & Authenticated Encryption as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Symmetric Encryption & Authenticated Encryption into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Symmetric Encryption & Authenticated Encryption changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Symmetric Encryption & Authenticated Encryption should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Symmetric Encryption & Authenticated Encryption was wrong?"
+      },
+      {
+        "id": "ct-04",
+        "title": "Public-Key Cryptography & Key Exchange",
+        "objective": "Build first-principles understanding of public-key cryptography & key exchange and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Public-Key Cryptography & Key Exchange is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Public-Key Cryptography & Key Exchange",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Public-Key Cryptography & Key Exchange",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Public-Key Cryptography & Key Exchange",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate public-key cryptography & key exchange in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply public-key cryptography & key exchange to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about public-key cryptography & key exchange?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of public-key cryptography & key exchange?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Public-Key Cryptography & Key Exchange is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Public-Key Cryptography & Key Exchange as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Public-Key Cryptography & Key Exchange into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Public-Key Cryptography & Key Exchange changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Public-Key Cryptography & Key Exchange should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Public-Key Cryptography & Key Exchange was wrong?"
+      },
+      {
+        "id": "ct-05",
+        "title": "Digital Signatures, Certificates & PKI",
+        "objective": "Build first-principles understanding of digital signatures, certificates & pki and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Digital Signatures, Certificates & PKI is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Digital Signatures, Certificates & PKI",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Digital Signatures, Certificates & PKI",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Digital Signatures, Certificates & PKI",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate digital signatures, certificates & pki in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply digital signatures, certificates & pki to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about digital signatures, certificates & pki?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of digital signatures, certificates & pki?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Digital Signatures, Certificates & PKI is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Digital Signatures, Certificates & PKI as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Digital Signatures, Certificates & PKI into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Digital Signatures, Certificates & PKI changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Digital Signatures, Certificates & PKI should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Digital Signatures, Certificates & PKI was wrong?"
+      },
+      {
+        "id": "ct-06",
+        "title": "TLS and Secure Communication",
+        "objective": "Build first-principles understanding of tls and secure communication and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "TLS and Secure Communication is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "TLS and Secure Communication",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "TLS and Secure Communication",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "TLS and Secure Communication",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate tls and secure communication in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply tls and secure communication to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about tls and secure communication?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of tls and secure communication?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: TLS and Secure Communication is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat TLS and Secure Communication as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break TLS and Secure Communication into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to TLS and Secure Communication changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about TLS and Secure Communication should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of TLS and Secure Communication was wrong?"
+      },
+      {
+        "id": "ct-07",
+        "title": "Key Management & Cryptographic Failure Modes",
+        "objective": "Build first-principles understanding of key management & cryptographic failure modes and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Key Management & Cryptographic Failure Modes is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Key Management & Cryptographic Failure Modes",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Key Management & Cryptographic Failure Modes",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Key Management & Cryptographic Failure Modes",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate key management & cryptographic failure modes in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply key management & cryptographic failure modes to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about key management & cryptographic failure modes?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of key management & cryptographic failure modes?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Key Management & Cryptographic Failure Modes is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Key Management & Cryptographic Failure Modes as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Key Management & Cryptographic Failure Modes into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Key Management & Cryptographic Failure Modes changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Key Management & Cryptographic Failure Modes should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Key Management & Cryptographic Failure Modes was wrong?"
+      },
+      {
+        "id": "ct-08",
+        "title": "Privacy Engineering & Data Protection",
+        "objective": "Build first-principles understanding of privacy engineering & data protection and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Cybersecurity Foundations + basic networking",
+        "read": "Privacy Engineering & Data Protection is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Privacy Engineering & Data Protection",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Privacy Engineering & Data Protection",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Privacy Engineering & Data Protection",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate privacy engineering & data protection in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply privacy engineering & data protection to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about privacy engineering & data protection?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of privacy engineering & data protection?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Privacy Engineering & Data Protection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Privacy Engineering & Data Protection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Privacy Engineering & Data Protection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Privacy Engineering & Data Protection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Privacy Engineering & Data Protection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Privacy Engineering & Data Protection was wrong?"
+      }
+    ]
+  },
+  {
+    "id": "ai-emerging-security",
+    "code": "15",
+    "title": "AI Security, Privacy & Emerging Technology",
+    "category": "Advanced Security",
+    "description": "Connect cybersecurity, data science and management through adversarial ML, GenAI security, responsible AI, IoT/OT and supply-chain risk.",
+    "meta": {
+      "level": "Advanced / Applied",
+      "load": "16–22 hours",
+      "focus": "Assess AI and emerging technology risk across models, data, agents, devices and supply chains.",
+      "outcomes": [
+        "Explain common AI attack and failure modes.",
+        "Assess model, prompt, tool and agent trust boundaries.",
+        "Apply responsible-AI and privacy principles.",
+        "Recognize IoT/OT constraints and resilience needs.",
+        "Assess emerging technology and supply-chain risk."
+      ],
+      "topics": [
+        "Adversarial ML",
+        "Poisoning",
+        "Evasion",
+        "Model theft",
+        "LLM security",
+        "Prompt injection",
+        "AI agents",
+        "Responsible AI",
+        "Privacy",
+        "IoT",
+        "OT/ICS",
+        "Supply chain"
+      ],
+      "case": "An enterprise introduces a generative-AI assistant that can search internal data and call business tools.",
+      "assessment": "AI security threat model + governance memo + emerging-technology risk register",
+      "lab": "AI & Emerging Technology Security Lab"
+    },
+    "lessons": [
+      {
+        "id": "ae-01",
+        "title": "AI Security Mental Models",
+        "objective": "Build first-principles understanding of ai security mental models and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "AI Security Mental Models is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "AI Security Mental Models",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "AI Security Mental Models",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "AI Security Mental Models",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate ai security mental models in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply ai security mental models to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about ai security mental models?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of ai security mental models?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: AI Security Mental Models is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat AI Security Mental Models as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break AI Security Mental Models into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to AI Security Mental Models changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about AI Security Mental Models should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of AI Security Mental Models was wrong?"
+      },
+      {
+        "id": "ae-02",
+        "title": "Adversarial Machine Learning",
+        "objective": "Build first-principles understanding of adversarial machine learning and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "Adversarial Machine Learning is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Adversarial Machine Learning",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Adversarial Machine Learning",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Adversarial Machine Learning",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate adversarial machine learning in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply adversarial machine learning to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about adversarial machine learning?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of adversarial machine learning?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Adversarial Machine Learning is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Adversarial Machine Learning as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Adversarial Machine Learning into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Adversarial Machine Learning changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Adversarial Machine Learning should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Adversarial Machine Learning was wrong?"
+      },
+      {
+        "id": "ae-03",
+        "title": "Data Poisoning, Evasion & Model Theft",
+        "objective": "Build first-principles understanding of data poisoning, evasion & model theft and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "Data Poisoning, Evasion & Model Theft is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Data Poisoning, Evasion & Model Theft",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Data Poisoning, Evasion & Model Theft",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Data Poisoning, Evasion & Model Theft",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate data poisoning, evasion & model theft in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply data poisoning, evasion & model theft to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about data poisoning, evasion & model theft?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of data poisoning, evasion & model theft?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Data Poisoning, Evasion & Model Theft is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Data Poisoning, Evasion & Model Theft as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Data Poisoning, Evasion & Model Theft into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Data Poisoning, Evasion & Model Theft changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Data Poisoning, Evasion & Model Theft should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Data Poisoning, Evasion & Model Theft was wrong?"
+      },
+      {
+        "id": "ae-04",
+        "title": "LLM Security & Prompt Injection",
+        "objective": "Build first-principles understanding of llm security & prompt injection and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "LLM Security & Prompt Injection is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "LLM Security & Prompt Injection",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "LLM Security & Prompt Injection",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "LLM Security & Prompt Injection",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate llm security & prompt injection in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply llm security & prompt injection to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about llm security & prompt injection?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of llm security & prompt injection?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: LLM Security & Prompt Injection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat LLM Security & Prompt Injection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break LLM Security & Prompt Injection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to LLM Security & Prompt Injection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about LLM Security & Prompt Injection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of LLM Security & Prompt Injection was wrong?"
+      },
+      {
+        "id": "ae-05",
+        "title": "AI Agents, Tools & Trust Boundaries",
+        "objective": "Build first-principles understanding of ai agents, tools & trust boundaries and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "AI Agents, Tools & Trust Boundaries is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "AI Agents, Tools & Trust Boundaries",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "AI Agents, Tools & Trust Boundaries",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "AI Agents, Tools & Trust Boundaries",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate ai agents, tools & trust boundaries in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply ai agents, tools & trust boundaries to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about ai agents, tools & trust boundaries?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of ai agents, tools & trust boundaries?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: AI Agents, Tools & Trust Boundaries is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat AI Agents, Tools & Trust Boundaries as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break AI Agents, Tools & Trust Boundaries into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to AI Agents, Tools & Trust Boundaries changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about AI Agents, Tools & Trust Boundaries should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of AI Agents, Tools & Trust Boundaries was wrong?"
+      },
+      {
+        "id": "ae-06",
+        "title": "Responsible AI, Privacy & Governance",
+        "objective": "Build first-principles understanding of responsible ai, privacy & governance and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "Responsible AI, Privacy & Governance is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Responsible AI, Privacy & Governance",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Responsible AI, Privacy & Governance",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Responsible AI, Privacy & Governance",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate responsible ai, privacy & governance in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply responsible ai, privacy & governance to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about responsible ai, privacy & governance?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of responsible ai, privacy & governance?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Responsible AI, Privacy & Governance is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Responsible AI, Privacy & Governance as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Responsible AI, Privacy & Governance into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Responsible AI, Privacy & Governance changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Responsible AI, Privacy & Governance should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Responsible AI, Privacy & Governance was wrong?"
+      },
+      {
+        "id": "ae-07",
+        "title": "IoT, OT/ICS & Cyber-Physical Resilience",
+        "objective": "Build first-principles understanding of iot, ot/ics & cyber-physical resilience and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "IoT, OT/ICS & Cyber-Physical Resilience is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "IoT, OT/ICS & Cyber-Physical Resilience",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "IoT, OT/ICS & Cyber-Physical Resilience",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "IoT, OT/ICS & Cyber-Physical Resilience",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate iot, ot/ics & cyber-physical resilience in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply iot, ot/ics & cyber-physical resilience to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about iot, ot/ics & cyber-physical resilience?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of iot, ot/ics & cyber-physical resilience?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: IoT, OT/ICS & Cyber-Physical Resilience is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat IoT, OT/ICS & Cyber-Physical Resilience as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break IoT, OT/ICS & Cyber-Physical Resilience into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to IoT, OT/ICS & Cyber-Physical Resilience changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about IoT, OT/ICS & Cyber-Physical Resilience should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of IoT, OT/ICS & Cyber-Physical Resilience was wrong?"
+      },
+      {
+        "id": "ae-08",
+        "title": "Supply Chain & Emerging Technology Risk",
+        "objective": "Build first-principles understanding of supply chain & emerging technology risk and apply it to a controlled security decision.",
+        "time": "2–2.75 hours",
+        "prerequisite": "Machine Learning + Security Engineering foundations",
+        "read": "Supply Chain & Emerging Technology Risk is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
+        "concepts": [
+          "Supply Chain & Emerging Technology Risk",
+          "Threat model",
+          "Trust boundary",
+          "Evidence",
+          "Trade-offs"
+        ],
+        "glossary": [
+          [
+            "Supply Chain & Emerging Technology Risk",
+            "A mechanism or practice used to address a defined technical or security objective."
+          ],
+          [
+            "Trust boundary",
+            "A boundary across which assumptions about identity, privilege or data handling change."
+          ],
+          [
+            "Evidence",
+            "Observable information used to support or challenge a conclusion."
+          ]
+        ],
+        "visual": {
+          "title": "Supply Chain & Emerging Technology Risk",
+          "caption": "Objective → mechanism → boundary → evidence → decision",
+          "steps": [
+            "Define objective",
+            "Trace mechanism",
+            "Identify boundary",
+            "Inspect evidence",
+            "Choose action"
+          ]
+        },
+        "case": "A professional team must evaluate supply chain & emerging technology risk in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
+        "caseQuestions": [
+          "What objective is being protected?",
+          "What assumptions does the mechanism make?",
+          "What failure mode matters most?",
+          "What evidence should be collected?",
+          "What decision is justified by the evidence?"
+        ],
+        "practice": "Apply supply chain & emerging technology risk to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
+        "practiceSteps": [
+          "State the objective.",
+          "Draw the mechanism and trust boundary.",
+          "List assumptions and failure modes.",
+          "Identify evidence and uncertainty.",
+          "Compare two defensible approaches.",
+          "Document the decision and limitations."
+        ],
+        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
+        "mistakes": [
+          "Confusing a mechanism with a guarantee.",
+          "Ignoring trust-boundary assumptions.",
+          "Selecting a tool before defining the objective.",
+          "Reporting a conclusion without evidence."
+        ],
+        "qa": [
+          {
+            "q": "What must you understand about supply chain & emerging technology risk?",
+            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
+            "why": "These make the knowledge transferable."
+          },
+          {
+            "q": "Why is evidence important?",
+            "a": "Because security decisions must be reproducible and challengeable.",
+            "why": "Evidence separates analysis from intuition."
+          },
+          {
+            "q": "What is mastery?",
+            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
+            "why": "Mastery requires application and reasoning."
+          }
+        ],
+        "check": {
+          "q": "Which approach best demonstrates understanding of supply chain & emerging technology risk?",
+          "options": [
+            "Explain the mechanism, apply it to a case and justify the result",
+            "Memorize terms only",
+            "Choose a product first",
+            "Ignore assumptions"
+          ],
+          "answer": "Explain the mechanism, apply it to a case and justify the result",
+          "why": "Deep capability requires mechanism-level understanding and evidence."
+        },
+        "why": "Why this matters: Supply Chain & Emerging Technology Risk is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Supply Chain & Emerging Technology Risk as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Supply Chain & Emerging Technology Risk into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Supply Chain & Emerging Technology Risk changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Supply Chain & Emerging Technology Risk should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Supply Chain & Emerging Technology Risk was wrong?"
+      }
+    ]
+  },
+  {
     "id": "enterprise-capstone",
     "code": "13",
     "title": "Enterprise Capstone",
@@ -19046,1985 +21025,6 @@ const NORTHSTAR_CURRICULUM = [
       "assessment": "Portfolio-grade enterprise security transformation dossier + presentation",
       "lab": "NorthStar Enterprise Simulation"
     }
-  },
-  {
-    "id": "cryptography-privacy",
-    "code": "14",
-    "title": "Cryptography, Privacy & Digital Trust",
-    "category": "Security Core",
-    "description": "Build cryptographic intuition, protocol literacy, privacy engineering and key-management capability.",
-    "meta": {
-      "level": "Intermediate → Advanced",
-      "load": "16–22 hours",
-      "focus": "Understand cryptographic mechanisms, protocol trust, key lifecycle and privacy engineering.",
-      "outcomes": [
-        "Explain hashes, MACs, symmetric and asymmetric cryptography.",
-        "Understand key exchange, digital signatures, certificates, PKI and TLS.",
-        "Reason about randomness, key lifecycle and cryptographic failure modes.",
-        "Distinguish security objectives from privacy objectives.",
-        "Evaluate cryptographic designs using evidence."
-      ],
-      "topics": [
-        "Hash functions",
-        "MACs",
-        "Symmetric encryption",
-        "Public-key cryptography",
-        "Randomness",
-        "Key exchange",
-        "Digital signatures",
-        "PKI",
-        "TLS",
-        "Key management",
-        "Privacy engineering"
-      ],
-      "case": "A customer portal must protect credentials, sessions, stored records and service-to-service traffic while keeping keys manageable.",
-      "assessment": "Cryptographic design review + protocol walkthrough + privacy risk analysis",
-      "lab": "Crypto & Trust Design Lab"
-    },
-    "lessons": [
-      {
-        "id": "ct-01",
-        "title": "Cryptographic Goals & Threat Models",
-        "objective": "Build first-principles understanding of cryptographic goals & threat models and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Cybersecurity Foundations + basic networking",
-        "read": "Cryptographic Goals & Threat Models is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "Cryptographic Goals & Threat Models",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "Cryptographic Goals & Threat Models",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "Cryptographic Goals & Threat Models",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate cryptographic goals & threat models in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply cryptographic goals & threat models to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about cryptographic goals & threat models?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of cryptographic goals & threat models?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: Cryptographic Goals & Threat Models is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Cryptographic Goals & Threat Models as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Cryptographic Goals & Threat Models into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Cryptographic Goals & Threat Models changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Cryptographic Goals & Threat Models should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Cryptographic Goals & Threat Models was wrong?"
-      },
-      {
-        "id": "ct-02",
-        "title": "Hash Functions, Integrity & Password Storage",
-        "objective": "Build first-principles understanding of hash functions, integrity & password storage and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Cybersecurity Foundations + basic networking",
-        "read": "Hash Functions, Integrity & Password Storage is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "Hash Functions, Integrity & Password Storage",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "Hash Functions, Integrity & Password Storage",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "Hash Functions, Integrity & Password Storage",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate hash functions, integrity & password storage in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply hash functions, integrity & password storage to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about hash functions, integrity & password storage?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of hash functions, integrity & password storage?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: Hash Functions, Integrity & Password Storage is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Hash Functions, Integrity & Password Storage as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Hash Functions, Integrity & Password Storage into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Hash Functions, Integrity & Password Storage changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Hash Functions, Integrity & Password Storage should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Hash Functions, Integrity & Password Storage was wrong?"
-      },
-      {
-        "id": "ct-03",
-        "title": "Symmetric Encryption & Authenticated Encryption",
-        "objective": "Build first-principles understanding of symmetric encryption & authenticated encryption and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Cybersecurity Foundations + basic networking",
-        "read": "Symmetric Encryption & Authenticated Encryption is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "Symmetric Encryption & Authenticated Encryption",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "Symmetric Encryption & Authenticated Encryption",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "Symmetric Encryption & Authenticated Encryption",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate symmetric encryption & authenticated encryption in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply symmetric encryption & authenticated encryption to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about symmetric encryption & authenticated encryption?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of symmetric encryption & authenticated encryption?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: Symmetric Encryption & Authenticated Encryption is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Symmetric Encryption & Authenticated Encryption as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Symmetric Encryption & Authenticated Encryption into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Symmetric Encryption & Authenticated Encryption changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Symmetric Encryption & Authenticated Encryption should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Symmetric Encryption & Authenticated Encryption was wrong?"
-      },
-      {
-        "id": "ct-04",
-        "title": "Public-Key Cryptography & Key Exchange",
-        "objective": "Build first-principles understanding of public-key cryptography & key exchange and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Cybersecurity Foundations + basic networking",
-        "read": "Public-Key Cryptography & Key Exchange is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "Public-Key Cryptography & Key Exchange",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "Public-Key Cryptography & Key Exchange",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "Public-Key Cryptography & Key Exchange",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate public-key cryptography & key exchange in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply public-key cryptography & key exchange to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about public-key cryptography & key exchange?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of public-key cryptography & key exchange?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: Public-Key Cryptography & Key Exchange is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Public-Key Cryptography & Key Exchange as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Public-Key Cryptography & Key Exchange into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Public-Key Cryptography & Key Exchange changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Public-Key Cryptography & Key Exchange should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Public-Key Cryptography & Key Exchange was wrong?"
-      },
-      {
-        "id": "ct-05",
-        "title": "Digital Signatures, Certificates & PKI",
-        "objective": "Build first-principles understanding of digital signatures, certificates & pki and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Cybersecurity Foundations + basic networking",
-        "read": "Digital Signatures, Certificates & PKI is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "Digital Signatures, Certificates & PKI",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "Digital Signatures, Certificates & PKI",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "Digital Signatures, Certificates & PKI",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate digital signatures, certificates & pki in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply digital signatures, certificates & pki to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about digital signatures, certificates & pki?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of digital signatures, certificates & pki?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: Digital Signatures, Certificates & PKI is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Digital Signatures, Certificates & PKI as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Digital Signatures, Certificates & PKI into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Digital Signatures, Certificates & PKI changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Digital Signatures, Certificates & PKI should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Digital Signatures, Certificates & PKI was wrong?"
-      },
-      {
-        "id": "ct-06",
-        "title": "TLS and Secure Communication",
-        "objective": "Build first-principles understanding of tls and secure communication and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Cybersecurity Foundations + basic networking",
-        "read": "TLS and Secure Communication is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "TLS and Secure Communication",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "TLS and Secure Communication",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "TLS and Secure Communication",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate tls and secure communication in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply tls and secure communication to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about tls and secure communication?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of tls and secure communication?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: TLS and Secure Communication is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat TLS and Secure Communication as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break TLS and Secure Communication into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to TLS and Secure Communication changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about TLS and Secure Communication should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of TLS and Secure Communication was wrong?"
-      },
-      {
-        "id": "ct-07",
-        "title": "Key Management & Cryptographic Failure Modes",
-        "objective": "Build first-principles understanding of key management & cryptographic failure modes and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Cybersecurity Foundations + basic networking",
-        "read": "Key Management & Cryptographic Failure Modes is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "Key Management & Cryptographic Failure Modes",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "Key Management & Cryptographic Failure Modes",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "Key Management & Cryptographic Failure Modes",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate key management & cryptographic failure modes in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply key management & cryptographic failure modes to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about key management & cryptographic failure modes?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of key management & cryptographic failure modes?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: Key Management & Cryptographic Failure Modes is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Key Management & Cryptographic Failure Modes as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Key Management & Cryptographic Failure Modes into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Key Management & Cryptographic Failure Modes changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Key Management & Cryptographic Failure Modes should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Key Management & Cryptographic Failure Modes was wrong?"
-      },
-      {
-        "id": "ct-08",
-        "title": "Privacy Engineering & Data Protection",
-        "objective": "Build first-principles understanding of privacy engineering & data protection and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Cybersecurity Foundations + basic networking",
-        "read": "Privacy Engineering & Data Protection is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "Privacy Engineering & Data Protection",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "Privacy Engineering & Data Protection",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "Privacy Engineering & Data Protection",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate privacy engineering & data protection in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply privacy engineering & data protection to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about privacy engineering & data protection?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of privacy engineering & data protection?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: Privacy Engineering & Data Protection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Privacy Engineering & Data Protection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Privacy Engineering & Data Protection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Privacy Engineering & Data Protection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Privacy Engineering & Data Protection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Privacy Engineering & Data Protection was wrong?"
-      }
-    ]
-  },
-  {
-    "id": "ai-emerging-security",
-    "code": "15",
-    "title": "AI Security, Privacy & Emerging Technology",
-    "category": "Advanced Security",
-    "description": "Connect cybersecurity, data science and management through adversarial ML, GenAI security, responsible AI, IoT/OT and supply-chain risk.",
-    "meta": {
-      "level": "Advanced / Applied",
-      "load": "16–22 hours",
-      "focus": "Assess AI and emerging technology risk across models, data, agents, devices and supply chains.",
-      "outcomes": [
-        "Explain common AI attack and failure modes.",
-        "Assess model, prompt, tool and agent trust boundaries.",
-        "Apply responsible-AI and privacy principles.",
-        "Recognize IoT/OT constraints and resilience needs.",
-        "Assess emerging technology and supply-chain risk."
-      ],
-      "topics": [
-        "Adversarial ML",
-        "Poisoning",
-        "Evasion",
-        "Model theft",
-        "LLM security",
-        "Prompt injection",
-        "AI agents",
-        "Responsible AI",
-        "Privacy",
-        "IoT",
-        "OT/ICS",
-        "Supply chain"
-      ],
-      "case": "An enterprise introduces a generative-AI assistant that can search internal data and call business tools.",
-      "assessment": "AI security threat model + governance memo + emerging-technology risk register",
-      "lab": "AI & Emerging Technology Security Lab"
-    },
-    "lessons": [
-      {
-        "id": "ae-01",
-        "title": "AI Security Mental Models",
-        "objective": "Build first-principles understanding of ai security mental models and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Machine Learning + Security Engineering foundations",
-        "read": "AI Security Mental Models is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "AI Security Mental Models",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "AI Security Mental Models",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "AI Security Mental Models",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate ai security mental models in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply ai security mental models to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about ai security mental models?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of ai security mental models?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: AI Security Mental Models is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat AI Security Mental Models as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break AI Security Mental Models into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to AI Security Mental Models changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about AI Security Mental Models should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of AI Security Mental Models was wrong?"
-      },
-      {
-        "id": "ae-02",
-        "title": "Adversarial Machine Learning",
-        "objective": "Build first-principles understanding of adversarial machine learning and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Machine Learning + Security Engineering foundations",
-        "read": "Adversarial Machine Learning is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "Adversarial Machine Learning",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "Adversarial Machine Learning",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "Adversarial Machine Learning",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate adversarial machine learning in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply adversarial machine learning to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about adversarial machine learning?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of adversarial machine learning?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: Adversarial Machine Learning is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Adversarial Machine Learning as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Adversarial Machine Learning into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Adversarial Machine Learning changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Adversarial Machine Learning should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Adversarial Machine Learning was wrong?"
-      },
-      {
-        "id": "ae-03",
-        "title": "Data Poisoning, Evasion & Model Theft",
-        "objective": "Build first-principles understanding of data poisoning, evasion & model theft and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Machine Learning + Security Engineering foundations",
-        "read": "Data Poisoning, Evasion & Model Theft is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "Data Poisoning, Evasion & Model Theft",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "Data Poisoning, Evasion & Model Theft",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "Data Poisoning, Evasion & Model Theft",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate data poisoning, evasion & model theft in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply data poisoning, evasion & model theft to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about data poisoning, evasion & model theft?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of data poisoning, evasion & model theft?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: Data Poisoning, Evasion & Model Theft is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Data Poisoning, Evasion & Model Theft as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Data Poisoning, Evasion & Model Theft into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Data Poisoning, Evasion & Model Theft changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Data Poisoning, Evasion & Model Theft should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Data Poisoning, Evasion & Model Theft was wrong?"
-      },
-      {
-        "id": "ae-04",
-        "title": "LLM Security & Prompt Injection",
-        "objective": "Build first-principles understanding of llm security & prompt injection and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Machine Learning + Security Engineering foundations",
-        "read": "LLM Security & Prompt Injection is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "LLM Security & Prompt Injection",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "LLM Security & Prompt Injection",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "LLM Security & Prompt Injection",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate llm security & prompt injection in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply llm security & prompt injection to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about llm security & prompt injection?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of llm security & prompt injection?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: LLM Security & Prompt Injection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat LLM Security & Prompt Injection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break LLM Security & Prompt Injection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to LLM Security & Prompt Injection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about LLM Security & Prompt Injection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of LLM Security & Prompt Injection was wrong?"
-      },
-      {
-        "id": "ae-05",
-        "title": "AI Agents, Tools & Trust Boundaries",
-        "objective": "Build first-principles understanding of ai agents, tools & trust boundaries and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Machine Learning + Security Engineering foundations",
-        "read": "AI Agents, Tools & Trust Boundaries is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "AI Agents, Tools & Trust Boundaries",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "AI Agents, Tools & Trust Boundaries",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "AI Agents, Tools & Trust Boundaries",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate ai agents, tools & trust boundaries in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply ai agents, tools & trust boundaries to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about ai agents, tools & trust boundaries?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of ai agents, tools & trust boundaries?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: AI Agents, Tools & Trust Boundaries is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat AI Agents, Tools & Trust Boundaries as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break AI Agents, Tools & Trust Boundaries into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to AI Agents, Tools & Trust Boundaries changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about AI Agents, Tools & Trust Boundaries should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of AI Agents, Tools & Trust Boundaries was wrong?"
-      },
-      {
-        "id": "ae-06",
-        "title": "Responsible AI, Privacy & Governance",
-        "objective": "Build first-principles understanding of responsible ai, privacy & governance and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Machine Learning + Security Engineering foundations",
-        "read": "Responsible AI, Privacy & Governance is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "Responsible AI, Privacy & Governance",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "Responsible AI, Privacy & Governance",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "Responsible AI, Privacy & Governance",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate responsible ai, privacy & governance in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply responsible ai, privacy & governance to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about responsible ai, privacy & governance?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of responsible ai, privacy & governance?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: Responsible AI, Privacy & Governance is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Responsible AI, Privacy & Governance as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Responsible AI, Privacy & Governance into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Responsible AI, Privacy & Governance changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Responsible AI, Privacy & Governance should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Responsible AI, Privacy & Governance was wrong?"
-      },
-      {
-        "id": "ae-07",
-        "title": "IoT, OT/ICS & Cyber-Physical Resilience",
-        "objective": "Build first-principles understanding of iot, ot/ics & cyber-physical resilience and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Machine Learning + Security Engineering foundations",
-        "read": "IoT, OT/ICS & Cyber-Physical Resilience is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "IoT, OT/ICS & Cyber-Physical Resilience",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "IoT, OT/ICS & Cyber-Physical Resilience",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "IoT, OT/ICS & Cyber-Physical Resilience",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate iot, ot/ics & cyber-physical resilience in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply iot, ot/ics & cyber-physical resilience to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about iot, ot/ics & cyber-physical resilience?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of iot, ot/ics & cyber-physical resilience?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: IoT, OT/ICS & Cyber-Physical Resilience is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat IoT, OT/ICS & Cyber-Physical Resilience as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break IoT, OT/ICS & Cyber-Physical Resilience into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to IoT, OT/ICS & Cyber-Physical Resilience changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about IoT, OT/ICS & Cyber-Physical Resilience should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of IoT, OT/ICS & Cyber-Physical Resilience was wrong?"
-      },
-      {
-        "id": "ae-08",
-        "title": "Supply Chain & Emerging Technology Risk",
-        "objective": "Build first-principles understanding of supply chain & emerging technology risk and apply it to a controlled security decision.",
-        "time": "2–2.75 hours",
-        "prerequisite": "Machine Learning + Security Engineering foundations",
-        "read": "Supply Chain & Emerging Technology Risk is taught as a mechanism, not a vocabulary item. Start with the security objective, identify the trust boundary, trace the mechanism, inspect failure modes, then apply the concept to a scoped case.",
-        "concepts": [
-          "Supply Chain & Emerging Technology Risk",
-          "Threat model",
-          "Trust boundary",
-          "Evidence",
-          "Trade-offs"
-        ],
-        "glossary": [
-          [
-            "Supply Chain & Emerging Technology Risk",
-            "A mechanism or practice used to address a defined technical or security objective."
-          ],
-          [
-            "Trust boundary",
-            "A boundary across which assumptions about identity, privilege or data handling change."
-          ],
-          [
-            "Evidence",
-            "Observable information used to support or challenge a conclusion."
-          ]
-        ],
-        "visual": {
-          "title": "Supply Chain & Emerging Technology Risk",
-          "caption": "Objective → mechanism → boundary → evidence → decision",
-          "steps": [
-            "Define objective",
-            "Trace mechanism",
-            "Identify boundary",
-            "Inspect evidence",
-            "Choose action"
-          ]
-        },
-        "case": "A professional team must evaluate supply chain & emerging technology risk in an enterprise environment with incomplete information, operational constraints and competing business priorities.",
-        "caseQuestions": [
-          "What objective is being protected?",
-          "What assumptions does the mechanism make?",
-          "What failure mode matters most?",
-          "What evidence should be collected?",
-          "What decision is justified by the evidence?"
-        ],
-        "practice": "Apply supply chain & emerging technology risk to the case. Produce a diagram or written model, identify assumptions, compare two approaches and record the evidence needed for the decision.",
-        "practiceSteps": [
-          "State the objective.",
-          "Draw the mechanism and trust boundary.",
-          "List assumptions and failure modes.",
-          "Identify evidence and uncertainty.",
-          "Compare two defensible approaches.",
-          "Document the decision and limitations."
-        ],
-        "evidence": "A reviewable artifact containing the model, assumptions, evidence, decision and limitations.",
-        "mistakes": [
-          "Confusing a mechanism with a guarantee.",
-          "Ignoring trust-boundary assumptions.",
-          "Selecting a tool before defining the objective.",
-          "Reporting a conclusion without evidence."
-        ],
-        "qa": [
-          {
-            "q": "What must you understand about supply chain & emerging technology risk?",
-            "a": "Its objective, mechanism, assumptions, boundaries and failure modes.",
-            "why": "These make the knowledge transferable."
-          },
-          {
-            "q": "Why is evidence important?",
-            "a": "Because security decisions must be reproducible and challengeable.",
-            "why": "Evidence separates analysis from intuition."
-          },
-          {
-            "q": "What is mastery?",
-            "a": "Explain the mechanism, apply it to a case and defend the conclusion.",
-            "why": "Mastery requires application and reasoning."
-          }
-        ],
-        "check": {
-          "q": "Which approach best demonstrates understanding of supply chain & emerging technology risk?",
-          "options": [
-            "Explain the mechanism, apply it to a case and justify the result",
-            "Memorize terms only",
-            "Choose a product first",
-            "Ignore assumptions"
-          ],
-          "answer": "Explain the mechanism, apply it to a case and justify the result",
-          "why": "Deep capability requires mechanism-level understanding and evidence."
-        },
-        "why": "Why this matters: Supply Chain & Emerging Technology Risk is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Supply Chain & Emerging Technology Risk as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is technical mechanism, evidence and decision-making."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Supply Chain & Emerging Technology Risk into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Supply Chain & Emerging Technology Risk changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Supply Chain & Emerging Technology Risk should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Supply Chain & Emerging Technology Risk was wrong?"
-      }
-    ]
   }
 ];
 
