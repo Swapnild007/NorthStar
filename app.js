@@ -1,4 +1,4 @@
-const VERSION="0.2.0";
+const VERSION="0.2.1";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 
 function readStoredJSON(key,fallback){
