@@ -2521,7 +2521,7 @@ const NORTHSTAR_CURRICULUM = [
     ],
     "meta": {
       "level": "Foundation / Core",
-      "load": "10–12 hours",
+      "load": "8–10 hours",
       "focus": "Build the common language of cybersecurity: objectives, identity, threats, vulnerabilities, risk, controls, trust boundaries and governance.",
       "outcomes": [
         "Frame security problems using assets, threats, vulnerabilities and controls.",
@@ -2940,7 +2940,7 @@ const NORTHSTAR_CURRICULUM = [
     ],
     "meta": {
       "level": "Core Technical",
-      "load": "12–14 hours",
+      "load": "10–12 hours",
       "focus": "Move from packet fundamentals to segmentation, protocol security and observable network behavior.",
       "outcomes": [
         "Interpret IP addresses, ports, protocols and TCP behavior.",
@@ -3426,7 +3426,7 @@ const NORTHSTAR_CURRICULUM = [
     ],
     "meta": {
       "level": "Core Technical",
-      "load": "12–14 hours",
+      "load": "7–9 hours",
       "focus": "Operating-system security, cloud responsibility, hardening, identity and secrets.",
       "outcomes": [
         "Review users, groups, permissions, processes and services.",
@@ -3842,7 +3842,7 @@ const NORTHSTAR_CURRICULUM = [
     ],
     "meta": {
       "level": "Core / SOC",
-      "load": "14–16 hours",
+      "load": "12–14 hours",
       "focus": "Build an analyst workflow from telemetry through detection, triage, response, evidence and recovery.",
       "outcomes": [
         "Design telemetry around questions an analyst must answer.",
@@ -4313,7 +4313,7 @@ const NORTHSTAR_CURRICULUM = [
     ],
     "meta": {
       "level": "Applied Security Testing",
-      "load": "12–14 hours",
+      "load": "10–12 hours",
       "focus": "Authorized testing methodology, application attack surfaces, validation and reporting.",
       "outcomes": [
         "Define scope and rules of engagement before testing.",
@@ -4781,7 +4781,7 @@ const NORTHSTAR_CURRICULUM = [
     ],
     "meta": {
       "level": "Advanced Integration",
-      "load": "14–16 hours",
+      "load": "12–14 hours",
       "focus": "Engineer security into software and infrastructure through architecture, secure development, automation and measurable controls.",
       "outcomes": [
         "Integrate security controls throughout software delivery.",
