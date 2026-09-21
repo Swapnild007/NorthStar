@@ -1,6 +1,17 @@
-const VERSION="1.0.0";
-const savedCompleted=JSON.parse(localStorage.getItem("ns_completed_lessons")||"[]");
-const savedLabs=JSON.parse(localStorage.getItem("ns_lab_state")||"{}");
+const VERSION="1.0.1";
+
+function readStoredJSON(key,fallback){
+ try{
+  const raw=localStorage.getItem(key);
+  return raw===null?fallback:JSON.parse(raw);
+ }catch(error){
+  console.warn(`NorthStar ignored invalid local storage for ${key}.`,error);
+  return fallback;
+ }
+}
+
+const savedCompleted=readStoredJSON("ns_completed_lessons",[]);
+const savedLabs=readStoredJSON("ns_lab_state",{});
 
 const curriculum=Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[];
 const labs=[
@@ -10,7 +21,7 @@ const labs=[
  ["Incident Room","Triage a simulated security incident","Advanced","Build a timeline from controlled evidence and document containment decisions."]
 ];
 const nav=[["home","Home","⌂"],["learn","Learn","▤"],["ai","AI","✦"],["labs","Labs","⌁"],["progress","Progress","◉"]];
-const savedAI=JSON.parse(localStorage.getItem("ns_ai_messages")||"null");
+const savedAI=readStoredJSON("ns_ai_messages",null);
 let aiEngine=null;
 let aiLoading=false;
 let aiProgress=0;
@@ -234,4 +245,15 @@ async function askNorthStar(q){
 ;
 
 // Boot the application after all view and event handlers are defined.
-render();
+function boot(){
+ try{
+  render();
+ }catch(error){
+  console.error("NorthStar boot failure:",error);
+  const app=document.querySelector("#app");
+  if(app){
+   app.innerHTML=`<main style="min-height:100vh;display:grid;place-items:center;padding:24px;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#f5f8fc;color:#0f172a"><section style="max-width:560px;width:100%;padding:24px;border-radius:24px;background:rgba(255,255,255,.9);border:1px solid #e2e8f0;box-shadow:0 20px 60px rgba(15,23,42,.08)"><strong style="display:block;font-size:18px;margin-bottom:8px">NorthStar could not start</strong><p style="color:#64748b;line-height:1.5;margin:0 0 16px">The application hit a startup error. Reload once; if the problem remains, send this screen to the NorthStar developer.</p><button onclick="location.reload()" style="border:0;border-radius:14px;padding:11px 16px;background:#2563eb;color:white;font-weight:800">Reload NorthStar</button></section></main>`;
+  }
+ }
+}
+boot();
