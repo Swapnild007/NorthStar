@@ -9,10 +9,16 @@ const labs=[
  ["Detection Drill","Turn telemetry into a detection rule","Intermediate","Inspect simulated telemetry and produce a defensible detection hypothesis."],
  ["Incident Room","Triage a simulated security incident","Advanced","Build a timeline from controlled evidence and document containment decisions."]
 ];
-const nav=[["home","Home","⌂"],["learn","Learn","▤"],["labs","Labs","⌁"],["ai","AI","✦"],["progress","Progress","◉"]];
+const nav=[["home","Home","⌂"],["learn","Learn","▤"],["ai","AI","✦"],["labs","Labs","⌁"],["progress","Progress","◉"]];
+const savedAI=JSON.parse(localStorage.getItem("ns_ai_messages")||"null");
+let aiEngine=null;
+let aiLoading=false;
+let aiProgress=0;
+let aiError="";
 const state={
  route:"home",filter:"All",completedLessons:Array.isArray(savedCompleted)?savedCompleted:[],
- labState:typeof savedLabs==="object"&&savedLabs?savedLabs:{},messages:[["ai","I’m your NorthStar companion. Ask about a concept, lab, or learning path."]],
+ labState:typeof savedLabs==="object"&&savedLabs?savedLabs:{},
+ messages:Array.isArray(savedAI)&&savedAI.length?savedAI:[["ai","I’m your NorthStar AI Mentor. I run locally in your browser, so your conversation does not need a NorthStar server."]],
  selectedCourse:0,selectedLesson:0,selectedLab:0,lessonTab:"Read",checkAnswer:""
 };
 const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
@@ -23,7 +29,11 @@ const completedCount=()=>state.completedLessons.filter(id=>allLessons().some(l=>
 const labCompletedCount=()=>Object.values(state.labState).filter(v=>v==="completed").length;
 const overallPercent=()=>Math.round(((completedCount()/Math.max(1,totalLessons()))+(labCompletedCount()/labs.length))/2*100);
 const courseProgress=i=>{const ls=curriculum[i]?.lessons||[];return ls.length?Math.round(ls.filter(l=>state.completedLessons.includes(l.id)).length/ls.length*100):0};
-const persist=()=>{localStorage.setItem("ns_completed_lessons",JSON.stringify(state.completedLessons));localStorage.setItem("ns_lab_state",JSON.stringify(state.labState));};
+const persist=()=>{
+ localStorage.setItem("ns_completed_lessons",JSON.stringify(state.completedLessons));
+ localStorage.setItem("ns_lab_state",JSON.stringify(state.labState));
+ localStorage.setItem("ns_ai_messages",JSON.stringify(state.messages.slice(-40)));
+};
 const go=r=>{state.route=r;window.scrollTo({top:0,behavior:"smooth"});render()};
 const iconFor=i=>["◈","◎","☁","◉","⌁","◇"][i]||"•";
 
@@ -118,7 +128,16 @@ const views={
   <div class="section card glass"><span class="eyebrow">Execution layer</span><h2>Sandbox contract pending</h2><p class="subtitle">The workflow is real; execution is intentionally not faked. A future isolated runner can plug into this interface.</p></div>
  </section>`,
  lab:()=>{const l=labs[state.selectedLab],s=state.labState[state.selectedLab]||"ready";return `<section class="fade"><button class="back" data-route="labs">← Back to labs</button><div class="card glass lesson-card"><span class="eyebrow">Controlled lab</span><h1>${l[0]}</h1><p class="subtitle">${l[1]}.</p><div class="inset"><span class="badge ${s==="completed"?"done":""}">${s==="completed"?"Completed":s==="started"?"In progress":l[2]}</span><h2>Objective</h2><p class="subtitle">${l[3]}</p><h2>Runner status</h2><p class="subtitle">${s==="completed"?"Evidence checkpoint recorded locally.":"Not connected. Interface workflow only."}</p></div><div class="lesson-footer"><button class="chip" data-route="labs">Return</button><button class="chip active" data-lab-complete>${s==="completed"?"Completed":s==="started"?"Complete lab":"Start lab"}</button></div></div></section>`},
- ai:()=>`<section class="fade"><span class="eyebrow">AI companion</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">Think with the system.</h1><p class="subtitle">Explain, challenge and connect what you are learning. This interface remains local until a secure backend contract is defined.</p><div class="tabs"><button class="chip" data-prompt="Explain TCP three-way handshake simply">Explain a concept</button><button class="chip" data-prompt="Give me a networking practice question">Practice question</button><button class="chip" data-prompt="What should I learn next?">Next step</button></div><div class="section card glass chat"><div class="messages">${state.messages.map(m=>`<div class="msg ${m[0]==="user"?"user":""}">${esc(m[1])}</div>`).join("")}</div><form class="composer" id="chat"><input id="prompt" autocomplete="off" placeholder="Ask: explain TCP three-way handshake"><button class="send">Send</button></form></div></section>`,
+ ai:()=>`<section class="fade">
+  <div class="section-head"><div><span class="eyebrow">AI companion</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">NorthStar AI Mentor</h1></div><button class="chip" data-clear-chat>Clear chat</button></div>
+  <p class="subtitle">A real local LLM running in your browser. No API key is embedded in NorthStar.</p>
+  <div class="tabs"><button class="chip" data-prompt="Explain TCP three-way handshake simply">Explain a concept</button><button class="chip" data-prompt="Give me a networking practice question">Practice question</button><button class="chip" data-prompt="What should I learn next in cybersecurity?">Next step</button></div>
+  <div class="section card glass chat">
+    <div class="ai-status ${aiError?"error":aiLoading?"loading":"ready"}">${aiLoading?`Loading local model… ${Math.round(aiProgress*100)}%`:aiError?esc(aiError):aiEngine?"● Local AI ready":"Local AI will initialize when you send your first message."}</div>
+    <div class="messages" id="messages">${state.messages.map((m,i)=>`<div class="msg ${m[0]==="user"?"user":""} ${i===state.messages.length-1&&m[0]==="ai"&&aiLoading?"ai-stream":""}">${esc(m[1])}</div>`).join("")}</div>
+    <form class="composer" id="chat"><input id="prompt" autocomplete="off" ${aiLoading?"disabled":""} placeholder="Ask NorthStar anything about cybersecurity"><button class="send" ${aiLoading?"disabled":""}>Send</button></form>
+  </div>
+ </section>`,
  progress:()=>{const p=overallPercent();return `<section class="fade"><span class="eyebrow">Progress</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">See your evidence.</h1><div class="section grid two"><div class="card glass progress-card"><div class="ring" style="--p:${p}%"><span>${p}%</span></div><h2>Overall progress</h2><p class="subtitle">${completedCount()} of ${totalLessons()} lessons and ${labCompletedCount()} of ${labs.length} labs completed.</p></div><div class="card glass"><span class="eyebrow">Skill matrix</span>${skillRows()}</div></div><div class="section grid stats"><div class="stat glass"><b>${completedCount()}</b><span>Lessons complete</span></div><div class="stat glass"><b>${totalLessons()-completedCount()}</b><span>Lessons remaining</span></div><div class="stat glass"><b>${labCompletedCount()}</b><span>Labs complete</span></div><div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div></div></section>`}
 };
 
@@ -145,6 +164,71 @@ function bind(){
  const labComplete=document.querySelector("[data-lab-complete]");
  if(labComplete)labComplete.onclick=()=>{state.labState[state.selectedLab]="completed";persist();render()};
  document.querySelectorAll("[data-prompt]").forEach(b=>b.onclick=()=>{const input=document.querySelector("#prompt");if(input){input.value=b.dataset.prompt;input.focus()}});
- const form=document.querySelector("#chat");if(form)form.onsubmit=e=>{e.preventDefault();const input=document.querySelector("#prompt"),q=input.value.trim();if(!q)return;state.messages.push(["user",q],["ai","For this UI phase, the companion is a local interaction shell. A real model connection will be added when the backend contract is defined."]);render()};
+ const clear=document.querySelector("[data-clear-chat]");
+ if(clear)clear.onclick=()=>{state.messages=[["ai","Chat cleared. I’m ready for your next cybersecurity question."]];persist();render()};
+ const form=document.querySelector("#chat");
+ if(form)form.onsubmit=async e=>{
+   e.preventDefault();
+   const input=document.querySelector("#prompt"),q=input?.value.trim();
+   if(!q||aiLoading)return;
+   state.messages.push(["user",q],["ai",""]);
+   persist();render();
+   await askNorthStar(q);
+ };
 }
-render();
+async function ensureAI(){
+ if(aiEngine)return aiEngine;
+ if(aiLoading)return null;
+ aiLoading=true;aiError="";aiProgress=0;render();
+ try{
+   const webllm=await import("https://esm.run/@mlc-ai/web-llm@0.2.82");
+   aiEngine=await webllm.CreateMLCEngine("Qwen3-0.6B-q4f16_1-MLC",{
+     initProgressCallback:p=>{aiProgress=typeof p?.progress==="number"?p.progress:aiProgress;const el=document.querySelector(".ai-status");if(el)el.textContent=`Loading local model… ${Math.round(aiProgress*100)}%`;},
+   });
+   aiLoading=false;render();
+   return aiEngine;
+ }catch(err){
+   aiLoading=false;
+   aiError="Local AI could not start. Use Chrome with WebGPU enabled and reload the page.";
+   console.error(err);
+   render();
+   return null;
+ }
+}
+
+function mentorSystem(){
+ const pathSummary=curriculum.map(c=>`${c.title}: ${(c.lessons||[]).map(l=>l.title).join(", ")}`).join("\n");
+ return `You are NorthStar AI Mentor, the cybersecurity tutor inside NorthStar.
+Teach clearly to a beginner while remaining technically accurate.
+Use the NorthStar curriculum as the primary learning map:
+${pathSummary}
+Focus on defensive security, secure engineering, authorized testing and controlled labs.
+For offensive-security questions, keep guidance scoped to systems the learner owns or is explicitly authorized to test; do not provide instructions that facilitate real-world compromise, credential theft, malware, persistence, evasion, or destructive activity.
+When useful, structure answers as concept, example, practice, and check.
+Do not claim access to NorthStar backend systems or external user data.`;
+}
+
+async function askNorthStar(q){
+ const engine=await ensureAI();
+ if(!engine)return;
+ const history=state.messages.slice(-14).map(m=>({role:m[0]==="user"?"user":"assistant",content:m[1]}));
+ const system={role:"system",content:mentorSystem()};
+ const target=document.querySelector(".ai-stream");
+ try{
+   const stream=await engine.chat.completions.create({messages:[system,...history],temperature:.5,max_tokens:500,stream:true});
+   let reply="";
+   for await(const chunk of stream){
+     reply+=chunk.choices?.[0]?.delta?.content||"";
+     state.messages[state.messages.length-1][1]=reply;
+     const el=document.querySelector(".ai-stream");
+     if(el){el.textContent=reply;el.scrollIntoView({block:"nearest"});}
+   }
+   persist();aiError="";render();
+ }catch(err){
+   console.error(err);
+   state.messages[state.messages.length-1][1]="I hit a local inference error. Reload the page and try again.";
+   aiError="Inference failed. Your model stays local; no API key was exposed.";
+   persist();render();
+ }
+}
+;
