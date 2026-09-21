@@ -99,7 +99,81 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "answer": "CPU",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
+      },
+      "learningGoal": "Build a mental model of how input becomes output and where hardware, software, data and instructions fit.",
+      "highlights": [
+        "A computer is a system, not just a physical device.",
+        "CPU, RAM and storage perform different jobs.",
+        "Security protects resources, information and permitted actions."
+      ],
+      "studyPlan": [
+        [
+          "Mental model",
+          "10 min"
+        ],
+        [
+          "Theory",
+          "15 min"
+        ],
+        [
+          "Worked examples",
+          "15 min"
+        ],
+        [
+          "Security connection",
+          "15 min"
+        ],
+        [
+          "Guided practice",
+          "15 min"
+        ],
+        [
+          "Q&A / self-explanation",
+          "10 min"
+        ]
+      ],
+      "examples": [
+        {
+          "title": "Opening a photo",
+          "body": "The photo stays on storage, is loaded for active use, processed and rendered.",
+          "answer": "The photo is data; the application is software; RAM is working space."
+        },
+        {
+          "title": "Security lens",
+          "body": "A customer CSV is readable by every local user.",
+          "answer": "The system may function correctly while access control is unsafe."
+        }
+      ],
+      "notes": [
+        "Do not memorize component names without their relationships.",
+        "Storage is persistent; RAM is active working memory.",
+        "Security questions should identify the exact resource and identity involved."
+      ],
+      "takeaways": [
+        "Hardware, software, data and instructions form the basic model.",
+        "CPU executes; RAM supports active work; storage persists information.",
+        "Trace data through the system to locate security boundaries."
+      ],
+      "practiceSteps": [
+        "Choose a familiar file.",
+        "Trace where it is stored.",
+        "Identify what becomes active in memory.",
+        "Identify the accessing identity.",
+        "Write one security question per stage."
+      ],
+      "reflection": "Explain the computer model without using the words CPU, RAM or storage first.",
+      "qa": [
+        {
+          "q": "Why is RAM different from storage?",
+          "a": "RAM is working memory; storage is persistent space.",
+          "why": "Running programs and retained files need different resources."
+        },
+        {
+          "q": "Why does cybersecurity need this model?",
+          "a": "Controls protect concrete resources, data and identities.",
+          "why": "A precise model prevents vague security reasoning."
+        }
+      ]
     },
     {
       "id": "cf-02",
@@ -167,7 +241,81 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "answer": "Managing access to resources and running programs",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
+      },
+      "learningGoal": "Explain the operating system as the management and security layer between applications and hardware.",
+      "highlights": [
+        "Applications normally request resources through the OS.",
+        "The kernel is privileged and therefore security-critical.",
+        "Permissions connect identities to actions."
+      ],
+      "studyPlan": [
+        [
+          "Recap",
+          "10 min"
+        ],
+        [
+          "OS layers",
+          "15 min"
+        ],
+        [
+          "Users/processes",
+          "20 min"
+        ],
+        [
+          "Trace an action",
+          "15 min"
+        ],
+        [
+          "Case",
+          "15 min"
+        ],
+        [
+          "Review",
+          "10 min"
+        ]
+      ],
+      "examples": [
+        {
+          "title": "Protected file",
+          "body": "An application asks the OS to open a file.",
+          "answer": "The OS can evaluate identity and permissions before returning the resource."
+        },
+        {
+          "title": "Service account",
+          "body": "A web service runs under a dedicated identity.",
+          "answer": "A compromise is constrained by that identity's permissions."
+        }
+      ],
+      "notes": [
+        "The OS is more than a graphical interface.",
+        "Kernel-level authority has broad security impact.",
+        "Least privilege reduces blast radius."
+      ],
+      "takeaways": [
+        "The OS coordinates resources.",
+        "The kernel is privileged.",
+        "Permissions create important security boundaries."
+      ],
+      "practiceSteps": [
+        "Choose one OS action.",
+        "Identify the requesting application.",
+        "Identify its identity.",
+        "State the permission check.",
+        "Describe the consequence of bypassing it."
+      ],
+      "reflection": "Why should applications not have unrestricted access to every file and device?",
+      "qa": [
+        {
+          "q": "What is a major OS security role?",
+          "a": "Managing resources, processes and access.",
+          "why": "Central management creates consistent boundaries."
+        },
+        {
+          "q": "Why is the kernel important?",
+          "a": "It performs privileged operations.",
+          "why": "Compromise at a privileged layer can have broad impact."
+        }
+      ]
     },
     {
       "id": "cf-03",
@@ -237,7 +385,81 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "answer": "It helps determine appropriate handling and access",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
+      },
+      "learningGoal": "Follow information through file creation, storage, use, sharing, backup, retention and deletion.",
+      "highlights": [
+        "One file can have many copies.",
+        "Sensitivity comes from information, not the filename.",
+        "Backups are part of the security boundary."
+      ],
+      "studyPlan": [
+        [
+          "File model",
+          "10 min"
+        ],
+        [
+          "Paths and permissions",
+          "15 min"
+        ],
+        [
+          "Lifecycle",
+          "15 min"
+        ],
+        [
+          "Copies/backups",
+          "15 min"
+        ],
+        [
+          "Case",
+          "15 min"
+        ],
+        [
+          "Review",
+          "10 min"
+        ]
+      ],
+      "examples": [
+        {
+          "title": "Customer CSV",
+          "body": "The same data exists in a working folder and shared backup.",
+          "answer": "Each copy needs appropriate access and retention controls."
+        },
+        {
+          "title": "Deletion",
+          "body": "A local copy is deleted but a backup still contains it.",
+          "answer": "Deletion must be evaluated across the lifecycle."
+        }
+      ],
+      "notes": [
+        "A copied file remains the same sensitive information.",
+        "Backups improve availability but add access requirements.",
+        "Classification should drive handling."
+      ],
+      "takeaways": [
+        "Think about information, not just filenames.",
+        "Copies and backups extend the lifecycle.",
+        "Retention and deletion are security decisions."
+      ],
+      "practiceSteps": [
+        "Choose a fictional sensitive file.",
+        "List its possible locations.",
+        "Classify it.",
+        "Assign access requirements.",
+        "Define evidence for deletion or retention."
+      ],
+      "reflection": "What other places could contain a file after you delete the visible copy?",
+      "qa": [
+        {
+          "q": "Why can backups create security risk?",
+          "a": "They contain additional copies.",
+          "why": "Every copy creates another access and retention boundary."
+        },
+        {
+          "q": "Does a filename determine sensitivity?",
+          "a": "No.",
+          "why": "The information and business context determine sensitivity."
+        }
+      ]
     },
     {
       "id": "cf-04",
@@ -302,7 +524,81 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "answer": "A process is a running instance of a program",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
+      },
+      "learningGoal": "Distinguish a stored program from a running process and connect process identity and privilege to security.",
+      "highlights": [
+        "A process is a running instance of a program.",
+        "Processes operate within a security context.",
+        "Least privilege limits the impact of compromise."
+      ],
+      "studyPlan": [
+        [
+          "Program vs process",
+          "10 min"
+        ],
+        [
+          "Memory",
+          "15 min"
+        ],
+        [
+          "Identity",
+          "15 min"
+        ],
+        [
+          "Security case",
+          "15 min"
+        ],
+        [
+          "Process matrix",
+          "15 min"
+        ],
+        [
+          "Review",
+          "10 min"
+        ]
+      ],
+      "examples": [
+        {
+          "title": "Web server",
+          "body": "A web process only needs its application files but has administrator rights.",
+          "answer": "Excess authority increases potential impact."
+        },
+        {
+          "title": "Parent-child process",
+          "body": "An application launches a helper process.",
+          "answer": "The relationship adds useful investigation context."
+        }
+      ],
+      "notes": [
+        "Program is stored code; process is runtime execution.",
+        "Process identity affects what it can do.",
+        "Least privilege is containment, not a cure."
+      ],
+      "takeaways": [
+        "Processes consume resources and perform actions.",
+        "Identity and privilege matter at runtime.",
+        "Observe process behavior through useful telemetry."
+      ],
+      "practiceSteps": [
+        "Choose a process.",
+        "State its purpose.",
+        "List required resources.",
+        "Define one prohibited action.",
+        "Choose one log source."
+      ],
+      "reflection": "Why is 'the application is trusted' an incomplete security statement?",
+      "qa": [
+        {
+          "q": "What is a process?",
+          "a": "A running instance of a program.",
+          "why": "It is the runtime context that performs actions."
+        },
+        {
+          "q": "Does least privilege eliminate vulnerabilities?",
+          "a": "No.",
+          "why": "It reduces potential impact."
+        }
+      ]
     },
     {
       "id": "cf-05",
@@ -376,7 +672,81 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "answer": "Help translate human-friendly names into network addressing information",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
+      },
+      "learningGoal": "Trace a request across networks and recognize paths, endpoints and trust boundaries.",
+      "highlights": [
+        "The internet is a network of networks.",
+        "Packets move through forwarding decisions.",
+        "Reachability creates security exposure."
+      ],
+      "studyPlan": [
+        [
+          "Vocabulary",
+          "15 min"
+        ],
+        [
+          "Trace a request",
+          "20 min"
+        ],
+        [
+          "Routing model",
+          "20 min"
+        ],
+        [
+          "Security boundaries",
+          "15 min"
+        ],
+        [
+          "Case",
+          "20 min"
+        ],
+        [
+          "Review",
+          "10 min"
+        ]
+      ],
+      "examples": [
+        {
+          "title": "Website request",
+          "body": "A client reaches a remote server through multiple networks.",
+          "answer": "Several network boundaries participate in the path."
+        },
+        {
+          "title": "Public database",
+          "body": "A database is reachable from the public network.",
+          "answer": "The path contradicts an architecture that expects only application access."
+        }
+      ],
+      "notes": [
+        "The internet is not one pipe.",
+        "A packet is not the same as a complete request.",
+        "Network exposure should be compared with intended design."
+      ],
+      "takeaways": [
+        "Networks connect endpoints through paths.",
+        "Routers forward traffic between networks.",
+        "Security depends on who can reach what."
+      ],
+      "practiceSteps": [
+        "Draw the client.",
+        "Add local network.",
+        "Add provider/intermediate networks.",
+        "Add destination.",
+        "Mark two security boundaries."
+      ],
+      "reflection": "If two systems can communicate, what should you verify before calling the path safe?",
+      "qa": [
+        {
+          "q": "What is the internet?",
+          "a": "A collection of interconnected networks.",
+          "why": "This explains routing and administrative boundaries."
+        },
+        {
+          "q": "What does a router do?",
+          "a": "It forwards traffic between networks.",
+          "why": "Routers form part of the path packets take."
+        }
+      ]
     },
     {
       "id": "cf-06",
@@ -441,7 +811,81 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "answer": "A transport endpoint associated with a service",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
+      },
+      "learningGoal": "Connect domain names, DNS, IP addresses, ports and services into one reasoning chain.",
+      "highlights": [
+        "DNS solves naming.",
+        "IP addresses and ports answer different reachability questions.",
+        "Exposed services reveal attack surface but do not prove compromise."
+      ],
+      "studyPlan": [
+        [
+          "DNS",
+          "20 min"
+        ],
+        [
+          "IP addresses",
+          "20 min"
+        ],
+        [
+          "Ports",
+          "20 min"
+        ],
+        [
+          "Trace service",
+          "20 min"
+        ],
+        [
+          "Exposure analysis",
+          "20 min"
+        ],
+        [
+          "Review",
+          "10 min"
+        ]
+      ],
+      "examples": [
+        {
+          "title": "Multiple services",
+          "body": "One host provides web and monitoring services.",
+          "answer": "One IP can support multiple transport endpoints."
+        },
+        {
+          "title": "Unexpected port",
+          "body": "A database listener is public.",
+          "answer": "Treat it as evidence of exposure and validate against intended architecture."
+        }
+      ],
+      "notes": [
+        "DNS is naming, not encryption.",
+        "IP address and port are different concepts.",
+        "An open port is an observation, not proof of breach."
+      ],
+      "takeaways": [
+        "Domain → DNS → IP → port/protocol → service is a useful beginner chain.",
+        "Ports help distinguish services.",
+        "Exposure should be justified by requirements."
+      ],
+      "practiceSteps": [
+        "Create a fictional service.",
+        "Assign an IP.",
+        "Choose a port/protocol.",
+        "State intended users.",
+        "Mark unnecessary exposure."
+      ],
+      "reflection": "Why is 'port 443 is open' not a complete security conclusion?",
+      "qa": [
+        {
+          "q": "What does DNS solve?",
+          "a": "Mapping names to DNS records.",
+          "why": "Names and network addresses serve different purposes."
+        },
+        {
+          "q": "Can two services use one IP?",
+          "a": "Yes, using different transport endpoints.",
+          "why": "A host can expose multiple services."
+        }
+      ]
     },
     {
       "id": "cf-07",
@@ -516,7 +960,81 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "answer": "TLS-based protection for the communication channel",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
+      },
+      "learningGoal": "Trace HTTP request/response flow and explain the security boundary provided by HTTPS.",
+      "highlights": [
+        "HTTP defines web requests and responses.",
+        "HTTPS uses TLS to protect communication in transit.",
+        "HTTPS does not fix application authorization."
+      ],
+      "studyPlan": [
+        [
+          "HTTP model",
+          "20 min"
+        ],
+        [
+          "Methods/status codes",
+          "20 min"
+        ],
+        [
+          "TLS",
+          "25 min"
+        ],
+        [
+          "Application boundary",
+          "15 min"
+        ],
+        [
+          "Case",
+          "15 min"
+        ],
+        [
+          "Review",
+          "10 min"
+        ]
+      ],
+      "examples": [
+        {
+          "title": "Login over HTTPS",
+          "body": "Credentials travel over a TLS-protected channel.",
+          "answer": "Transport is protected, but authentication logic still matters."
+        },
+        {
+          "title": "HTTPS with authorization flaw",
+          "body": "A user can view another user's record despite HTTPS.",
+          "answer": "Transport security did not solve the application authorization problem."
+        }
+      ],
+      "notes": [
+        "HTTP and HTTPS are not the whole security model.",
+        "A padlock does not guarantee application safety.",
+        "Separate transport, authentication and authorization."
+      ],
+      "takeaways": [
+        "HTTP is request/response communication.",
+        "TLS protects the transport channel.",
+        "Application controls remain necessary."
+      ],
+      "practiceSteps": [
+        "Write a fictional GET request.",
+        "Add headers.",
+        "Write a response.",
+        "Mark data that needs transit protection.",
+        "Name one control HTTPS cannot provide."
+      ],
+      "reflection": "Why can a site with HTTPS still be insecure?",
+      "qa": [
+        {
+          "q": "What does HTTPS add?",
+          "a": "TLS-based protection for the communication channel.",
+          "why": "It protects transit but not every application decision."
+        },
+        {
+          "q": "Does HTTPS fix authorization?",
+          "a": "No.",
+          "why": "Authorization is an application-layer decision."
+        }
+      ]
     },
     {
       "id": "cf-08",
