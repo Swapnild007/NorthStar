@@ -115,10 +115,35 @@ const views={
  },
  learn:()=>{
   const filtered=state.filter==="All"?curriculum:curriculum.filter(c=>c.category===state.filter);
-  return `<section class="fade"><span class="eyebrow">Curriculum</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">Build real capability.</h1><p class="subtitle">Six structured paths · ${totalLessons()} lessons · Read → Practice → Check.</p>
+  return `<section class="fade">
+   <span class="eyebrow">Academic learning path</span>
+   <h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">Build real capability.</h1>
+   <p class="subtitle">Six structured modules · ${totalLessons()} lessons · case analysis · applied practice · assessment evidence.</p>
    <div class="tabs">${["All","Foundation","Network","Defensive","Offensive"].map(x=>`<button class="chip ${state.filter===x?"active":""}" data-filter="${x}">${x}</button>`).join("")}</div>
-   <div class="list">${filtered.map(c=>{const i=curriculum.indexOf(c),p=courseProgress(i),next=(c.lessons||[]).findIndex(l=>!state.completedLessons.includes(l.id));return `<button class="card glass school clickable" data-course="${i}" data-lesson="${next<0?0:next}"><div class="course-icon">${c.code}</div><div><strong>${esc(c.title)}</strong><p>${esc(c.description)} · ${c.lessons.length} lessons · ${p}% complete</p><div class="progress"><i style="width:${p}%"></i></div></div><span class="badge ${p===100?"done":""}">${p===100?"Complete":c.category}</span></button>`}).join("")}</div>
-   <div class="section card glass"><span class="eyebrow">Lesson engine</span><h2>Read → Practice → Check</h2><p class="subtitle">Every lesson is structured, interactive and tracked locally on this device.</p></div>
+   <div class="list section">${filtered.map(c=>{
+     const i=curriculum.indexOf(c),p=courseProgress(i),next=(c.lessons||[]).findIndex(l=>!state.completedLessons.includes(l.id)),m=c.meta||{};
+     return `<article class="card glass module-card">
+       <button class="school clickable" data-course="${i}" data-lesson="${next<0?0:next}">
+        <div class="course-icon">${c.code}</div>
+        <div class="course-main"><div class="module-title-row"><strong>${esc(c.title)}</strong><span class="badge ${p===100?"done":""}">${p===100?"Complete":m.level||c.category}</span></div><p>${esc(m.focus||c.description)}</p><div class="progress"><i style="width:${p}%"></i></div><small>${(c.lessons||[]).length} lessons · ${m.load||"Self-paced"} · ${p}% complete</small></div>
+       </button>
+       <details class="module-details">
+        <summary>Module outline & academic depth</summary>
+        <div class="module-detail-grid">
+         <div><span class="eyebrow">Learning outcomes</span><ul>${(m.outcomes||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+         <div><span class="eyebrow">Core topics</span><div class="topic-list">${(m.topics||[]).map(x=>`<span class="topic">${esc(x)}</span>`).join("")}</div></div>
+         <div><span class="eyebrow">Case analysis</span><p>${esc(m.case||"Applied case analysis.")}</p></div>
+         <div><span class="eyebrow">Assessment</span><p>${esc(m.assessment||"Knowledge check and applied exercise.")}</p></div>
+         <div><span class="eyebrow">Practical lab</span><p>${esc(m.lab||"Controlled practical exercise.")}</p></div>
+        </div>
+       </details>
+     </article>`;
+   }).join("")}</div>
+   <div class="section card glass">
+    <span class="eyebrow">Academic design</span>
+    <h2>Learn → Apply → Analyze → Evidence</h2>
+    <p class="subtitle">NorthStar uses a postgraduate-style applied structure: conceptual foundations, case analysis, simulations or controlled exercises, and evidence-based assessment. The benchmark is informed by publicly described IIM Information Systems, analytics, digital transformation and cybersecurity teaching approaches; this is not an official IIM curriculum.</p>
+   </div>
   </section>`;
  },
  lesson:()=>{
