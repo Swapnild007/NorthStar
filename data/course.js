@@ -3,7 +3,7 @@ window.NORTHSTAR_COURSE={
   "shortTitle": "CYBER SECURITY · MANAGEMENT · DATA SCIENCE",
   "tagline": "From absolute beginner to advanced capability.",
   "description": "A structured, evidence-driven learning path combining cybersecurity, data science, technical foundations and management thinking.",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "methodology": [
     "Orient",
     "Explain",
@@ -96,5 +96,9 @@ window.NORTHSTAR_COURSE={
       "name": "OWASP Top 10:2025",
       "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
     }
-  ]
+  ],
+  "pathways": 16,
+  "activeLessons": 140,
+  "workload": "261–329 hours",
+  "academicNote": "IIM-benchmarked structure uses case analysis, applied exercises, simulation and evidence-based assessment. NorthStar is not an official IIM curriculum."
 };
