@@ -100,17 +100,7 @@ const NORTHSTAR_CURRICULUM = [
         "answer": "CPU",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
       }
-    ,
-      "learningGoal": "Build a mental model of how input becomes output and where hardware, software, data and instructions fit.",
-      "highlights": ["A computer is a system, not just a physical device.","CPU, RAM and storage perform different jobs.","Security protects resources, information and permitted actions."],
-      "studyPlan": [["Mental model","10 min"],["Theory","15 min"],["Worked examples","15 min"],["Security connection","15 min"],["Guided practice","15 min"],["Q&A / self-explanation","10 min"]],
-      "examples": [{"title":"Opening a photo","body":"The photo stays on storage, is loaded for active use, processed and rendered.","answer":"The photo is data; the application is software; RAM is working space."},{"title":"Security lens","body":"A customer CSV is readable by every local user.","answer":"The system may function correctly while access control is unsafe."}],
-      "notes": ["Do not memorize component names without their relationships.","Storage is persistent; RAM is active working memory.","Security questions should identify the exact resource and identity involved."],
-      "takeaways": ["Hardware, software, data and instructions form the basic model.","CPU executes; RAM supports active work; storage persists information.","Trace data through the system to locate security boundaries."],
-      "practiceSteps": ["Choose a familiar file.","Trace where it is stored.","Identify what becomes active in memory.","Identify the accessing identity.","Write one security question per stage."],
-      "reflection": "Explain the computer model without using the words CPU, RAM or storage first.",
-      "qa": [{"q":"Why is RAM different from storage?","a":"RAM is working memory; storage is persistent space.","why":"Running programs and retained files need different resources."},{"q":"Why does cybersecurity need this model?","a":"Controls protect concrete resources, data and identities.","why":"A precise model prevents vague security reasoning."}]
-},
+    },
     {
       "id": "cf-02",
       "title": "Operating Systems: The Computer's Manager",
@@ -178,17 +168,7 @@ const NORTHSTAR_CURRICULUM = [
         "answer": "Managing access to resources and running programs",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
       }
-    ,
-      "learningGoal": "Explain the operating system as the management and security layer between applications and hardware.",
-      "highlights": ["Applications normally request resources through the OS.","The kernel is privileged and therefore security-critical.","Permissions connect identities to actions."],
-      "studyPlan": [["Recap","10 min"],["OS layers","15 min"],["Users/processes","20 min"],["Trace an action","15 min"],["Case","15 min"],["Review","10 min"]],
-      "examples": [{"title":"Protected file","body":"An application asks the OS to open a file.","answer":"The OS can evaluate identity and permissions before returning the resource."},{"title":"Service account","body":"A web service runs under a dedicated identity.","answer":"A compromise is constrained by that identity's permissions."}],
-      "notes": ["The OS is more than a graphical interface.","Kernel-level authority has broad security impact.","Least privilege reduces blast radius."],
-      "takeaways": ["The OS coordinates resources.","The kernel is privileged.","Permissions create important security boundaries."],
-      "practiceSteps": ["Choose one OS action.","Identify the requesting application.","Identify its identity.","State the permission check.","Describe the consequence of bypassing it."],
-      "reflection": "Why should applications not have unrestricted access to every file and device?",
-      "qa": [{"q":"What is a major OS security role?","a":"Managing resources, processes and access.","why":"Central management creates consistent boundaries."},{"q":"Why is the kernel important?","a":"It performs privileged operations.","why":"Compromise at a privileged layer can have broad impact."}]
-},
+    },
     {
       "id": "cf-03",
       "title": "Files, Folders & Storage",
@@ -258,17 +238,7 @@ const NORTHSTAR_CURRICULUM = [
         "answer": "It helps determine appropriate handling and access",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
       }
-    ,
-      "learningGoal": "Follow information through file creation, storage, use, sharing, backup, retention and deletion.",
-      "highlights": ["One file can have many copies.","Sensitivity comes from information, not the filename.","Backups are part of the security boundary."],
-      "studyPlan": [["File model","10 min"],["Paths and permissions","15 min"],["Lifecycle","15 min"],["Copies/backups","15 min"],["Case","15 min"],["Review","10 min"]],
-      "examples": [{"title":"Customer CSV","body":"The same data exists in a working folder and shared backup.","answer":"Each copy needs appropriate access and retention controls."},{"title":"Deletion","body":"A local copy is deleted but a backup still contains it.","answer":"Deletion must be evaluated across the lifecycle."}],
-      "notes": ["A copied file remains the same sensitive information.","Backups improve availability but add access requirements.","Classification should drive handling."],
-      "takeaways": ["Think about information, not just filenames.","Copies and backups extend the lifecycle.","Retention and deletion are security decisions."],
-      "practiceSteps": ["Choose a fictional sensitive file.","List its possible locations.","Classify it.","Assign access requirements.","Define evidence for deletion or retention."],
-      "reflection": "What other places could contain a file after you delete the visible copy?",
-      "qa": [{"q":"Why can backups create security risk?","a":"They contain additional copies.","why":"Every copy creates another access and retention boundary."},{"q":"Does a filename determine sensitivity?","a":"No.","why":"The information and business context determine sensitivity."}]
-},
+    },
     {
       "id": "cf-04",
       "title": "Programs, Processes & Memory",
@@ -333,17 +303,7 @@ const NORTHSTAR_CURRICULUM = [
         "answer": "A process is a running instance of a program",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
       }
-    ,
-      "learningGoal": "Distinguish a stored program from a running process and connect process identity and privilege to security.",
-      "highlights": ["A process is a running instance of a program.","Processes operate within a security context.","Least privilege limits the impact of compromise."],
-      "studyPlan": [["Program vs process","10 min"],["Memory","15 min"],["Identity","15 min"],["Security case","15 min"],["Process matrix","15 min"],["Review","10 min"]],
-      "examples": [{"title":"Web server","body":"A web process only needs its application files but has administrator rights.","answer":"Excess authority increases potential impact."},{"title":"Parent-child process","body":"An application launches a helper process.","answer":"The relationship adds useful investigation context."}],
-      "notes": ["Program is stored code; process is runtime execution.","Process identity affects what it can do.","Least privilege is containment, not a cure."],
-      "takeaways": ["Processes consume resources and perform actions.","Identity and privilege matter at runtime.","Observe process behavior through useful telemetry."],
-      "practiceSteps": ["Choose a process.","State its purpose.","List required resources.","Define one prohibited action.","Choose one log source."],
-      "reflection": "Why is 'the application is trusted' an incomplete security statement?",
-      "qa": [{"q":"What is a process?","a":"A running instance of a program.","why":"It is the runtime context that performs actions."},{"q":"Does least privilege eliminate vulnerabilities?","a":"No.","why":"It reduces potential impact."}]
-},
+    },
     {
       "id": "cf-05",
       "title": "How the Internet Works",
@@ -417,17 +377,7 @@ const NORTHSTAR_CURRICULUM = [
         "answer": "Help translate human-friendly names into network addressing information",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
       }
-    ,
-      "learningGoal": "Trace a request across networks and recognize paths, endpoints and trust boundaries.",
-      "highlights": ["The internet is a network of networks.","Packets move through forwarding decisions.","Reachability creates security exposure."],
-      "studyPlan": [["Vocabulary","15 min"],["Trace a request","20 min"],["Routing model","20 min"],["Security boundaries","15 min"],["Case","20 min"],["Review","10 min"]],
-      "examples": [{"title":"Website request","body":"A client reaches a remote server through multiple networks.","answer":"Several network boundaries participate in the path."},{"title":"Public database","body":"A database is reachable from the public network.","answer":"The path contradicts an architecture that expects only application access."}],
-      "notes": ["The internet is not one pipe.","A packet is not the same as a complete request.","Network exposure should be compared with intended design."],
-      "takeaways": ["Networks connect endpoints through paths.","Routers forward traffic between networks.","Security depends on who can reach what."],
-      "practiceSteps": ["Draw the client.","Add local network.","Add provider/intermediate networks.","Add destination.","Mark two security boundaries."],
-      "reflection": "If two systems can communicate, what should you verify before calling the path safe?",
-      "qa": [{"q":"What is the internet?","a":"A collection of interconnected networks.","why":"This explains routing and administrative boundaries."},{"q":"What does a router do?","a":"It forwards traffic between networks.","why":"Routers form part of the path packets take."}]
-},
+    },
     {
       "id": "cf-06",
       "title": "DNS, IP Addresses & Ports",
@@ -492,17 +442,7 @@ const NORTHSTAR_CURRICULUM = [
         "answer": "A transport endpoint associated with a service",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
       }
-    ,
-      "learningGoal": "Connect domain names, DNS, IP addresses, ports and services into one reasoning chain.",
-      "highlights": ["DNS solves naming.","IP addresses and ports answer different reachability questions.","Exposed services reveal attack surface but do not prove compromise."],
-      "studyPlan": [["DNS","20 min"],["IP addresses","20 min"],["Ports","20 min"],["Trace service","20 min"],["Exposure analysis","20 min"],["Review","10 min"]],
-      "examples": [{"title":"Multiple services","body":"One host provides web and monitoring services.","answer":"One IP can support multiple transport endpoints."},{"title":"Unexpected port","body":"A database listener is public.","answer":"Treat it as evidence of exposure and validate against intended architecture."}],
-      "notes": ["DNS is naming, not encryption.","IP address and port are different concepts.","An open port is an observation, not proof of breach."],
-      "takeaways": ["Domain → DNS → IP → port/protocol → service is a useful beginner chain.","Ports help distinguish services.","Exposure should be justified by requirements."],
-      "practiceSteps": ["Create a fictional service.","Assign an IP.","Choose a port/protocol.","State intended users.","Mark unnecessary exposure."],
-      "reflection": "Why is 'port 443 is open' not a complete security conclusion?",
-      "qa": [{"q":"What does DNS solve?","a":"Mapping names to DNS records.","why":"Names and network addresses serve different purposes."},{"q":"Can two services use one IP?","a":"Yes, using different transport endpoints.","why":"A host can expose multiple services."}]
-},
+    },
     {
       "id": "cf-07",
       "title": "Websites, HTTP & HTTPS",
@@ -577,17 +517,7 @@ const NORTHSTAR_CURRICULUM = [
         "answer": "TLS-based protection for the communication channel",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
       }
-    ,
-      "learningGoal": "Trace HTTP request/response flow and explain the security boundary provided by HTTPS.",
-      "highlights": ["HTTP defines web requests and responses.","HTTPS uses TLS to protect communication in transit.","HTTPS does not fix application authorization."],
-      "studyPlan": [["HTTP model","20 min"],["Methods/status codes","20 min"],["TLS","25 min"],["Application boundary","15 min"],["Case","15 min"],["Review","10 min"]],
-      "examples": [{"title":"Login over HTTPS","body":"Credentials travel over a TLS-protected channel.","answer":"Transport is protected, but authentication logic still matters."},{"title":"HTTPS with authorization flaw","body":"A user can view another user's record despite HTTPS.","answer":"Transport security did not solve the application authorization problem."}],
-      "notes": ["HTTP and HTTPS are not the whole security model.","A padlock does not guarantee application safety.","Separate transport, authentication and authorization."],
-      "takeaways": ["HTTP is request/response communication.","TLS protects the transport channel.","Application controls remain necessary."],
-      "practiceSteps": ["Write a fictional GET request.","Add headers.","Write a response.","Mark data that needs transit protection.","Name one control HTTPS cannot provide."],
-      "reflection": "Why can a site with HTTPS still be insecure?",
-      "qa": [{"q":"What does HTTPS add?","a":"TLS-based protection for the communication channel.","why":"It protects transit but not every application decision."},{"q":"Does HTTPS fix authorization?","a":"No.","why":"Authorization is an application-layer decision."}]
-},
+    },
     {
       "id": "cf-08",
       "title": "Accounts, Passwords & Multi-Factor Authentication",
@@ -651,17 +581,7 @@ const NORTHSTAR_CURRICULUM = [
         "answer": "Using different categories of authentication factors",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
       }
-    ,
-      "learningGoal": "Distinguish identity, authentication, authorization, session and recovery security.",
-      "highlights": ["Identity says which principal is being claimed.","Authentication verifies a claim; authorization determines permitted actions.","Recovery is part of account security."],
-      "studyPlan": [["Identity model","20 min"],["Authentication factors","20 min"],["Sessions/recovery","20 min"],["Case","20 min"],["Access flow","15 min"],["Review","10 min"]],
-      "examples": [{"title":"Employee portal","body":"A user authenticates and requests payroll data.","answer":"Authentication does not automatically grant access to that data."},{"title":"Weak recovery","body":"Strong MFA exists but account recovery is weak.","answer":"Recovery becomes an alternate authentication path."}],
-      "notes": ["Authentication and authorization are different.","Sessions are security-sensitive objects.","Recovery must be protected."],
-      "takeaways": ["Identity, authentication and authorization answer different questions.","MFA strengthens authentication but does not replace authorization.","Account security is a lifecycle."],
-      "practiceSteps": ["Choose a role.","Choose factors.","Describe session creation.","Define permitted/prohibited resources.","Describe revocation."],
-      "reflection": "Why is passing MFA not enough to prove access to every resource is allowed?",
-      "qa": [{"q":"What is authentication?","a":"Verification of a claimed identity.","why":"It establishes confidence in the claimant."},{"q":"What is authorization?","a":"A decision about permitted actions or resources.","why":"An authenticated user can still lack permission."}]
-},
+    },
     {
       "id": "cf-09",
       "title": "Digital Safety: Downloads, Links & Social Engineering",
@@ -722,17 +642,7 @@ const NORTHSTAR_CURRICULUM = [
         "answer": "Verify it through a known trusted channel",
         "why": "The correct answer follows the beginner mental model introduced in this lesson."
       }
-    ,
-      "learningGoal": "Understand values, fields, records and datasets and recognize data-quality problems before analysis.",
-      "highlights": ["A field describes an attribute; a record represents an observation.","Data quality affects analytical conclusions.","Provenance tells you where data came from and how it was produced."],
-      "studyPlan": [["Vocabulary","20 min"],["Table inspection","20 min"],["Quality checks","20 min"],["Security interpretation","20 min"],["Practice","15 min"],["Review","10 min"]],
-      "examples": [{"title":"Login table","body":"Timestamp, user, source_ip and result form fields; each row is one event.","answer":"Fields describe attributes and rows represent observations."},{"title":"Timezone mismatch","body":"Two systems record different time conventions.","answer":"Validate definitions before interpreting event order."}],
-      "notes": ["Understand the unit of observation before analysis.","Data quality is part of security analysis.","Correct formulas cannot rescue incorrect data."],
-      "takeaways": ["Know what one row represents.","Schema and provenance define meaning.","Data quality can create false patterns."],
-      "practiceSteps": ["Define every column.","Identify the observation unit.","Find missing values.","Find duplicates.","State one assumption to verify."],
-      "reflection": "If you cannot explain one row, should you trust a chart made from the table?",
-      "qa": [{"q":"What is a record?","a":"One observation represented as a row or event.","why":"The unit of observation determines interpretation."},{"q":"Why does provenance matter?","a":"It explains where data came from and how it was produced.","why":"Without it, meaning and reliability may be uncertain."}]
-},
+    },
     {
       "id": "cf-10",
       "title": "Data Basics: Tables, Fields, Records & Datasets",
@@ -817,17 +727,7 @@ const NORTHSTAR_CURRICULUM = [
       {id:"sf-04",title:"Threat Modeling Basics",objective:"Map trust boundaries, entry points, assets and abuse cases before selecting mitigations.",time:"2–2.5 hours",prerequisite:"Security Mental Models + Identity & Access Fundamentals",read:"Threat modeling is structured reasoning about how a system could be misused or fail. Start with the system boundary and major components, then identify assets, entry points, trust boundaries, identities and important data flows. Convert plausible misuse into abuse cases and ask which controls prevent, detect or limit the scenario. A threat model is not a prediction of exactly what an attacker will do; it is a way to make assumptions explicit and prioritize analysis.",concepts:["System boundary","Trust boundary","Entry point","Data flow","Abuse case","Mitigation"],example:"For Browser → API → Database, the browser is an untrusted client, the API is a control boundary, and the database contains protected assets. The API should validate requests and enforce authorization rather than trusting client-side claims.",case:"Case — Customer portal: draw Browser → CDN/WAF → API → Database. Mark the trust boundaries, two entry points, two assets and three abuse cases. For each abuse case, name one preventive and one detective control.",mistakes:["Starting with a list of vulnerabilities instead of understanding the system.","Treating the client as a trusted authority for authorization decisions.","Drawing components without showing trust boundaries or data flows."],practice:"Produce a one-page threat model for a browser, API and database. Label every trust boundary and write three abuse cases in the form: actor + action + target + consequence.",evidence:"A diagram plus three structured abuse cases and control mappings.",check:{q:"What should be identified early in a threat model?",options:["Trust boundaries","Office seating","Logo colors","Printer models"],answer:"Trust boundaries",why:"Trust boundaries show where assumptions about identity, data or control change and therefore where security controls deserve explicit attention."}},
       {id:"sf-05",title:"Security Operations Vocabulary",objective:"Separate events, alerts, incidents, findings and evidence so investigations stay precise.",time:"2 hours",prerequisite:"Threat Modeling Basics",read:"Security operations depends on precise language. An event is an observed occurrence. An alert is a signal generated because an event or pattern may require attention. An incident is a confirmed or suspected security situation that requires response according to organizational criteria. A finding is an analyst conclusion or observation supported by evidence. Evidence is information preserved or referenced to support an investigation, decision or conclusion. These terms describe different stages and purposes; they should not be used interchangeably.",concepts:["Event","Alert","Incident","Finding","Evidence","Triage"],example:"A failed login is an event. A rule detecting 50 failures followed by a success may create an alert. After investigation shows the activity violates policy or indicates compromise, it may be handled as an incident. The analyst's documented conclusion is a finding supported by relevant evidence.",case:"Case — Suspicious authentication sequence: an alert shows repeated failures followed by a successful login from an unusual location. Identify the initial event, the alert, the questions needed for triage, the evidence to collect, and the conditions that would justify incident escalation.",mistakes:["Calling every alert an incident.","Writing conclusions without preserving supporting evidence.","Treating a single log record as proof of intent."],practice:"Take the suspicious-login scenario and write an investigation note with five headings: Signal, Context, Evidence, Finding, Decision. Clearly mark anything still uncertain.",evidence:"A concise investigation note that separates observed facts from analyst interpretation and records uncertainty.",check:{q:"What is evidence used for?",options:["Supporting an investigation or conclusion","Replacing all logs","Increasing CPU speed","Changing a password automatically"],answer:"Supporting an investigation or conclusion",why:"Evidence gives an investigation a defensible basis for observations, conclusions and decisions."}},
     ]
-  ,
-      "learningGoal": "Combine the foundation concepts into a repeatable risk-based digital security process.",
-      "highlights": ["Security identifies assets, threats, weaknesses, controls and evidence.","Convenience and security can compete; good design manages the trade-off.","Evidence separates defensible analysis from intuition."],
-      "studyPlan": [["Review","15 min"],["Risk mindset","20 min"],["Apply to device/account/data","25 min"],["Case simulation","25 min"],["Checklist","15 min"],["Final review","10 min"]],
-      "examples": [{"title":"Unexpected login prompt","body":"An employee receives an unrecognized authentication request.","answer":"Verify through a trusted path instead of approving blindly."},{"title":"Sensitive file sharing","body":"A team wants to share customer data externally.","answer":"Review classification, authorization, transfer method and retention."}],
-      "notes": ["Controls should be usable and proportionate.","Evidence makes claims defensible.","When uncertain, pause and verify."],
-      "takeaways": ["Start with assets, threats, weaknesses and controls.","Use least privilege and defense in depth.","Separate facts, assumptions and conclusions.","Evidence is part of professional security work."],
-      "practiceSteps": ["List five assets.","Identify a threat for each.","Identify a weakness/exposure.","Choose a control.","State evidence that it works."],
-      "reflection": "Explain the difference between 'I think this is safe' and 'I have evidence this control operates as intended.'",
-      "qa": [{"q":"What is a security mindset?","a":"A repeatable way of identifying assets, threats, weaknesses, controls and evidence.","why":"Consistency supports decisions under uncertainty."},{"q":"Why is evidence important?","a":"It lets a security claim be checked.","why":"Professional analysis needs defensible reasoning."}]
-},
+  },
   {
     id:"network-security", code:"02", title:"Networking & Network Security", category:"Network",
     description:"TCP/IP, segmentation, protocols, firewalls and traffic analysis.",
