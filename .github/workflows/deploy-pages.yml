@@ -25,21 +25,19 @@ jobs:
           python - <<'PY'
           import pathlib
           s=pathlib.Path("data/curriculum.js").read_text()
-          stack=[]; pairs={")":"(","]":"[","}":"{"}; opens=set(pairs.values()); in_str=None; esc=False; line=1; i=0
-          while i<len(s):
-              ch=s[i]
+          stack=[]; pairs={")":"(","]":"[","}":"{"}; in_str=None; esc=False; line=1
+          for ch in s:
               if ch=="\\n": line+=1
               if in_str:
                   if esc: esc=False
-                  elif ch=="\\": esc=True
+                  elif ch=="\\\\": esc=True
                   elif ch==in_str: in_str=None
-              elif ch in "'\"`": in_str=ch
+              elif ch in "'\\\"`": in_str=ch
               elif ch in "([{": stack.append((ch,line))
               elif ch in ")]}":
                   if not stack or stack[-1][0]!=pairs[ch]: raise SystemExit(f"delimiter mismatch at line {line}: {ch}; stack top={stack[-1] if stack else None}")
                   stack.pop()
-              i+=1
-          print("delimiter stack:",stack[-10:])
+          print("delimiter stack:",stack[-20:])
           PY
           node --check data/curriculum.js
       - name: Configure Pages
