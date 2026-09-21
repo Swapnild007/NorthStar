@@ -17,19 +17,35 @@ const NORTHSTAR_CURRICULUM = [
         "Read simple data tables and distinguish a value, field, record and dataset."
       ],
       "topics": [
-        "Computer basics",
+        "Binary and data representation",
+        "Computer architecture",
+        "CPU and memory",
         "Operating systems",
-        "Files & storage",
-        "Processes",
-        "Internet basics",
-        "DNS & IP",
-        "Web & HTTPS",
-        "Digital safety",
-        "Data basics"
+        "Processes and threads",
+        "Filesystems",
+        "Storage",
+        "Virtualization",
+        "Networking",
+        "DNS",
+        "HTTP/HTTPS",
+        "Data representation",
+        "Algorithms and data structures",
+        "Digital safety"
       ],
       "case": "Case: a new employee receives a company laptop and must safely connect to the internet, access a web application and handle a customer CSV without exposing it.",
       "assessment": "Foundation concept checks + digital-safety review + simple data interpretation exercise",
-      "lab": "Digital Systems Orientation"
+      "lab": "Digital Systems Orientation",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "Carnegie Mellon MSIS",
+          "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+        },
+        {
+          "name": "Stanford Data Science",
+          "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+        }
+      ]
     },
     "lessons": [
       {
@@ -158,11 +174,12 @@ const NORTHSTAR_CURRICULUM = [
           "Security analysis starts by identifying assets, execution and boundaries."
         ],
         "practiceSteps": [
-          "Draw a device with CPU, RAM and storage.",
-          "Trace what happens when a file is opened.",
-          "Mark where the file exists before, during and after opening.",
-          "List one security risk for each state.",
-          "Explain the model aloud without using the words 'computer magic'."
+          "Explain What Is a Computer? in your own words without copying the definition.",
+          "Draw the main flow, relationship, architecture or statistical model.",
+          "Identify one normal condition and one failure or adversarial condition.",
+          "State the evidence you would collect before making a high-impact decision.",
+          "Apply the concept to the lesson case and document your reasoning.",
+          "State one limitation and one follow-up question."
         ],
         "reflection": "If a file is encrypted on storage but appears in readable form in memory while an application uses it, what new security question does that create?",
         "qa": [
@@ -194,12 +211,22 @@ const NORTHSTAR_CURRICULUM = [
           {
             "title": "3. The security mental model",
             "body": "For any computing system, ask four questions: What are the instructions? What data do they operate on? Which identity or process is allowed to act? What hardware and software boundary contains the activity?\n\nThis turns 'computer security' from a vague phrase into a set of observable relationships. Later modules will add networks, users, cryptography, cloud services and data pipelines to this model."
+          },
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break What Is a Computer? into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ],
         "caseQuestions": [
-          "Which information could be exposed without disk encryption?",
-          "Which security controls remain effective if the attacker has physical possession?",
-          "What evidence would show whether the device was encrypted?"
+          "What is the business or technical objective?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the working hypothesis?",
+          "Which control, analysis or next action is justified?",
+          "What limitation should be communicated to the reviewer?"
         ],
         "why": "Why this matters: What Is a Computer? is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -226,6 +253,16 @@ const NORTHSTAR_CURRICULUM = [
           "Correct application to a scoped case",
           "Evidence and assumption handling",
           "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          },
+          {
+            "name": "Stanford Data Science",
+            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+          }
         ]
       },
       {
@@ -352,11 +389,12 @@ const NORTHSTAR_CURRICULUM = [
           "Patching and least privilege protect the boundary."
         ],
         "practiceSteps": [
-          "Name five resources an OS manages.",
-          "Explain kernel vs application in your own words.",
-          "Pick a file and define who should read it.",
-          "Describe how a process identity affects access.",
-          "Give one example of a privilege boundary."
+          "Explain Operating Systems: The Computer's Manager in your own words without copying the definition.",
+          "Draw the main flow, relationship, architecture or statistical model.",
+          "Identify one normal condition and one failure or adversarial condition.",
+          "State the evidence you would collect before making a high-impact decision.",
+          "Apply the concept to the lesson case and document your reasoning.",
+          "State one limitation and one follow-up question."
         ],
         "reflection": "Why might running every application as an administrator make a vulnerability more dangerous?",
         "qa": [
@@ -388,11 +426,22 @@ const NORTHSTAR_CURRICULUM = [
           {
             "title": "3. Users, processes and permissions",
             "body": "A process runs with an identity and a set of permissions. Files and resources can have access rules. The operating system uses these relationships to determine which actions are allowed.\n\nSecurity engineers try to minimize privilege, isolate processes where practical, patch vulnerable components and monitor security-relevant changes."
+          },
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Operating Systems: The Computer's Manager into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ],
         "caseQuestions": [
-          "Which boundary is being created?",
-          "What evidence would show which account a process is using?"
+          "What is the business or technical objective?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the working hypothesis?",
+          "Which control, analysis or next action is justified?",
+          "What limitation should be communicated to the reviewer?"
         ],
         "why": "Why this matters: Operating Systems: The Computer's Manager is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -419,6 +468,16 @@ const NORTHSTAR_CURRICULUM = [
           "Correct application to a scoped case",
           "Evidence and assumption handling",
           "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          },
+          {
+            "name": "Stanford Data Science",
+            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+          }
         ]
       },
       {
@@ -548,11 +607,12 @@ const NORTHSTAR_CURRICULUM = [
           "Deletion claims should be supported by evidence."
         ],
         "practiceSteps": [
-          "Choose a sensitive file.",
-          "List every place it could exist.",
-          "Classify its sensitivity.",
-          "Assign an owner and access rule.",
-          "Define a retention/deletion verification method."
+          "Explain Files, Folders & Storage in your own words without copying the definition.",
+          "Draw the main flow, relationship, architecture or statistical model.",
+          "Identify one normal condition and one failure or adversarial condition.",
+          "State the evidence you would collect before making a high-impact decision.",
+          "Apply the concept to the lesson case and document your reasoning.",
+          "State one limitation and one follow-up question."
         ],
         "reflection": "Why can a backup be both a security control and a security exposure?",
         "qa": [
@@ -584,12 +644,22 @@ const NORTHSTAR_CURRICULUM = [
           {
             "title": "3. Backups are security boundaries too",
             "body": "Backups improve availability but also create another copy of the information. A backup repository with weak access controls can become an attractive target. Good backup design considers authentication, authorization, encryption, retention, integrity and recovery testing."
+          },
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Files, Folders & Storage into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ],
         "caseQuestions": [
-          "Which copies are known versus assumed?",
-          "Which system owns each copy?",
-          "What evidence confirms retention or deletion?"
+          "What is the business or technical objective?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the working hypothesis?",
+          "Which control, analysis or next action is justified?",
+          "What limitation should be communicated to the reviewer?"
         ],
         "why": "Why this matters: Files, Folders & Storage is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -616,6 +686,16 @@ const NORTHSTAR_CURRICULUM = [
           "Correct application to a scoped case",
           "Evidence and assumption handling",
           "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          },
+          {
+            "name": "Stanford Data Science",
+            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+          }
         ]
       },
       {
@@ -740,11 +820,12 @@ const NORTHSTAR_CURRICULUM = [
           "Process relationships can support detection and investigation."
         ],
         "practiceSteps": [
-          "Draw a program-to-process relationship.",
-          "Give a process an identity.",
-          "Assign three permissions.",
-          "Describe what changes if the process becomes administrator-level.",
-          "List evidence you would collect from a suspicious process."
+          "Explain Programs, Processes & Memory in your own words without copying the definition.",
+          "Draw the main flow, relationship, architecture or statistical model.",
+          "Identify one normal condition and one failure or adversarial condition.",
+          "State the evidence you would collect before making a high-impact decision.",
+          "Apply the concept to the lesson case and document your reasoning.",
+          "State one limitation and one follow-up question."
         ],
         "reflection": "Why might the same executable be low-risk under one identity and high-risk under another?",
         "qa": [
@@ -776,13 +857,22 @@ const NORTHSTAR_CURRICULUM = [
           {
             "title": "3. Memory as active state",
             "body": "Running programs use memory for instructions, variables, buffers and temporary data. Some sensitive information may exist in memory while a process is running. This is one reason endpoint security and digital forensics distinguish persistent storage from volatile state."
+          },
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Programs, Processes & Memory into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ],
         "caseQuestions": [
-          "What is the parent process?",
-          "Which user and integrity level are involved?",
-          "What command or file was executed?",
-          "Was the behavior expected for this application?"
+          "What is the business or technical objective?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the working hypothesis?",
+          "Which control, analysis or next action is justified?",
+          "What limitation should be communicated to the reviewer?"
         ],
         "why": "Why this matters: Programs, Processes & Memory is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -809,6 +899,16 @@ const NORTHSTAR_CURRICULUM = [
           "Correct application to a scoped case",
           "Evidence and assumption handling",
           "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          },
+          {
+            "name": "Stanford Data Science",
+            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+          }
         ]
       },
       {
@@ -941,11 +1041,12 @@ const NORTHSTAR_CURRICULUM = [
           "Traffic observations require endpoint and business context."
         ],
         "practiceSteps": [
-          "Draw your device to a destination server.",
-          "Add a local router and upstream network.",
-          "Show a packet crossing each boundary.",
-          "Mark where encryption might protect content.",
-          "List five fields an analyst could investigate."
+          "Explain How the Internet Works in your own words without copying the definition.",
+          "Draw the main flow, relationship, architecture or statistical model.",
+          "Identify one normal condition and one failure or adversarial condition.",
+          "State the evidence you would collect before making a high-impact decision.",
+          "Apply the concept to the lesson case and document your reasoning.",
+          "State one limitation and one follow-up question."
         ],
         "reflection": "Why is knowing the destination IP alone rarely enough to determine whether traffic is malicious?",
         "qa": [
@@ -977,13 +1078,22 @@ const NORTHSTAR_CURRICULUM = [
           {
             "title": "3. Security at multiple points",
             "body": "Traffic can be controlled at endpoints, local networks, firewalls, proxies, cloud boundaries and application layers. Encryption may protect content, while metadata such as destination and timing can remain observable.\n\nA secure network therefore uses layered controls rather than assuming one firewall solves every problem."
+          },
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break How the Internet Works into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ],
         "caseQuestions": [
-          "Which process created the connection?",
-          "What domain or service corresponds to the destination?",
-          "Is the destination expected for the business application?",
-          "What changed before the traffic started?"
+          "What is the business or technical objective?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the working hypothesis?",
+          "Which control, analysis or next action is justified?",
+          "What limitation should be communicated to the reviewer?"
         ],
         "why": "Why this matters: How the Internet Works is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -1010,6 +1120,16 @@ const NORTHSTAR_CURRICULUM = [
           "Correct application to a scoped case",
           "Evidence and assumption handling",
           "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          },
+          {
+            "name": "Stanford Data Science",
+            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+          }
         ]
       },
       {
@@ -1133,11 +1253,12 @@ const NORTHSTAR_CURRICULUM = [
           "Attack surface is managed through exposure, controls and monitoring."
         ],
         "practiceSteps": [
-          "Choose a domain.",
-          "Describe the DNS lookup conceptually.",
-          "Choose a destination IP.",
-          "Choose a service and port.",
-          "Explain what evidence would show whether the service should be exposed."
+          "Explain DNS, IP Addresses & Ports in your own words without copying the definition.",
+          "Draw the main flow, relationship, architecture or statistical model.",
+          "Identify one normal condition and one failure or adversarial condition.",
+          "State the evidence you would collect before making a high-impact decision.",
+          "Apply the concept to the lesson case and document your reasoning.",
+          "State one limitation and one follow-up question."
         ],
         "reflection": "Why can reducing network exposure be a security improvement even when no vulnerability has been found?",
         "qa": [
@@ -1169,13 +1290,22 @@ const NORTHSTAR_CURRICULUM = [
           {
             "title": "3. Attack surface",
             "body": "Every reachable service represents potential attack surface. Reducing unnecessary services, restricting exposure, patching software and monitoring access are basic security practices.\n\nThe goal is not to close everything. Organizations need services to perform business functions. The security decision is whether exposure is necessary, controlled and monitored."
+          },
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break DNS, IP Addresses & Ports into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ],
         "caseQuestions": [
-          "Which services are business-required?",
-          "Who needs to access them?",
-          "From which networks?",
-          "What authentication and monitoring exist?"
+          "What is the business or technical objective?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the working hypothesis?",
+          "Which control, analysis or next action is justified?",
+          "What limitation should be communicated to the reviewer?"
         ],
         "why": "Why this matters: DNS, IP Addresses & Ports is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -1202,6 +1332,16 @@ const NORTHSTAR_CURRICULUM = [
           "Correct application to a scoped case",
           "Evidence and assumption handling",
           "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          },
+          {
+            "name": "Stanford Data Science",
+            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+          }
         ]
       },
       {
@@ -1335,11 +1475,12 @@ const NORTHSTAR_CURRICULUM = [
           "Web security is a layered system."
         ],
         "practiceSteps": [
-          "Draw browser → DNS → network → TLS → server.",
-          "Label one security guarantee at each stage.",
-          "Identify where authentication occurs.",
-          "Identify where authorization occurs.",
-          "Explain why HTTPS cannot fix broken access control."
+          "Explain Websites, HTTP & HTTPS in your own words without copying the definition.",
+          "Draw the main flow, relationship, architecture or statistical model.",
+          "Identify one normal condition and one failure or adversarial condition.",
+          "State the evidence you would collect before making a high-impact decision.",
+          "Apply the concept to the lesson case and document your reasoning.",
+          "State one limitation and one follow-up question."
         ],
         "reflection": "If an attacker already controls the user's browser, what can HTTPS no longer guarantee?",
         "qa": [
@@ -1371,12 +1512,22 @@ const NORTHSTAR_CURRICULUM = [
           {
             "title": "3. What HTTPS does not solve",
             "body": "HTTPS cannot stop a vulnerable application from accepting unauthorized actions. It does not automatically prevent SQL injection, broken access control, malicious browser extensions, stolen sessions or compromised endpoints.\n\nSecurity is therefore layered: transport protection is one control among many."
+          },
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Websites, HTTP & HTTPS into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ],
         "caseQuestions": [
-          "Which threat does TLS address?",
-          "Which control is missing at the application layer?",
-          "What evidence would demonstrate the authorization flaw?"
+          "What is the business or technical objective?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the working hypothesis?",
+          "Which control, analysis or next action is justified?",
+          "What limitation should be communicated to the reviewer?"
         ],
         "why": "Why this matters: Websites, HTTP & HTTPS is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -1403,6 +1554,16 @@ const NORTHSTAR_CURRICULUM = [
           "Correct application to a scoped case",
           "Evidence and assumption handling",
           "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          },
+          {
+            "name": "Stanford Data Science",
+            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+          }
         ]
       },
       {
@@ -1513,6 +1674,14 @@ const NORTHSTAR_CURRICULUM = [
           {
             "title": "3. Recovery and sessions",
             "body": "Account recovery can become an alternate authentication path. Security design therefore considers recovery identity proofing, support processes, backup factors and notifications. After authentication, a session token may represent the user's established access; protecting that session matters too."
+          },
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Accounts, Passwords & Multi-Factor Authentication into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ],
         "examples": [
@@ -1528,10 +1697,11 @@ const NORTHSTAR_CURRICULUM = [
           }
         ],
         "caseQuestions": [
-          "How is the employee verified?",
-          "Can existing sessions be revoked?",
-          "How is the replacement factor enrolled?",
-          "What evidence is recorded?"
+          "What is the business or technical objective?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the working hypothesis?",
+          "Which control, analysis or next action is justified?",
+          "What limitation should be communicated to the reviewer?"
         ],
         "notes": [
           "MFA is not a magic shield.",
@@ -1546,11 +1716,12 @@ const NORTHSTAR_CURRICULUM = [
           "Recovery and session handling are security boundaries too."
         ],
         "practiceSteps": [
-          "Classify three authentication methods by factor category.",
-          "Design a secure recovery scenario.",
-          "List three signs of an account takeover.",
-          "Describe how to revoke sessions.",
-          "Explain why password reuse creates cascading risk."
+          "Explain Accounts, Passwords & Multi-Factor Authentication in your own words without copying the definition.",
+          "Draw the main flow, relationship, architecture or statistical model.",
+          "Identify one normal condition and one failure or adversarial condition.",
+          "State the evidence you would collect before making a high-impact decision.",
+          "Apply the concept to the lesson case and document your reasoning.",
+          "State one limitation and one follow-up question."
         ],
         "reflection": "Why should an organization threat-model account recovery just as seriously as login?",
         "qa": [
@@ -1595,6 +1766,16 @@ const NORTHSTAR_CURRICULUM = [
           "Correct application to a scoped case",
           "Evidence and assumption handling",
           "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          },
+          {
+            "name": "Stanford Data Science",
+            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+          }
         ]
       },
       {
@@ -1702,6 +1883,14 @@ const NORTHSTAR_CURRICULUM = [
           {
             "title": "3. Reporting is a control",
             "body": "Reporting helps security teams correlate similar attempts and protect other users. A good reporting process should be simple, non-punitive for honest mistakes and connected to triage."
+          },
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Digital Safety: Downloads, Links & Social Engineering into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ],
         "examples": [
@@ -1717,10 +1906,11 @@ const NORTHSTAR_CURRICULUM = [
           }
         ],
         "caseQuestions": [
-          "What technical controls could reduce impact?",
-          "What user workflow should be taught?",
-          "What evidence should be collected?",
-          "How should the event be reported?"
+          "What is the business or technical objective?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the working hypothesis?",
+          "Which control, analysis or next action is justified?",
+          "What limitation should be communicated to the reviewer?"
         ],
         "notes": [
           "Visual polish is not identity proof.",
@@ -1735,11 +1925,12 @@ const NORTHSTAR_CURRICULUM = [
           "Reporting is part of defense."
         ],
         "practiceSteps": [
-          "Read a hypothetical urgent request.",
-          "Mark every pressure tactic.",
-          "Identify what would need independent verification.",
-          "Choose a safe verification channel.",
-          "Write the evidence you would preserve for the security team."
+          "Explain Digital Safety: Downloads, Links & Social Engineering in your own words without copying the definition.",
+          "Draw the main flow, relationship, architecture or statistical model.",
+          "Identify one normal condition and one failure or adversarial condition.",
+          "State the evidence you would collect before making a high-impact decision.",
+          "Apply the concept to the lesson case and document your reasoning.",
+          "State one limitation and one follow-up question."
         ],
         "reflection": "How can a security program reduce social-engineering success without expecting users to become security experts?",
         "qa": [
@@ -1784,6 +1975,16 @@ const NORTHSTAR_CURRICULUM = [
           "Correct application to a scoped case",
           "Evidence and assumption handling",
           "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          },
+          {
+            "name": "Stanford Data Science",
+            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+          }
         ]
       },
       {
@@ -1902,6 +2103,14 @@ const NORTHSTAR_CURRICULUM = [
           {
             "title": "3. Security telemetry",
             "body": "Logs are records of observed activity. Different systems record different fields and levels of detail. Analysts often normalize timestamps, identities, hostnames and event types so records from multiple sources can be compared.\n\nThe quality of a detection or model cannot exceed the quality and context of the data feeding it."
+          },
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Data Basics: Tables, Fields, Records & Datasets into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ],
         "examples": [
@@ -1917,10 +2126,11 @@ const NORTHSTAR_CURRICULUM = [
           }
         ],
         "caseQuestions": [
-          "What does 'timestamp' mean in this dataset?",
-          "Which records can be compared reliably?",
-          "What bias could missing fields introduce?",
-          "What evidence would validate a cleaned dataset?"
+          "What is the business or technical objective?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the working hypothesis?",
+          "Which control, analysis or next action is justified?",
+          "What limitation should be communicated to the reviewer?"
         ],
         "notes": [
           "A row is not automatically a complete truth about an event.",
@@ -1935,11 +2145,12 @@ const NORTHSTAR_CURRICULUM = [
           "Data quality is part of security reasoning."
         ],
         "practiceSteps": [
-          "Create a five-row authentication table on paper.",
-          "Label each field's data type.",
-          "Add one missing value and describe its meaning.",
-          "Group the records by result.",
-          "Write one security question the table could answer."
+          "Explain Data Basics: Tables, Fields, Records & Datasets in your own words without copying the definition.",
+          "Draw the main flow, relationship, architecture or statistical model.",
+          "Identify one normal condition and one failure or adversarial condition.",
+          "State the evidence you would collect before making a high-impact decision.",
+          "Apply the concept to the lesson case and document your reasoning.",
+          "State one limitation and one follow-up question."
         ],
         "reflection": "Why can a technically correct SQL query still produce a misleading security conclusion?",
         "qa": [
@@ -1984,6 +2195,16 @@ const NORTHSTAR_CURRICULUM = [
           "Correct application to a scoped case",
           "Evidence and assumption handling",
           "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          },
+          {
+            "name": "Stanford Data Science",
+            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+          }
         ]
       }
     ]
@@ -2097,6 +2318,16 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Security Mental Models into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
@@ -2200,6 +2431,16 @@ const NORTHSTAR_CURRICULUM = [
             "q": "How do you demonstrate mastery?",
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break CIA Triad & Security Objectives into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ]
       },
@@ -2306,6 +2547,16 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Identity & Access Fundamentals into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
@@ -2411,11 +2662,21 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Threat Modeling Basics into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "sf-05",
-        "title": "Security Operations Vocabulary",
+        "title": "Defense in Depth, Zero Trust & Security Architecture",
         "objective": "Separate events, alerts, incidents, findings and evidence so investigations stay precise.",
         "time": "2 hours",
         "prerequisite": "Threat Modeling Basics",
@@ -2516,6 +2777,16 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Defense in Depth, Zero Trust & Security Architecture into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       }
     ],
@@ -2531,18 +2802,30 @@ const NORTHSTAR_CURRICULUM = [
       ],
       "topics": [
         "CIA and security objectives",
-        "AAA and IAM",
+        "AAA / IAM",
         "Assets and attack surface",
-        "Threats and vulnerabilities",
+        "Threats, vulnerabilities and adversaries",
         "Risk and controls",
         "Threat modeling",
         "Defense in depth",
         "Zero trust concepts",
+        "Security architecture",
         "NIST CSF 2.0"
       ],
       "case": "Case: customer portal exposure — identify business assets, trust boundaries, likely threats and control gaps.",
       "assessment": "Concept checks + threat-model exercise + short case analysis",
-      "lab": "Security Scoping Lab"
+      "lab": "Security Scoping Lab",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "NIST CSF 2.0",
+          "url": "https://www.nist.gov/cyberframework"
+        },
+        {
+          "name": "CSEC2017",
+          "url": "https://cybered.hosting.acm.org/wp/"
+        }
+      ]
     }
   },
   {
@@ -2627,11 +2910,31 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "Georgia Tech Cybersecurity",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break TCP/IP Mental Model into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "ns-02",
-        "title": "IPv4 Addressing & Subnets",
+        "title": "IPv4/IPv6 Addressing & Subnets",
         "objective": "Read IPv4 addresses, CIDR notation and basic subnet boundaries.",
         "time": "2.5–3 hours",
         "read": "CIDR notation expresses a network prefix and host portion. Subnetting lets organizations separate broadcast domains and apply different routing and security policies.",
@@ -2704,11 +3007,31 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "Georgia Tech Cybersecurity",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break IPv4/IPv6 Addressing & Subnets into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "ns-03",
-        "title": "TCP, UDP & Ports",
+        "title": "TCP, UDP, Ports & Application Protocols",
         "objective": "Compare transport behavior and interpret common port usage.",
         "time": "2.5–3 hours",
         "read": "TCP provides connection-oriented reliable delivery. UDP is connectionless and has lower protocol overhead. A port identifies a transport endpoint associated with a process or service.",
@@ -2781,11 +3104,31 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "Georgia Tech Cybersecurity",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break TCP, UDP, Ports & Application Protocols into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "ns-04",
-        "title": "Firewalls & Network Segmentation",
+        "title": "Routing, NAT, Firewalls & Segmentation",
         "objective": "Understand policy enforcement and trust-zone separation.",
         "time": "2.5–3 hours",
         "read": "Firewalls enforce traffic policy based on attributes such as addresses, ports, protocols and application identity. Segmentation limits lateral movement and reduces unnecessary trust.",
@@ -2858,11 +3201,31 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "Georgia Tech Cybersecurity",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Routing, NAT, Firewalls & Segmentation into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "ns-05",
-        "title": "Packet Analysis Workflow",
+        "title": "DNS, DHCP & Packet Analysis Workflow",
         "objective": "Build a repeatable workflow for interpreting controlled packet captures.",
         "time": "2 hours",
         "read": "Packet analysis should begin with scope, then establish the baseline, identify endpoints and protocols, isolate unusual behavior and document evidence. Never infer intent from a single packet alone.",
@@ -2935,6 +3298,26 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "Georgia Tech Cybersecurity",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break DNS, DHCP & Packet Analysis Workflow into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       }
     ],
@@ -2950,19 +3333,31 @@ const NORTHSTAR_CURRICULUM = [
       ],
       "topics": [
         "Ethernet and ARP",
-        "IPv4/IPv6",
-        "Subnetting",
+        "IPv4 and IPv6",
+        "CIDR and subnetting",
         "Routing and NAT",
-        "TCP/UDP",
-        "DNS/DHCP",
-        "HTTP/TLS",
-        "Firewalls",
-        "VPNs",
+        "TCP and UDP",
+        "DNS and DHCP",
+        "HTTP and TLS",
+        "Firewalls and segmentation",
+        "VPNs and proxies",
+        "IDS/IPS",
         "Packet analysis"
       ],
       "case": "Case: enterprise network redesign — separate user, application and database trust zones and justify controls.",
       "assessment": "Subnet reasoning + policy design + packet-analysis worksheet",
-      "lab": "Packet Recon"
+      "lab": "Packet Recon",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "Georgia Tech Cybersecurity",
+          "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+        },
+        {
+          "name": "NYU Cybersecurity MS",
+          "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+        }
+      ]
     }
   },
   {
@@ -3113,11 +3508,31 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+          },
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Linux Security Fundamentals into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "sc-02",
-        "title": "Processes & Services",
+        "title": "Processes, Services & Isolation",
         "objective": "Recognize service exposure and process relationships.",
         "time": "2–2.5 hours",
         "read": "A service is a long-running program that provides functionality. Security review asks which services are enabled, which identities they run under, what interfaces they expose and what dependencies they have.",
@@ -3190,11 +3605,31 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+          },
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Processes, Services & Isolation into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "sc-03",
-        "title": "Cloud Shared Responsibility",
+        "title": "Virtualization, Containers & Cloud Shared Responsibility",
         "objective": "Separate provider responsibilities from customer responsibilities.",
         "time": "2–2.5 hours",
         "read": "Cloud security is shared. Providers secure the underlying cloud infrastructure while customers remain responsible for configurations and workloads according to the service model.",
@@ -3266,6 +3701,26 @@ const NORTHSTAR_CURRICULUM = [
             "q": "How do you demonstrate mastery?",
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "references": [
+          {
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+          },
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Virtualization, Containers & Cloud Shared Responsibility into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ]
       },
@@ -3344,11 +3799,31 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+          },
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Secure Configuration & Hardening into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "sc-05",
-        "title": "Cloud Identity & Secrets",
+        "title": "Cloud IAM, Workload Identity & Secrets",
         "objective": "Apply least privilege to cloud identities and protect credentials.",
         "time": "2.5 hours",
         "read": "Cloud identities should receive only required permissions. Long-lived credentials increase exposure; managed identities, short-lived credentials and centralized secret storage reduce risk.",
@@ -3421,6 +3896,26 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+          },
+          {
+            "name": "Carnegie Mellon MSIS",
+            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Cloud IAM, Workload Identity & Secrets into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       }
     ],
@@ -3435,16 +3930,32 @@ const NORTHSTAR_CURRICULUM = [
         "Design safer cloud identity and secret-management patterns."
       ],
       "topics": [
-        "Linux security",
-        "Processes & services",
-        "Cloud shared responsibility",
-        "Hardening",
-        "IAM",
-        "Secrets management"
+        "Linux filesystem",
+        "Users, groups and permissions",
+        "Processes and services",
+        "Isolation and memory",
+        "Logging",
+        "Virtualization",
+        "Containers",
+        "Cloud service models",
+        "Shared responsibility",
+        "Cloud IAM",
+        "Secrets"
       ],
       "case": "Case: cloud application migration — identify configuration, identity and secret-management risks.",
       "assessment": "Hardening checklist + cloud responsibility matrix + architecture review",
-      "lab": "Secure Configuration Lab"
+      "lab": "Secure Configuration Lab",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "NYU Cybersecurity MS",
+          "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+        },
+        {
+          "name": "Carnegie Mellon MSIS",
+          "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+        }
+      ]
     }
   },
   {
@@ -3529,6 +4040,26 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "NIST SP 800-61 Rev.3",
+            "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+          },
+          {
+            "name": "Georgia Tech Cybersecurity",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Logging for Detection into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
@@ -3605,6 +4136,26 @@ const NORTHSTAR_CURRICULUM = [
             "q": "How do you demonstrate mastery?",
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "references": [
+          {
+            "name": "NIST SP 800-61 Rev.3",
+            "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+          },
+          {
+            "name": "Georgia Tech Cybersecurity",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Detection Engineering Basics into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ]
       },
@@ -3683,6 +4234,26 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "NIST SP 800-61 Rev.3",
+            "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+          },
+          {
+            "name": "Georgia Tech Cybersecurity",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break SIEM Investigation Workflow into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
@@ -3760,11 +4331,31 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "NIST SP 800-61 Rev.3",
+            "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+          },
+          {
+            "name": "Georgia Tech Cybersecurity",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Incident Triage & Severity into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "ds-05",
-        "title": "Evidence & Incident Timeline",
+        "title": "Evidence, Incident Timeline & Recovery",
         "objective": "Build a defensible timeline from controlled evidence.",
         "time": "2 hours",
         "read": "A timeline aligns events from multiple sources into a coherent sequence. Preserve original timestamps, source identifiers and uncertainty instead of inventing missing facts.",
@@ -3837,6 +4428,26 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "references": [
+          {
+            "name": "NIST SP 800-61 Rev.3",
+            "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+          },
+          {
+            "name": "Georgia Tech Cybersecurity",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Evidence, Incident Timeline & Recovery into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       }
     ],
@@ -3852,20 +4463,33 @@ const NORTHSTAR_CURRICULUM = [
         "Construct defensible incident timelines."
       ],
       "topics": [
+        "Telemetry",
         "Logging",
-        "Telemetry quality",
         "Detection engineering",
         "SIEM",
         "Triage",
         "Incident response",
-        "Forensics",
+        "Forensics basics",
+        "Timeline analysis",
         "Threat intelligence",
         "Hunting",
-        "Recovery"
+        "Recovery",
+        "Lessons learned"
       ],
       "case": "Case: suspicious authentication sequence — correlate telemetry and decide what evidence is required before escalation.",
       "assessment": "Detection rule + investigation narrative + incident timeline",
-      "lab": "Detection Drill + Incident Room"
+      "lab": "Detection Drill + Incident Room",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "NIST SP 800-61 Rev.3",
+          "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+        },
+        {
+          "name": "Georgia Tech Cybersecurity",
+          "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+        }
+      ]
     }
   },
   {
@@ -3924,8 +4548,8 @@ const NORTHSTAR_CURRICULUM = [
             "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
           },
           {
-            "name": "NIST SSDF",
-            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
           }
         ],
         "caseQuestions": [
@@ -3959,6 +4583,16 @@ const NORTHSTAR_CURRICULUM = [
             "q": "How do you demonstrate mastery?",
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Offensive Security Methodology into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ]
       },
@@ -4011,8 +4645,8 @@ const NORTHSTAR_CURRICULUM = [
             "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
           },
           {
-            "name": "NIST SSDF",
-            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
           }
         ],
         "caseQuestions": [
@@ -4047,11 +4681,21 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Web Application Attack Surface into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "os-03",
-        "title": "Input Validation & Injection",
+        "title": "Input Validation, Injection & Output Encoding",
         "objective": "Understand why untrusted input can alter program behavior.",
         "time": "2.5–3 hours",
         "read": "Injection vulnerabilities occur when data is interpreted as instructions in a different language or context. Defenses include parameterization, contextual encoding and strict validation.",
@@ -4098,8 +4742,8 @@ const NORTHSTAR_CURRICULUM = [
             "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
           },
           {
-            "name": "NIST SSDF",
-            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
           }
         ],
         "caseQuestions": [
@@ -4134,11 +4778,21 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Input Validation, Injection & Output Encoding into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "os-04",
-        "title": "Authentication & Session Testing",
+        "title": "Authentication, Authorization & Session Security",
         "objective": "Evaluate authentication boundaries and session handling safely.",
         "time": "2.5–3 hours",
         "read": "Testing should examine credential handling, session issuance, expiration, privilege boundaries and recovery flows in an authorized environment.",
@@ -4185,8 +4839,8 @@ const NORTHSTAR_CURRICULUM = [
             "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
           },
           {
-            "name": "NIST SSDF",
-            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
           }
         ],
         "caseQuestions": [
@@ -4221,11 +4875,21 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Authentication, Authorization & Session Security into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "os-05",
-        "title": "Reporting Security Findings",
+        "title": "Security Testing, Findings & Remediation Reporting",
         "objective": "Turn technical observations into reproducible, useful findings.",
         "time": "2 hours",
         "read": "A security finding should identify the affected asset, observed behavior, evidence, impact, reproduction conditions and a practical remediation path.",
@@ -4272,8 +4936,8 @@ const NORTHSTAR_CURRICULUM = [
             "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
           },
           {
-            "name": "NIST SSDF",
-            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+            "name": "NYU Cybersecurity MS",
+            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
           }
         ],
         "caseQuestions": [
@@ -4308,6 +4972,16 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Security Testing, Findings & Remediation Reporting into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       }
     ],
@@ -4323,17 +4997,32 @@ const NORTHSTAR_CURRICULUM = [
         "Produce reproducible security findings with remediation context."
       ],
       "topics": [
-        "Testing methodology",
-        "Web attack surface",
+        "Rules of engagement",
+        "Attack surface",
+        "Web architecture",
+        "OWASP Top 10:2025",
         "Input validation",
-        "Injection concepts",
-        "Authentication",
-        "Session security",
-        "Security reporting"
+        "Injection",
+        "XSS/CSRF/SSRF concepts",
+        "Access control",
+        "Authentication and sessions",
+        "Security testing",
+        "Reporting and remediation"
       ],
       "case": "Case: deliberately vulnerable web application — map the surface, identify validation questions and document findings without uncontrolled exploitation.",
       "assessment": "Scope document + attack-surface map + finding report",
-      "lab": "Web Surface"
+      "lab": "Web Surface",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "OWASP Top 10:2025",
+          "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
+        },
+        {
+          "name": "NYU Cybersecurity MS",
+          "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+        }
+      ]
     }
   },
   {
@@ -4428,6 +5117,16 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Secure Software Lifecycle into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
@@ -4514,6 +5213,16 @@ const NORTHSTAR_CURRICULUM = [
             "q": "How do you demonstrate mastery?",
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Security Automation into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ]
       },
@@ -4602,11 +5311,21 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Security Architecture into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "se-04",
-        "title": "Vulnerability Management",
+        "title": "Vulnerability, Dependency & Supply-Chain Management",
         "objective": "Prioritize remediation using evidence and business context.",
         "time": "3–3.5 hours",
         "read": "Vulnerability management combines discovery, validation, prioritization, remediation and verification. Severity alone does not describe the complete business risk.",
@@ -4689,11 +5408,21 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Vulnerability, Dependency & Supply-Chain Management into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "se-05",
-        "title": "Security Metrics & Evidence",
+        "title": "Security Metrics, SBOM & Evidence",
         "objective": "Measure capability using outcomes rather than vanity metrics.",
         "time": "2 hours",
         "read": "Useful security metrics connect activity to outcomes: detection coverage, mean time to triage, remediation verification and control effectiveness are more informative than raw activity counts alone.",
@@ -4776,6 +5505,16 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Security Metrics, SBOM & Evidence into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       }
     ],
@@ -4794,17 +5533,30 @@ const NORTHSTAR_CURRICULUM = [
         "Security requirements",
         "Threat modeling",
         "Secure design",
-        "SSDF",
+        "NIST SSDF",
         "Secure coding",
         "SAST/DAST/SCA",
         "CI/CD",
         "IaC",
         "SBOM",
-        "Vulnerability management"
+        "Dependency and supply-chain risk",
+        "Vulnerability management",
+        "Security metrics"
       ],
       "case": "Case: security transformation roadmap — prioritize controls, investments, metrics and verification across a growing digital business.",
       "assessment": "Secure-SDLC design + control roadmap + executive security scorecard",
-      "lab": "Security Engineering Capstone"
+      "lab": "Security Engineering Capstone",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "NIST SSDF",
+          "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+        },
+        {
+          "name": "NIST NICE v2.2.0",
+          "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+        }
+      ]
     }
   },
   {
@@ -4842,7 +5594,18 @@ const NORTHSTAR_CURRICULUM = [
       ],
       "case": "Case: a security analyst receives authentication logs and must identify unusual patterns without modifying the original evidence.",
       "assessment": "Concept checks + Python exercises + SQL investigation + authentication-log mini project",
-      "lab": "Security Data Automation Lab"
+      "lab": "Security Data Automation Lab",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "IIM Calcutta PGDBA",
+          "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+        },
+        {
+          "name": "UC Berkeley Data Science",
+          "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+        }
+      ]
     },
     "lessons": [
       {
@@ -4976,6 +5739,16 @@ const NORTHSTAR_CURRICULUM = [
             "q": "How do you demonstrate mastery?",
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break How Programmers Think: Inputs → Rules → Outputs into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ]
       },
@@ -5111,6 +5884,16 @@ const NORTHSTAR_CURRICULUM = [
             "q": "How do you demonstrate mastery?",
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Variables & Data Types into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ]
       },
@@ -5248,6 +6031,16 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Conditions & Boolean Logic into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
@@ -5378,6 +6171,16 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Loops: Repeating Work Safely into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
@@ -5507,6 +6310,16 @@ const NORTHSTAR_CURRICULUM = [
             "q": "How do you demonstrate mastery?",
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Functions & Decomposition into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ]
       },
@@ -5641,6 +6454,16 @@ const NORTHSTAR_CURRICULUM = [
             "q": "How do you demonstrate mastery?",
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Python Collections: Lists, Dictionaries & Sets into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ]
       },
@@ -5777,6 +6600,16 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break CSV & JSON: Working With Real Data into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
@@ -5910,6 +6743,16 @@ const NORTHSTAR_CURRICULUM = [
             "q": "How do you demonstrate mastery?",
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Errors, Validation & Testing into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ]
       },
@@ -6046,11 +6889,21 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break SQL Fundamentals: Ask Questions of Tables into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "pro-10",
-        "title": "SQL Filtering, Joins & Aggregation",
+        "title": "SQL Filtering, Joins, Aggregation & Data Modeling",
         "objective": "Combine related tables and summarize security evidence with COUNT, GROUP BY and joins.",
         "time": "2–2.5 hours",
         "prerequisite": "SQL Fundamentals",
@@ -6181,11 +7034,21 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break SQL Filtering, Joins, Aggregation & Data Modeling into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       },
       {
         "id": "pro-11",
-        "title": "Security Automation with Python",
+        "title": "Security Automation with Python & Reproducible Pipelines",
         "objective": "Combine Python, validation and data handling into a safe repeatable security workflow.",
         "time": "2–2.5 hours",
         "prerequisite": "SQL Filtering, Joins & Aggregation",
@@ -6310,6 +7173,16 @@ const NORTHSTAR_CURRICULUM = [
             "q": "How do you demonstrate mastery?",
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Security Automation with Python & Reproducible Pipelines into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
           }
         ]
       },
@@ -6442,6 +7315,16 @@ const NORTHSTAR_CURRICULUM = [
             "a": "Explain it, apply it, produce evidence, and state limitations.",
             "why": "That sequence tests knowledge, skill and judgment."
           }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Mini Project: Authentication Log Analyzer into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
         ]
       }
     ]
@@ -6541,12 +7424,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -6716,12 +7603,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -6891,12 +7782,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -6977,7 +7872,12 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
-        ]
+        ],
+        "math": {
+          "title": "Mathematical foundation",
+          "body": "Mean: x̄ = (1/n)Σxᵢ. Median is the middle ordered value. Percentiles locate a value relative to an ordered distribution.",
+          "intuition": "Start with the meaning of the quantities, then use the formula, calculate a small example, and interpret the result in context."
+        }
       },
       {
         "id": "dat-04",
@@ -7066,12 +7966,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -7152,7 +8056,12 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
-        ]
+        ],
+        "math": {
+          "title": "Mathematical foundation",
+          "body": "Sample variance s² = Σ(xᵢ−x̄)²/(n−1); standard deviation s = √s². Interpret spread in the original unit.",
+          "intuition": "Start with the meaning of the quantities, then use the formula, calculate a small example, and interpret the result in context."
+        }
       },
       {
         "id": "dat-05",
@@ -7241,12 +8150,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -7416,12 +8329,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -7502,7 +8419,12 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
-        ]
+        ],
+        "math": {
+          "title": "Mathematical foundation",
+          "body": "For events A and B, P(A∩B)=P(A|B)P(B). Use complements and conditional probability to reason about uncertainty.",
+          "intuition": "Start with the meaning of the quantities, then use the formula, calculate a small example, and interpret the result in context."
+        }
       },
       {
         "id": "dat-07",
@@ -7591,12 +8513,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -7677,11 +8603,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
-        ]
+        ],
+        "math": {
+          "title": "Mathematical foundation",
+          "body": "Bayes: P(A|B)=P(B|A)P(A)/P(B). The base rate matters; a strong signal does not automatically imply a high posterior probability.",
+          "intuition": "Start with the meaning of the quantities, then use the formula, calculate a small example, and interpret the result in context."
+        }
       },
       {
         "id": "dat-08",
-        "title": "Correlation vs Causation",
+        "title": "Correlation, Regression & Causation",
         "objective": "Understand correlation vs causation and apply it to a realistic data & analytics problem.",
         "time": "1.75–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -7766,12 +8697,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -7852,11 +8787,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
-        ]
+        ],
+        "math": {
+          "title": "Mathematical foundation",
+          "body": "Correlation summarizes association; regression models conditional relationships. Neither alone establishes causation.",
+          "intuition": "Start with the meaning of the quantities, then use the formula, calculate a small example, and interpret the result in context."
+        }
       },
       {
         "id": "dat-09",
-        "title": "Sampling & Confidence",
+        "title": "Sampling, Confidence Intervals & Hypothesis Tests",
         "objective": "Understand sampling & confidence and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -7941,12 +8881,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -8027,7 +8971,12 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
-        ]
+        ],
+        "math": {
+          "title": "Mathematical foundation",
+          "body": "A confidence interval has the form estimate ± critical value × standard error. Its interpretation is about a procedure, not the probability that a fixed parameter is random.",
+          "intuition": "Start with the meaning of the quantities, then use the formula, calculate a small example, and interpret the result in context."
+        }
       },
       {
         "id": "dat-10",
@@ -8116,12 +9065,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -8202,11 +9155,21 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
-        ]
+        ],
+        "dataQuality": {
+          "title": "Data-quality checklist",
+          "items": [
+            "Define the unit of observation",
+            "Inspect missingness and duplicates",
+            "Check impossible values and inconsistent formats",
+            "Document transformations",
+            "Keep raw data separate from derived data"
+          ]
+        }
       },
       {
         "id": "dat-11",
-        "title": "Visualization for Security Data",
+        "title": "Visualization, Time-Series Patterns & Security Dashboards",
         "objective": "Understand visualization for security data and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -8291,12 +9254,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -8466,12 +9433,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "UC Berkeley Data Science",
-            "url": "https://guide.berkeley.edu/undergraduate/degree-programs/data-science/"
-          },
-          {
             "name": "Stanford Statistics/Data Science",
             "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+          },
+          {
+            "name": "UC Berkeley Data Science",
+            "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+          },
+          {
+            "name": "IIM Calcutta PGDBA",
+            "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
           }
         ],
         "caseQuestions": [
@@ -8572,16 +9543,33 @@ const NORTHSTAR_CURRICULUM = [
         "Bias",
         "Probability",
         "Distributions",
-        "Inference",
+        "Uncertainty",
         "Confidence intervals",
         "Hypothesis testing",
         "Regression",
         "Causality",
-        "Visualization"
+        "Visualization",
+        "Data quality",
+        "Ethics and privacy"
       ],
       "case": "Case: security operations data contains login failures, response times and alert volumes; determine what changed and what the evidence can actually support.",
       "assessment": "Data-quality review + statistical analysis + executive interpretation",
-      "lab": "Security Analytics Notebook"
+      "lab": "Security Analytics Notebook",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "Stanford Statistics/Data Science",
+          "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+        },
+        {
+          "name": "UC Berkeley Data Science",
+          "url": "https://cdss.berkeley.edu/dsus/academics/courses"
+        },
+        {
+          "name": "IIM Calcutta PGDBA",
+          "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+        }
+      ]
     }
   },
   {
@@ -8765,6 +9753,15 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       },
       {
@@ -8940,6 +9937,15 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       },
       {
@@ -9115,6 +10121,15 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       },
       {
@@ -9290,6 +10305,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "math": {
+          "title": "Mathematical foundation",
+          "body": "Simple linear regression: ŷ = β₀ + β₁x. Least squares chooses coefficients that minimize Σ(yᵢ−ŷᵢ)².",
+          "intuition": "Start with the meaning of the quantities, then use the formula, calculate a small example, and interpret the result in context."
+        },
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       },
       {
@@ -9465,11 +10494,25 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "math": {
+          "title": "Mathematical foundation",
+          "body": "Binary classification often models P(Y=1|X). Threshold choice trades false positives against false negatives.",
+          "intuition": "Start with the meaning of the quantities, then use the formula, calculate a small example, and interpret the result in context."
+        },
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       },
       {
         "id": "mac-06",
-        "title": "Decision Trees & Rules",
+        "title": "Decision Trees, Ensembles & Model Interpretation",
         "objective": "Understand decision trees & rules and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -9640,6 +10683,15 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       },
       {
@@ -9815,11 +10867,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       },
       {
         "id": "mac-08",
-        "title": "Clustering & Anomaly Thinking",
+        "title": "Clustering, Dimensionality Reduction & Anomaly Detection",
         "objective": "Understand clustering & anomaly thinking and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -9990,6 +11051,15 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       },
       {
@@ -10165,11 +11235,25 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "math": {
+          "title": "Mathematical foundation",
+          "body": "Precision = TP/(TP+FP); recall = TP/(TP+FN); F1 = 2PR/(P+R). Choose metrics according to operational cost.",
+          "intuition": "Start with the meaning of the quantities, then use the formula, calculate a small example, and interpret the result in context."
+        },
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       },
       {
         "id": "mac-10",
-        "title": "Overfitting & Generalization",
+        "title": "Overfitting, Regularization & Generalization",
         "objective": "Understand overfitting & generalization and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -10340,11 +11424,25 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "math": {
+          "title": "Mathematical foundation",
+          "body": "Regularization adds a penalty to the objective. Ridge uses λΣβⱼ²; Lasso uses λΣ|βⱼ| to control complexity.",
+          "intuition": "Start with the meaning of the quantities, then use the formula, calculate a small example, and interpret the result in context."
+        },
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       },
       {
         "id": "mac-11",
-        "title": "Feature Leakage, Bias & Drift",
+        "title": "Feature Leakage, Bias, Drift & Responsible Evaluation",
         "objective": "Understand feature leakage, bias & drift and apply it to a realistic data & analytics problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -10515,6 +11613,15 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       },
       {
@@ -10690,6 +11797,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "math": {
+          "title": "Mathematical foundation",
+          "body": "Evaluate a classifier with a held-out test set and report confusion-matrix metrics with uncertainty and class-balance context.",
+          "intuition": "Start with the meaning of the quantities, then use the formula, calculate a small example, and interpret the result in context."
+        },
+        "modelWorkflow": [
+          "Define prediction target",
+          "Choose features available at decision time",
+          "Split data without leakage",
+          "Train and tune",
+          "Evaluate on held-out data",
+          "Inspect errors and operational costs",
+          "Monitor drift after deployment"
         ]
       }
     ],
@@ -10707,24 +11828,36 @@ const NORTHSTAR_CURRICULUM = [
       ],
       "topics": [
         "Problem formulation",
-        "Features/labels",
+        "Features and labels",
+        "Train/validation/test",
         "Regression",
         "Classification",
-        "Trees",
+        "Decision trees",
         "Ensembles",
         "Clustering",
+        "Dimensionality reduction",
         "Anomaly detection",
-        "Metrics",
-        "Cross-validation",
+        "Precision/recall",
         "Regularization",
         "Optimization",
         "Neural networks",
-        "Deep learning",
-        "Drift"
+        "Drift",
+        "Responsible ML"
       ],
       "case": "Case: classify suspicious login events while controlling false positives, leakage and changing attacker behavior.",
       "assessment": "Model comparison + evaluation report + security limitations review",
-      "lab": "Security ML Lab"
+      "lab": "Security ML Lab",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "Stanford Statistics/Data Science",
+          "url": "https://statistics.stanford.edu/academic-programs/graduate-programs/statistics-data-science-curriculum"
+        },
+        {
+          "name": "IIM Calcutta PGDBA",
+          "url": "https://www.iimcal.ac.in/programs/pgdba/programme-overview/course-list"
+        }
+      ]
     }
   },
   {
@@ -10898,6 +12031,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       },
       {
@@ -11063,6 +12206,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       },
       {
@@ -11228,6 +12381,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       },
       {
@@ -11393,6 +12556,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       },
       {
@@ -11558,6 +12731,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       },
       {
@@ -11723,6 +12906,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       },
       {
@@ -11888,6 +13081,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       },
       {
@@ -12053,6 +13256,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       },
       {
@@ -12218,6 +13431,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       },
       {
@@ -12383,6 +13606,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       },
       {
@@ -12548,6 +13781,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       },
       {
@@ -12713,6 +13956,16 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          }
         ]
       }
     ],
@@ -12742,7 +13995,18 @@ const NORTHSTAR_CURRICULUM = [
       ],
       "case": "Case: repeated authentication failures followed by a successful login and unusual endpoint activity; determine what happened using only available evidence.",
       "assessment": "Detection specification + investigation narrative + tuning review",
-      "lab": "Detection Engineering Lab"
+      "lab": "Detection Engineering Lab",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "NIST NICE v2.2.0",
+          "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+        },
+        {
+          "name": "NIST CSF 2.0",
+          "url": "https://www.nist.gov/cyberframework"
+        }
+      ]
     }
   },
   {
@@ -12916,6 +14180,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       },
       {
@@ -13081,6 +14359,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       },
       {
@@ -13246,6 +14538,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       },
       {
@@ -13411,6 +14717,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       },
       {
@@ -13576,6 +14896,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       },
       {
@@ -13741,11 +15075,25 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       },
       {
         "id": "clo-07",
-        "title": "Workload Security",
+        "title": "Workload Security: VMs, Containers & Kubernetes",
         "objective": "Understand workload security and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -13906,6 +15254,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       },
       {
@@ -14071,6 +15433,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       },
       {
@@ -14236,11 +15612,25 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       },
       {
         "id": "clo-10",
-        "title": "Infrastructure as Code Security",
+        "title": "Infrastructure as Code, Policy & Supply-Chain Security",
         "objective": "Understand infrastructure as code security and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -14401,11 +15791,25 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       },
       {
         "id": "clo-11",
-        "title": "Cloud Monitoring & Incident Response",
+        "title": "Cloud Monitoring, Detection & Incident Response",
         "objective": "Understand cloud monitoring & incident response and apply it to a realistic advanced security problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -14566,6 +15970,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       },
       {
@@ -14731,6 +16149,20 @@ const NORTHSTAR_CURRICULUM = [
           "You should be able to apply it to a new case.",
           "You should be able to identify evidence and limitations.",
           "You should be able to communicate the result to another professional."
+        ],
+        "references": [
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          },
+          {
+            "name": "NIST SSDF",
+            "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
         ]
       }
     ],
@@ -14747,21 +16179,41 @@ const NORTHSTAR_CURRICULUM = [
         "Plan monitoring, backup and recovery for cloud workloads."
       ],
       "topics": [
-        "Shared responsibility",
-        "Cloud IAM",
+        "Cloud architecture",
+        "IAM",
         "Network controls",
-        "Workload identity",
+        "Storage",
+        "Encryption",
         "Secrets",
-        "Storage security",
+        "VMs",
+        "Containers",
+        "Kubernetes concepts",
         "CI/CD",
-        "SAST/DAST concepts",
-        "Infrastructure as code",
+        "SAST/DAST/SCA",
+        "IaC",
+        "SBOM",
         "Monitoring",
-        "Resilience"
+        "Incident response",
+        "Supply chain"
       ],
       "case": "Case: migrate a customer-facing application to cloud while preserving identity controls, data protection, deployment safety and recovery capability.",
       "assessment": "Cloud architecture review + control mapping + secure pipeline design",
-      "lab": "Cloud Security Architecture Lab"
+      "lab": "Cloud Security Architecture Lab",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "NIST C-SCRM",
+          "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+        },
+        {
+          "name": "NIST SSDF",
+          "url": "https://csrc.nist.gov/csrc/projects/ssdf"
+        },
+        {
+          "name": "NIST NICE v2.2.0",
+          "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+        }
+      ]
     }
   },
   {
@@ -14859,12 +16311,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -15034,12 +16490,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -15209,12 +16669,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -15384,12 +16848,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -15559,12 +17027,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -15734,12 +17206,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -15909,12 +17385,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -15999,7 +17479,7 @@ const NORTHSTAR_CURRICULUM = [
       },
       {
         "id": "cyb-08",
-        "title": "Policies & Standards",
+        "title": "Policies, Standards & Security Governance",
         "objective": "Understand policies & standards and apply it to a realistic management & governance problem.",
         "time": "1.5–2 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -16084,12 +17564,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -16174,7 +17658,7 @@ const NORTHSTAR_CURRICULUM = [
       },
       {
         "id": "cyb-09",
-        "title": "Compliance & Evidence",
+        "title": "Compliance, Privacy & Audit Evidence",
         "objective": "Understand compliance & evidence and apply it to a realistic management & governance problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -16259,12 +17743,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -16349,7 +17837,7 @@ const NORTHSTAR_CURRICULUM = [
       },
       {
         "id": "cyb-10",
-        "title": "Third-Party Risk",
+        "title": "Third-Party, Supply-Chain & Resilience Risk",
         "objective": "Understand third-party risk and apply it to a realistic management & governance problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -16434,12 +17922,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -16524,7 +18016,7 @@ const NORTHSTAR_CURRICULUM = [
       },
       {
         "id": "cyb-11",
-        "title": "Security Metrics for Leaders",
+        "title": "Security Metrics, Investment & Executive Decisions",
         "objective": "Understand security metrics for leaders and apply it to a realistic management & governance problem.",
         "time": "2–2.5 hours",
         "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
@@ -16609,12 +18101,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -16784,12 +18280,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "IIM Calcutta Cybersecurity for Business",
+            "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
           }
         ],
         "caseQuestions": [
@@ -16889,20 +18389,39 @@ const NORTHSTAR_CURRICULUM = [
         "Governance",
         "Risk appetite",
         "Enterprise risk",
-        "Controls",
+        "Policies",
+        "Standards",
+        "Control design",
         "Compliance",
         "Privacy",
         "Audit evidence",
-        "BCP/DR",
+        "Business continuity",
+        "Disaster recovery",
         "Third-party risk",
         "C-SCRM",
         "Metrics",
-        "Budgets",
-        "Board reporting"
+        "Budgeting",
+        "Board reporting",
+        "Incident communications"
       ],
       "case": "Case: a growing digital business must prioritize security investments across identity, cloud, applications and workforce risk.",
       "assessment": "Enterprise risk register + control assessment + executive briefing",
-      "lab": "Cyber Risk Management Lab"
+      "lab": "Cyber Risk Management Lab",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "NIST CSF 2.0",
+          "url": "https://www.nist.gov/cyberframework"
+        },
+        {
+          "name": "IIM Calcutta Cyber Leadership",
+          "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+        },
+        {
+          "name": "IIM Calcutta Cybersecurity for Business",
+          "url": "https://www.iimcal.ac.in/programs/pgpex/elective-courses-offered-mba-for-executives-programme-term5"
+        }
+      ]
     }
   },
   {
@@ -16937,7 +18456,22 @@ const NORTHSTAR_CURRICULUM = [
       ],
       "case": "A customer portal must protect credentials, sessions, stored records and service-to-service traffic while keeping keys manageable.",
       "assessment": "Cryptographic design review + protocol walkthrough + privacy risk analysis",
-      "lab": "Crypto & Trust Design Lab"
+      "lab": "Crypto & Trust Design Lab",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "Georgia Tech Applied Cryptography",
+          "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+        },
+        {
+          "name": "NIST Key Management SP 800-57",
+          "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+        },
+        {
+          "name": "NIST Privacy Framework",
+          "url": "https://www.nist.gov/privacy-framework"
+        }
+      ]
     },
     "lessons": [
       {
@@ -17057,7 +18591,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Cryptographic Goals & Threat Models was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of Cryptographic Goals & Threat Models was wrong?",
+        "references": [
+          {
+            "name": "Georgia Tech Applied Cryptography",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NIST Key Management SP 800-57",
+            "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+          },
+          {
+            "name": "NIST Privacy Framework",
+            "url": "https://www.nist.gov/privacy-framework"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Cryptographic Goals & Threat Models into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ct-02",
@@ -17176,7 +18734,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Hash Functions, Integrity & Password Storage was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of Hash Functions, Integrity & Password Storage was wrong?",
+        "references": [
+          {
+            "name": "Georgia Tech Applied Cryptography",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NIST Key Management SP 800-57",
+            "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+          },
+          {
+            "name": "NIST Privacy Framework",
+            "url": "https://www.nist.gov/privacy-framework"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Hash Functions, Integrity & Password Storage into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ct-03",
@@ -17295,7 +18877,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Symmetric Encryption & Authenticated Encryption was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of Symmetric Encryption & Authenticated Encryption was wrong?",
+        "references": [
+          {
+            "name": "Georgia Tech Applied Cryptography",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NIST Key Management SP 800-57",
+            "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+          },
+          {
+            "name": "NIST Privacy Framework",
+            "url": "https://www.nist.gov/privacy-framework"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Symmetric Encryption & Authenticated Encryption into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ct-04",
@@ -17414,7 +19020,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Public-Key Cryptography & Key Exchange was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of Public-Key Cryptography & Key Exchange was wrong?",
+        "references": [
+          {
+            "name": "Georgia Tech Applied Cryptography",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NIST Key Management SP 800-57",
+            "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+          },
+          {
+            "name": "NIST Privacy Framework",
+            "url": "https://www.nist.gov/privacy-framework"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Public-Key Cryptography & Key Exchange into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ct-05",
@@ -17533,7 +19163,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Digital Signatures, Certificates & PKI was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of Digital Signatures, Certificates & PKI was wrong?",
+        "references": [
+          {
+            "name": "Georgia Tech Applied Cryptography",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NIST Key Management SP 800-57",
+            "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+          },
+          {
+            "name": "NIST Privacy Framework",
+            "url": "https://www.nist.gov/privacy-framework"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Digital Signatures, Certificates & PKI into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ct-06",
@@ -17652,7 +19306,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of TLS and Secure Communication was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of TLS and Secure Communication was wrong?",
+        "references": [
+          {
+            "name": "Georgia Tech Applied Cryptography",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NIST Key Management SP 800-57",
+            "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+          },
+          {
+            "name": "NIST Privacy Framework",
+            "url": "https://www.nist.gov/privacy-framework"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break TLS and Secure Communication into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ct-07",
@@ -17771,7 +19449,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Key Management & Cryptographic Failure Modes was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of Key Management & Cryptographic Failure Modes was wrong?",
+        "references": [
+          {
+            "name": "Georgia Tech Applied Cryptography",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NIST Key Management SP 800-57",
+            "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+          },
+          {
+            "name": "NIST Privacy Framework",
+            "url": "https://www.nist.gov/privacy-framework"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Key Management & Cryptographic Failure Modes into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ct-08",
@@ -17890,7 +19592,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Privacy Engineering & Data Protection was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of Privacy Engineering & Data Protection was wrong?",
+        "references": [
+          {
+            "name": "Georgia Tech Applied Cryptography",
+            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+          },
+          {
+            "name": "NIST Key Management SP 800-57",
+            "url": "https://csrc.nist.gov/pubs/sp/800/57/pt1/r5/final"
+          },
+          {
+            "name": "NIST Privacy Framework",
+            "url": "https://www.nist.gov/privacy-framework"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Privacy Engineering & Data Protection into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       }
     ]
   },
@@ -17927,7 +19653,22 @@ const NORTHSTAR_CURRICULUM = [
       ],
       "case": "An enterprise introduces a generative-AI assistant that can search internal data and call business tools.",
       "assessment": "AI security threat model + governance memo + emerging-technology risk register",
-      "lab": "AI & Emerging Technology Security Lab"
+      "lab": "AI & Emerging Technology Security Lab",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "NIST NICE v2.2.0",
+          "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+        },
+        {
+          "name": "NIST AI RMF Generative AI Profile",
+          "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+        },
+        {
+          "name": "NIST C-SCRM",
+          "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+        }
+      ]
     },
     "lessons": [
       {
@@ -18047,7 +19788,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of AI Security Mental Models was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of AI Security Mental Models was wrong?",
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST AI RMF Generative AI Profile",
+            "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+          },
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break AI Security Mental Models into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ae-02",
@@ -18166,7 +19931,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Adversarial Machine Learning was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of Adversarial Machine Learning was wrong?",
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST AI RMF Generative AI Profile",
+            "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+          },
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Adversarial Machine Learning into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ae-03",
@@ -18285,7 +20074,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Data Poisoning, Evasion & Model Theft was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of Data Poisoning, Evasion & Model Theft was wrong?",
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST AI RMF Generative AI Profile",
+            "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+          },
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Data Poisoning, Evasion & Model Theft into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ae-04",
@@ -18404,7 +20217,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of LLM Security & Prompt Injection was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of LLM Security & Prompt Injection was wrong?",
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST AI RMF Generative AI Profile",
+            "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+          },
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break LLM Security & Prompt Injection into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ae-05",
@@ -18523,7 +20360,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of AI Agents, Tools & Trust Boundaries was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of AI Agents, Tools & Trust Boundaries was wrong?",
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST AI RMF Generative AI Profile",
+            "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+          },
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break AI Agents, Tools & Trust Boundaries into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ae-06",
@@ -18642,7 +20503,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Responsible AI, Privacy & Governance was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of Responsible AI, Privacy & Governance was wrong?",
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST AI RMF Generative AI Profile",
+            "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+          },
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Responsible AI, Privacy & Governance into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ae-07",
@@ -18761,7 +20646,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of IoT, OT/ICS & Cyber-Physical Resilience was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of IoT, OT/ICS & Cyber-Physical Resilience was wrong?",
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST AI RMF Generative AI Profile",
+            "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+          },
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break IoT, OT/ICS & Cyber-Physical Resilience into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       },
       {
         "id": "ae-08",
@@ -18880,7 +20789,31 @@ const NORTHSTAR_CURRICULUM = [
           "Evidence and assumption handling",
           "Clear professional communication"
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Supply Chain & Emerging Technology Risk was wrong?"
+        "reflection": "What observation would most quickly tell you that your first explanation of Supply Chain & Emerging Technology Risk was wrong?",
+        "references": [
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          },
+          {
+            "name": "NIST AI RMF Generative AI Profile",
+            "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence"
+          },
+          {
+            "name": "NIST C-SCRM",
+            "url": "https://csrc.nist.gov/Projects/cyber-supply-chain-risk-management"
+          }
+        ],
+        "sections": [
+          {
+            "title": "Mechanism and boundary",
+            "body": "Break Supply Chain & Emerging Technology Risk into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+          },
+          {
+            "title": "Decision and evidence",
+            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+          }
+        ]
       }
     ]
   },
@@ -18979,12 +20912,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -19154,12 +21091,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -19329,12 +21270,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -19504,12 +21449,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -19679,12 +21628,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -19854,12 +21807,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -20029,12 +21986,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -20204,12 +22165,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -20379,12 +22344,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -20554,12 +22523,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -20729,12 +22702,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -20904,12 +22881,16 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
             "name": "IIM Calcutta Cyber Leadership",
             "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
           },
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           }
         ],
         "caseQuestions": [
@@ -21023,7 +23004,22 @@ const NORTHSTAR_CURRICULUM = [
       ],
       "case": "Capstone: design a security transformation for a mid-sized digital enterprise with identity, cloud, application, data and operational constraints.",
       "assessment": "Portfolio-grade enterprise security transformation dossier + presentation",
-      "lab": "NorthStar Enterprise Simulation"
+      "lab": "NorthStar Enterprise Simulation",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "NIST CSF 2.0",
+          "url": "https://www.nist.gov/cyberframework"
+        },
+        {
+          "name": "IIM Calcutta Cyber Leadership",
+          "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+        },
+        {
+          "name": "NIST NICE v2.2.0",
+          "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+        }
+      ]
     }
   }
 ];
