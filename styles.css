@@ -277,3 +277,24 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
   .hero h1{font-size:46px}
   .mobile-profile{display:none}
 }
+
+/* Academic Learn screen — content depth only; visual system remains frozen. */
+.module-card{overflow:hidden}
+.module-title-row{display:flex;align-items:center;gap:10px;justify-content:space-between}
+.module-title-row strong{min-width:0}
+.module-details{margin:0 16px 16px;border-top:1px solid rgba(100,116,139,.14);padding-top:12px}
+.module-details summary{cursor:pointer;font-weight:800;color:#2563eb;list-style:none}
+.module-details summary::-webkit-details-marker{display:none}
+.module-details summary::after{content:"＋";float:right;font-size:18px}
+.module-details[open] summary::after{content:"−"}
+.module-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.module-detail-grid>div{padding:14px;border-radius:16px;background:rgba(248,250,252,.72);border:1px solid rgba(148,163,184,.12)}
+.module-detail-grid p,.module-detail-grid ul{margin:8px 0 0;color:#64748b;line-height:1.55;font-size:14px}
+.module-detail-grid ul{padding-left:18px}
+.topic-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.topic{padding:6px 9px;border-radius:999px;background:rgba(37,99,235,.07);color:#334155;font-size:12px;font-weight:700}
+@media(max-width:700px){
+ .module-title-row{align-items:flex-start;flex-direction:column;gap:7px}
+ .module-detail-grid{grid-template-columns:1fr}
+ .module-details{margin-left:12px;margin-right:12px}
+}
