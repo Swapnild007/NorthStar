@@ -152,8 +152,9 @@ const views={
   let panel="";
   if(state.lessonTab==="Read")panel=`<div class="lesson-stack">
    <div class="lesson-meta"><span><b>Study time</b>${esc(l.time||"Self-paced")}</span><span><b>Prerequisite</b>${esc(l.prerequisite||"None")}</span></div>
-   <div><h2>What to understand</h2><p class="subtitle">${esc(l.read)}</p></div>
+   <div><h2>What to understand</h2>${String(l.read||"").split(/\\n\\n|\n\n/).filter(Boolean).map(x=>`<p class="subtitle lesson-paragraph">${esc(x)}</p>`).join("")}</div>
    <div class="inset"><strong>Core concepts</strong><div class="topic-list">${(l.concepts||[]).map(x=>`<span class="topic">${esc(x)}</span>`).join("")}</div></div>
+   <div class="inset"><strong>Beginner vocabulary</strong><div class="vocab-list">${(l.glossary||[]).map(x=>`<div><b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join("")}</div></div>
    <div class="inset"><strong>Worked example</strong><p class="subtitle">${esc(l.example||"Apply the concept to a realistic security scenario.")}</p></div>
    <div class="inset"><strong>Case analysis</strong><p class="subtitle">${esc(l.case||"Analyze a controlled scenario and state your assumptions.")}</p></div>
   </div>`;
