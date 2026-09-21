@@ -25,19 +25,19 @@ jobs:
           python - <<'PY'
           import pathlib
           s=pathlib.Path("data/curriculum.js").read_text()
-          stack=[]; pairs={")":"(","]":"[","}":"{"}; in_str=None; esc=False; line=1
-          for ch in s:
-              if ch=="\\n": line+=1
+          stack=[]; pairs={")":"(","]":"[","}":"{"}; in_str=None; esc=False
+          for i,ch in enumerate(s):
               if in_str:
                   if esc: esc=False
-                  elif ch=="\\\\": esc=True
+                  elif ch=="\\": esc=True
                   elif ch==in_str: in_str=None
-              elif ch in "'\\\"`": in_str=ch
-              elif ch in "([{": stack.append((ch,line))
+              elif ch in "'\"`": in_str=ch
+              elif ch in "([{": stack.append((ch,i))
               elif ch in ")]}":
-                  if not stack or stack[-1][0]!=pairs[ch]: raise SystemExit(f"delimiter mismatch at line {line}: {ch}; stack top={stack[-1] if stack else None}")
+                  if not stack or stack[-1][0]!=pairs[ch]: raise SystemExit(f"delimiter mismatch at index {i}: {ch}; stack top={stack[-1] if stack else None}")
                   stack.pop()
-          print("delimiter stack:",stack[-20:])
+          print("delimiter stack:",stack[-10:])
+          for ch,i in stack[-10:]: print("OPEN",ch,"INDEX",i,"CONTEXT",repr(s[max(0,i-80):i+120]))
           PY
           node --check data/curriculum.js
       - name: Configure Pages
