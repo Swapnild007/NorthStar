@@ -172,6 +172,12 @@ const views={
   if(state.lessonTab==="Read")panel=`<div class="lesson-stack">
    <div class="lesson-meta"><span><b>Study time</b>${esc(l.time||"Self-paced")}</span><span><b>Prerequisite</b>${esc(l.prerequisite||"None")}</span></div>
    ${l.learningGoal?`<div class="inset callout"><strong>Learning goal</strong><p class="subtitle">${esc(l.learningGoal)}</p></div>`:""}
+   ${l.why?`<div class="inset callout"><strong>Why this matters</strong><p class="subtitle">${esc(l.why)}</p></div>`:""}
+   ${l.competency?`<div class="inset"><strong>Competency target</strong><p class="subtitle">${esc(l.competency)}</p></div>`:""}
+   ${Array.isArray(l.deepDive)&&l.deepDive.length?`<div class="depth-grid">${l.deepDive.map((x,i)=>`<div class="depth-card"><span>${i+1}</span><div><b>${esc(x.title||"Deep dive")}</b><p>${esc(x.body||"")}</p></div></div>`).join("")}</div>`:""}
+   ${l.math?`<div class="inset example-card"><span class="eyebrow">${esc(l.math.title||"Mathematical foundation")}</span><h3>Intuition → formula → interpretation</h3><p class="subtitle">${esc(l.math.body||"")}</p><div class="answer-note"><b>How to study it</b><p>${esc(l.math.intuition||"Understand the quantities first, then calculate and interpret.")}</p></div></div>`:""}
+   ${l.dataQuality?`<div class="inset"><strong>${esc(l.dataQuality.title)}</strong><ul class="lesson-list">${(l.dataQuality.items||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
+   ${Array.isArray(l.modelWorkflow)&&l.modelWorkflow.length?`<div class="inset"><strong>Model development workflow</strong><ol class="practice-steps">${l.modelWorkflow.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`:""}
    ${highlights.length?`<div class="depth-grid">${highlights.map((x,i)=>`<div class="depth-card highlight-card"><span>${i+1}</span><div><b>Key idea</b><p>${esc(x)}</p></div></div>`).join("")}</div>`:""}
    ${plan.length?`<div class="inset"><strong>How to use your study time</strong><div class="study-plan">${plan.map((x,i)=>`<div class="plan-row"><span>${i+1}</span><div><b>${esc(x[0])}</b><small>${esc(x[1])}</small></div></div>`).join("")}</div></div>`:""}
    ${deepLessonBlocks(l)}
@@ -184,6 +190,8 @@ const views={
    ${l.case?`<div class="inset case-card"><span class="eyebrow">Case analysis</span><h3>${esc(l.caseTitle||"Case study")}</h3><p class="subtitle">${esc(l.case)}</p>${l.caseQuestions?`<ul class="lesson-list">${l.caseQuestions.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}</div>`:""}
    ${notes.length?`<div class="note-card"><span class="eyebrow">Study notes</span>${notes.map(x=>`<div class="note-row"><span>✦</span><p>${esc(x)}</p></div>`).join("")}</div>`:""}
    ${takeaways.length?`<div class="inset takeaway-card"><strong>Key takeaways</strong><ol>${takeaways.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`:""}
+   ${Array.isArray(l.assessmentRubric)&&l.assessmentRubric.length?`<div class="inset"><span class="eyebrow">Assessment standard</span><ul class="lesson-list">${l.assessmentRubric.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
+   ${Array.isArray(l.references)&&l.references.length?`<div class="inset"><span class="eyebrow">Academic references</span><div class="vocab-list">${l.references.map(x=>`<div><b>${esc(x.name)}</b><span><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Open source ↗</a></span></div>`).join("")}</div></div>`:""}
   </div>`;
   else if(state.lessonTab==="Practice")panel=`<div class="lesson-stack">
    <div><h2>Practice by doing</h2><p class="subtitle">${esc(l.practice||"Work through the problem in your own words before checking the answer.")}</p></div>
