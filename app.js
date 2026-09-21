@@ -149,26 +149,43 @@ const views={
   </section>`;
  },
  lesson:()=>{
-  const c=curriculum[state.selectedCourse],l=c?.lessons?.[state.selectedLesson];if(!c||!l)return `<div class="empty card glass">Lesson unavailable.</div>`;
-  const done=state.completedLessons.includes(l.id),meta=l.meta||{};
+  const c=curriculum[state.selectedCourse],l=c?.lessons?.[state.selectedLesson];
+  if(!c||!l)return `<div class="empty card glass">Lesson unavailable.</div>`;
+  const list=a=>Array.isArray(a)?a.filter(Boolean):[];
+  const paragraphs=String(l.read||"").split(/\\n\\n|\n\n/).filter(Boolean);
+  const highlights=list(l.highlights), sections=list(l.sections), notes=list(l.notes), takeaways=list(l.takeaways);
+  const examples=Array.isArray(l.examples)?l.examples:[], qas=Array.isArray(l.qa)?l.qa:[], plan=Array.isArray(l.studyPlan)?l.studyPlan:[];
+  const visual=l.visual, graph=l.graph;
+  const graphHtml=graph?`<div class="visual-card lesson-graph"><span class="eyebrow">${esc(graph.title||"Learning graph")}</span><p class="visual-caption">${esc(graph.caption||"Use the pattern to reason about the concept.")}</p><div class="graph-bars">${(graph.items||[]).map(x=>`<div class="graph-row"><div class="graph-label"><span>${esc(x.label)}</span><b>${esc(x.value)}</b></div><div class="graph-track"><i style="width:${Math.max(0,Math.min(100,Number(x.percent)||0))}%"></i></div></div>`).join("")}</div></div>`:"";
+  const visualHtml=visual?`<div class="visual-card"><span class="eyebrow">${esc(visual.title||"Visual model")}</span><p class="visual-caption">${esc(visual.caption||"")}</p><div class="visual-steps">${(visual.steps||[]).map((x,i)=>`<div class="visual-step"><span>${i+1}</span><strong>${esc(x)}</strong></div>`).join("")}</div></div>`:"";
   let panel="";
   if(state.lessonTab==="Read")panel=`<div class="lesson-stack">
    <div class="lesson-meta"><span><b>Study time</b>${esc(l.time||"Self-paced")}</span><span><b>Prerequisite</b>${esc(l.prerequisite||"None")}</span></div>
-   <div><h2>What to understand</h2>${String(l.read||"").split(/\\n\\n|\n\n/).filter(Boolean).map(x=>`<p class="subtitle lesson-paragraph">${esc(x)}</p>`).join("")}</div>
-   <div class="inset"><strong>Core concepts</strong><div class="topic-list">${(l.concepts||[]).map(x=>`<span class="topic">${esc(x)}</span>`).join("")}</div></div>
-   <div class="inset"><strong>Beginner vocabulary</strong><div class="vocab-list">${(l.glossary||[]).map(x=>`<div><b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join("")}</div></div>
-   ${l.visual?`<div class="visual-card"><span class="eyebrow">${esc(l.visual.title||"Visual model")}</span><p class="visual-caption">${esc(l.visual.caption||"")}</p><div class="visual-steps">${(l.visual.steps||[]).map((x,i)=>`<div class="visual-step"><span>${i+1}</span><strong>${esc(x)}</strong></div>`).join("")}</div></div>`:""}<div class="inset"><strong>Worked example</strong><p class="subtitle">${esc(l.example||"Apply the concept to a realistic security scenario.")}</p></div>
-   <div class="inset"><strong>Case analysis</strong><p class="subtitle">${esc(l.case||"Analyze a controlled scenario and state your assumptions.")}</p></div>
+   ${l.learningGoal?`<div class="inset callout"><strong>Learning goal</strong><p class="subtitle">${esc(l.learningGoal)}</p></div>`:""}
+   ${highlights.length?`<div class="depth-grid">${highlights.map((x,i)=>`<div class="depth-card highlight-card"><span>${i+1}</span><div><b>Key idea</b><p>${esc(x)}</p></div></div>`).join("")}</div>`:""}
+   ${plan.length?`<div class="inset"><strong>How to use your study time</strong><div class="study-plan">${plan.map((x,i)=>`<div class="plan-row"><span>${i+1}</span><div><b>${esc(x[0])}</b><small>${esc(x[1])}</small></div></div>`).join("")}</div></div>`:""}
+   <div><h2>What to understand</h2>${paragraphs.map(x=>`<p class="subtitle lesson-paragraph">${esc(x)}</p>`).join("")}</div>
+   ${sections.map(s=>`<div class="inset"><strong>${esc(s.title)}</strong>${String(s.body||"").split(/\\n\\n|\n\n/).filter(Boolean).map(x=>`<p class="subtitle">${esc(x)}</p>`).join("")}</div>`).join("")}
+   ${(l.concepts||[]).length?`<div class="inset"><strong>Core concepts</strong><div class="topic-list">${(l.concepts||[]).map(x=>`<span class="topic">${esc(x)}</span>`).join("")}</div></div>`:""}
+   ${(l.glossary||[]).length?`<div class="inset"><strong>Beginner vocabulary</strong><div class="vocab-list">${(l.glossary||[]).map(x=>`<div><b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join("")}</div></div>`:""}
+   ${visualHtml}${graphHtml}
+   ${examples.length?examples.map((x,i)=>`<div class="inset example-card"><span class="eyebrow">Worked example ${i+1}</span><h3>${esc(x.title||"Example")}</h3><p class="subtitle">${esc(x.body||x)}</p>${x.answer?`<div class="answer-note"><b>Reasoning</b><p>${esc(x.answer)}</p></div>`:""}</div>`).join(""):`<div class="inset example-card"><strong>Worked example</strong><p class="subtitle">${esc(l.example||"Apply the concept to a realistic security scenario.")}</p></div>`}
+   ${l.case?`<div class="inset case-card"><span class="eyebrow">Case analysis</span><h3>${esc(l.caseTitle||"Case study")}</h3><p class="subtitle">${esc(l.case)}</p>${l.caseQuestions?`<ul class="lesson-list">${l.caseQuestions.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}</div>`:""}
+   ${notes.length?`<div class="note-card"><span class="eyebrow">Study notes</span>${notes.map(x=>`<div class="note-row"><span>✦</span><p>${esc(x)}</p></div>`).join("")}</div>`:""}
+   ${takeaways.length?`<div class="inset takeaway-card"><strong>Key takeaways</strong><ol>${takeaways.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`:""}
   </div>`;
   else if(state.lessonTab==="Practice")panel=`<div class="lesson-stack">
-   <div><h2>Applied practice</h2><p class="subtitle">${esc(l.practice)}</p></div>
+   <div><h2>Practice by doing</h2><p class="subtitle">${esc(l.practice||"Work through the problem in your own words before checking the answer.")}</p></div>
+   ${Array.isArray(l.practiceSteps)&&l.practiceSteps.length?`<div class="inset"><strong>Guided practice</strong><ol class="practice-steps">${l.practiceSteps.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`:""}
    <div class="inset"><strong>Evidence checkpoint</strong><p class="subtitle">${esc(l.evidence||"Write your observation or answer before moving on. Keep the evidence reproducible and scoped.")}</p></div>
    <div class="inset"><strong>Common mistakes to avoid</strong><ul class="lesson-list">${(l.mistakes||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+   ${l.reflection?`<div class="note-card"><span class="eyebrow">Self-explanation</span><p>${esc(l.reflection)}</p></div>`:""}
   </div>`;
-  else panel=`<div class="lesson-stack"><h2>Check your understanding</h2><p class="subtitle">${esc(l.check.q)}</p><div class="check-options">${l.check.options.map(x=>`<button class="option ${state.checkAnswer===x?"selected":""}" data-answer="${esc(x)}">${esc(x)}</button>`).join("")}</div><p class="feedback">${state.checkAnswer?(state.checkAnswer===l.check.answer?"Correct. "+esc(l.check.why||""): "Not quite. Re-read the lesson and try again."):"Select an answer to check it."}</p></div>`;
+  else if(state.lessonTab==="Q&A")panel=`<div class="lesson-stack"><h2>Questions & answers</h2><p class="subtitle">Try to answer each question before opening the explanation.</p>${qas.map((x,i)=>`<details class="qa-card"><summary><span>${i+1}</span>${esc(x.q)}</summary><div><b>Answer</b><p>${esc(x.a)}</p>${x.why?`<b>Why</b><p>${esc(x.why)}</p>`:""}</div></details>`).join("")}</div>`;
+  else panel=`<div class="lesson-stack"><h2>Check your understanding</h2><p class="subtitle">${esc(l.check?.q||"What is the most important idea from this lesson?")}</p><div class="check-options">${(l.check?.options||[]).map(x=>`<button class="option ${state.checkAnswer===x?"selected":""}" data-answer="${esc(x)}">${esc(x)}</button>`).join("")}</div><p class="feedback">${state.checkAnswer?(state.checkAnswer===l.check.answer?"Correct. "+esc(l.check.why||"Your reasoning matches the lesson."): "Not quite. Re-read the relevant section, explain the concept in your own words, and try again."):"Select an answer to check it."}</p>${l.check?.explain?`<div class="answer-note"><b>Why this matters</b><p>${esc(l.check.explain)}</p></div>`:""}</div>`;
   return `<section class="fade"><button class="back" data-route="learn">← Back to curriculum</button><div class="card glass lesson-card">
    <span class="eyebrow">Lesson ${c.code} · ${esc(c.title)}</span><h1>${esc(l.title)}</h1><p class="subtitle">${esc(l.objective)}</p>
-   <div class="tabs">${["Read","Practice","Check"].map(t=>`<button class="chip ${state.lessonTab===t?"active":""}" data-lesson-tab="${t}">${t}</button>`).join("")}</div>
+   <div class="tabs">${["Read","Practice","Q&A","Check"].map(t=>`<button class="chip ${state.lessonTab===t?"active":""}" data-lesson-tab="${t}">${t}</button>`).join("")}</div>
    <div class="section tab-panel">${panel}</div>
    <div class="lesson-footer"><span class="status ${done?"success":""}">${done?"✓ Completed":"In progress"}</span><button class="chip active" data-complete-lesson>${done?"Completed":"Mark lesson complete"}</button></div>
   </div></section>`;
