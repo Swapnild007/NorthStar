@@ -22,18 +22,6 @@ jobs:
       - name: Validate JavaScript
         run: |
           node --check app.js
-          python - <<'PY'
-          import pathlib
-          s=pathlib.Path("data/curriculum.js").read_text()
-          in_str=None; esc=False; starts=[]
-          for i,ch in enumerate(s):
-              if in_str:
-                  if esc: esc=False
-                  elif ch=="\\": esc=True
-                  elif ch==in_str: in_str=None
-              elif ch in "'\"`": in_str=ch; starts.append((ch,i))
-          print("open string:",in_str,"last starts:",starts[-8:])
-          PY
           node --check data/curriculum.js
       - name: Configure Pages
         uses: actions/configure-pages@v5
