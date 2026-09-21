@@ -1,4 +1,5 @@
-const VERSION="1.0.1";
+const VERSION="0.2.0";
+const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 
 function readStoredJSON(key,fallback){
  try{
@@ -59,7 +60,7 @@ function render(){
    </aside>
    <main class="main">
     <header class="topbar">
-      <div class="brand"><span class="brand-mark">N</span><span class="brand-copy">NorthStar<small>LEARN · PRACTICE · BUILD · SECURE</small></span></div>
+      <div class="brand"><span class="brand-mark">N</span><span class="brand-copy">NorthStar<small>${esc(COURSE.shortTitle)}</small></span></div>
       <div class="profile" title="NorthStar learner">NS</div>
     </header>
     <div id="view"></div>
@@ -77,7 +78,7 @@ const views={
    <div class="hero glass">
     <span class="eyebrow">Capability platform</span>
     <h1>Your capability.<br>Your path.<br>A safer tomorrow.</h1>
-    <p>Master cybersecurity through structured learning, controlled practice, and evidence of what you can actually do.</p>
+    <p>${esc(COURSE.description)}</p>
     <button class="cta" data-route="learn">Continue Learning →</button>
    </div>
    <div class="grid stats">
@@ -114,18 +115,19 @@ const views={
   </section>`;
  },
  learn:()=>{
+  const categories=["All",...new Set(curriculum.map(c=>c.category).filter(Boolean))];
   const filtered=state.filter==="All"?curriculum:curriculum.filter(c=>c.category===state.filter);
   return `<section class="fade">
    <span class="eyebrow">Academic learning path</span>
    <h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">Build real capability.</h1>
-   <p class="subtitle">Six structured modules · ${totalLessons()} lessons · case analysis · applied practice · assessment evidence.</p>
-   <div class="tabs">${["All","Foundation","Network","Defensive","Offensive"].map(x=>`<button class="chip ${state.filter===x?"active":""}" data-filter="${x}">${x}</button>`).join("")}</div>
+   <p class="subtitle">${curriculum.length} pathways · ${totalLessons()} active lessons · case analysis · applied practice · assessment evidence.</p>
+   <div class="tabs">${categories.map(x=>`<button class="chip ${state.filter===x?"active":""}" data-filter="${x}">${x}</button>`).join("")}</div>
    <div class="list section">${filtered.map(c=>{
      const i=curriculum.indexOf(c),p=courseProgress(i),next=(c.lessons||[]).findIndex(l=>!state.completedLessons.includes(l.id)),m=c.meta||{};
      return `<article class="card glass module-card">
-       <button class="school clickable" data-course="${i}" data-lesson="${next<0?0:next}">
+       <button class="school clickable" ${(!c.lessons||!c.lessons.length)?"disabled":`data-course="${i}" data-lesson="${next<0?0:next}"`}>
         <div class="course-icon">${c.code}</div>
-        <div class="course-main"><div class="module-title-row"><strong>${esc(c.title)}</strong><span class="badge ${p===100?"done":""}">${p===100?"Complete":m.level||c.category}</span></div><p>${esc(m.focus||c.description)}</p><div class="progress"><i style="width:${p}%"></i></div><small>${(c.lessons||[]).length} lessons · ${m.load||"Self-paced"} · ${p}% complete</small></div>
+        <div class="course-main"><div class="module-title-row"><strong>${esc(c.title)}</strong><span class="badge ${p===100?"done":""}">${p===100?"Complete":c.status==="planned"?"Roadmap":m.level||c.category}</span></div><p>${esc(m.focus||c.description)}</p><div class="progress"><i style="width:${p}%"></i></div><small>${(c.lessons||[]).length} lessons · ${m.load||"Self-paced"} · ${p}% complete</small></div>
        </button>
        <details class="module-details">
         <summary>Module outline & academic depth</summary>
@@ -155,7 +157,7 @@ const views={
    <div><h2>What to understand</h2>${String(l.read||"").split(/\\n\\n|\n\n/).filter(Boolean).map(x=>`<p class="subtitle lesson-paragraph">${esc(x)}</p>`).join("")}</div>
    <div class="inset"><strong>Core concepts</strong><div class="topic-list">${(l.concepts||[]).map(x=>`<span class="topic">${esc(x)}</span>`).join("")}</div></div>
    <div class="inset"><strong>Beginner vocabulary</strong><div class="vocab-list">${(l.glossary||[]).map(x=>`<div><b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join("")}</div></div>
-   <div class="inset"><strong>Worked example</strong><p class="subtitle">${esc(l.example||"Apply the concept to a realistic security scenario.")}</p></div>
+   ${l.visual?`<div class="visual-card"><span class="eyebrow">${esc(l.visual.title||"Visual model")}</span><p class="visual-caption">${esc(l.visual.caption||"")}</p><div class="visual-steps">${(l.visual.steps||[]).map((x,i)=>`<div class="visual-step"><span>${i+1}</span><strong>${esc(x)}</strong></div>`).join("")}</div></div>`:""}<div class="inset"><strong>Worked example</strong><p class="subtitle">${esc(l.example||"Apply the concept to a realistic security scenario.")}</p></div>
    <div class="inset"><strong>Case analysis</strong><p class="subtitle">${esc(l.case||"Analyze a controlled scenario and state your assumptions.")}</p></div>
   </div>`;
   else if(state.lessonTab==="Practice")panel=`<div class="lesson-stack">
