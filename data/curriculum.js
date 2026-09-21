@@ -19055,7 +19055,7 @@ const NORTHSTAR_CURRICULUM = [
     "description": "Build cryptographic intuition, protocol literacy, privacy engineering and key-management capability.",
     "meta": {
       "level": "Intermediate → Advanced",
-      "load": "18–22 hours",
+      "load": "16–22 hours",
       "focus": "Understand cryptographic mechanisms, protocol trust, key lifecycle and privacy engineering.",
       "outcomes": [
         "Explain hashes, MACs, symmetric and asymmetric cryptography.",
@@ -20044,7 +20044,7 @@ const NORTHSTAR_CURRICULUM = [
     "description": "Connect cybersecurity, data science and management through adversarial ML, GenAI security, responsible AI, IoT/OT and supply-chain risk.",
     "meta": {
       "level": "Advanced / Applied",
-      "load": "18–22 hours",
+      "load": "16–22 hours",
       "focus": "Assess AI and emerging technology risk across models, data, agents, devices and supply chains.",
       "outcomes": [
         "Explain common AI attack and failure modes.",
