@@ -81,7 +81,7 @@ function render(){
 
 const views={
  home:()=>{
-  const p=overallPercent(), cp=courseProgress(1);
+  const p=overallPercent(), cp=courseProgress(2);
   const activity=allLessons().filter(l=>state.completedLessons.includes(l.id)).slice(-3).reverse();
   return `<section class="fade">
    <div class="hero glass">
@@ -102,8 +102,8 @@ const views={
    </div>
    <div class="section">
     <div class="section-head"><h2>Continue learning</h2><button data-route="learn">See all →</button></div>
-    <button class="card glass learning-card clickable" data-course="1" data-lesson="0" style="width:100%">
-      <div class="course-icon">02</div><div class="course-main"><strong>${curriculum[1]?.title||"Network Security"}</strong><small>Lesson ${Math.min(5,(curriculum[1]?.lessons||[]).length)} · TCP/IP · traffic · segmentation</small><div class="progress"><i style="width:${cp||42}%"></i></div></div><b>${cp||42}%</b>
+    <button class="card glass learning-card clickable" data-course="2" data-lesson="0" style="width:100%">
+      <div class="course-icon">02</div><div class="course-main"><strong>${curriculum[2]?.title||"Networking & Network Security"}</strong><small>Lesson ${Math.min(5,(curriculum[2]?.lessons||[]).length)} · TCP/IP · traffic · segmentation</small><div class="progress"><i style="width:${cp||42}%"></i></div></div><b>${cp||42}%</b>
     </button>
    </div>
    <div class="section grid quick-grid">
