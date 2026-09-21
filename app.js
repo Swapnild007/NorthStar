@@ -148,10 +148,21 @@ const views={
  },
  lesson:()=>{
   const c=curriculum[state.selectedCourse],l=c?.lessons?.[state.selectedLesson];if(!c||!l)return `<div class="empty card glass">Lesson unavailable.</div>`;
-  const done=state.completedLessons.includes(l.id);let panel="";
-  if(state.lessonTab==="Read")panel=`<h2>What to understand</h2><p class="subtitle">${esc(l.read)}</p><div class="inset"><strong>Objective</strong><p class="subtitle">${esc(l.objective)}</p></div>`;
-  else if(state.lessonTab==="Practice")panel=`<h2>Practice</h2><p class="subtitle">${esc(l.practice)}</p><div class="inset"><strong>Evidence checkpoint</strong><p class="subtitle">Write your observation or answer before moving on. Keep the evidence reproducible and scoped.</p></div>`;
-  else panel=`<h2>Check</h2><p class="subtitle">${esc(l.check.q)}</p><div class="check-options">${l.check.options.map(x=>`<button class="option ${state.checkAnswer===x?"selected":""}" data-answer="${esc(x)}">${esc(x)}</button>`).join("")}</div><p class="feedback">${state.checkAnswer?(state.checkAnswer===l.check.answer?"Correct.":"Not quite. Re-read the lesson and try again."):"Select an answer to check it."}</p>`;
+  const done=state.completedLessons.includes(l.id),meta=l.meta||{};
+  let panel="";
+  if(state.lessonTab==="Read")panel=`<div class="lesson-stack">
+   <div class="lesson-meta"><span><b>Study time</b>${esc(l.time||"Self-paced")}</span><span><b>Prerequisite</b>${esc(l.prerequisite||"None")}</span></div>
+   <div><h2>What to understand</h2><p class="subtitle">${esc(l.read)}</p></div>
+   <div class="inset"><strong>Core concepts</strong><div class="topic-list">${(l.concepts||[]).map(x=>`<span class="topic">${esc(x)}</span>`).join("")}</div></div>
+   <div class="inset"><strong>Worked example</strong><p class="subtitle">${esc(l.example||"Apply the concept to a realistic security scenario.")}</p></div>
+   <div class="inset"><strong>Case analysis</strong><p class="subtitle">${esc(l.case||"Analyze a controlled scenario and state your assumptions.")}</p></div>
+  </div>`;
+  else if(state.lessonTab==="Practice")panel=`<div class="lesson-stack">
+   <div><h2>Applied practice</h2><p class="subtitle">${esc(l.practice)}</p></div>
+   <div class="inset"><strong>Evidence checkpoint</strong><p class="subtitle">${esc(l.evidence||"Write your observation or answer before moving on. Keep the evidence reproducible and scoped.")}</p></div>
+   <div class="inset"><strong>Common mistakes to avoid</strong><ul class="lesson-list">${(l.mistakes||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+  </div>`;
+  else panel=`<div class="lesson-stack"><h2>Check your understanding</h2><p class="subtitle">${esc(l.check.q)}</p><div class="check-options">${l.check.options.map(x=>`<button class="option ${state.checkAnswer===x?"selected":""}" data-answer="${esc(x)}">${esc(x)}</button>`).join("")}</div><p class="feedback">${state.checkAnswer?(state.checkAnswer===l.check.answer?"Correct. "+esc(l.check.why||""): "Not quite. Re-read the lesson and try again."):"Select an answer to check it."}</p></div>`;
   return `<section class="fade"><button class="back" data-route="learn">← Back to curriculum</button><div class="card glass lesson-card">
    <span class="eyebrow">Lesson ${c.code} · ${esc(c.title)}</span><h1>${esc(l.title)}</h1><p class="subtitle">${esc(l.objective)}</p>
    <div class="tabs">${["Read","Practice","Check"].map(t=>`<button class="chip ${state.lessonTab===t?"active":""}" data-lesson-tab="${t}">${t}</button>`).join("")}</div>
