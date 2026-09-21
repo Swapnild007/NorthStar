@@ -1,4 +1,4 @@
-const VERSION="0.3.0";
+const VERSION="0.5.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 
 function readStoredJSON(key,fallback){
@@ -174,6 +174,7 @@ const views={
    ${l.learningGoal?`<div class="inset callout"><strong>Learning goal</strong><p class="subtitle">${esc(l.learningGoal)}</p></div>`:""}
    ${highlights.length?`<div class="depth-grid">${highlights.map((x,i)=>`<div class="depth-card highlight-card"><span>${i+1}</span><div><b>Key idea</b><p>${esc(x)}</p></div></div>`).join("")}</div>`:""}
    ${plan.length?`<div class="inset"><strong>How to use your study time</strong><div class="study-plan">${plan.map((x,i)=>`<div class="plan-row"><span>${i+1}</span><div><b>${esc(x[0])}</b><small>${esc(x[1])}</small></div></div>`).join("")}</div></div>`:""}
+   ${deepLessonBlocks(l)}
    <div><h2>What to understand</h2>${paragraphs.map(x=>`<p class="subtitle lesson-paragraph">${esc(x)}</p>`).join("")}</div>
    ${sections.map(s=>`<div class="inset"><strong>${esc(s.title)}</strong>${String(s.body||"").split(/\\n\\n|\n\n/).filter(Boolean).map(x=>`<p class="subtitle">${esc(x)}</p>`).join("")}</div>`).join("")}
    ${(l.concepts||[]).length?`<div class="inset"><strong>Core concepts</strong><div class="topic-list">${(l.concepts||[]).map(x=>`<span class="topic">${esc(x)}</span>`).join("")}</div></div>`:""}
@@ -218,6 +219,13 @@ const views={
  progress:()=>{const p=overallPercent();return `<section class="fade"><span class="eyebrow">Progress</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">See your evidence.</h1><div class="section grid two"><div class="card glass progress-card"><div class="ring" style="--p:${p}%"><span>${p}%</span></div><h2>Overall progress</h2><p class="subtitle">${completedCount()} of ${totalLessons()} lessons and ${labCompletedCount()} of ${labs.length} labs completed.</p></div><div class="card glass"><span class="eyebrow">Skill matrix</span>${skillRows()}</div></div><div class="section grid stats"><div class="stat glass"><b>${completedCount()}</b><span>Lessons complete</span></div><div class="stat glass"><b>${totalLessons()-completedCount()}</b><span>Lessons remaining</span></div><div class="stat glass"><b>${labCompletedCount()}</b><span>Labs complete</span></div><div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div></div></section>`}
 };
 
+function deepLessonBlocks(l){
+ const esc2=esc;
+ const deep=(l.deepDive||[]).map(x=>"<div class=\"inset depth-section\"><span class=\"eyebrow\">"+esc2(x.title)+"</span><p class=\"subtitle\">"+esc2(x.body)+"</p></div>").join("");
+ const rubric=(l.assessmentRubric||[]).map(x=>"<li>"+esc2(x)+"</li>").join("");
+ const refs=(l.references||[]).map(x=>"<p class=\"subtitle\"><a href=\""+esc2(x.url)+"\" target=\"_blank\" rel=\"noopener\">"+esc2(x.name)+"</a></p>").join("");
+ return (l.why?"<div class=\"inset callout\"><strong>Why this matters</strong><p class=\"subtitle\">"+esc2(l.why)+"</p></div>":"")+deep+(rubric?"<div class=\"inset\"><span class=\"eyebrow\">Assessment standard</span><ul class=\"lesson-list\">"+rubric+"</ul></div>":"")+(refs?"<div class=\"inset\"><span class=\"eyebrow\">Academic references</span>"+refs+"</div>":"");
+}
 function skillRows(){
  const vals=[
   ["Network Security",Math.max(0,courseProgress(1))],
