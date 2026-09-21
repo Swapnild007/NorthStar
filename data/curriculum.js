@@ -67,5 +67,77 @@ const NORTHSTAR_CURRICULUM = [
   }
 ];
 
+
+// NorthStar academic module metadata.
+// This is an IIM-style benchmarked structure (case analysis, applied exercises,
+// simulation, ethics/governance and evidence-based assessment), not an official IIM curriculum.
+const NORTHSTAR_MODULE_META = {
+ "security-foundations":{
+  level:"Foundation / Core",
+  load:"10–12 hours",
+  focus:"Security vocabulary, risk thinking, identity, access and threat modeling.",
+  outcomes:["Frame security problems using assets, threats, vulnerabilities and controls.","Apply CIA, authentication, authorization and least privilege to business scenarios.","Build a basic threat model with trust boundaries and abuse cases.","Distinguish events, alerts, incidents, findings and evidence."],
+  topics:["Security mental models","CIA triad","Identity & access management","Least privilege","Threat modeling","Security operations vocabulary"],
+  case:"Case: customer portal exposure — identify business assets, trust boundaries, likely threats and control gaps.",
+  assessment:"Concept checks + threat-model exercise + short case analysis",
+  lab:"Security Scoping Lab"
+ },
+ "network-security":{
+  level:"Core Technical",
+  load:"12–14 hours",
+  focus:"Network architecture, protocols, segmentation, firewall policy and packet analysis.",
+  outcomes:["Interpret IP addresses, ports, protocols and TCP behavior.","Explain subnet boundaries and basic network segmentation.","Translate business requirements into firewall policy.","Perform a disciplined packet-analysis workflow using controlled evidence."],
+  topics:["TCP/IP","IPv4 & CIDR","TCP/UDP","Ports & services","Firewalls","Segmentation","Packet analysis"],
+  case:"Case: enterprise network redesign — separate user, application and database trust zones and justify controls.",
+  assessment:"Subnet reasoning + policy design + packet-analysis worksheet",
+  lab:"Packet Recon"
+ },
+ "systems-cloud":{
+  level:"Core Technical",
+  load:"12–14 hours",
+  focus:"Operating-system security, cloud responsibility, hardening, identity and secrets.",
+  outcomes:["Review users, groups, permissions, processes and services.","Separate cloud-provider and customer security responsibilities.","Convert security baselines into measurable configuration checks.","Design safer cloud identity and secret-management patterns."],
+  topics:["Linux security","Processes & services","Cloud shared responsibility","Hardening","IAM","Secrets management"],
+  case:"Case: cloud application migration — identify configuration, identity and secret-management risks.",
+  assessment:"Hardening checklist + cloud responsibility matrix + architecture review",
+  lab:"Secure Configuration Lab"
+ },
+ "defensive-security":{
+  level:"Core / SOC",
+  load:"14–16 hours",
+  focus:"Security telemetry, detection engineering, SIEM investigation and incident response.",
+  outcomes:["Design telemetry around questions an analyst must answer.","Write testable detection hypotheses from observable behavior.","Correlate users, hosts, IPs, processes and timestamps in investigations.","Triage incidents using impact, scope and confidence.","Construct defensible incident timelines."],
+  topics:["Security logging","Detection engineering","SIEM investigation","Incident triage","Evidence handling","Timeline reconstruction"],
+  case:"Case: suspicious authentication sequence — correlate telemetry and decide what evidence is required before escalation.",
+  assessment:"Detection rule + investigation narrative + incident timeline",
+  lab:"Detection Drill + Incident Room"
+ },
+ "offensive-security":{
+  level:"Applied Security Testing",
+  load:"12–14 hours",
+  focus:"Authorized testing methodology, application attack surfaces, validation and reporting.",
+  outcomes:["Define scope and rules of engagement before testing.","Map web/application attack surfaces and trust boundaries.","Explain injection and authentication weaknesses safely.","Evaluate session-management controls in authorized environments.","Produce reproducible security findings with remediation context."],
+  topics:["Testing methodology","Web attack surface","Input validation","Injection concepts","Authentication","Session security","Security reporting"],
+  case:"Case: deliberately vulnerable web application — map the surface, identify validation questions and document findings without uncontrolled exploitation.",
+  assessment:"Scope document + attack-surface map + finding report",
+  lab:"Web Surface"
+ },
+ "security-engineering":{
+  level:"Advanced Integration",
+  load:"14–16 hours",
+  focus:"Secure SDLC, automation, architecture, vulnerability management and security metrics.",
+  outcomes:["Integrate security controls throughout software delivery.","Design auditable security automation.","Apply defense in depth and failure containment.","Prioritize vulnerabilities using exposure, exploitability and asset criticality.","Define metrics that support security decisions and governance."],
+  topics:["Secure SDLC","Security automation","Defense in depth","Security architecture","Vulnerability management","Security metrics","Governance & evidence"],
+  case:"Case: security transformation roadmap — prioritize controls, investments, metrics and verification across a growing digital business.",
+  assessment:"Secure-SDLC design + control roadmap + executive security scorecard",
+  lab:"Security Engineering Capstone"
+ }
+};
+
+Object.keys(NORTHSTAR_MODULE_META).forEach(id=>{
+ const module=NORTHSTAR_CURRICULUM.find(c=>c.id===id);
+ if(module) module.meta=NORTHSTAR_MODULE_META[id];
+});
+
 // Public data contract consumed by the NorthStar application shell.
 window.NORTHSTAR_CURRICULUM = NORTHSTAR_CURRICULUM;
