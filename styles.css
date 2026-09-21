@@ -324,3 +324,37 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
 .visual-step span{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#e0e7ff;color:#4338ca;font-size:11px;font-weight:900;flex:none}
 .visual-step strong{font-size:12px;line-height:1.4}
 .school:disabled{cursor:default;opacity:.88}.school:disabled:hover{transform:none;box-shadow:none}.path{grid-template-columns:repeat(auto-fit,minmax(82px,1fr))}
+
+
+/* Deep learning content components — instructional depth without changing the frozen visual language. */
+.depth-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.depth-card{display:flex;gap:10px;padding:14px;border-radius:17px;background:linear-gradient(145deg,rgba(239,246,255,.82),rgba(255,255,255,.76));border:1px solid rgba(37,99,235,.08)}
+.depth-card>span{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#e0e7ff;color:#4338ca;font-size:11px;font-weight:900;flex:none}
+.depth-card b{font-size:12px}.depth-card p{margin:4px 0 0;color:#64748b;font-size:13px;line-height:1.5}
+.study-plan{display:grid;gap:8px;margin-top:11px}
+.plan-row{display:flex;gap:10px;align-items:flex-start;padding:9px;border-radius:13px;background:rgba(255,255,255,.7)}
+.plan-row>span{display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:#eff6ff;color:#2563eb;font-size:10px;font-weight:900;flex:none}
+.plan-row b{display:block;font-size:12px}.plan-row small{display:block;color:#64748b;margin-top:2px;line-height:1.4}
+.callout{background:linear-gradient(145deg,rgba(239,246,255,.9),rgba(255,255,255,.76));border-color:rgba(37,99,235,.12)}
+.example-card h3,.case-card h3{margin:6px 0 4px;font-size:16px;letter-spacing:-.02em}
+.answer-note{margin-top:11px;padding:11px 12px;border-radius:13px;background:rgba(236,253,245,.75);border:1px solid rgba(16,185,129,.10)}
+.answer-note b{font-size:11px;color:#047857}.answer-note p{margin:4px 0 0;color:#475569;line-height:1.5;font-size:13px}
+.case-card{background:linear-gradient(145deg,rgba(255,255,255,.84),rgba(239,246,255,.64))}
+.note-card{padding:15px;border-radius:18px;background:linear-gradient(145deg,rgba(255,251,235,.88),rgba(255,255,255,.76));border:1px solid rgba(245,158,11,.13)}
+.note-row{display:flex;gap:9px;padding:9px 0;border-bottom:1px solid rgba(245,158,11,.10)}.note-row:last-child{border-bottom:0}
+.note-row>span{color:#d97706;font-weight:900}.note-row p{margin:0;color:#475569;line-height:1.5;font-size:13px}
+.takeaway-card ol{margin:10px 0 0;padding-left:21px;color:#475569;line-height:1.6}.takeaway-card li{margin:5px 0}
+.practice-steps{margin:10px 0 0;padding-left:22px;color:#475569;line-height:1.65}.practice-steps li{padding:4px 0}
+.qa-card{border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.76);overflow:hidden}
+.qa-card summary{display:flex;align-items:center;gap:10px;padding:14px;cursor:pointer;font-weight:800;list-style:none}
+.qa-card summary::-webkit-details-marker{display:none}
+.qa-card summary span{display:grid;place-items:center;width:25px;height:25px;border-radius:8px;background:#eef2ff;color:#4338ca;font-size:10px;flex:none}
+.qa-card>div{padding:0 15px 15px 49px;color:#64748b;line-height:1.55;font-size:13px}
+.qa-card>div b{color:#0f172a;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+.qa-card>div p{margin:4px 0 12px}
+.graph-bars{display:grid;gap:11px;margin-top:12px}
+.graph-label{display:flex;justify-content:space-between;gap:10px;margin-bottom:5px;font-size:11px;color:#475569}
+.graph-track{height:10px;border-radius:99px;background:#e8edf5;overflow:hidden}
+.graph-track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#2563eb,#06b6d4,#8b5cf6);transition:width .5s cubic-bezier(.22,1,.36,1)}
+.lesson-graph{background:linear-gradient(145deg,rgba(239,246,255,.9),rgba(245,243,255,.76))}
+@media(max-width:700px){.depth-grid{grid-template-columns:1fr}}
