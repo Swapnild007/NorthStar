@@ -32,13 +32,45 @@ const NORTHSTAR_CURRICULUM = [
     "lab": "Digital Systems Orientation"
   },
   "lessons": [
-    {
+        {
       "id": "cf-01",
       "title": "What Is a Computer?",
-      "objective": "Build a simple mental model of hardware, software, data and instructions.",
+      "objective": "Build a working mental model of hardware, software, data, instructions, processing and output so later security concepts have a physical foundation.",
       "time": "75–90 minutes",
       "prerequisite": "None",
-      "read": "A computer is a machine that follows instructions to work with information. Start with four ideas: hardware, software, data and instructions. Hardware is the physical equipment such as processor, memory and storage. Software is the instructions that tell hardware what to do. Data is the information those instructions work on.\n\nThe CPU executes instructions. RAM holds information programs are actively using. Storage keeps information when power is off. Security begins here because later security work is about protecting hardware, software, data and the instructions that operate on them.",
+      "learningGoal": "Explain what happens between an input and an output, name the main computing resources involved, and identify where security controls can apply.",
+      "highlights": [
+        "A computer receives inputs, follows instructions, processes information and produces outputs.",
+        "CPU, memory and storage are different resources with different jobs.",
+        "Security begins by understanding what exists, where it exists and who can act on it."
+      ],
+      "studyPlan": [
+        [
+          "Mental model",
+          "10 min"
+        ],
+        [
+          "CPU, RAM and storage",
+          "15 min"
+        ],
+        [
+          "Trace a real example",
+          "15 min"
+        ],
+        [
+          "Security connection",
+          "15 min"
+        ],
+        [
+          "Guided practice",
+          "15 min"
+        ],
+        [
+          "Q&A and self-explanation",
+          "10 min"
+        ]
+      ],
+      "read": "A computer is a system that accepts information, follows instructions and produces a result. The same model works for a phone, laptop, server, cloud virtual machine or embedded device. Hardware is the physical equipment; software is organized instructions; data is the information being processed; instructions define the operations to perform.\n\nThe CPU executes instructions. RAM is fast working space used by active programs. Storage keeps information when power is removed. These resources cooperate: a file can live on storage, be loaded into RAM and then processed by the CPU.\n\nSecurity follows the same chain. If software is modified, the instructions may no longer be trustworthy. If an account can read data it does not need, confidentiality is weakened. If storage is destroyed, availability is affected. If a process has excessive authority, a compromise can have a larger impact.\n\nA useful beginner question is: what is the asset, where is it, which component handles it, and which identity is allowed to operate on it? That question will return throughout NorthStar.",
       "concepts": [
         "Hardware",
         "Software",
@@ -46,12 +78,14 @@ const NORTHSTAR_CURRICULUM = [
         "RAM",
         "Storage",
         "Data",
-        "Instructions"
+        "Instructions",
+        "Input",
+        "Output"
       ],
       "glossary": [
         [
           "Hardware",
-          "Physical components of a computing device."
+          "Physical computing components."
         ],
         [
           "Software",
@@ -67,672 +101,2311 @@ const NORTHSTAR_CURRICULUM = [
         ],
         [
           "Storage",
-          "Persistent space for data and programs."
-        ]
-      ],
-      "example": "A photo is stored on storage, opened by an application, loaded into RAM and processed by the CPU.",
-      "visual": {
-        "title": "A computer mental model: Input",
-        "caption": "Instructional mental model for this lesson.",
-        "steps": [
-          "A computer mental model: Input",
-          "CPU + RAM",
-          "Storage",
-          "Output"
-        ]
-      },
-      "case": "Case — What Is a Computer?: explain the security decision a beginner should make and what evidence would validate it.",
-      "mistakes": [
-        "Memorizing terminology without understanding the relationship between concepts.",
-        "Assuming one control solves every security problem.",
-        "Ignoring context, evidence or the identity involved."
-      ],
-      "practice": "Complete a short written exercise for \"What Is a Computer?\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-      "evidence": "A concise written explanation, one example and one evidence-based security question.",
-      "check": {
-        "q": "Which component primarily executes program instructions?",
-        "options": [
-          "CPU",
-          "SSD",
-          "Keyboard",
-          "Monitor"
-        ],
-        "answer": "CPU",
-        "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
-    },
-    {
-      "id": "cf-02",
-      "title": "Operating Systems: The Computer's Manager",
-      "objective": "Understand why an operating system exists and how it manages programs, users, files and hardware.",
-      "time": "75–90 minutes",
-      "prerequisite": "Computer basics",
-      "read": "An operating system is the main software layer that manages a computer and provides services to applications. Windows, macOS, Linux, Android and iOS are examples. Think of the OS as a manager between applications and hardware.\n\nApplications ask the OS to open files, use memory, create network connections and access devices. This separation also gives the OS a place to enforce security boundaries such as permissions and process isolation.",
-      "concepts": [
-        "Operating system",
-        "Application",
-        "Kernel",
-        "User account",
-        "Permission",
-        "Process"
-      ],
-      "glossary": [
-        [
-          "Operating system",
-          "Core software that manages hardware and provides services."
-        ],
-        [
-          "Application",
-          "A program designed to perform a task."
-        ],
-        [
-          "Kernel",
-          "Privileged core of an operating system."
-        ],
-        [
-          "Permission",
-          "A rule describing allowed actions."
+          "Persistent space for programs and data."
         ],
         [
           "Process",
           "A running instance of a program."
         ]
       ],
-      "example": "A browser asks the operating system to create a downloaded file. The OS applies the relevant permissions and performs the storage operation.",
       "visual": {
-        "title": "User",
-        "caption": "Instructional mental model for this lesson.",
+        "title": "Computer mental model",
+        "caption": "A reusable model for every later technical topic.",
         "steps": [
-          "User",
-          "Application",
-          "Operating system",
-          "Hardware"
+          "Input enters the system",
+          "Instructions define what to do",
+          "CPU executes operations using working memory",
+          "Data is read or written to storage",
+          "Output is produced"
         ]
       },
-      "case": "Case — Operating Systems: The Computer's Manager: explain the security decision a beginner should make and what evidence would validate it.",
-      "mistakes": [
-        "Memorizing terminology without understanding the relationship between concepts.",
-        "Assuming one control solves every security problem.",
-        "Ignoring context, evidence or the identity involved."
+      "examples": [
+        {
+          "title": "Opening a photo",
+          "body": "The photo exists on storage. The operating system locates it, the application requests the data, relevant data is loaded into RAM, processing occurs and the display produces the result.",
+          "answer": "The photo is data; the application is software; RAM is working space; storage is persistent space."
+        },
+        {
+          "title": "Security interpretation",
+          "body": "A customer CSV is readable by every local user.",
+          "answer": "The computer may work correctly, but an identity has more access to sensitive data than its role requires."
+        }
       ],
-      "practice": "Complete a short written exercise for \"Operating Systems: The Computer's Manager\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-      "evidence": "A concise written explanation, one example and one evidence-based security question.",
+      "caseTitle": "Case: Customer information on a workstation",
+      "case": "A new employee receives a laptop containing a customer CSV. The file is stored locally, synchronized to a backup service and opened by a spreadsheet application. Identify the components and where confidentiality could be lost.",
+      "caseQuestions": [
+        "Who should read the file?",
+        "Which copies need protection?",
+        "What evidence would show access is restricted?"
+      ],
+      "notes": [
+        "Do not memorize component names without connecting them to jobs.",
+        "Storage is not RAM; persistence and active working memory are different.",
+        "Security controls apply to specific resources, identities and processes."
+      ],
+      "takeaways": [
+        "A computer combines hardware, software, data and instructions.",
+        "CPU executes; RAM provides working space; storage provides persistence.",
+        "Security becomes easier when data is traced through the system."
+      ],
+      "practice": "Draw the path of a customer document from storage to the screen. Label CPU, RAM, application, operating system and data.",
+      "practiceSteps": [
+        "Choose a familiar file.",
+        "Trace where it is stored.",
+        "Identify what becomes active in memory.",
+        "Identify the accessing identity.",
+        "Write one security question for each stage."
+      ],
+      "evidence": "A labelled flow plus three sentences explaining where confidentiality, integrity or availability could be affected.",
+      "reflection": "Explain the computer model aloud without using the words CPU, RAM or storage first, then introduce each term.",
+      "qa": [
+        {
+          "q": "Why is RAM different from storage?",
+          "a": "RAM is working memory for active computation; storage is persistent space.",
+          "why": "The distinction explains running programs versus retained files."
+        },
+        {
+          "q": "Is a spreadsheet application data?",
+          "a": "No. The application is software; spreadsheet contents are data.",
+          "why": "Separating instructions from information is fundamental to system reasoning."
+        },
+        {
+          "q": "Why does cybersecurity need a computer mental model?",
+          "a": "Because controls protect concrete assets, identities, processes and resources.",
+          "why": "A precise model lets you locate the actual security boundary."
+        }
+      ],
       "check": {
-        "q": "What is a major security role of an operating system?",
+        "q": "Which statement best describes a computer?",
         "options": [
-          "Managing access to resources and running programs",
-          "Replacing every application",
-          "Making all files public",
-          "Eliminating the need for users"
+          "A system that follows instructions to process information and produce outputs",
+          "Only the physical hardware inside a device",
+          "A storage container for files",
+          "A network connection"
         ],
-        "answer": "Managing access to resources and running programs",
-        "why": "The correct answer follows the beginner mental model introduced in this lesson."
+        "answer": "A system that follows instructions to process information and produce outputs",
+        "why": "The foundation is the relationship among input, instructions, processing, data and output.",
+        "explain": "This model becomes the foundation for operating systems, networks, programming and security."
       }
-    },
-    {
-      "id": "cf-03",
-      "title": "Files, Folders & Storage",
-      "objective": "Understand how digital information is organized, stored and exposed through files and directories.",
-      "time": "75–90 minutes",
-      "prerequisite": "Operating systems",
-      "read": "A file is a named collection of digital information. A folder organizes files and other folders. The security questions are simple: where is the information, who can access it, and how long should it exist?\n\nData can also exist in backups, temporary files, browser caches, synchronization services and old copies. Security therefore considers the data lifecycle, not only the file visible on screen.",
-      "concepts": [
-        "File",
-        "Directory",
-        "Path",
-        "Extension",
-        "Storage",
-        "Data classification",
-        "Backup"
-      ],
-      "glossary": [
-        [
-          "File",
-          "Named unit of stored information."
-        ],
-        [
-          "Directory",
-          "Container used to organize files."
-        ],
-        [
-          "Path",
-          "Location of a file or directory."
-        ],
-        [
-          "Data classification",
-          "A rule describing sensitivity or importance."
-        ],
-        [
-          "Backup",
-          "Separate copy used for recovery."
-        ]
-      ],
-      "example": "A customer CSV may exist in a primary folder, a backup and a synchronized copy. Access rules should cover the lifecycle.",
-      "visual": {
-        "title": "Create",
-        "caption": "Instructional mental model for this lesson.",
-        "steps": [
-          "Create",
-          "Store",
-          "Use",
-          "Copy",
-          "Retain or delete"
-        ]
-      },
-      "case": "Case — Files, Folders & Storage: explain the security decision a beginner should make and what evidence would validate it.",
-      "mistakes": [
-        "Memorizing terminology without understanding the relationship between concepts.",
-        "Assuming one control solves every security problem.",
-        "Ignoring context, evidence or the identity involved."
-      ],
-      "practice": "Complete a short written exercise for \"Files, Folders & Storage\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-      "evidence": "A concise written explanation, one example and one evidence-based security question.",
-      "check": {
-        "q": "Why is data classification useful?",
-        "options": [
-          "It helps determine appropriate handling and access",
-          "It automatically encrypts every file",
-          "It makes files smaller",
-          "It removes the need for backups"
-        ],
-        "answer": "It helps determine appropriate handling and access",
-        "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
-    },
-    {
-      "id": "cf-04",
-      "title": "Programs, Processes & Memory",
-      "objective": "Understand the difference between a program and a running process and why process identity matters to security.",
-      "time": "75–90 minutes",
-      "prerequisite": "Operating systems",
-      "read": "A program is stored instructions. A process is a running instance of a program. One program can create several processes. Security controls often apply to the running process and its identity.\n\nMemory is the active workspace used by running programs. If a process has too much authority, a compromise can have a larger impact. The key mental model is: stored instructions become running processes, processes consume resources, and identity and permissions limit actions.",
-      "concepts": [
-        "Program",
-        "Process",
-        "Parent process",
-        "Memory",
-        "Process identity",
-        "Privilege"
-      ],
-      "glossary": [
-        [
-          "Program",
-          "Stored instructions."
-        ],
-        [
-          "Process",
-          "Running instance of a program."
-        ],
-        [
-          "Memory",
-          "Working space used by active programs."
-        ],
-        [
-          "Privilege",
-          "Authority available to an identity or process."
-        ]
-      ],
-      "example": "A web server process runs under a dedicated identity. Its permissions influence what a compromise could reach.",
-      "visual": {
-        "title": "Program on disk",
-        "caption": "Instructional mental model for this lesson.",
-        "steps": [
-          "Program on disk",
-          "Process starts",
-          "Identity + memory",
-          "Actions",
-          "Permissions"
-        ]
-      },
-      "case": "Case — Programs, Processes & Memory: explain the security decision a beginner should make and what evidence would validate it.",
-      "mistakes": [
-        "Memorizing terminology without understanding the relationship between concepts.",
-        "Assuming one control solves every security problem.",
-        "Ignoring context, evidence or the identity involved."
-      ],
-      "practice": "Complete a short written exercise for \"Programs, Processes & Memory\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-      "evidence": "A concise written explanation, one example and one evidence-based security question.",
-      "check": {
-        "q": "Which statement is correct?",
-        "options": [
-          "A process is a running instance of a program",
-          "A process is always a file on disk",
-          "A program can never create a process",
-          "Memory is the same as storage"
-        ],
-        "answer": "A process is a running instance of a program",
-        "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
-    },
-    {
-      "id": "cf-05",
-      "title": "How the Internet Works",
-      "objective": "Build a beginner mental model of devices, networks, IP addresses and data moving between systems.",
-      "time": "90–120 minutes",
-      "prerequisite": "Computer basics",
-      "read": "The internet is a network of networks. Your device connects to a local network, which connects through routers and service providers to other networks. Data is exchanged between endpoints using protocols.\n\nAn IP address identifies a network endpoint. Routers use IP information to decide where packets should go. DNS helps translate human-friendly names into addressing information. Ports help identify transport endpoints associated with services.",
-      "concepts": [
-        "Network",
-        "Router",
-        "IP address",
-        "Packet",
-        "DNS",
-        "Port",
-        "Endpoint"
-      ],
-      "glossary": [
-        [
-          "Network",
-          "Connected systems that exchange information."
-        ],
-        [
-          "Router",
-          "System that forwards traffic between networks."
-        ],
-        [
-          "IP address",
-          "Network-layer address for an endpoint."
-        ],
-        [
-          "Packet",
-          "Unit of network data."
-        ],
-        [
-          "DNS",
-          "Naming and lookup system."
-        ],
-        [
-          "Port",
-          "Transport endpoint number."
-        ]
-      ],
-      "example": "Your device connects to a local network, then routers and service providers carry traffic toward the destination.",
-      "visual": {
-        "title": "Your device",
-        "caption": "Instructional mental model for this lesson.",
-        "steps": [
-          "Your device",
-          "Local network",
-          "ISP",
-          "Other networks",
-          "Destination server"
-        ]
-      },
-      "case": "Case — How the Internet Works: explain the security decision a beginner should make and what evidence would validate it.",
-      "mistakes": [
-        "Memorizing terminology without understanding the relationship between concepts.",
-        "Assuming one control solves every security problem.",
-        "Ignoring context, evidence or the identity involved."
-      ],
-      "practice": "Complete a short written exercise for \"How the Internet Works\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-      "evidence": "A concise written explanation, one example and one evidence-based security question.",
-      "check": {
-        "q": "What is the main purpose of DNS at a beginner level?",
-        "options": [
-          "Help translate human-friendly names into network addressing information",
-          "Encrypt every file",
-          "Replace the CPU",
-          "Store every website"
-        ],
-        "answer": "Help translate human-friendly names into network addressing information",
-        "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
-    },
-    {
-      "id": "cf-06",
-      "title": "DNS, IP Addresses & Ports",
-      "objective": "Connect names, IP addresses, ports and services into one usable mental model.",
-      "time": "90–120 minutes",
-      "prerequisite": "How the Internet Works",
-      "read": "A network connection needs a destination and a service. The destination is associated with an IP address. The service endpoint is associated with a port. DNS helps an application find addressing information from a name.\n\nPorts are not literal doors, but the analogy can help: a port identifies a transport endpoint associated with a service. Security teams care about exposed ports because unnecessary services increase attack surface.",
-      "concepts": [
-        "Domain",
-        "DNS lookup",
-        "IPv4 address",
-        "IPv6 address",
-        "TCP/UDP port",
-        "Service endpoint"
-      ],
-      "glossary": [
-        [
-          "Domain",
-          "Human-friendly network name."
-        ],
-        [
-          "IP address",
-          "Network-layer endpoint address."
-        ],
-        [
-          "Port",
-          "Number identifying a transport endpoint."
-        ],
-        [
-          "Service endpoint",
-          "Network-accessible service destination."
-        ]
-      ],
-      "example": "A public web service may need one port exposed while an unrelated administrative service should remain restricted.",
-      "visual": {
-        "title": "Domain",
-        "caption": "Instructional mental model for this lesson.",
-        "steps": [
-          "Domain",
-          "DNS lookup",
-          "IP address",
-          "Port",
-          "Application service"
-        ]
-      },
-      "case": "Case — DNS, IP Addresses & Ports: explain the security decision a beginner should make and what evidence would validate it.",
-      "mistakes": [
-        "Memorizing terminology without understanding the relationship between concepts.",
-        "Assuming one control solves every security problem.",
-        "Ignoring context, evidence or the identity involved."
-      ],
-      "practice": "Complete a short written exercise for \"DNS, IP Addresses & Ports\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-      "evidence": "A concise written explanation, one example and one evidence-based security question.",
-      "check": {
-        "q": "What does a port primarily help identify?",
-        "options": [
-          "A transport endpoint associated with a service",
-          "The physical size of a server",
-          "A user's password",
-          "The brand of a router"
-        ],
-        "answer": "A transport endpoint associated with a service",
-        "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
-    },
-    {
-      "id": "cf-07",
-      "title": "Websites, HTTP & HTTPS",
-      "objective": "Understand the basic browser-to-web-server request flow and why HTTPS matters.",
-      "time": "90–120 minutes",
-      "prerequisite": "DNS, IP Addresses & Ports",
-      "read": "A browser is a client. A web server or application receives requests and returns responses. HTTP defines web request and response structure.\n\nHTTPS means HTTP is protected by TLS. TLS provides encryption in transit and helps the client verify the intended server when certificates are validated correctly. HTTPS protects communication; it does not automatically make the application secure or authorize users correctly.",
-      "concepts": [
-        "Client",
-        "Server",
-        "HTTP",
-        "HTTPS",
-        "TLS",
-        "Request",
-        "Response",
-        "Certificate"
-      ],
-      "glossary": [
-        [
-          "Client",
-          "System that requests a service."
-        ],
-        [
-          "Server",
-          "System that provides a service."
-        ],
-        [
-          "HTTP",
-          "Web communication protocol."
-        ],
-        [
-          "HTTPS",
-          "HTTP protected using TLS."
-        ],
-        [
-          "TLS",
-          "Protocol providing cryptographic protection."
-        ],
-        [
-          "Certificate",
-          "Digital credential used in TLS server authentication."
-        ]
-      ],
-      "example": "HTTPS can protect a login request while it travels across the network, but the server still needs correct authentication and authorization.",
-      "visual": {
-        "title": "Browser",
-        "caption": "Instructional mental model for this lesson.",
-        "steps": [
-          "Browser",
-          "DNS/network",
-          "TLS",
-          "HTTPS request",
-          "Server response"
-        ]
-      },
-      "case": "Case — Websites, HTTP & HTTPS: explain the security decision a beginner should make and what evidence would validate it.",
-      "mistakes": [
-        "Memorizing terminology without understanding the relationship between concepts.",
-        "Assuming one control solves every security problem.",
-        "Ignoring context, evidence or the identity involved."
-      ],
-      "practice": "Complete a short written exercise for \"Websites, HTTP & HTTPS\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-      "evidence": "A concise written explanation, one example and one evidence-based security question.",
-      "check": {
-        "q": "What is HTTPS primarily adding to HTTP?",
-        "options": [
-          "TLS-based protection for the communication channel",
-          "Automatic administrator privileges",
-          "A larger screen",
-          "A replacement for authorization"
-        ],
-        "answer": "TLS-based protection for the communication channel",
-        "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
-    },
-    {
-      "id": "cf-08",
-      "title": "Accounts, Passwords & Multi-Factor Authentication",
-      "objective": "Understand authentication, passwords, password managers and multi-factor authentication.",
-      "time": "90–120 minutes",
-      "prerequisite": "Operating systems + web basics",
-      "read": "Authentication asks how a system gains confidence that an identity is really you. A password is one factor based on something you know. Other factors include something you have or something you are.\n\nMFA combines different factor categories. It reduces the chance that one stolen secret is enough for access, but recovery processes, phishing and stolen sessions still matter. Unique passwords and password managers reduce reuse risk.",
-      "concepts": [
-        "Authentication",
-        "Password",
-        "Password manager",
-        "MFA",
-        "Recovery",
-        "Phishing"
-      ],
-      "glossary": [
-        [
-          "Authentication",
-          "Process for establishing confidence in identity."
-        ],
-        [
-          "MFA",
-          "Authentication using different factor categories."
-        ],
-        [
-          "Password manager",
-          "Tool for storing and generating credentials."
-        ],
-        [
-          "Recovery",
-          "Process for regaining access after loss or compromise."
-        ]
-      ],
-      "example": "A stolen password is less useful when a separate authentication factor is required.",
-      "visual": {
-        "title": "Know",
-        "caption": "Instructional mental model for this lesson.",
-        "steps": [
-          "Know",
-          "Have",
-          "Be",
-          "MFA combines different categories"
-        ]
-      },
-      "case": "Case — Accounts, Passwords & Multi-Factor Authentication: explain the security decision a beginner should make and what evidence would validate it.",
-      "mistakes": [
-        "Memorizing terminology without understanding the relationship between concepts.",
-        "Assuming one control solves every security problem.",
-        "Ignoring context, evidence or the identity involved."
-      ],
-      "practice": "Complete a short written exercise for \"Accounts, Passwords & Multi-Factor Authentication\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-      "evidence": "A concise written explanation, one example and one evidence-based security question.",
-      "check": {
-        "q": "What makes MFA multi-factor?",
-        "options": [
-          "Using different categories of authentication factors",
-          "Using two passwords",
-          "Using a longer username",
-          "Logging in twice"
-        ],
-        "answer": "Using different categories of authentication factors",
-        "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
-    },
-    {
-      "id": "cf-09",
-      "title": "Digital Safety: Downloads, Links & Social Engineering",
-      "objective": "Recognize common social-engineering and unsafe-download patterns without relying on fear or guesswork.",
-      "time": "90–120 minutes",
-      "prerequisite": "Accounts, Passwords & MFA",
-      "read": "Social engineering uses manipulation to influence behavior. Examples include fake login pages, urgent payment requests, malicious attachments and impersonation.\n\nThe goal is not to distrust everything. Pause, inspect, verify through a known channel, then act. A familiar logo or name is not proof of identity. Reporting suspicious messages is part of a healthy security culture.",
-      "concepts": [
-        "Social engineering",
-        "Phishing",
-        "Impersonation",
-        "Malicious attachment",
-        "Trusted channel",
-        "Reporting"
-      ],
-      "glossary": [
-        [
-          "Phishing",
-          "Deceptive attempt to obtain information or cause an unsafe action."
-        ],
-        [
-          "Social engineering",
-          "Manipulation of people to influence security-relevant behavior."
-        ],
-        [
-          "Trusted channel",
-          "Independently verified communication method."
-        ]
-      ],
-      "example": "A message claims to be from finance and requests an urgent transfer. Verify it through a known phone number or workflow instead of replying to the message.",
-      "visual": {
-        "title": "Pause",
-        "caption": "Instructional mental model for this lesson.",
-        "steps": [
-          "Pause",
-          "Inspect",
-          "Verify",
-          "Act",
-          "Report"
-        ]
-      },
-      "case": "Case — Digital Safety: Downloads, Links & Social Engineering: explain the security decision a beginner should make and what evidence would validate it.",
-      "mistakes": [
-        "Memorizing terminology without understanding the relationship between concepts.",
-        "Assuming one control solves every security problem.",
-        "Ignoring context, evidence or the identity involved."
-      ],
-      "practice": "Complete a short written exercise for \"Digital Safety: Downloads, Links & Social Engineering\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-      "evidence": "A concise written explanation, one example and one evidence-based security question.",
-      "check": {
-        "q": "What is a safer response to an urgent payment request from an unexpected message?",
-        "options": [
-          "Verify it through a known trusted channel",
-          "Reply immediately",
-          "Click the link and enter credentials",
-          "Forward it to everyone"
-        ],
-        "answer": "Verify it through a known trusted channel",
-        "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
-    },
-    {
-      "id": "cf-10",
-      "title": "Data Basics: Tables, Fields, Records & Datasets",
-      "objective": "Build the vocabulary needed for SQL, data science and security analytics.",
-      "time": "90–120 minutes",
-      "prerequisite": "Files, folders and basic computer concepts",
-      "read": "A dataset is a collection of data. A table organizes data into rows and columns. A column or field represents an attribute such as date or username. A row or record represents one observation.\n\nSecurity teams use these ideas constantly. Logs are datasets. Detection rules query fields. Analysts group records, compare values and look for patterns. Statistics and machine learning later build on this foundation.",
-      "concepts": [
-        "Dataset",
-        "Table",
-        "Row",
-        "Column",
-        "Field",
-        "Record",
-        "Value",
-        "Data type"
-      ],
-      "glossary": [
-        [
-          "Dataset",
-          "Collection of related data."
-        ],
-        [
-          "Field",
-          "Named attribute represented by a column."
-        ],
-        [
-          "Record",
-          "Observation represented by a row."
-        ],
-        [
-          "Value",
-          "Actual data stored for a field."
-        ],
-        [
-          "Data type",
-          "Kind of value such as number, text or date."
-        ]
-      ],
-      "example": "A login table can contain timestamp, username, source IP and result. Each row represents one login event.",
-      "visual": {
-        "title": "Event",
-        "caption": "Instructional mental model for this lesson.",
-        "steps": [
-          "Event",
-          "Log record",
-          "Fields",
-          "Records",
-          "Table",
-          "Analysis"
-        ]
-      },
-      "case": "Case — Data Basics: Tables, Fields, Records & Datasets: explain the security decision a beginner should make and what evidence would validate it.",
-      "mistakes": [
-        "Memorizing terminology without understanding the relationship between concepts.",
-        "Assuming one control solves every security problem.",
-        "Ignoring context, evidence or the identity involved."
-      ],
-      "practice": "Complete a short written exercise for \"Data Basics: Tables, Fields, Records & Datasets\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-      "evidence": "A concise written explanation, one example and one evidence-based security question.",
-      "check": {
-        "q": "In a table, what is a row usually used to represent?",
-        "options": [
-          "A record or observation",
-          "A column name",
-          "A database server",
-          "A password policy"
-        ],
-        "answer": "A record or observation",
-        "why": "The correct answer follows the beginner mental model introduced in this lesson."
-      }
-    }
-  ]
-},
-  {
-    id:"security-foundations", code:"01", title:"Cybersecurity Foundations", category:"Foundation",
-    description:"Networking, Linux, identity, threat modeling and core security concepts.",
-    lessons:[
-      {id:"sf-01",title:"Security Mental Models",objective:"Build a consistent mental model for assets, threats, vulnerabilities, controls and risk.",time:"2–2.5 hours",prerequisite:"None",read:"Security work starts by separating five ideas that are often mixed together. An asset is something valuable to a person or organization. A threat is a potential cause of harm. A vulnerability is a weakness that can be exploited or abused. A control is a safeguard intended to prevent, detect or reduce harm. Risk is the relationship between what can happen, how likely or exposed it is, and the consequence if it occurs. The same technical weakness can represent very different business risk depending on the asset, exposure and impact.",concepts:["Asset","Threat","Vulnerability","Control","Risk"],example:"A customer portal stores personal data. The data is the asset; unauthorized disclosure is a threat scenario; an overly broad database role is a vulnerability; least-privilege access and monitoring are controls. The analyst should describe the chain rather than simply calling the system “insecure.”",case:"Case — Customer portal exposure: identify the two most valuable assets, two plausible threat scenarios, two vulnerabilities that could enable them, and two controls. State one assumption you would verify before making a risk decision.",mistakes:["Treating a threat and a vulnerability as the same thing.","Calling every vulnerability high risk without considering exposure and impact.","Jumping to a control before understanding the asset and threat scenario."],practice:"Create a five-column table for the fictional customer portal: Asset → Threat → Vulnerability → Control → Expected risk reduction. Then choose one row and explain what evidence would validate it.",evidence:"A completed risk chain with explicit assumptions and one evidence source for each important claim.",check:{q:"Which chain correctly connects the core security concepts?",options:["Asset → Threat → Vulnerability → Control → Risk","Control → Logo → Threat → Asset → Password","Vulnerability → Office → Control → Asset → Theme","Risk → Screen → Threat → Printer → Control"],answer:"Asset → Threat → Vulnerability → Control → Risk",why:"The chain moves from what has value, through a harmful scenario and enabling weakness, to a safeguard and the resulting risk decision."}},
-      {id:"sf-02",title:"CIA Triad & Security Objectives",objective:"Use confidentiality, integrity and availability to classify security objectives and trade-offs.",time:"2–2.5 hours",prerequisite:"Security Mental Models",read:"The CIA triad is a compact way to describe three security objectives. Confidentiality limits unauthorized disclosure. Integrity protects information and system behavior from unauthorized or unintended alteration. Availability keeps systems and services usable when needed. Real incidents can affect more than one objective, so classify the primary impact first and then record secondary effects. Security decisions also involve trade-offs: stronger controls can introduce friction, latency or operational complexity.",concepts:["Confidentiality","Integrity","Availability","Primary vs secondary impact","Security trade-offs"],example:"If an attacker changes a beneficiary bank account, integrity is the immediate security objective affected. If the same incident also exposes customer records, confidentiality is affected too. A good analyst records both instead of forcing every event into one category.",case:"Case — Online claims platform: a deployment accidentally makes customer records readable to unauthorized users for 20 minutes, while the application remains available. Identify the primary CIA impact, a secondary business consequence, and one control that would reduce recurrence.",mistakes:["Using availability to mean performance in every situation.","Assuming an incident can affect only one CIA property.","Confusing confidentiality with authentication."],practice:"Classify five fictional incidents as C, I, A, or multiple objectives. For each, write one sentence explaining why the classification matters to the business.",evidence:"A classification table with a primary impact, secondary impact where applicable, and one business consequence per scenario.",check:{q:"A database record is modified without authorization. Which security objective is directly affected?",options:["Confidentiality","Integrity","Availability","Latency"],answer:"Integrity",why:"Unauthorized modification changes the correctness or trustworthiness of information, which is an integrity concern."}},
-      {id:"sf-03",title:"Identity & Access Fundamentals",objective:"Distinguish identification, authentication, authorization, accounting and least privilege.",time:"2–2.5 hours",prerequisite:"Security Mental Models + CIA Triad",read:"Identity and access management answers four practical questions: which identity is requesting access, how that identity is authenticated, what it is authorized to do, and what activity is recorded for accountability. Authentication establishes identity; authorization determines permitted actions; accounting or audit records help reconstruct activity. Least privilege means granting only the access required for a defined task, for only as long as it is needed.",concepts:["Identification","Authentication","Authorization","Accounting / audit","Least privilege","Role-based access"],example:"A support analyst may need to view a customer's case but not export the entire customer database. Authentication proves which analyst is signed in; authorization limits the actions available to that analyst; audit records can show what was accessed.",case:"Case — Support operations: design a role for a support analyst who handles customer tickets. Specify what the role can read, what it can change, what it must never access, and what activity should be logged.",mistakes:["Treating successful login as proof that every action is authorized.","Giving broad admin rights because they are convenient.","Ignoring service accounts and machine identities."],practice:"Create a least-privilege role matrix with three columns: task, required permission, and audit requirement. Include one temporary elevated action and explain how it should be controlled.",evidence:"A role matrix that maps business tasks to permissions and identifies an auditable control for elevated access.",check:{q:"What does authorization answer?",options:["Who are you?","What are you allowed to do?","When did the system start?","How fast is the network?"],answer:"What are you allowed to do?",why:"Authorization evaluates the permissions or actions available to an already identified and authenticated identity."}},
-      {id:"sf-04",title:"Threat Modeling Basics",objective:"Map trust boundaries, entry points, assets and abuse cases before selecting mitigations.",time:"2–2.5 hours",prerequisite:"Security Mental Models + Identity & Access Fundamentals",read:"Threat modeling is structured reasoning about how a system could be misused or fail. Start with the system boundary and major components, then identify assets, entry points, trust boundaries, identities and important data flows. Convert plausible misuse into abuse cases and ask which controls prevent, detect or limit the scenario. A threat model is not a prediction of exactly what an attacker will do; it is a way to make assumptions explicit and prioritize analysis.",concepts:["System boundary","Trust boundary","Entry point","Data flow","Abuse case","Mitigation"],example:"For Browser → API → Database, the browser is an untrusted client, the API is a control boundary, and the database contains protected assets. The API should validate requests and enforce authorization rather than trusting client-side claims.",case:"Case — Customer portal: draw Browser → CDN/WAF → API → Database. Mark the trust boundaries, two entry points, two assets and three abuse cases. For each abuse case, name one preventive and one detective control.",mistakes:["Starting with a list of vulnerabilities instead of understanding the system.","Treating the client as a trusted authority for authorization decisions.","Drawing components without showing trust boundaries or data flows."],practice:"Produce a one-page threat model for a browser, API and database. Label every trust boundary and write three abuse cases in the form: actor + action + target + consequence.",evidence:"A diagram plus three structured abuse cases and control mappings.",check:{q:"What should be identified early in a threat model?",options:["Trust boundaries","Office seating","Logo colors","Printer models"],answer:"Trust boundaries",why:"Trust boundaries show where assumptions about identity, data or control change and therefore where security controls deserve explicit attention."}},
-      {id:"sf-05",title:"Security Operations Vocabulary",objective:"Separate events, alerts, incidents, findings and evidence so investigations stay precise.",time:"2 hours",prerequisite:"Threat Modeling Basics",read:"Security operations depends on precise language. An event is an observed occurrence. An alert is a signal generated because an event or pattern may require attention. An incident is a confirmed or suspected security situation that requires response according to organizational criteria. A finding is an analyst conclusion or observation supported by evidence. Evidence is information preserved or referenced to support an investigation, decision or conclusion. These terms describe different stages and purposes; they should not be used interchangeably.",concepts:["Event","Alert","Incident","Finding","Evidence","Triage"],example:"A failed login is an event. A rule detecting 50 failures followed by a success may create an alert. After investigation shows the activity violates policy or indicates compromise, it may be handled as an incident. The analyst's documented conclusion is a finding supported by relevant evidence.",case:"Case — Suspicious authentication sequence: an alert shows repeated failures followed by a successful login from an unusual location. Identify the initial event, the alert, the questions needed for triage, the evidence to collect, and the conditions that would justify incident escalation.",mistakes:["Calling every alert an incident.","Writing conclusions without preserving supporting evidence.","Treating a single log record as proof of intent."],practice:"Take the suspicious-login scenario and write an investigation note with five headings: Signal, Context, Evidence, Finding, Decision. Clearly mark anything still uncertain.",evidence:"A concise investigation note that separates observed facts from analyst interpretation and records uncertainty.",check:{q:"What is evidence used for?",options:["Supporting an investigation or conclusion","Replacing all logs","Increasing CPU speed","Changing a password automatically"],answer:"Supporting an investigation or conclusion",why:"Evidence gives an investigation a defensible basis for observations, conclusions and decisions."}},
-    ]
-  },
-  {
-    id:"network-security", code:"02", title:"Networking & Network Security", category:"Network",
-    description:"TCP/IP, segmentation, protocols, firewalls and traffic analysis.",
-    lessons:[
-      {id:"ns-01",title:"TCP/IP Mental Model",objective:"Use layers, addresses, ports and protocols to interpret network traffic.",time:"2.5–3 hours",read:"A practical TCP/IP model separates link delivery, IP routing, transport behavior and application protocols. Analysts use source/destination addresses, ports, flags and payload metadata to reason about traffic.",practice:"For a TCP connection, identify the source IP, destination IP, source port, destination port and transport protocol.",check:{q:"Which sequence represents normal TCP connection establishment?",options:["SYN → SYN/ACK → ACK","ACK → SYN → FIN","SYN → ACK → RST","FIN → SYN → ACK"],answer:"SYN → SYN/ACK → ACK"}},
+    },    },{
+    },  "id": "cf-02",
+    },  "title": "Operating Systems: The Computer's Manager",
+    },  "objective": "Understand how an operating system coordinates hardware, applications, users, files, processes and permissions.",
+    },  "time": "75–90 minutes",
+    },  "prerequisite": "What Is a Computer?",
+    },  "learningGoal": "Explain why an operating system exists and identify where it creates security boundaries.",
+    },  "highlights": [
+    },    "Applications normally depend on the OS for controlled access to resources.",
+    },    "The kernel operates with high privilege and is security-critical.",
+    },    "Users, processes and permissions connect human identity to technical actions."
+    },  ],
+    },  "studyPlan": [
+    },    [
+    },      "Recap computer model",
+    },      "10 min"
+    },    ],
+    },    [
+    },      "OS layers",
+    },      "15 min"
+    },    ],
+    },    [
+    },      "Users, processes and permissions",
+    },      "20 min"
+    },    ],
+    },    [
+    },      "Trace an application action",
+    },      "15 min"
+    },    ],
+    },    [
+    },      "Security case",
+    },      "15 min"
+    },    ],
+    },    [
+    },      "Check",
+    },      "10 min"
+    },    ]
+    },  ],
+    },  "read": "An operating system is the software layer that coordinates a computer's resources and provides common services to applications. Windows, Linux, Android, macOS and iOS are examples. Without an OS, every application would need to control hardware directly.\n\nUse the model user → application → operating system → hardware. When a browser wants a file, it normally asks the OS to perform the operation. The OS can check permissions, locate the resource, communicate with storage and return the result.\n\nThe kernel is the privileged core of the OS. It manages memory, processes, devices and system calls. Because it has broad authority, a serious kernel compromise can affect many applications.\n\nThe OS also manages identities and processes. A user account represents an identity. A process is a running program. The process operates within a security context that influences what it can access. Least privilege therefore reduces the impact of compromise.\n\nSecurity teams care about updates, account permissions, process behavior, service configuration, logging and isolation. Security is layered: a secure application on an insecure host can still be exposed, and a hardened host cannot fix every application flaw.",
+    },  "concepts": [
+    },    "Operating system",
+    },    "Kernel",
+    },    "System call",
+    },    "User account",
+    },    "Process",
+    },    "Permission",
+    },    "Service",
+    },    "Isolation",
+    },    "Least privilege"
+    },  ],
+    },  "glossary": [
+    },    [
+    },      "Operating system",
+    },      "Core software that manages resources and provides services."
+    },    ],
+    },    [
+    },      "Kernel",
+    },      "Privileged core of an operating system."
+    },    ],
+    },    [
+    },      "System call",
+    },      "A controlled request from software to the OS."
+    },    ],
+    },    [
+    },      "Process",
+    },      "A running instance of a program."
+    },    ],
+    },    [
+    },      "Permission",
+    },      "A rule describing allowed actions."
+    },    ],
+    },    [
+    },      "Least privilege",
+    },      "Giving only the authority required for a task."
+    },    ]
+    },  ],
+    },  "visual": {
+    },    "title": "Application request path",
+    },    "caption": "The OS is a control point between applications and resources.",
+    },    "steps": [
+    },      "User starts an application",
+    },      "Application requests a resource",
+    },      "OS evaluates the request",
+    },      "Kernel and drivers interact with hardware",
+    },      "Result returns to the application"
+    },    ]
+    },  },
+    },  "examples": [
+    },    {
+    },      "title": "Opening a protected file",
+    },      "body": "A user opens a document. The application asks the OS to open it, and the OS evaluates the identity and permissions.",
+    },      "answer": "Authorization occurs before the resource is returned."
+    },    },
+    },    {
+    },      "title": "Web service process",
+    },      "body": "A web service runs under a dedicated identity instead of an administrator account.",
+    },      "answer": "If compromised, its authority limits what it can reach."
+    },    }
+    },  ],
+    },  "caseTitle": "Case: Shared office workstation",
+    },  "case": "Five users share a workstation. One account has administrator rights because it is convenient. A malicious document compromises an application running under that account.",
+    },  "caseQuestions": [
+    },    "Which identity runs the process?",
+    },    "What resources can it control?",
+    },    "What evidence would show administrator rights are unnecessary?"
+    },  ],
+    },  "notes": [
+    },    "The OS is a resource and security management layer, not merely a graphical interface.",
+    },    "Kernel-level authority is powerful and therefore security-sensitive.",
+    },    "Least privilege limits blast radius; it does not remove vulnerabilities."
+    },  ],
+    },  "takeaways": [
+    },    "The OS mediates access to resources.",
+    },    "The kernel is privileged and security-critical.",
+    },    "Least privilege constrains what compromised processes can do."
+    },  ],
+    },  "practice": "Create a four-layer diagram: user, application, OS and hardware. Add one permission decision and explain why it exists.",
+    },  "practiceSteps": [
+    },    "Choose one file operation.",
+    },    "Identify the application.",
+    },    "Identify the user or service identity.",
+    },    "State what the OS should verify.",
+    },    "Describe what could happen if the check failed."
+    },  ],
+    },  "evidence": "A labelled OS interaction diagram and a least-privilege explanation.",
+    },  "reflection": "Why should an application not normally have unrestricted direct access to every device and file?",
+    },  "qa": [
+    },    {
+    },      "q": "What is a major OS security role?",
+    },      "a": "Managing access to resources and running programs.",
+    },      "why": "Central resource management creates consistent security boundaries."
+    },    },
+    },    {
+    },      "q": "Why is the kernel important?",
+    },      "a": "It performs privileged operations and manages core resources.",
+    },      "why": "A highly privileged component has a large security impact."
+    },    },
+    },    {
+    },      "q": "Why use a dedicated service account?",
+    },      "a": "To constrain the permissions available to a service.",
+    },      "why": "A compromised service then has less authority."
+    },    }
+    },  ],
+    },  "check": {
+    },    "q": "Which statement best describes the operating system?",
+    },    "options": [
+    },      "A software layer that manages resources and provides controlled services to applications",
+    },      "A replacement for all applications",
+    },      "A permanent copy of every file",
+    },      "A network cable"
+    },    ],
+    },    "answer": "A software layer that manages resources and provides controlled services to applications",
+    },    "why": "The OS is the management and control layer between applications and hardware.",
+    },    "explain": "This becomes essential for Linux security, processes, permissions and cloud systems."
+    },  }
+    },},    },},{
+    },},  "id": "cf-03",
+    },},  "title": "Files, Folders & Storage",
+    },},  "objective": "Understand how digital information is named, organized, copied, retained and exposed across storage systems.",
+    },},  "time": "75–90 minutes",
+    },},  "prerequisite": "Operating Systems: The Computer's Manager",
+    },},  "learningGoal": "Trace a file through its lifecycle and identify where controls are required.",
+    },},  "highlights": [
+    },},    "A file can have multiple copies, locations and owners.",
+    },},    "The information inside a file determines sensitivity, not its filename.",
+    },},    "Backups and synchronization extend the data lifecycle."
+    },},  ],
+    },},  "studyPlan": [
+    },},    [
+    },},      "File and folder model",
+    },},      "10 min"
+    },},    ],
+    },},    [
+    },},      "Paths and permissions",
+    },},      "15 min"
+    },},    ],
+    },},    [
+    },},      "Data lifecycle",
+    },},      "15 min"
+    },},    ],
+    },},    [
+    },},      "Copies and backups",
+    },},      "15 min"
+    },},    ],
+    },},    [
+    },},      "Security case",
+    },},      "15 min"
+    },},    ],
+    },},    [
+    },},      "Review",
+    },},      "10 min"
+    },},    ]
+    },},  ],
+    },},  "read": "A file is a named unit of digital information. A folder organizes files and other folders. A path describes where an item can be found. Security problems often appear because people think only about the visible copy.\n\nA customer CSV may exist in a working directory, backup, email attachment, synchronization folder, temporary file and recovery snapshot. Each copy can have different access rules. Security must follow the information rather than only its filename.\n\nUse the lifecycle create → store → use → share → copy → retain → delete. Every stage creates confidentiality, integrity and availability questions. Deleting the visible file may not remove backups or synchronized copies.\n\nGood decisions start with classification and ownership: what is the information, who needs it, where does it exist, how long should it be retained and how should recovery work?",
+    },},  "concepts": [
+    },},    "File",
+    },},    "Directory",
+    },},    "Path",
+    },},    "Metadata",
+    },},    "Permission",
+    },},    "Data classification",
+    },},    "Backup",
+    },},    "Retention",
+    },},    "Data lifecycle"
+    },},  ],
+    },},  "glossary": [
+    },},    [
+    },},      "File",
+    },},      "Named unit of stored information."
+    },},    ],
+    },},    [
+    },},      "Directory",
+    },},      "Container used to organize files."
+    },},    ],
+    },},    [
+    },},      "Path",
+    },},      "Location used to identify a file or directory."
+    },},    ],
+    },},    [
+    },},      "Metadata",
+    },},      "Information describing a file or data object."
+    },},    ],
+    },},    [
+    },},      "Backup",
+    },},      "Separate copy maintained for recovery."
+    },},    ],
+    },},    [
+    },},      "Retention",
+    },},      "How long information should be kept."
+    },},    ]
+    },},  ],
+    },},  "visual": {
+    },},    "title": "Data lifecycle",
+    },},    "caption": "Security follows information through its entire lifecycle.",
+    },},    "steps": [
+    },},      "Create",
+    },},      "Store",
+    },},      "Use",
+    },},      "Share",
+    },},      "Copy / back up",
+    },},      "Retain or securely delete"
+    },},    ]
+    },},  },
+    },},  "examples": [
+    },},    {
+    },},      "title": "Customer CSV",
+    },},      "body": "A customer CSV is exported for analysis and copied into a shared folder.",
+    },},      "answer": "The copied location becomes a new access boundary and must be reviewed."
+    },},    },
+    },},    {
+    },},      "title": "Deletion",
+    },},      "body": "A sensitive file is deleted from a laptop but remains in a backup snapshot.",
+    },},      "answer": "Deletion is a lifecycle question, not merely a screen action."
+    },},    }
+    },},  ],
+    },},  "caseTitle": "Case: The disappearing customer report",
+    },},  "case": "An employee deletes a customer report. Three weeks later the same data is found in a shared backup.",
+    },},  "caseQuestions": [
+    },},    "What is the retention requirement?",
+    },},    "Who can access backups?",
+    },},    "How would you verify deletion where required?"
+    },},  ],
+    },},  "notes": [
+    },},    "A copy is still the same sensitive information even if the filename changes.",
+    },},    "Backups improve availability but create additional access and retention requirements.",
+    },},    "Classification should guide handling."
+    },},  ],
+    },},  "takeaways": [
+    },},    "Think in terms of the information lifecycle.",
+    },},    "Copies and backups are part of the security boundary.",
+    },},    "Sensitivity comes from the information, not its extension."
+    },},  ],
+    },},  "practice": "Map a hypothetical customer document through create, store, use, share, backup and delete stages. Identify one risk and one control at each stage.",
+    },},  "practiceSteps": [
+    },},    "Choose a fictional customer document.",
+    },},    "List every place it might exist.",
+    },},    "Assign a simple classification.",
+    },},    "Identify who needs access.",
+    },},    "Identify evidence that lifecycle controls worked."
+    },},  ],
+    },},  "evidence": "A lifecycle map with at least six stages, risks and controls.",
+    },},  "reflection": "If a file disappears from your screen, what other locations should you consider before concluding the information is gone?",
+    },},  "qa": [
+    },},    {
+    },},      "q": "Why can backups be a security concern?",
+    },},      "a": "They contain copies of information and create additional access and retention requirements.",
+    },},      "why": "Availability controls can create confidentiality concerns."
+    },},    },
+    },},    {
+    },},      "q": "Does a file extension define sensitivity?",
+    },},      "a": "No. The information and business context determine sensitivity.",
+    },},      "why": "A filename does not change the value of the data."
+    },},    },
+    },},    {
+    },},      "q": "Why map the lifecycle?",
+    },},      "a": "Risk can appear when information is created, copied, shared, retained or deleted.",
+    },},      "why": "The visible working file is only one part of the environment."
+    },},    }
+    },},  ],
+    },},  "check": {
+    },},    "q": "Which statement best reflects secure file handling?",
+    },},    "options": [
+    },},      "Protect the information throughout its lifecycle, including copies and backups",
+    },},      "Only protect the original filename",
+    },},      "Delete the visible copy and assume all copies are gone",
+    },},      "Allow everyone in the organization to access shared files"
+    },},    ],
+    },},    "answer": "Protect the information throughout its lifecycle, including copies and backups",
+    },},    "why": "Security follows information across locations and stages.",
+    },},    "explain": "The lifecycle model becomes important in databases, cloud storage and data science."
+    },},  }
+    },},},    },},},{
+    },},},  "id": "cf-04",
+    },},},  "title": "Programs, Processes & Memory",
+    },},},  "objective": "Understand the difference between stored programs and running processes, and connect process identity, memory and privilege to security.",
+    },},},  "time": "75–90 minutes",
+    },},},  "prerequisite": "Operating Systems: The Computer's Manager",
+    },},},  "learningGoal": "Explain what a process is, why it has an identity, and why excessive process privilege increases impact.",
+    },},},  "highlights": [
+    },},},    "A program is stored instructions; a process is a running instance.",
+    },},},    "A process consumes resources and acts through an identity.",
+    },},},    "Least privilege and isolation reduce the impact of compromise."
+    },},},  ],
+    },},},  "studyPlan": [
+    },},},    [
+    },},},      "Program vs process",
+    },},},      "10 min"
+    },},},    ],
+    },},},    [
+    },},},      "Memory and execution",
+    },},},      "15 min"
+    },},},    ],
+    },},},    [
+    },},},      "Identity and privilege",
+    },},},      "15 min"
+    },},},    ],
+    },},},    [
+    },},},      "Process security case",
+    },},},      "15 min"
+    },},},    ],
+    },},},    [
+    },},},      "Guided analysis",
+    },},},      "15 min"
+    },},},    ],
+    },},},    [
+    },},},      "Review",
+    },},},      "10 min"
+    },},},    ]
+    },},},  ],
+    },},},  "read": "A program is stored instructions. A process is a running instance of those instructions. Security teams observe and control what is running, not only what is stored on disk.\n\nWhen a program starts, the OS creates a process and assigns resources such as memory. The process receives a security context that influences what it can access. One application can create multiple processes, and a process can start another process.\n\nMemory is working space; storage holds persistent information. Isolation and memory protection reduce the ability of one process to interfere with another.\n\nConsider a web server. If it runs with only the permissions needed to serve its application files, a compromise may be constrained. If it runs as an administrator, the same weakness can have a much larger consequence.\n\nSecurity engineers ask: under which identity does it run, what can it access, what can it start, what network resources can it reach, and what logs show its behavior?",
+    },},},  "concepts": [
+    },},},    "Program",
+    },},},    "Process",
+    },},},    "Process identity",
+    },},},    "Memory",
+    },},},    "Parent process",
+    },},},    "Privilege",
+    },},},    "Isolation",
+    },},},    "Resource limits"
+    },},},  ],
+    },},},  "glossary": [
+    },},},    [
+    },},},      "Program",
+    },},},      "Stored instructions."
+    },},},    ],
+    },},},    [
+    },},},      "Process",
+    },},},      "A running instance of a program."
+    },},},    ],
+    },},},    [
+    },},},      "Process identity",
+    },},},      "The account or security context associated with a process."
+    },},},    ],
+    },},},    [
+    },},},      "Memory",
+    },},},      "Working space used by active processes."
+    },},},    ],
+    },},},    [
+    },},},      "Privilege",
+    },},},      "Authority available to an identity or process."
+    },},},    ],
+    },},},    [
+    },},},      "Isolation",
+    },},},      "Separating components to limit interference."
+    },},},    ]
+    },},},  ],
+    },},},  "visual": {
+    },},},    "title": "From program to action",
+    },},},    "caption": "Stored code becomes a running process with identity and authority.",
+    },},},    "steps": [
+    },},},      "Program stored on disk",
+    },},},      "Process starts",
+    },},},      "OS assigns identity and memory",
+    },},},      "Process performs actions",
+    },},},      "Permissions constrain those actions"
+    },},},    ]
+    },},},  },
+    },},},  "examples": [
+    },},},    {
+    },},},      "title": "Web server privilege",
+    },},},      "body": "A web server only needs access to its application directory and logs, but it runs as an administrator.",
+    },},},      "answer": "Dedicated service identities and least privilege reduce impact if the process is compromised."
+    },},},    },
+    },},},    {
+    },},},      "title": "Parent and child processes",
+    },},},      "body": "An application launches a helper process. During investigation, the relationship helps explain what initiated activity.",
+    },},},      "answer": "Process relationships provide context that a filename alone cannot provide."
+    },},},    }
+    },},},  ],
+    },},},  "caseTitle": "Case: A compromised application process",
+    },},},  "case": "A web application process is suspected of compromise. It runs under a service account that can read application data but cannot modify operating-system configuration.",
+    },},},  "caseQuestions": [
+    },},},    "What resources can the process reach?",
+    },},},    "What actions can its identity perform?",
+    },},},    "What logs would help confirm what it did?"
+    },},},  ],
+    },},},  "notes": [
+    },},},    "Process is a runtime concept; program is a stored-code concept.",
+    },},},    "Process identity is a major security boundary.",
+    },},},    "Least privilege is containment, not a substitute for secure software."
+    },},},  ],
+    },},},  "takeaways": [
+    },},},    "Programs become processes when they run.",
+    },},},    "Processes have identities, resources and permissions.",
+    },},},    "Security improves when process authority is constrained and observable."
+    },},},  ],
+    },},},  "practice": "Given three fictional processes—a browser, database and log collector—describe what each should access and why.",
+    },},},  "practiceSteps": [
+    },},},    "Name the process purpose.",
+    },},},    "List minimum required resources.",
+    },},},    "Choose a dedicated identity where appropriate.",
+    },},},    "Identify one prohibited action.",
+    },},},    "Identify one log source that could show activity."
+    },},},  ],
+    },},},  "evidence": "A process-permission matrix with purpose, identity, resources and one prohibited action.",
+    },},},  "reflection": "Why is 'the application is trusted' an incomplete security statement?",
+    },},},  "qa": [
+    },},},    {
+    },},},      "q": "What is a process?",
+    },},},      "a": "A running instance of a program.",
+    },},},      "why": "The process is the execution context that consumes resources and performs actions."
+    },},},    },
+    },},},    {
+    },},},      "q": "Why does process identity matter?",
+    },},},      "a": "It influences what the process is authorized to access or change.",
+    },},},      "why": "A compromised process can inherit its execution authority."
+    },},},    },
+    },},},    {
+    },},},      "q": "Does least privilege eliminate vulnerabilities?",
+    },},},      "a": "No. It limits potential impact when vulnerabilities or misuse occur.",
+    },},},      "why": "Least privilege is a containment control."
+    },},},    }
+    },},},  ],
+    },},},  "check": {
+    },},},    "q": "Which design reduces the impact of a compromised service?",
+    },},},    "options": [
+    },},},      "Run it with only the permissions required for its job",
+    },},},      "Run it as the most privileged administrator",
+    },},},      "Give it access to every file for convenience",
+    },},},      "Disable all logging"
+    },},},    ],
+    },},},    "answer": "Run it with only the permissions required for its job",
+    },},},    "why": "Least privilege constrains what the process can do after compromise.",
+    },},},    "explain": "This principle recurs in Linux, IAM, cloud security and architecture."
+    },},},  }
+    },},},},    },},},},{
+    },},},},  "id": "cf-05",
+    },},},},  "title": "How the Internet Works",
+    },},},},  "objective": "Build a beginner mental model of networks, endpoints, packets, routers and protocols.",
+    },},},},  "time": "90–120 minutes",
+    },},},},  "prerequisite": "Computer basics",
+    },},},},  "learningGoal": "Trace a simple request from a device to a remote service without treating the internet as a single machine.",
+    },},},},  "highlights": [
+    },},},},    "The internet is a network of networks.",
+    },},},},    "Packets carry pieces of communication between endpoints.",
+    },},},},    "Routers forward traffic between networks using addressing information."
+    },},},},  ],
+    },},},},  "studyPlan": [
+    },},},},    [
+    },},},},      "Network vocabulary",
+    },},},},      "15 min"
+    },},},},    ],
+    },},},},    [
+    },},},},      "Trace a web request",
+    },},},},      "20 min"
+    },},},},    ],
+    },},},},    [
+    },},},},      "Packets and routing",
+    },},},},      "20 min"
+    },},},},    ],
+    },},},},    [
+    },},},},      "Security implications",
+    },},},},      "15 min"
+    },},},},    ],
+    },},},},    [
+    },},},},      "Case practice",
+    },},},},      "20 min"
+    },},},},    ],
+    },},},},    [
+    },},},},      "Review",
+    },},},},      "10 min"
+    },},},},    ]
+    },},},},  ],
+    },},},},  "read": "The internet is a network of networks. Your phone or laptop connects to a local network, which connects through a router and provider to other networks. A remote application may be hosted in a data center or cloud environment many network hops away.\n\nCommunication is broken into packets. Each packet carries addressing information and data associated with a larger exchange. Routers examine network-layer information and decide where to forward traffic.\n\nAt beginner level, think of an endpoint as a system participating in communication, an IP address as a network-layer address, a port as a transport endpoint and a protocol as a defined communication rule.\n\nWhen you open a website, connectivity, name resolution, destination reachability, transport establishment and application exchange occur. HTTPS then protects web communication between relevant endpoints.\n\nSecurity depends on visibility and boundaries. Unnecessary exposed services increase attack surface. Unexpected paths can indicate segmentation weakness. Missing connection logs make investigations harder.",
+    },},},},  "concepts": [
+    },},},},    "Network",
+    },},},},    "Endpoint",
+    },},},},    "Packet",
+    },},},},    "Router",
+    },},},},    "IP address",
+    },},},},    "Protocol",
+    },},},},    "Hop",
+    },},},},    "ISP"
+    },},},},  ],
+    },},},},  "glossary": [
+    },},},},    [
+    },},},},      "Endpoint",
+    },},},},      "A system participating in network communication."
+    },},},},    ],
+    },},},},    [
+    },},},},      "Packet",
+    },},},},      "A unit of network data."
+    },},},},    ],
+    },},},},    [
+    },},},},      "Router",
+    },},},},      "A system that forwards traffic between networks."
+    },},},},    ],
+    },},},},    [
+    },},},},      "Protocol",
+    },},},},      "Defined rules for communication."
+    },},},},    ],
+    },},},},    [
+    },},},},      "Hop",
+    },},},},      "One forwarding step between network points."
+    },},},},    ]
+    },},},},  ],
+    },},},},  "visual": {
+    },},},},    "title": "A simple journey across the internet",
+    },},},},    "caption": "A request crosses multiple network boundaries.",
+    },},},},    "steps": [
+    },},},},      "Your device",
+    },},},},      "Local network / router",
+    },},},},      "Internet provider",
+    },},},},      "Intermediate networks",
+    },},},},      "Destination network",
+    },},},},      "Application server"
+    },},},},    ]
+    },},},},  },
+    },},},},  "examples": [
+    },},},},    {
+    },},},},      "title": "Opening a website",
+    },},},},      "body": "A browser requests a site, resolves the destination, reaches the remote network, establishes communication and exchanges web data.",
+    },},},},      "answer": "Several layers cooperate; there is no single 'internet action'."
+    },},},},    },
+    },},},},    {
+    },},},},      "title": "Security boundary",
+    },},},},      "body": "A database server is reachable from a public network even though only application servers should communicate with it.",
+    },},},},      "answer": "The network path violates the intended trust boundary."
+    },},},},    }
+    },},},},  ],
+    },},},},  "caseTitle": "Case: Publicly reachable database",
+    },},},},  "case": "A database accepts connections from the public internet although the intended architecture says only application servers should reach it.",
+    },},},},  "caseQuestions": [
+    },},},},    "What boundary is violated?",
+    },},},},    "What evidence confirms exposure?",
+    },},},},    "Which control reduces the unnecessary path?"
+    },},},},  ],
+    },},},},  "notes": [
+    },},},},    "The internet is many interconnected networks, not one pipe.",
+    },},},},    "A packet is not the same as a complete application request.",
+    },},},},    "Network security concerns paths, endpoints, protocols and exposure."
+    },},},},  ],
+    },},},},  "takeaways": [
+    },},},},    "The internet connects many independent networks.",
+    },},},},    "Packets move through forwarding decisions.",
+    },},},},    "Security teams care about which paths and services are exposed."
+    },},},},  ],
+    },},},},  "practice": "Draw a path from a phone to a fictional company web server and label at least two security boundaries.",
+    },},},},  "practiceSteps": [
+    },},},},    "Start with the client.",
+    },},},},    "Add the local boundary.",
+    },},},},    "Add provider/intermediate networks.",
+    },},},},    "Add the destination network.",
+    },},},},    "Mark where firewall or segmentation controls could exist."
+    },},},},  ],
+    },},},},  "evidence": "A network journey diagram with two security boundaries and an explanation of each.",
+    },},},},  "reflection": "If two systems can communicate, what questions should you ask before deciding the path is safe?",
+    },},},},  "qa": [
+    },},},},    {
+    },},},},      "q": "What is the internet?",
+    },},},},      "a": "A collection of interconnected networks that exchange traffic using common protocols.",
+    },},},},      "why": "This explains routing and multiple administrative boundaries."
+    },},},},    },
+    },},},},    {
+    },},},},      "q": "What does a router do?",
+    },},},},      "a": "It forwards traffic between networks using addressing and routing information.",
+    },},},},      "why": "Routers form part of the path packets take."
+    },},},},    },
+    },},},},    {
+    },},},},      "q": "Why does network exposure matter?",
+    },},},},      "a": "An exposed endpoint can be reached by more systems and therefore has greater potential attack surface.",
+    },},},},      "why": "Security boundaries depend on who can reach a service."
+    },},},},    }
+    },},},},  ],
+    },},},},  "check": {
+    },},},},    "q": "Which statement is most accurate?",
+    },},},},    "options": [
+    },},},},      "The internet is a network of interconnected networks",
+    },},},},      "The internet is one central computer",
+    },},},},      "Every packet uses exactly one router",
+    },},},},      "A website is stored inside DNS"
+    },},},},    ],
+    },},},},    "answer": "The internet is a network of interconnected networks",
+    },},},},    "why": "The distributed network model explains routing and security boundaries.",
+    },},},},    "explain": "This model starts TCP/IP, DNS, firewalls and packet analysis."
+    },},},},  }
+    },},},},},    },},},},},{
+    },},},},},  "id": "cf-06",
+    },},},},},  "title": "DNS, IP Addresses & Ports",
+    },},},},},  "objective": "Connect names, IP addresses, transport ports and application services into one usable model.",
+    },},},},},  "time": "90–120 minutes",
+    },},},},},  "prerequisite": "How the Internet Works",
+    },},},},},  "learningGoal": "Given a domain and service, explain the relationship between name resolution, addressing and service endpoints.",
+    },},},},},  "highlights": [
+    },},},},},    "DNS solves naming questions; it does not replace routing or encryption.",
+    },},},},},    "An IP address identifies a network endpoint; a port identifies a transport endpoint.",
+    },},},},},    "Security teams inspect names, addresses and ports because they reveal attack surface."
+    },},},},},  ],
+    },},},},},  "studyPlan": [
+    },},},},},    [
+    },},},},},      "Names and DNS",
+    },},},},},      "20 min"
+    },},},},},    ],
+    },},},},},    [
+    },},},},},      "IP addressing",
+    },},},},},      "20 min"
+    },},},},},    ],
+    },},},},},    [
+    },},},},},      "Ports and services",
+    },},},},},      "20 min"
+    },},},},},    ],
+    },},},},},    [
+    },},},},},      "Trace a request",
+    },},},},},      "20 min"
+    },},},},},    ],
+    },},},},},    [
+    },},},},},      "Security analysis",
+    },},},},},      "20 min"
+    },},},},},    ],
+    },},},},},    [
+    },},},},},      "Review",
+    },},},},},      "10 min"
+    },},},},},    ]
+    },},},},},  ],
+    },},},},},  "read": "People prefer names such as portal.example.test. Networks need addressing information to reach a destination. DNS is the naming system that helps applications obtain records associated with names.\n\nAn IP address identifies a network-layer endpoint. IPv4 uses 32-bit addresses and IPv6 uses 128-bit addresses. A port is different: the address identifies the host or endpoint while the port identifies a transport endpoint, allowing one host to provide multiple services.\n\nThe common chain is domain → DNS information → IP address → transport protocol and port → application service. Real systems can be more complex, but this model is useful for reasoning.\n\nSecurity teams use it to understand attack surface. A public name may reveal an endpoint. An exposed port may reveal a service. An unexpected service can indicate configuration drift. None alone proves compromise; each is evidence for controlled verification.",
+    },},},},},  "concepts": [
+    },},},},},    "Domain name",
+    },},},},},    "DNS",
+    },},},},},    "A/AAAA record",
+    },},},},},    "IPv4",
+    },},},},},    "IPv6",
+    },},},},},    "Port",
+    },},},},},    "TCP",
+    },},},},},    "UDP",
+    },},},},},    "Service endpoint"
+    },},},},},  ],
+    },},},},},  "glossary": [
+    },},},},},    [
+    },},},},},      "DNS",
+    },},},},},      "Distributed naming system used to resolve names to records."
+    },},},},},    ],
+    },},},},},    [
+    },},},},},      "IPv4",
+    },},},},},      "IP addressing system using 32-bit addresses."
+    },},},},},    ],
+    },},},},},    [
+    },},},},},      "IPv6",
+    },},},},},      "IP addressing system using 128-bit addresses."
+    },},},},},    ],
+    },},},},},    [
+    },},},},},      "Port",
+    },},},},},      "Transport-layer endpoint number."
+    },},},},},    ],
+    },},},},},    [
+    },},},},},      "Service",
+    },},},},},      "A network-accessible application function."
+    },},},},},    ]
+    },},},},},  ],
+    },},},},},  "visual": {
+    },},},},},    "title": "Name to service",
+    },},},},},    "caption": "The chain connects human naming to a reachable service.",
+    },},},},},    "steps": [
+    },},},},},      "Domain",
+    },},},},},      "DNS lookup",
+    },},},},},      "IP address",
+    },},},},},      "Transport + port",
+    },},},},},      "Application service"
+    },},},},},    ]
+    },},},},},  },
+    },},},},},  "graph": {
+    },},},},},    "title": "Illustrative exposure model",
+    },},},},},    "caption": "Teaching model only: more exposed services generally create more places to validate.",
+    },},},},},    "items": [
+    },},},},},      {
+    },},},},},        "label": "No exposed service",
+    },},},},},        "value": "Lowest",
+    },},},},},        "percent": 15
+    },},},},},      },
+    },},},},},      {
+    },},},},},        "label": "One required service",
+    },},},},},        "value": "Controlled",
+    },},},},},        "percent": 35
+    },},},},},      },
+    },},},},},      {
+    },},},},},        "label": "Several services",
+    },},},},},        "value": "Higher",
+    },},},},},        "percent": 65
+    },},},},},      },
+    },},},},},      {
+    },},},},},        "label": "Unnecessary public services",
+    },},},},},        "value": "Highest",
+    },},},},},        "percent": 90
+    },},},},},      }
+    },},},},},    ]
+    },},},},},  },
+    },},},},},  "examples": [
+    },},},},},    {
+    },},},},},      "title": "One host, multiple services",
+    },},},},},      "body": "A server has one IP address but provides web and monitoring services on different transport ports.",
+    },},},},},      "answer": "The IP identifies the host; ports help distinguish service endpoints."
+    },},},},},    },
+    },},},},},    {
+    },},},},},      "title": "Unexpected public port",
+    },},},},},      "body": "A security review discovers a database service listening on a public interface.",
+    },},},},},      "answer": "This is evidence of unnecessary exposure that should be investigated against intended architecture."
+    },},},},},    }
+    },},},},},  ],
+    },},},},},  "caseTitle": "Case: Service exposure review",
+    },},},},},  "case": "A public server exposes web, remote administration and database services although only web access is required from the internet.",
+    },},},},},  "caseQuestions": [
+    },},},},},    "Which exposure conflicts with the requirement?",
+    },},},},},    "What evidence verifies the listener and firewall path?",
+    },},},},},    "What change reduces unnecessary exposure?"
+    },},},},},  ],
+    },},},},},  "notes": [
+    },},},},},    "DNS is a naming system, not the internet itself.",
+    },},},},},    "IP address and port answer different questions.",
+    },},},},},    "An open port is an observation, not proof of compromise."
+    },},},},},  ],
+    },},},},},  "takeaways": [
+    },},},},},    "Names help humans find services; IP addresses help networks reach endpoints.",
+    },},},},},    "Ports identify transport endpoints.",
+    },},},},},    "Exposure should be compared with intended architecture."
+    },},},},},  ],
+    },},},},},  "practice": "Create a service inventory: name, IP, port, protocol, purpose, intended users and security boundary.",
+    },},},},},  "practiceSteps": [
+    },},},},},    "List the required service.",
+    },},},},},    "Assign a fictional IP.",
+    },},},},},    "Choose a fictional port and protocol.",
+    },},},},},    "State who should reach it.",
+    },},},},},    "Mark one service that should be blocked publicly."
+    },},},},},  ],
+    },},},},},  "evidence": "A service inventory and a paragraph explaining why each exposed service is justified.",
+    },},},},},  "reflection": "Why is 'port 443 is open' an observation rather than a complete security conclusion?",
+    },},},},},  "qa": [
+    },},},},},    {
+    },},},},},      "q": "What does DNS primarily solve?",
+    },},},},},      "a": "It helps map names to DNS records used by applications and networks.",
+    },},},},},      "why": "Names and addresses serve different purposes."
+    },},},},},    },
+    },},},},},    {
+    },},},},},      "q": "Can two services share one IP?",
+    },},},},},      "a": "Yes, they can use different transport endpoints such as ports.",
+    },},},},},      "why": "One host can provide multiple services."
+    },},},},},    },
+    },},},},},    {
+    },},},},},      "q": "Does an open port prove a breach?",
+    },},},},},      "a": "No. Further evidence is required to establish compromise.",
+    },},},},},      "why": "Good analysis separates observations from conclusions."
+    },},},},},    }
+    },},},},},  ],
+    },},},},},  "check": {
+    },},},},},    "q": "Which chain is the best beginner model?",
+    },},},},},    "options": [
+    },},},},},      "Domain → DNS → IP address → port/protocol → service",
+    },},},},},      "Domain → CPU → RAM → keyboard → service",
+    },},},},},      "Port → DNS → storage → monitor",
+    },},},},},      "IP address → spreadsheet → DNS → CPU"
+    },},},},},    ],
+    },},},},},    "answer": "Domain → DNS → IP address → port/protocol → service",
+    },},},},},    "why": "It connects naming, addressing, transport and application layers.",
+    },},},},},    "explain": "This prepares you for deeper networking and network-security lessons."
+    },},},},},  }
+    },},},},},},    },},},},},},{
+    },},},},},},  "id": "cf-07",
+    },},},},},},  "title": "Websites, HTTP & HTTPS",
+    },},},},},},  "objective": "Understand browser-server communication and why HTTPS matters for confidentiality and integrity.",
+    },},},},},},  "time": "90–120 minutes",
+    },},},},},},  "prerequisite": "DNS, IP Addresses & Ports",
+    },},},},},},  "learningGoal": "Trace a basic web request and explain what HTTPS protects and what it does not solve.",
+    },},},},},},  "highlights": [
+    },},},},},},    "HTTP defines web requests and responses.",
+    },},},},},},    "HTTPS uses TLS to protect the communication channel.",
+    },},},},},},    "HTTPS does not automatically fix application authorization or business-logic flaws."
+    },},},},},},  ],
+    },},},},},},  "studyPlan": [
+    },},},},},},    [
+    },},},},},},      "HTTP request/response",
+    },},},},},},      "20 min"
+    },},},},},},    ],
+    },},},},},},    [
+    },},},},},},      "Methods and status codes",
+    },},},},},},      "20 min"
+    },},},},},},    ],
+    },},},},},},    [
+    },},},},},},      "TLS and HTTPS",
+    },},},},},},      "25 min"
+    },},},},},},    ],
+    },},},},},},    [
+    },},},},},},      "What HTTPS cannot solve",
+    },},},},},},      "15 min"
+    },},},},},},    ],
+    },},},},},},    [
+    },},},},},},      "Case",
+    },},},},},},      "15 min"
+    },},},},},},    ],
+    },},},},},},    [
+    },},},},},},      "Review",
+    },},},},},},      "10 min"
+    },},},},},},    ]
+    },},},},},},  ],
+    },},},},},},  "read": "The web is built around client-server communication. A browser sends an HTTP request and a server returns an HTTP response. Requests contain a method, target and headers; responses contain a status code, headers and often a body.\n\nGET commonly retrieves information and POST commonly submits information. Status codes provide broad outcome categories: 2xx success, 3xx redirection, 4xx client-side problems and 5xx server-side failures.\n\nHTTPS is HTTP carried over TLS. TLS provides cryptographic protections intended to prevent unauthorized parties on the path from reading or modifying protected traffic and helps authenticate the server through certificates.\n\nHTTPS has boundaries. It does not make a malicious website safe, prevent a user from voluntarily giving credentials to a fraudulent site, or fix authorization bugs inside the application.\n\nSecurity analysis separates transport security from application security. You can have correctly configured HTTPS and still have an application that allows one customer to access another customer's record.",
+    },},},},},},  "concepts": [
+    },},},},},},    "Client",
+    },},},},},},    "Server",
+    },},},},},},    "HTTP",
+    },},},},},},    "Request",
+    },},},},},},    "Response",
+    },},},},},},    "Header",
+    },},},},},},    "Status code",
+    },},},},},},    "TLS",
+    },},},},},},    "HTTPS",
+    },},},},},},    "Certificate"
+    },},},},},},  ],
+    },},},},},},  "glossary": [
+    },},},},},},    [
+    },},},},},},      "HTTP",
+    },},},},},},      "Application protocol used for web requests and responses."
+    },},},},},},    ],
+    },},},},},},    [
+    },},},},},},      "HTTPS",
+    },},},},},},      "HTTP protected by TLS."
+    },},},},},},    ],
+    },},},},},},    [
+    },},},},},},      "TLS",
+    },},},},},},      "Cryptographic protocol for protected network communication."
+    },},},},},},    ],
+    },},},},},},    [
+    },},},},},},      "Header",
+    },},},},},},      "Metadata carried with an HTTP request or response."
+    },},},},},},    ],
+    },},},},},},    [
+    },},},},},},      "Status code",
+    },},},},},},      "Numeric indication of broad request outcome."
+    },},},},},},    ]
+    },},},},},},  ],
+    },},},},},},  "visual": {
+    },},},},},},    "title": "Browser to web application",
+    },},},},},},    "caption": "HTTPS protects the transport path; application security is separate.",
+    },},},},},},    "steps": [
+    },},},},},},      "Browser creates request",
+    },},},},},},      "TLS protects the channel",
+    },},},},},},      "Server receives request",
+    },},},},},},      "Application processes it",
+    },},},},},},      "Server returns response",
+    },},},},},},      "Browser renders result"
+    },},},},},},    ]
+    },},},},},},  },
+    },},},},},},  "examples": [
+    },},},},},},    {
+    },},},},},},      "title": "Secure login transport",
+    },},},},},},      "body": "A user submits a login form over HTTPS.",
+    },},},},},},      "answer": "TLS helps protect credentials in transit, but authentication and password handling still need correct application design."
+    },},},},},},    },
+    },},},},},},    {
+    },},},},},},      "title": "HTTPS but broken authorization",
+    },},},},},},      "body": "An application uses HTTPS but allows a user to access another customer's record by changing an object identifier.",
+    },},},},},},      "answer": "Transport security did not solve an authorization problem."
+    },},},},},},    }
+    },},},},},},  ],
+    },},},},},},  "caseTitle": "Case: Secure transport, insecure application",
+    },},},},},},  "case": "A customer portal uses HTTPS everywhere. Testing shows that one customer can access another customer's record through an authorization weakness.",
+    },},},},},},  "caseQuestions": [
+    },},},},},},    "Which layer is working?",
+    },},},},},},    "Which control is deficient?",
+    },},},},},},    "What evidence should be captured safely?"
+    },},},},},},  ],
+    },},},},},},  "notes": [
+    },},},},},},    "HTTP describes web communication; HTTPS adds TLS protection.",
+    },},},},},},    "A certificate does not make every application action trustworthy.",
+    },},},},},},    "Never treat HTTPS as a complete security guarantee."
+    },},},},},},  ],
+    },},},},},},  "takeaways": [
+    },},},},},},    "HTTP is request/response communication.",
+    },},},},},},    "HTTPS protects the transport channel with TLS.",
+    },},},},},},    "Authentication and authorization remain application responsibilities."
+    },},},},},},  ],
+    },},},},},},  "practice": "Annotate a fictional GET /profile request and response. Mark which information TLS protects while in transit.",
+    },},},},},},  "practiceSteps": [
+    },},},},},},    "Write a request line.",
+    },},},},},},    "Add two headers.",
+    },},},},},},    "Write a response status.",
+    },},},},},},    "Identify data that should be protected in transit.",
+    },},},},},},    "Name one application control HTTPS does not provide."
+    },},},},},},  ],
+    },},},},},},  "evidence": "Annotated request/response and a paragraph distinguishing transport and application security.",
+    },},},},},},  "reflection": "Why can an application still be insecure when the browser shows a padlock?",
+    },},},},},},  "qa": [
+    },},},},},},    {
+    },},},},},},      "q": "What does HTTPS add to HTTP?",
+    },},},},},},      "a": "TLS-based protection for the communication channel.",
+    },},},},},},      "why": "TLS provides confidentiality/integrity protections and server authentication mechanisms."
+    },},},},},},    },
+    },},},},},},    {
+    },},},},},},      "q": "Does HTTPS fix authorization?",
+    },},},},},},      "a": "No. Authorization is an application access-control decision.",
+    },},},},},},      "why": "Different layers solve different problems."
+    },},},},},},    },
+    },},},},},},    {
+    },},},},},},      "q": "What is a status code?",
+    },},},},},},      "a": "A numeric indication of the broad outcome of a request.",
+    },},},},},},      "why": "It provides operational and security context."
+    },},},},},},    }
+    },},},},},},  ],
+    },},},},},},  "check": {
+    },},},},},},    "q": "Which statement is correct?",
+    },},},},},},    "options": [
+    },},},},},},      "HTTPS protects web communication but does not eliminate application vulnerabilities",
+    },},},},},},      "HTTPS guarantees the website is trustworthy",
+    },},},},},},      "HTTPS replaces authentication and authorization",
+    },},},},},},      "HTTP status codes are encryption keys"
+    },},},},},},    ],
+    },},},},},},    "answer": "HTTPS protects web communication but does not eliminate application vulnerabilities",
+    },},},},},},    "why": "Transport security is one layer of a broader architecture.",
+    },},},},},},    "explain": "This distinction becomes critical in web application security."
+    },},},},},},  }
+    },},},},},},},    },},},},},},},{
+    },},},},},},},  "id": "cf-08",
+    },},},},},},},  "title": "Digital Identity, Accounts & Authentication",
+    },},},},},},},  "objective": "Understand identity, authentication, authorization, sessions and account security from first principles.",
+    },},},},},},},  "time": "90–120 minutes",
+    },},},},},},},  "prerequisite": "Websites, HTTP & HTTPS",
+    },},},},},},},  "learningGoal": "Distinguish identity, authentication and authorization and recognize account-security failure patterns.",
+    },},},},},},},  "highlights": [
+    },},},},},},},    "Identity answers which account or principal is being claimed.",
+    },},},},},},},    "Authentication verifies the claim; authorization determines permitted actions.",
+    },},},},},},},    "Account security includes sessions, recovery, monitoring and revocation."
+    },},},},},},},  ],
+    },},},},},},},  "studyPlan": [
+    },},},},},},},    [
+    },},},},},},},      "Identity vs authentication vs authorization",
+    },},},},},},},      "20 min"
+    },},},},},},},    ],
+    },},},},},},},    [
+    },},},},},},},      "Authentication factors",
+    },},},},},},},      "20 min"
+    },},},},},},},    ],
+    },},},},},},},    [
+    },},},},},},},      "Sessions and recovery",
+    },},},},},},},      "20 min"
+    },},},},},},},    ],
+    },},},},},},},    [
+    },},},},},},},      "Account-security case",
+    },},},},},},},      "20 min"
+    },},},},},},},    ],
+    },},},},},},},    [
+    },},},},},},},      "Practice",
+    },},},},},},},      "15 min"
+    },},},},},},},    ],
+    },},},},},},},    [
+    },},},},},},},      "Check",
+    },},},},},},},      "10 min"
+    },},},},},},},    ]
+    },},},},},},},  ],
+    },},},},},},},  "read": "Digital identity represents a person, service or system in a computing environment. Authentication verifies a claimed identity. Authorization decides what an authenticated identity may do.\n\nAuthentication factors are commonly described as something you know, something you have or something you are. Combining independent factors can strengthen authentication. A username alone is not proof of identity.\n\nSecurity continues after login. Sessions need protected identifiers and sensible lifecycle rules. Account recovery must be protected because a weak recovery path can undermine a strong login method.\n\nA useful lifecycle is identity → authentication → session → authorization → monitoring → recovery or revocation. Each stage can fail differently. This model becomes central to application security, cloud IAM and enterprise access control.",
+    },},},},},},},  "concepts": [
+    },},},},},},},    "Identity",
+    },},},},},},},    "Account",
+    },},},},},},},    "Authentication",
+    },},},},},},},    "Authorization",
+    },},},},},},},    "Credential",
+    },},},},},},},    "MFA",
+    },},},},},},},    "Session",
+    },},},},},},},    "Recovery",
+    },},},},},},},    "Principal"
+    },},},},},},},  ],
+    },},},},},},},  "glossary": [
+    },},},},},},},    [
+    },},},},},},},      "Identity",
+    },},},},},},},      "Representation of a person, service or system."
+    },},},},},},},    ],
+    },},},},},},},    [
+    },},},},},},},      "Authentication",
+    },},},},},},},      "Verification of a claimed identity."
+    },},},},},},},    ],
+    },},},},},},},    [
+    },},},},},},},      "Authorization",
+    },},},},},},},      "Decision about permitted actions or resources."
+    },},},},},},},    ],
+    },},},},},},},    [
+    },},},},},},},      "Credential",
+    },},},},},},},      "Evidence or mechanism used during authentication."
+    },},},},},},},    ],
+    },},},},},},},    [
+    },},},},},},},      "Session",
+    },},},},},},},      "State representing an authenticated interaction."
+    },},},},},},},    ],
+    },},},},},},},    [
+    },},},},},},},      "MFA",
+    },},},},},},},      "Authentication using multiple independent factors."
+    },},},},},},},    ]
+    },},},},},},},  ],
+    },},},},},},},  "visual": {
+    },},},},},},},    "title": "Identity lifecycle",
+    },},},},},},},    "caption": "Authentication is one step in a broader identity security lifecycle.",
+    },},},},},},},    "steps": [
+    },},},},},},},      "Claim identity",
+    },},},},},},},      "Authenticate",
+    },},},},},},},      "Establish session",
+    },},},},},},},      "Authorize actions",
+    },},},},},},},      "Monitor activity",
+    },},},},},},},      "Recover or revoke access"
+    },},},},},},},    ]
+    },},},},},},},  },
+    },},},},},},},  "examples": [
+    },},},},},},},    {
+    },},},},},},},      "title": "Employee portal",
+    },},},},},},},      "body": "An employee authenticates with a password and second factor, receives a session and is then checked for access to payroll data.",
+    },},},},},},},      "answer": "Authentication does not automatically grant authorization."
+    },},},},},},},    },
+    },},},},},},},    {
+    },},},},},},},      "title": "Weak recovery",
+    },},},},},},},      "body": "An account has strong MFA, but password reset can be completed using easily guessed personal information.",
+    },},},},},},},      "answer": "Recovery is an alternate authentication path and must be protected."
+    },},},},},},},    }
+    },},},},},},},  ],
+    },},},},},},},  "caseTitle": "Case: Strong login, weak authorization",
+    },},},},},},},  "case": "A finance application requires MFA. A standard employee can authenticate but can also view an administrative report because the application checks only whether the user is logged in.",
+    },},},},},},},  "caseQuestions": [
+    },},},},},},},    "Which identity stage works?",
+    },},},},},},},    "Which control is missing?",
+    },},},},},},},    "What evidence demonstrates correct authorization?"
+    },},},},},},},  ],
+    },},},},},},},  "notes": [
+    },},},},},},},    "Authentication and authorization are different decisions.",
+    },},},},},},},    "Recovery is part of account security.",
+    },},},},},},},    "Sessions are security-sensitive objects."
+    },},},},},},},  ],
+    },},},},},},},  "takeaways": [
+    },},},},},},},    "Identity, authentication and authorization answer different questions.",
+    },},},},},},},    "MFA strengthens authentication but does not replace authorization.",
+    },},},},},},},    "Account security includes sessions, recovery and revocation."
+    },},},},},},},  ],
+    },},},},},},},  "practice": "Create an access flow for a fictional employee portal and label identity, authentication, session and authorization decisions.",
+    },},},},},},},  "practiceSteps": [
+    },},},},},},},    "Choose a fictional role.",
+    },},},},},},},    "Choose two authentication factors.",
+    },},},},},},},    "Describe session creation.",
+    },},},},},},},    "Define one permitted resource.",
+    },},},},},},},    "Define one prohibited resource.",
+    },},},},},},},    "Describe revocation."
+    },},},},},},},  ],
+    },},},},},},},  "evidence": "An identity lifecycle diagram and an access-control table.",
+    },},},},},},},  "reflection": "Why is 'the user passed MFA' not enough evidence that they should see a particular record?",
+    },},},},},},},  "qa": [
+    },},},},},},},    {
+    },},},},},},},      "q": "What is authentication?",
+    },},},},},},},      "a": "Verification of a claimed identity.",
+    },},},},},},},      "why": "It establishes confidence in the claimant."
+    },},},},},},},    },
+    },},},},},},},    {
+    },},},},},},},      "q": "What is authorization?",
+    },},},},},},},      "a": "A decision about actions or resources an identity may access.",
+    },},},},},},},      "why": "An authenticated user can still lack permission."
+    },},},},},},},    },
+    },},},},},},},    {
+    },},},},},},},      "q": "Why protect recovery?",
+    },},},},},},},      "a": "It can provide an alternate route to regain account access.",
+    },},},},},},},      "why": "Weak recovery can bypass strong login controls."
+    },},},},},},},    }
+    },},},},},},},  ],
+    },},},},},},},  "check": {
+    },},},},},},},    "q": "Which sequence is most accurate?",
+    },},},},},},},    "options": [
+    },},},},},},},      "Identity → authentication → session → authorization",
+    },},},},},},},      "Authorization → CPU → DNS → identity",
+    },},},},},},},      "Authentication → storage → keyboard → authorization",
+    },},},},},},},      "Session → password reset → CPU → identity"
+    },},},},},},},    ],
+    },},},},},},},    "answer": "Identity → authentication → session → authorization",
+    },},},},},},},    "why": "It captures the core identity lifecycle.",
+    },},},},},},},    "explain": "This prepares you for IAM, cloud identity and access control."
+    },},},},},},},  }
+    },},},},},},},},    },},},},},},},},{
+    },},},},},},},},  "id": "cf-09",
+    },},},},},},},},  "title": "Data Basics: Values, Fields, Records & Datasets",
+    },},},},},},},},  "objective": "Learn the vocabulary and mental models needed to work safely with structured data before statistics and data science.",
+    },},},},},},},},  "time": "90–120 minutes",
+    },},},},},},},},  "prerequisite": "Files, Folders & Storage",
+    },},},},},},},},  "learningGoal": "Inspect a simple dataset, distinguish fields from records and identify data-quality problems.",
+    },},},},},},},},  "highlights": [
+    },},},},},},},},    "A field describes an attribute; a record represents an observation; a dataset contains related records.",
+    },},},},},},},},    "Data quality can produce wrong security conclusions even when analysis code is correct.",
+    },},},},},},},},    "Security data needs context, provenance and sensitivity handling."
+    },},},},},},},},  ],
+    },},},},},},},},  "studyPlan": [
+    },},},},},},},},    [
+    },},},},},},},},      "Dataset vocabulary",
+    },},},},},},},},      "20 min"
+    },},},},},},},},    ],
+    },},},},},},},},    [
+    },},},},},},},},      "Inspect a small table",
+    },},},},},},},},      "20 min"
+    },},},},},},},},    ],
+    },},},},},},},},    [
+    },},},},},},},},      "Data quality",
+    },},},},},},},},      "20 min"
+    },},},},},},},},    ],
+    },},},},},},},},    [
+    },},},},},},},},      "Security interpretation",
+    },},},},},},},},      "20 min"
+    },},},},},},},},    ],
+    },},},},},},},},    [
+    },},},},},},},},      "Practice",
+    },},},},},},},},      "15 min"
+    },},},},},},},},    ],
+    },},},},},},},},    [
+    },},},},},},},},      "Review",
+    },},},},},},},},      "10 min"
+    },},},},},},},},    ]
+    },},},},},},},},  ],
+    },},},},},},},},  "read": "Data science starts before statistics. A value is an individual piece of information. A field, often a column, describes an attribute such as timestamp, user, source IP or outcome. A record, often a row, represents one observation such as one login event. A dataset is a collection of records.\n\nData quality includes completeness, consistency, accuracy, validity and timeliness. A missing timestamp can break a timeline. Duplicate events can exaggerate activity. An incorrect timezone can make events appear out of order.\n\nSecurity analysts therefore ask where the data came from, what each field means, what is missing and what assumptions are being made. A sophisticated model cannot repair an incorrect definition of the underlying event.",
+    },},},},},},},},  "concepts": [
+    },},},},},},},},    "Value",
+    },},},},},},},},    "Field",
+    },},},},},},},},    "Record",
+    },},},},},},},},    "Dataset",
+    },},},},},},},},    "Schema",
+    },},},},},},},},    "Missing value",
+    },},},},},},},},    "Duplicate",
+    },},},},},},},},    "Data quality",
+    },},},},},},},},    "Provenance"
+    },},},},},},},},  ],
+    },},},},},},},},  "glossary": [
+    },},},},},},},},    [
+    },},},},},},},},      "Field",
+    },},},},},},},},      "An attribute or variable represented in a dataset."
+    },},},},},},},},    ],
+    },},},},},},},},    [
+    },},},},},},},},      "Record",
+    },},},},},},},},      "One observation represented by a row or structured event."
+    },},},},},},},},    ],
+    },},},},},},},},    [
+    },},},},},},},},      "Dataset",
+    },},},},},},},},      "A collection of related records."
+    },},},},},},},},    ],
+    },},},},},},},},    [
+    },},},},},},},},      "Schema",
+    },},},},},},},},      "Description of structure and expected fields/types."
+    },},},},},},},},    ],
+    },},},},},},},},    [
+    },},},},},},},},      "Provenance",
+    },},},},},},},},      "Information about where data came from and how it was produced."
+    },},},},},},},},    ]
+    },},},},},},},},  ],
+    },},},},},},},},  "visual": {
+    },},},},},},},},    "title": "From event to dataset",
+    },},},},},},},},    "caption": "Security datasets are built from observations.",
+    },},},},},},},},    "steps": [
+    },},},},},},},},      "Real-world event",
+    },},},},},},},},      "System records the event",
+    },},},},},},},},      "Fields describe the event",
+    },},},},},},},},      "Records accumulate",
+    },},},},},},},},      "Dataset supports analysis"
+    },},},},},},},},    ]
+    },},},},},},},},  },
+    },},},},},},},},  "examples": [
+    },},},},},},},},    {
+    },},},},},},},},      "title": "Authentication table",
+    },},},},},},},},      "body": "A table contains timestamp, user, source_ip and result. One row records one authentication event.",
+    },},},},},},},},      "answer": "The timestamp is a field value, the row is a record and the table is the dataset."
+    },},},},},},},},    },
+    },},},},},},},},    {
+    },},},},},},},},      "title": "Bad timezone",
+    },},},},},},},},      "body": "One system records UTC while another records local time. A correlation appears impossible.",
+    },},},},},},},},      "answer": "Validate timestamp definitions before concluding that behavior is impossible."
+    },},},},},},},},    }
+    },},},},},},},},  ],
+    },},},},},},},},  "caseTitle": "Case: False alert from poor data quality",
+    },},},},},},},},  "case": "An analyst sees 500 login failures in five minutes. Investigation reveals a collector duplicated every event during a retry condition.",
+    },},},},},},},},  "caseQuestions": [
+    },},},},},},},},    "Which conclusion was invalid?",
+    },},},},},},},},    "What data-quality test detects duplicates?",
+    },},},},},},},},    "What evidence should be preserved before correcting analysis?"
+    },},},},},},},},  ],
+    },},},},},},},},  "notes": [
+    },},},},},},},},    "Understand a dataset before analyzing it.",
+    },},},},},},},},    "Data quality is part of security analysis.",
+    },},},},},},},},    "A correct calculation on incorrect data is still an incorrect conclusion."
+    },},},},},},},},  ],
+    },},},},},},},},  "takeaways": [
+    },},},},},},},},    "Know the unit of observation.",
+    },},},},},},},},    "Schema and provenance define meaning.",
+    },},},},},},},},    "Data quality directly affects security decisions."
+    },},},},},},},},  ],
+    },},},},},},},},  "practice": "Inspect a fictional 10-row login table and identify fields, records, missing values, duplicates and quality issues.",
+    },},},},},},},},  "practiceSteps": [
+    },},},},},},},},    "Write the intended meaning of each column.",
+    },},},},},},},},    "Identify the unit of observation.",
+    },},},},},},},},    "Look for missing values.",
+    },},},},},},},},    "Look for duplicates.",
+    },},},},},},},},    "Identify one assumption to verify."
+    },},},},},},},},  ],
+    },},},},},},},},  "evidence": "A short data dictionary plus a data-quality checklist.",
+    },},},},},},},},  "reflection": "If you cannot explain what one row represents, should you trust a chart built from those rows? Why?",
+    },},},},},},},},  "qa": [
+    },},},},},},},},    {
+    },},},},},},},},      "q": "What is a record?",
+    },},},},},},},},      "a": "One observation represented as a row or structured event.",
+    },},},},},},},},      "why": "The unit of observation determines how analysis should be interpreted."
+    },},},},},},},},    },
+    },},},},},},},},    {
+    },},},},},},},},      "q": "Why does provenance matter?",
+    },},},},},},},},      "a": "It tells you where data came from and how it was generated or transformed.",
+    },},},},},},},},      "why": "Without provenance, field meaning and reliability can be uncertain."
+    },},},},},},},},    },
+    },},},},},},},},    {
+    },},},},},},},},      "q": "Can duplicates affect security analysis?",
+    },},},},},},},},      "a": "Yes. They can exaggerate counts and create false patterns.",
+    },},},},},},},},      "why": "Conclusions depend on the integrity of observations."
+    },},},},},},},},    }
+    },},},},},},},},  ],
+    },},},},},},},},  "check": {
+    },},},},},},},},    "q": "Which statement is correct?",
+    },},},},},},},},    "options": [
+    },},},},},},},},      "A record represents an observation and a field describes an attribute of that observation",
+    },},},},},},},},      "A field is always an entire dataset",
+    },},},},},},},},      "A dataset cannot contain missing values",
+    },},},},},},},},      "Data quality is irrelevant if formulas are correct"
+    },},},},},},},},    ],
+    },},},},},},},},    "answer": "A record represents an observation and a field describes an attribute of that observation",
+    },},},},},},},},    "why": "This vocabulary is foundational for statistics and data science.",
+    },},},},},},},},    "explain": "These concepts will be used constantly in security analytics and machine learning."
+    },},},},},},},},  }
+    },},},},},},},},},    },},},},},},},},},{
+    },},},},},},},},},  "id": "cf-10",
+    },},},},},},},},},  "title": "Digital Safety & Your Security Mindset",
+    },},},},},},},},},  "objective": "Combine foundation concepts into a practical risk-based security mindset.",
+    },},},},},},},},},  "time": "90–120 minutes",
+    },},},},},},},},},  "prerequisite": "Computer & Digital Foundations lessons 01–09",
+    },},},},},},},},},  "learningGoal": "Apply a simple process to devices, accounts, data and everyday digital decisions.",
+    },},},},},},},},},  "highlights": [
+    },},},},},},},},},    "Security is a process of identifying what matters, understanding threats, applying controls and checking evidence.",
+    },},},},},},},},},    "Convenience and security can compete; good design manages the trade-off.",
+    },},},},},},},},},    "A beginner can make strong decisions using repeatable questions."
+    },},},},},},},},},  ],
+    },},},},},},},},},  "studyPlan": [
+    },},},},},},},},},    [
+    },},},},},},},},},      "Review foundations",
+    },},},},},},},},},      "15 min"
+    },},},},},},},},},    ],
+    },},},},},},},},},    [
+    },},},},},},},},},      "Build a risk mindset",
+    },},},},},},},},},      "20 min"
+    },},},},},},},},},    ],
+    },},},},},},},},},    [
+    },},},},},},},},},      "Apply to device/account/data",
+    },},},},},},},},},      "25 min"
+    },},},},},},},},},    ],
+    },},},},},},},},},    [
+    },},},},},},},},},      "Case simulation",
+    },},},},},},},},},      "25 min"
+    },},},},},},},},},    ],
+    },},},},},},},},},    [
+    },},},},},},},},},      "Security checklist",
+    },},},},},},},},},      "15 min"
+    },},},},},},},},},    ],
+    },},},},},},},},},    [
+    },},},},},},},},},      "Final review",
+    },},},},},},},},},      "10 min"
+    },},},},},},},},},    ]
+    },},},},},},},},},  ],
+    },},},},},},},},},  "read": "Digital safety is the practical application of the foundation models. Computers contain resources, operating systems enforce boundaries, files have lifecycles, processes have identities, networks create paths, websites use protocols, accounts require authentication and data must be interpreted correctly.\n\nA security mindset begins with a few questions: what are we protecting, who or what could cause harm, how could the asset be exposed, which control reduces likelihood or impact, and what evidence would show the control is working?\n\nRisk is contextual. A sensitive customer file on a device used by many people may create more concern than the same file in a properly restricted system. Good security is layered: updates, strong authentication, least privilege, careful data handling, safe browsing, backups, monitoring and recovery address different failure modes.\n\nProfessional security avoids absolute statements such as 'this system is secure'. Instead, state what is known, what is assumed, what control exists and what evidence supports the conclusion.",
+    },},},},},},},},},  "concepts": [
+    },},},},},},},},},    "Asset",
+    },},},},},},},},},    "Threat",
+    },},},},},},},},},    "Vulnerability",
+    },},},},},},},},},    "Control",
+    },},},},},},},},},    "Risk",
+    },},},},},},},},},    "Exposure",
+    },},},},},},},},},    "Evidence",
+    },},},},},},},},},    "Least privilege",
+    },},},},},},},},},    "Defense in depth"
+    },},},},},},},},},  ],
+    },},},},},},},},},  "glossary": [
+    },},},},},},},},},    [
+    },},},},},},},},},      "Asset",
+    },},},},},},},},},      "Something valuable that needs protection."
+    },},},},},},},},},    ],
+    },},},},},},},},},    [
+    },},},},},},},},},      "Threat",
+    },},},},},},},},},      "A potential cause of harm."
+    },},},},},},},},},    ],
+    },},},},},},},},},    [
+    },},},},},},},},},      "Vulnerability",
+    },},},},},},},},},      "A weakness that can be exploited or abused."
+    },},},},},},},},},    ],
+    },},},},},},},},},    [
+    },},},},},},},},},      "Control",
+    },},},},},},},},},      "A safeguard intended to prevent, detect or reduce harm."
+    },},},},},},},},},    ],
+    },},},},},},},},},    [
+    },},},},},},},},},      "Risk",
+    },},},},},},},},},      "Relationship among potential event, likelihood/exposure and consequence."
+    },},},},},},},},},    ],
+    },},},},},},},},},    [
+    },},},},},},},},},      "Evidence",
+    },},},},},},},},},      "Information supporting a conclusion or control claim."
+    },},},},},},},},},    ]
+    },},},},},},},},},  ],
+    },},},},},},},},},  "visual": {
+    },},},},},},},},},    "title": "Beginner security decision loop",
+    },},},},},},},},},    "caption": "Use this loop whenever a security decision is unclear.",
+    },},},},},},},},},    "steps": [
+    },},},},},},},},},      "Identify what matters",
+    },},},},},},},},},      "Identify plausible threats",
+    },},},},},},},},},      "Find weaknesses or exposure",
+    },},},},},},},},},      "Choose proportionate controls",
+    },},},},},},},},},      "Collect evidence",
+    },},},},},},},},},      "Review and improve"
+    },},},},},},},},},    ]
+    },},},},},},},},},  },
+    },},},},},},},},},  "examples": [
+    },},},},},},},},},    {
+    },},},},},},},},},      "title": "Unexpected login request",
+    },},},},},},},},},      "body": "An employee receives a prompt asking them to approve a login they do not recognize.",
+    },},},},},},},},},      "answer": "Do not approve blindly. Verify through a trusted channel and follow the reporting process."
+    },},},},},},},},},    },
+    },},},},},},},},},    {
+    },},},},},},},},},      "title": "Sensitive file sharing",
+    },},},},},},},},},      "body": "A team wants to share customer data with a contractor.",
+    },},},},},},},},},      "answer": "Consider classification, business need, recipient authorization, transfer method, retention and evidence."
+    },},},},},},},},},    }
+    },},},},},},},},},  ],
+    },},},},},},},},},  "caseTitle": "Case: First week at a digital company",
+    },},},},},},},},},  "case": "You receive a laptop, create accounts, access a customer portal, download a report and receive an unexpected authentication prompt. Apply the foundation models to the whole day.",
+    },},},},},},},},},  "caseQuestions": [
+    },},},},},},},},},    "What assets exist?",
+    },},},},},},},},},    "Which identities and permissions are involved?",
+    },},},},},},},},},    "Where are trust boundaries?",
+    },},},},},},},},},    "Which events deserve verification?",
+    },},},},},},},},},    "What evidence should be retained?"
+    },},},},},},},},},  ],
+    },},},},},},},},},  "notes": [
+    },},},},},},},},},    "Security is not simply inconvenience; controls should be usable and proportionate.",
+    },},},},},},},},},    "Evidence turns an opinion into a defensible statement.",
+    },},},},},},},},},    "When uncertain, pause and verify through a trusted path."
+    },},},},},},},},},  ],
+    },},},},},},},},},  "takeaways": [
+    },},},},},},},},},    "Security decisions start with assets, threats, weaknesses and controls.",
+    },},},},},},},},},    "Use least privilege and defense in depth.",
+    },},},},},},},},},    "Separate facts, assumptions and conclusions.",
+    },},},},},},},},},    "Evidence is part of professional security work."
+    },},},},},},},},},  ],
+    },},},},},},},},},  "practice": "Complete a security review for a fictional work laptop covering updates, account protection, data handling, network exposure, backups and recovery.",
+    },},},},},},},},},  "practiceSteps": [
+    },},},},},},},},},    "List five assets.",
+    },},},},},},},},},    "Identify one threat for each.",
+    },},},},},},},},},    "Identify one weakness or exposure.",
+    },},},},},},},},},    "Choose one control for each.",
+    },},},},},},},},},    "State evidence that would demonstrate the control is operating."
+    },},},},},},},},},  ],
+    },},},},},},},},},  "evidence": "A one-page review containing assets, threats, weaknesses, controls and evidence.",
+    },},},},},},},},},  "reflection": "Explain the difference between 'I think this is safe' and 'I have evidence that this control is operating as intended.'",
+    },},},},},},},},},  "qa": [
+    },},},},},},},},},    {
+    },},},},},},},},},      "q": "What is a security mindset?",
+    },},},},},},},},},      "a": "A repeatable way of identifying assets, threats, weaknesses, controls and evidence.",
+    },},},},},},},},},      "why": "Consistency helps people make decisions under uncertainty."
+    },},},},},},},},},    },
+    },},},},},},},},},    {
+    },},},},},},},},},      "q": "Why is evidence important?",
+    },},},},},},},},},      "a": "It allows a security claim to be checked rather than accepted on intuition.",
+    },},},},},},},},},      "why": "Professional security requires defensible reasoning."
+    },},},},},},},},},    },
+    },},},},},},},},},    {
+    },},},},},},},},},      "q": "Is one control enough?",
+    },},},},},},},},},      "a": "Usually not; layered controls reduce dependence on any single safeguard.",
+    },},},},},},},},},      "why": "Controls can fail, be bypassed or be misconfigured."
+    },},},},},},},},},    }
+    },},},},},},},},},  ],
+    },},},},},},},},},  "check": {
+    },},},},},},},},},    "q": "Which approach best demonstrates a security mindset?",
+    },},},},},},},},},    "options": [
+    },},},},},},},},},      "Identify assets, threats, weaknesses, controls and evidence",
+    },},},},},},},},},      "Memorize every security term without applying it",
+    },},},},},},},},},      "Assume a system is safe because it has antivirus",
+    },},},},},},},},},      "Treat every risk as equally severe"
+    },},},},},},},},},    ],
+    },},},},},},},},},    "answer": "Identify assets, threats, weaknesses, controls and evidence",
+    },},},},},},},},},    "why": "This is the repeatable reasoning process across the foundation module.",
+    },},},},},},},},},    "explain": "You now have the mental model needed to begin formal cybersecurity foundations."
+    },},},},},},},},},  }
+    },},},},},},},},},},    },},},},},},},},},},{
+    },},},},},},},},},},  "id": "sf-01",
+    },},},},},},},},},},  "title": "Security Mental Models",
+    },},},},},},},},},},  "objective": "Build a consistent mental model of assets, threats, vulnerabilities, controls, exposure and risk.",
+    },},},},},},},},},},  "time": "2–2.5 hours",
+    },},},},},},},},},},  "prerequisite": "Computer & Digital Foundations",
+    },},},},},},},},},},  "learningGoal": "Describe a security problem without collapsing different concepts into the vague statement 'the system is insecure'.",
+    },},},},},},},},},},  "highlights": [
+    },},},},},},},},},},    "Asset, threat, vulnerability, control and risk are related but different.",
+    },},},},},},},},},},    "A strong analysis moves from what matters to what could happen, why it could happen, and what reduces it.",
+    },},},},},},},},},},    "Good analysts separate facts, assumptions and conclusions."
+    },},},},},},},},},},  ],
+    },},},},},},},},},},  "studyPlan": [
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Foundation recap",
+    },},},},},},},},},},      "15 min"
+    },},},},},},},},},},    ],
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Security reasoning chain",
+    },},},},},},},},},},      "25 min"
+    },},},},},},},},},},    ],
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Worked examples",
+    },},},},},},},},},},      "25 min"
+    },},},},},},},},},},    ],
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Case analysis",
+    },},},},},},},},},},      "25 min"
+    },},},},},},},},},},    ],
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Guided practice",
+    },},},},},},},},},},      "20 min"
+    },},},},},},},},},},    ],
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Q&A and assessment",
+    },},},},},},},},},},      "15 min"
+    },},},},},},},},},},    ]
+    },},},},},},},},},},  ],
+    },},},},},},},},},},  "read": "Cybersecurity becomes easier when five ideas are kept separate. An asset is something valuable. A threat is a potential cause of harm. A vulnerability is a weakness that can be exploited or abused. A control is a safeguard intended to prevent, detect or reduce harm. Risk connects a potential event with likelihood or exposure and consequence.\n\nImagine a customer portal. Customer records are assets. Unauthorized disclosure is a threat scenario. A database account with excessive privileges is a vulnerability. Least-privilege access and monitoring are controls. Risk depends on sensitivity, exposure, likelihood and consequence.\n\nThe chain is asset → threat → vulnerability or exposure → control → residual risk. This prevents vague reasoning. 'The database is insecure' does not tell a decision-maker what should change. A precise statement identifies the asset, harmful scenario, enabling weakness and control gap.\n\nRisk is contextual. The same weakness can have different consequences depending on the asset and exposure. A test system with fictional data is not equivalent to production with sensitive customer information.\n\nStart with scope: system, assets, owners, users, data, trust boundaries and assumptions. Then identify plausible threats and control gaps. Only then prioritize actions.",
+    },},},},},},},},},},  "concepts": [
+    },},},},},},},},},},    "Asset",
+    },},},},},},},},},},    "Threat",
+    },},},},},},},},},},    "Vulnerability",
+    },},},},},},},},},},    "Control",
+    },},},},},},},},},},    "Exposure",
+    },},},},},},},},},},    "Risk",
+    },},},},},},},},},},    "Residual risk",
+    },},},},},},},},},},    "Trust boundary",
+    },},},},},},},},},},    "Assumption",
+    },},},},},},},},},},    "Evidence"
+    },},},},},},},},},},  ],
+    },},},},},},},},},},  "glossary": [
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Asset",
+    },},},},},},},},},},      "Something valuable to a person or organization."
+    },},},},},},},},},},    ],
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Threat",
+    },},},},},},},},},},      "A potential cause of an unwanted event."
+    },},},},},},},},},},    ],
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Vulnerability",
+    },},},},},},},},},},      "A weakness that can be exploited or abused."
+    },},},},},},},},},},    ],
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Control",
+    },},},},},},},},},},      "A safeguard that prevents, detects or reduces harm."
+    },},},},},},},},},},    ],
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Exposure",
+    },},},},},},},},},},      "A condition of being accessible or susceptible to a threat."
+    },},},},},},},},},},    ],
+    },},},},},},},},},},    [
+    },},},},},},},},},},      "Residual risk",
+    },},},},},},},},},},      "Risk remaining after controls are applied."
+    },},},},},},},},},},    ]
+    },},},},},},},},},},  ],
+    },},},},},},},},},},  "visual": {
+    },},},},},},},},},},    "title": "Security reasoning chain",
+    },},},},},},},},},},    "caption": "Use the chain to turn vague concerns into analyzable statements.",
+    },},},},},},},},},},    "steps": [
+    },},},},},},},},},},      "Asset: what matters?",
+    },},},},},},},},},},      "Threat: what could cause harm?",
+    },},},},},},},},},},      "Weakness / exposure: why is it possible?",
+    },},},},},},},},},},      "Control: what reduces it?",
+    },},},},},},},},},},      "Evidence: how do we know?",
+    },},},},},},},},},},      "Residual risk: what remains?"
+    },},},},},},},},},},    ]
+    },},},},},},},},},},  },
+    },},},},},},},},},},  "graph": {
+    },},},},},},},},},},    "title": "Illustrative risk prioritization",
+    },},},},},},},},},},    "caption": "Teaching model only. Higher consequence and exposure generally demand more attention.",
+    },},},},},},},},},},    "items": [
+    },},},},},},},},},},      {
+    },},},},},},},},},},        "label": "Low consequence / low exposure",
+    },},},},},},},},},},        "value": "Lower",
+    },},},},},},},},},},        "percent": 20
+    },},},},},},},},},},      },
+    },},},},},},},},},},      {
+    },},},},},},},},},},        "label": "High consequence / low exposure",
+    },},},},},},},},},},        "value": "Moderate",
+    },},},},},},},},},},        "percent": 45
+    },},},},},},},},},},      },
+    },},},},},},},},},},      {
+    },},},},},},},},},},        "label": "Low consequence / high exposure",
+    },},},},},},},},},},        "value": "Moderate",
+    },},},},},},},},},},        "percent": 55
+    },},},},},},},},},},      },
+    },},},},},},},},},},      {
+    },},},},},},},},},},        "label": "High consequence / high exposure",
+    },},},},},},},},},},        "value": "Higher",
+    },},},},},},},},},},        "percent": 90
+    },},},},},},},},},},      }
+    },},},},},},},},},},    ]
+    },},},},},},},},},},  },
+    },},},},},},},},},},  "examples": [
+    },},},},},},},},},},    {
+    },},},},},},},},},},      "title": "Excessive database access",
+    },},},},},},},},},},      "body": "Asset: customer records. Threat: unauthorized disclosure. Vulnerability: reporting account reads unrelated tables. Control: restrict access and monitor use.",
+    },},},},},},},},},},      "answer": "Each part of the chain is explicit, making the finding actionable."
+    },},},},},},},},},},    },
+    },},},},},},},},},},    {
+    },},},},},},},},},},      "title": "Lost laptop",
+    },},},},},},},},},},      "body": "Asset: customer information. Threat: unauthorized physical access. Vulnerability: sensitive local data without adequate protection. Controls: encryption, strong authentication and management.",
+    },},},},},},},},},},      "answer": "Control selection follows the actual exposure."
+    },},},},},},},},},},    }
+    },},},},},},},},},},  ],
+    },},},},},},},},},},  "caseTitle": "Case: Customer portal exposure",
+    },},},},},},},},},},  "case": "A customer portal stores personal data. Its database account can read more tables than required, while monitoring does not alert on unusual bulk reads.",
+    },},},},},},},},},},  "caseQuestions": [
+    },},},},},},},},},},    "Identify two assets.",
+    },},},},},},},},},},    "Describe two plausible threat scenarios.",
+    },},},},},},},},},},    "Identify the vulnerability or exposure.",
+    },},},},},},},},},},    "Name two controls.",
+    },},},},},},},},},},    "State one assumption to verify."
+    },},},},},},},},},},  ],
+    },},},},},},},},},},  "notes": [
+    },},},},},},},},},},    "Do not use vulnerability as a synonym for risk.",
+    },},},},},},},},},},    "Controls can prevent, detect or reduce impact.",
+    },},},},},},},},},},    "When evidence is incomplete, state the assumption."
+    },},},},},},},},},},  ],
+    },},},},},},},},},},  "takeaways": [
+    },},},},},},},},},},    "Use common vocabulary to make security reasoning precise.",
+    },},},},},},},},},},    "Trace the chain from asset to residual risk.",
+    },},},},},},},},},},    "Context and evidence determine prioritization."
+    },},},},},},},},},},  ],
+    },},},},},},},},},},  "practice": "Write three security statements using asset → threat → weakness → control → evidence. Avoid saying only 'the system is insecure'.",
+    },},},},},},},},},},  "practiceSteps": [
+    },},},},},},},},},},    "Choose an asset.",
+    },},},},},},},},},},    "Write a plausible threat scenario.",
+    },},},},},},},},},},    "Identify a weakness or exposure.",
+    },},},},},},},},},},    "Choose a control and its purpose.",
+    },},},},},},},},},},    "Name evidence that would verify the claim."
+    },},},},},},},},},},  ],
+    },},},},},},},},},},  "evidence": "Three complete security chains plus one assumption and one verification step.",
+    },},},},},},},},},},  "reflection": "Why can the same vulnerability represent different risk in a test system and a public production system?",
+    },},},},},},},},},},  "qa": [
+    },},},},},},},},},},    {
+    },},},},},},},},},},      "q": "Is a threat the same as a vulnerability?",
+    },},},},},},},},},},      "a": "No. A threat is a potential cause of harm; a vulnerability is a weakness that may enable it.",
+    },},},},},},},},},},      "why": "Separating them identifies both the event and enabling condition."
+    },},},},},},},},},},    },
+    },},},},},},},},},},    {
+    },},},},},},},},},},      "q": "What is residual risk?",
+    },},},},},},},},},},      "a": "Risk remaining after controls are applied.",
+    },},},},},},},},},},      "why": "Controls do not eliminate every possible risk."
+    },},},},},},},},},},    },
+    },},},},},},},},},},    {
+    },},},},},},},},},},      "q": "Why state assumptions?",
+    },},},},},},},},},},      "a": "Because decisions can change when uncertain facts are verified.",
+    },},},},},},},},},},      "why": "Explicit assumptions make analysis auditable."
+    },},},},},},},},},},    }
+    },},},},},},},},},},  ],
+    },},},},},},},},},},  "check": {
+    },},},},},},},},},},    "q": "Which chain is most useful for security analysis?",
+    },},},},},},},},},},    "options": [
+    },},},},},},},},},},      "Asset → threat → weakness/exposure → control → evidence → residual risk",
+    },},},},},},},},},},      "Password → keyboard → CPU → monitor",
+    },},},},},},},},},},      "Threat → asset → browser → storage → risk",
+    },},},},},},},},},},      "Control → assumption → CPU → file → threat"
+    },},},},},},},},},},    ],
+    },},},},},},},},},},    "answer": "Asset → threat → weakness/exposure → control → evidence → residual risk",
+    },},},},},},},},},},    "why": "The chain keeps concepts distinct and connects them into a decision process.",
+    },},},},},},},},},},    "explain": "This model is reused in threat modeling, SOC investigations, architecture and GRC."
+    },},},},},},},},},},  }
+    },},},},},},},},},},},    },},},},},},},},},},},{
+    },},},},},},},},},},},  "id": "sf-02",
+    },},},},},},},},},},},  "title": "CIA Triad & Security Objectives",
+    },},},},},},},},},},},  "objective": "Understand confidentiality, integrity and availability and use them to describe what security must protect.",
+    },},},},},},},},},},},  "time": "2–2.5 hours",
+    },},},},},},},},},},},  "prerequisite": "Security Mental Models",
+    },},},},},},},},},},},  "learningGoal": "Translate vague security concerns into explicit confidentiality, integrity and availability objectives.",
+    },},},},},},},},},},},  "highlights": [
+    },},},},},},},},},},},    "Confidentiality limits unauthorized disclosure.",
+    },},},},},},},},},},},    "Integrity protects correctness and trustworthiness.",
+    },},},},},},},},},},},    "Availability supports authorized access when needed."
+    },},},},},},},},},},},  ],
+    },},},},},},},},},},},  "studyPlan": [
+    },},},},},},},},},},},    [
+    },},},},},},},},},},},      "CIA fundamentals",
+    },},},},},},},},},},},      "20 min"
+    },},},},},},},},},},},    ],
+    },},},},},},},},},},},    [
+    },},},},},},},},},},},      "Scenario comparison",
+    },},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},    ],
+    },},},},},},},},},},},    [
+    },},},},},},},},},},},      "Map controls",
+    },},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},    ],
+    },},},},},},},},},},},    [
+    },},},},},},},},},},},      "Case analysis",
+    },},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},    ],
+    },},},},},},},},},},},    [
+    },},},},},},},},},},},      "Practice",
+    },},},},},},},},},},},      "20 min"
+    },},},},},},},},},},},    ],
+    },},},},},},},},},},},    [
+    },},},},},},},},},},},      "Assessment",
+    },},},},},},},},},},},      "15 min"
+    },},},},},},},},},},},    ]
+    },},},},},},},},},},},  ],
+    },},},},},},},},},},},  "read": "The CIA triad describes three fundamental security objectives. Confidentiality means preventing unauthorized disclosure. Integrity means protecting information and system behavior from unauthorized or unintended change. Availability means ensuring authorized users can access required systems and information when needed.\n\nThe objectives can overlap. Ransomware can affect availability by blocking access and integrity by altering data. A data leak affects confidentiality. A malicious configuration change can affect integrity and availability.\n\nControls should connect to objectives. Access control supports confidentiality and integrity. Backups support availability and recovery from integrity failures. Change control supports integrity. Redundancy supports availability.\n\nThe triad turns 'protect the customer portal' into questions: who should see the data, who may change it, and how quickly must the service recover? Those questions become requirements and measurable controls.",
+    },},},},},},},},},},},  "concepts": [
+    },},},},},},},},},},},    "Confidentiality",
+    },},},},},},},},},},},    "Integrity",
+    },},},},},},},},},},},    "Availability",
+    },},},},},},},},},},},    "Authorization",
+    },},},},},},},},},},},    "Change control",
+    },},},},},},},},},},},    "Backup",
+    },},},},},},},},},},},    "Redundancy",
+    },},},},},},},},},},},    "Recovery"
+    },},},},},},},},},},},  ],
+    },},},},},},},},},},},  "glossary": [
+    },},},},},},},},},},},    [
+    },},},},},},},},},},},      "Confidentiality",
+    },},},},},},},},},},},      "Preventing unauthorized disclosure."
+    },},},},},},},},},},},    ],
+    },},},},},},},},},},},    [
+    },},},},},},},},},},},      "Integrity",
+    },},},},},},},},},},},      "Protecting correctness and trustworthiness from unauthorized or unintended change."
+    },},},},},},},},},},},    ],
+    },},},},},},},},},},},    [
+    },},},},},},},},},},},      "Availability",
+    },},},},},},},},},},},      "Ensuring authorized access when required."
+    },},},},},},},},},},},    ],
+    },},},},},},},},},},},    [
+    },},},},},},},},},},},      "Redundancy",
+    },},},},},},},},},},},      "Alternate resources that improve resilience."
+    },},},},},},},},},},},    ],
+    },},},},},},},},},},},    [
+    },},},},},},},},},},},      "Recovery",
+    },},},},},},},},},},},      "Restoring systems or data after disruption."
+    },},},},},},},},},},},    ]
+    },},},},},},},},},},},  ],
+    },},},},},},},},},},},  "visual": {
+    },},},},},},},},},},},    "title": "CIA decision lens",
+    },},},},},},},},},},},    "caption": "Ask three different questions about every important asset.",
+    },},},},},},},},},},},    "steps": [
+    },},},},},},},},},},},      "Confidentiality — who can see it?",
+    },},},},},},},},},},},      "Integrity — who can change it?",
+    },},},},},},},},},},},      "Availability — who needs it and when?",
+    },},},},},},},},},},},      "Choose controls for each objective",
+    },},},},},},},},},},},      "Measure whether objectives are met"
+    },},},},},},},},},},},    ]
+    },},},},},},},},},},},  },
+    },},},},},},},},},},},  "examples": [
+    },},},},},},},},},},},    {
+    },},},},},},},},},},},      "title": "Payroll file",
+    },},},},},},},},},},},      "body": "Only payroll staff should read salary information, changes should be controlled and the file must be available during payroll processing.",
+    },},},},},},},},},},},      "answer": "One asset can have requirements across all three objectives."
+    },},},},},},},},},},},    },
+    },},},},},},},},},},},    {
+    },},},},},},},},},},},      "title": "Public website",
+    },},},},},},},},},},},      "body": "A public homepage may need little confidentiality, but unauthorized modification would damage integrity and availability is important.",
+    },},},},},},},},},},},      "answer": "Objectives differ by business context."
+    },},},},},},},},},},},    }
+    },},},},},},},},},},},  ],
+    },},},},},},},},},},},  "caseTitle": "Case: Payment processing system",
+    },},},},},},},},},},},  "case": "A payment system must operate during business hours, prevent unauthorized changes to transaction amounts and restrict customer information to authorized personnel.",
+    },},},},},},},},},},},  "caseQuestions": [
+    },},},},},},},},},},},    "State one confidentiality requirement.",
+    },},},},},},},},},},},    "State one integrity requirement.",
+    },},},},},},},},},},},    "State one availability requirement.",
+    },},},},},},},},},},},    "Name one control for each."
+    },},},},},},},},},},},  ],
+    },},},},},},},},},},},  "notes": [
+    },},},},},},},},},},},    "CIA is a lens, not a score.",
+    },},},},},},},},},},},    "Not every asset has equal priority for all three objectives.",
+    },},},},},},},},},},},    "Controls often support more than one objective."
+    },},},},},},},},},},},  ],
+    },},},},},},},},},},},  "takeaways": [
+    },},},},},},},},},},},    "Confidentiality = unauthorized disclosure.",
+    },},},},},},},},},},},    "Integrity = unauthorized or incorrect change.",
+    },},},},},},},},},},},    "Availability = reliable authorized access.",
+    },},},},},},},},},},},    "Use CIA to turn business needs into requirements."
+    },},},},},},},},},},},  ],
+    },},},},},},},},},},},  "practice": "Choose three assets—customer data, application code and a website—and assign a CIA requirement to each.",
+    },},},},},},},},},},},  "practiceSteps": [
+    },},},},},},},},},},},    "Write who should see each asset.",
+    },},},},},},},},},},},    "Write who may modify it.",
+    },},},},},},},},},},},    "Write when it must be available.",
+    },},},},},},},},},},},    "Choose one control per objective.",
+    },},},},},},},},},},},    "Explain one trade-off."
+    },},},},},},},},},},},  ],
+    },},},},},},},},},},},  "evidence": "A CIA requirements matrix with at least three assets and nine objective statements.",
+    },},},},},},},},},},},  "reflection": "Can a public website have a confidentiality requirement? Give a realistic example.",
+    },},},},},},},},},},},  "qa": [
+    },},},},},},},},},},},    {
+    },},},},},},},},},},},      "q": "What does integrity protect?",
+    },},},},},},},},},},},      "a": "The correctness and trustworthiness of information and system behavior.",
+    },},},},},},},},},},},      "why": "Integrity concerns unauthorized or unintended change."
+    },},},},},},},},},},},    },
+    },},},},},},},},},},},    {
+    },},},},},},},},},},},      "q": "Do backups only support availability?",
+    },},},},},},},},},},},      "a": "No. Their main role may be availability and recovery, while backup access also creates confidentiality requirements.",
+    },},},},},},},},},},},      "why": "Controls can have multiple security effects."
+    },},},},},},},},},},},    },
+    },},},},},},},},},},},    {
+    },},},},},},},},},},},      "q": "Can one event affect multiple CIA objectives?",
+    },},},},},},},},},},},      "a": "Yes.",
+    },},},},},},},},},},},      "why": "Real incidents often have overlapping impacts."
+    },},},},},},},},},},},    }
+    },},},},},},},},},},},  ],
+    },},},},},},},},},},},  "check": {
+    },},},},},},},},},},},    "q": "Which example is primarily an integrity issue?",
+    },},},},},},},},},},},    "options": [
+    },},},},},},},},},},},      "An unauthorized person changes a payment amount",
+    },},},},},},},},},},},      "An authorized user cannot access a service during an outage",
+    },},},},},},},},},},},      "A confidential report is disclosed to an unauthorized person",
+    },},},},},},},},},},},      "A public brochure is available online"
+    },},},},},},},},},},},    ],
+    },},},},},},},},},},},    "answer": "An unauthorized person changes a payment amount",
+    },},},},},},},},},},},    "why": "The core problem is unauthorized modification.",
+    },},},},},},},},},},},    "explain": "CIA classification helps describe impact before selecting controls."
+    },},},},},},},},},},},  }
+    },},},},},},},},},},},},    },},},},},},},},},},},},{
+    },},},},},},},},},},},},  "id": "sf-03",
+    },},},},},},},},},},},},  "title": "Identity & Access Fundamentals",
+    },},},},},},},},},},},},  "objective": "Apply identity, authentication, authorization, least privilege and access lifecycle concepts to business systems.",
+    },},},},},},},},},},},},  "time": "2–2.5 hours",
+    },},},},},},},},},},},},  "prerequisite": "Security Mental Models; CIA Triad",
+    },},},},},},},},},},},},  "learningGoal": "Design a simple access model where people and services receive only the permissions required for their responsibilities.",
+    },},},},},},},},},},},},  "highlights": [
+    },},},},},},},},},},},},    "Authentication establishes identity confidence; authorization determines permitted actions.",
+    },},},},},},},},},},},},    "Least privilege reduces unnecessary authority.",
+    },},},},},},},},},},},},    "Access must be managed across joiner, mover and leaver events."
+    },},},},},},},},},},},},  ],
+    },},},},},},},},},},},},  "studyPlan": [
+    },},},},},},},},},},},},    [
+    },},},},},},},},},},},},      "IAM mental model",
+    },},},},},},},},},},},},      "20 min"
+    },},},},},},},},},},},},    ],
+    },},},},},},},},},},},},    [
+    },},},},},},},},},},},},      "Authentication vs authorization",
+    },},},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},},    ],
+    },},},},},},},},},},},},    [
+    },},},},},},},},},},},},      "Least privilege and roles",
+    },},},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},},    ],
+    },},},},},},},},},},},},    [
+    },},},},},},},},},},},},      "Lifecycle case",
+    },},},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},},    ],
+    },},},},},},},},},},},},    [
+    },},},},},},},},},},},},      "Practice",
+    },},},},},},},},},},},},      "20 min"
+    },},},},},},},},},},},},    ],
+    },},},},},},},},},},},},    [
+    },},},},},},},},},},},},      "Review",
+    },},},},},},},},},},},},      "15 min"
+    },},},},},},},},},},},},    ]
+    },},},},},},},},},},},},  ],
+    },},},},},},},},},},},},  "read": "Identity and access management answers who or what is allowed to do what. An identity can represent a person, service, device or workload. Authorization maps that identity to permissions.\n\nAuthentication verifies a claimed identity. Authorization evaluates whether the identity can perform a specific action on a specific resource. A user can be correctly authenticated and still be unauthorized to view another department's records.\n\nLeast privilege means granting only the permissions needed for a task. Role-based access control can group permissions around responsibilities. The goal is understandable and reviewable access boundaries rather than thousands of arbitrary grants.\n\nAccess has a lifecycle. Joiners receive required access, movers change roles and leavers have access revoked. Stale permissions create unnecessary exposure. Service identities need the same discipline; convenience should not justify administrator-level access.",
+    },},},},},},},},},},},},  "concepts": [
+    },},},},},},},},},},},},    "IAM",
+    },},},},},},},},},},},},    "Identity",
+    },},},},},},},},},},},},    "Authentication",
+    },},},},},},},},},},},},    "Authorization",
+    },},},},},},},},},},},},    "Role",
+    },},},},},},},},},},},},    "RBAC",
+    },},},},},},},},},},},},    "Least privilege",
+    },},},},},},},},},},},},    "Joiner-mover-leaver",
+    },},},},},},},},},},},},    "Service identity"
+    },},},},},},},},},},},},  ],
+    },},},},},},},},},},},},  "glossary": [
+    },},},},},},},},},},},},    [
+    },},},},},},},},},},},},      "IAM",
+    },},},},},},},},},},},},      "Processes and controls for managing identities and access."
+    },},},},},},},},},},},},    ],
+    },},},},},},},},},},},},    [
+    },},},},},},},},},},},},      "RBAC",
+    },},},},},},},},},},},},      "Role-based access control; permissions are grouped around roles."
+    },},},},},},},},},},},},    ],
+    },},},},},},},},},},},},    [
+    },},},},},},},},},},},},      "Least privilege",
+    },},},},},},},},},},},},      "Only required authority is granted."
+    },},},},},},},},},},},},    ],
+    },},},},},},},},},},},},    [
+    },},},},},},},},},},},},      "Service identity",
+    },},},},},},},},},},},},      "Identity used by an application or workload."
+    },},},},},},},},},},},},    ],
+    },},},},},},},},},},},},    [
+    },},},},},},},},},},},},      "Access review",
+    },},},},},},},},},},},},      "Periodic check that permissions remain appropriate."
+    },},},},},},},},},},},},    ]
+    },},},},},},},},},},},},  ],
+    },},},},},},},},},},},},  "visual": {
+    },},},},},},},},},},},},    "title": "Access decision",
+    },},},},},},},},},},},},    "caption": "Authentication and authorization are separate decisions.",
+    },},},},},},},},},},},},    "steps": [
+    },},},},},},},},},},},},      "Identity claims who it is",
+    },},},},},},},},},},},},      "Authentication verifies the claim",
+    },},},},},},},},},},},},      "Policy evaluates the requested resource",
+    },},},},},},},},},},},},      "Authorization allows or denies",
+    },},},},},},},},},},},},      "Action is logged and reviewed"
+    },},},},},},},},},},},},    ]
+    },},},},},},},},},},},},  },
+    },},},},},},},},},},},},  "examples": [
+    },},},},},},},},},},},},    {
+    },},},},},},},},},},},},      "title": "Employee transfer",
+    },},},},},},},},},},},},      "body": "An analyst moves from support to finance but retains support permissions.",
+    },},},},},},},},},},},},      "answer": "The mover event should trigger access review and adjustment."
+    },},},},},},},},},},},},    },
+    },},},},},},},},},},},},    {
+    },},},},},},},},},},},},      "title": "Service account",
+    },},},},},},},},},},},},      "body": "A reporting service needs read access to three tables but has database administrator privileges.",
+    },},},},},},},},},},},},      "answer": "The service has excessive authority and should be redesigned around least privilege."
+    },},},},},},},},},},},},    }
+    },},},},},},},},},},},},  ],
+    },},},},},},},},},},},},  "caseTitle": "Case: Joiner, mover, leaver",
+    },},},},},},},},},},},},  "case": "A company provisions new employees through tickets, but role changes are manual and departures are processed at the end of the week.",
+    },},},},},},},},},},},},  "caseQuestions": [
+    },},},},},},},},},},},},    "Where are the lifecycle risks?",
+    },},},},},},},},},},},},    "Which access should be automated or time-bound?",
+    },},},},},},},},},},},},    "What evidence proves access was revoked?"
+    },},},},},},},},},},},},  ],
+    },},},},},},},},},},},},  "notes": [
+    },},},},},},},},},},},},    "Authentication does not grant universal authorization.",
+    },},},},},},},},},},},},    "Least privilege applies to humans and machine identities.",
+    },},},},},},},},},},},},    "Access reviews should reflect business responsibility."
+    },},},},},},},},},},},},  ],
+    },},},},},},},},},},},},  "takeaways": [
+    },},},},},},},},},},},},    "IAM answers who can do what.",
+    },},},},},},},},},},},},    "Authentication and authorization are separate.",
+    },},},},},},},},},},},},    "Least privilege and lifecycle controls reduce persistent exposure."
+    },},},},},},},},},},},},  ],
+    },},},},},},},},},},},},  "practice": "Design roles for employee, manager, analyst and administrator personas.",
+    },},},},},},},},},},},},  "practiceSteps": [
+    },},},},},},},},},},},},    "List three resources.",
+    },},},},},},},},},},},},    "Define read access.",
+    },},},},},},},},},},},},    "Define modification access.",
+    },},},},},},},},},},},},    "Define one permission nobody needs by default.",
+    },},},},},},},},},},},},    "Describe what happens when a user changes role."
+    },},},},},},},},},},},},  ],
+    },},},},},},},},},},},},  "evidence": "A role-permission matrix plus one lifecycle workflow.",
+    },},},},},},},},},},},},  "reflection": "Why is 'give everyone access and remove it later' harder to secure than deliberate access assignment?",
+    },},},},},},},},},},},},  "qa": [
+    },},},},},},},},},},},},    {
+    },},},},},},},},},},},},      "q": "What does authorization decide?",
+    },},},},},},},},},},},},      "a": "Whether an authenticated identity may perform an action on a resource.",
+    },},},},},},},},},},},},      "why": "Authorization is contextual and action-specific."
+    },},},},},},},},},},},},    },
+    },},},},},},},},},},},},    {
+    },},},},},},},},},},},},      "q": "What is least privilege?",
+    },},},},},},},},},},},},      "a": "Granting only authority required for a task.",
+    },},},},},},},},},},},},      "why": "It limits unnecessary exposure and potential impact."
+    },},},},},},},},},},},},    },
+    },},},},},},},},},},},},    {
+    },},},},},},},},},},},},      "q": "Why are role changes important?",
+    },},},},},},},},},},},},      "a": "Old permissions may remain after responsibilities change.",
+    },},},},},},},},},},},},      "why": "Stale access is a lifecycle weakness."
+    },},},},},},},},},},},},    }
+    },},},},},},},},},},},},  ],
+    },},},},},},},},},},},},  "check": {
+    },},},},},},},},},},},},    "q": "Which control best demonstrates least privilege?",
+    },},},},},},},},},},},},    "options": [
+    },},},},},},},},},},},},      "A reporting service can read only the tables it requires",
+    },},},},},},},},},},},},      "Every employee is a database administrator",
+    },},},},},},},},},},},},      "Former employees retain access for convenience",
+    },},},},},},},},},},},},      "All services share one administrator credential"
+    },},},},},},},},},},},},    ],
+    },},},},},},},},},},},},    "answer": "A reporting service can read only the tables it requires",
+    },},},},},},},},},},},},    "why": "Permission is aligned to the actual task.",
+    },},},},},},},},},},},},    "explain": "This principle recurs in Linux permissions, cloud IAM and application authorization."
+    },},},},},},},},},},},},  }
+    },},},},},},},},},},},},},    },},},},},},},},},},},},},{
+    },},},},},},},},},},},},},  "id": "sf-04",
+    },},},},},},},},},},},},},  "title": "Threat Modeling Basics",
+    },},},},},},},},},},},},},  "objective": "Learn to identify assets, trust boundaries, threats, abuse cases and controls before implementation.",
+    },},},},},},},},},},},},},  "time": "2–2.5 hours",
+    },},},},},},},},},},},},},  "prerequisite": "Security Mental Models; Identity & Access Fundamentals",
+    },},},},},},},},},},},},},  "learningGoal": "Create a simple threat model for a small system and use it to identify questions worth validating.",
+    },},},},},},},},},},},},},  "highlights": [
+    },},},},},},},},},},},},},    "Threat modeling is structured thinking before or during design.",
+    },},},},},},},},},},},},},    "Trust boundaries matter because data or authority crosses them.",
+    },},},},},},},},},},},},},    "A useful threat model produces actionable questions and controls."
+    },},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},  "studyPlan": [
+    },},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},      "Threat-model method",
+    },},},},},},},},},},},},},      "20 min"
+    },},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},      "Assets and boundaries",
+    },},},},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},      "Threat scenarios",
+    },},},},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},      "Controls",
+    },},},},},},},},},},},},},      "20 min"
+    },},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},      "Case workshop",
+    },},},},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},      "Review",
+    },},},},},},},},},},},},},      "15 min"
+    },},},},},},},},},},},},},    ]
+    },},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},  "read": "Threat modeling is a structured way to ask how a system could be misused, attacked or fail before those possibilities become incidents. A strong beginner model uses architecture, assets, identities, data flows and trust boundaries.\n\nStart by defining scope. What is inside the application? What is outside? Which users, services or networks interact with it? Then identify valuable assets and the paths through which they move.\n\nA trust boundary is a point where trust, authority or control changes. Examples include a public user entering an application, an application accessing a database, or a cloud workload accessing an external service.\n\nThreat scenarios should be concrete: an unauthorized user accesses another customer's record; a compromised service sends sensitive data outside; a malicious input causes unintended behavior. Controls should respond through authentication, authorization, validation, segmentation and logging.\n\nThreat modeling is not prediction. It makes assumptions visible, identifies plausible failure modes and creates verification questions.",
+    },},},},},},},},},},},},},  "concepts": [
+    },},},},},},},},},},},},},    "Threat modeling",
+    },},},},},},},},},},},},},    "System boundary",
+    },},},},},},},},},},},},},    "Trust boundary",
+    },},},},},},},},},},},},},    "Data flow",
+    },},},},},},},},},},},},},    "Asset",
+    },},},},},},},},},},},},},    "Threat scenario",
+    },},},},},},},},},},},},},    "Abuse case",
+    },},},},},},},},},},},},},    "Control",
+    },},},},},},},},},},},},},    "Assumption"
+    },},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},  "glossary": [
+    },},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},      "Threat model",
+    },},},},},},},},},},},},},      "Structured representation of assets, boundaries, threats and controls."
+    },},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},      "Trust boundary",
+    },},},},},},},},},},},},},      "Point where trust or authority changes."
+    },},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},      "Data flow",
+    },},},},},},},},},},},},},      "Movement of information between components."
+    },},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},      "Abuse case",
+    },},},},},},},},},},},},},      "Scenario describing unintended or harmful use."
+    },},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},      "Mitigation",
+    },},},},},},},},},},},},},      "A design or control change that reduces risk."
+    },},},},},},},},},},},},},    ]
+    },},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},  "visual": {
+    },},},},},},},},},},},},},    "title": "Threat-model workflow",
+    },},},},},},},},},},},},},    "caption": "Start with the system and end with testable controls.",
+    },},},},},},},},},},},},},    "steps": [
+    },},},},},},},},},},},},},      "Define scope",
+    },},},},},},},},},},},},},      "Identify assets",
+    },},},},},},},},},},},},},      "Map data flows",
+    },},},},},},},},},},},},},      "Mark trust boundaries",
+    },},},},},},},},},},},},},      "Describe threat scenarios",
+    },},},},},},},},},},},},},      "Select controls",
+    },},},},},},},},},},},},},      "Define verification evidence"
+    },},},},},},},},},},},},},    ]
+    },},},},},},},},},},},},},  },
+    },},},},},},},},},},},},},  "examples": [
+    },},},},},},},},},},},},},    {
+    },},},},},},},},},},},},},      "title": "Customer portal",
+    },},},},},},},},},},},},},      "body": "A public browser sends requests to an application service, which queries a database containing customer records.",
+    },},},},},},},},},},},},},      "answer": "Boundaries exist between public user and application, and application and database. Authorization and network restrictions become key questions."
+    },},},},},},},},},},},},},    },
+    },},},},},},},},},},},},},    {
+    },},},},},},},},},},},},},      "title": "Third-party integration",
+    },},},},},},},},},},},},},      "body": "A payroll application sends data to an external service.",
+    },},},},},},},},},},},},},      "answer": "The integration creates a trust boundary and raises questions about authentication, data minimization, encryption, logging and responsibilities."
+    },},},},},},},},},},},},},    }
+    },},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},  "caseTitle": "Case: Customer portal threat model",
+    },},},},},},},},},},},},},  "case": "Design a model for public users, an application server, a database and an administrative interface.",
+    },},},},},},},},},},},},},  "caseQuestions": [
+    },},},},},},},},},},},},},    "What are the valuable assets?",
+    },},},},},},},},},},},},},    "Where are trust boundaries?",
+    },},},},},},},},},},},},},    "What could an unauthorized user attempt?",
+    },},},},},},},},},},},},},    "Which controls should be validated?",
+    },},},},},},},},},},},},},    "What evidence would prove the controls work?"
+    },},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},  "notes": [
+    },},},},},},},},},},},},},    "Threat modeling is about plausible scenarios, not dramatic stories.",
+    },},},},},},},},},},},},},    "Update the model when architecture or business use changes.",
+    },},},},},},},},},},},},},    "A model is useful only if it leads to decisions or tests."
+    },},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},  "takeaways": [
+    },},},},},},},},},},},},},    "Define scope before listing threats.",
+    },},},},},},},},},},},},},    "Trust boundaries reveal where assumptions change.",
+    },},},},},},},},},},},},},    "Good scenarios are specific enough to test.",
+    },},},},},},},},},},},},},    "Controls should map back to scenarios."
+    },},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},  "practice": "Create a threat model for a simple online student portal.",
+    },},},},},},},},},},},},},  "practiceSteps": [
+    },},},},},},},},},},},},},    "Draw four components.",
+    },},},},},},},},},},},},},    "Draw data flows.",
+    },},},},},},},},},},},},},    "Mark public and privileged boundaries.",
+    },},},},},},},},},},},},},    "Identify five assets.",
+    },},},},},},},},},},},},},    "Write five threat scenarios.",
+    },},},},},},},},},},},},},    "Map each to a control."
+    },},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},  "evidence": "A one-page threat model with architecture, five scenarios and mapped controls.",
+    },},},},},},},},},},},},},  "reflection": "Why is 'an attacker could hack the system' too vague to be useful?",
+    },},},},},},},},},},},},},  "qa": [
+    },},},},},},},},},},},},},    {
+    },},},},},},},},},},},},},      "q": "What is a trust boundary?",
+    },},},},},},},},},},},},},      "a": "A point where trust, authority or security assumptions change.",
+    },},},},},},},},},},},},},      "why": "Boundaries reveal where validation is needed."
+    },},},},},},},},},},},},},    },
+    },},},},},},},},},},},},},    {
+    },},},},},},},},},},},},},      "q": "Why define scope first?",
+    },},},},},},},},},},},},},      "a": "Without scope, threat analysis becomes vague and incomplete.",
+    },},},},},},},},},},},},},      "why": "A model needs a clear system and assumptions."
+    },},},},},},},},},},},},},    },
+    },},},},},},},},},},},},},    {
+    },},},},},},},},},},},},},      "q": "Is threat modeling only for security specialists?",
+    },},},},},},},},},},},},},      "a": "No. Different stakeholders contribute architecture, business and operational knowledge.",
+    },},},},},},},},},},},},},      "why": "Threats depend on system and business context."
+    },},},},},},},},},},},},},    }
+    },},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},  "check": {
+    },},},},},},},},},},},},},    "q": "What should a beginner threat model produce?",
+    },},},},},},},},},},},},},    "options": [
+    },},},},},},},},},},},},},      "Specific threat scenarios, boundaries, controls and verification questions",
+    },},},},},},},},},},},},},      "A list of random hacking techniques",
+    },},},},},},},},},},},},},      "Only a password policy",
+    },},},},},},},},},},},},},      "A guarantee that the system cannot be attacked"
+    },},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},    "answer": "Specific threat scenarios, boundaries, controls and verification questions",
+    },},},},},},},},},},},},},    "why": "Threat modeling is structured risk reasoning, not a guarantee.",
+    },},},},},},},},},},},},},    "explain": "This connects directly to application security, cloud architecture and enterprise risk."
+    },},},},},},},},},},},},},  }
+    },},},},},},},},},},},},},},    },},},},},},},},},},},},},},{
+    },},},},},},},},},},},},},},  "id": "sf-05",
+    },},},},},},},},},},},},},},  "title": "Security Operations Vocabulary",
+    },},},},},},},},},},},},},},  "objective": "Build the vocabulary needed to understand events, alerts, incidents, findings, evidence and response decisions.",
+    },},},},},},},},},},},},},},  "time": "2 hours",
+    },},},},},},},},},},},},},},  "prerequisite": "Threat Modeling Basics",
+    },},},},},},},},},},},},},},  "learningGoal": "Distinguish what happened, what was detected, what is confirmed and what requires response.",
+    },},},},},},},},},},},},},},  "highlights": [
+    },},},},},},},},},},},},},},    "An event is an observed occurrence; an alert is a signal that something may deserve attention.",
+    },},},},},},},},},},},},},},    "An incident is an event or set of events that meets response criteria.",
+    },},},},},},},},},},},},},},    "Evidence supports conclusions and should not be replaced by assumptions."
+    },},},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},},  "studyPlan": [
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Operational terms",
+    },},},},},},},},},},},},},},      "20 min"
+    },},},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Event to incident",
+    },},},},},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Evidence and timeline",
+    },},},},},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Triage case",
+    },},},},},},},},},},},},},},      "25 min"
+    },},},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Practice",
+    },},},},},},},},},},},},},},      "15 min"
+    },},},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Review",
+    },},},},},},},},},},},},},},      "10 min"
+    },},},},},},},},},},},},},},    ]
+    },},},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},},  "read": "Security operations depends on precise language because teams make decisions under time pressure. An event is an observable occurrence, such as a login, process start or network connection. An alert is a signal produced because an event or pattern deserves attention. Not every alert is an incident.\n\nAn incident is an event or collection of events that meets organizational criteria for requiring security response. A finding is a documented observation or issue discovered during assessment or analysis. Evidence is information that supports a conclusion, such as logs, timestamps, configuration snapshots or preserved files.\n\nTriage quickly determines what deserves attention, how serious it may be, what is known and what remains uncertain. A useful workflow is event → detection → alert → triage → investigation → incident decision → response → lessons learned.\n\nAnalysts also construct timelines by correlating identities, hosts, applications, IPs and timestamps. A timeline should distinguish observed facts from interpretation.",
+    },},},},},},},},},},},},},},  "concepts": [
+    },},},},},},},},},},},},},},    "Event",
+    },},},},},},},},},},},},},},    "Alert",
+    },},},},},},},},},},},},},},    "Incident",
+    },},},},},},},},},},},},},},    "Finding",
+    },},},},},},},},},},},},},},    "Evidence",
+    },},},},},},},},},},},},},},    "Triage",
+    },},},},},},},},},},},},},},    "Investigation",
+    },},},},},},},},},},},},},},    "Timeline",
+    },},},},},},},},},},},},},},    "Severity",
+    },},},},},},},},},},},},},},    "Response"
+    },},},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},},  "glossary": [
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Event",
+    },},},},},},},},},},},},},},      "An observed occurrence in a system or environment."
+    },},},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Alert",
+    },},},},},},},},},},},},},},      "A signal that an event or pattern may require attention."
+    },},},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Incident",
+    },},},},},},},},},},},},},},      "A security event or set of events meeting response criteria."
+    },},},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Evidence",
+    },},},},},},},},},},},},},},      "Information supporting an observation or conclusion."
+    },},},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Triage",
+    },},},},},},},},},},},},},},      "Initial assessment of significance, scope and priority."
+    },},},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},},    [
+    },},},},},},},},},},},},},},      "Timeline",
+    },},},},},},},},},},},},},},      "Chronological reconstruction of relevant activity."
+    },},},},},},},},},},},},},},    ]
+    },},},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},},  "visual": {
+    },},},},},},},},},},},},},},    "title": "From observation to response",
+    },},},},},},},},},},},},},},    "caption": "Each stage should add evidence and confidence.",
+    },},},},},},},},},},},},},},    "steps": [
+    },},},},},},},},},},},},},},      "Event observed",
+    },},},},},},},},},},},},},},      "Detection produces signal",
+    },},},},},},},},},},},},},},      "Alert reviewed",
+    },},},},},},},},},},},},},},      "Triage establishes scope and confidence",
+    },},},},},},},},},},},},},},      "Investigation gathers evidence",
+    },},},},},},},},},},},},},},      "Incident decision and response"
+    },},},},},},},},},},},},},},    ]
+    },},},},},},},},},},},},},},  },
+    },},},},},},},},},},},},},},  "examples": [
+    },},},},},},},},},},},},},},    {
+    },},},},},},},},},},},},},},      "title": "Many failed logins",
+    },},},},},},},},},},},},},},      "body": "A system records 100 failures from one source. A detection creates an alert. The analyst checks whether the activity came from a test system.",
+    },},},},},},},},},},},},},},      "answer": "The alert is a signal; investigation determines whether incident criteria are met."
+    },},},},},},},},},},},},},},    },
+    },},},},},},},},},},},},},},    {
+    },},},},},},},},},},},},},},      "title": "Timeline reconstruction",
+    },},},},},},},},},},},},},},      "body": "Authentication, endpoint and application logs are correlated to determine whether a suspicious login preceded a sensitive action.",
+    },},},},},},},},},},},},},},      "answer": "Multiple evidence sources can increase confidence when timestamps and identities are understood."
+    },},},},},},},},},},},},},},    }
+    },},},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},},  "caseTitle": "Case: Suspicious authentication sequence",
+    },},},},},},},},},},},},},},  "case": "A privileged account logs in from an unusual source, accesses an administrative portal and changes a configuration shortly afterward. Some logs are missing.",
+    },},},},},},},},},},},},},},  "caseQuestions": [
+    },},},},},},},},},},},},},},    "What is directly observed?",
+    },},},},},},},},},},},},},},    "What is still an assumption?",
+    },},},},},},},},},},},},},},    "Which evidence should be collected next?",
+    },},},},},},},},},},},},},},    "What factors influence triage priority?",
+    },},},},},},},},},},},},},},    "When would the organization declare an incident?"
+    },},},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},},  "notes": [
+    },},},},},},},},},},},},},},    "Alert does not equal incident.",
+    },},},},},},},},},},},},},},    "Severity should use documented criteria, impact, scope and confidence.",
+    },},},},},},},},},},},},},},    "Preserve evidence and record uncertainty."
+    },},},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},},  "takeaways": [
+    },},},},},},},},},},},},},},    "Use operational terms consistently.",
+    },},},},},},},},},},},},},},    "Triage considers scope, impact, confidence and next action.",
+    },},},},},},},},},},},},},},    "Timelines connect events into a sequence.",
+    },},},},},},},},},},},},},},    "Evidence should support important conclusions."
+    },},},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},},  "practice": "Take five fictional security events and classify each as event, alert, finding or potential incident, explaining the reasoning.",
+    },},},},},},},},},},},},},},  "practiceSteps": [
+    },},},},},},},},},},},},},},    "Read the observation without interpretation.",
+    },},},},},},},},},},},},},},    "Identify whether a detection produced an alert.",
+    },},},},},},},},},},},},},},    "Check available evidence.",
+    },},},},},},},},},},},},},},    "Compare with incident criteria.",
+    },},},},},},},},},},},},},},    "Record known and unknown facts."
+    },},},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},},  "evidence": "A triage worksheet with classification, evidence, confidence and next action.",
+    },},},},},},},},},},},},},},  "reflection": "Why is 'suspicious' not enough to justify declaring an incident?",
+    },},},},},},},},},},},},},},  "qa": [
+    },},},},},},},},},},},},},},    {
+    },},},},},},},},},},},},},},      "q": "Is every alert an incident?",
+    },},},},},},},},},},},},},},      "a": "No. Alerts require triage against documented criteria.",
+    },},},},},},},},},},},},},},      "why": "Detection systems can generate benign or low-confidence signals."
+    },},},},},},},},},},},},},},    },
+    },},},},},},},},},},},},},},    {
+    },},},},},},},},},},},},},},      "q": "What is evidence?",
+    },},},},},},},},},},},},},},      "a": "Information supporting an observation or conclusion.",
+    },},},},},},},},},},},},},},      "why": "Evidence makes investigation reproducible and defensible."
+    },},},},},},},},},},},},},},    },
+    },},},},},},},},},},},},},},    {
+    },},},},},},},},},},},},},},      "q": "Why separate facts from assumptions?",
+    },},},},},},},},},},},},},},      "a": "Assumptions can change as evidence appears.",
+    },},},},},},},},},},},},},},      "why": "Clear uncertainty prevents premature conclusions."
+    },},},},},},},},},},},},},},    }
+    },},},},},},},},},},},},},},  ],
+    },},},},},},},},},},},},},},  "check": {
+    },},},},},},},},},},},},},},    "q": "Which sequence best represents a basic security-operations workflow?",
+    },},},},},},},},},},},},},},    "options": [
+    },},},},},},},},},},},},},},      "Event → alert → triage → investigation → incident decision → response",
+    },},},},},},},},},},},},},},      "Incident → guess → delete logs → close ticket",
+    },},},},},},},},},},},},},},      "Alert → assume compromise → publish conclusion",
+    },},},},},},},},},},},},},},      "Finding → CPU → DNS → password"
+    },},},},},},},},},},},},},},    ],
+    },},},},},},},},},},},},},},    "answer": "Event → alert → triage → investigation → incident decision → response",
+    },},},},},},},},},},},},},},    "why": "The workflow adds evidence and decisions progressively.",
+    },},},},},},},},},},},},},},    "explain": "This vocabulary prepares you for SOC, SIEM, detection engineering and incident response."
+    },},},},},},},},},},},},},},  }
+    },},},},},},},},},},},},},},},{id:"ns-01",title:"TCP/IP Mental Model",objective:"Use layers, addresses, ports and protocols to interpret network traffic.",time:"2.5–3 hours",read:"A practical TCP/IP model separates link delivery, IP routing, transport behavior and application protocols. Analysts use source/destination addresses, ports, flags and payload metadata to reason about traffic.",practice:"For a TCP connection, identify the source IP, destination IP, source port, destination port and transport protocol.",check:{q:"Which sequence represents normal TCP connection establishment?",options:["SYN → SYN/ACK → ACK","ACK → SYN → FIN","SYN → ACK → RST","FIN → SYN → ACK"],answer:"SYN → SYN/ACK → ACK"}},
       {id:"ns-02",title:"IPv4 Addressing & Subnets",objective:"Read IPv4 addresses, CIDR notation and basic subnet boundaries.",time:"2.5–3 hours",read:"CIDR notation expresses a network prefix and host portion. Subnetting lets organizations separate broadcast domains and apply different routing and security policies.",practice:"Explain what /24 means in an IPv4 network.",check:{q:"In 192.168.10.0/24, how many bits form the network prefix?",options:["8","16","24","32"],answer:"24"}},
       {id:"ns-03",title:"TCP, UDP & Ports",objective:"Compare transport behavior and interpret common port usage.",time:"2.5–3 hours",read:"TCP provides connection-oriented reliable delivery. UDP is connectionless and has lower protocol overhead. A port identifies a transport endpoint associated with a process or service.",practice:"Explain why a DNS query can commonly use UDP while a web application may use TCP.",check:{q:"Which transport protocol is connection-oriented?",options:["UDP","TCP","ICMP","ARP"],answer:"TCP"}},
       {id:"ns-04",title:"Firewalls & Network Segmentation",objective:"Understand policy enforcement and trust-zone separation.",time:"2.5–3 hours",read:"Firewalls enforce traffic policy based on attributes such as addresses, ports, protocols and application identity. Segmentation limits lateral movement and reduces unnecessary trust.",practice:"Create a policy that allows an application tier to reach a database only on its required service port.",check:{q:"Why segment a database from a user network?",options:["To reduce unnecessary trust and lateral movement","To make passwords longer","To increase monitor brightness","To remove all logging"],answer:"To reduce unnecessary trust and lateral movement"}},
