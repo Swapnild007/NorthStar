@@ -20,8 +20,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
       - name: Validate JavaScript
-        run: node --check app.js
-      node --check data/curriculum.js
+        run: |
+          node --check app.js
+          node --check data/curriculum.js
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
