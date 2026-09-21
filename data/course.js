@@ -1,14 +1,1 @@
-window.NORTHSTAR_COURSE={
-  title:"Cyber Security Management & Data Science",
-  shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE",
-  tagline:"From absolute beginner to advanced capability.",
-  description:"A structured, evidence-driven learning path combining cybersecurity, data science, technical foundations and management thinking.",
-  version:"0.2.0",
-  methodology:["Explain","Visualize","Understand","See it","Think about it","Do it","Check it","Connect it"],
-  sources:[
-    {name:"NIST NICE Framework",url:"https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"},
-    {name:"ACM/IEEE/AIS/IFIP CSEC2017",url:"https://cybered.hosting.acm.org/wp/"},
-    {name:"UC Berkeley Data Science curriculum",url:"https://cdss.berkeley.edu/curriculum-overview"},
-    {name:"Carnegie Mellon MITS",url:"https://www.cmu.edu/cmist/academics/graduate-programs/mits/"}
-  ]
-};
+window.NORTHSTAR_COURSE={title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE",tagline:"From absolute beginner to advanced capability.",description:"A structured, evidence-driven learning path combining cybersecurity, data science, technical foundations and management thinking.",version:"0.2.0",methodology:["Explain","Visualize","Understand","See it","Think about it","Do it","Check it","Connect it"],sources:[{name:"NIST NICE Framework",url:"https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"},{name:"ACM/IEEE/AIS/IFIP CSEC2017",url:"https://cybered.hosting.acm.org/wp/"},{name:"UC Berkeley Data Science curriculum",url:"https://cdss.berkeley.edu/curriculum-overview"},{name:"Carnegie Mellon MITS",url:"https://www.cmu.edu/cmist/academics/graduate-programs/mits/"}]};
