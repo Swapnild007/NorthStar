@@ -18425,2211 +18425,6 @@ const NORTHSTAR_CURRICULUM = [
     }
   },
   {
-    "id": "enterprise-capstone",
-    "code": "13",
-    "title": "Enterprise Capstone",
-    "category": "Integration",
-    "description": "Integrate technical, analytical and management skills into an evidence-based security transformation project.",
-    "status": "active",
-    "lessons": [
-      {
-        "id": "ent-01",
-        "title": "Capstone Brief & Problem Framing",
-        "objective": "Understand capstone brief & problem framing and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Capstone Brief & Problem Framing",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Capstone Brief & Problem Framing",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to capstone brief & problem framing. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Capstone Brief & Problem Framing",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving capstone brief & problem framing. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain capstone brief & problem framing in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of capstone brief & problem framing?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Capstone Brief & Problem Framing is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Capstone Brief & Problem Framing as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Capstone Brief & Problem Framing into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Capstone Brief & Problem Framing changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Capstone Brief & Problem Framing should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Capstone Brief & Problem Framing scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Capstone Brief & Problem Framing in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Capstone Brief & Problem Framing was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Capstone Brief & Problem Framing?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Capstone Brief & Problem Framing. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Capstone Brief & Problem Framing. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Capstone Brief & Problem Framing as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Capstone Brief & Problem Framing without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      },
-      {
-        "id": "ent-02",
-        "title": "Enterprise Asset Model",
-        "objective": "Understand enterprise asset model and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Enterprise Asset Model",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Enterprise Asset Model",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to enterprise asset model. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Enterprise Asset Model",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving enterprise asset model. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain enterprise asset model in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of enterprise asset model?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Enterprise Asset Model is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Enterprise Asset Model as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Enterprise Asset Model into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Enterprise Asset Model changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Enterprise Asset Model should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Enterprise Asset Model scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Enterprise Asset Model in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Enterprise Asset Model was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Enterprise Asset Model?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Enterprise Asset Model. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Enterprise Asset Model. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Enterprise Asset Model as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Enterprise Asset Model without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      },
-      {
-        "id": "ent-03",
-        "title": "Threat & Trust-Boundary Mapping",
-        "objective": "Understand threat & trust-boundary mapping and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Threat & Trust-Boundary Mapping",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Threat & Trust-Boundary Mapping",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to threat & trust-boundary mapping. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Threat & Trust-Boundary Mapping",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving threat & trust-boundary mapping. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain threat & trust-boundary mapping in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of threat & trust-boundary mapping?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Threat & Trust-Boundary Mapping is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Threat & Trust-Boundary Mapping as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Threat & Trust-Boundary Mapping into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Threat & Trust-Boundary Mapping changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Threat & Trust-Boundary Mapping should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Threat & Trust-Boundary Mapping scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Threat & Trust-Boundary Mapping in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Threat & Trust-Boundary Mapping was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Threat & Trust-Boundary Mapping?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Threat & Trust-Boundary Mapping. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Threat & Trust-Boundary Mapping. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Threat & Trust-Boundary Mapping as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Threat & Trust-Boundary Mapping without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      },
-      {
-        "id": "ent-04",
-        "title": "Data & Evidence Plan",
-        "objective": "Understand data & evidence plan and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Data & Evidence Plan",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Data & Evidence Plan",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to data & evidence plan. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Data & Evidence Plan",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving data & evidence plan. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain data & evidence plan in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of data & evidence plan?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Data & Evidence Plan is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Data & Evidence Plan as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Data & Evidence Plan into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Data & Evidence Plan changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Data & Evidence Plan should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Data & Evidence Plan scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Data & Evidence Plan in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Data & Evidence Plan was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Data & Evidence Plan?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Data & Evidence Plan. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Data & Evidence Plan. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Data & Evidence Plan as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Data & Evidence Plan without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      },
-      {
-        "id": "ent-05",
-        "title": "Security Architecture",
-        "objective": "Understand security architecture and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Security Architecture",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Security Architecture",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to security architecture. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Security Architecture",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving security architecture. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain security architecture in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of security architecture?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Security Architecture is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Security Architecture as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Security Architecture into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Security Architecture changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Security Architecture should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Security Architecture scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Security Architecture in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Security Architecture was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Security Architecture?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Security Architecture. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Security Architecture. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Security Architecture as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Security Architecture without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      },
-      {
-        "id": "ent-06",
-        "title": "Identity & Access Strategy",
-        "objective": "Understand identity & access strategy and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Identity & Access Strategy",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Identity & Access Strategy",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to identity & access strategy. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Identity & Access Strategy",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving identity & access strategy. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain identity & access strategy in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of identity & access strategy?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Identity & Access Strategy is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Identity & Access Strategy as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Identity & Access Strategy into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Identity & Access Strategy changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Identity & Access Strategy should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Identity & Access Strategy scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Identity & Access Strategy in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Identity & Access Strategy was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Identity & Access Strategy?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Identity & Access Strategy. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Identity & Access Strategy. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Identity & Access Strategy as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Identity & Access Strategy without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      },
-      {
-        "id": "ent-07",
-        "title": "Detection & Response Strategy",
-        "objective": "Understand detection & response strategy and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Detection & Response Strategy",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Detection & Response Strategy",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to detection & response strategy. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Detection & Response Strategy",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving detection & response strategy. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain detection & response strategy in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of detection & response strategy?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Detection & Response Strategy is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Detection & Response Strategy as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Detection & Response Strategy into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Detection & Response Strategy changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Detection & Response Strategy should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Detection & Response Strategy scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Detection & Response Strategy in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Detection & Response Strategy was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Detection & Response Strategy?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Detection & Response Strategy. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Detection & Response Strategy. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Detection & Response Strategy as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Detection & Response Strategy without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      },
-      {
-        "id": "ent-08",
-        "title": "Security Analytics Plan",
-        "objective": "Understand security analytics plan and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Security Analytics Plan",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Security Analytics Plan",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to security analytics plan. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Security Analytics Plan",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving security analytics plan. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain security analytics plan in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of security analytics plan?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Security Analytics Plan is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Security Analytics Plan as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Security Analytics Plan into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Security Analytics Plan changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Security Analytics Plan should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Security Analytics Plan scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Security Analytics Plan in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Security Analytics Plan was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Security Analytics Plan?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Security Analytics Plan. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Security Analytics Plan. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Security Analytics Plan as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Security Analytics Plan without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      },
-      {
-        "id": "ent-09",
-        "title": "Cloud & DevSecOps Controls",
-        "objective": "Understand cloud & devsecops controls and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Cloud & DevSecOps Controls",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Cloud & DevSecOps Controls",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to cloud & devsecops controls. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Cloud & DevSecOps Controls",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving cloud & devsecops controls. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain cloud & devsecops controls in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of cloud & devsecops controls?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Cloud & DevSecOps Controls is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Cloud & DevSecOps Controls as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Cloud & DevSecOps Controls into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Cloud & DevSecOps Controls changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Cloud & DevSecOps Controls should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Cloud & DevSecOps Controls scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Cloud & DevSecOps Controls in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Cloud & DevSecOps Controls was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Cloud & DevSecOps Controls?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Cloud & DevSecOps Controls. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Cloud & DevSecOps Controls. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Cloud & DevSecOps Controls as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Cloud & DevSecOps Controls without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      },
-      {
-        "id": "ent-10",
-        "title": "Risk & Investment Prioritization",
-        "objective": "Understand risk & investment prioritization and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Risk & Investment Prioritization",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Risk & Investment Prioritization",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to risk & investment prioritization. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Risk & Investment Prioritization",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving risk & investment prioritization. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain risk & investment prioritization in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of risk & investment prioritization?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Risk & Investment Prioritization is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Risk & Investment Prioritization as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Risk & Investment Prioritization into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Risk & Investment Prioritization changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Risk & Investment Prioritization should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Risk & Investment Prioritization scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Risk & Investment Prioritization in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Risk & Investment Prioritization was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Risk & Investment Prioritization?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Risk & Investment Prioritization. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Risk & Investment Prioritization. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Risk & Investment Prioritization as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Risk & Investment Prioritization without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      },
-      {
-        "id": "ent-11",
-        "title": "Executive Communication",
-        "objective": "Understand executive communication and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Executive Communication",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Executive Communication",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to executive communication. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Executive Communication",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving executive communication. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain executive communication in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of executive communication?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Executive Communication is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Executive Communication as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Executive Communication into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Executive Communication changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Executive Communication should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Executive Communication scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Executive Communication in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Executive Communication was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Executive Communication?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Executive Communication. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Executive Communication. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Executive Communication as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Executive Communication without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      },
-      {
-        "id": "ent-12",
-        "title": "Final Defense & Reflection",
-        "objective": "Understand final defense & reflection and apply it to a realistic integration problem.",
-        "time": "1.5–2 hours",
-        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
-        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
-        "concepts": [
-          "Final Defense & Reflection",
-          "Inputs and outputs",
-          "Assumptions",
-          "Evidence",
-          "Common failure modes"
-        ],
-        "glossary": [
-          [
-            "Final Defense & Reflection",
-            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
-          ],
-          [
-            "Evidence",
-            "Information that supports a technical or business conclusion."
-          ],
-          [
-            "Assumption",
-            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
-          ]
-        ],
-        "example": "Worked example: imagine a security team facing a small business problem related to final defense & reflection. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
-        "visual": {
-          "title": "Final Defense & Reflection",
-          "caption": "Mental model: understand → apply → inspect → explain.",
-          "steps": [
-            "Define the problem",
-            "Identify inputs",
-            "Apply the concept",
-            "Inspect the result",
-            "Explain the evidence"
-          ]
-        },
-        "case": "Case analysis: a security or data team must make a decision involving final defense & reflection. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
-        "mistakes": [
-          "Memorizing the definition without understanding when to use it.",
-          "Skipping assumptions or data-quality checks.",
-          "Treating a result as certain when the evidence is incomplete."
-        ],
-        "practice": "Practice: explain final defense & reflection in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
-        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
-        "check": {
-          "q": "Which approach best demonstrates understanding of final defense & reflection?",
-          "options": [
-            "Apply the concept to a scoped problem and justify the result",
-            "Memorize the term only",
-            "Skip evidence and rely on intuition",
-            "Use the same answer for every situation"
-          ],
-          "answer": "Apply the concept to a scoped problem and justify the result",
-          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
-        },
-        "why": "Why this matters: Final Defense & Reflection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
-        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
-        "deepDive": [
-          {
-            "title": "Mental model",
-            "body": "Treat Final Defense & Reflection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
-          },
-          {
-            "title": "Mechanism",
-            "body": "Break Final Defense & Reflection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
-          },
-          {
-            "title": "Security and business consequences",
-            "body": "A control or technique related to Final Defense & Reflection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
-          },
-          {
-            "title": "Evidence and limitations",
-            "body": "A professional conclusion about Final Defense & Reflection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
-          }
-        ],
-        "assessmentRubric": [
-          "Conceptual accuracy",
-          "Correct application to a scoped case",
-          "Evidence and assumption handling",
-          "Clear professional communication"
-        ],
-        "references": [
-          {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
-          },
-          {
-            "name": "IIM Calcutta Cyber Leadership",
-            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-          },
-          {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-          }
-        ],
-        "caseQuestions": [
-          "What is the objective in this Final Defense & Reflection scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
-        ],
-        "practiceSteps": [
-          "Explain Final Defense & Reflection in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
-        ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Final Defense & Reflection was wrong?",
-        "qa": [
-          {
-            "q": "What is the core idea behind Final Defense & Reflection?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
-          },
-          {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
-          },
-          {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
-          }
-        ],
-        "sections": [
-          {
-            "title": "Conceptual foundation",
-            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
-          },
-          {
-            "title": "Mechanism and assumptions",
-            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
-          },
-          {
-            "title": "Security implications",
-            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
-          },
-          {
-            "title": "Applied case reasoning",
-            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
-          },
-          {
-            "title": "Professional evidence",
-            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
-          }
-        ],
-        "examples": [
-          {
-            "title": "Small worked scenario",
-            "body": "Take a small enterprise scenario involving Final Defense & Reflection. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
-            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
-          },
-          {
-            "title": "Failure-mode comparison",
-            "body": "Construct one normal case and one failure case for Final Defense & Reflection. Identify the observation that separates them.",
-            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
-          }
-        ],
-        "highlights": [
-          "Understand Final Defense & Reflection as a mechanism, not only a definition.",
-          "Make assumptions explicit before drawing conclusions.",
-          "Use evidence to distinguish normal behavior from a security-relevant exception.",
-          "Connect technical observations to business impact and operational constraints."
-        ],
-        "takeaways": [
-          "You should be able to explain Final Defense & Reflection without reading the lesson.",
-          "You should be able to apply it to a new case.",
-          "You should be able to identify evidence and limitations.",
-          "You should be able to communicate the result to another professional."
-        ]
-      }
-    ],
-    "meta": {
-      "level": "Capstone / Integration",
-      "load": "18–24 hours",
-      "focus": "Integrate technical, analytical and management capabilities into an evidence-based enterprise security transformation.",
-      "outcomes": [
-        "Frame a real enterprise security problem.",
-        "Collect and validate technical and business evidence.",
-        "Analyze security data and identify uncertainty.",
-        "Design controls and detection capabilities.",
-        "Prioritize investment using risk and business context.",
-        "Present an evidence-based security transformation plan."
-      ],
-      "topics": [
-        "Problem framing",
-        "Assets",
-        "Trust boundaries",
-        "Architecture",
-        "IAM",
-        "Telemetry",
-        "Detection",
-        "Incident response",
-        "Security analytics",
-        "Cloud/DevSecOps",
-        "Risk",
-        "Governance",
-        "Investment",
-        "Executive communication"
-      ],
-      "case": "Capstone: design a security transformation for a mid-sized digital enterprise with identity, cloud, application, data and operational constraints.",
-      "assessment": "Portfolio-grade enterprise security transformation dossier + presentation",
-      "lab": "NorthStar Enterprise Simulation",
-      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
-      "references": [
-        {
-          "name": "NIST CSF 2.0",
-          "url": "https://www.nist.gov/cyberframework"
-        },
-        {
-          "name": "IIM Calcutta Cyber Leadership",
-          "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
-        },
-        {
-          "name": "NIST NICE v2.2.0",
-          "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
-        }
-      ]
-    }
-  },
-  {
     "id": "cryptography-privacy",
     "code": "14",
     "title": "Cryptography, Privacy & Digital Trust",
@@ -23021,6 +20816,2211 @@ const NORTHSTAR_CURRICULUM = [
         ]
       }
     ]
+  },
+  {
+    "id": "enterprise-capstone",
+    "code": "13",
+    "title": "Enterprise Capstone",
+    "category": "Integration",
+    "description": "Integrate technical, analytical and management skills into an evidence-based security transformation project.",
+    "status": "active",
+    "lessons": [
+      {
+        "id": "ent-01",
+        "title": "Capstone Brief & Problem Framing",
+        "objective": "Understand capstone brief & problem framing and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Capstone Brief & Problem Framing",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Capstone Brief & Problem Framing",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to capstone brief & problem framing. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Capstone Brief & Problem Framing",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving capstone brief & problem framing. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain capstone brief & problem framing in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of capstone brief & problem framing?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Capstone Brief & Problem Framing is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Capstone Brief & Problem Framing as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Capstone Brief & Problem Framing into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Capstone Brief & Problem Framing changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Capstone Brief & Problem Framing should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Capstone Brief & Problem Framing scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Capstone Brief & Problem Framing in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Capstone Brief & Problem Framing was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Capstone Brief & Problem Framing?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Capstone Brief & Problem Framing. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Capstone Brief & Problem Framing. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Capstone Brief & Problem Framing as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Capstone Brief & Problem Framing without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      },
+      {
+        "id": "ent-02",
+        "title": "Enterprise Asset Model",
+        "objective": "Understand enterprise asset model and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Enterprise Asset Model",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Enterprise Asset Model",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to enterprise asset model. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Enterprise Asset Model",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving enterprise asset model. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain enterprise asset model in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of enterprise asset model?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Enterprise Asset Model is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Enterprise Asset Model as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Enterprise Asset Model into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Enterprise Asset Model changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Enterprise Asset Model should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Enterprise Asset Model scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Enterprise Asset Model in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Enterprise Asset Model was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Enterprise Asset Model?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Enterprise Asset Model. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Enterprise Asset Model. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Enterprise Asset Model as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Enterprise Asset Model without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      },
+      {
+        "id": "ent-03",
+        "title": "Threat & Trust-Boundary Mapping",
+        "objective": "Understand threat & trust-boundary mapping and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Threat & Trust-Boundary Mapping",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Threat & Trust-Boundary Mapping",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to threat & trust-boundary mapping. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Threat & Trust-Boundary Mapping",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving threat & trust-boundary mapping. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain threat & trust-boundary mapping in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of threat & trust-boundary mapping?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Threat & Trust-Boundary Mapping is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Threat & Trust-Boundary Mapping as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Threat & Trust-Boundary Mapping into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Threat & Trust-Boundary Mapping changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Threat & Trust-Boundary Mapping should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Threat & Trust-Boundary Mapping scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Threat & Trust-Boundary Mapping in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Threat & Trust-Boundary Mapping was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Threat & Trust-Boundary Mapping?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Threat & Trust-Boundary Mapping. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Threat & Trust-Boundary Mapping. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Threat & Trust-Boundary Mapping as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Threat & Trust-Boundary Mapping without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      },
+      {
+        "id": "ent-04",
+        "title": "Data & Evidence Plan",
+        "objective": "Understand data & evidence plan and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Data & Evidence Plan",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Data & Evidence Plan",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to data & evidence plan. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Data & Evidence Plan",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving data & evidence plan. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain data & evidence plan in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of data & evidence plan?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Data & Evidence Plan is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Data & Evidence Plan as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Data & Evidence Plan into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Data & Evidence Plan changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Data & Evidence Plan should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Data & Evidence Plan scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Data & Evidence Plan in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Data & Evidence Plan was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Data & Evidence Plan?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Data & Evidence Plan. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Data & Evidence Plan. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Data & Evidence Plan as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Data & Evidence Plan without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      },
+      {
+        "id": "ent-05",
+        "title": "Security Architecture",
+        "objective": "Understand security architecture and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Security Architecture",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Security Architecture",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to security architecture. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Security Architecture",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving security architecture. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain security architecture in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of security architecture?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Security Architecture is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Architecture as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Architecture into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Architecture changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Architecture should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Architecture scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Architecture in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Architecture was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Architecture?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Security Architecture. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Security Architecture. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Security Architecture as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Security Architecture without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      },
+      {
+        "id": "ent-06",
+        "title": "Identity & Access Strategy",
+        "objective": "Understand identity & access strategy and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Identity & Access Strategy",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Identity & Access Strategy",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to identity & access strategy. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Identity & Access Strategy",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving identity & access strategy. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain identity & access strategy in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of identity & access strategy?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Identity & Access Strategy is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Identity & Access Strategy as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Identity & Access Strategy into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Identity & Access Strategy changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Identity & Access Strategy should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Identity & Access Strategy scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Identity & Access Strategy in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Identity & Access Strategy was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Identity & Access Strategy?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Identity & Access Strategy. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Identity & Access Strategy. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Identity & Access Strategy as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Identity & Access Strategy without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      },
+      {
+        "id": "ent-07",
+        "title": "Detection & Response Strategy",
+        "objective": "Understand detection & response strategy and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Detection & Response Strategy",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Detection & Response Strategy",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to detection & response strategy. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Detection & Response Strategy",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving detection & response strategy. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain detection & response strategy in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of detection & response strategy?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Detection & Response Strategy is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Detection & Response Strategy as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Detection & Response Strategy into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Detection & Response Strategy changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Detection & Response Strategy should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Detection & Response Strategy scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Detection & Response Strategy in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Detection & Response Strategy was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Detection & Response Strategy?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Detection & Response Strategy. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Detection & Response Strategy. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Detection & Response Strategy as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Detection & Response Strategy without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      },
+      {
+        "id": "ent-08",
+        "title": "Security Analytics Plan",
+        "objective": "Understand security analytics plan and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Security Analytics Plan",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Security Analytics Plan",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to security analytics plan. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Security Analytics Plan",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving security analytics plan. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain security analytics plan in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of security analytics plan?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Security Analytics Plan is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Security Analytics Plan as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Security Analytics Plan into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Security Analytics Plan changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Security Analytics Plan should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Security Analytics Plan scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Security Analytics Plan in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Security Analytics Plan was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Security Analytics Plan?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Security Analytics Plan. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Security Analytics Plan. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Security Analytics Plan as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Security Analytics Plan without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      },
+      {
+        "id": "ent-09",
+        "title": "Cloud & DevSecOps Controls",
+        "objective": "Understand cloud & devsecops controls and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Cloud & DevSecOps Controls",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Cloud & DevSecOps Controls",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to cloud & devsecops controls. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Cloud & DevSecOps Controls",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving cloud & devsecops controls. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain cloud & devsecops controls in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of cloud & devsecops controls?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Cloud & DevSecOps Controls is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Cloud & DevSecOps Controls as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Cloud & DevSecOps Controls into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Cloud & DevSecOps Controls changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Cloud & DevSecOps Controls should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Cloud & DevSecOps Controls scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Cloud & DevSecOps Controls in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Cloud & DevSecOps Controls was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Cloud & DevSecOps Controls?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Cloud & DevSecOps Controls. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Cloud & DevSecOps Controls. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Cloud & DevSecOps Controls as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Cloud & DevSecOps Controls without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      },
+      {
+        "id": "ent-10",
+        "title": "Risk & Investment Prioritization",
+        "objective": "Understand risk & investment prioritization and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Risk & Investment Prioritization",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Risk & Investment Prioritization",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to risk & investment prioritization. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Risk & Investment Prioritization",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving risk & investment prioritization. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain risk & investment prioritization in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of risk & investment prioritization?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Risk & Investment Prioritization is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Risk & Investment Prioritization as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Risk & Investment Prioritization into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Risk & Investment Prioritization changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Risk & Investment Prioritization should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Risk & Investment Prioritization scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Risk & Investment Prioritization in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Risk & Investment Prioritization was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Risk & Investment Prioritization?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Risk & Investment Prioritization. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Risk & Investment Prioritization. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Risk & Investment Prioritization as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Risk & Investment Prioritization without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      },
+      {
+        "id": "ent-11",
+        "title": "Executive Communication",
+        "objective": "Understand executive communication and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Executive Communication",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Executive Communication",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to executive communication. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Executive Communication",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving executive communication. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain executive communication in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of executive communication?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Executive Communication is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Executive Communication as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Executive Communication into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Executive Communication changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Executive Communication should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Executive Communication scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Executive Communication in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Executive Communication was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Executive Communication?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Executive Communication. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Executive Communication. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Executive Communication as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Executive Communication without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      },
+      {
+        "id": "ent-12",
+        "title": "Final Defense & Reflection",
+        "objective": "Understand final defense & reflection and apply it to a realistic integration problem.",
+        "time": "1.5–2 hours",
+        "prerequisite": "Complete the previous lesson in this pathway or review the listed prerequisite concepts.",
+        "read": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined.\n\nBuild the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context.\n\nCreate an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis.\n\nIntegrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer.\n\nFinish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation.",
+        "concepts": [
+          "Final Defense & Reflection",
+          "Inputs and outputs",
+          "Assumptions",
+          "Evidence",
+          "Common failure modes"
+        ],
+        "glossary": [
+          [
+            "Final Defense & Reflection",
+            "The core idea being learned in this lesson, explained in the context of Enterprise Capstone."
+          ],
+          [
+            "Evidence",
+            "Information that supports a technical or business conclusion."
+          ],
+          [
+            "Assumption",
+            "A condition accepted for the purpose of analysis and made explicit so it can be challenged."
+          ]
+        ],
+        "example": "Worked example: imagine a security team facing a small business problem related to final defense & reflection. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",
+        "visual": {
+          "title": "Final Defense & Reflection",
+          "caption": "Mental model: understand → apply → inspect → explain.",
+          "steps": [
+            "Define the problem",
+            "Identify inputs",
+            "Apply the concept",
+            "Inspect the result",
+            "Explain the evidence"
+          ]
+        },
+        "case": "Case analysis: a security or data team must make a decision involving final defense & reflection. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",
+        "mistakes": [
+          "Memorizing the definition without understanding when to use it.",
+          "Skipping assumptions or data-quality checks.",
+          "Treating a result as certain when the evidence is incomplete."
+        ],
+        "practice": "Practice: explain final defense & reflection in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",
+        "evidence": "Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",
+        "check": {
+          "q": "Which approach best demonstrates understanding of final defense & reflection?",
+          "options": [
+            "Apply the concept to a scoped problem and justify the result",
+            "Memorize the term only",
+            "Skip evidence and rely on intuition",
+            "Use the same answer for every situation"
+          ],
+          "answer": "Apply the concept to a scoped problem and justify the result",
+          "why": "Professional competence requires application, reasoning and evidence, not vocabulary recall alone."
+        },
+        "why": "Why this matters: Final Defense & Reflection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
+        "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
+        "deepDive": [
+          {
+            "title": "Mental model",
+            "body": "Treat Final Defense & Reflection as a system. Identify inputs, transformations, outputs, actors, dependencies and boundaries. In this pathway the important lens is integrating architecture, identity, telemetry, analytics, controls, risk and executive decisions."
+          },
+          {
+            "title": "Mechanism",
+            "body": "Break Final Defense & Reflection into observable steps. For every step ask what must be true, what can fail, and what evidence would distinguish normal behavior from a security-relevant exception."
+          },
+          {
+            "title": "Security and business consequences",
+            "body": "A control or technique related to Final Defense & Reflection changes risk, cost, usability or operational complexity. Separate the security objective from the mechanism used to pursue it, and state assumptions explicitly."
+          },
+          {
+            "title": "Evidence and limitations",
+            "body": "A professional conclusion about Final Defense & Reflection should identify the scope, inputs, observations, assumptions, uncertainty and limitations. Prefer reproducible evidence over intuition or tool output without context."
+          }
+        ],
+        "assessmentRubric": [
+          "Conceptual accuracy",
+          "Correct application to a scoped case",
+          "Evidence and assumption handling",
+          "Clear professional communication"
+        ],
+        "references": [
+          {
+            "name": "NIST CSF 2.0",
+            "url": "https://www.nist.gov/cyberframework"
+          },
+          {
+            "name": "IIM Calcutta Cyber Leadership",
+            "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+          },
+          {
+            "name": "NIST NICE v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+          }
+        ],
+        "caseQuestions": [
+          "What is the objective in this Final Defense & Reflection scenario?",
+          "Which facts are known and which are assumptions?",
+          "What evidence would confirm or falsify the current explanation?",
+          "What is the smallest defensible next action?",
+          "What limitation must be communicated?"
+        ],
+        "practiceSteps": [
+          "Explain Final Defense & Reflection in your own words.",
+          "Draw the main flow, relationship or boundary.",
+          "Identify one normal and one abnormal condition.",
+          "List the evidence you would collect.",
+          "Apply the concept to the case and justify the result.",
+          "State one limitation and one follow-up question."
+        ],
+        "reflection": "What observation would most quickly tell you that your first explanation of Final Defense & Reflection was wrong?",
+        "qa": [
+          {
+            "q": "What is the core idea behind Final Defense & Reflection?",
+            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
+            "why": "Transfer is a stronger test than vocabulary recall."
+          },
+          {
+            "q": "What is a common mistake?",
+            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
+            "why": "Professional analysis separates observation, hypothesis and conclusion."
+          },
+          {
+            "q": "How do you demonstrate mastery?",
+            "a": "Explain it, apply it, produce evidence, and state limitations.",
+            "why": "That sequence tests knowledge, skill and judgment."
+          }
+        ],
+        "sections": [
+          {
+            "title": "Conceptual foundation",
+            "body": "Begin with problem framing. State the business objective, scope, stakeholders, critical services and success criteria. Avoid starting with tools or controls before the problem is defined."
+          },
+          {
+            "title": "Mechanism and assumptions",
+            "body": "Build the enterprise model across assets, identities, applications, networks, cloud services, data and suppliers. Mark trust boundaries and dependencies so security decisions have a concrete system context."
+          },
+          {
+            "title": "Security implications",
+            "body": "Create an evidence plan. Decide which telemetry, configurations, vulnerabilities, business metrics and control evidence are needed. Record data quality, assumptions and limitations before analysis."
+          },
+          {
+            "title": "Applied case reasoning",
+            "body": "Integrate technical and management reasoning. Design controls and detections, analyze risk, prioritize investment, consider operational constraints, and explain trade-offs instead of presenting a single technically perfect answer."
+          },
+          {
+            "title": "Professional evidence",
+            "body": "Finish with executive communication and reflection. Defend the decision using evidence, state residual risk and unresolved questions, and identify the feedback loop that would improve the program after implementation."
+          }
+        ],
+        "examples": [
+          {
+            "title": "Small worked scenario",
+            "body": "Take a small enterprise scenario involving Final Defense & Reflection. Define the objective, identify the relevant inputs and trace the mechanism step by step.",
+            "answer": "The useful result is not a tool name; it is a reproducible explanation of the mechanism and the evidence supporting the conclusion."
+          },
+          {
+            "title": "Failure-mode comparison",
+            "body": "Construct one normal case and one failure case for Final Defense & Reflection. Identify the observation that separates them.",
+            "answer": "This trains analytical thinking: a strong practitioner can explain what would change the conclusion."
+          }
+        ],
+        "highlights": [
+          "Understand Final Defense & Reflection as a mechanism, not only a definition.",
+          "Make assumptions explicit before drawing conclusions.",
+          "Use evidence to distinguish normal behavior from a security-relevant exception.",
+          "Connect technical observations to business impact and operational constraints."
+        ],
+        "takeaways": [
+          "You should be able to explain Final Defense & Reflection without reading the lesson.",
+          "You should be able to apply it to a new case.",
+          "You should be able to identify evidence and limitations.",
+          "You should be able to communicate the result to another professional."
+        ]
+      }
+    ],
+    "meta": {
+      "level": "Capstone / Integration",
+      "load": "18–24 hours",
+      "focus": "Integrate technical, analytical and management capabilities into an evidence-based enterprise security transformation.",
+      "outcomes": [
+        "Frame a real enterprise security problem.",
+        "Collect and validate technical and business evidence.",
+        "Analyze security data and identify uncertainty.",
+        "Design controls and detection capabilities.",
+        "Prioritize investment using risk and business context.",
+        "Present an evidence-based security transformation plan."
+      ],
+      "topics": [
+        "Problem framing",
+        "Assets",
+        "Trust boundaries",
+        "Architecture",
+        "IAM",
+        "Telemetry",
+        "Detection",
+        "Incident response",
+        "Security analytics",
+        "Cloud/DevSecOps",
+        "Risk",
+        "Governance",
+        "Investment",
+        "Executive communication"
+      ],
+      "case": "Capstone: design a security transformation for a mid-sized digital enterprise with identity, cloud, application, data and operational constraints.",
+      "assessment": "Portfolio-grade enterprise security transformation dossier + presentation",
+      "lab": "NorthStar Enterprise Simulation",
+      "benchmark": "Benchmarked against public university curricula, NIST workforce/security frameworks and applied management education; not an official university curriculum.",
+      "references": [
+        {
+          "name": "NIST CSF 2.0",
+          "url": "https://www.nist.gov/cyberframework"
+        },
+        {
+          "name": "IIM Calcutta Cyber Leadership",
+          "url": "https://www.iimcal.ac.in/mdp/cyber-leadership-for-successful-business-operations"
+        },
+        {
+          "name": "NIST NICE v2.2.0",
+          "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+        }
+      ]
+    }
   }
 ];
 
