@@ -783,19 +783,817 @@ const NORTHSTAR_CURRICULUM = [
       {id:"se-05",title:"Security Metrics & Evidence",objective:"Measure capability using outcomes rather than vanity metrics.",read:"Useful security metrics connect activity to outcomes: detection coverage, mean time to triage, remediation verification and control effectiveness are more informative than raw activity counts alone.",practice:"Design three metrics that demonstrate improved defensive capability.",check:{q:"A strong security metric should:",options:["Connect measurement to an outcome or decision","Only count activity","Avoid definitions","Change meaning each week"],answer:"Connect measurement to an outcome or decision"}}
     ]
   },
-  {id:"programming-data",code:"07",title:"Programming, Python & SQL",category:"Technical Foundations",description:"Build programming and query fluency for automation, analytics and security engineering.",status:"active",lessons:[
-    {id:"pro-01",title:"Programming Mindset",objective:"Understand programming mindset and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Programming Mindset is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Programming Mindset", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Programming Mindset","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to programming mindset. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Programming Mindset",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving programming mindset. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain programming mindset in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of programming mindset?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
-    {id:"pro-02",title:"Variables & Data Types",objective:"Understand variables & data types and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Variables & Data Types is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Variables & Data Types", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Variables & Data Types","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to variables & data types. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Variables & Data Types",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving variables & data types. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain variables & data types in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of variables & data types?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
-    {id:"pro-03",title:"Conditions & Boolean Logic",objective:"Understand conditions & boolean logic and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Conditions & Boolean Logic is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Conditions & Boolean Logic", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Conditions & Boolean Logic","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to conditions & boolean logic. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Conditions & Boolean Logic",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving conditions & boolean logic. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain conditions & boolean logic in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of conditions & boolean logic?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
-    {id:"pro-04",title:"Loops & Repetition",objective:"Understand loops & repetition and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Loops & Repetition is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Loops & Repetition", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Loops & Repetition","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to loops & repetition. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Loops & Repetition",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving loops & repetition. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain loops & repetition in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of loops & repetition?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
-    {id:"pro-05",title:"Functions & Decomposition",objective:"Understand functions & decomposition and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Functions & Decomposition is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Functions & Decomposition", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Functions & Decomposition","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to functions & decomposition. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Functions & Decomposition",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving functions & decomposition. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain functions & decomposition in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of functions & decomposition?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
-    {id:"pro-06",title:"Python Collections",objective:"Understand python collections and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Python Collections is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Python Collections", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Python Collections","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to python collections. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Python Collections",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving python collections. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain python collections in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of python collections?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
-    {id:"pro-07",title:"Files, CSV & JSON",objective:"Understand files, csv & json and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Files, CSV & JSON is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Files, CSV & JSON", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Files, CSV & JSON","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to files, csv & json. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Files, CSV & JSON",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving files, csv & json. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain files, csv & json in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of files, csv & json?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
-    {id:"pro-08",title:"Errors, Validation & Testing",objective:"Understand errors, validation & testing and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Errors, Validation & Testing is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Errors, Validation & Testing", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Errors, Validation & Testing","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to errors, validation & testing. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Errors, Validation & Testing",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving errors, validation & testing. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain errors, validation & testing in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of errors, validation & testing?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
-    {id:"pro-09",title:"SQL Fundamentals",objective:"Understand sql fundamentals and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: SQL Fundamentals is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["SQL Fundamentals", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["SQL Fundamentals","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to sql fundamentals. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"SQL Fundamentals",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving sql fundamentals. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain sql fundamentals in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of sql fundamentals?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
-    {id:"pro-10",title:"SQL Filtering, Joins & Aggregation",objective:"Understand sql filtering, joins & aggregation and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: SQL Filtering, Joins & Aggregation is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["SQL Filtering, Joins & Aggregation", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["SQL Filtering, Joins & Aggregation","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to sql filtering, joins & aggregation. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"SQL Filtering, Joins & Aggregation",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving sql filtering, joins & aggregation. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain sql filtering, joins & aggregation in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of sql filtering, joins & aggregation?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
-    {id:"pro-11",title:"Security Automation with Python",objective:"Understand security automation with python and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Security Automation with Python is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Security Automation with Python", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Security Automation with Python","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to security automation with python. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Security Automation with Python",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving security automation with python. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain security automation with python in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of security automation with python?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
-    {id:"pro-12",title:"Mini Project: Authentication Log Analyzer",objective:"Understand mini project: authentication log analyzer and apply it to a realistic technical foundations problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Mini Project: Authentication Log Analyzer is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Mini Project: Authentication Log Analyzer", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Mini Project: Authentication Log Analyzer","The core idea being learned in this lesson, explained in the context of Programming, Python & SQL."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to mini project: authentication log analyzer. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Mini Project: Authentication Log Analyzer",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving mini project: authentication log analyzer. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain mini project: authentication log analyzer in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of mini project: authentication log analyzer?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},  ],meta:{"level":"Foundation → Applied","load":"20–24 hours","focus":"Learn programming logic, Python, data handling and SQL from first principles and apply them to security work.","outcomes":["Break problems into variables, conditions, loops and functions.","Read and write beginner Python safely and clearly.","Work with files, structured data, errors and reusable functions.","Use SQL to filter, join, aggregate and validate data.","Build small security-oriented automation tasks with reproducible evidence."],"topics":["Programming logic","Python basics","Data structures","Functions","Files & errors","JSON & CSV","SQL","Joins & aggregation","Automation","Testing"],"case":"Case: a security analyst receives thousands of authentication records and must clean, query and summarize them without changing the source evidence.","assessment":"Python exercises + SQL investigation + small automation project","lab":"Security Data Automation Lab"}},
+{
+  "id": "programming-data",
+  "code": "07",
+  "title": "Programming, Python & SQL",
+  "category": "Technical Foundations",
+  "description": "Build programming and query fluency for automation, analytics and security engineering.",
+  "status": "active",
+  "meta": {
+    "level": "Foundation → Applied",
+    "load": "24–30 hours",
+    "focus": "Learn programming logic, Python and SQL from first principles, then use them to investigate security data and automate repeatable work.",
+    "outcomes": [
+      "Break a problem into inputs, decisions, repetition and outputs.",
+      "Read and write beginner Python without treating code as magic.",
+      "Choose useful Python data structures and functions for a task.",
+      "Read CSV and JSON safely and validate data before analysis.",
+      "Use SQL to filter, join, group and aggregate evidence.",
+      "Build a small security-data workflow that is reproducible and explainable."
+    ],
+    "topics": [
+      "Problem solving",
+      "Python syntax",
+      "Variables & types",
+      "Boolean logic",
+      "Loops",
+      "Functions",
+      "Lists & dictionaries",
+      "CSV & JSON",
+      "Errors & testing",
+      "SQL",
+      "Joins & aggregation",
+      "Security automation"
+    ],
+    "case": "Case: a security analyst receives authentication logs and must identify unusual patterns without modifying the original evidence.",
+    "assessment": "Concept checks + Python exercises + SQL investigation + authentication-log mini project",
+    "lab": "Security Data Automation Lab"
+  },
+  "lessons": [
+    {
+      "id": "pro-01",
+      "title": "How Programmers Think: Inputs → Rules → Outputs",
+      "objective": "Learn to turn a real problem into a small sequence of precise instructions.",
+      "time": "75–90 minutes",
+      "prerequisite": "None",
+      "read": "Programming is not primarily about typing code. It is about describing a process precisely enough that a computer can repeat it. A useful first model is: input → rules → output.\\n\\nSuppose you have five login records and want to count failed logins. A human may say, “count the failures.” A program needs the exact rule: inspect each record, check whether status equals failed, increase the counter, then report the counter.\\n\\nThis way of thinking matters in security because vague rules create unreliable automation. Before writing code, define the question, inputs, expected output and assumptions.",
+      "concepts": [
+        "Input",
+        "Rule",
+        "Output",
+        "Algorithm",
+        "Assumption",
+        "Edge case"
+      ],
+      "glossary": [
+        [
+          "Algorithm",
+          "A step-by-step method for solving a problem."
+        ],
+        [
+          "Input",
+          "Information supplied to a process."
+        ],
+        [
+          "Output",
+          "The result produced by a process."
+        ],
+        [
+          "Edge case",
+          "An unusual input or boundary condition that can expose a flaw."
+        ]
+      ],
+      "example": "Question: “How many failed logins occurred?” Input: login records. Rule: count records whose status is failed. Output: one integer. Edge case: what should happen if the status field is missing?",
+      "visual": {
+        "title": "The programmer's mental model",
+        "caption": "Turn an ambiguous request into something a computer can execute.",
+        "steps": [
+          "Define the question",
+          "Identify inputs",
+          "Write exact rules",
+          "Handle edge cases",
+          "Produce and verify output"
+        ]
+      },
+      "case": "A manager asks for “suspicious logins.” Identify what is missing from that request before anyone writes code: definition of suspicious, required fields, time window, expected output and validation evidence.",
+      "mistakes": [
+        "Starting with syntax before defining the problem.",
+        "Assuming missing data means no event occurred.",
+        "Using words such as suspicious without defining a measurable rule."
+      ],
+      "practice": "Write an algorithm in plain English to count failed logins and separately count unique users with failures.",
+      "evidence": "Submit the algorithm, two assumptions and one edge case.",
+      "check": {
+        "q": "What should normally come before writing the code?",
+        "options": [
+          "Define the problem, inputs, rules and expected output",
+          "Choose random Python syntax",
+          "Delete unusual records",
+          "Assume the data is perfect"
+        ],
+        "answer": "Define the problem, inputs, rules and expected output",
+        "why": "Clear problem definition reduces ambiguity and makes the resulting program testable."
+      }
+    },
+    {
+      "id": "pro-02",
+      "title": "Variables & Data Types",
+      "objective": "Understand how Python stores values and why data type affects what an operation means.",
+      "time": "75–90 minutes",
+      "prerequisite": "Programming mindset",
+      "read": "A variable is a name that refers to a value. In Python, that value has a type. For example, a username is naturally text, a failed-login count is an integer, and a risk score may be a decimal number.\\n\\nTypes matter because operations depend on them. Adding two numbers produces arithmetic; combining two pieces of text produces text. A security script that confuses a timestamp, number and string can silently produce wrong results.\\n\\nStart with the question: “What does this value represent?” Then choose or inspect the type. Do not convert data just to make an error disappear; understand why the conversion is needed.",
+      "concepts": [
+        "Variable",
+        "String",
+        "Integer",
+        "Float",
+        "Boolean",
+        "Type conversion",
+        "None"
+      ],
+      "glossary": [
+        [
+          "String",
+          "Text data such as a username or IP address."
+        ],
+        [
+          "Integer",
+          "Whole-number data such as a count."
+        ],
+        [
+          "Boolean",
+          "A value representing true or false."
+        ],
+        [
+          "Type conversion",
+          "Changing a value from one representation to another when that change is valid."
+        ]
+      ],
+      "example": "`failed_count = 7` represents a count. `username = \"alex\"` represents text. `enabled = True` represents a Boolean decision.",
+      "visual": {
+        "title": "A variable is a labeled value",
+        "caption": "Think of a variable as a name attached to a value with a meaning and type.",
+        "steps": [
+          "Choose a meaningful name",
+          "Store a value",
+          "Understand its type",
+          "Use an appropriate operation",
+          "Validate the result"
+        ]
+      },
+      "case": "A CSV stores `failed_attempts` as text. Before comparing it to a numeric threshold, determine whether every value can safely be converted and how invalid values will be handled.",
+      "mistakes": [
+        "Treating every value as text.",
+        "Converting invalid values silently.",
+        "Using unclear names such as x or data for important security fields."
+      ],
+      "practice": "Create variables for username, failed_attempts, source_ip and account_locked. Decide the most appropriate Python type for each and explain why.",
+      "evidence": "A five-line example plus a short explanation of each chosen type.",
+      "check": {
+        "q": "Which type is most natural for a count such as failed login attempts?",
+        "options": [
+          "Integer",
+          "String",
+          "Boolean",
+          "Dictionary"
+        ],
+        "answer": "Integer",
+        "why": "A count is a whole number, so an integer represents it directly."
+      }
+    },
+    {
+      "id": "pro-03",
+      "title": "Conditions & Boolean Logic",
+      "objective": "Use if/else decisions and Boolean logic to express security rules clearly.",
+      "time": "90 minutes",
+      "prerequisite": "Variables & Data Types",
+      "read": "A condition lets a program choose between paths. Python commonly uses `if`, `elif` and `else`. The condition produces a Boolean result: true or false.\\n\\nSecurity automation depends heavily on conditions: “If an account is locked, do not approve the request”; “If failures exceed a threshold, create a review candidate.” Multiple conditions can be combined with `and`, `or` and `not`.\\n\\nThe dangerous part is not the syntax. It is writing a rule whose meaning is different from what you intended. Write the rule in plain English first, then translate it into code and test both the true and false paths.",
+      "concepts": [
+        "if",
+        "elif",
+        "else",
+        "Boolean",
+        "and",
+        "or",
+        "not",
+        "Comparison"
+      ],
+      "glossary": [
+        [
+          "Condition",
+          "A test that evaluates to true or false."
+        ],
+        [
+          "Boolean",
+          "True or false value used for decisions."
+        ],
+        [
+          "Operator",
+          "A symbol or keyword used to compare or combine values."
+        ],
+        [
+          "Branch",
+          "One possible path through a program."
+        ]
+      ],
+      "example": "Rule: flag an account when `failed_attempts >= 5` AND the account is not already locked. Test both conditions separately before combining them.",
+      "visual": {
+        "title": "Decision flow",
+        "caption": "Every branch should have a clear rule and an expected outcome.",
+        "steps": [
+          "Read the input",
+          "Evaluate condition",
+          "True → action A",
+          "False → action B",
+          "Test both paths"
+        ]
+      },
+      "case": "Design a rule for a review queue: flag an authentication event when it has at least five failures in the window OR the source is explicitly blocked. Discuss why changing OR to AND changes the meaning.",
+      "mistakes": [
+        "Using AND when the requirement says either condition.",
+        "Testing only the normal case.",
+        "Putting business assumptions inside code without documenting them."
+      ],
+      "practice": "Write three plain-English rules and then express them as Boolean expressions: locked account; high-risk login; repeated failure from a blocked source.",
+      "evidence": "Three rules, their Boolean expressions and at least one boundary test for each.",
+      "check": {
+        "q": "What does `A and B` require?",
+        "options": [
+          "Both A and B must be true",
+          "Either A or B must be true",
+          "Both must be false",
+          "Only A matters"
+        ],
+        "answer": "Both A and B must be true",
+        "why": "AND is true only when every required condition is true."
+      }
+    },
+    {
+      "id": "pro-04",
+      "title": "Loops: Repeating Work Safely",
+      "objective": "Process many records with loops while avoiding missed data and runaway repetition.",
+      "time": "90 minutes",
+      "prerequisite": "Conditions & Boolean Logic",
+      "read": "A loop repeats an operation. A `for` loop is especially useful when you have a collection of records and want to inspect each one.\\n\\nFor example, a security analyst may need to inspect every login record and count failures. The loop should have a clear collection, a clear operation and a clear stopping point.\\n\\nLoops introduce new failure modes: skipping records, counting the wrong thing, modifying data accidentally or creating a loop that never ends. In analysis work, prefer simple loops that are easy to read and verify before optimizing them.",
+      "concepts": [
+        "for loop",
+        "Iteration",
+        "Collection",
+        "Counter",
+        "Accumulator",
+        "Break"
+      ],
+      "glossary": [
+        [
+          "Iteration",
+          "One pass through a loop."
+        ],
+        [
+          "Accumulator",
+          "A variable updated as a loop processes records."
+        ],
+        [
+          "break",
+          "A Python statement that exits a loop early."
+        ]
+      ],
+      "example": "Start `failed_count = 0`. For each login record, if its status is failed, increase the counter by one. After the loop, report the counter.",
+      "visual": {
+        "title": "One record at a time",
+        "caption": "A loop applies the same rule to each item in a collection.",
+        "steps": [
+          "Load collection",
+          "Take next record",
+          "Apply rule",
+          "Update result",
+          "Repeat until complete"
+        ]
+      },
+      "case": "You have 10,000 login records. Explain why processing each record with the same deterministic rule is safer than manually reviewing selected rows.",
+      "mistakes": [
+        "Changing the collection while iterating without understanding the effect.",
+        "Forgetting to initialize the accumulator.",
+        "Stopping after the first matching record when all matches are required."
+      ],
+      "practice": "Write pseudocode for counting failed logins and counting how many distinct users experienced failures.",
+      "evidence": "Pseudocode plus a hand-worked example using five records.",
+      "check": {
+        "q": "What is the usual purpose of a `for` loop in this context?",
+        "options": [
+          "Repeat an operation for items in a collection",
+          "Create a password",
+          "Encrypt the whole computer",
+          "Replace the operating system"
+        ],
+        "answer": "Repeat an operation for items in a collection",
+        "why": "A for loop is designed to iterate through items in a sequence or other iterable."
+      }
+    },
+    {
+      "id": "pro-05",
+      "title": "Functions & Decomposition",
+      "objective": "Break a larger program into small reusable pieces with clear inputs and outputs.",
+      "time": "90 minutes",
+      "prerequisite": "Loops",
+      "read": "As programs grow, putting every instruction in one block becomes difficult to understand and test. A function gives a name to a reusable piece of logic. It can accept inputs and return an output.\\n\\nImagine an authentication analyzer. One function can parse a record, another can determine whether it is a failure, and another can calculate a summary. Each function has a smaller responsibility.\\n\\nGood decomposition makes security automation easier to audit. If a rule changes, you can identify the specific function responsible instead of searching through one giant script.",
+      "concepts": [
+        "Function",
+        "Parameter",
+        "Argument",
+        "Return value",
+        "Scope",
+        "Single responsibility"
+      ],
+      "glossary": [
+        [
+          "Parameter",
+          "A named input accepted by a function."
+        ],
+        [
+          "Return value",
+          "The result a function gives back to its caller."
+        ],
+        [
+          "Scope",
+          "The region in which a name or variable is available."
+        ]
+      ],
+      "example": "A function `is_failed(record)` can receive one login record and return true when its status is `failed`. The main analysis can then reuse that rule.",
+      "visual": {
+        "title": "Decompose the job",
+        "caption": "Small functions make a workflow easier to read, test and change.",
+        "steps": [
+          "Large problem",
+          "Split responsibilities",
+          "Define inputs",
+          "Return results",
+          "Combine functions"
+        ]
+      },
+      "case": "A script contains 250 lines and repeats the same IP-address validation logic in four places. Explain the maintenance and security risks and propose a function boundary.",
+      "mistakes": [
+        "Functions that secretly change unrelated global state.",
+        "Huge functions that still do everything.",
+        "Returning inconsistent types from the same function."
+      ],
+      "practice": "Design three functions for a login analyzer: parse_record, is_failed and summarize_failures. Write each function's input and output in plain English.",
+      "evidence": "A function map showing inputs, outputs and responsibilities.",
+      "check": {
+        "q": "Why is decomposition useful?",
+        "options": [
+          "It makes logic easier to understand, test and reuse",
+          "It guarantees code has no bugs",
+          "It removes the need for requirements",
+          "It makes all programs shorter"
+        ],
+        "answer": "It makes logic easier to understand, test and reuse",
+        "why": "Decomposition improves structure and testability, but it does not guarantee correctness."
+      }
+    },
+    {
+      "id": "pro-06",
+      "title": "Python Collections: Lists, Dictionaries & Sets",
+      "objective": "Choose basic Python collections based on the shape of the data and the operation you need.",
+      "time": "90–120 minutes",
+      "prerequisite": "Functions & Decomposition",
+      "read": "Python collections let you keep related values together. A list preserves an ordered collection, a dictionary maps keys to values, and a set stores unique values.\\n\\nSecurity data often fits these patterns. A list can represent login events in time order. A dictionary can represent one parsed event such as username → value. A set can represent unique source IP addresses.\\n\\nChoosing the right structure is partly about meaning and partly about the operation you need. If you need unique values, a set expresses that requirement directly. If you need fields by name, a dictionary is easier to understand than a long list of positions.",
+      "concepts": [
+        "List",
+        "Dictionary",
+        "Set",
+        "Key-value",
+        "Membership",
+        "Uniqueness"
+      ],
+      "glossary": [
+        [
+          "List",
+          "Ordered collection of values."
+        ],
+        [
+          "Dictionary",
+          "Collection of key-value pairs."
+        ],
+        [
+          "Set",
+          "Collection designed for unique values."
+        ],
+        [
+          "Key",
+          "Name used to access a dictionary value."
+        ]
+      ],
+      "example": "`users = [\"Asha\", \"Ravi\", \"Asha\"]` keeps all entries. `unique_users = {\"Asha\", \"Ravi\"}` represents uniqueness. `event = {\"user\":\"Asha\", \"status\":\"failed\"}` represents named fields.",
+      "visual": {
+        "title": "Choose by meaning",
+        "caption": "The data structure should make the intended operation obvious.",
+        "steps": [
+          "Ordered records → list",
+          "Named fields → dictionary",
+          "Unique values → set",
+          "Select the structure",
+          "Test the operations you need"
+        ]
+      },
+      "case": "A log has 50,000 events but only 2,300 unique source IPs. Explain which structure you would use to collect unique IPs and why.",
+      "mistakes": [
+        "Using a list when uniqueness is the actual requirement.",
+        "Using numeric positions for data that has meaningful field names.",
+        "Assuming collection choice never affects performance or clarity."
+      ],
+      "practice": "Represent one login event as a dictionary, a sequence of five events as a list, and unique source IPs as a set.",
+      "evidence": "Three structures with one sentence explaining why each fits.",
+      "check": {
+        "q": "Which collection naturally represents unique source IP addresses?",
+        "options": [
+          "Set",
+          "List",
+          "String",
+          "Integer"
+        ],
+        "answer": "Set",
+        "why": "A set is designed to represent unique values."
+      }
+    },
+    {
+      "id": "pro-07",
+      "title": "CSV & JSON: Working With Real Data",
+      "objective": "Read common structured-data formats and validate their contents before analysis.",
+      "time": "90–120 minutes",
+      "prerequisite": "Python Collections",
+      "read": "CSV and JSON are common ways to exchange structured information. CSV is often tabular: rows and columns. JSON represents objects and nested structures.\\n\\nThe important security habit is to separate “the file loaded successfully” from “the data is trustworthy.” A CSV can have missing columns, duplicate rows, unexpected values or incorrect timestamps. JSON can contain missing keys or unexpected nested data.\\n\\nBefore analysis, inspect the schema, sample records, required fields, types and obvious anomalies. Preserve the original evidence and work on a copy or controlled representation.",
+      "concepts": [
+        "CSV",
+        "JSON",
+        "Schema",
+        "Parsing",
+        "Validation",
+        "Missing value",
+        "Data provenance"
+      ],
+      "glossary": [
+        [
+          "CSV",
+          "Comma-separated tabular text format commonly used for data exchange."
+        ],
+        [
+          "JSON",
+          "Structured text format representing objects, arrays and values."
+        ],
+        [
+          "Schema",
+          "Expected structure and meaning of fields."
+        ],
+        [
+          "Provenance",
+          "Information about where data came from and how it was handled."
+        ]
+      ],
+      "example": "Expected fields: timestamp, username, source_ip, status. Before counting failures, verify those fields exist and inspect whether status contains values such as success and failed.",
+      "visual": {
+        "title": "Raw data → validated data",
+        "caption": "Parsing is only the first step; validation protects the analysis.",
+        "steps": [
+          "Preserve source",
+          "Parse format",
+          "Inspect schema",
+          "Validate fields and types",
+          "Analyze a controlled copy"
+        ]
+      },
+      "case": "A CSV suddenly contains a new column and 4% of timestamps are blank. Decide whether analysis should continue, what must be documented and what evidence is needed.",
+      "mistakes": [
+        "Dropping bad rows without measuring how many were removed.",
+        "Assuming a parser error means the source is malicious.",
+        "Overwriting the original evidence."
+      ],
+      "practice": "Design a validation checklist for an authentication CSV before calculating failure rates.",
+      "evidence": "A checklist containing schema, required fields, types, missing values and provenance.",
+      "check": {
+        "q": "What should you do before trusting a parsed security dataset?",
+        "options": [
+          "Validate its structure, fields, values and provenance",
+          "Immediately delete unusual rows",
+          "Assume the parser guarantees correctness",
+          "Change the source file"
+        ],
+        "answer": "Validate its structure, fields, values and provenance",
+        "why": "Parsing tells you the format can be read; validation asks whether the contents are suitable for the intended analysis."
+      }
+    },
+    {
+      "id": "pro-08",
+      "title": "Errors, Validation & Testing",
+      "objective": "Make programs fail clearly and verify behavior with deliberate tests.",
+      "time": "90–120 minutes",
+      "prerequisite": "CSV & JSON",
+      "read": "Programs encounter bad inputs, missing files, unexpected values and logic mistakes. An error is not automatically a failure of the whole system; what matters is whether the program detects the problem, responds safely and leaves enough evidence to understand what happened.\\n\\nValidation checks whether an input meets an expected rule. Testing checks whether the program behaves as intended under known scenarios. These are different from simply running the program once.\\n\\nFor a login analyzer, test normal records, missing fields, invalid timestamps, zero records and boundary values such as exactly five failures.",
+      "concepts": [
+        "Exception",
+        "Validation",
+        "Unit test",
+        "Boundary test",
+        "Expected failure",
+        "Logging"
+      ],
+      "glossary": [
+        [
+          "Exception",
+          "A signal that an operation could not proceed normally."
+        ],
+        [
+          "Validation",
+          "Checking whether data or input meets defined requirements."
+        ],
+        [
+          "Unit test",
+          "A focused test of a small piece of logic."
+        ],
+        [
+          "Boundary test",
+          "A test around a limit where behavior may change."
+        ]
+      ],
+      "example": "If the rule is “flag five or more failures,” test 4, 5 and 6. A single test with 10 failures does not prove the boundary is correct.",
+      "visual": {
+        "title": "Reliable code loop",
+        "caption": "Build → test → observe → fix → test again.",
+        "steps": [
+          "Define expected behavior",
+          "Create normal and edge cases",
+          "Run the code",
+          "Compare actual vs expected",
+          "Fix and retest"
+        ]
+      },
+      "case": "A script reports zero failed logins after the input schema changed. Explain why “the script ran without an error” is not enough evidence of correctness.",
+      "mistakes": [
+        "Testing only happy paths.",
+        "Catching every error and hiding it.",
+        "Changing code without rerunning the relevant tests."
+      ],
+      "practice": "Create five test cases for an `is_failed(record)` function, including missing status and unexpected status.",
+      "evidence": "Test table with input, expected result and observed result.",
+      "check": {
+        "q": "Why test boundary values?",
+        "options": [
+          "Rules often change behavior at boundaries",
+          "They always reveal a security breach",
+          "They replace all other testing",
+          "They make data unnecessary"
+        ],
+        "answer": "Rules often change behavior at boundaries",
+        "why": "Threshold-based logic can be wrong exactly where the decision changes."
+      }
+    },
+    {
+      "id": "pro-09",
+      "title": "SQL Fundamentals: Ask Questions of Tables",
+      "objective": "Understand tables, rows, columns and SELECT queries as a way to retrieve evidence.",
+      "time": "90–120 minutes",
+      "prerequisite": "Errors, Validation & Testing",
+      "read": "SQL is a language for working with relational data. Think of a table as a structured collection of rows, where each column has a defined meaning.\\n\\nA basic `SELECT` asks the database for columns or expressions. `FROM` identifies the table. `WHERE` filters rows. SQL is powerful because the question can be expressed close to the data instead of manually copying thousands of records.\\n\\nSecurity analysts use SQL to answer questions such as “Which accounts had failures today?” or “Which source IPs generated more than a threshold?” The query is only as good as the definitions and data behind it.",
+      "concepts": [
+        "Database",
+        "Table",
+        "Row",
+        "Column",
+        "SELECT",
+        "FROM",
+        "WHERE"
+      ],
+      "glossary": [
+        [
+          "Table",
+          "Structured set of related rows and columns."
+        ],
+        [
+          "Row",
+          "One record in a table."
+        ],
+        [
+          "Column",
+          "A named field with a defined meaning."
+        ],
+        [
+          "Query",
+          "A request for information or an operation on data."
+        ]
+      ],
+      "example": "`SELECT username, status FROM logins WHERE status = 'failed';` asks for username and status from rows whose status is failed.",
+      "visual": {
+        "title": "SQL question model",
+        "caption": "Translate an analytical question into table → fields → filter.",
+        "steps": [
+          "State the question",
+          "Choose the table",
+          "Choose fields",
+          "Add filters",
+          "Inspect the result"
+        ]
+      },
+      "case": "You need all failed logins from 10 September. Identify the table, fields and filter conditions before writing the query.",
+      "mistakes": [
+        "Selecting data without defining the question.",
+        "Filtering on the wrong field.",
+        "Assuming column names describe their meaning perfectly without checking the schema."
+      ],
+      "practice": "Write plain-English questions and corresponding SELECT/WHERE logic for failed events, one user and one source IP.",
+      "evidence": "Three questions with SQL queries and a sentence explaining each filter.",
+      "check": {
+        "q": "What does a WHERE clause normally do?",
+        "options": [
+          "Filter rows according to a condition",
+          "Create a new operating system",
+          "Encrypt the database",
+          "Rename every column"
+        ],
+        "answer": "Filter rows according to a condition",
+        "why": "WHERE restricts the rows returned by a query based on a condition."
+      }
+    },
+    {
+      "id": "pro-10",
+      "title": "SQL Filtering, Joins & Aggregation",
+      "objective": "Combine related tables and summarize security evidence with COUNT, GROUP BY and joins.",
+      "time": "120 minutes",
+      "prerequisite": "SQL Fundamentals",
+      "read": "Real systems often separate information across tables. A login table may contain events while a user table contains department and account status. A join connects related records using a shared key.\\n\\nAggregation answers questions about groups: `COUNT` can count events, while `GROUP BY` defines the groups. Together they can turn thousands of events into a useful summary such as failed logins per user or per source IP.\\n\\nBe careful: joins can multiply rows when relationships are misunderstood. Always check the expected relationship and validate the resulting counts.",
+      "concepts": [
+        "JOIN",
+        "Primary key",
+        "Foreign key",
+        "COUNT",
+        "GROUP BY",
+        "Aggregate",
+        "Cardinality"
+      ],
+      "glossary": [
+        [
+          "Primary key",
+          "Field or combination of fields intended to uniquely identify a row."
+        ],
+        [
+          "Foreign key",
+          "Field that references a related record in another table."
+        ],
+        [
+          "GROUP BY",
+          "SQL clause that forms groups for aggregate calculations."
+        ],
+        [
+          "Cardinality",
+          "The nature and number of relationships between related records."
+        ]
+      ],
+      "example": "Join `logins.user_id` to `users.id`, then group by department to count failed events. Validate that the join did not unexpectedly duplicate events.",
+      "visual": {
+        "title": "From events to insight",
+        "caption": "Join carefully, then aggregate and validate the result.",
+        "steps": [
+          "Identify related tables",
+          "Confirm join key",
+          "Join records",
+          "Group by the business question",
+          "Check counts against expectations"
+        ]
+      },
+      "case": "A join doubles the number of login events. Determine which relationship assumption may be wrong and what validation query or count comparison you would perform.",
+      "mistakes": [
+        "Joining on a non-unique field without understanding the effect.",
+        "Trusting an aggregate without checking the underlying row count.",
+        "Using GROUP BY without knowing what each group represents."
+      ],
+      "practice": "Design a query to count failed logins per user and another to count unique source IPs per user.",
+      "evidence": "Two queries plus an explanation of the join key and expected relationship.",
+      "check": {
+        "q": "Why can a join unexpectedly increase row counts?",
+        "options": [
+          "One record can match multiple related records",
+          "SQL always duplicates rows",
+          "COUNT creates copies",
+          "WHERE disables uniqueness"
+        ],
+        "answer": "One record can match multiple related records",
+        "why": "A one-to-many or many-to-many relationship can produce multiple joined rows for one original record."
+      }
+    },
+    {
+      "id": "pro-11",
+      "title": "Security Automation with Python",
+      "objective": "Combine Python, validation and data handling into a safe repeatable security workflow.",
+      "time": "120 minutes",
+      "prerequisite": "SQL Filtering, Joins & Aggregation",
+      "read": "Automation means turning a repeatable procedure into a program. In security, automation should make work faster without hiding how the result was produced. A good automation workflow defines scope, reads controlled input, validates it, applies deterministic rules, records useful output and preserves evidence.\\n\\nStart with read-only analysis. For example, a script can read authentication logs and produce a report of failure counts. It should not silently modify accounts or delete evidence. Any action with operational impact should have explicit authorization and safeguards.\\n\\nThe goal is reproducibility: another analyst should be able to understand what input was used, what version of the logic ran and what output was produced.",
+      "concepts": [
+        "Automation",
+        "Scope",
+        "Idempotence",
+        "Read-only analysis",
+        "Reproducibility",
+        "Audit trail"
+      ],
+      "glossary": [
+        [
+          "Reproducibility",
+          "Ability to repeat an analysis and obtain an explainable result from defined inputs and logic."
+        ],
+        [
+          "Scope",
+          "Explicit boundary describing what the automation may process or affect."
+        ],
+        [
+          "Audit trail",
+          "Record of relevant actions, inputs and outputs."
+        ]
+      ],
+      "example": "A read-only script loads a CSV, validates required fields, counts failures by user, writes a summary CSV and records the input filename and processing time.",
+      "visual": {
+        "title": "Safe automation pipeline",
+        "caption": "Keep the workflow observable and bounded.",
+        "steps": [
+          "Define authorized scope",
+          "Read controlled input",
+          "Validate",
+          "Process deterministically",
+          "Write evidence + report"
+        ]
+      },
+      "case": "A team wants a script that automatically disables accounts after suspicious activity. Before approving it, identify authorization, false-positive, rollback, logging and testing requirements.",
+      "mistakes": [
+        "Automating high-impact actions before validating detection quality.",
+        "Hard-coding credentials or secrets.",
+        "Failing to record which input and code version produced a report."
+      ],
+      "practice": "Design a read-only authentication-log automation pipeline. Identify inputs, validations, outputs, failure behavior and evidence.",
+      "evidence": "A one-page workflow diagram or ordered procedure with explicit safety boundaries.",
+      "check": {
+        "q": "What is a good first security-automation target?",
+        "options": [
+          "A bounded, read-only, repeatable analysis",
+          "An irreversible account action with no testing",
+          "Deleting suspicious evidence",
+          "Changing production configuration without approval"
+        ],
+        "answer": "A bounded, read-only, repeatable analysis",
+        "why": "Read-only automation allows the learner to prove correctness before introducing operational impact."
+      }
+    },
+    {
+      "id": "pro-12",
+      "title": "Mini Project: Authentication Log Analyzer",
+      "objective": "Integrate Python and data reasoning to produce an evidence-based authentication analysis.",
+      "time": "2–3 hours",
+      "prerequisite": "All previous lessons in this pathway",
+      "read": "This mini project brings the pathway together. You receive authentication records containing a timestamp, username, source IP and status. Your job is not to “find hackers.” Your job is to produce a defensible analysis of the data you were given.\\n\\nFirst preserve the source and inspect the schema. Then validate required fields and values. Calculate failed attempts, unique users, unique source IPs and threshold candidates. Finally, explain what the data supports and what it does not support.\\n\\nA strong result separates observation from conclusion. “User A had 8 failures” is an observation. “User A was compromised” is a much stronger claim requiring additional evidence.",
+      "concepts": [
+        "Project framing",
+        "Data validation",
+        "Python processing",
+        "SQL reasoning",
+        "Thresholds",
+        "Evidence",
+        "Uncertainty"
+      ],
+      "glossary": [
+        [
+          "Observation",
+          "A directly supported statement about the available data."
+        ],
+        [
+          "Hypothesis",
+          "A proposed explanation that requires evidence."
+        ],
+        [
+          "Threshold candidate",
+          "A rule-based signal that may deserve review but is not proof of malicious activity."
+        ]
+      ],
+      "example": "If a source IP has 25 failed attempts across 12 users, report the counts and identify it as a review candidate. Do not claim compromise without corroborating evidence.",
+      "visual": {
+        "title": "Evidence before conclusion",
+        "caption": "Move from raw records to a bounded analytical statement.",
+        "steps": [
+          "Preserve source",
+          "Validate data",
+          "Calculate signals",
+          "Investigate context",
+          "State supported conclusions"
+        ]
+      },
+      "case": "A report shows one IP with 40 failures but the IP belongs to a corporate NAT gateway shared by 500 employees. Explain why raw counts alone can mislead and what additional context you need.",
+      "mistakes": [
+        "Calling a threshold breach an incident without investigation.",
+        "Ignoring shared infrastructure such as NAT or proxies.",
+        "Removing inconvenient records because they complicate the result."
+      ],
+      "practice": "Build the project in stages: validate the dataset, calculate summary metrics, identify review candidates, document assumptions and write a short analyst conclusion.",
+      "evidence": "Final project evidence: validation summary, analysis output, three observations, one hypothesis, assumptions and a short recommendation for the next investigation step.",
+      "check": {
+        "q": "Which statement is the most defensible project conclusion?",
+        "options": [
+          "The data shows 40 failures from this IP; additional context is required to determine why",
+          "This IP is definitely an attacker",
+          "The user is definitely compromised",
+          "The data proves intent"
+        ],
+        "answer": "The data shows 40 failures from this IP; additional context is required to determine why",
+        "why": "A defensible analyst separates observed facts from hypotheses that require additional evidence."
+      }
+    }
+  ]
+},
   {id:"data-science",code:"08",title:"Statistics & Data Science",category:"Data & Analytics",description:"Learn probability, statistics, data cleaning, visualization and analytical reasoning from first principles.",status:"active",lessons:[
     {id:"dat-01",title:"Data Thinking",objective:"Understand data thinking and apply it to a realistic data & analytics problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Data Thinking is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Data Thinking", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Data Thinking","The core idea being learned in this lesson, explained in the context of Statistics & Data Science."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to data thinking. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Data Thinking",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving data thinking. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain data thinking in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of data thinking?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
     {id:"dat-02",title:"Population, Sample & Bias",objective:"Understand population, sample & bias and apply it to a realistic data & analytics problem.",time:"90–120 minutes",prerequisite:"Complete the previous lesson in this pathway or review the listed prerequisite concepts.",read:"This lesson starts with the idea in plain language: Population, Sample & Bias is not a term to memorize; it is a tool for making better technical decisions. First build the mental model, then connect it to an example, and finally test your understanding.\\n\\nIn professional work, the important question is not only what a concept means, but when it is useful, what assumptions it depends on, what evidence supports a conclusion, and what could go wrong. NorthStar therefore treats each lesson as a small competency rather than a vocabulary item.",concepts:["Population, Sample & Bias", "Inputs and outputs", "Assumptions", "Evidence", "Common failure modes"],glossary:[["Population, Sample & Bias","The core idea being learned in this lesson, explained in the context of Statistics & Data Science."],["Evidence","Information that supports a technical or business conclusion."],["Assumption","A condition accepted for the purpose of analysis and made explicit so it can be challenged."]],example:"Worked example: imagine a security team facing a small business problem related to population, sample & bias. Start by stating the goal, identify the relevant inputs, apply the concept, inspect the result, and record what evidence would make the conclusion trustworthy.",visual:{title:"Population, Sample & Bias",caption:"Mental model: understand → apply → inspect → explain.",steps:["Define the problem","Identify inputs","Apply the concept","Inspect the result","Explain the evidence"]},case:"Case analysis: a security or data team must make a decision involving population, sample & bias. Identify the business objective, technical facts, missing evidence, possible risks and the next defensible action.",mistakes:["Memorizing the definition without understanding when to use it.","Skipping assumptions or data-quality checks.","Treating a result as certain when the evidence is incomplete."],practice:"Practice: explain population, sample & bias in your own words, work through the case, state one assumption, identify the evidence you would collect, and describe what would change your conclusion.",evidence:"Evidence checkpoint: submit a short explanation, the reasoning used in the case, one assumption and one piece of supporting evidence.",check:{q:"Which approach best demonstrates understanding of population, sample & bias?",options:["Apply the concept to a scoped problem and justify the result","Memorize the term only","Skip evidence and rely on intuition","Use the same answer for every situation"],answer:"Apply the concept to a scoped problem and justify the result",why:"Professional competence requires application, reasoning and evidence, not vocabulary recall alone."}},
