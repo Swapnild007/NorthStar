@@ -232,3 +232,6 @@ async function askNorthStar(q){
  }
 }
 ;
+
+// Boot the application after all view and event handlers are defined.
+render();
