@@ -298,3 +298,12 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
  .module-detail-grid{grid-template-columns:1fr}
  .module-details{margin-left:12px;margin-right:12px}
 }
+
+
+/* Lesson depth — preserves the frozen NorthStar visual system while adding academic structure. */
+.lesson-stack{display:grid;gap:16px}
+.lesson-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.lesson-meta span{display:flex;flex-direction:column;gap:5px;padding:12px 14px;border-radius:15px;background:rgba(248,250,252,.72);border:1px solid rgba(148,163,184,.12);color:#64748b;font-size:13px}
+.lesson-meta b{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#94a3b8}
+.lesson-list{margin:9px 0 0;padding-left:20px;color:#64748b;line-height:1.6}
+@media(max-width:700px){.lesson-meta{grid-template-columns:1fr}}
