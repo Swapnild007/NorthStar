@@ -671,9 +671,20 @@ async function askNorthStar(q){
  const history=state.messages.slice(-14).map(m=>({role:m[0]==="user"?"user":"assistant",content:m[1]}));
  const mentor={mode:mentorMode(),classification:mentorClassification(q),context:mentorContextPayload()};
  try{
+  const localMode=Boolean(AI_CONFIG.allowLocalEndpoint && /^(localhost|127\\.0\\.1)$/.test(location.hostname));
+  let omniKey="";
+  if(localMode){
+   omniKey=String(sessionStorage.getItem("ns_omniroute_key")||"");
+   if(!omniKey){
+    omniKey=String(window.prompt("Enter your local OmniRoute API key. It will be kept only for this browser session.")||"").trim();
+    if(omniKey)sessionStorage.setItem("ns_omniroute_key",omniKey);
+   }
+  }
+  const headers={"Content-Type":"application/json"};
+  if(omniKey)headers.Authorization="Bearer "+omniKey;
   const response=await fetch(endpoint+"/v1/chat/completions",{
    method:"POST",
-   headers:{"Content-Type":"application/json"},
+   headers,
    body:JSON.stringify({messages:history,mentor})
   });
   if(!response.ok){
