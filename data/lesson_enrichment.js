@@ -4661,7 +4661,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of Cryptographic Goals & Threat Models were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of Cryptographic Goals & Threat Models were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "Threat-model a messaging system before choosing cryptographic controls.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "Threat-model a messaging system before choosing cryptographic controls.",
+        "answer": "Identify assets, adversaries, trust boundaries and security goals before selecting primitives."
+      }
+    ]
   },
   "ct-02": {
     "learningGoal": "Build first-principles understanding of hash functions, integrity & password storage and apply it to a controlled security decision.",
@@ -4703,7 +4711,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of Hash Functions, Integrity & Password Storage were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of Hash Functions, Integrity & Password Storage were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "A password database is leaked and defenders must determine whether passwords can be recovered.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "A password database is leaked and defenders must determine whether passwords can be recovered.",
+        "answer": "Compare hashing, salting and slow password verification and explain what evidence supports the risk assessment."
+      }
+    ]
   },
   "ct-03": {
     "learningGoal": "Build first-principles understanding of symmetric encryption & authenticated encryption and apply it to a controlled security decision.",
@@ -4745,7 +4761,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of Symmetric Encryption & Authenticated Encryption were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of Symmetric Encryption & Authenticated Encryption were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "A service must protect sensitive records while also detecting tampering in transit.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "A service must protect sensitive records while also detecting tampering in transit.",
+        "answer": "Compare encryption with authenticated encryption and identify what confidentiality and integrity evidence each provides."
+      }
+    ]
   },
   "ct-04": {
     "learningGoal": "Build first-principles understanding of public-key cryptography & key exchange and apply it to a controlled security decision.",
@@ -4787,7 +4811,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of Public-Key Cryptography & Key Exchange were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of Public-Key Cryptography & Key Exchange were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "Two endpoints need to establish a shared secret over an untrusted network.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "Two endpoints need to establish a shared secret over an untrusted network.",
+        "answer": "Trace public-key exchange and identify what prevents an active intermediary from silently substituting keys."
+      }
+    ]
   },
   "ct-05": {
     "learningGoal": "Build first-principles understanding of digital signatures, certificates & pki and apply it to a controlled security decision.",
@@ -4829,7 +4861,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of Digital Signatures, Certificates & PKI were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of Digital Signatures, Certificates & PKI were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "A browser receives a certificate for a secure website.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "A browser receives a certificate for a secure website.",
+        "answer": "Trace certificate validation from the leaf certificate through the trust chain and identify what would cause rejection."
+      }
+    ]
   },
   "ct-06": {
     "learningGoal": "Build first-principles understanding of tls and secure communication and apply it to a controlled security decision.",
@@ -4871,7 +4911,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of TLS and Secure Communication were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of TLS and Secure Communication were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "A client connects to a web service using HTTPS.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "A client connects to a web service using HTTPS.",
+        "answer": "Trace the TLS handshake at a conceptual level and identify where authentication, key establishment and protected application data occur."
+      }
+    ]
   },
   "ct-07": {
     "learningGoal": "Build first-principles understanding of key management & cryptographic failure modes and apply it to a controlled security decision.",
@@ -4913,7 +4961,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of Key Management & Cryptographic Failure Modes were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of Key Management & Cryptographic Failure Modes were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "An organization loses access to an encryption key used for production data.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "An organization loses access to an encryption key used for production data.",
+        "answer": "Analyze key lifecycle, backup, rotation and recovery controls and distinguish availability failure from cryptographic weakness."
+      }
+    ]
   },
   "ct-08": {
     "learningGoal": "Build first-principles understanding of privacy engineering & data protection and apply it to a controlled security decision.",
@@ -4955,7 +5011,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of Privacy Engineering & Data Protection were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of Privacy Engineering & Data Protection were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "A company wants to use customer telemetry for analytics without exposing unnecessary personal information.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "A company wants to use customer telemetry for analytics without exposing unnecessary personal information.",
+        "answer": "Identify data elements, purpose, minimization opportunities, access controls and residual privacy risk."
+      }
+    ]
   },
   "ae-01": {
     "learningGoal": "Build first-principles understanding of ai security mental models and apply it to a controlled security decision.",
@@ -4997,7 +5061,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of AI Security Mental Models were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of AI Security Mental Models were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "An AI model is accurate in testing but creates a new security risk when deployed in production.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "An AI model is accurate in testing but creates a new security risk when deployed in production.",
+        "answer": "Map the model, data, users, tools and trust boundaries before selecting controls."
+      }
+    ]
   },
   "ae-02": {
     "learningGoal": "Build first-principles understanding of adversarial machine learning and apply it to a controlled security decision.",
@@ -5039,7 +5111,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of Adversarial Machine Learning were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of Adversarial Machine Learning were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "An attacker makes small input changes that cause a classifier to produce an incorrect result.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "An attacker makes small input changes that cause a classifier to produce an incorrect result.",
+        "answer": "Explain the attack surface, assumptions and evidence needed to distinguish adversarial manipulation from ordinary model error."
+      }
+    ]
   },
   "ae-03": {
     "learningGoal": "Build first-principles understanding of data poisoning, evasion & model theft and apply it to a controlled security decision.",
@@ -5081,7 +5161,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of Data Poisoning, Evasion & Model Theft were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of Data Poisoning, Evasion & Model Theft were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "A training dataset contains manipulated records that alter model behavior after deployment.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "A training dataset contains manipulated records that alter model behavior after deployment.",
+        "answer": "Trace the data supply chain and identify validation, provenance and monitoring evidence."
+      }
+    ]
   },
   "ae-04": {
     "learningGoal": "Build first-principles understanding of llm security & prompt injection and apply it to a controlled security decision.",
@@ -5123,7 +5211,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of LLM Security & Prompt Injection were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of LLM Security & Prompt Injection were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "A support chatbot follows a malicious instruction hidden inside retrieved content.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "A support chatbot follows a malicious instruction hidden inside retrieved content.",
+        "answer": "Separate system instructions, user input and retrieved data and identify the trust boundary that failed."
+      }
+    ]
   },
   "ae-05": {
     "learningGoal": "Build first-principles understanding of ai agents, tools & trust boundaries and apply it to a controlled security decision.",
@@ -5165,7 +5261,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of AI Agents, Tools & Trust Boundaries were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of AI Agents, Tools & Trust Boundaries were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "An AI agent can call an external tool that modifies business records.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "An AI agent can call an external tool that modifies business records.",
+        "answer": "Identify the agent, tool, identity, authorization boundary and evidence required before allowing the action."
+      }
+    ]
   },
   "ae-06": {
     "learningGoal": "Build first-principles understanding of responsible ai, privacy & governance and apply it to a controlled security decision.",
@@ -5207,7 +5311,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of Responsible AI, Privacy & Governance were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of Responsible AI, Privacy & Governance were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "A model uses sensitive personal information to produce predictions.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "A model uses sensitive personal information to produce predictions.",
+        "answer": "Map the data lifecycle, purpose, access and governance controls and identify where privacy risk can arise."
+      }
+    ]
   },
   "ae-07": {
     "learningGoal": "Build first-principles understanding of iot, ot/ics & cyber-physical resilience and apply it to a controlled security decision.",
@@ -5249,7 +5361,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of IoT, OT/ICS & Cyber-Physical Resilience were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of IoT, OT/ICS & Cyber-Physical Resilience were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "A networked industrial controller behaves unexpectedly during a maintenance window.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "A networked industrial controller behaves unexpectedly during a maintenance window.",
+        "answer": "Prioritize safety, process state, network evidence and change records before making disruptive containment decisions."
+      }
+    ]
   },
   "ae-08": {
     "learningGoal": "Build first-principles understanding of supply chain & emerging technology risk and apply it to a controlled security decision.",
@@ -5291,7 +5411,15 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
       "Produce a short evidence artifact: scope, observations, reasoning, conclusion and limitation.",
       "State what you still do not know and one follow-up question that would improve the analysis."
     ],
-    "reflection": "If your current explanation of Supply Chain & Emerging Technology Risk were wrong, what observation or evidence would most quickly change your conclusion?"
+    "reflection": "If your current explanation of Supply Chain & Emerging Technology Risk were wrong, what observation or evidence would most quickly change your conclusion?",
+    "example": "A critical software dependency is compromised upstream.",
+    "examples": [
+      {
+        "title": "Worked scenario",
+        "body": "A critical software dependency is compromised upstream.",
+        "answer": "Trace the dependency chain, provenance, update path and detection evidence and identify where compensating controls could reduce exposure."
+      }
+    ]
   },
   "ent-01": {
     "learningGoal": "Understand capstone brief & problem framing and apply it to a realistic integration problem.",
