@@ -1,4 +1,4 @@
-const VERSION="0.8.0";
+const VERSION="0.9.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 const AI_CONFIG=window.NORTHSTAR_AI||{model:"Qwen3-0.6B-q4f16_1-MLC",provider:"WebLLM",mode:"local-browser"};
 
@@ -218,7 +218,7 @@ const views={
    ${l.dataQuality?`<div class="inset"><strong>${esc(l.dataQuality.title)}</strong><ul class="lesson-list">${(l.dataQuality.items||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
    ${Array.isArray(l.modelWorkflow)&&l.modelWorkflow.length?`<div class="inset"><strong>Model development workflow</strong><ol class="practice-steps">${l.modelWorkflow.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`:""}
    ${highlights.length?`<div class="depth-grid">${highlights.map((x,i)=>`<div class="depth-card highlight-card"><span>${i+1}</span><div><b>Key idea</b><p>${esc(x)}</p></div></div>`).join("")}</div>`:""}
-   ${plan.length?`<div class="inset"><strong>How to use your study time</strong><div class="study-plan">${plan.map((x,i)=>`<div class="plan-row"><span>${i+1}</span><div><b>${esc(x[0])}</b><small>${esc(x[1])}</small></div></div>`).join("")}</div></div>`:""}
+   ${plan.length?`<div class="inset lesson-roadmap"><div class="roadmap-head"><div><span class="eyebrow">Lesson roadmap</span><strong>How to use your study time</strong><p class="subtitle">These are time-boxed study blocks, not separate lessons. The actual teaching, examples, practice and assessment are provided in this lesson.</p></div><span class="badge">${plan.reduce((n,x)=>n+(Number(String(x[1]||"").match(/\\d+/)?.[0])||0),0)} min</span></div><div class="study-plan">${plan.map((x,i)=>`<div class="plan-row"><span>${i+1}</span><div><b>${esc(x[0])}</b><small>${esc(x[1])}</small></div><span class="roadmap-state">Study block</span></div>`).join("")}</div></div>`:""}
    ${deepLessonBlocks(l)}
    <div><h2>What to understand</h2>${paragraphs.map(x=>`<p class="subtitle lesson-paragraph">${esc(x)}</p>`).join("")}</div>
    ${sections.map(s=>`<div class="inset"><strong>${esc(s.title)}</strong>${String(s.body||"").split(/\\n\\n|\n\n/).filter(Boolean).map(x=>`<p class="subtitle">${esc(x)}</p>`).join("")}</div>`).join("")}
