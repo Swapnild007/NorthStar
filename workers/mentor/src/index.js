@@ -172,6 +172,6 @@ export default {
     } catch (error) {
       console.error("NorthStar OmniRoute gateway error", error);
       return json({ error: "OmniRoute is temporarily unavailable." }, 503, origin);
-    }}
+    }
   },
 };
