@@ -1,0 +1,10 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/configuration/",
+  "name": "northstar-ai-mentor",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-22",
+  "workers_dev": true,
+  "ai": {
+    "binding": "AI"
+  }
+}
