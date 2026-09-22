@@ -116,6 +116,10 @@ export default {
       return json({ error: "Not found" }, 404, origin);
     }
 
+    if (origin !== ALLOWED_ORIGIN) {
+      return json({ error: "Origin not allowed" }, 403, origin || ALLOWED_ORIGIN);
+    }
+
     const length = Number(request.headers.get("content-length") || 0);
     if (length && length > MAX_BODY_BYTES) {
       return json({ error: "Request too large" }, 413, origin);
