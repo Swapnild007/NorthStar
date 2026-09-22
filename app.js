@@ -1,5 +1,6 @@
-const VERSION="0.5.0";
+const VERSION="0.6.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
+const AI_CONFIG=window.NORTHSTAR_AI||{model:"Qwen3-0.6B-q4f16_1-MLC",provider:"WebLLM",mode:"local-browser"};
 
 function readStoredJSON(key,fallback){
  try{
@@ -275,7 +276,7 @@ async function ensureAI(){
  aiLoading=true;aiError="";aiProgress=0;render();
  try{
    const webllm=await import("https://esm.run/@mlc-ai/web-llm@0.2.82");
-   aiEngine=await webllm.CreateMLCEngine("Qwen3-0.6B-q4f16_1-MLC",{
+   aiEngine=await webllm.CreateMLCEngine(AI_CONFIG.model,{
      initProgressCallback:p=>{aiProgress=typeof p?.progress==="number"?p.progress:aiProgress;const el=document.querySelector(".ai-status");if(el)el.textContent=`Loading local model… ${Math.round(aiProgress*100)}%`;},
    });
    aiLoading=false;render();
@@ -290,15 +291,11 @@ async function ensureAI(){
 }
 
 function mentorSystem(){
- const pathSummary=curriculum.map(c=>`${c.title}: ${(c.lessons||[]).map(l=>l.title).join(", ")}`).join("\n");
- return `You are NorthStar AI Mentor, the cybersecurity tutor inside NorthStar.
-Teach clearly to a beginner while remaining technically accurate.
-Use the NorthStar curriculum as the primary learning map:
-${pathSummary}
-Focus on defensive security, secure engineering, authorized testing and controlled labs.
-For offensive-security questions, keep guidance scoped to systems the learner owns or is explicitly authorized to test; do not provide instructions that facilitate real-world compromise, credential theft, malware, persistence, evasion, or destructive activity.
-When useful, structure answers as concept, example, practice, and check.
-Do not claim access to NorthStar backend systems or external user data.`;
+ const pathSummary=curriculum.map(c=>c.title+": "+(c.lessons||[]).map(l=>l.title).join(", ")).join("\n");
+ const current=state.route==="lesson"?curriculum[state.selectedCourse]?.lessons?.[state.selectedLesson]:null;
+ const currentContext=current?"Current lesson: "+current.title+". Objective: "+(current.objective||"Not specified")+". Concepts: "+(current.concepts||[]).join(", "):"No lesson is currently open.";
+ const progress="Learner progress: "+completedCount()+" of "+totalLessons()+" lessons completed.";
+ return "You are NorthStar AI Mentor, the cybersecurity tutor inside NorthStar.\nTeach clearly to a true beginner while remaining technically accurate. Never assume prior knowledge when the learner signals confusion.\n"+currentContext+"\n"+progress+"\nUse the NorthStar curriculum as the primary learning map:\n"+pathSummary+"\nTeaching protocol: diagnose what the learner understands; explain from first principles; use a concrete example; ask one short check question when useful; connect the concept to the next prerequisite or skill. Do not overwhelm the learner with unexplained jargon.\nFor labs, prefer hints and investigation questions before a complete solution. Distinguish simulated exercises from real execution.\nFocus on defensive security, secure engineering, authorized testing and controlled labs. For offensive-security questions, keep guidance scoped to systems the learner owns or is explicitly authorized to test; do not provide instructions that facilitate real-world compromise, credential theft, malware, persistence, evasion, or destructive activity.\nDo not claim access to NorthStar backend systems, private files, accounts, or external user data. The current AI runtime is "+(AI_CONFIG.mode||"local-browser")+" using "+(AI_CONFIG.model||"configured model")+"."; 
 }
 
 async function askNorthStar(q){
