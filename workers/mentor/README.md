@@ -1,49 +1,79 @@
 # NorthStar AI Mentor Worker
 
-This Worker is the server-side AI gateway for the NorthStar GitHub Pages frontend.
+This Worker is the cloud inference boundary for the NorthStar Mentor.
 
 ## Architecture
 
-GitHub Pages frontend -> Cloudflare Worker -> OmniRoute -> OmniRoute-selected model
+`GitHub Pages → NorthStar Mentor Worker → OmniRoute → model provider`
 
-The model is never downloaded to the learner's phone. The Worker owns the OmniRoute binding, and the browser only sends HTTPS requests to the Worker.
+If `OMNIROUTE_BASE_URL` is not configured, the Worker uses the Cloudflare Workers AI binding as a cloud fallback. The learner's device never stores or runs an LLM.
 
-## Deploy manually
+The current fallback model is `@cf/qwen/qwen3.8-27b`, a Cloudflare-hosted Qwen 3.8 27B model with reasoning and function-calling support. Cloudflare documents the model and Workers AI binding here:
+- https://developers.cloudflare.com/workers-ai/models/qwen3.8-27b/
+- https://developers.cloudflare.com/workers-ai/configuration/bindings/
+
+## Required Worker configuration
+
+### Cloudflare Workers AI fallback
+
+The existing `wrangler.jsonc` already contains the `AI` binding. Deploying the Worker with that binding gives the mentor a cloud inference path.
+
+### Optional OmniRoute
+
+For the provider-neutral route, configure Worker secrets/variables:
+
+- `OMNIROUTE_BASE_URL` = private OmniRoute gateway URL
+- `OMNIROUTE_TOKEN` = gateway authentication token
+
+Never put either value in the GitHub Pages frontend.
+
+## Deploy
 
 From this directory:
 
 ```bash
+npm install
+npx wrangler login
 npx wrangler deploy
 ```
 
-The first deployment will use a `workers.dev` URL. If you deploy manually rather than through GitHub Actions, copy that Worker URL into `data/ai.js` as `endpoint`.
+The deployment will produce a Worker URL similar to:
 
-## Required Cloudflare setup
+`https://northstar-ai-mentor.<your-workers-subdomain>.workers.dev`
 
-1. Create/sign in to a Cloudflare account.
-2. Deploy OmniRoute and expose its OpenAI-compatible endpoint to the Worker.
-3. Add repository secrets:
-   - `CLOUDFLARE_API_TOKEN`
-   - `CLOUDFLARE_ACCOUNT_ID`
-4. Run the **Deploy NorthStar AI Mentor** GitHub Actions workflow.
-5. The workflow deploys the Worker, resolves the account `workers.dev` subdomain, and automatically writes the public Worker URL into `data/ai.js`.
+Check:
 
-The Worker itself does not require a model API key. The OmniRoute configuration is the server-side connection to OmniRoute.
+`GET /health`
 
-## Routes
+Then set that exact Worker URL as `endpoint` in `data/ai.js` in the main NorthStar repository.
 
-- `GET /health` -> deployment/inference health metadata.
-- `POST /v1/chat/completions` -> streamed mentor responses.
-- `OPTIONS` -> CORS preflight.
+## Frontend contract
 
-Only the NorthStar GitHub Pages origin is allowed by default.
+The browser calls:
 
-## Privacy
+`POST <endpoint>/v1/chat/completions`
 
-The Worker does not write conversation data to KV, R2, D1, Durable Objects, or another persistence service. The browser keeps its own chat history in localStorage.
+with:
 
-Cloudflare states that OmniRoute customer content is not used to train the OmniRoute models or improve Cloudflare/third-party services unless explicit consent is provided. Review the current Cloudflare data-use terms before production deployment.
+```json
+{
+  "messages": [],
+  "mentor": {
+    "mode": "teacher",
+    "classification": "concept",
+    "context": {}
+  }
+}
+```
 
-## Worker configuration
+The Worker adds the NorthStar teaching contract and learner context server-side before sending the request to the cloud model.
 
-Set `OMNIROUTE_BASE_URL` and optional `OMNIROUTE_TOKEN` as Cloudflare Worker secrets. Do not put them in the frontend. The frontend uses model `auto`.
+## Security
+
+- No API keys in the frontend.
+- No model weights on the device.
+- CORS is restricted to the NorthStar GitHub Pages origin.
+- Request size and message length are bounded.
+- CyberRange context is treated as simulated evidence.
+- The mentor must not claim access to private device, account, network or file data.
+- Offensive-security coaching is constrained to authorized, controlled environments.
