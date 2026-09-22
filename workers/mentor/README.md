@@ -1,35 +1,23 @@
 # NorthStar AI Mentor Worker
 
-This Worker is the cloud inference boundary for the NorthStar Mentor.
+This Worker is the NorthStar AI Gateway inside the **NorthStar repository**. It owns the NorthStar mentor contract and securely forwards inference to OmniRoute.
 
 ## Architecture
 
-`GitHub Pages → NorthStar Mentor Worker → OmniRoute → model provider`
+`GitHub Pages → NorthStar AI Gateway (this Worker) → OmniRoute → model provider`
 
-If `OMNIROUTE_BASE_URL` is not configured, the Worker uses the Cloudflare Workers AI binding as a cloud fallback. The learner's device never stores or runs an LLM.
-
-The current fallback model is `@cf/qwen/qwen3.8-27b`, a Cloudflare-hosted Qwen 3.8 27B model with reasoning and function-calling support. Cloudflare documents the model and Workers AI binding here:
-- https://developers.cloudflare.com/workers-ai/models/qwen3.8-27b/
-- https://developers.cloudflare.com/workers-ai/configuration/bindings/
+NorthStar does not run or store an LLM on the learner's device. The browser never receives an OmniRoute credential or provider API key.
 
 ## Required Worker configuration
 
-### Cloudflare Workers AI fallback
+Configure these as Worker secrets/variables:
 
-The existing `wrangler.jsonc` already contains the `AI` binding. Deploying the Worker with that binding gives the mentor a cloud inference path.
+- `OMNIROUTE_BASE_URL` = the private OmniRoute gateway URL
+- `OMNIROUTE_TOKEN` = the OmniRoute authentication token, if required
 
-### Optional OmniRoute
-
-For the provider-neutral route, configure Worker secrets/variables:
-
-- `OMNIROUTE_BASE_URL` = private OmniRoute gateway URL
-- `OMNIROUTE_TOKEN` = gateway authentication token
-
-Never put either value in the GitHub Pages frontend.
+OmniRoute remains the only model/provider routing layer. There is **no direct Cloudflare Workers AI fallback**.
 
 ## Deploy
-
-From this directory:
 
 ```bash
 npm install
@@ -37,41 +25,22 @@ npx wrangler login
 npx wrangler deploy
 ```
 
-The deployment will produce a Worker URL similar to:
+After deployment, check `GET /health`.
 
-`https://northstar-ai-mentor.<your-workers-subdomain>.workers.dev`
-
-Check:
-
-`GET /health`
-
-Then set that exact Worker URL as `endpoint` in `data/ai.js` in the main NorthStar repository.
+Then set the deployed Worker URL as `endpoint` in `data/ai.js`.
 
 ## Frontend contract
 
-The browser calls:
+The browser calls `POST <endpoint>/v1/chat/completions` with `messages` and a `mentor` object containing mode, classification and NorthStar learning context.
 
-`POST <endpoint>/v1/chat/completions`
-
-with:
-
-```json
-{
-  "messages": [],
-  "mentor": {
-    "mode": "teacher",
-    "classification": "concept",
-    "context": {}
-  }
-}
-```
-
-The Worker adds the NorthStar teaching contract and learner context server-side before sending the request to the cloud model.
+The gateway adds the NorthStar teaching contract and learner context server-side before sending the request to OmniRoute.
 
 ## Security
 
 - No API keys in the frontend.
 - No model weights on the device.
+- No direct model invocation from the browser.
+- OmniRoute credentials remain server-side.
 - CORS is restricted to the NorthStar GitHub Pages origin.
 - Request size and message length are bounded.
 - CyberRange context is treated as simulated evidence.
