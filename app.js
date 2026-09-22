@@ -607,45 +607,46 @@ function mentorMode(){
 function mentorContextPayload(){
  const current=state.route==="lesson"?curriculum[state.selectedCourse]?.lessons?.[state.selectedLesson]:null;
  const learner=learnerState();
- const mastery=current?lessonMastery(current.id):overallMastery();
- const attempts=current?Number(learner.attempts?.[current.id]||0):Object.values(learner.attempts||{}).reduce((n,v)=>n+Number(v||0),0);
- const checks=current?Number(learner.checks?.[current.id]||0):Object.keys(learner.checks||{}).length;
- let lab=null,labScoreValue=0;
+ const currentId=current?.id||"";
+ const mastery=Number(learner.mastery?.[currentId]||0);
+ const attempts=Number(learner.attempts?.[currentId]||0);
+ const checks=Number(learner.checks?.[currentId]?.score||learner.checks?.[currentId]||0);
+ let lab=null,labWorkspace=null,labDetails=null;
  if(state.route==="lab"){
-  const l=labs[state.selectedLab];
-  if(l){
-   const d=getLabDetails(l.id),w=cyberToolState(l.id),s=labScore(l,d,w);
-   lab={id:l.id,title:l.title,track:l.track,checkpointCount:d.checkpoints.length,answeredCheckpoints:d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length,evidenceEntries:d.evidence.slice(0,8),lockedEvidence:(w.locker||[]).length,finding:w.finding||{}};
-   labScoreValue=s.total;
+  lab=labs[state.selectedLab]||null;
+  if(lab){
+   labWorkspace=cyberToolState(lab.id);
+   labDetails=getLabDetails(lab.id);
   }
  }
- const context={
-  lesson:current?.title||"No active lesson",
-  module:curriculum[state.selectedCourse]?.title||"None",
-  objective:current?.objective||current?.learningGoal||"No active lesson objective",
-  prerequisite:current?.prerequisite||"Not specified",
-  concepts:Array.isArray(current?.concepts)?current.concepts.slice(0,8):[],
-  mastery,attempts,checks,labScore:labScoreValue
- };
  if(window.NORTHSTAR_MENTOR_ENGINE?.buildContext){
   try{
-   const built=window.NORTHSTAR_MENTOR_ENGINE.buildContext({
+   return window.NORTHSTAR_MENTOR_ENGINE.buildContext({
     lesson:current||null,
     course:curriculum[state.selectedCourse]||null,
-    learner:{mastery,attempts,checks},
-    lab:state.route==="lab"?labs[state.selectedLab]:null,
-    labWorkspace:state.route==="lab"?labWorkspace(labs[state.selectedLab]?.id||""):null,
-    labDetails:state.route==="lab"?getLabDetails(labs[state.selectedLab]?.id||""):null
+    learner:{
+     mastery:{[currentId]:mastery},
+     attempts:{[currentId]:attempts},
+     checks:{[currentId]:checks}
+    },
+    lab,
+    labWorkspace,
+    labDetails
    });
-   if(built?.lessonId)context.lessonId=built.lessonId;
-   if(built?.diagnosis)context.diagnosis=built.diagnosis;
-   if(built?.lab)context.lab=built.lab;
-  }catch(error){console.warn("NorthStar mentor context bridge skipped.",error)}
+  }catch(error){
+   console.warn("NorthStar mentor context engine fallback.",error);
+  }
  }
- if(lab)context.lab=lab;
- return context;
+ return {
+  lessonId:currentId||null,
+  module:curriculum[state.selectedCourse]?.title||"",
+  lesson:current?.title||"No active lesson",
+  objective:current?.objective||current?.learningGoal||"",
+  prerequisite:current?.prerequisite||"",
+  concepts:Array.isArray(current?.concepts)?current.concepts.slice(0,10):[],
+  mastery,attempts,checks,labScore:Number(labWorkspace?.assessment?.total||0)
+ };
 }
-
 function mentorClassification(q){
  return window.NORTHSTAR_MENTOR_ENGINE?.classify?.(q)||"general";
 }
@@ -670,6 +671,7 @@ async function askNorthStar(q){
  aiLoading=true;aiError="";render();
  const history=state.messages.slice(-14).map(m=>({role:m[0]==="user"?"user":"assistant",content:m[1]}));
  const mentor=mentorContextPayload();
+ const classification=mentorClassification(q);
  try{
   const localMode=Boolean(AI_CONFIG.allowLocalEndpoint && /^(localhost|127\.0\.0\.1)$/.test(location.hostname));
   let omniKey="";
@@ -682,17 +684,13 @@ async function askNorthStar(q){
   }
   if(localMode && !omniKey)throw new Error("OmniRoute API key is required for local NorthStar.");
 
-  const systemPrompt=[
-   "You are NorthStar Mentor, a rigorous cybersecurity tutor and lab mentor.",
-   "Teach a beginner progressively toward professional security competence.",
-   "Explain unfamiliar terminology before using it heavily.",
-   "Use concrete examples, analogies, checks for understanding, and safe authorized lab guidance.",
-   "Do not pretend simulated lab evidence is real-world telemetry.",
-   "When the learner is confused, diagnose the missing prerequisite and reteach it.",
-   "When the learner asks for an answer to a practice question, explain the reasoning rather than only giving the answer.",
-   "Never provide instructions intended to compromise systems without authorization.",
-   "Current NorthStar learning context: "+JSON.stringify(mentor)
-  ].join("\n");
+  const systemPrompt=window.NORTHSTAR_MENTOR_ENGINE?.system
+   ? window.NORTHSTAR_MENTOR_ENGINE.system({mode:mentorMode(),context:{...mentor,classification}})
+   : [
+      "You are NorthStar Mentor, a rigorous cybersecurity tutor.",
+      "Teach from first principles, diagnose misconceptions, and use safe authorized labs.",
+      "Current NorthStar learning context: "+JSON.stringify({...mentor,classification})
+     ].join("\n");
 
   const headers={"Content-Type":"application/json"};
   if(omniKey)headers.Authorization="Bearer "+omniKey;
