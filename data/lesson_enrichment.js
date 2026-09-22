@@ -5949,4 +5949,4 @@ const NORTHSTAR_LESSON_ENRICHMENT = {
     ],
     "reflection": "If your current explanation of Final Defense & Reflection were wrong, what observation or evidence would most quickly change your conclusion?"
   }
-};\n
+};
