@@ -3450,17 +3450,18 @@ const NORTHSTAR_CURRICULUM = [
         "title": "TCP/IP Mental Model",
         "objective": "Use layers, addresses, ports and protocols to interpret network traffic.",
         "time": "2.5–3 hours",
-        "read": "A practical TCP/IP model separates link delivery, IP routing, transport behavior and application protocols. Analysts use source/destination addresses, ports, flags and payload metadata to reason about traffic.",
-        "practice": "For a TCP connection, identify the source IP, destination IP, source port, destination port and transport protocol.",
+        "read": "Network communication uses layers so application meaning can be separated from transport, routing and local delivery.\n\nEncapsulate an HTTPS request through HTTP data, TCP, IP and Ethernet; decapsulate at the receiver.\n\nLayer-specific controls have different visibility and failure modes; encrypted payloads do not eliminate metadata and flow evidence.",
+        "practice": "Complete a controlled tcp/ip mental model exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Which sequence represents normal TCP connection establishment?",
+          "q": "Which approach best demonstrates understanding of TCP/IP Mental Model?",
           "options": [
-            "SYN → SYN/ACK → ACK",
-            "ACK → SYN → FIN",
-            "SYN → ACK → RST",
-            "FIN → SYN → ACK"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "SYN → SYN/ACK → ACK"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: TCP/IP Mental Model is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -3489,75 +3490,171 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this TCP/IP Mental Model scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain TCP/IP Mental Model in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of TCP/IP Mental Model was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a tcp/ip mental model investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind TCP/IP Mental Model?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in TCP/IP Mental Model?",
+            "a": "Encapsulate an HTTPS request through HTTP data, TCP, IP and Ethernet; decapsulate at the receiver.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "Georgia Tech Cybersecurity",
-            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break TCP/IP Mental Model into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Network communication uses layers so application meaning can be separated from transport, routing and local delivery."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Encapsulate an HTTPS request through HTTP data, TCP, IP and Ethernet; decapsulate at the receiver."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Layer-specific controls have different visibility and failure modes; encrypted payloads do not eliminate metadata and flow evidence."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For TCP/IP Mental Model, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Encapsulation",
+          "Ethernet",
+          "ARP",
+          "IP",
+          "TCP",
+          "Application protocol",
+          "Layering"
+        ],
+        "glossary": [
+          [
+            "Encapsulation",
+            "A core networking & network security term used to analyze tcp/ip mental model."
+          ],
+          [
+            "Ethernet",
+            "A core networking & network security term used to analyze tcp/ip mental model."
+          ],
+          [
+            "ARP",
+            "A core networking & network security term used to analyze tcp/ip mental model."
+          ],
+          [
+            "IP",
+            "A core networking & network security term used to analyze tcp/ip mental model."
+          ],
+          [
+            "TCP",
+            "A core networking & network security term used to analyze tcp/ip mental model."
+          ],
+          [
+            "Application protocol",
+            "A core networking & network security term used to analyze tcp/ip mental model."
+          ],
+          [
+            "Layering",
+            "A core networking & network security term used to analyze tcp/ip mental model."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving tcp/ip mental model. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review tcp/ip mental model under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — TCP/IP Mental Model: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Network communication uses layers so application meaning can be separated from transport, routing and local delivery.",
+          "Encapsulate an HTTPS request through HTTP data, TCP, IP and Ethernet; decapsulate at the receiver.",
+          "Layer-specific controls have different visibility and failure modes; encrypted payloads do not eliminate metadata and flow evidence.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "TCP/IP Mental Model — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "ns-02",
         "title": "IPv4/IPv6 Addressing & Subnets",
         "objective": "Read IPv4 addresses, CIDR notation and basic subnet boundaries.",
         "time": "2.5–3 hours",
-        "read": "CIDR notation expresses a network prefix and host portion. Subnetting lets organizations separate broadcast domains and apply different routing and security policies.",
-        "practice": "Explain what /24 means in an IPv4 network.",
+        "read": "IPv4 subnetting divides an address space into network and host portions using a prefix length.\n\nConvert common CIDR prefixes to ranges and determine network, broadcast and usable hosts.\n\nSubnet boundaries shape routing and segmentation; poor addressing can create unnecessary reachability.",
+        "practice": "Complete a controlled ipv4/ipv6 addressing & subnets exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "In 192.168.10.0/24, how many bits form the network prefix?",
+          "q": "Which approach best demonstrates understanding of IPv4/IPv6 Addressing & Subnets?",
           "options": [
-            "8",
-            "16",
-            "24",
-            "32"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "24"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: IPv4 Addressing & Subnets is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -3586,75 +3683,171 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this IPv4 Addressing & Subnets scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain IPv4 Addressing & Subnets in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of IPv4 Addressing & Subnets was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a ipv4/ipv6 addressing & subnets investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind IPv4 Addressing & Subnets?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in IPv4/IPv6 Addressing & Subnets?",
+            "a": "Convert common CIDR prefixes to ranges and determine network, broadcast and usable hosts.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "Georgia Tech Cybersecurity",
-            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break IPv4/IPv6 Addressing & Subnets into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "IPv4 subnetting divides an address space into network and host portions using a prefix length."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Convert common CIDR prefixes to ranges and determine network, broadcast and usable hosts."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Subnet boundaries shape routing and segmentation; poor addressing can create unnecessary reachability."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For IPv4/IPv6 Addressing & Subnets, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "IPv4",
+          "CIDR",
+          "Subnet mask",
+          "Network address",
+          "Broadcast",
+          "Gateway",
+          "Host range"
+        ],
+        "glossary": [
+          [
+            "IPv4",
+            "A core networking & network security term used to analyze ipv4/ipv6 addressing & subnets."
+          ],
+          [
+            "CIDR",
+            "A core networking & network security term used to analyze ipv4/ipv6 addressing & subnets."
+          ],
+          [
+            "Subnet mask",
+            "A core networking & network security term used to analyze ipv4/ipv6 addressing & subnets."
+          ],
+          [
+            "Network address",
+            "A core networking & network security term used to analyze ipv4/ipv6 addressing & subnets."
+          ],
+          [
+            "Broadcast",
+            "A core networking & network security term used to analyze ipv4/ipv6 addressing & subnets."
+          ],
+          [
+            "Gateway",
+            "A core networking & network security term used to analyze ipv4/ipv6 addressing & subnets."
+          ],
+          [
+            "Host range",
+            "A core networking & network security term used to analyze ipv4/ipv6 addressing & subnets."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving ipv4/ipv6 addressing & subnets. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review ipv4/ipv6 addressing & subnets under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — IPv4/IPv6 Addressing & Subnets: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "IPv4 subnetting divides an address space into network and host portions using a prefix length.",
+          "Convert common CIDR prefixes to ranges and determine network, broadcast and usable hosts.",
+          "Subnet boundaries shape routing and segmentation; poor addressing can create unnecessary reachability.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "IPv4/IPv6 Addressing & Subnets — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "ns-03",
         "title": "TCP, UDP, Ports & Application Protocols",
         "objective": "Compare transport behavior and interpret common port usage.",
         "time": "2.5–3 hours",
-        "read": "TCP provides connection-oriented reliable delivery. UDP is connectionless and has lower protocol overhead. A port identifies a transport endpoint associated with a process or service.",
-        "practice": "Explain why a DNS query can commonly use UDP while a web application may use TCP.",
+        "read": "TCP provides reliable ordered byte-stream delivery while UDP provides connectionless datagrams.\n\nTrace SYN/SYN-ACK/ACK, sequence numbers and retransmission; contrast with UDP request/response behavior.\n\nUnexpected listening ports and connection states can reveal exposure, but port numbers alone are not proof of malicious activity.",
+        "practice": "Complete a controlled tcp, udp, ports & application protocols exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Which transport protocol is connection-oriented?",
+          "q": "Which approach best demonstrates understanding of TCP, UDP, Ports & Application Protocols?",
           "options": [
-            "UDP",
-            "TCP",
-            "ICMP",
-            "ARP"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "TCP"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: TCP, UDP & Ports is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -3683,75 +3876,171 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this TCP, UDP & Ports scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain TCP, UDP & Ports in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of TCP, UDP & Ports was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a tcp, udp, ports & application protocols investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind TCP, UDP & Ports?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in TCP, UDP, Ports & Application Protocols?",
+            "a": "Trace SYN/SYN-ACK/ACK, sequence numbers and retransmission; contrast with UDP request/response behavior.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "Georgia Tech Cybersecurity",
-            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break TCP, UDP, Ports & Application Protocols into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "TCP provides reliable ordered byte-stream delivery while UDP provides connectionless datagrams."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Trace SYN/SYN-ACK/ACK, sequence numbers and retransmission; contrast with UDP request/response behavior."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Unexpected listening ports and connection states can reveal exposure, but port numbers alone are not proof of malicious activity."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For TCP, UDP, Ports & Application Protocols, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "TCP",
+          "UDP",
+          "Port",
+          "Socket",
+          "SYN",
+          "ACK",
+          "Connection state"
+        ],
+        "glossary": [
+          [
+            "TCP",
+            "A core networking & network security term used to analyze tcp, udp, ports & application protocols."
+          ],
+          [
+            "UDP",
+            "A core networking & network security term used to analyze tcp, udp, ports & application protocols."
+          ],
+          [
+            "Port",
+            "A core networking & network security term used to analyze tcp, udp, ports & application protocols."
+          ],
+          [
+            "Socket",
+            "A core networking & network security term used to analyze tcp, udp, ports & application protocols."
+          ],
+          [
+            "SYN",
+            "A core networking & network security term used to analyze tcp, udp, ports & application protocols."
+          ],
+          [
+            "ACK",
+            "A core networking & network security term used to analyze tcp, udp, ports & application protocols."
+          ],
+          [
+            "Connection state",
+            "A core networking & network security term used to analyze tcp, udp, ports & application protocols."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving tcp, udp, ports & application protocols. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review tcp, udp, ports & application protocols under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — TCP, UDP, Ports & Application Protocols: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "TCP provides reliable ordered byte-stream delivery while UDP provides connectionless datagrams.",
+          "Trace SYN/SYN-ACK/ACK, sequence numbers and retransmission; contrast with UDP request/response behavior.",
+          "Unexpected listening ports and connection states can reveal exposure, but port numbers alone are not proof of malicious activity.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "TCP, UDP, Ports & Application Protocols — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "ns-04",
         "title": "Routing, NAT, Firewalls & Segmentation",
         "objective": "Understand policy enforcement and trust-zone separation.",
         "time": "2.5–3 hours",
-        "read": "Firewalls enforce traffic policy based on attributes such as addresses, ports, protocols and application identity. Segmentation limits lateral movement and reduces unnecessary trust.",
-        "practice": "Create a policy that allows an application tier to reach a database only on its required service port.",
+        "read": "A firewall evaluates traffic against policy, while segmentation limits which zones can communicate.\n\nTranslate a business requirement into source, destination, protocol, port, action and logging; explain default-deny.\n\nRules must be tested, logged, reviewed and aligned with application dependencies; broad rules increase blast radius.",
+        "practice": "Complete a controlled routing, nat, firewalls & segmentation exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Why segment a database from a user network?",
+          "q": "Which approach best demonstrates understanding of Routing, NAT, Firewalls & Segmentation?",
           "options": [
-            "To reduce unnecessary trust and lateral movement",
-            "To make passwords longer",
-            "To increase monitor brightness",
-            "To remove all logging"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "To reduce unnecessary trust and lateral movement"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Firewalls & Network Segmentation is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -3780,75 +4069,171 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this Firewalls & Network Segmentation scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Firewalls & Network Segmentation in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Firewalls & Network Segmentation was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a routing, nat, firewalls & segmentation investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Firewalls & Network Segmentation?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Routing, NAT, Firewalls & Segmentation?",
+            "a": "Translate a business requirement into source, destination, protocol, port, action and logging; explain default-deny.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "Georgia Tech Cybersecurity",
-            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Routing, NAT, Firewalls & Segmentation into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "A firewall evaluates traffic against policy, while segmentation limits which zones can communicate."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Translate a business requirement into source, destination, protocol, port, action and logging; explain default-deny."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Rules must be tested, logged, reviewed and aligned with application dependencies; broad rules increase blast radius."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Routing, NAT, Firewalls & Segmentation, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Firewall",
+          "ACL",
+          "Zone",
+          "Ingress",
+          "Egress",
+          "Default deny",
+          "Segmentation"
+        ],
+        "glossary": [
+          [
+            "Firewall",
+            "A core networking & network security term used to analyze routing, nat, firewalls & segmentation."
+          ],
+          [
+            "ACL",
+            "A core networking & network security term used to analyze routing, nat, firewalls & segmentation."
+          ],
+          [
+            "Zone",
+            "A core networking & network security term used to analyze routing, nat, firewalls & segmentation."
+          ],
+          [
+            "Ingress",
+            "A core networking & network security term used to analyze routing, nat, firewalls & segmentation."
+          ],
+          [
+            "Egress",
+            "A core networking & network security term used to analyze routing, nat, firewalls & segmentation."
+          ],
+          [
+            "Default deny",
+            "A core networking & network security term used to analyze routing, nat, firewalls & segmentation."
+          ],
+          [
+            "Segmentation",
+            "A core networking & network security term used to analyze routing, nat, firewalls & segmentation."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving routing, nat, firewalls & segmentation. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review routing, nat, firewalls & segmentation under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Routing, NAT, Firewalls & Segmentation: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "A firewall evaluates traffic against policy, while segmentation limits which zones can communicate.",
+          "Translate a business requirement into source, destination, protocol, port, action and logging; explain default-deny.",
+          "Rules must be tested, logged, reviewed and aligned with application dependencies; broad rules increase blast radius.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Routing, NAT, Firewalls & Segmentation — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "ns-05",
         "title": "DNS, DHCP & Packet Analysis Workflow",
         "objective": "Build a repeatable workflow for interpreting controlled packet captures.",
         "time": "2 hours",
-        "read": "Packet analysis should begin with scope, then establish the baseline, identify endpoints and protocols, isolate unusual behavior and document evidence. Never infer intent from a single packet alone.",
-        "practice": "Create a five-step packet triage checklist.",
+        "read": "Packet analysis is evidence-driven inspection of frames, protocols, timing and flows.\n\nFilter a controlled capture, identify endpoints, decode the protocol, follow a flow and correlate timestamps.\n\nCaptures can be incomplete and encrypted; distinguish observed packet facts from host/application conclusions.",
+        "practice": "Complete a controlled dns, dhcp & packet analysis workflow exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "What should come before interpreting an anomaly?",
+          "q": "Which approach best demonstrates understanding of DNS, DHCP & Packet Analysis Workflow?",
           "options": [
-            "Establish scope and baseline",
-            "Delete the capture",
-            "Disable logging",
-            "Assume compromise"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "Establish scope and baseline"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Packet Analysis Workflow is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -3877,58 +4262,153 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this Packet Analysis Workflow scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Packet Analysis Workflow in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Packet Analysis Workflow was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a dns, dhcp & packet analysis workflow investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Packet Analysis Workflow?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in DNS, DHCP & Packet Analysis Workflow?",
+            "a": "Filter a controlled capture, identify endpoints, decode the protocol, follow a flow and correlate timestamps.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "Georgia Tech Cybersecurity",
-            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break DNS, DHCP & Packet Analysis Workflow into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Packet analysis is evidence-driven inspection of frames, protocols, timing and flows."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Filter a controlled capture, identify endpoints, decode the protocol, follow a flow and correlate timestamps."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Captures can be incomplete and encrypted; distinguish observed packet facts from host/application conclusions."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For DNS, DHCP & Packet Analysis Workflow, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Packet capture",
+          "Frame",
+          "Flow",
+          "Payload",
+          "Filter",
+          "Timestamp",
+          "Correlation"
+        ],
+        "glossary": [
+          [
+            "Packet capture",
+            "A core networking & network security term used to analyze dns, dhcp & packet analysis workflow."
+          ],
+          [
+            "Frame",
+            "A core networking & network security term used to analyze dns, dhcp & packet analysis workflow."
+          ],
+          [
+            "Flow",
+            "A core networking & network security term used to analyze dns, dhcp & packet analysis workflow."
+          ],
+          [
+            "Payload",
+            "A core networking & network security term used to analyze dns, dhcp & packet analysis workflow."
+          ],
+          [
+            "Filter",
+            "A core networking & network security term used to analyze dns, dhcp & packet analysis workflow."
+          ],
+          [
+            "Timestamp",
+            "A core networking & network security term used to analyze dns, dhcp & packet analysis workflow."
+          ],
+          [
+            "Correlation",
+            "A core networking & network security term used to analyze dns, dhcp & packet analysis workflow."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving dns, dhcp & packet analysis workflow. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review dns, dhcp & packet analysis workflow under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — DNS, DHCP & Packet Analysis Workflow: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Packet analysis is evidence-driven inspection of frames, protocols, timing and flows.",
+          "Filter a controlled capture, identify endpoints, decode the protocol, follow a flow and correlate timestamps.",
+          "Captures can be incomplete and encrypted; distinguish observed packet facts from host/application conclusions.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "DNS, DHCP & Packet Analysis Workflow — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       }
     ],
     "meta": {
@@ -3983,63 +4463,49 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand how Linux users, groups, permissions, processes and services work together to protect a computer.",
         "time": "3–4 hours",
         "prerequisite": "Security Mental Models + Identity & Access Fundamentals",
-        "read": "Linux is an operating system family widely used on servers, cloud workloads, security tools and many other systems. Before learning Linux security, think of a Linux machine as a collection of identities, files, running programs and network-facing services. Security means making sure the right person or program can perform the right action, while reducing unnecessary access and keeping useful records of what happened.\n\nStart with four questions. Who is acting? What resource are they trying to use? What action are they trying to perform? What program or service is involved? Linux answers these questions through users, groups, file permissions, process identities and service configuration.\n\nA user represents an identity. A group is a way to organize identities and grant shared permissions. A file or directory has an owner and group, plus permissions that determine whether the owner, group members and other users may read, write or execute it. A process is a running instance of a program and normally runs with an identity. A service is a program intended to provide functionality continuously or in the background, such as a web server or SSH server.\n\nThe security principle connecting these concepts is least privilege: give a person or process only the access required to perform its job. If a web application only needs to read one directory, it should not run with unrestricted administrator privileges. If a support user only needs to inspect logs, that user should not automatically receive permission to modify system configuration.\n\nPermissions are not the whole of Linux security. Secure configuration also includes patching, authentication controls, service exposure, logging, backups, secrets protection and system hardening. The goal is not to memorize commands first; it is to understand what each security control is trying to achieve.",
+        "read": "Linux security combines users, groups, permissions, processes, services, filesystems and privileged operations.\n\nUse ownership and permission bits to reason about who can read, write or execute resources; explain sudo and root.\n\nLeast privilege, patching, service minimization and auditability reduce host attack surface.",
         "concepts": [
-          "Operating system",
+          "Linux",
+          "Root",
           "User",
           "Group",
-          "Root / administrator",
-          "File permissions",
-          "Process",
+          "Permission",
+          "Sudo",
           "Service",
-          "Least privilege",
-          "Attack surface",
-          "Audit trail"
+          "Filesystem"
         ],
         "glossary": [
           [
-            "Operating system",
-            "The software that manages the computer’s hardware and provides the environment in which programs run."
-          ],
-          [
-            "User",
-            "An identity representing a person or account that can interact with the system."
-          ],
-          [
-            "Group",
-            "A collection of users used to manage shared permissions."
+            "Linux",
+            "A core linux, systems & cloud term used to analyze linux security fundamentals."
           ],
           [
             "Root",
-            "Linux’s most powerful administrative identity; it can perform actions that ordinary users cannot."
+            "A core linux, systems & cloud term used to analyze linux security fundamentals."
+          ],
+          [
+            "User",
+            "A core linux, systems & cloud term used to analyze linux security fundamentals."
+          ],
+          [
+            "Group",
+            "A core linux, systems & cloud term used to analyze linux security fundamentals."
           ],
           [
             "Permission",
-            "A rule controlling whether an identity may read, write or execute a resource."
+            "A core linux, systems & cloud term used to analyze linux security fundamentals."
           ],
           [
-            "Process",
-            "A program that is currently running."
+            "Sudo",
+            "A core linux, systems & cloud term used to analyze linux security fundamentals."
           ],
           [
             "Service",
-            "A program designed to provide a function, often continuously or in the background."
-          ],
-          [
-            "Least privilege",
-            "Give an identity only the access it needs, and no more."
-          ],
-          [
-            "Attack surface",
-            "The set of exposed ways a system could potentially be accessed, misused or attacked."
-          ],
-          [
-            "Audit trail",
-            "Records that help reconstruct what happened, when it happened and which identity was involved."
+            "A core linux, systems & cloud term used to analyze linux security fundamentals."
           ]
         ],
         "example": "Imagine a Linux web server hosting a company website. The web application runs as a dedicated service account. Its files belong to an appropriate owner and group. Configuration files containing sensitive settings are not writable by ordinary users. The database service is not unnecessarily exposed to the public network. Administrative access is restricted and logged. If the web application is compromised, limiting its identity and permissions can reduce what the attacker can access. This is an example of containment through least privilege and segmentation.",
-        "case": "Case — Small company web server: the server has three human administrators, one web application, a database and an SSH service. Your job is to reason about the security design before touching the machine. Identify which identities should exist, which services need to be exposed, which resources each identity needs, and what activity should be logged. Then explain what could happen if the web application ran as root.",
+        "case": "Case study — Linux Security Fundamentals: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
         "mistakes": [
           "Memorizing Linux commands without understanding what security decision each command represents.",
           "Assuming root is simply a normal user with a stronger password; root has broad administrative authority and should be tightly controlled.",
@@ -4047,18 +4513,18 @@ const NORTHSTAR_CURRICULUM = [
           "Confusing a process with a user: a process is a running program, while the process operates under an identity.",
           "Assuming a system is secure merely because its firewall is enabled; host configuration, identities, services, patching and logging also matter."
         ],
-        "practice": "Build a simple security model for a fictional Linux web server. Write five sections: 1) Identities — list the human and service identities; 2) Resources — list important files, directories and data; 3) Permissions — state who should read, write or execute each resource; 4) Services — identify which services must run and which should not; 5) Evidence — identify the logs or records you would review during an investigation. Finally, answer this question in your own words: why is running an application with unnecessary administrator privileges dangerous?",
-        "evidence": "A one-page Linux security review that clearly separates identities, resources, permissions, services and evidence. Your reasoning is more important than memorizing command syntax.",
+        "practice": "Complete a controlled linux security fundamentals exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
         "check": {
-          "q": "A web application only needs to read its own application files. Which security design follows least privilege?",
+          "q": "Which approach best demonstrates understanding of Linux Security Fundamentals?",
           "options": [
-            "Run the application as root so it can access everything",
-            "Give the application a dedicated low-privilege identity with only the required file access",
-            "Give every user write access to the application directory",
-            "Disable all logging so the application runs faster"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "Give the application a dedicated low-privilege identity with only the required file access",
-          "why": "Least privilege limits the application's authority to what it actually needs. If the application is compromised, this reduces the amount of the system and data that the compromised process can directly access."
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Linux Security Fundamentals is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -4087,75 +4553,130 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this Linux Security Fundamentals scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Linux Security Fundamentals in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Linux Security Fundamentals was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a linux security fundamentals investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Linux Security Fundamentals?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Linux Security Fundamentals?",
+            "a": "Use ownership and permission bits to reason about who can read, write or execute resources; explain sudo and root.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Linux Security Fundamentals into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Linux security combines users, groups, permissions, processes, services, filesystems and privileged operations."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Use ownership and permission bits to reason about who can read, write or execute resources; explain sudo and root."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Least privilege, patching, service minimization and auditability reduce host attack surface."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Linux Security Fundamentals, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving linux security fundamentals. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review linux security fundamentals under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "takeaways": [
+          "Linux security combines users, groups, permissions, processes, services, filesystems and privileged operations.",
+          "Use ownership and permission bits to reason about who can read, write or execute resources; explain sudo and root.",
+          "Least privilege, patching, service minimization and auditability reduce host attack surface.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Linux Security Fundamentals — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "sc-02",
         "title": "Processes, Services & Isolation",
         "objective": "Recognize service exposure and process relationships.",
         "time": "2–2.5 hours",
-        "read": "A service is a long-running program that provides functionality. Security review asks which services are enabled, which identities they run under, what interfaces they expose and what dependencies they have.",
-        "practice": "Review a fictional server inventory and mark unnecessary services for removal.",
+        "read": "Processes execute code; services provide persistent functions and often create listeners or scheduled work.\n\nRead a process tree conceptually, connect PIDs to executable paths, users, resources and services.\n\nUnexpected process ancestry, persistence or listeners are investigation signals that require context.",
+        "practice": "Complete a controlled processes, services & isolation exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Why minimize unnecessary services?",
+          "q": "Which approach best demonstrates understanding of Processes, Services & Isolation?",
           "options": [
-            "To reduce attack surface",
-            "To increase attack surface",
-            "To disable backups",
-            "To hide logs"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "To reduce attack surface"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Processes & Services is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -4184,75 +4705,171 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this Processes & Services scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Processes & Services in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Processes & Services was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a processes, services & isolation investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Processes & Services?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Processes, Services & Isolation?",
+            "a": "Read a process tree conceptually, connect PIDs to executable paths, users, resources and services.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Processes, Services & Isolation into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Processes execute code; services provide persistent functions and often create listeners or scheduled work."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Read a process tree conceptually, connect PIDs to executable paths, users, resources and services."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Unexpected process ancestry, persistence or listeners are investigation signals that require context."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Processes, Services & Isolation, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Process",
+          "PID",
+          "Parent process",
+          "Daemon",
+          "Service",
+          "Listener",
+          "Process tree"
+        ],
+        "glossary": [
+          [
+            "Process",
+            "A core linux, systems & cloud term used to analyze processes, services & isolation."
+          ],
+          [
+            "PID",
+            "A core linux, systems & cloud term used to analyze processes, services & isolation."
+          ],
+          [
+            "Parent process",
+            "A core linux, systems & cloud term used to analyze processes, services & isolation."
+          ],
+          [
+            "Daemon",
+            "A core linux, systems & cloud term used to analyze processes, services & isolation."
+          ],
+          [
+            "Service",
+            "A core linux, systems & cloud term used to analyze processes, services & isolation."
+          ],
+          [
+            "Listener",
+            "A core linux, systems & cloud term used to analyze processes, services & isolation."
+          ],
+          [
+            "Process tree",
+            "A core linux, systems & cloud term used to analyze processes, services & isolation."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving processes, services & isolation. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review processes, services & isolation under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Processes, Services & Isolation: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Processes execute code; services provide persistent functions and often create listeners or scheduled work.",
+          "Read a process tree conceptually, connect PIDs to executable paths, users, resources and services.",
+          "Unexpected process ancestry, persistence or listeners are investigation signals that require context.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Processes, Services & Isolation — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "sc-03",
         "title": "Virtualization, Containers & Cloud Shared Responsibility",
         "objective": "Separate provider responsibilities from customer responsibilities.",
         "time": "2–2.5 hours",
-        "read": "Cloud security is shared. Providers secure the underlying cloud infrastructure while customers remain responsible for configurations and workloads according to the service model.",
-        "practice": "For a cloud-hosted application, list three customer-controlled security responsibilities.",
+        "read": "Cloud responsibility is divided according to service model and architecture.\n\nCompare IaaS, PaaS and SaaS and map provider/customer control for compute, network, platform, data and identity.\n\nMisconfiguration remains a major customer-side risk even when infrastructure is provider-managed.",
+        "practice": "Complete a controlled virtualization, containers & cloud shared responsibility exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Who is responsible for secure application configuration?",
+          "q": "Which approach best demonstrates understanding of Virtualization, Containers & Cloud Shared Responsibility?",
           "options": [
-            "The customer/workload owner",
-            "Only the cloud provider",
-            "The ISP",
-            "The browser vendor"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "The customer/workload owner"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Cloud Shared Responsibility is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -4281,75 +4898,171 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this Cloud Shared Responsibility scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Cloud Shared Responsibility in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Cloud Shared Responsibility was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a virtualization, containers & cloud shared responsibility investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Cloud Shared Responsibility?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Virtualization, Containers & Cloud Shared Responsibility?",
+            "a": "Compare IaaS, PaaS and SaaS and map provider/customer control for compute, network, platform, data and identity.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Virtualization, Containers & Cloud Shared Responsibility into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Cloud responsibility is divided according to service model and architecture."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Compare IaaS, PaaS and SaaS and map provider/customer control for compute, network, platform, data and identity."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Misconfiguration remains a major customer-side risk even when infrastructure is provider-managed."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Virtualization, Containers & Cloud Shared Responsibility, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "IaaS",
+          "PaaS",
+          "SaaS",
+          "Shared responsibility",
+          "Workload",
+          "Provider",
+          "Customer"
+        ],
+        "glossary": [
+          [
+            "IaaS",
+            "A core linux, systems & cloud term used to analyze virtualization, containers & cloud shared responsibility."
+          ],
+          [
+            "PaaS",
+            "A core linux, systems & cloud term used to analyze virtualization, containers & cloud shared responsibility."
+          ],
+          [
+            "SaaS",
+            "A core linux, systems & cloud term used to analyze virtualization, containers & cloud shared responsibility."
+          ],
+          [
+            "Shared responsibility",
+            "A core linux, systems & cloud term used to analyze virtualization, containers & cloud shared responsibility."
+          ],
+          [
+            "Workload",
+            "A core linux, systems & cloud term used to analyze virtualization, containers & cloud shared responsibility."
+          ],
+          [
+            "Provider",
+            "A core linux, systems & cloud term used to analyze virtualization, containers & cloud shared responsibility."
+          ],
+          [
+            "Customer",
+            "A core linux, systems & cloud term used to analyze virtualization, containers & cloud shared responsibility."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving virtualization, containers & cloud shared responsibility. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review virtualization, containers & cloud shared responsibility under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Virtualization, Containers & Cloud Shared Responsibility: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Cloud responsibility is divided according to service model and architecture.",
+          "Compare IaaS, PaaS and SaaS and map provider/customer control for compute, network, platform, data and identity.",
+          "Misconfiguration remains a major customer-side risk even when infrastructure is provider-managed.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Virtualization, Containers & Cloud Shared Responsibility — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "sc-04",
         "title": "Secure Configuration & Hardening",
         "objective": "Turn baseline requirements into measurable configuration checks.",
         "time": "2.5 hours",
-        "read": "Hardening removes unnecessary functionality, applies secure defaults, restricts administrative access, protects secrets and keeps systems patched.",
-        "practice": "Write five measurable hardening checks for a Linux server.",
+        "read": "Hardening reduces unnecessary attack surface while preserving required business functionality.\n\nInventory, baseline, change, validate, monitor drift and document exceptions.\n\nHardening must be tested and reversible; disabling a dependency without understanding it can create outages.",
+        "practice": "Complete a controlled secure configuration & hardening exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "A useful hardening check should be:",
+          "q": "Which approach best demonstrates understanding of Secure Configuration & Hardening?",
           "options": [
-            "Measurable and verifiable",
-            "Purely subjective",
-            "Impossible to test",
-            "Unrelated to risk"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "Measurable and verifiable"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Secure Configuration & Hardening is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -4378,75 +5091,166 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this Secure Configuration & Hardening scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Secure Configuration & Hardening in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Secure Configuration & Hardening was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a secure configuration & hardening investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Secure Configuration & Hardening?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Secure Configuration & Hardening?",
+            "a": "Inventory, baseline, change, validate, monitor drift and document exceptions.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Secure Configuration & Hardening into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Hardening reduces unnecessary attack surface while preserving required business functionality."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Inventory, baseline, change, validate, monitor drift and document exceptions."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Hardening must be tested and reversible; disabling a dependency without understanding it can create outages."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Secure Configuration & Hardening, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Hardening",
+          "Baseline",
+          "Configuration drift",
+          "Patch",
+          "Attack surface",
+          "Exception"
+        ],
+        "glossary": [
+          [
+            "Hardening",
+            "A core linux, systems & cloud term used to analyze secure configuration & hardening."
+          ],
+          [
+            "Baseline",
+            "A core linux, systems & cloud term used to analyze secure configuration & hardening."
+          ],
+          [
+            "Configuration drift",
+            "A core linux, systems & cloud term used to analyze secure configuration & hardening."
+          ],
+          [
+            "Patch",
+            "A core linux, systems & cloud term used to analyze secure configuration & hardening."
+          ],
+          [
+            "Attack surface",
+            "A core linux, systems & cloud term used to analyze secure configuration & hardening."
+          ],
+          [
+            "Exception",
+            "A core linux, systems & cloud term used to analyze secure configuration & hardening."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving secure configuration & hardening. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review secure configuration & hardening under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Secure Configuration & Hardening: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Hardening reduces unnecessary attack surface while preserving required business functionality.",
+          "Inventory, baseline, change, validate, monitor drift and document exceptions.",
+          "Hardening must be tested and reversible; disabling a dependency without understanding it can create outages.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Secure Configuration & Hardening — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "sc-05",
         "title": "Cloud IAM, Workload Identity & Secrets",
         "objective": "Apply least privilege to cloud identities and protect credentials.",
         "time": "2.5 hours",
-        "read": "Cloud identities should receive only required permissions. Long-lived credentials increase exposure; managed identities, short-lived credentials and centralized secret storage reduce risk.",
-        "practice": "Identify three risks of embedding a cloud API key directly in frontend code.",
+        "read": "Cloud identities and secrets authorize access to high-value resources and must have controlled lifecycles.\n\nCompare human identity, workload identity, role, token and secret store; explain rotation and revocation.\n\nLeast privilege, short-lived credentials and monitored secret access reduce blast radius.",
+        "practice": "Complete a controlled cloud iam, workload identity & secrets exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Where should sensitive application secrets generally be kept?",
+          "q": "Which approach best demonstrates understanding of Cloud IAM, Workload Identity & Secrets?",
           "options": [
-            "A protected server-side secret store",
-            "Public JavaScript",
-            "A URL query string",
-            "A README"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "A protected server-side secret store"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Cloud Identity & Secrets is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -4475,58 +5279,153 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this Cloud Identity & Secrets scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Cloud Identity & Secrets in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Cloud Identity & Secrets was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a cloud iam, workload identity & secrets investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Cloud Identity & Secrets?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Cloud IAM, Workload Identity & Secrets?",
+            "a": "Compare human identity, workload identity, role, token and secret store; explain rotation and revocation.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Cloud IAM, Workload Identity & Secrets into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Cloud identities and secrets authorize access to high-value resources and must have controlled lifecycles."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Compare human identity, workload identity, role, token and secret store; explain rotation and revocation."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Least privilege, short-lived credentials and monitored secret access reduce blast radius."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Cloud IAM, Workload Identity & Secrets, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Secret",
+          "Credential",
+          "Token",
+          "Role",
+          "Workload identity",
+          "Rotation",
+          "Revocation"
+        ],
+        "glossary": [
+          [
+            "Secret",
+            "A core linux, systems & cloud term used to analyze cloud iam, workload identity & secrets."
+          ],
+          [
+            "Credential",
+            "A core linux, systems & cloud term used to analyze cloud iam, workload identity & secrets."
+          ],
+          [
+            "Token",
+            "A core linux, systems & cloud term used to analyze cloud iam, workload identity & secrets."
+          ],
+          [
+            "Role",
+            "A core linux, systems & cloud term used to analyze cloud iam, workload identity & secrets."
+          ],
+          [
+            "Workload identity",
+            "A core linux, systems & cloud term used to analyze cloud iam, workload identity & secrets."
+          ],
+          [
+            "Rotation",
+            "A core linux, systems & cloud term used to analyze cloud iam, workload identity & secrets."
+          ],
+          [
+            "Revocation",
+            "A core linux, systems & cloud term used to analyze cloud iam, workload identity & secrets."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving cloud iam, workload identity & secrets. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review cloud iam, workload identity & secrets under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Cloud IAM, Workload Identity & Secrets: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Cloud identities and secrets authorize access to high-value resources and must have controlled lifecycles.",
+          "Compare human identity, workload identity, role, token and secret store; explain rotation and revocation.",
+          "Least privilege, short-lived credentials and monitored secret access reduce blast radius.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Cloud IAM, Workload Identity & Secrets — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       }
     ],
     "meta": {
@@ -4580,17 +5479,18 @@ const NORTHSTAR_CURRICULUM = [
         "title": "Logging for Detection",
         "objective": "Choose telemetry that supports security questions.",
         "time": "3–3.5 hours",
-        "read": "Good security telemetry is purposeful. Define the question first, then collect the minimum useful fields with reliable timestamps, identities, source context and retention.",
-        "practice": "For a suspicious login investigation, list the fields an analyst needs.",
+        "read": "Logs turn activity into evidence for detection, investigation and accountability.\n\nDesign event fields for actor, action, resource, outcome, timestamp, source and correlation.\n\nUseful telemetry balances coverage, cost, privacy, retention and integrity.",
+        "practice": "Complete a controlled logging for detection exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "What should drive telemetry selection?",
+          "q": "Which approach best demonstrates understanding of Logging for Detection?",
           "options": [
-            "The security questions you need to answer",
-            "Maximum log volume",
-            "Random fields",
-            "Only storage capacity"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "The security questions you need to answer"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Logging for Detection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -4619,75 +5519,171 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this Logging for Detection scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Logging for Detection in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Logging for Detection was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a logging for detection investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Logging for Detection?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Logging for Detection?",
+            "a": "Design event fields for actor, action, resource, outcome, timestamp, source and correlation.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "NIST SP 800-61 Rev.3",
-            "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "Georgia Tech Cybersecurity",
-            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Logging for Detection into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Logs turn activity into evidence for detection, investigation and accountability."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Design event fields for actor, action, resource, outcome, timestamp, source and correlation."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Useful telemetry balances coverage, cost, privacy, retention and integrity."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Logging for Detection, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Log",
+          "Event",
+          "Telemetry",
+          "Timestamp",
+          "Actor",
+          "Outcome",
+          "Retention"
+        ],
+        "glossary": [
+          [
+            "Log",
+            "A core defensive security & soc term used to analyze logging for detection."
+          ],
+          [
+            "Event",
+            "A core defensive security & soc term used to analyze logging for detection."
+          ],
+          [
+            "Telemetry",
+            "A core defensive security & soc term used to analyze logging for detection."
+          ],
+          [
+            "Timestamp",
+            "A core defensive security & soc term used to analyze logging for detection."
+          ],
+          [
+            "Actor",
+            "A core defensive security & soc term used to analyze logging for detection."
+          ],
+          [
+            "Outcome",
+            "A core defensive security & soc term used to analyze logging for detection."
+          ],
+          [
+            "Retention",
+            "A core defensive security & soc term used to analyze logging for detection."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving logging for detection. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review logging for detection under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Logging for Detection: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Logs turn activity into evidence for detection, investigation and accountability.",
+          "Design event fields for actor, action, resource, outcome, timestamp, source and correlation.",
+          "Useful telemetry balances coverage, cost, privacy, retention and integrity.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Logging for Detection — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "ds-02",
         "title": "Detection Engineering Basics",
         "objective": "Turn observable behavior into testable detection logic.",
         "time": "3–3.5 hours",
-        "read": "A detection should describe an observable signal, reduce noise through context and define what evidence an analyst should inspect next.",
-        "practice": "Write a detection hypothesis for repeated failed logins followed by a successful login.",
+        "read": "Detection engineering converts a threat hypothesis into testable logic over telemetry.\n\nDefine data dependencies, analytic condition, baseline, threshold, expected behavior and tuning loop.\n\nA detection is a maintained control; false positives, false negatives and data drift must be measured.",
+        "practice": "Complete a controlled detection engineering basics exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "A useful detection should be:",
+          "q": "Which approach best demonstrates understanding of Detection Engineering Basics?",
           "options": [
-            "Testable against observable telemetry",
-            "Based only on intuition",
-            "Impossible to reproduce",
-            "Independent of evidence"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "Testable against observable telemetry"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Detection Engineering Basics is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -4716,75 +5712,171 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this Detection Engineering Basics scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Detection Engineering Basics in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Detection Engineering Basics was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a detection engineering basics investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Detection Engineering Basics?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Detection Engineering Basics?",
+            "a": "Define data dependencies, analytic condition, baseline, threshold, expected behavior and tuning loop.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "NIST SP 800-61 Rev.3",
-            "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "Georgia Tech Cybersecurity",
-            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Detection Engineering Basics into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Detection engineering converts a threat hypothesis into testable logic over telemetry."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Define data dependencies, analytic condition, baseline, threshold, expected behavior and tuning loop."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "A detection is a maintained control; false positives, false negatives and data drift must be measured."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Detection Engineering Basics, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Detection",
+          "Hypothesis",
+          "Rule",
+          "Threshold",
+          "False positive",
+          "False negative",
+          "Tuning"
+        ],
+        "glossary": [
+          [
+            "Detection",
+            "A core defensive security & soc term used to analyze detection engineering basics."
+          ],
+          [
+            "Hypothesis",
+            "A core defensive security & soc term used to analyze detection engineering basics."
+          ],
+          [
+            "Rule",
+            "A core defensive security & soc term used to analyze detection engineering basics."
+          ],
+          [
+            "Threshold",
+            "A core defensive security & soc term used to analyze detection engineering basics."
+          ],
+          [
+            "False positive",
+            "A core defensive security & soc term used to analyze detection engineering basics."
+          ],
+          [
+            "False negative",
+            "A core defensive security & soc term used to analyze detection engineering basics."
+          ],
+          [
+            "Tuning",
+            "A core defensive security & soc term used to analyze detection engineering basics."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving detection engineering basics. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review detection engineering basics under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Detection Engineering Basics: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Detection engineering converts a threat hypothesis into testable logic over telemetry.",
+          "Define data dependencies, analytic condition, baseline, threshold, expected behavior and tuning loop.",
+          "A detection is a maintained control; false positives, false negatives and data drift must be measured.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Detection Engineering Basics — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "ds-03",
         "title": "SIEM Investigation Workflow",
         "objective": "Search, pivot, correlate and document findings.",
         "time": "3–3.5 hours",
-        "read": "A disciplined SIEM investigation moves from an initial signal to related entities such as users, hosts, IPs, processes and timestamps. Every pivot should answer a question.",
-        "practice": "Create a pivot chain from a suspicious login to the affected host.",
+        "read": "SIEM investigation correlates telemetry so analysts can reconstruct activity across entities and time.\n\nStart with alert validation, scope, pivots, timeline, corroboration, impact and documentation.\n\nCorrelation can amplify bad data; analysts must validate source quality and distinguish evidence from inference.",
+        "practice": "Complete a controlled siem investigation workflow exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Why correlate multiple events?",
+          "q": "Which approach best demonstrates understanding of SIEM Investigation Workflow?",
           "options": [
-            "To establish context and reduce isolated-event ambiguity",
-            "To remove timestamps",
-            "To avoid evidence",
-            "To increase false positives"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "To establish context and reduce isolated-event ambiguity"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: SIEM Investigation Workflow is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -4813,75 +5905,171 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this SIEM Investigation Workflow scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain SIEM Investigation Workflow in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of SIEM Investigation Workflow was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a siem investigation workflow investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind SIEM Investigation Workflow?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in SIEM Investigation Workflow?",
+            "a": "Start with alert validation, scope, pivots, timeline, corroboration, impact and documentation.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "NIST SP 800-61 Rev.3",
-            "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "Georgia Tech Cybersecurity",
-            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break SIEM Investigation Workflow into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "SIEM investigation correlates telemetry so analysts can reconstruct activity across entities and time."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Start with alert validation, scope, pivots, timeline, corroboration, impact and documentation."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Correlation can amplify bad data; analysts must validate source quality and distinguish evidence from inference."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For SIEM Investigation Workflow, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "SIEM",
+          "Correlation",
+          "Pivot",
+          "Enrichment",
+          "Timeline",
+          "Entity",
+          "Alert"
+        ],
+        "glossary": [
+          [
+            "SIEM",
+            "A core defensive security & soc term used to analyze siem investigation workflow."
+          ],
+          [
+            "Correlation",
+            "A core defensive security & soc term used to analyze siem investigation workflow."
+          ],
+          [
+            "Pivot",
+            "A core defensive security & soc term used to analyze siem investigation workflow."
+          ],
+          [
+            "Enrichment",
+            "A core defensive security & soc term used to analyze siem investigation workflow."
+          ],
+          [
+            "Timeline",
+            "A core defensive security & soc term used to analyze siem investigation workflow."
+          ],
+          [
+            "Entity",
+            "A core defensive security & soc term used to analyze siem investigation workflow."
+          ],
+          [
+            "Alert",
+            "A core defensive security & soc term used to analyze siem investigation workflow."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving siem investigation workflow. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review siem investigation workflow under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — SIEM Investigation Workflow: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "SIEM investigation correlates telemetry so analysts can reconstruct activity across entities and time.",
+          "Start with alert validation, scope, pivots, timeline, corroboration, impact and documentation.",
+          "Correlation can amplify bad data; analysts must validate source quality and distinguish evidence from inference.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "SIEM Investigation Workflow — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "ds-04",
         "title": "Incident Triage & Severity",
         "objective": "Classify incidents using impact, scope and confidence.",
         "time": "3–3.5 hours",
-        "read": "Triage prioritizes response using factors such as affected assets, business impact, scope, persistence and confidence in the evidence.",
-        "practice": "Compare two simulated incidents and explain which factors affect urgency.",
+        "read": "Incident triage is decision-making under uncertainty about scope, impact, confidence and urgency.\n\nSeparate severity, priority, confidence and business impact; choose containment based on evidence and potential harm.\n\nPremature containment can disrupt operations; delayed action can increase exposure.",
+        "practice": "Complete a controlled incident triage & severity exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Which factor directly affects incident priority?",
+          "q": "Which approach best demonstrates understanding of Incident Triage & Severity?",
           "options": [
-            "Business impact",
-            "Wallpaper choice",
-            "Keyboard layout",
-            "Browser theme"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "Business impact"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Incident Triage & Severity is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -4910,75 +6098,171 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this Incident Triage & Severity scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Incident Triage & Severity in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Incident Triage & Severity was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a incident triage & severity investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Incident Triage & Severity?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Incident Triage & Severity?",
+            "a": "Separate severity, priority, confidence and business impact; choose containment based on evidence and potential harm.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "NIST SP 800-61 Rev.3",
-            "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "Georgia Tech Cybersecurity",
-            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Incident Triage & Severity into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Incident triage is decision-making under uncertainty about scope, impact, confidence and urgency."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Separate severity, priority, confidence and business impact; choose containment based on evidence and potential harm."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Premature containment can disrupt operations; delayed action can increase exposure."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Incident Triage & Severity, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Triage",
+          "Incident",
+          "Severity",
+          "Priority",
+          "Confidence",
+          "Impact",
+          "Containment"
+        ],
+        "glossary": [
+          [
+            "Triage",
+            "A core defensive security & soc term used to analyze incident triage & severity."
+          ],
+          [
+            "Incident",
+            "A core defensive security & soc term used to analyze incident triage & severity."
+          ],
+          [
+            "Severity",
+            "A core defensive security & soc term used to analyze incident triage & severity."
+          ],
+          [
+            "Priority",
+            "A core defensive security & soc term used to analyze incident triage & severity."
+          ],
+          [
+            "Confidence",
+            "A core defensive security & soc term used to analyze incident triage & severity."
+          ],
+          [
+            "Impact",
+            "A core defensive security & soc term used to analyze incident triage & severity."
+          ],
+          [
+            "Containment",
+            "A core defensive security & soc term used to analyze incident triage & severity."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving incident triage & severity. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review incident triage & severity under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Incident Triage & Severity: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Incident triage is decision-making under uncertainty about scope, impact, confidence and urgency.",
+          "Separate severity, priority, confidence and business impact; choose containment based on evidence and potential harm.",
+          "Premature containment can disrupt operations; delayed action can increase exposure.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Incident Triage & Severity — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "ds-05",
         "title": "Evidence, Incident Timeline & Recovery",
         "objective": "Build a defensible timeline from controlled evidence.",
         "time": "2 hours",
-        "read": "A timeline aligns events from multiple sources into a coherent sequence. Preserve original timestamps, source identifiers and uncertainty instead of inventing missing facts.",
-        "practice": "Build a five-event timeline from authentication, process and network records.",
+        "read": "An incident timeline is a chronological evidence model that connects artifacts into a defensible narrative.\n\nNormalize time zones, preserve source references, mark inferred events and record gaps.\n\nEvidence provenance and integrity determine whether the timeline can support later review.",
+        "practice": "Complete a controlled evidence, incident timeline & recovery exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "What should an analyst do when a timestamp is uncertain?",
+          "q": "Which approach best demonstrates understanding of Evidence, Incident Timeline & Recovery?",
           "options": [
-            "Record the uncertainty",
-            "Invent a precise time",
-            "Delete the event",
-            "Change the source"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "Record the uncertainty"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Evidence & Incident Timeline is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -5007,58 +6291,153 @@ const NORTHSTAR_CURRICULUM = [
           "Clear professional communication"
         ],
         "caseQuestions": [
-          "What is the objective in this Evidence & Incident Timeline scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Evidence & Incident Timeline in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Evidence & Incident Timeline was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a evidence, incident timeline & recovery investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Evidence & Incident Timeline?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Evidence, Incident Timeline & Recovery?",
+            "a": "Normalize time zones, preserve source references, mark inferred events and record gaps.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "references": [
           {
-            "name": "NIST SP 800-61 Rev.3",
-            "url": "https://csrc.nist.gov/pubs/sp/800/61/r3/final"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "Georgia Tech Cybersecurity",
-            "url": "https://pe.gatech.edu/degrees/cybersecurity/curriculum"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Evidence, Incident Timeline & Recovery into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "An incident timeline is a chronological evidence model that connects artifacts into a defensible narrative."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Normalize time zones, preserve source references, mark inferred events and record gaps."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Evidence provenance and integrity determine whether the timeline can support later review."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Evidence, Incident Timeline & Recovery, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Timeline",
+          "Provenance",
+          "Artifact",
+          "Timestamp",
+          "Evidence",
+          "Integrity",
+          "Inference"
+        ],
+        "glossary": [
+          [
+            "Timeline",
+            "A core defensive security & soc term used to analyze evidence, incident timeline & recovery."
+          ],
+          [
+            "Provenance",
+            "A core defensive security & soc term used to analyze evidence, incident timeline & recovery."
+          ],
+          [
+            "Artifact",
+            "A core defensive security & soc term used to analyze evidence, incident timeline & recovery."
+          ],
+          [
+            "Timestamp",
+            "A core defensive security & soc term used to analyze evidence, incident timeline & recovery."
+          ],
+          [
+            "Evidence",
+            "A core defensive security & soc term used to analyze evidence, incident timeline & recovery."
+          ],
+          [
+            "Integrity",
+            "A core defensive security & soc term used to analyze evidence, incident timeline & recovery."
+          ],
+          [
+            "Inference",
+            "A core defensive security & soc term used to analyze evidence, incident timeline & recovery."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving evidence, incident timeline & recovery. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review evidence, incident timeline & recovery under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Evidence, Incident Timeline & Recovery: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "An incident timeline is a chronological evidence model that connects artifacts into a defensible narrative.",
+          "Normalize time zones, preserve source references, mark inferred events and record gaps.",
+          "Evidence provenance and integrity determine whether the timeline can support later review.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Evidence, Incident Timeline & Recovery — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       }
     ],
     "meta": {
@@ -5114,17 +6493,18 @@ const NORTHSTAR_CURRICULUM = [
         "title": "Offensive Security Methodology",
         "objective": "Understand scoped reconnaissance, validation, exploitation and reporting.",
         "time": "2.5–3 hours",
-        "read": "Authorized security testing is evidence-driven and scope-bound. A professional workflow defines targets, rules of engagement, safe validation methods and reporting requirements before testing.",
-        "practice": "Write a scope statement for a deliberately vulnerable training application.",
+        "read": "Authorized offensive security is a controlled assessment with scope, rules, discovery, validation, impact analysis and reporting.\n\nMove from reconnaissance to enumeration to safe validation without crossing authorization boundaries.\n\nA finding must connect a verified condition to affected scope, impact and remediation.",
+        "practice": "Complete a controlled offensive security methodology exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "What must exist before authorized testing begins?",
+          "q": "Which approach best demonstrates understanding of Offensive Security Methodology?",
           "options": [
-            "A defined scope and rules of engagement",
-            "A public exploit",
-            "An unknown target",
-            "A production credential"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "A defined scope and rules of engagement"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Offensive Security Methodology is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -5154,74 +6534,170 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "OWASP Top 10:2025",
-            "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Offensive Security Methodology scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Offensive Security Methodology in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Offensive Security Methodology was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a offensive security methodology investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Offensive Security Methodology?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Offensive Security Methodology?",
+            "a": "Move from reconnaissance to enumeration to safe validation without crossing authorization boundaries.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Offensive Security Methodology into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Authorized offensive security is a controlled assessment with scope, rules, discovery, validation, impact analysis and reporting."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Move from reconnaissance to enumeration to safe validation without crossing authorization boundaries."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "A finding must connect a verified condition to affected scope, impact and remediation."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Offensive Security Methodology, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Rules of engagement",
+          "Reconnaissance",
+          "Enumeration",
+          "Validation",
+          "Finding",
+          "Scope",
+          "Impact"
+        ],
+        "glossary": [
+          [
+            "Rules of engagement",
+            "A core offensive & application security term used to analyze offensive security methodology."
+          ],
+          [
+            "Reconnaissance",
+            "A core offensive & application security term used to analyze offensive security methodology."
+          ],
+          [
+            "Enumeration",
+            "A core offensive & application security term used to analyze offensive security methodology."
+          ],
+          [
+            "Validation",
+            "A core offensive & application security term used to analyze offensive security methodology."
+          ],
+          [
+            "Finding",
+            "A core offensive & application security term used to analyze offensive security methodology."
+          ],
+          [
+            "Scope",
+            "A core offensive & application security term used to analyze offensive security methodology."
+          ],
+          [
+            "Impact",
+            "A core offensive & application security term used to analyze offensive security methodology."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving offensive security methodology. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review offensive security methodology under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Offensive Security Methodology: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Authorized offensive security is a controlled assessment with scope, rules, discovery, validation, impact analysis and reporting.",
+          "Move from reconnaissance to enumeration to safe validation without crossing authorization boundaries.",
+          "A finding must connect a verified condition to affected scope, impact and remediation.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Offensive Security Methodology — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "os-02",
         "title": "Web Application Attack Surface",
         "objective": "Map pages, APIs, inputs, authentication boundaries and trust relationships.",
         "time": "2.5–3 hours",
-        "read": "An application's attack surface includes exposed routes, parameters, APIs, authentication flows, file handling and integrations. Mapping is about understanding what exists before attempting validation.",
-        "practice": "Create an attack-surface inventory for a fictional web app.",
+        "read": "A web attack surface includes routes, APIs, parameters, identities, sessions, uploads, dependencies and integrations.\n\nMap browser→web server→API→data store and identify attacker-controlled inputs and trust boundaries.\n\nAuthorization and architecture weaknesses can be more important than input filtering alone.",
+        "practice": "Complete a controlled web application attack surface exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Which is part of a web attack surface?",
+          "q": "Which approach best demonstrates understanding of Web Application Attack Surface?",
           "options": [
-            "API endpoints",
-            "Office furniture",
-            "Monitor size",
-            "Keyboard color"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "API endpoints"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Web Application Attack Surface is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -5251,74 +6727,170 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "OWASP Top 10:2025",
-            "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Web Application Attack Surface scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Web Application Attack Surface in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Web Application Attack Surface was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a web application attack surface investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Web Application Attack Surface?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Web Application Attack Surface?",
+            "a": "Map browser→web server→API→data store and identify attacker-controlled inputs and trust boundaries.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Web Application Attack Surface into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "A web attack surface includes routes, APIs, parameters, identities, sessions, uploads, dependencies and integrations."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Map browser→web server→API→data store and identify attacker-controlled inputs and trust boundaries."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Authorization and architecture weaknesses can be more important than input filtering alone."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Web Application Attack Surface, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Attack surface",
+          "Endpoint",
+          "API",
+          "Parameter",
+          "Session",
+          "Upload",
+          "Trust boundary"
+        ],
+        "glossary": [
+          [
+            "Attack surface",
+            "A core offensive & application security term used to analyze web application attack surface."
+          ],
+          [
+            "Endpoint",
+            "A core offensive & application security term used to analyze web application attack surface."
+          ],
+          [
+            "API",
+            "A core offensive & application security term used to analyze web application attack surface."
+          ],
+          [
+            "Parameter",
+            "A core offensive & application security term used to analyze web application attack surface."
+          ],
+          [
+            "Session",
+            "A core offensive & application security term used to analyze web application attack surface."
+          ],
+          [
+            "Upload",
+            "A core offensive & application security term used to analyze web application attack surface."
+          ],
+          [
+            "Trust boundary",
+            "A core offensive & application security term used to analyze web application attack surface."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving web application attack surface. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review web application attack surface under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Web Application Attack Surface: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "A web attack surface includes routes, APIs, parameters, identities, sessions, uploads, dependencies and integrations.",
+          "Map browser→web server→API→data store and identify attacker-controlled inputs and trust boundaries.",
+          "Authorization and architecture weaknesses can be more important than input filtering alone.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Web Application Attack Surface — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "os-03",
         "title": "Input Validation, Injection & Output Encoding",
         "objective": "Understand why untrusted input can alter program behavior.",
         "time": "2.5–3 hours",
-        "read": "Injection vulnerabilities occur when data is interpreted as instructions in a different language or context. Defenses include parameterization, contextual encoding and strict validation.",
-        "practice": "Explain the difference between data and executable instructions.",
+        "read": "Injection occurs when untrusted input is interpreted as code, query language or markup rather than data.\n\nContrast concatenated queries/commands with parameterized or safely encoded designs; explain context.\n\nThe durable defense is to preserve code/data separation and use safe interfaces, not fragile blacklists.",
+        "practice": "Complete a controlled input validation, injection & output encoding exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Which control helps prevent SQL injection?",
+          "q": "Which approach best demonstrates understanding of Input Validation, Injection & Output Encoding?",
           "options": [
-            "Parameterized queries",
-            "Hard-coded passwords",
-            "Disabling logs",
-            "Longer URLs"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "Parameterized queries"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Input Validation & Injection is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -5348,74 +6920,165 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "OWASP Top 10:2025",
-            "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Input Validation & Injection scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Input Validation & Injection in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Input Validation & Injection was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a input validation, injection & output encoding investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Input Validation & Injection?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Input Validation, Injection & Output Encoding?",
+            "a": "Contrast concatenated queries/commands with parameterized or safely encoded designs; explain context.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Input Validation, Injection & Output Encoding into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Injection occurs when untrusted input is interpreted as code, query language or markup rather than data."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Contrast concatenated queries/commands with parameterized or safely encoded designs; explain context."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "The durable defense is to preserve code/data separation and use safe interfaces, not fragile blacklists."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Input Validation, Injection & Output Encoding, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Injection",
+          "SQL injection",
+          "Command injection",
+          "Encoding",
+          "Parameterization",
+          "Interpreter"
+        ],
+        "glossary": [
+          [
+            "Injection",
+            "A core offensive & application security term used to analyze input validation, injection & output encoding."
+          ],
+          [
+            "SQL injection",
+            "A core offensive & application security term used to analyze input validation, injection & output encoding."
+          ],
+          [
+            "Command injection",
+            "A core offensive & application security term used to analyze input validation, injection & output encoding."
+          ],
+          [
+            "Encoding",
+            "A core offensive & application security term used to analyze input validation, injection & output encoding."
+          ],
+          [
+            "Parameterization",
+            "A core offensive & application security term used to analyze input validation, injection & output encoding."
+          ],
+          [
+            "Interpreter",
+            "A core offensive & application security term used to analyze input validation, injection & output encoding."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving input validation, injection & output encoding. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review input validation, injection & output encoding under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Input Validation, Injection & Output Encoding: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Injection occurs when untrusted input is interpreted as code, query language or markup rather than data.",
+          "Contrast concatenated queries/commands with parameterized or safely encoded designs; explain context.",
+          "The durable defense is to preserve code/data separation and use safe interfaces, not fragile blacklists.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Input Validation, Injection & Output Encoding — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "os-04",
         "title": "Authentication, Authorization & Session Security",
         "objective": "Evaluate authentication boundaries and session handling safely.",
         "time": "2.5–3 hours",
-        "read": "Testing should examine credential handling, session issuance, expiration, privilege boundaries and recovery flows in an authorized environment.",
-        "practice": "List five questions for reviewing a session-management design.",
+        "read": "Authentication establishes identity; authorization determines permitted actions; sessions preserve authenticated state.\n\nTrace login, session issuance, authorization checks, logout, timeout and recovery.\n\nStrong authentication cannot compensate for broken authorization or insecure session lifecycle.",
+        "practice": "Complete a controlled authentication, authorization & session security exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Why should sessions expire?",
+          "q": "Which approach best demonstrates understanding of Authentication, Authorization & Session Security?",
           "options": [
-            "To reduce the lifetime of stolen session material",
-            "To make pages prettier",
-            "To increase bandwidth",
-            "To disable authorization"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "To reduce the lifetime of stolen session material"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Authentication & Session Testing is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -5445,74 +7108,170 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "OWASP Top 10:2025",
-            "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Authentication & Session Testing scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Authentication & Session Testing in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Authentication & Session Testing was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a authentication, authorization & session security investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Authentication & Session Testing?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Authentication, Authorization & Session Security?",
+            "a": "Trace login, session issuance, authorization checks, logout, timeout and recovery.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Authentication, Authorization & Session Security into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Authentication establishes identity; authorization determines permitted actions; sessions preserve authenticated state."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Trace login, session issuance, authorization checks, logout, timeout and recovery."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Strong authentication cannot compensate for broken authorization or insecure session lifecycle."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Authentication, Authorization & Session Security, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Authentication",
+          "Authorization",
+          "Session",
+          "Cookie",
+          "Token",
+          "Timeout",
+          "Recovery"
+        ],
+        "glossary": [
+          [
+            "Authentication",
+            "A core offensive & application security term used to analyze authentication, authorization & session security."
+          ],
+          [
+            "Authorization",
+            "A core offensive & application security term used to analyze authentication, authorization & session security."
+          ],
+          [
+            "Session",
+            "A core offensive & application security term used to analyze authentication, authorization & session security."
+          ],
+          [
+            "Cookie",
+            "A core offensive & application security term used to analyze authentication, authorization & session security."
+          ],
+          [
+            "Token",
+            "A core offensive & application security term used to analyze authentication, authorization & session security."
+          ],
+          [
+            "Timeout",
+            "A core offensive & application security term used to analyze authentication, authorization & session security."
+          ],
+          [
+            "Recovery",
+            "A core offensive & application security term used to analyze authentication, authorization & session security."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving authentication, authorization & session security. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review authentication, authorization & session security under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Authentication, Authorization & Session Security: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Authentication establishes identity; authorization determines permitted actions; sessions preserve authenticated state.",
+          "Trace login, session issuance, authorization checks, logout, timeout and recovery.",
+          "Strong authentication cannot compensate for broken authorization or insecure session lifecycle.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Authentication, Authorization & Session Security — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "os-05",
         "title": "Security Testing, Findings & Remediation Reporting",
         "objective": "Turn technical observations into reproducible, useful findings.",
         "time": "2 hours",
-        "read": "A security finding should identify the affected asset, observed behavior, evidence, impact, reproduction conditions and a practical remediation path.",
-        "practice": "Write a finding title and evidence summary for a simulated access-control issue.",
+        "read": "A security report turns technical evidence into a reproducible finding and an actionable remediation.\n\nWrite scope, preconditions, observation, evidence, impact, severity context, remediation and limitations.\n\nReports should distinguish observed facts from inferred impact and avoid overstating certainty.",
+        "practice": "Complete a controlled security testing, findings & remediation reporting exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "A strong finding should include:",
+          "q": "Which approach best demonstrates understanding of Security Testing, Findings & Remediation Reporting?",
           "options": [
-            "Evidence and reproducible conditions",
-            "Only a dramatic title",
-            "No affected asset",
-            "No remediation context"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "Evidence and reproducible conditions"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Reporting Security Findings is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -5542,57 +7301,152 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "OWASP Top 10:2025",
-            "url": "https://top10.owasp.org/2025/0x00_2025-Introduction/"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NYU Cybersecurity MS",
-            "url": "https://bulletins.nyu.edu/graduate/engineering/programs/cybersecurity-ms/"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Reporting Security Findings scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Reporting Security Findings in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Reporting Security Findings was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a security testing, findings & remediation reporting investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Reporting Security Findings?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Security Testing, Findings & Remediation Reporting?",
+            "a": "Write scope, preconditions, observation, evidence, impact, severity context, remediation and limitations.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Security Testing, Findings & Remediation Reporting into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "A security report turns technical evidence into a reproducible finding and an actionable remediation."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Write scope, preconditions, observation, evidence, impact, severity context, remediation and limitations."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Reports should distinguish observed facts from inferred impact and avoid overstating certainty."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Security Testing, Findings & Remediation Reporting, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Finding",
+          "Evidence",
+          "Impact",
+          "Severity",
+          "Remediation",
+          "Reproduction",
+          "Scope"
+        ],
+        "glossary": [
+          [
+            "Finding",
+            "A core offensive & application security term used to analyze security testing, findings & remediation reporting."
+          ],
+          [
+            "Evidence",
+            "A core offensive & application security term used to analyze security testing, findings & remediation reporting."
+          ],
+          [
+            "Impact",
+            "A core offensive & application security term used to analyze security testing, findings & remediation reporting."
+          ],
+          [
+            "Severity",
+            "A core offensive & application security term used to analyze security testing, findings & remediation reporting."
+          ],
+          [
+            "Remediation",
+            "A core offensive & application security term used to analyze security testing, findings & remediation reporting."
+          ],
+          [
+            "Reproduction",
+            "A core offensive & application security term used to analyze security testing, findings & remediation reporting."
+          ],
+          [
+            "Scope",
+            "A core offensive & application security term used to analyze security testing, findings & remediation reporting."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving security testing, findings & remediation reporting. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review security testing, findings & remediation reporting under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Security Testing, Findings & Remediation Reporting: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "A security report turns technical evidence into a reproducible finding and an actionable remediation.",
+          "Write scope, preconditions, observation, evidence, impact, severity context, remediation and limitations.",
+          "Reports should distinguish observed facts from inferred impact and avoid overstating certainty.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Security Testing, Findings & Remediation Reporting — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       }
     ],
     "meta": {
@@ -5647,17 +7501,18 @@ const NORTHSTAR_CURRICULUM = [
         "title": "Secure Software Lifecycle",
         "objective": "Integrate security requirements throughout software delivery.",
         "time": "3–3.5 hours",
-        "read": "Security engineering shifts important controls earlier into design, development, testing, deployment and operations instead of relying only on final review.",
-        "practice": "Place threat modeling, code review, dependency checks and runtime monitoring into a delivery lifecycle.",
+        "read": "Secure development integrates security requirements, threat modeling, secure design, implementation, testing, release and operations.\n\nMap security activities across the software lifecycle and identify evidence produced at each stage.\n\nFinding defects earlier reduces rework, but lifecycle controls must fit developer workflows and business risk.",
+        "practice": "Complete a controlled secure software lifecycle exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "Why integrate security earlier?",
+          "q": "Which approach best demonstrates understanding of Secure Software Lifecycle?",
           "options": [
-            "To identify and reduce risk before it becomes expensive to change",
-            "To remove testing",
-            "To eliminate requirements",
-            "To avoid documentation"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "To identify and reduce risk before it becomes expensive to change"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Secure Software Lifecycle is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -5687,74 +7542,170 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "NIST SSDF",
-            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Secure Software Lifecycle scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Secure Software Lifecycle in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Secure Software Lifecycle was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a secure software lifecycle investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Secure Software Lifecycle?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Secure Software Lifecycle?",
+            "a": "Map security activities across the software lifecycle and identify evidence produced at each stage.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Secure Software Lifecycle into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Secure development integrates security requirements, threat modeling, secure design, implementation, testing, release and operations."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Map security activities across the software lifecycle and identify evidence produced at each stage."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Finding defects earlier reduces rework, but lifecycle controls must fit developer workflows and business risk."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Secure Software Lifecycle, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Secure SDLC",
+          "Requirement",
+          "Threat model",
+          "Secure design",
+          "Code review",
+          "Testing",
+          "Release"
+        ],
+        "glossary": [
+          [
+            "Secure SDLC",
+            "A core security engineering & devsecops term used to analyze secure software lifecycle."
+          ],
+          [
+            "Requirement",
+            "A core security engineering & devsecops term used to analyze secure software lifecycle."
+          ],
+          [
+            "Threat model",
+            "A core security engineering & devsecops term used to analyze secure software lifecycle."
+          ],
+          [
+            "Secure design",
+            "A core security engineering & devsecops term used to analyze secure software lifecycle."
+          ],
+          [
+            "Code review",
+            "A core security engineering & devsecops term used to analyze secure software lifecycle."
+          ],
+          [
+            "Testing",
+            "A core security engineering & devsecops term used to analyze secure software lifecycle."
+          ],
+          [
+            "Release",
+            "A core security engineering & devsecops term used to analyze secure software lifecycle."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving secure software lifecycle. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review secure software lifecycle under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Secure Software Lifecycle: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Secure development integrates security requirements, threat modeling, secure design, implementation, testing, release and operations.",
+          "Map security activities across the software lifecycle and identify evidence produced at each stage.",
+          "Finding defects earlier reduces rework, but lifecycle controls must fit developer workflows and business risk.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Secure Software Lifecycle — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "se-02",
         "title": "Security Automation",
         "objective": "Design repeatable checks that produce auditable evidence.",
         "time": "3–3.5 hours",
-        "read": "Automation is valuable when the rule is explicit, the input is reliable and the output can be reviewed. Good automation reduces repetitive work without hiding uncertainty.",
-        "practice": "Design an automated check for a public storage bucket configuration.",
+        "read": "Security automation makes repeatable checks fast and consistent while preserving safe failure behavior.\n\nDesign a security job with bounded permissions, deterministic inputs, validation, logging and explicit failure handling.\n\nAutomation can amplify bad assumptions, so every automated decision needs scope and observability.",
+        "practice": "Complete a controlled security automation exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "What makes an automated security check useful?",
+          "q": "Which approach best demonstrates understanding of Security Automation?",
           "options": [
-            "A clear rule and auditable output",
-            "Hidden logic",
-            "No evidence",
-            "Random results"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "A clear rule and auditable output"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Security Automation is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -5784,74 +7735,165 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "NIST SSDF",
-            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Security Automation scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Security Automation in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Security Automation was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a security automation investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Security Automation?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Security Automation?",
+            "a": "Design a security job with bounded permissions, deterministic inputs, validation, logging and explicit failure handling.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Security Automation into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Security automation makes repeatable checks fast and consistent while preserving safe failure behavior."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Design a security job with bounded permissions, deterministic inputs, validation, logging and explicit failure handling."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Automation can amplify bad assumptions, so every automated decision needs scope and observability."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Security Automation, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Automation",
+          "Pipeline",
+          "Idempotency",
+          "Validation",
+          "Least privilege",
+          "Failure handling"
+        ],
+        "glossary": [
+          [
+            "Automation",
+            "A core security engineering & devsecops term used to analyze security automation."
+          ],
+          [
+            "Pipeline",
+            "A core security engineering & devsecops term used to analyze security automation."
+          ],
+          [
+            "Idempotency",
+            "A core security engineering & devsecops term used to analyze security automation."
+          ],
+          [
+            "Validation",
+            "A core security engineering & devsecops term used to analyze security automation."
+          ],
+          [
+            "Least privilege",
+            "A core security engineering & devsecops term used to analyze security automation."
+          ],
+          [
+            "Failure handling",
+            "A core security engineering & devsecops term used to analyze security automation."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving security automation. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review security automation under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Security Automation: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Security automation makes repeatable checks fast and consistent while preserving safe failure behavior.",
+          "Design a security job with bounded permissions, deterministic inputs, validation, logging and explicit failure handling.",
+          "Automation can amplify bad assumptions, so every automated decision needs scope and observability.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Security Automation — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "se-03",
         "title": "Security Architecture",
         "objective": "Apply defense in depth, trust boundaries and failure containment.",
         "time": "3–3.5 hours",
-        "read": "Secure architecture assumes individual controls can fail. Layered controls, isolation, least privilege and explicit trust boundaries reduce the impact of a single failure.",
-        "practice": "Design three independent controls around a sensitive API.",
+        "read": "Security architecture places controls at trust boundaries and balances security, usability, cost and operational constraints.\n\nModel users, services, data stores, zones and control points; explain defense in depth and zero-trust principles.\n\nA good architecture makes unwanted flows difficult and legitimate flows observable.",
+        "practice": "Complete a controlled security architecture exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "What is defense in depth?",
+          "q": "Which approach best demonstrates understanding of Security Architecture?",
           "options": [
-            "Multiple complementary security controls",
-            "One control everywhere",
-            "No controls",
-            "Only perimeter security"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "Multiple complementary security controls"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Security Architecture is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -5881,74 +7923,165 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "NIST SSDF",
-            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Security Architecture scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Security Architecture in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Security Architecture was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a security architecture investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Security Architecture?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Security Architecture?",
+            "a": "Model users, services, data stores, zones and control points; explain defense in depth and zero-trust principles.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Security Architecture into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Security architecture places controls at trust boundaries and balances security, usability, cost and operational constraints."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Model users, services, data stores, zones and control points; explain defense in depth and zero-trust principles."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "A good architecture makes unwanted flows difficult and legitimate flows observable."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Security Architecture, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Architecture",
+          "Trust boundary",
+          "Defense in depth",
+          "Zero trust",
+          "Segmentation",
+          "Control placement"
+        ],
+        "glossary": [
+          [
+            "Architecture",
+            "A core security engineering & devsecops term used to analyze security architecture."
+          ],
+          [
+            "Trust boundary",
+            "A core security engineering & devsecops term used to analyze security architecture."
+          ],
+          [
+            "Defense in depth",
+            "A core security engineering & devsecops term used to analyze security architecture."
+          ],
+          [
+            "Zero trust",
+            "A core security engineering & devsecops term used to analyze security architecture."
+          ],
+          [
+            "Segmentation",
+            "A core security engineering & devsecops term used to analyze security architecture."
+          ],
+          [
+            "Control placement",
+            "A core security engineering & devsecops term used to analyze security architecture."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving security architecture. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review security architecture under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Security Architecture: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Security architecture places controls at trust boundaries and balances security, usability, cost and operational constraints.",
+          "Model users, services, data stores, zones and control points; explain defense in depth and zero-trust principles.",
+          "A good architecture makes unwanted flows difficult and legitimate flows observable.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Security Architecture — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "se-04",
         "title": "Vulnerability, Dependency & Supply-Chain Management",
         "objective": "Prioritize remediation using evidence and business context.",
         "time": "3–3.5 hours",
-        "read": "Vulnerability management combines discovery, validation, prioritization, remediation and verification. Severity alone does not describe the complete business risk.",
-        "practice": "Define a remediation priority using exploitability, exposure, asset criticality and compensating controls.",
+        "read": "Vulnerability management is a lifecycle of discovery, validation, prioritization, remediation, verification and exception handling.\n\nCombine technical severity with asset criticality, exposure, exploitability and business context.\n\nA vulnerability queue is a risk-management process, not simply a list sorted by scanner score.",
+        "practice": "Complete a controlled vulnerability, dependency & supply-chain management exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "What should happen after remediation?",
+          "q": "Which approach best demonstrates understanding of Vulnerability, Dependency & Supply-Chain Management?",
           "options": [
-            "Verify the fix",
-            "Assume success",
-            "Delete the finding",
-            "Stop collecting evidence"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "Verify the fix"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Vulnerability Management is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -5978,74 +8111,170 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "NIST SSDF",
-            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Vulnerability Management scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Vulnerability Management in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Vulnerability Management was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a vulnerability, dependency & supply-chain management investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Vulnerability Management?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Vulnerability, Dependency & Supply-Chain Management?",
+            "a": "Combine technical severity with asset criticality, exposure, exploitability and business context.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Vulnerability, Dependency & Supply-Chain Management into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Vulnerability management is a lifecycle of discovery, validation, prioritization, remediation, verification and exception handling."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Combine technical severity with asset criticality, exposure, exploitability and business context."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "A vulnerability queue is a risk-management process, not simply a list sorted by scanner score."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Vulnerability, Dependency & Supply-Chain Management, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Vulnerability",
+          "Severity",
+          "Exploitability",
+          "Exposure",
+          "Remediation",
+          "Exception",
+          "Verification"
+        ],
+        "glossary": [
+          [
+            "Vulnerability",
+            "A core security engineering & devsecops term used to analyze vulnerability, dependency & supply-chain management."
+          ],
+          [
+            "Severity",
+            "A core security engineering & devsecops term used to analyze vulnerability, dependency & supply-chain management."
+          ],
+          [
+            "Exploitability",
+            "A core security engineering & devsecops term used to analyze vulnerability, dependency & supply-chain management."
+          ],
+          [
+            "Exposure",
+            "A core security engineering & devsecops term used to analyze vulnerability, dependency & supply-chain management."
+          ],
+          [
+            "Remediation",
+            "A core security engineering & devsecops term used to analyze vulnerability, dependency & supply-chain management."
+          ],
+          [
+            "Exception",
+            "A core security engineering & devsecops term used to analyze vulnerability, dependency & supply-chain management."
+          ],
+          [
+            "Verification",
+            "A core security engineering & devsecops term used to analyze vulnerability, dependency & supply-chain management."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving vulnerability, dependency & supply-chain management. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review vulnerability, dependency & supply-chain management under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Vulnerability, Dependency & Supply-Chain Management: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Vulnerability management is a lifecycle of discovery, validation, prioritization, remediation, verification and exception handling.",
+          "Combine technical severity with asset criticality, exposure, exploitability and business context.",
+          "A vulnerability queue is a risk-management process, not simply a list sorted by scanner score.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Vulnerability, Dependency & Supply-Chain Management — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       },
       {
         "id": "se-05",
         "title": "Security Metrics, SBOM & Evidence",
         "objective": "Measure capability using outcomes rather than vanity metrics.",
         "time": "2 hours",
-        "read": "Useful security metrics connect activity to outcomes: detection coverage, mean time to triage, remediation verification and control effectiveness are more informative than raw activity counts alone.",
-        "practice": "Design three metrics that demonstrate improved defensive capability.",
+        "read": "Security metrics should measure outcomes and control performance rather than activity volume alone.\n\nDefine numerator, denominator, population, time window, target and evidence source for each metric.\n\nPoorly designed metrics can create misleading trends and incentives.",
+        "practice": "Complete a controlled security metrics, sbom & evidence exercise. Work from a defined scope, record observations, test one hypothesis, and produce a short evidence artifact rather than only a written definition.",
         "check": {
-          "q": "A strong security metric should:",
+          "q": "Which approach best demonstrates understanding of Security Metrics, SBOM & Evidence?",
           "options": [
-            "Connect measurement to an outcome or decision",
-            "Only count activity",
-            "Avoid definitions",
-            "Change meaning each week"
+            "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+            "Memorize terminology only",
+            "Select a tool before defining the objective",
+            "Treat one symptom as proof of cause"
           ],
-          "answer": "Connect measurement to an outcome or decision"
+          "answer": "Model the mechanism, apply it to a scoped case and justify the conclusion with evidence",
+          "why": "Professional cybersecurity capability requires mechanism-level understanding and evidence-based application."
         },
         "why": "Why this matters: Security Metrics & Evidence is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -6075,57 +8304,152 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "NIST SSDF",
-            "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+            "name": "NIST NICE Framework v2.2.0",
+            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
           },
           {
-            "name": "NIST NICE v2.2.0",
-            "url": "https://www.nist.gov/news-events/news/2026/04/nice-releases-nice-framework-components-v220"
+            "name": "NIST Cybersecurity Framework 2.0",
+            "url": "https://www.nist.gov/cyberframework"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Security Metrics & Evidence scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the normal expected behavior?",
+          "Which component, identity or boundary is involved?",
+          "Which facts are known versus assumed?",
+          "What evidence would confirm or falsify the hypothesis?",
+          "What is the security and business impact if the hypothesis is wrong?",
+          "What should be done next, and how will success be verified?"
         ],
         "practiceSteps": [
-          "Explain Security Metrics & Evidence in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
-          "State one limitation and one follow-up question."
+          "Define scope and expected behavior.",
+          "Identify the relevant entities, data or traffic.",
+          "Draw or write the mechanism/workflow.",
+          "Introduce or analyze the controlled abnormal condition.",
+          "Collect evidence and compare explanations.",
+          "Document conclusion, limitation and next step."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Security Metrics & Evidence was wrong?",
+        "reflection": "What single additional observation would most reduce uncertainty in a security metrics, sbom & evidence investigation?",
         "qa": [
           {
-            "q": "What is the core idea behind Security Metrics & Evidence?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central mechanism in Security Metrics, SBOM & Evidence?",
+            "a": "Define numerator, denominator, population, time window, target and evidence source for each metric.",
+            "why": "Mechanism-level understanding lets you transfer the concept to new systems."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "What is the most common analytical mistake?",
+            "a": "Treating a symptom as proof of a cause without validating scope, assumptions and evidence.",
+            "why": "Security analysis is hypothesis-driven."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What makes a control or investigation defensible?",
+            "a": "A clear objective, defined scope, appropriate evidence, explicit assumptions and a reproducible reasoning chain.",
+            "why": "Another person should be able to inspect the decision."
+          },
+          {
+            "q": "What should happen when evidence is insufficient?",
+            "a": "Record the uncertainty and collect the highest-value missing evidence before making a high-impact decision.",
+            "why": "False certainty is itself an operational risk."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Security Metrics, SBOM & Evidence into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Security metrics should measure outcomes and control performance rather than activity volume alone."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. Mechanism and workflow",
+            "body": "Define numerator, denominator, population, time window, target and evidence source for each metric."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Poorly designed metrics can create misleading trends and incentives."
+          },
+          {
+            "title": "4. Evidence and uncertainty",
+            "body": "For Security Metrics, SBOM & Evidence, distinguish observable facts from interpretation. Identify what telemetry, configuration, packet data, process information, source code or business context would be required to support the conclusion. Record missing evidence instead of silently filling gaps."
+          },
+          {
+            "title": "5. Professional decision-making",
+            "body": "Define scope → identify the relevant entities and boundaries → trace the mechanism → test the leading hypothesis → evaluate impact and alternatives → document the evidence → choose a proportionate action → communicate limitations. This is the foundation for later analyst, engineer and management work."
           }
-        ]
+        ],
+        "concepts": [
+          "Metric",
+          "KPI",
+          "KRI",
+          "Numerator",
+          "Denominator",
+          "Trend",
+          "Control effectiveness"
+        ],
+        "glossary": [
+          [
+            "Metric",
+            "A core security engineering & devsecops term used to analyze security metrics, sbom & evidence."
+          ],
+          [
+            "KPI",
+            "A core security engineering & devsecops term used to analyze security metrics, sbom & evidence."
+          ],
+          [
+            "KRI",
+            "A core security engineering & devsecops term used to analyze security metrics, sbom & evidence."
+          ],
+          [
+            "Numerator",
+            "A core security engineering & devsecops term used to analyze security metrics, sbom & evidence."
+          ],
+          [
+            "Denominator",
+            "A core security engineering & devsecops term used to analyze security metrics, sbom & evidence."
+          ],
+          [
+            "Trend",
+            "A core security engineering & devsecops term used to analyze security metrics, sbom & evidence."
+          ],
+          [
+            "Control effectiveness",
+            "A core security engineering & devsecops term used to analyze security metrics, sbom & evidence."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example",
+            "body": "Consider a controlled enterprise scenario involving security metrics, sbom & evidence. Start with the normal expected behavior, then introduce one abnormal condition. Trace what changes and identify the evidence that would distinguish a genuine security issue from a configuration, operational or data-quality problem.",
+            "answer": "The important skill is not guessing the cause; it is building and testing a defensible explanation."
+          },
+          {
+            "title": "Engineering example",
+            "body": "A team must implement or review security metrics, sbom & evidence under a real business constraint. State the requirement, identify the security boundary, compare two approaches and document the trade-off.",
+            "answer": "A professional answer makes assumptions and trade-offs explicit rather than presenting a control as universally correct."
+          }
+        ],
+        "case": "Case study — Security Metrics, SBOM & Evidence: an enterprise team has a scoped problem involving this capability. The team must protect business operations while collecting enough evidence to make a defensible technical decision. Analyze the system, identify uncertainty, propose the next action and state what would change your conclusion.",
+        "evidence": "Evidence artifact: scope + expected behavior + observation + evidence + conclusion + limitation + next action.",
+        "takeaways": [
+          "Security metrics should measure outcomes and control performance rather than activity volume alone.",
+          "Define numerator, denominator, population, time window, target and evidence source for each metric.",
+          "Poorly designed metrics can create misleading trends and incentives.",
+          "Separate facts, hypotheses and conclusions.",
+          "Treat evidence quality as part of security quality."
+        ],
+        "highlights": [
+          "Mechanism before memorization.",
+          "Scope and trust boundaries matter.",
+          "Evidence must support the conclusion.",
+          "Controls have trade-offs and operational constraints."
+        ],
+        "visual": {
+          "title": "Security Metrics, SBOM & Evidence — professional workflow",
+          "caption": "Use this sequence while studying and later while working.",
+          "steps": [
+            "Define objective and scope",
+            "Model the mechanism",
+            "Identify boundaries and failure modes",
+            "Collect and validate evidence",
+            "Decide, document and verify"
+          ]
+        }
       }
     ],
     "meta": {
