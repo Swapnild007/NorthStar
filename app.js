@@ -1,4 +1,4 @@
-const VERSION="1.1.0";
+const VERSION="1.2.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 const AI_CONFIG=window.NORTHSTAR_AI||{model:"Qwen3-0.6B-q4f16_1-MLC",provider:"WebLLM",mode:"local-browser"};
 
@@ -233,8 +233,9 @@ const views={
    ${Array.isArray(l.references)&&l.references.length?`<div class="inset"><span class="eyebrow">Academic references</span><div class="vocab-list">${l.references.map(x=>`<div><b>${esc(x.name)}</b><span><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Open source ↗</a></span></div>`).join("")}</div></div>`:""}
   </div>`;
   else if(state.lessonTab==="Practice")panel=`<div class="lesson-stack">
-   <div><h2>Practice by doing</h2><p class="subtitle">${esc(l.practice||"Work through the problem in your own words before checking the answer.")}</p></div>
-   ${Array.isArray(l.practiceSteps)&&l.practiceSteps.length?`<div class="inset"><strong>Guided practice</strong><ol class="practice-steps">${l.practiceSteps.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`:""}
+   <div><h2>Practice by doing</h2><p class="subtitle">This section is for application. The Q&A tab contains recall questions; Practice should produce an action, observation or evidence artifact.</p></div>
+   ${Array.isArray(l.practiceSteps)&&l.practiceSteps.length?`<div class="inset"><span class="eyebrow">Hands-on task</span><strong>${esc(l.practiceSteps[2]||l.practiceSteps[0])}</strong><p class="subtitle">Complete the task before reading the remaining guidance. Treat the result as evidence of application, not a memorized answer.</p></div>`:`<div class="inset"><span class="eyebrow">Hands-on task</span><strong>Apply the lesson to a realistic security scenario.</strong><p class="subtitle">${esc(l.objective||"Produce a scoped observation and explain your reasoning.")}</p></div>`}
+   ${Array.isArray(l.practiceSteps)&&l.practiceSteps.length?`<div class="inset"><strong>Practice procedure</strong><ol class="practice-steps">${l.practiceSteps.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`:""}
    <div class="inset"><strong>Evidence checkpoint</strong><p class="subtitle">${esc(l.evidence||"Write your observation or answer before moving on. Keep the evidence reproducible and scoped.")}</p></div>
    <div class="inset"><strong>Common mistakes to avoid</strong><ul class="lesson-list">${(l.mistakes||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
    ${l.reflection?`<div class="note-card"><span class="eyebrow">Self-explanation</span><p>${esc(l.reflection)}</p></div>`:""}
