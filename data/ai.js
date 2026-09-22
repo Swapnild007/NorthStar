@@ -1,8 +1,8 @@
 window.NORTHSTAR_AI={
- version:"4.1.0",
+ version:"4.2.0",
  provider:"OmniRoute",
  mode:"local-omniroute",
- model:"auto",
+ model:"cloudflare-ai/@cf/meta/llama-3.1-8b-instruct-fp8",
  endpoint:"",
  localEndpoint:"http://127.0.0.1:20128",
  allowLocalEndpoint:true,
