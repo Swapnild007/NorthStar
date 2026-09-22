@@ -56,4 +56,4 @@ CyberRange actions remain simulated and local. The mentor cannot execute shell c
 
 See `workers/mentor/README.md`.
 
-The GitHub Pages site remains the frontend repository. Cloudflare is used only as the AI inference gateway.
+The GitHub Pages site remains the frontend repository. Cloudflare is used only as the AI inference gateway. The GitHub Actions deployment workflow can resolve the account `workers.dev` URL and configure the frontend automatically after deployment.
