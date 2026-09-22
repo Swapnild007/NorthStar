@@ -1,4 +1,4 @@
-const VERSION="0.6.0";
+const VERSION="0.8.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 const AI_CONFIG=window.NORTHSTAR_AI||{model:"Qwen3-0.6B-q4f16_1-MLC",provider:"WebLLM",mode:"local-browser"};
 
@@ -143,8 +143,8 @@ const views={
     c,i,lessons:Array.isArray(c.lessons)?c.lessons:[],meta:c.meta&&typeof c.meta==="object"?c.meta:{}
   })).sort((a,b)=>Number(a.c.code)-Number(b.c.code));
   const categories=["All",...new Set(modules.map(x=>x.c.category).filter(Boolean))];
-  const activeFilter=categories.includes(state.filter)?state.filter:"All";
-  if(state.filter!==activeFilter)state.filter=activeFilter;
+  const activeFilter=state.filterExplicit&&categories.includes(state.filter)?state.filter:"All";
+  if(!state.filterExplicit||state.filter!==activeFilter)state.filter=activeFilter;
   const filtered=activeFilter==="All"?modules:modules.filter(x=>x.c.category===activeFilter);
   const total=modules.reduce((n,x)=>n+x.lessons.length,0);
   const visibleTotal=filtered.reduce((n,x)=>n+x.lessons.length,0);
@@ -171,7 +171,7 @@ const views={
          <small><b>${ls.length} lessons</b> · ${esc(m.load||"Self-paced")} · ${p}% complete</small>
         </div>
        </button>
-       <details class="module-details">
+       <details class="module-details" open>
         <summary>Module outline & academic depth</summary>
         <div class="module-detail-grid">
          <div class="lesson-index">
@@ -286,7 +286,7 @@ function skillRows(){
 
 function bind(){
  document.querySelectorAll("[data-route]").forEach(b=>b.onclick=()=>go(b.dataset.route));
- document.querySelectorAll("[data-filter]").forEach(b=>b.onclick=()=>{state.filter=b.dataset.filter;render()});
+ document.querySelectorAll("[data-filter]").forEach(b=>b.onclick=()=>{state.filter=b.dataset.filter;state.filterExplicit=b.dataset.filter!=="All";render()});
  document.querySelectorAll("[data-course]").forEach(b=>b.onclick=()=>{state.selectedCourse=Number(b.dataset.course);state.selectedLesson=Number(b.dataset.lesson||0);state.lessonTab="Read";state.checkAnswer="";state.route="lesson";render()});
  document.querySelectorAll("[data-lesson-tab]").forEach(b=>b.onclick=()=>{state.lessonTab=b.dataset.lessonTab;render()});
  document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{state.checkAnswer=b.dataset.answer;render()});
