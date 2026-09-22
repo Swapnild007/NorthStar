@@ -1,4 +1,4 @@
-const DEFAULT_MODEL = "auto";
+const DEFAULT_MODEL = "@cf/qwen/qwen3.8-27b";
 const ALLOWED_ORIGIN = "https://swapnild007.github.io";
 const MAX_BODY_BYTES = 120000;
 const MAX_MESSAGES = 18;
@@ -112,7 +112,7 @@ export default {
 
     const url = new URL(request.url);
     if (url.pathname === "/health") {
-      return json({ ok: true, service: "northstar-ai-mentor", model: DEFAULT_MODEL, gateway: "OmniRoute", inference: "cloud" }, 200, origin);
+      return json({ ok: true, service: "northstar-ai-mentor", model: DEFAULT_MODEL, gateway: omniBase(env) ? "OmniRoute" : "Cloudflare Workers AI", inference: "cloud" }, 200, origin);
     }
 
     if (url.pathname !== "/v1/chat/completions" || request.method !== "POST") {
@@ -144,34 +144,51 @@ export default {
 
     const mentor = body.mentor && typeof body.mentor === "object" ? body.mentor : {};
     const system = BASE_SYSTEM + "\n\n" + contextBlock(mentor);
-
-    const modelMessages = [
-      { role: "system", content: system },
-      ...messages,
-    ];
+    const modelMessages = [{ role: "system", content: system }, ...messages];
 
     const base = omniBase(env);
-    if (!base) return json({ error: "OmniRoute gateway is not configured on the Worker." }, 503, origin);
     try {
-      const upstream = await fetch(base + "/v1/chat/completions", {
-        method: "POST",
-        headers: upstreamHeaders(env),
-        body: JSON.stringify({
-          model: String(body.model || DEFAULT_MODEL).slice(0,100),
+      if (base) {
+        const upstream = await fetch(base + "/v1/chat/completions", {
+          method: "POST",
+          headers: upstreamHeaders(env),
+          body: JSON.stringify({
+            model: String(body.model || "auto").slice(0,100),
+            stream: true,
+            temperature: 0.4,
+            max_tokens: 900,
+            messages: modelMessages,
+          }),
+        });
+        const headers = new Headers(upstream.headers);
+        Object.entries(corsHeaders(origin)).forEach(([k,v]) => headers.set(k,v));
+        headers.set("Cache-Control", "no-cache, no-transform");
+        headers.set("X-Content-Type-Options", "nosniff");
+        return new Response(upstream.body, { status: upstream.status, statusText: upstream.statusText, headers });
+      }
+
+      if (env.AI) {
+        const stream = await env.AI.run(DEFAULT_MODEL, {
+          messages: modelMessages,
           stream: true,
           temperature: 0.4,
           max_tokens: 900,
-          messages: modelMessages,
-        }),
-      });
-      const headers = new Headers(upstream.headers);
-      Object.entries(corsHeaders(origin)).forEach(([k,v]) => headers.set(k,v));
-      headers.set("Cache-Control", "no-cache, no-transform");
-      headers.set("X-Content-Type-Options", "nosniff");
-      return new Response(upstream.body, { status: upstream.status, statusText: upstream.statusText, headers });
+        });
+        return new Response(stream, {
+          status: 200,
+          headers: {
+            ...corsHeaders(origin),
+            "Content-Type": "text/event-stream",
+            "Cache-Control": "no-cache, no-transform",
+            "X-Content-Type-Options": "nosniff",
+          },
+        });
+      }
+
+      return json({ error: "No cloud AI provider is configured on the Worker." }, 503, origin);
     } catch (error) {
-      console.error("NorthStar OmniRoute gateway error", error);
-      return json({ error: "OmniRoute is temporarily unavailable." }, 503, origin);
+      console.error("NorthStar mentor inference error", error);
+      return json({ error: "Cloud mentor inference is temporarily unavailable." }, 503, origin);
     }
   },
 };
