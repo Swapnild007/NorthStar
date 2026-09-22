@@ -112,7 +112,7 @@ export default {
 
     const url = new URL(request.url);
     if (url.pathname === "/health") {
-      return json({ ok: true, service: "northstar-ai-mentor", model: MODEL, inference: "cloud" }, 200, origin);
+      return json({ ok: true, service: "northstar-ai-mentor", model: DEFAULT_MODEL, inference: "cloud" }, 200, origin);
     }
 
     if (url.pathname !== "/v1/chat/completions" || request.method !== "POST") {
