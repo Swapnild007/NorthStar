@@ -16,16 +16,16 @@ GitHub Pages
       v
 Cloudflare Worker
       |
-      | Workers AI binding
+      | OmniRoute binding
       v
-Qwen3.8 27B
+OmniRoute-selected model
 ```
 
 The LLM stays on Cloudflare infrastructure. Nothing in the NorthStar frontend downloads model weights.
 
-## Why Qwen3.8 27B
+## Why OmniRoute-selected model
 
-Cloudflare currently lists `@cf/qwen/qwen3.8-27b` as a hosted model with reasoning, function calling, vision, and a 262,144-token context window. NorthStar only needs text today, but the multimodal/tooling capabilities leave room for later CyberRange mentor features.
+Cloudflare currently lists `auto` as a hosted model with reasoning, function calling, vision, and a 262,144-token context window. NorthStar only needs text today, but the multimodal/tooling capabilities leave room for later CyberRange mentor features.
 
 ## Mentor architecture
 
@@ -33,7 +33,7 @@ Cloudflare currently lists `@cf/qwen/qwen3.8-27b` as a hosted model with reasoni
 - `data/mentor_ui.js`: lightweight UI state bridge.
 - `data/learner.js` / local learner state: progress and mastery evidence.
 - `data/cyberrange.js`: controlled lab context.
-- `workers/mentor/src/index.js`: server-side mentor policy, safety boundary, request validation, and Workers AI inference.
+- `workers/mentor/src/index.js`: server-side mentor policy, safety boundary, request validation, and OmniRoute inference.
 
 The frontend supplies educational context. The Worker supplies the non-negotiable mentor and cybersecurity safety contract.
 
@@ -57,3 +57,7 @@ CyberRange actions remain simulated and local. The mentor cannot execute shell c
 See `workers/mentor/README.md`.
 
 The GitHub Pages site remains the frontend repository. Cloudflare is used only as the AI inference gateway. The GitHub Actions deployment workflow can resolve the account `workers.dev` URL and configure the frontend automatically after deployment.
+
+## OmniRoute deployment
+
+Set `OMNIROUTE_BASE_URL` and optional `OMNIROUTE_TOKEN` on the Worker. The browser never receives these values.
