@@ -120,14 +120,18 @@ export default {
       return json({ error: "Origin not allowed" }, 403, origin || ALLOWED_ORIGIN);
     }
 
-    const length = Number(request.headers.get("content-length") || 0);
-    if (length && length > MAX_BODY_BYTES) {
+    const declaredLength = Number(request.headers.get("content-length") || 0);
+    if (declaredLength && declaredLength > MAX_BODY_BYTES) {
       return json({ error: "Request too large" }, 413, origin);
     }
 
     let body;
     try {
-      body = await request.json();
+      const raw = await request.text();
+      if (raw.length > MAX_BODY_BYTES) {
+        return json({ error: "Request too large" }, 413, origin);
+      }
+      body = JSON.parse(raw);
     } catch {
       return json({ error: "Invalid JSON body" }, 400, origin);
     }
