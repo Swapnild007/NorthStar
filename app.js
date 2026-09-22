@@ -1,4 +1,4 @@
-const VERSION="1.5.0";
+const VERSION="1.6.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 const AI_CONFIG=window.NORTHSTAR_AI||{model:"Qwen3-0.6B-q4f16_1-MLC",provider:"WebLLM",mode:"local-browser"};
 
@@ -24,63 +24,48 @@ const labs=[
 ];
 const LAB_DETAILS={
  "packet-recon":{
-  scenario:"A workstation at 10.20.5.14 communicates with 10.20.5.20. The capture below contains normal setup traffic and one anomalous connection.",
-  evidence:[
-   "08:14:02 ARP 10.20.5.14 asks for 10.20.5.1",
-   "08:14:03 ARP reply: 10.20.5.1 is at 00:11:22:33:44:55",
-   "08:14:05 TCP 10.20.5.14:51522 → 10.20.5.20:443 SYN",
-   "08:14:05 TCP 10.20.5.20:443 → 10.20.5.14:51522 SYN/ACK",
-   "08:14:06 TCP 10.20.5.14:51522 → 10.20.5.20:443 ACK",
-   "08:14:21 TCP 10.20.5.14:51531 → 10.20.5.77:23 SYN",
-   "08:14:21 TCP 10.20.5.77:23 → 10.20.5.14:51531 SYN/ACK"
-  ],
+  scenario:"A workstation at 10.20.5.14 communicates with 10.20.5.20. The capture contains normal setup traffic and one connection that requires investigation.",
+  evidence:["08:14:02 ARP 10.20.5.14 asks for 10.20.5.1","08:14:03 ARP reply: 10.20.5.1 is at 00:11:22:33:44:55","08:14:05 TCP 10.20.5.14:51522 → 10.20.5.20:443 SYN","08:14:05 TCP 10.20.5.20:443 → 10.20.5.14:51522 SYN/ACK","08:14:06 TCP 10.20.5.14:51522 → 10.20.5.20:443 ACK","08:14:21 TCP 10.20.5.14:51531 → 10.20.5.77:23 SYN","08:14:21 TCP 10.20.5.77:23 → 10.20.5.14:51531 SYN/ACK"],
   task:"Identify the normal HTTPS connection and the connection that requires investigation. Explain the protocol, endpoint, port and evidence that led to your conclusion.",
-  deliverable:"Write: normal flow, suspicious flow, evidence used, one alternative explanation, and one next observation you would collect.",
-  success:"Correctly distinguish the HTTPS flow from the port-23 connection and justify the distinction with packet evidence."
+  checkpoints:["Which flow completes the TCP three-way handshake to port 443?","What makes the port-23 connection worth investigating without proving it malicious?","What additional observation would reduce uncertainty?"],
+  hints:["Follow the SYN → SYN/ACK → ACK sequence before interpreting the application.","Port 23 identifies a service convention, not intent. Separate observation from conclusion.","Look for the process, destination ownership, historical baseline or additional packet content."],
+  deliverable:"Write: normal flow, investigated flow, evidence used, one alternative explanation, and one next observation.",
+  success:"Correctly distinguish the flows and justify the distinction with packet evidence."
  },
  "web-surface":{
-  scenario:"You are reviewing a deliberately isolated training application. Your task is inventory and risk reasoning only. Do not attempt exploitation.",
-  evidence:[
-   "GET /login → 200",
-   "GET /search?q=training → 200",
-   "GET /api/profile → 401",
-   "GET /admin → 403",
-   "POST /login → 401 when credentials are invalid",
-   "GET /health → 200",
-   "GET /static/app.js → 200"
-  ],
+  scenario:"You are reviewing a deliberately isolated training application. Inventory and risk reasoning only. Do not attempt exploitation.",
+  evidence:["GET /login → 200","GET /search?q=training → 200","GET /api/profile → 401","GET /admin → 403","POST /login → 401 when credentials are invalid","GET /health → 200","GET /static/app.js → 200"],
   task:"Build an attack-surface inventory from the observed routes. Identify authentication boundaries, user-controlled input and privileged functionality.",
+  checkpoints:["Which routes are publicly reachable from the evidence?","Where are authentication or authorization boundaries visible?","Which observation would you need before calling a route vulnerable?"],
+  hints:["Reachability is not the same as authorization.","401 and 403 provide different evidence about access control state.","A route being present does not establish an exploitable weakness. Identify the missing evidence."],
   deliverable:"Create a table with route, method, trust boundary, authentication state, input surface and evidence.",
-  success:"Inventory the routes accurately and distinguish public, authenticated and restricted surfaces without performing an exploit."
+  success:"Inventory the routes accurately and distinguish public, authenticated and restricted surfaces without exploiting anything."
  },
  "detection-drill":{
   scenario:"A simulated endpoint produces five events. Most match the baseline; one sequence is unusual and needs a detection hypothesis.",
-  evidence:[
-   "09:00 user login from 10.10.2.15",
-   "09:04 powershell.exe started by approved management agent",
-   "09:05 powershell.exe queried system inventory",
-   "09:06 powershell.exe launched from a user document directory",
-   "09:07 outbound connection to an unclassified destination"
-  ],
+  evidence:["09:00 user login from 10.10.2.15","09:04 powershell.exe started by approved management agent","09:05 powershell.exe queried system inventory","09:06 powershell.exe launched from a user document directory","09:07 outbound connection to an unclassified destination"],
   task:"Separate baseline activity from the sequence that deserves investigation. Propose a detection condition and state how you would reduce false positives.",
+  checkpoints:["Which events have an explicit benign explanation in the evidence?","What combination of events forms the strongest investigation signal?","What benign condition could produce the same signal?"],
+  hints:["A single event is often weak; sequence and context matter.","The document-directory launch plus outbound connection changes the context.","Think about approved software, administrative workflows and user behavior as possible alternatives."],
   deliverable:"Write the signal, supporting events, expected benign explanation, suspicious hypothesis, false-positive control and next evidence source.",
-  success:"A detection hypothesis is tied to observable events rather than a vague indicator or conclusion."
+  success:"The detection hypothesis is tied to observable events and includes a false-positive control."
  },
  "incident-room":{
   scenario:"A simulated incident affects one employee workstation. Evidence arrives from endpoint, authentication and network logs.",
-  evidence:[
-   "10:02 user login from workstation WS-17",
-   "10:07 new executable observed in Downloads",
-   "10:09 process started by the logged-in user",
-   "10:11 outbound connection to an unfamiliar external address",
-   "10:14 same user authenticates to a file server",
-   "10:18 endpoint alert generated"
-  ],
+  evidence:["10:02 user login from workstation WS-17","10:07 new executable observed in Downloads","10:09 process started by the logged-in user","10:11 outbound connection to an unfamiliar external address","10:14 same user authenticates to a file server","10:18 endpoint alert generated"],
   task:"Build a preliminary incident timeline, identify the earliest meaningful signal, define current scope and state the containment decision you would investigate first.",
+  checkpoints:["What is the earliest event that changes the investigation posture?","What assets and identity are currently supported by evidence?","What evidence is still missing before expanding the incident scope?"],
+  hints:["Chronology matters. Do not use the final alert as the beginning of the incident.","Separate confirmed observations from inferred compromise.","Look for additional hosts, authentication events, process lineage and network evidence before expanding scope."],
   deliverable:"Produce timeline, affected asset, account involved, evidence gaps, containment priority and confidence/uncertainty.",
   success:"The timeline is chronological, scope is evidence-based, and containment reasoning is separated from assumptions."
  }
 };
+function labWorkspaceKey(id){return "ns_lab_workspace_"+id}
+function labWorkspace(id){
+ const fallback={answers:{},revealedHints:[],note:""};
+ return {...fallback,...readStoredJSON(labWorkspaceKey(id),fallback)};
+}
+function saveLabWorkspace(id,w){localStorage.setItem(labWorkspaceKey(id),JSON.stringify(w))}
 const nav=[["home","Home","⌂"],["learn","Learn","▤"],["ai","AI","✦"],["labs","Labs","⌁"],["progress","Progress","◉"]];
 const savedAI=readStoredJSON("ns_ai_messages",null);
 let aiEngine=null;
@@ -305,14 +290,16 @@ const views={
   <div class="list section">${labs.map((l,i)=>{const st=state.labState[i]||"ready";let tags=l.skills.slice(0,4).map(x=>'<span class="tag">'+esc(x)+'</span>').join("");return '<article class="card glass learning-card"><div class="course-icon">0'+(i+1)+'</div><div class="course-main"><strong>'+esc(l.title)+'</strong><small>'+esc(l.subtitle)+' · '+esc(l.level)+'</small><div class="tag-row">'+tags+'</div></div><button class="badge '+(st==="completed"?"done":"")+'" data-lab="'+i+'">'+(st==="completed"?"Done":st==="started"?"Resume":"Start")+'</button></article>';}).join("")}</div>
   <div class="section card glass"><span class="eyebrow">Safety boundary</span><h2>Isolated learning simulations</h2><p class="subtitle">NorthStar records your reasoning locally. These labs do not scan, attack, connect to, or modify external systems.</p></div>
  </section>`,
- lab:()=>{const l=labs[state.selectedLab],d=LAB_DETAILS[l.id],st=state.labState[state.selectedLab]||"ready";const saved=readStoredJSON("ns_lab_notes_"+l.id,"");return `<section class="fade"><button class="back" data-route="labs">← Back to labs</button><div class="card glass lesson-card"><span class="eyebrow">Controlled lab · ${esc(l.level)}</span><h1>${esc(l.title)}</h1><p class="subtitle">${esc(l.subtitle)}.</p>
+ lab:()=>{const l=labs[state.selectedLab],d=LAB_DETAILS[l.id],st=state.labState[state.selectedLab]||"ready";const w=labWorkspace(l.id);const answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length;const stages=[answered>0||w.note?"Understand":"Understand",answered>=1?"Analyze":"Analyze",answered>=2?"Reason":"Reason",String(w.note||"").trim().length>=20?"Report":"Report"];const stageCount=st==="completed"?4:stages.filter((x,i)=>i===0?answered>0||String(w.note||"").trim():i===1?answered>=1:i===2?answered>=2:String(w.note||"").trim().length>=20).length;return `<section class="fade"><button class="back" data-route="labs">← Back to labs</button><div class="card glass lesson-card"><span class="eyebrow">Controlled lab · ${esc(l.level)}</span><h1>${esc(l.title)}</h1><p class="subtitle">${esc(l.subtitle)}.</p>
+  <div class="lab-stagebar">${stages.map((x,i)=>'<div class="lab-stage '+(i<stageCount?"done":"")+'"><span>'+(i<stageCount?"✓":String(i+1))+'</span><small>'+x+'</small></div>').join("")}</div>
   <div class="inset"><span class="badge ${st==="completed"?"done":""}">${st==="completed"?"Completed":st==="started"?"In progress":"Ready"}</span><h2>Objective</h2><p class="subtitle">${esc(l.objective)}</p><h2>Scenario</h2><p class="subtitle">${esc(d.scenario)}</p></div>
   <div class="inset"><span class="eyebrow">Evidence feed</span><ul class="lesson-list">${d.evidence.map(x=>'<li>'+esc(x)+'</li>').join("")}</ul></div>
-  <div class="inset"><span class="eyebrow">Your task</span><h3>${esc(d.task)}</h3><p class="subtitle">Use only the supplied evidence. If evidence is missing, say so instead of guessing.</p></div>
-  <div class="inset"><span class="eyebrow">Evidence artifact</span><p class="subtitle">${esc(d.deliverable)}</p><textarea class="lab-note" data-lab-note="${l.id}" placeholder="Write your analysis, evidence and uncertainty here...">${esc(saved)}</textarea><small>Your work is stored locally in this browser.</small></div>
-  <div class="inset"><span class="eyebrow">Success standard</span><p class="subtitle">${esc(d.success)}</p></div>
+  <div class="inset"><span class="eyebrow">Investigation checkpoints</span><p class="subtitle">Answer in your own words. These checkpoints measure reasoning, not keyword recall.</p>${d.checkpoints.map((q,i)=>'<label class="lab-question"><b>Q'+(i+1)+'. '+esc(q)+'</b><textarea class="lab-answer" data-lab-answer="'+i+'" placeholder="Your reasoning...">'+esc(w.answers?.[i]||"")+'</textarea>'+(w.revealedHints?.includes(i)?'<small class="hint">Hint: '+esc(d.hints[i])+'</small>':'<button class="chip" type="button" data-lab-hint="'+i+'">Show hint</button>')+'</label>').join("")}</div>
+  <div class="inset"><span class="eyebrow">Evidence artifact</span><p class="subtitle">${esc(d.deliverable)}</p><textarea class="lab-note" data-lab-note="'+l.id+'" placeholder="Write your final analysis, evidence, alternative explanation, uncertainty and next action...">'+esc(w.note||"")+'</textarea><small>Your work is stored locally in this browser.</small></div>
+  <div class="inset"><span class="eyebrow">Success standard</span><p class="subtitle">${esc(d.success)}</p><p class="subtitle"><b>Progress:</b> ${answered}/${d.checkpoints.length} checkpoints answered · ${stageCount}/4 stages evidenced.</p></div>
   <div class="lesson-footer"><button class="chip" data-route="labs">Return</button><button class="chip active" data-lab-complete>${st==="completed"?"Completed":"Submit evidence & complete"}</button></div>
- </div></section>`}, ai:()=>`<section class="fade">
+ </div></section>`},
+ ai:()=>`<section class="fade">
   <div class="section-head"><div><span class="eyebrow">AI companion</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">NorthStar AI Mentor</h1></div><button class="chip" data-clear-chat>Clear chat</button></div>
   <p class="subtitle">A real local LLM running in your browser. No API key is embedded in NorthStar.</p>
   <div class="tabs"><button class="chip" data-prompt="Explain TCP three-way handshake simply">Explain a concept</button><button class="chip" data-prompt="Give me a networking practice question">Practice question</button><button class="chip" data-prompt="What should I learn next in cybersecurity?">Next step</button></div>
@@ -562,10 +549,11 @@ function bind(){
  persist();render();
 };
  document.querySelectorAll("[data-lab]").forEach(b=>{b.onclick=()=>{state.selectedLab=Number(b.dataset.lab);state.labState[state.selectedLab]=state.labState[state.selectedLab]==="completed"?"completed":"started";persist();state.route="lab";render()};});
- document.querySelectorAll("[data-lab-note]").forEach(el=>el.oninput=()=>localStorage.setItem("ns_lab_notes_"+el.dataset.labNote,el.value));
-
+ document.querySelectorAll("[data-lab-answer]").forEach(el=>el.oninput=()=>{const l=labs[state.selectedLab],w=labWorkspace(l.id);w.answers=Object.assign({},w.answers,{[el.dataset.labAnswer]:el.value});saveLabWorkspace(l.id,w);});
+ document.querySelectorAll("[data-lab-note]").forEach(el=>el.oninput=()=>{const w=labWorkspace(el.dataset.labNote);w.note=el.value;saveLabWorkspace(el.dataset.labNote,w);});
+ document.querySelectorAll("[data-lab-hint]").forEach(b=>b.onclick=()=>{const l=labs[state.selectedLab],w=labWorkspace(l.id);w.revealedHints=Array.from(new Set([...(w.revealedHints||[]),Number(b.dataset.labHint)]));saveLabWorkspace(l.id,w);render();});
  const labComplete=document.querySelector("[data-lab-complete]");
- if(labComplete)labComplete.onclick=()=>{const l=labs[state.selectedLab];const note=localStorage.getItem("ns_lab_notes_"+l.id)||"";if(note.trim().length<20){alert("Add your evidence artifact before completing this lab.");return;}state.labState[state.selectedLab]="completed";persist();render()};
+ if(labComplete)labComplete.onclick=()=>{const l=labs[state.selectedLab],d=LAB_DETAILS[l.id],w=labWorkspace(l.id);const answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length;if(answered<d.checkpoints.length||String(w.note||"").trim().length<40){alert("Complete all investigation checkpoints and write an evidence artifact before completing this lab.");return;}state.labState[state.selectedLab]="completed";persist();render()};
  document.querySelectorAll("[data-prompt]").forEach(b=>b.onclick=()=>{const input=document.querySelector("#prompt");if(input){input.value=b.dataset.prompt;input.focus()}});
  const clear=document.querySelector("[data-clear-chat]");
  if(clear)clear.onclick=()=>{state.messages=[["ai","Chat cleared. I’m ready for your next cybersecurity question."]];persist();render()};

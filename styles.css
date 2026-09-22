@@ -433,3 +433,19 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
 .tag{display:inline-flex;padding:4px 7px;border-radius:999px;background:rgba(37,99,235,.07);color:var(--muted);font-size:10px;font-weight:700}
 .lab-note{width:100%;min-height:170px;margin-top:10px;padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.92);font:inherit;font-size:13px;line-height:1.6;color:var(--text);resize:vertical;outline:none}
 .lab-note:focus{border-color:rgba(37,99,235,.35);box-shadow:0 0 0 4px rgba(37,99,235,.07)}
+
+/* Lab investigation stages and checkpoints */
+.lab-stagebar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 18px}
+.lab-stage{display:flex;align-items:center;gap:7px;padding:8px;border-radius:12px;background:rgba(148,163,184,.08);color:var(--muted)}
+.lab-stage span{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid var(--line);font-size:11px;font-weight:800}
+.lab-stage.done{color:var(--text);background:rgba(16,185,129,.08)}
+.lab-stage.done span{background:rgba(16,185,129,.14);color:#047857;border-color:rgba(16,185,129,.2)}
+.lab-stage small{font-size:11px;font-weight:800}
+.lab-question{display:block;padding:14px 0;border-top:1px solid var(--line)}
+.lab-question:first-of-type{border-top:0}
+.lab-question b{display:block;font-size:13px;line-height:1.5}
+.lab-answer{width:100%;min-height:92px;margin-top:9px;padding:11px 12px;border:1px solid var(--line);border-radius:13px;background:rgba(255,255,255,.9);font:inherit;font-size:13px;line-height:1.55;resize:vertical;color:var(--text);outline:none}
+.lab-answer:focus{border-color:rgba(37,99,235,.35);box-shadow:0 0 0 4px rgba(37,99,235,.06)}
+.lab-question>.chip{margin-top:7px;padding:6px 9px;font-size:11px}
+.hint{display:block;margin-top:8px;padding:9px 11px;border-radius:11px;background:rgba(245,158,11,.08);color:#92400e;font-size:11px;line-height:1.5}
+@media(max-width:700px){.lab-stagebar{grid-template-columns:repeat(2,1fr)}.lab-stage small{font-size:10px}}
