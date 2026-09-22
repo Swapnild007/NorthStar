@@ -232,35 +232,10 @@ const views={
    ${Array.isArray(l.assessmentRubric)&&l.assessmentRubric.length?`<div class="inset"><span class="eyebrow">Assessment standard</span><ul class="lesson-list">${l.assessmentRubric.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
    ${Array.isArray(l.references)&&l.references.length?`<div class="inset"><span class="eyebrow">Academic references</span><div class="vocab-list">${l.references.map(x=>`<div><b>${esc(x.name)}</b><span><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Open source ↗</a></span></div>`).join("")}</div></div>`:""}
   </div>`;
-  else if(state.lessonTab==="Practice"){
-   const p=practiceScenario(l);
-   panel=`<div class="lesson-stack">
-    <div><span class="eyebrow">Application</span><h2>Practice by doing</h2><p class="subtitle">Use the lesson to solve a concrete scenario. This is not a recall quiz.</p></div>
-    ${p.scenario?`<div class="inset case-card"><span class="eyebrow">Scenario</span><p class="subtitle">${esc(p.scenario)}</p></div>`:""}
-    <div class="inset"><span class="eyebrow">Your task</span><strong>${esc(p.task)}</strong><p class="subtitle">Write your reasoning before looking for confirmation. The goal is to demonstrate application, not reproduce the lesson text.</p></div>
-    <div class="inset"><span class="eyebrow">Investigation procedure</span><ol class="practice-steps">${p.procedure.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>
-    <div class="inset"><strong>Evidence checkpoint</strong><p class="subtitle">${esc(l.evidence||"Produce a scoped evidence artifact containing observations, reasoning, conclusion and limitations.")}</p></div>
-    ${(l.mistakes||[]).length?`<div class="inset"><strong>Common mistakes to avoid</strong><ul class="lesson-list">${(l.mistakes||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
-    ${l.reflection?`<div class="note-card"><span class="eyebrow">Self-explanation</span><p>${esc(l.reflection)}</p></div>`:""}
-   </div>`;
-  } else if(state.lessonTab==="Q&A"){
-   const q=qnaData(l);
-   panel=`<div class="lesson-stack">
-    <div><span class="eyebrow">Recall + reasoning</span><h2>Questions & answers</h2><p class="subtitle">Answer from memory first, then open the explanation. Q&A tests understanding; Practice tests application.</p></div>
-    ${q.qas.length?`<div class="qa-group"><span class="eyebrow">Core knowledge</span>${q.qas.map((x,i)=>`<details class="qa-card"><summary><span>${i+1}</span><b>${esc(x.q)}</b></summary><div><b>Answer</b><p>${esc(x.a||"Explain the concept using the lesson material.")}</p>${x.why?`<b>Why</b><p>${esc(x.why)}</p>`:""}</div></details>`).join("")}</div>`:`<div class="inset"><strong>Core knowledge</strong><p class="subtitle">No authored recall set is available for this lesson yet. Use the Check tab for the scored knowledge check.</p></div>`}
-    ${q.cases.length?`<div class="qa-group"><span class="eyebrow">Reasoning prompts</span>${q.cases.map((x,i)=>`<details class="qa-card reasoning-card"><summary><span>R${i+1}</span><b>${esc(x)}</b></summary><div><b>How to answer</b><p>State the relevant concept, your reasoning, the evidence you would inspect, and one limitation.</p></div></details>`).join("")}</div>`:""}
-   </div>`;
-  } else {
-   const cd=checkData(l), c=cd.check, options=Array.isArray(c.options)?c.options:[];
-   const noteKey=`ns_check_note_${l.id}`;
-   const savedNote=localStorage.getItem(noteKey)||"";
-   panel=`<div class="lesson-stack">
-    <div><span class="eyebrow">Assessment</span><h2>Check your understanding</h2><p class="subtitle">First answer independently. Then use the explanation to identify the exact concept you need to revisit.</p></div>
-    ${c.q?`<div class="inset check-card"><span class="eyebrow">Knowledge check</span><p class="check-question"><b>${esc(c.q)}</b></p><div class="check-options">${options.map(x=>`<button class="option ${state.checkAnswer===x?"selected":""}" data-answer="${esc(x)}">${esc(x)}</button>`).join("")}</div><p class="feedback">${state.checkAnswer?(state.checkAnswer===c.answer?"✓ Correct. "+esc(c.why||"Your reasoning matches the lesson."): "Not quite. Revisit the relevant concept, then try again."):"Select an answer to check it."}</p>${c.explain?`<div class="answer-note"><b>Explanation</b><p>${esc(c.explain)}</p></div>`:""}</div>`:`<div class="inset"><strong>Knowledge check</strong><p class="subtitle">No multiple-choice check is authored for this lesson yet.</p></div>`}
-    ${cd.scenario?`<div class="inset"><span class="eyebrow">Transfer check</span><strong>Apply the lesson to this case</strong><p class="subtitle">${esc(cd.scenario)}</p>${cd.cases.length?`<ul class="lesson-list">${cd.cases.slice(0,3).map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}<p class="subtitle"><b>Success standard:</b> identify the relevant concept, explain the mechanism, cite evidence, and state a limitation.</p></div>`:""}
-    <div class="inset reasoning-check"><span class="eyebrow">Reasoning check</span><strong>Explain your answer in your own words</strong><p class="subtitle">Write a short explanation. This is intentionally not auto-graded.</p><textarea class="check-note" data-check-note="${esc(noteKey)}" placeholder="What makes your answer correct? What evidence supports it?">${esc(savedNote)}</textarea><small>Your response stays in this browser.</small></div>
-   </div>`;
-  }  return `<section class="fade"><button class="back" data-route="learn">← Back to curriculum</button><div class="card glass lesson-card">
+  else if(state.lessonTab==="Practice")panel=practicePanel(l);
+  else if(state.lessonTab==="Q&A")panel=qnaPanel(l);
+  else panel=checkPanel(l);
+  return `<section class="fade"><button class="back" data-route="learn">← Back to curriculum</button><div class="card glass lesson-card">
    <span class="eyebrow">Lesson ${c.code} · ${esc(c.title)}</span><h1>${esc(l.title)}</h1><p class="subtitle">${esc(l.objective)}</p>
    <div class="tabs">${["Read","Practice","Q&A","Check"].map(t=>`<button class="chip ${state.lessonTab===t?"active":""}" data-lesson-tab="${t}">${t}</button>`).join("")}</div>
    <div class="section tab-panel">${panel}</div>
@@ -311,6 +286,48 @@ function checkData(l){
  const cases=Array.isArray(l.caseQuestions)?l.caseQuestions.filter(Boolean):[];
  const scenario=String(l.case||"").trim();
  return {check,cases,scenario};
+}
+function practicePanel(l){
+ const p=practiceScenario(l);
+ let h='<div class="lesson-stack">';
+ h+='<div><span class="eyebrow">Application</span><h2>Practice by doing</h2><p class="subtitle">Use the lesson to solve a concrete scenario. This is not a recall quiz.</p></div>';
+ if(p.scenario)h+='<div class="inset case-card"><span class="eyebrow">Scenario</span><p class="subtitle">'+esc(p.scenario)+'</p></div>';
+ h+='<div class="inset"><span class="eyebrow">Your task</span><strong>'+esc(p.task)+'</strong><p class="subtitle">Write your reasoning before looking for confirmation. The goal is to demonstrate application, not reproduce the lesson text.</p></div>';
+ h+='<div class="inset"><span class="eyebrow">Investigation procedure</span><ol class="practice-steps">'+p.procedure.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ol></div>';
+ h+='<div class="inset"><strong>Evidence checkpoint</strong><p class="subtitle">'+esc(l.evidence||"Produce a scoped evidence artifact containing observations, reasoning, conclusion and limitations.")+'</p></div>';
+ if((l.mistakes||[]).length)h+='<div class="inset"><strong>Common mistakes to avoid</strong><ul class="lesson-list">'+(l.mistakes||[]).map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div>';
+ if(l.reflection)h+='<div class="note-card"><span class="eyebrow">Self-explanation</span><p>'+esc(l.reflection)+'</p></div>';
+ return h+'</div>';
+}
+function qnaPanel(l){
+ const q=qnaData(l);
+ let h='<div class="lesson-stack"><div><span class="eyebrow">Recall + reasoning</span><h2>Questions & answers</h2><p class="subtitle">Answer from memory first, then open the explanation. Q&A tests understanding; Practice tests application.</p></div>';
+ if(q.qas.length){
+  h+='<div class="qa-group"><span class="eyebrow">Core knowledge</span>';
+  h+=q.qas.map((x,i)=>'<details class="qa-card"><summary><span>'+(i+1)+'</span><b>'+esc(x.q)+'</b></summary><div><b>Answer</b><p>'+esc(x.a||"Explain the concept using the lesson material.")+'</p>'+(x.why?'<b>Why</b><p>'+esc(x.why)+'</p>':"")+'</div></details>').join("");
+  h+='</div>';
+ }else h+='<div class="inset"><strong>Core knowledge</strong><p class="subtitle">No authored recall set is available for this lesson yet. Use the Check tab for the scored knowledge check.</p></div>';
+ if(q.cases.length){
+  h+='<div class="qa-group"><span class="eyebrow">Reasoning prompts</span>';
+  h+=q.cases.map((x,i)=>'<details class="qa-card reasoning-card"><summary><span>R'+(i+1)+'</span><b>'+esc(x)+'</b></summary><div><b>How to answer</b><p>State the relevant concept, your reasoning, the evidence you would inspect, and one limitation.</p></div></details>').join("");
+  h+='</div>';
+ }
+ return h+'</div>';
+}
+function checkPanel(l){
+ const cd=checkData(l),c=cd.check,options=Array.isArray(c.options)?c.options:[];
+ const noteKey="ns_check_note_"+l.id,savedNote=localStorage.getItem(noteKey)||"";
+ let h='<div class="lesson-stack"><div><span class="eyebrow">Assessment</span><h2>Check your understanding</h2><p class="subtitle">First answer independently. Then use the explanation to identify the exact concept you need to revisit.</p></div>';
+ if(c.q){
+  h+='<div class="inset check-card"><span class="eyebrow">Knowledge check</span><p class="check-question"><b>'+esc(c.q)+'</b></p><div class="check-options">'+options.map(x=>'<button class="option '+(state.checkAnswer===x?"selected":"")+'" data-answer="'+esc(x)+'">'+esc(x)+'</button>').join("")+'</div><p class="feedback">'+(state.checkAnswer?(state.checkAnswer===c.answer?"✓ Correct. "+esc(c.why||"Your reasoning matches the lesson."):"Not quite. Revisit the relevant concept, then try again."):"Select an answer to check it.")+'</p>'+(c.explain?'<div class="answer-note"><b>Explanation</b><p>'+esc(c.explain)+'</p></div>':"")+'</div>';
+ }else h+='<div class="inset"><strong>Knowledge check</strong><p class="subtitle">No multiple-choice check is authored for this lesson yet.</p></div>';
+ if(cd.scenario){
+  h+='<div class="inset"><span class="eyebrow">Transfer check</span><strong>Apply the lesson to this case</strong><p class="subtitle">'+esc(cd.scenario)+'</p>';
+  if(cd.cases.length)h+='<ul class="lesson-list">'+cd.cases.slice(0,3).map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>';
+  h+='<p class="subtitle"><b>Success standard:</b> identify the relevant concept, explain the mechanism, cite evidence, and state a limitation.</p></div>';
+ }
+ h+='<div class="inset reasoning-check"><span class="eyebrow">Reasoning check</span><strong>Explain your answer in your own words</strong><p class="subtitle">Write a short explanation. This is intentionally not auto-graded.</p><textarea class="check-note" data-check-note="'+esc(noteKey)+'" placeholder="What makes your answer correct? What evidence supports it?">'+esc(savedNote)+'</textarea><small>Your response stays in this browser.</small></div>';
+ return h+'</div>';
 }
 function studyBlockContent(l,title,index){
  const plan=Array.isArray(l.studyPlan)?l.studyPlan:[];
@@ -437,7 +454,8 @@ function bind(){
  document.querySelectorAll("[data-lesson-tab]").forEach(b=>b.onclick=()=>{state.lessonTab=b.dataset.lessonTab;render()});
  document.querySelectorAll("[data-study-expand]").forEach(b=>b.onclick=()=>{b.closest(".study-blocks-shell")?.querySelectorAll("details.study-block").forEach(d=>d.open=true)});
  document.querySelectorAll("[data-study-collapse]").forEach(b=>b.onclick=()=>{b.closest(".study-blocks-shell")?.querySelectorAll("details.study-block").forEach(d=>d.open=false)});
- document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{state.checkAnswer=b.dataset.answer;render()});\n document.querySelectorAll("[data-check-note]").forEach(el=>el.oninput=()=>localStorage.setItem(el.dataset.checkNote,el.value));
+ document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{state.checkAnswer=b.dataset.answer;render()});
+ document.querySelectorAll("[data-check-note]").forEach(el=>el.oninput=()=>localStorage.setItem(el.dataset.checkNote,el.value));
  const complete=document.querySelector("[data-complete-lesson]");
  if(complete)complete.onclick=()=>{
  const id=lessonKey(state.selectedCourse,state.selectedLesson);
