@@ -1,69 +1,61 @@
 (()=>{"use strict";
-const KEY="ns_mentor_ui_state";
-const CONTEXT_KEY="ns_mentor_context";
-const modes={
- teacher:["Teacher","First principles, examples, prerequisite repair."],
- socratic:["Socratic","One question at a time. Make me reason."],
- practice:["Practice","Short exercises with observable answers."],
- lab:["Lab Coach","Evidence-led hints. Do not reveal the conclusion."],
- reviewer:["Reviewer","Critique reasoning, evidence, assumptions and clarity."]
+const KEY="ns_mentor_ui_state",CTX="ns_mentor_context",DIAG="ns_mentor_diagnosis";
+const MODES={
+ teacher:["Teacher","First principles → example → check"],
+ socratic:["Socratic","One focused question → your reasoning"],
+ practice:["Practice","One task → your attempt → feedback"],
+ lab:["Lab Coach","Evidence → correlation → next observation"],
+ reviewer:["Reviewer","Accuracy → evidence → assumptions"]
 };
-const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
 const read=(k,f)=>{try{const x=localStorage.getItem(k);return x===null?f:JSON.parse(x)}catch{return f}};
 const write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
-const modeState=()=>read(KEY,{mode:"teacher"});
-function captureContext(){
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+function getMode(){return read(KEY,{mode:"teacher"}).mode||"teacher"}
+function capture(){
  const lesson=document.querySelector(".lesson-card");
- const lab=document.querySelector(".cyberrange-pro");
+ const lab=document.querySelector(".lab-mode .cr-operator-hud")?.closest(".app-shell");
+ let context={type:"none",title:"No active context",objective:"Open a lesson or lab."};
  if(lesson){
-  const title=lesson.querySelector("h1")?.textContent?.trim()||"";
-  const objective=lesson.querySelector(".lesson-card > .subtitle")?.textContent?.trim()||"";
-  if(title)write(CONTEXT_KEY,{type:"lesson",title,objective,updated:new Date().toISOString()});
+  context={type:"lesson",title:lesson.querySelector("h1")?.textContent?.trim()||"Active lesson",objective:lesson.querySelector(".subtitle")?.textContent?.trim()||"Lesson context"};
  }
  if(lab){
-  const title=lab.querySelector(".cr-header h1")?.textContent?.trim()||"";
-  const objective=lab.querySelector(".cr-brief h2")?.textContent?.trim()||"";
-  const locker=[...lab.querySelectorAll(".cr-locker-item")].map(x=>x.textContent.trim()).slice(0,5);
-  const evidence=lab.querySelector(".cr-operator-hud")?.textContent?.replace(/\s+/g," ").trim()||"";
-  if(title)write(CONTEXT_KEY,{type:"lab",title,objective,locker,evidence,updated:new Date().toISOString()});
+  context={type:"lab",title:lab.querySelector("h1")?.textContent?.trim()||"CyberRange investigation",objective:lab.querySelector(".cr-brief h2")?.textContent?.trim()||"Controlled investigation",evidence:lab.querySelector(".cr-operator-hud")?.textContent?.replace(/\s+/g," ").trim()||""};
  }
+ write(CTX,context);return context;
 }
-function context(){return read(CONTEXT_KEY,{type:"none",title:"No active context",objective:"Open a lesson or CyberRange investigation before asking for contextual coaching."})}
-function promptFor(mode,q){
- const c=context(),m=modes[mode]||modes.teacher;
- return "[NORTHSTAR MENTOR CONTEXT]\nMode: "+m[0]+"\nContext type: "+c.type+"\nTopic: "+c.title+"\nObjective: "+c.objective+(c.type==="lab"?"\nVisible lab state: "+(c.evidence||"")+"\nLocked evidence: "+(c.locker||[]).join(" | "):"")+"\n\nMentor behavior: "+m[1]+"\nLearner request: "+q;
+function diagnosis(){
+ const raw=read("ns_learner_model",{mastery:{},attempts:{},checks:{}});
+ const vals=Object.values(raw.mastery||{}).map(Number).filter(Number.isFinite);
+ const mastery=vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):0;
+ const attempts=Object.values(raw.attempts||{}).reduce((n,v)=>n+Number(v||0),0);
+ const checks=Object.values(raw.checks||{}).length;
+ let band="Not assessed",next="diagnose the prerequisite mental model";
+ if(mastery>=90){band="Strong";next="transfer the skill to a novel scenario"}
+ else if(mastery>=70){band="Functional";next="independent reasoning and evidence-backed application"}
+ else if(mastery>=40){band="Developing";next="guided practice and misconception repair"}
+ else if(mastery>0){band="Exposed";next="foundation repair with a worked example"}
+ const d={mastery,band,attempts,checks,next,updated:new Date().toISOString()};write(DIAG,d);return d;
 }
-function patchAI(){
- const root=document.querySelector("#view");
- if(!root||!root.querySelector(".chat")||root.dataset.mentorPatched==="1")return;
- root.dataset.mentorPatched="1";
- const s=modeState(),c=context();
- const host=root.querySelector(".mentor-shell")||root.firstElementChild;
- if(!host)return;
- const head=host.querySelector(".section-head")||host.firstElementChild;
- const bar=document.createElement("div");
- bar.className="mentor-mode-bar mentor-ui-injected";
- bar.innerHTML=Object.entries(modes).map(([id,m])=>'<button type="button" class="mentor-mode '+(s.mode===id?"active":"")+'" data-mentor-ui-mode="'+id+'"><b>'+esc(m[0])+'</b><small>'+esc(m[1])+'</small></button>').join("");
- host.insertBefore(bar,host.querySelector(".chat")||host.firstChild);
- const ctx=document.createElement("div");
- ctx.className="mentor-context mentor-ui-injected";
- ctx.innerHTML='<div><span>CONTEXT</span><b>'+esc(c.title)+'</b><small>'+esc(c.objective||"Local learner context")+'</small></div><div><span>MODE</span><b>'+esc(modes[s.mode]?.[0]||"Teacher")+'</b><small>Context is prepared locally in this browser.</small></div>';
- host.insertBefore(ctx,host.querySelector(".chat")||null);
- const actions=document.createElement("div");
- actions.className="mentor-actions mentor-ui-injected";
- ["Explain this from first principles","Quiz me one question at a time","Give me a short practice task","Review my reasoning"].forEach(q=>{
-  const b=document.createElement("button");b.type="button";b.className="chip";b.textContent=q;
-  b.addEventListener("click",()=>{const input=root.querySelector("#prompt");if(input){input.value=q;input.focus()}});
-  actions.appendChild(b);
- });
- host.insertBefore(actions,host.querySelector(".chat")||null);
+function renderChrome(root){
+ if(root.dataset.mentorBuilt==="1")return;
+ const chat=root.querySelector(".chat");if(!chat)return;
+ root.dataset.mentorBuilt="1";
+ const mode=getMode(),d=diagnosis(),c=capture();
+ const host=chat.parentElement;
+ const bar=document.createElement("div");bar.className="mentor-mode-bar";
+ bar.innerHTML=Object.entries(MODES).map(([id,x])=>'<button type="button" class="mentor-mode '+(id===mode?"active":"")+'" data-mentor-mode="'+id+'"><b>'+esc(x[0])+'</b><small>'+esc(x[1])+'</small></button>').join("");
+ host.insertBefore(bar,chat);
+ const dash=document.createElement("div");dash.className="mentor-dashboard";
+ dash.innerHTML='<div><span>CONTEXT</span><b>'+esc(c.title)+'</b><small>'+esc(c.objective)+'</small></div><div><span>LEARNER STATE</span><b>'+d.band+' · '+d.mastery+'%</b><small>Next: '+esc(d.next)+'</small></div><div><span>MENTOR CONTRACT</span><b>ADAPTIVE</b><small>Completion ≠ mastery. Evidence drives progression.</small></div>';
+ host.insertBefore(dash,chat);
+ const actions=document.createElement("div");actions.className="mentor-actions";
+ ["Teach this from first principles","Diagnose my understanding","Give me one practice task","Review my reasoning"].forEach(t=>{const b=document.createElement("button");b.type="button";b.className="chip";b.textContent=t;b.onclick=()=>{const i=root.querySelector("#prompt");if(i){i.value=t;i.focus()}};actions.appendChild(b)});
+ host.insertBefore(actions,chat);
+ bar.querySelectorAll("[data-mentor-mode]").forEach(b=>b.onclick=()=>{write(KEY,{mode:b.dataset.mentorMode});location.reload()});
  const form=root.querySelector("#chat");
- if(form){
-  form.addEventListener("submit",()=>{const input=form.querySelector("#prompt");if(input&&input.value.trim())input.value=promptFor(modeState().mode,input.value.trim())},{capture:true});
- }
- bar.querySelectorAll("[data-mentor-ui-mode]").forEach(b=>b.onclick=()=>{write(KEY,{mode:b.dataset.mentorUiMode});root.querySelectorAll(".mentor-ui-injected").forEach(x=>x.remove());root.dataset.mentorPatched="";patchAI()});
+ if(form)form.addEventListener("submit",()=>{const input=form.querySelector("#prompt");if(!input?.value.trim())return;const context=read(CTX,c),diag=diagnosis(),m=MODES[getMode()]||MODES.teacher;input.value="[NorthStar Mentor Context]\nMode: "+m[0]+"\nContext: "+context.type+" / "+context.title+"\nObjective: "+context.objective+"\nLearner state: "+diag.band+" at "+diag.mastery+"%\nAdaptive next step: "+diag.next+"\nMentor rule: "+m[1]+"\n\nLearner request: "+input.value.trim()},{capture:true});
 }
-function run(){captureContext();patchAI()}
+function run(){const root=document.querySelector("#view");if(root){capture();diagnosis();renderChrome(root)}}
 new MutationObserver(run).observe(document.body,{subtree:true,childList:true});
 run();
 })();
