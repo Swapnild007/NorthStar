@@ -1,0 +1,32 @@
+name: NorthStar Static QA
+
+on:
+  push:
+    branches: ["main", "feat/ai-mentor-omniroute"]
+    paths:
+      - "app.js"
+      - "data/**/*.js"
+      - "workers/mentor/**/*.js"
+      - ".github/workflows/northstar-static-qa.yml"
+  pull_request:
+    paths:
+      - "app.js"
+      - "data/**/*.js"
+      - "workers/mentor/**/*.js"
+      - ".github/workflows/northstar-static-qa.yml"
+  workflow_dispatch:
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Check JavaScript syntax
+        run: |
+          set -e
+          node --check app.js
+          for file in data/*.js; do node --check "$file"; done
+          node --check workers/mentor/src/index.js
