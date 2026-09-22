@@ -16,17 +16,17 @@ From this directory:
 npx wrangler deploy
 ```
 
-The first deployment will use a `workers.dev` URL. Copy the resulting URL and set it in `data/ai.js` as `endpoint`.
+The first deployment will use a `workers.dev` URL. If you deploy manually rather than through GitHub Actions, copy that Worker URL into `data/ai.js` as `endpoint`.
 
 ## Required Cloudflare setup
 
 1. Create/sign in to a Cloudflare account.
 2. Enable Workers AI for the account.
-3. Deploy this Worker with Wrangler.
-4. If deploying from GitHub Actions, add repository secrets:
+3. Add repository secrets:
    - `CLOUDFLARE_API_TOKEN`
    - `CLOUDFLARE_ACCOUNT_ID`
-5. The API token needs the permissions required to deploy Workers and use Workers AI.
+4. Run the **Deploy NorthStar AI Mentor** GitHub Actions workflow.
+5. The workflow deploys the Worker, resolves the account `workers.dev` subdomain, and automatically writes the public Worker URL into `data/ai.js`.
 
 The Worker itself does not require a model API key. The `AI` binding is the server-side connection to Workers AI.
 
