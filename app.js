@@ -261,20 +261,45 @@ const views={
 };
 
 function practiceScenario(l){
- const examples=Array.isArray(l.examples)?l.examples.filter(Boolean):[];
- const scenario=String(l.case||"").trim() || String(examples[0]?.body||"").trim() || String(l.practice||"").trim();
- const concepts=(l.concepts||[]).slice(0,5).join(", ");
- const title=l.title||"this lesson";
- const task=String(l.caseQuestions?.[0]||"").trim() || ("Analyze the scenario using the concepts from "+title+". State what should happen, what could fail, and what evidence would distinguish the two.");
+ const title=String(l.title||"this lesson").trim();
+ const concepts=(l.concepts||[]).filter(Boolean).slice(0,6);
+ const objective=String(l.objective||l.learningGoal||"").trim();
+ const rawCase=String(l.case||"").trim();
+ const generic=/scoped problem|must collect enough evidence|defensible technical decision|analyze the system, identify uncertainty/i.test(rawCase);
+ let scenario=generic?"":rawCase;
+ let task="";
+ if(/tcp\/ip mental model/i.test(title)){
+  scenario="A packet is moving from a client to a server. Use the TCP/IP model to explain what each layer contributes, which address identifies the endpoint at each layer, and where a failure would appear in evidence.";
+  task="Trace one client-to-server connection from Ethernet framing through ARP and IP delivery to TCP. Name the MAC addresses, IP addresses and ports involved, then explain what a packet capture should show at each step.";
+ }else if(/http|web architecture/i.test(title)){
+  scenario="A browser requests a web page from an application. Trace the request from the browser to the server and identify where DNS, TCP, TLS, HTTP and the application boundary appear.";
+  task="Draw the request path in order, identify the protocol at each stage, and state one observable failure signal for each stage.";
+ }else if(/tls|certificate/i.test(title)){
+  scenario="A client connects to a service over TLS and receives a certificate chain. Determine what the client must validate before trusting the connection.";
+  task="Trace the trust decision from certificate presentation to hostname, validity and chain verification. State what evidence would prove each validation succeeded or failed.";
+ }else if(/linux|operating system|process|permission|filesystem/i.test(title)){
+  scenario="A Linux host shows unexpected behavior from a running process. Investigate the process, its identity, permissions, resources and observable activity without changing the system.";
+  task="Trace the process from execution to resource access. Identify the security boundary involved, the evidence you would collect, and the observation that would distinguish expected behavior from a compromise.";
+ }else if(/sql|database/i.test(title)){
+  scenario="An application reads and writes records through a database. Investigate how input reaches the query layer and how access should be constrained.";
+  task="Trace the data from application input to database operation. Identify the trust boundary, the expected authorization decision, and the evidence that would reveal unsafe query construction or excessive privilege.";
+ }else if(/python|programming|algorithm|data structure/i.test(title)){
+  scenario="You need to implement and verify a small program that processes security-relevant input.";
+  task="State the input, transformation and expected output for this lesson. Work one concrete example, identify an edge case, and explain how you would test it.";
+ }else{
+  scenario=generic?"":scenario;
+  task="Demonstrate the objective of this lesson by applying "+title+" to a concrete security situation. Explain the mechanism, identify the relevant boundary or failure mode, and specify the evidence that would support your conclusion.";
+ }
+ if(!scenario)scenario="Apply "+title+" to a realistic security situation using the concepts and objective of this lesson.";
  const procedure=[
-  scenario?"1. Define the system, actors and scope described in the scenario.":"1. Define the system, actors and scope for the exercise.",
-  concepts?"2. Identify the relevant concepts: "+concepts+".":"2. Identify the lesson concepts that control the outcome.",
-  "3. Trace the mechanism step by step and state the expected behavior.",
-  "4. Identify the failure, abuse case or abnormal behavior that would change the conclusion.",
-  "5. Specify the evidence you would collect and explain why it is sufficient.",
-  "6. Write your conclusion, one limitation and one follow-up question."
+  "Define the system, actors, assets and scope.",
+  concepts.length?"Identify the relevant concepts: "+concepts.join(", ")+".":"Identify the lesson concepts that control the outcome.",
+  "Trace the mechanism step by step and state the expected behavior.",
+  "Identify the failure, abuse case or boundary condition that would change the conclusion.",
+  "Specify the evidence you would collect and explain why it is sufficient.",
+  "Write your conclusion, one limitation and one follow-up question."
  ];
- return {scenario,task,procedure};
+ return {scenario,task,objective,procedure};
 }
 function qnaData(l){
  const qas=Array.isArray(l.qa)?l.qa.filter(x=>x&&x.q):[];
@@ -290,11 +315,13 @@ function checkData(l){
 function practicePanel(l){
  const p=practiceScenario(l);
  let h='<div class="lesson-stack">';
- h+='<div><span class="eyebrow">Application</span><h2>Practice by doing</h2><p class="subtitle">Use the lesson to solve a concrete scenario. This is not a recall quiz.</p></div>';
- if(p.scenario)h+='<div class="inset case-card"><span class="eyebrow">Scenario</span><p class="subtitle">'+esc(p.scenario)+'</p></div>';
- h+='<div class="inset"><span class="eyebrow">Your task</span><strong>'+esc(p.task)+'</strong><p class="subtitle">Write your reasoning before looking for confirmation. The goal is to demonstrate application, not reproduce the lesson text.</p></div>';
- h+='<div class="inset"><span class="eyebrow">Investigation procedure</span><ol class="practice-steps">'+p.procedure.map(x=>'<li>'+esc(x)+'</li>').join("")+'</ol></div>';
- h+='<div class="inset"><strong>Evidence checkpoint</strong><p class="subtitle">'+esc(l.evidence||"Produce a scoped evidence artifact containing observations, reasoning, conclusion and limitations.")+'</p></div>';
+ h+='<div><span class="eyebrow">Application</span><h2>Practice by doing</h2><p class="subtitle">This is the application stage. Solve the scenario before reading any confirmation.</p></div>';
+ h+='<div class="inset case-card"><span class="eyebrow">Scenario</span><p class="subtitle">'+esc(p.scenario)+'</p></div>';
+ h+='<div class="inset"><span class="eyebrow">Your task</span><h3>'+esc(p.task)+'</h3>';
+ if(p.objective)h+='<p class="subtitle"><b>Lesson objective:</b> '+esc(p.objective)+'</p>';
+ h+='<p class="subtitle">Your answer should contain the mechanism, evidence, conclusion and one limitation.</p></div>';
+ h+='<div class="inset"><span class="eyebrow">Investigation procedure</span><ol class="practice-steps">'+p.procedure.map(x=>'<li>'+esc(String(x).replace(/^\s*\d+[.)]\s*/,""))+'</li>').join("")+'</ol></div>';
+ h+='<div class="inset"><span class="eyebrow">Evidence checkpoint</span><strong>Produce an evidence artifact</strong><p class="subtitle">'+esc(l.evidence||"Record scope, observations, reasoning, conclusion, limitation and next action.")+'</p></div>';
  if((l.mistakes||[]).length)h+='<div class="inset"><strong>Common mistakes to avoid</strong><ul class="lesson-list">'+(l.mistakes||[]).map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div>';
  if(l.reflection)h+='<div class="note-card"><span class="eyebrow">Self-explanation</span><p>'+esc(l.reflection)+'</p></div>';
  return h+'</div>';
