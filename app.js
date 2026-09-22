@@ -654,7 +654,7 @@ function mentorEndpoint(){
  const configured=String(AI_CONFIG.endpoint||"").trim().replace(/\/$/,"");
  if(configured)return configured;
  const local=String(AI_CONFIG.localEndpoint||"").trim().replace(/\/$/,"");
- if(AI_CONFIG.allowLocalEndpoint && local && /^(localhost|127\\.0\\.0\\.1)$/.test(location.hostname)) return local;
+ if(AI_CONFIG.allowLocalEndpoint && local && location.protocol==="http:" && location.hostname!=="swapnild007.github.io") return local;
  return "";
 }
 
