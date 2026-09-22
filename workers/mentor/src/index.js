@@ -1,8 +1,11 @@
-const MODEL = "@cf/qwen/qwen3.8-27b";
+const DEFAULT_MODEL = "auto";
 const ALLOWED_ORIGIN = "https://swapnild007.github.io";
 const MAX_BODY_BYTES = 120000;
 const MAX_MESSAGES = 18;
 const MAX_MESSAGE_CHARS = 7000;
+
+function omniBase(env){ return String(env.OMNIROUTE_BASE_URL||"").trim().replace(/\/$/,""); }
+function upstreamHeaders(env){ const h={"Content-Type":"application/json","Accept":"text/event-stream"}; const token=String(env.OMNIROUTE_TOKEN||"").trim(); if(token) h.Authorization="Bearer "+token; return h; }
 
 const BASE_SYSTEM = `You are NorthStar Mentor, the AI tutor inside the NorthStar cybersecurity learning platform.
 
@@ -109,7 +112,7 @@ export default {
 
     const url = new URL(request.url);
     if (url.pathname === "/health") {
-      return json({ ok: true, service: "northstar-ai-mentor", model: MODEL, inference: "cloud" }, 200, origin);
+      return json({ ok: true, service: "northstar-ai-mentor", model: DEFAULT_MODEL, gateway: "OmniRoute", inference: "cloud" }, 200, origin);
     }
 
     if (url.pathname !== "/v1/chat/completions" || request.method !== "POST") {
@@ -147,26 +150,28 @@ export default {
       ...messages,
     ];
 
+    const base = omniBase(env);
+    if (!base) return json({ error: "OmniRoute gateway is not configured on the Worker." }, 503, origin);
     try {
-      const result = await env.AI.run(MODEL, {
-        messages: modelMessages,
-        stream: true,
-        temperature: 0.4,
-        max_tokens: 900,
+      const upstream = await fetch(base + "/v1/chat/completions", {
+        method: "POST",
+        headers: upstreamHeaders(env),
+        body: JSON.stringify({
+          model: String(body.model || DEFAULT_MODEL).slice(0,100),
+          stream: true,
+          temperature: 0.4,
+          max_tokens: 900,
+          messages: modelMessages,
+        }),
       });
-
-      return new Response(result, {
-        status: 200,
-        headers: {
-          ...corsHeaders(origin),
-          "Content-Type": "text/event-stream; charset=utf-8",
-          "Cache-Control": "no-cache, no-transform",
-          "X-Content-Type-Options": "nosniff",
-        },
-      });
+      const headers = new Headers(upstream.headers);
+      Object.entries(corsHeaders(origin)).forEach(([k,v]) => headers.set(k,v));
+      headers.set("Cache-Control", "no-cache, no-transform");
+      headers.set("X-Content-Type-Options", "nosniff");
+      return new Response(upstream.body, { status: upstream.status, statusText: upstream.statusText, headers });
     } catch (error) {
-      console.error("NorthStar mentor inference failed", error);
-      return json({ error: "Mentor inference is temporarily unavailable." }, 503, origin);
-    }
+      console.error("NorthStar OmniRoute gateway error", error);
+      return json({ error: "OmniRoute is temporarily unavailable." }, 503, origin);
+    }}
   },
 };
