@@ -18,14 +18,14 @@ Cloudflare Worker
       |
       | Workers AI binding
       v
-Qwen3.8 27B
+OmniRoute-selected model
 ```
 
 The LLM stays on Cloudflare infrastructure. Nothing in the NorthStar frontend downloads model weights.
 
-## Why Qwen3.8 27B
+## Why OmniRoute-selected model
 
-Cloudflare currently lists `@cf/qwen/qwen3.8-27b` as a hosted model with reasoning, function calling, vision, and a 262,144-token context window. NorthStar only needs text today, but the multimodal/tooling capabilities leave room for later CyberRange mentor features.
+Cloudflare currently lists `auto` as a hosted model with reasoning, function calling, vision, and a 262,144-token context window. NorthStar only needs text today, but the multimodal/tooling capabilities leave room for later CyberRange mentor features.
 
 ## Mentor architecture
 
