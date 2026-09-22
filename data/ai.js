@@ -1,10 +1,10 @@
 window.NORTHSTAR_AI={
- version:"2.0.0",
- provider:"Cloudflare Workers AI",
- mode:"cloud",
- model:"@cf/qwen/qwen3.8-27b",
+ version:"3.6.0",
+ provider:"OmniRoute",
+ mode:"cloud-gateway",
+ model:"auto",
  endpoint:"",
- architecture:"cloud-gateway",
+ architecture:"github-pages -> cloudflare-worker -> omniroute -> provider",
  localModel:false,
  deviceModelStorage:false,
  roles:["Teacher","Socratic Tutor","Lab Mentor","Code Mentor","Examiner","Security Analyst"],
@@ -13,6 +13,12 @@ window.NORTHSTAR_AI={
   modelStoredOnDevice:false,
   conversationStorage:"localStorage",
   backendRequired:true
+ },
+ routing:{
+  strategy:"auto",
+  fallback:true,
+  providerSelection:"OmniRoute",
+  compression:"gateway-controlled"
  },
  labPolicy:"Controlled and authorized environments only"
 };
