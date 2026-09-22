@@ -601,3 +601,38 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
  .lab-mode .cr-route-grid{grid-template-columns:1fr}
  .lab-mode .cr-iam-graph{min-width:330px}
 }
+/* CyberRange intelligence layer — scoped to Labs only. */
+.lab-mode .cr-row-wrap{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:stretch}
+.lab-mode .cr-row-wrap .cr-row{min-width:0}
+.lab-mode .cr-lock{padding:0 10px;border:1px solid rgba(56,189,248,.16);border-radius:9px;background:rgba(15,23,42,.72);color:#67e8f9;font:800 9px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em}
+.lab-mode .cr-lock:hover{background:rgba(8,47,73,.9);border-color:rgba(103,232,249,.42)}
+.lab-mode .cr-intel-head{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px;border-bottom:1px solid rgba(148,163,184,.12)}
+.lab-mode .cr-score-label,.lab-mode .cr-intel-head span,.lab-mode .cr-capabilities>span,.lab-mode .cr-remediation>span{display:block;color:#64748b;font:800 9px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em;text-transform:uppercase}
+.lab-mode .cr-intel-head b{display:block;font:900 34px ui-monospace,SFMono-Regular,Menlo,monospace;color:#67e8f9;margin-top:4px}
+.lab-mode .cr-intel-head small{display:block;color:#86efac;font:800 10px ui-monospace,SFMono-Regular,Menlo,monospace;margin-top:4px}
+.lab-mode .cr-intel-head p{margin:7px 0 0;color:#cbd5e1;font-size:12px;line-height:1.55}
+.lab-mode .cr-score-grid{display:grid;gap:10px;padding:14px 16px}
+.lab-mode .cr-score-grid>div{display:grid;grid-template-columns:90px 1fr 34px;gap:9px;align-items:center}
+.lab-mode .cr-score-grid span,.lab-mode .cr-score-grid b{font:800 10px ui-monospace,SFMono-Regular,Menlo,monospace;color:#cbd5e1}
+.lab-mode .cr-score-grid b{text-align:right;color:#f8fafc}
+.lab-mode .cr-score-grid i{height:6px;background:#172033;border-radius:99px;overflow:hidden}
+.lab-mode .cr-score-grid em{display:block;height:100%;background:linear-gradient(90deg,#2563eb,#06b6d4,#22c55e);border-radius:99px}
+.lab-mode .cr-capabilities{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 14px}
+.lab-mode .cr-capabilities>span{width:100%}
+.lab-mode .cr-capabilities b{padding:7px 9px;border:1px solid rgba(56,189,248,.14);border-radius:999px;color:#bae6fd;background:rgba(8,47,73,.45);font:800 9px ui-monospace,SFMono-Regular,Menlo,monospace}
+.lab-mode .cr-remediation{margin:0 16px 16px;padding:11px 12px;border:1px solid rgba(245,158,11,.15);border-radius:10px;background:rgba(120,53,15,.16)}
+.lab-mode .cr-remediation p{margin:5px 0 0;color:#cbd5e1;font-size:11px;line-height:1.5}
+.lab-mode .cr-report-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:15px 0}
+.lab-mode .cr-report-fields label{display:grid;gap:6px;color:#94a3b8;font:800 9px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase}
+.lab-mode .cr-report-fields label:nth-child(3),.lab-mode .cr-report-fields label:nth-child(5),.lab-mode .cr-report-fields label:nth-child(6){grid-column:1/-1}
+.lab-mode .cr-report-fields input,.lab-mode .cr-report-fields textarea,.lab-mode .cr-report-fields select{width:100%;border:1px solid rgba(148,163,184,.14);border-radius:10px;background:#0b1220;color:#e2e8f0;padding:10px 11px;outline:none;font:600 11px ui-monospace,SFMono-Regular,Menlo,monospace;text-transform:none;letter-spacing:0}
+.lab-mode .cr-report-fields textarea{min-height:78px;resize:vertical;line-height:1.5}
+.lab-mode .cr-report-fields input:focus,.lab-mode .cr-report-fields textarea:focus,.lab-mode .cr-report-fields select:focus{border-color:rgba(34,211,238,.5);box-shadow:0 0 0 3px rgba(6,182,212,.08)}
+.lab-mode .cr-readiness{font:900 10px ui-monospace,SFMono-Regular,Menlo,monospace;color:#67e8f9}
+@media(max-width:700px){
+ .lab-mode .cr-intel-head{grid-template-columns:1fr}
+ .lab-mode .cr-report-fields{grid-template-columns:1fr}
+ .lab-mode .cr-report-fields label:nth-child(n){grid-column:1}
+ .lab-mode .cr-row-wrap{grid-template-columns:1fr}
+ .lab-mode .cr-lock{min-height:34px}
+}
