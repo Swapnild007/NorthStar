@@ -1,9 +1,11 @@
-FROM node:22-bookworm-slim
+FROM diegosouzapw/omniroute:latest
 
-RUN npm install -g omniroute
+ENV NODE_ENV=production \
+    PORT=20128 \
+    HOSTNAME=0.0.0.0 \
+    DATA_DIR=/app/data \
+    REQUIRE_API_KEY=true \
+    AUTH_COOKIE_SECURE=true
 
-WORKDIR /app
 VOLUME ["/app/data"]
 EXPOSE 20128
-
-CMD ["omniroute", "--no-open"]
