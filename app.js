@@ -1,4 +1,4 @@
-const VERSION="1.7.0";
+const VERSION="2.0.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 const AI_CONFIG=window.NORTHSTAR_AI||{model:"Qwen3-0.6B-q4f16_1-MLC",provider:"WebLLM",mode:"local-browser"};
 
@@ -16,50 +16,9 @@ const savedCompleted=readStoredJSON("ns_completed_lessons",[]);
 const savedLabs=readStoredJSON("ns_lab_state",{});
 
 const curriculum=(Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[]).map(c=>({...c,lessons:(c.lessons||[]).map(l=>({...l,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[l.id]||{})}))}));
-const labs=[
- {id:"packet-recon",title:"Packet Recon",subtitle:"Analyze a controlled packet capture",level:"Beginner",objective:"Inspect simulated packets, identify protocols and endpoints, and document a defensible observation.",skills:["Ethernet","ARP","IP","TCP","Ports","Evidence"]},
- {id:"web-surface",title:"Web Surface",subtitle:"Map a deliberately vulnerable web surface",level:"Intermediate",objective:"Inventory a simulated web application, identify trust boundaries and document the attack surface without exploiting it.",skills:["HTTP","Routes","Authentication","Trust boundaries","Input surface","Evidence"]},
- {id:"detection-drill",title:"Detection Drill",subtitle:"Turn telemetry into a detection rule",level:"Intermediate",objective:"Inspect simulated security telemetry, separate normal from suspicious behavior, and write a defensible detection hypothesis.",skills:["Logs","Indicators","Baselines","Detection logic","False positives","Evidence"]},
- {id:"incident-room",title:"Incident Room",subtitle:"Triage a simulated security incident",level:"Advanced",objective:"Build a timeline from controlled evidence, identify the affected assets and document containment priorities.",skills:["Timeline","Scope","Evidence","Containment","Impact","Uncertainty"]}
-];
-const LAB_DETAILS={
- "packet-recon":{
-  scenario:"A workstation at 10.20.5.14 communicates with 10.20.5.20. The capture contains normal setup traffic and one connection that requires investigation.",
-  evidence:["08:14:02 ARP 10.20.5.14 asks for 10.20.5.1","08:14:03 ARP reply: 10.20.5.1 is at 00:11:22:33:44:55","08:14:05 TCP 10.20.5.14:51522 → 10.20.5.20:443 SYN","08:14:05 TCP 10.20.5.20:443 → 10.20.5.14:51522 SYN/ACK","08:14:06 TCP 10.20.5.14:51522 → 10.20.5.20:443 ACK","08:14:21 TCP 10.20.5.14:51531 → 10.20.5.77:23 SYN","08:14:21 TCP 10.20.5.77:23 → 10.20.5.14:51531 SYN/ACK"],
-  task:"Identify the normal HTTPS connection and the connection that requires investigation. Explain the protocol, endpoint, port and evidence that led to your conclusion.",
-  checkpoints:["Which flow completes the TCP three-way handshake to port 443?","What makes the port-23 connection worth investigating without proving it malicious?","What additional observation would reduce uncertainty?"],
-  hints:["Follow the SYN → SYN/ACK → ACK sequence before interpreting the application.","Port 23 identifies a service convention, not intent. Separate observation from conclusion.","Look for the process, destination ownership, historical baseline or additional packet content."],
-  deliverable:"Write: normal flow, investigated flow, evidence used, one alternative explanation, and one next observation.",
-  success:"Correctly distinguish the flows and justify the distinction with packet evidence."
- },
- "web-surface":{
-  scenario:"You are reviewing a deliberately isolated training application. Inventory and risk reasoning only. Do not attempt exploitation.",
-  evidence:["GET /login → 200","GET /search?q=training → 200","GET /api/profile → 401","GET /admin → 403","POST /login → 401 when credentials are invalid","GET /health → 200","GET /static/app.js → 200"],
-  task:"Build an attack-surface inventory from the observed routes. Identify authentication boundaries, user-controlled input and privileged functionality.",
-  checkpoints:["Which routes are publicly reachable from the evidence?","Where are authentication or authorization boundaries visible?","Which observation would you need before calling a route vulnerable?"],
-  hints:["Reachability is not the same as authorization.","401 and 403 provide different evidence about access control state.","A route being present does not establish an exploitable weakness. Identify the missing evidence."],
-  deliverable:"Create a table with route, method, trust boundary, authentication state, input surface and evidence.",
-  success:"Inventory the routes accurately and distinguish public, authenticated and restricted surfaces without exploiting anything."
- },
- "detection-drill":{
-  scenario:"A simulated endpoint produces five events. Most match the baseline; one sequence is unusual and needs a detection hypothesis.",
-  evidence:["09:00 user login from 10.10.2.15","09:04 powershell.exe started by approved management agent","09:05 powershell.exe queried system inventory","09:06 powershell.exe launched from a user document directory","09:07 outbound connection to an unclassified destination"],
-  task:"Separate baseline activity from the sequence that deserves investigation. Propose a detection condition and state how you would reduce false positives.",
-  checkpoints:["Which events have an explicit benign explanation in the evidence?","What combination of events forms the strongest investigation signal?","What benign condition could produce the same signal?"],
-  hints:["A single event is often weak; sequence and context matter.","The document-directory launch plus outbound connection changes the context.","Think about approved software, administrative workflows and user behavior as possible alternatives."],
-  deliverable:"Write the signal, supporting events, expected benign explanation, suspicious hypothesis, false-positive control and next evidence source.",
-  success:"The detection hypothesis is tied to observable events and includes a false-positive control."
- },
- "incident-room":{
-  scenario:"A simulated incident affects one employee workstation. Evidence arrives from endpoint, authentication and network logs.",
-  evidence:["10:02 user login from workstation WS-17","10:07 new executable observed in Downloads","10:09 process started by the logged-in user","10:11 outbound connection to an unfamiliar external address","10:14 same user authenticates to a file server","10:18 endpoint alert generated"],
-  task:"Build a preliminary incident timeline, identify the earliest meaningful signal, define current scope and state the containment decision you would investigate first.",
-  checkpoints:["What is the earliest event that changes the investigation posture?","What assets and identity are currently supported by evidence?","What evidence is still missing before expanding the incident scope?"],
-  hints:["Chronology matters. Do not use the final alert as the beginning of the incident.","Separate confirmed observations from inferred compromise.","Look for additional hosts, authentication events, process lineage and network evidence before expanding scope."],
-  deliverable:"Produce timeline, affected asset, account involved, evidence gaps, containment priority and confidence/uncertainty.",
-  success:"The timeline is chronological, scope is evidence-based, and containment reasoning is separated from assumptions."
- }
-};
+const labs=window.NORTHSTAR_LABS||[];
+const LAB_DETAILS=window.NORTHSTAR_LAB_DETAILS||{};
+const LAB_TRACKS=window.NORTHSTAR_LAB_TRACKS||[];
 function labWorkspaceKey(id){return "ns_lab_workspace_"+id}
 function labWorkspace(id){
  const fallback={answers:{},revealedHints:[],note:""};
@@ -286,11 +245,16 @@ const views={
    <div class="lesson-footer"><span class="status ${done?"success":""}">${done?"✓ Completed":"In progress"}</span><button class="chip active" data-complete-lesson>${done?"Completed":"Mark lesson complete"}</button></div>
   </div></section>`;
  },
- labs:()=>`<section class="fade"><span class="eyebrow">Controlled practice environment</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">Practice with evidence.</h1><p class="subtitle">Four controlled simulations. Each lab requires observation, reasoning and an evidence artifact. Nothing here executes against a real system.</p>
-  <div class="list section">${labs.map((l,i)=>{const st=state.labState[i]||"ready";let tags=l.skills.slice(0,4).map(x=>'<span class="tag">'+esc(x)+'</span>').join("");return '<article class="card glass learning-card"><div class="course-icon">0'+(i+1)+'</div><div class="course-main"><strong>'+esc(l.title)+'</strong><small>'+esc(l.subtitle)+' · '+esc(l.level)+'</small><div class="tag-row">'+tags+'</div></div><button class="badge '+(st==="completed"?"done":"")+'" data-lab="'+i+'">'+(st==="completed"?"Done":st==="started"?"Resume":"Start")+'</button></article>';}).join("")}</div>
-  <div class="section card glass"><span class="eyebrow">Safety boundary</span><h2>Isolated learning simulations</h2><p class="subtitle">NorthStar records your reasoning locally. These labs do not scan, attack, connect to, or modify external systems.</p></div>
- </section>`,
- lab:()=>{const l=labs[state.selectedLab],d=LAB_DETAILS[l.id],st=state.labState[state.selectedLab]||"ready";const w=labWorkspace(l.id);const answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length;const note=String(w.note||"");const activeTool=state.labTool||"overview";const toolNames={overview:"Mission",evidence:"Evidence Feed",analysis:"Investigation",timeline:"Timeline",findings:"Findings"};const flow=[["Understand",answered>0||note.trim().length>0,"Establish scope"],["Analyze",answered>=1,"Inspect evidence"],["Reason",answered>=2,"Test hypotheses"],["Report",note.trim().length>=40,"Document findings"]];const pct=Math.min(100,Math.round(answered/d.checkpoints.length*100));let h='<section class="fade cyberrange">';h+='<div class="cyber-top"><div><button class="back" data-route="labs">← Cyber Range</button><span class="cyber-kicker">NORTHSTAR SECURITY OPERATIONS LAB</span><h1>'+esc(l.title)+'</h1><p>'+esc(l.subtitle)+' · <b>'+esc(l.level)+'</b></p></div><div class="cyber-status"><i></i>SIMULATION ONLINE<span>LAB 0'+(state.selectedLab+1)+'</span></div></div>';h+='<div class="cyber-grid"><aside class="cyber-sidebar"><div class="mission-chip"><span>MISSION</span><b>0'+(state.selectedLab+1)+'</b><small>CONTROLLED ENVIRONMENT</small></div><nav class="cyber-nav">';Object.entries(toolNames).forEach(([id,name])=>{h+='<button class="'+(activeTool===id?"active":"")+'" data-lab-tool="'+id+'"><span>'+({overview:"⌁",evidence:"◈",analysis:"⌘",timeline:"◷",findings:"✓"}[id]||"•")+'</span>'+name+'</button>'});h+='</nav><div class="cyber-progress"><span>INVESTIGATION</span><b>'+answered+'/'+d.checkpoints.length+'</b><div><i style="width:'+pct+'%"></i></div></div></aside><main class="cyber-main">';
+ labs:()=>{
+  const total=labs.length,done=labCompletedCount();
+  let h='<section class="fade lab-catalog"><div class="range-hero"><div><span class="eyebrow">CyberRange 2.0 · Adaptive practice</span><h1 class="title">Operate the range.</h1><p class="subtitle">From first principles to enterprise investigations. Every lab is controlled, evidence-driven and mapped to a practical security skill.</p></div><div class="range-stat"><b>'+done+'/'+total+'</b><span>labs completed</span></div></div><div class="range-rails"><div><b>FOUNDATION</b><span>Start with no prior security experience.</span></div><div><b>INVESTIGATE</b><span>Observe → correlate → hypothesize → report.</span></div><div><b>ADVANCED</b><span>Unknown scenarios test transfer, not memory.</span></div></div>';
+  LAB_TRACKS.forEach(track=>{const items=labs.filter(x=>x.track===track.id);if(!items.length)return;h+='<div class="lab-track"><div class="lab-track-head"><div><span class="eyebrow">'+esc(track.label)+'</span><h2>'+esc(track.label)+'</h2><p>'+esc(track.desc)+'</p></div><b>'+items.length+' LAB'+(items.length===1?"":"S")+'</b></div><div class="lab-grid">';
+   items.forEach(l=>{const i=labs.indexOf(l),st=state.labState[i]||"ready";h+='<article class="lab-card '+(st==="completed"?"completed":"")+'"><div class="lab-card-top"><span>LAB '+String(i+1).padStart(3,"0")+'</span><em>'+esc(l.level)+'</em></div><h3>'+esc(l.title)+'</h3><p>'+esc(l.subtitle)+'</p><div class="lab-meta"><span>'+esc(l.duration)+'</span>'+l.skills.slice(0,3).map(x=>'<i>'+esc(x)+'</i>').join("")+'</div><button data-lab="'+i+'">'+(st==="completed"?"Review":"Start Lab →")+'</button></article>'});
+   h+='</div></div>';
+  });
+  h+='<div class="range-safety"><span class="eyebrow">SAFETY BOUNDARY</span><h2>Controlled cyber range</h2><p>NorthStar labs use simulated evidence and local learner state. They do not scan, attack, connect to or modify external systems.</p></div></section>';
+  return h
+ }, lab:()=>{const l=labs[state.selectedLab],d=LAB_DETAILS[l.id],st=state.labState[state.selectedLab]||"ready";const w=labWorkspace(l.id);const answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length;const note=String(w.note||"");const activeTool=state.labTool||"overview";const toolNames={overview:"Mission",evidence:"Evidence Feed",analysis:"Investigation",timeline:"Timeline",findings:"Findings"};const flow=[["Understand",answered>0||note.trim().length>0,"Establish scope"],["Analyze",answered>=1,"Inspect evidence"],["Reason",answered>=2,"Test hypotheses"],["Report",note.trim().length>=40,"Document findings"]];const pct=Math.min(100,Math.round(answered/d.checkpoints.length*100));let h='<section class="fade cyberrange">';h+='<div class="cyber-top"><div><button class="back" data-route="labs">← Cyber Range</button><span class="cyber-kicker">NORTHSTAR SECURITY OPERATIONS LAB</span><h1>'+esc(l.title)+'</h1><p>'+esc(l.subtitle)+' · <b>'+esc(l.level)+'</b></p></div><div class="cyber-status"><i></i>SIMULATION ONLINE<span>LAB 0'+(state.selectedLab+1)+'</span></div></div>';h+='<div class="cyber-grid"><aside class="cyber-sidebar"><div class="mission-chip"><span>MISSION</span><b>0'+(state.selectedLab+1)+'</b><small>CONTROLLED ENVIRONMENT</small></div><nav class="cyber-nav">';Object.entries(toolNames).forEach(([id,name])=>{h+='<button class="'+(activeTool===id?"active":"")+'" data-lab-tool="'+id+'"><span>'+({overview:"⌁",evidence:"◈",analysis:"⌘",timeline:"◷",findings:"✓"}[id]||"•")+'</span>'+name+'</button>'});h+='</nav><div class="cyber-progress"><span>INVESTIGATION</span><b>'+answered+'/'+d.checkpoints.length+'</b><div><i style="width:'+pct+'%"></i></div></div></aside><main class="cyber-main">';
 if(activeTool==="overview"){h+='<div class="mission-grid"><article class="terminal-panel mission-panel"><div class="panel-head"><span>MISSION BRIEF</span><em>READ ONLY</em></div><div class="panel-body"><h2>'+esc(l.objective)+'</h2><p>'+esc(d.scenario)+'</p><div class="mission-metrics"><div><small>EVIDENCE</small><b>'+d.evidence.length+'</b></div><div><small>CHECKPOINTS</small><b>'+d.checkpoints.length+'</b></div><div><small>STATUS</small><b>'+((st==="completed")?"COMPLETE":"ACTIVE")+'</b></div></div></div></article><article class="terminal-panel"><div class="panel-head"><span>INVESTIGATION FLOW</span><em>LIVE</em></div><div class="flow-list">';flow.forEach((x,i)=>{h+='<div class="'+(x[1]?"flow-done":"")+'"><span>'+(x[1]?"✓":String(i+1))+'</span><b>'+x[0]+'</b><small>'+x[2]+'</small></div>'});h+='</div></article></div><div class="terminal-panel"><div class="panel-head"><span>SCENARIO MAP</span><em>SIMULATED</em></div><div class="network-map"><div class="node client"><i>HOST</i><b>TRAINING CLIENT</b><small>CONTROLLED ASSET</small></div><div class="link"><span>INVESTIGATE →</span></div><div class="node target"><i>LAB DATA</i><b>SIMULATED ENVIRONMENT</b><small>NO EXTERNAL ACCESS</small></div></div></div>'}
 else if(activeTool==="evidence"){h+='<div class="terminal-panel"><div class="panel-head"><span>EVIDENCE FEED</span><em>'+d.evidence.length+' RECORDS</em></div><div class="evidence-stream">';d.evidence.forEach((x,i)=>{h+='<div><span>'+String(i+1).padStart(2,"0")+'</span><code>'+esc(x)+'</code><button class="chip" data-copy-evidence="'+i+'">Inspect</button></div>'});h+='</div></div>'}
 else if(activeTool==="analysis"){h+='<div class="terminal-panel"><div class="panel-head"><span>INVESTIGATION CONSOLE</span><em>'+answered+'/'+d.checkpoints.length+' ANSWERED</em></div><div class="checkpoint-stack">';d.checkpoints.forEach((q,i)=>{h+='<article class="checkpoint '+(String(w.answers?.[i]||"").trim()?"complete":"")+'"><header><span>Q0'+(i+1)+'</span><b>'+esc(q)+'</b></header><textarea data-lab-answer="'+i+'" placeholder="Record your reasoning...">'+esc(w.answers?.[i]||"")+'</textarea>';h+=(w.revealedHints||[]).includes(i)?'<div class="cyber-hint">HINT · '+esc(d.hints[i])+'</div>':'<button class="chip" data-lab-hint="'+i+'">Request hint</button>';h+='</article>'});h+='</div></div>'}
@@ -545,7 +509,7 @@ function bind(){
  }
  persist();render();
 };
- document.querySelectorAll("[data-lab]").forEach(b=>{b.onclick=()=>{state.selectedLab=Number(b.dataset.lab);state.labState[state.selectedLab]=state.labState[state.selectedLab]==="completed"?"completed":"started";persist();state.route="lab";render()};});
+ document.querySelectorAll("[data-lab]").forEach(b=>{b.onclick=()=>{state.selectedLab=Number(b.dataset.lab);state.labTool="overview";state.labState[state.selectedLab]=state.labState[state.selectedLab]==="completed"?"completed":"started";persist();state.route="lab";render()};});
  document.querySelectorAll("[data-lab-tool]").forEach(b=>b.onclick=()=>{state.labTool=b.dataset.labTool;render()});
  document.querySelectorAll("[data-lab-answer]").forEach(el=>el.oninput=()=>{const l=labs[state.selectedLab],w=labWorkspace(l.id);w.answers=Object.assign({},w.answers,{[el.dataset.labAnswer]:el.value});saveLabWorkspace(l.id,w);});
  document.querySelectorAll("[data-lab-note]").forEach(el=>el.oninput=()=>{const w=labWorkspace(el.dataset.labNote);w.note=el.value;saveLabWorkspace(el.dataset.labNote,w);});
