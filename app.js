@@ -28,7 +28,8 @@ function labWorkspace(id){
 }
 function saveLabWorkspace(id,w){localStorage.setItem(labWorkspaceKey(id),JSON.stringify(w))}
 const nav=[["home","Home","⌂"],["learn","Learn","▤"],["ai","AI","✦"],["labs","Labs","⌁"],["progress","Progress","◉"]];
-const savedAI=readStoredJSON("ns_ai_messages",null);
+const AI_MESSAGES_KEY="ns_ai_messages_v2";
+const savedAI=readStoredJSON(AI_MESSAGES_KEY,null);
 let aiEngine=null;
 let aiLoading=false;
 let aiProgress=0;
@@ -64,7 +65,7 @@ const courseProgress=i=>{const ls=curriculum[i]?.lessons||[];return ls.length?Ma
 const persist=()=>{
  localStorage.setItem("ns_completed_lessons",JSON.stringify(state.completedLessons));
  localStorage.setItem("ns_lab_state",JSON.stringify(state.labState));
- localStorage.setItem("ns_ai_messages",JSON.stringify(state.messages.slice(-40)));
+ localStorage.setItem(AI_MESSAGES_KEY,JSON.stringify(state.messages.slice(-40)));
 };
 const go=r=>{state.route=r;window.scrollTo({top:0,behavior:"smooth"});render()};
 const iconFor=i=>["◈","◎","☁","◉","⌁","◇"][i]||"•";
@@ -587,6 +588,7 @@ function bind(){
  document.querySelectorAll("[data-lab-hint]").forEach(b=>b.onclick=()=>{const l=labs[state.selectedLab],w=labWorkspace(l.id);w.revealedHints=Array.from(new Set([...(w.revealedHints||[]),Number(b.dataset.labHint)]));saveLabWorkspace(l.id,w);render();});
  const labComplete=document.querySelector("[data-lab-complete]");
  if(labComplete)labComplete.onclick=()=>{const l=labs[state.selectedLab],d=getLabDetails(l.id),w=cyberToolState(l.id),f=w.finding||{},answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length,score=labScore(l,d,w);const missing=[];if(answered<d.checkpoints.length)missing.push("all investigation checkpoints");if((w.locker||[]).length<2)missing.push("at least 2 locked evidence items");if(String(w.note||"").trim().length<120)missing.push("a 120+ character analyst narrative");if(!String(f.title||"").trim())missing.push("a finding title");if(!String(f.impact||"").trim())missing.push("impact / scope");if(!String(f.nextAction||"").trim())missing.push("a next action");if(score.total<70)missing.push("a readiness score of at least 70%");if(missing.length){alert("Complete before submission:\n• "+missing.join("\n• "));return;}state.labState[state.selectedLab]="completed";w.completedAt=new Date().toISOString();w.assessment=score;saveLabWorkspace(l.id,w);persist();render()};
+ document.querySelectorAll("[data-mentor-mode]").forEach(b=>b.onclick=()=>{if(window.NORTHSTAR_MENTOR_UI?.setMode?.(b.dataset.mentorMode)){render()}});
  document.querySelectorAll("[data-prompt]").forEach(b=>b.onclick=()=>{const input=document.querySelector("#prompt");if(input){input.value=b.dataset.prompt;input.focus()}});
  const clear=document.querySelector("[data-clear-chat]");
  if(clear)clear.onclick=()=>{state.messages=[["ai","Chat cleared. I’m ready for your next cybersecurity question."]];persist();render()};
