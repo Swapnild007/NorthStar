@@ -35,8 +35,22 @@ const state={
  selectedCourse:0,selectedLesson:0,selectedLab:0,lessonTab:"Read",checkAnswer:""
 };
 const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
-const allLessons=()=>curriculum.flatMap(c=>c.lessons||[]);
+const allLessons=()=>curriculum.flatMap(c=>Array.isArray(c.lessons)?c.lessons:[]);
 const totalLessons=()=>allLessons().length;
+const LEARNER_KEY="ns_learner_model";
+const learnerState=()=>{
+ const fallback={version:"1.0",mastery:{},attempts:{},checks:{},lastActivity:null};
+ const saved=readStoredJSON(LEARNER_KEY,fallback);
+ return saved&&typeof saved==="object"?{
+  ...fallback,...saved,
+  mastery:typeof saved.mastery==="object"&&saved.mastery?saved.mastery:{},
+  attempts:typeof saved.attempts==="object"&&saved.attempts?saved.attempts:{},
+  checks:typeof saved.checks==="object"&&saved.checks?saved.checks:{}
+ }:fallback;
+};
+const lessonMastery=id=>{const s=learnerState();return Number(s.mastery?.[id]||0)};
+const overallMastery=()=>{const ids=allLessons().map(l=>l.id).filter(Boolean);return ids.length?Math.round(ids.reduce((n,id)=>n+lessonMastery(id),0)/ids.length):0};
+const CURRICULUM_STANDARD=window.NORTHSTAR_CURRICULUM_STANDARD||{version:"2.0"};
 const lessonKey=(course,lesson)=>curriculum[course]?.lessons?.[lesson]?.id||"";
 const completedCount=()=>state.completedLessons.filter(id=>allLessons().some(l=>l.id===id)).length;
 const labCompletedCount=()=>Object.values(state.labState).filter(v=>v==="completed").length;
@@ -125,19 +139,37 @@ const views={
   </section>`;
  },
  learn:()=>{
-  const categories=["All",...new Set(curriculum.map(c=>c.category).filter(Boolean))];
-  const filtered=state.filter==="All"?curriculum:curriculum.filter(c=>c.category===state.filter);
+  const modules=curriculum.map((c,i)=>({
+    c,i,lessons:Array.isArray(c.lessons)?c.lessons:[],meta:c.meta&&typeof c.meta==="object"?c.meta:{}
+  }));
+  const categories=["All",...new Set(modules.map(x=>x.c.category).filter(Boolean))];
+  const activeFilter=categories.includes(state.filter)?state.filter:"All";
+  if(state.filter!==activeFilter)state.filter=activeFilter;
+  const filtered=activeFilter==="All"?modules:modules.filter(x=>x.c.category===activeFilter);
+  const total=modules.reduce((n,x)=>n+x.lessons.length,0);
+  const visibleTotal=filtered.reduce((n,x)=>n+x.lessons.length,0);
   return `<section class="fade">
    <span class="eyebrow">Academic learning path</span>
    <h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">Build real capability.</h1>
-   <p class="subtitle">${curriculum.length} pathways · ${totalLessons()} active lessons · ${esc(COURSE.workload||"Self-paced")} guided study · case analysis · applied practice · assessment evidence.</p>
-   <div class="tabs">${categories.map(x=>`<button class="chip ${state.filter===x?"active":""}" data-filter="${x}">${x}</button>`).join("")}</div>
-   <div class="list section">${filtered.map(c=>{
-     const i=curriculum.indexOf(c),p=courseProgress(i),next=(c.lessons||[]).findIndex(l=>!state.completedLessons.includes(l.id)),m=c.meta||{};
-     return `<article class="card glass module-card">
-       <button class="school clickable" ${(!c.lessons||!c.lessons.length)?"disabled":`data-course="${i}" data-lesson="${next<0?0:next}"`}>
-        <div class="course-icon">${c.code}</div>
-        <div class="course-main"><div class="module-title-row"><strong>${esc(c.title)}</strong><span class="badge ${p===100?"done":""}">${p===100?"Complete":c.status==="planned"?"Roadmap":m.level||c.category}</span></div><p>${esc(m.focus||c.description)}</p><div class="progress"><i style="width:${p}%"></i></div><small>${(c.lessons||[]).length} lessons · ${m.load||"Self-paced"} · ${p}% complete</small></div>
+   <p class="subtitle">${modules.length} pathways · ${total} active lessons · ${esc(COURSE.workload||"Self-paced")} guided study · case analysis · applied practice · assessment evidence.</p>
+   <div class="module-summary glass">
+    <div><b>${filtered.length}</b><span>Modules shown</span></div>
+    <div><b>${visibleTotal}</b><span>Lessons in view</span></div>
+    <div><b>${total}</b><span>Lessons total</span></div>
+   </div>
+   <div class="tabs">${categories.map(x=>`<button class="chip ${activeFilter===x?"active":""}" data-filter="${x}">${x}</button>`).join("")}</div>
+   <div class="list section module-list">
+    ${filtered.map(({c,i,lessons:ls,meta:m})=>{
+      const p=courseProgress(i),next=ls.findIndex(l=>!state.completedLessons.includes(l.id));
+      return `<article class="card glass module-card">
+       <button class="school clickable" ${!ls.length?"disabled":`data-course="${i}" data-lesson="${next<0?0:next}"`}>
+        <div class="course-icon">${esc(c.code||String(i+1).padStart(2,"0"))}</div>
+        <div class="course-main">
+         <div class="module-title-row"><strong>${esc(c.title)}</strong><span class="badge ${p===100?"done":""}">${p===100?"Complete":esc(m.level||c.category||"Curriculum")}</span></div>
+         <p>${esc(m.focus||c.description||"")}</p>
+         <div class="progress"><i style="width:${p}%"></i></div>
+         <small><b>${ls.length} lessons</b> · ${esc(m.load||"Self-paced")} · ${p}% complete</small>
+        </div>
        </button>
        <details class="module-details">
         <summary>Module outline & academic depth</summary>
@@ -149,16 +181,16 @@ const views={
          <div><span class="eyebrow">Practical lab</span><p>${esc(m.lab||"Controlled practical exercise.")}</p></div>
         </div>
        </details>
-     </article>`;
-   }).join("")}</div>
+      </article>`;
+    }).join("")}
+   </div>
    <div class="section card glass">
     <span class="eyebrow">Academic design</span>
     <h2>Learn → Apply → Analyze → Evidence</h2>
     <p class="subtitle">NorthStar uses a postgraduate-style applied structure: conceptual foundations, case analysis, simulations or controlled exercises, and evidence-based assessment. The benchmark is informed by publicly described IIM Information Systems, analytics, digital transformation and cybersecurity teaching approaches; this is not an official IIM curriculum.</p>
    </div>
   </section>`;
- },
- lesson:()=>{
+ }, lesson:()=>{
   const c=curriculum[state.selectedCourse],l=c?.lessons?.[state.selectedLesson];
   if(!c||!l)return `<div class="empty card glass">Lesson unavailable.</div>`;
   const done=state.completedLessons.includes(l.id);
@@ -237,11 +269,11 @@ function deepLessonBlocks(l){
 }
 function skillRows(){
  const vals=[
-  ["Network Security",Math.max(0,courseProgress(1))],
-  ["System Security",courseProgress(2)],
-  ["Defensive Security",courseProgress(3)],
-  ["Offensive Security",courseProgress(4)],
-  ["Security Engineering",courseProgress(5)]
+  ["Network Security",courseProgress(2)],
+  ["System Security",courseProgress(3)],
+  ["Defensive Security",courseProgress(4)],
+  ["Offensive Security",courseProgress(5)],
+  ["Security Engineering",courseProgress(6)]
  ];
  return vals.map(s=>`<div class="skill"><span>${s[0]}</span><div class="meter"><i style="width:${s[1]}%"></i></div><b>${s[1]}%</b></div>`).join("");
 }
@@ -253,7 +285,18 @@ function bind(){
  document.querySelectorAll("[data-lesson-tab]").forEach(b=>b.onclick=()=>{state.lessonTab=b.dataset.lessonTab;render()});
  document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{state.checkAnswer=b.dataset.answer;render()});
  const complete=document.querySelector("[data-complete-lesson]");
- if(complete)complete.onclick=()=>{const id=lessonKey(state.selectedCourse,state.selectedLesson);if(id&&!state.completedLessons.includes(id))state.completedLessons.push(id);persist();render()};
+ if(complete)complete.onclick=()=>{
+ const id=lessonKey(state.selectedCourse,state.selectedLesson);
+ if(id&&!state.completedLessons.includes(id)){
+  state.completedLessons.push(id);
+  const ls=learnerState();
+  ls.mastery=ls.mastery||{};
+  ls.mastery[id]=Math.max(Number(ls.mastery[id]||0),70);
+  ls.lastActivity=new Date().toISOString();
+  localStorage.setItem(LEARNER_KEY,JSON.stringify(ls));
+ }
+ persist();render();
+};
  document.querySelectorAll("[data-lab]").forEach(b=>b.onclick=()=>{state.selectedLab=Number(b.dataset.lab);state.labState[state.selectedLab]=state.labState[state.selectedLab]==="completed"?"completed":"started";persist();state.route="lab";render()});
  const labComplete=document.querySelector("[data-lab-complete]");
  if(labComplete)labComplete.onclick=()=>{state.labState[state.selectedLab]="completed";persist();render()};
