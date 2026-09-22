@@ -427,3 +427,9 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
 .check-note:focus{border-color:rgba(37,99,235,.35);box-shadow:0 0 0 4px rgba(37,99,235,.07)}
 .reasoning-check small{display:block;margin-top:7px;color:var(--muted);font-size:11px}
 @media(max-width:700px){.qa-card summary{align-items:flex-start}.check-note{min-height:105px}}
+
+/* Controlled lab workspace */
+.tag-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.tag{display:inline-flex;padding:4px 7px;border-radius:999px;background:rgba(37,99,235,.07);color:var(--muted);font-size:10px;font-weight:700}
+.lab-note{width:100%;min-height:170px;margin-top:10px;padding:14px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.92);font:inherit;font-size:13px;line-height:1.6;color:var(--text);resize:vertical;outline:none}
+.lab-note:focus{border-color:rgba(37,99,235,.35);box-shadow:0 0 0 4px rgba(37,99,235,.07)}
