@@ -1,4 +1,4 @@
-const VERSION="3.1.0";
+const VERSION="3.2.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 const AI_CONFIG=window.NORTHSTAR_AI||{model:"Qwen3-0.6B-q4f16_1-MLC",provider:"WebLLM",mode:"local-browser"};
 
@@ -14,6 +14,7 @@ function readStoredJSON(key,fallback){
 
 const savedCompleted=readStoredJSON("ns_completed_lessons",[]);
 const savedLabs=readStoredJSON("ns_lab_state",{});
+const LAB_INTELLIGENCE=window.NORTHSTAR_LAB_INTELLIGENCE||{version:"1.0",scoring:{evidence:20,reasoning:35,artifact:20,finding:15,confidence:10},labs:{}};
 
 const curriculum=(Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[]).map(c=>({...c,lessons:(c.lessons||[]).map(l=>({...l,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[l.id]||{})}))}));
 const labs=window.NORTHSTAR_LABS||[];
@@ -103,188 +104,7 @@ function labTerminalOutput(l,w,cmd){const c=String(cmd||"").trim(),d=getLabDetai
 function crPanel(title,meta,body,cls=""){return '<section class="cr-panel '+cls+'"><header><span>'+esc(title)+'</span><em>'+esc(meta||"")+'</em></header>'+body+'</section>';}
 function crOperatorHud(l,d,w,answered,pct){const locked=(w.locker||[]).length;return "<div class='cr-operator-hud'><div class='hud-cell'><span>RANGE</span><b>ISOLATED</b><small>NO EXTERNAL IO</small></div><div class='hud-cell'><span>OBJECTIVE</span><b>"+esc(String(l.objective||"Investigation"))+"</b><small>OBSERVE · CORRELATE · REPORT</small></div><div class='hud-cell'><span>EVIDENCE</span><b>"+locked+" LOCKED / "+d.evidence.length+"</b><small>LOCAL EVIDENCE STORE</small></div><div class='hud-cell hud-progress'><span>PROGRESS</span><b>"+pct+"%</b><div><i style='width:"+pct+"%'></i></div></div></div>";}
 function cyberHeader(l){return '<div class="cr-header"><div><button class="back" data-route="labs">← CyberRange</button><div class="cr-kicker">NORTHSTAR // CYBERRANGE 2.0</div><h1>'+esc(l.title)+'</h1><p>'+esc(l.subtitle)+' · <b>'+esc(l.level)+'</b> · '+esc(l.duration||"Practice")+'</p></div><div class="cr-live"><i></i><b>SIMULATION</b><span>LOCAL ONLY</span><small>LAB '+String(state.selectedLab+1).padStart(3,"0")+'</small></div></div>';}
-function crEvidence(l,w){const data=Array.isArray(l?.evidence)?l:getLabDetails(l?.id);const q=w.query.toLowerCase();const rows=data.evidence.map((x,i)=>({x,i})).filter(o=>!q||o.x.toLowerCase().includes(q));return '<div class="cr-toolbar"><div class="cr-search"><span>⌕</span><input data-lab-query placeholder="Filter evidence…" value="'+esc(w.query)+'"></div><span class="cr-count">'+rows.length+'/'+data.evidence.length+' EVENTS</span></div><div class="cr-table">'+rows.map(o=>'<button class="cr-row '+(o.i===w.selectedEvidence?"selected":"")+'" data-lab-select="'+o.i+'"><span>'+String(o.i+1).padStart(2,"0")+'</span><code>'+esc(o.x)+'</code><i>INSPECT</i></button>').join("")+'</div>';}
-function crEvidenceLocker(l,w){const data=getLabDetails(l.id),items=(w.locker||[]).map(n=>({n,x:data.evidence[n]})).filter(o=>o.x);return crPanel("EVIDENCE LOCKER",String(items.length).padStart(2,"0")+" ITEMS",'<div class="cr-locker">'+(items.length?items.map(o=>'<button class="cr-locker-item" data-lab-select="'+o.n+'"><span>EVT-'+String(o.n+1).padStart(2,"0")+'</span><code>'+esc(o.x)+'</code><i>OPEN</i></button>').join(""):'<div class="cr-empty-locker">Select an observation and add it here. Evidence stays local to this lab.</div>')+'</div>');}
-function crInspector(l,w){const data=Array.isArray(l?.evidence)?l:getLabDetails(l?.id);const x=data.evidence[w.selectedEvidence]||data.evidence[0]||"No evidence selected";return crPanel("EVIDENCE INSPECTOR","SELECTED EVENT",'<div class="cr-inspector"><div class="cr-signal">EVENT '+String(w.selectedEvidence+1).padStart(2,"0")+'</div><code>'+esc(x)+'</code><p>Select observations and explain why they matter. NorthStar does not pre-label the answer for you.</p><div class="cr-facts"><span><b>TYPE</b> SIMULATED</span><span><b>SOURCE</b> LAB DATASET</span><span><b>TRUST</b> CONTROLLED</span></div></div>');}
-function crInstrument(l,w){const id=l.id,d=getLabDetails(id),e=d.evidence||[],sel=e[w.selectedEvidence]||e[0]||"",evidence=crEvidence(l,w),inspector=crInspector(l,w);
-if(id==="packet-recon")return '<div class="cr-workstation-grid">'+crPanel("PACKET CAPTURE","PCAP // SIMULATED",'<div class="cr-capture-head"><div><b>'+e.length*178+'</b><span>PACKETS LOADED</span></div><div><b>TCP / UDP</b><span>PROTOCOLS</span></div><div><b>'+String(w.selectedEvidence+1).padStart(2,"0")+'</b><span>SELECTED</span></div></div>'+evidence,"wide")+crPanel("PACKET INSPECTOR","LAYER VIEW",'<div class="cr-packet-detail"><div class="packet-row"><span>SUMMARY</span><b>'+esc(sel)+'</b></div><div class="packet-row"><span>NETWORK</span><b>SIMULATED IPv4 · CONTROLLED FLOW</b></div><div class="packet-row"><span>TRANSPORT</span><b>TCP · FLAGS / PORT CONTEXT</b></div><div class="packet-row"><span>PAYLOAD</span><b>REDACTED TRAINING DATA</b></div></div>')+crPanel("CONNECTION MAP","FLOW CORRELATION",'<div class="cr-connection-map"><span>CLIENT</span><i>──── TCP ────</i><span>DESTINATION</span></div>')+'</div>';
-if(id==="tls-inspector")return '<div class="cr-workstation-grid">'+crPanel("TLS HANDSHAKE","SEQUENCE // SIMULATED",'<div class="cr-handshake">'+["ClientHello · SNI","ServerHello · TLS 1.3","Certificate · CN / issuer","Validation · chain","Finished · encrypted data"].map((x,i)=>'<div class="'+(i<=w.selectedEvidence?"active":"")+'"><span>0'+(i+1)+'</span><b>'+x+'</b><small>'+esc(e[i]||"Observation available")+'</small></div>').join("")+'</div>',"wide")+crPanel("CERTIFICATE INSPECTOR","TRUST EVIDENCE",'<div class="cr-cert"><div><span>SUBJECT</span><b>training.northstar.local</b></div><div><span>ISSUER</span><b>NorthStar Lab CA</b></div><div><span>PROTOCOL</span><b>TLS 1.3</b></div><div><span>VALIDATION</span><b>TRUSTED IN LAB STORE</b></div><p>Trust is contextual. Verify hostname and validation policy before generalizing.</p></div>')+'</div>';
-if(id==="http-request-lab"||id==="web-surface"||id==="auth-boundary")return '<div class="cr-workstation-grid">'+crPanel("HTTP TRANSACTION","REQUEST / RESPONSE",'<div class="cr-http-split"><div><span>REQUEST</span><code>'+esc(sel)+'</code><pre>GET /api/profile HTTP/1.1\nCookie: session=LAB-7F3\nAccept: application/json</pre></div><div><span>RESPONSE</span><code>HTTP/1.1 403 Forbidden</code><pre>Set-Cookie: session=LAB-7F3\nContent-Type: application/json\nCache-Control: no-store</pre></div></div>',"wide")+crPanel("ROUTE INVENTORY","TRUST BOUNDARY",'<div class="cr-route-grid">'+["PUBLIC","AUTHENTICATED","PRIVILEGED"].map((x,i)=>'<div><span>'+x+'</span><b>'+[2,2,1][i]+' routes</b></div>').join("")+'</div>')+'</div>';
-if(id==="windows-event-hunt"||id==="endpoint-process-hunt"||id==="detection-drill"||id==="log-triage"||id==="dns-hunt"||id==="linux-process")return '<div class="cr-workstation-grid">'+crPanel("TELEMETRY STREAM","EVENTS // SIMULATED",'<div class="cr-telemetry">'+e.map((x,i)=>'<button class="'+(i===w.selectedEvidence?"selected":"")+'" data-lab-select="'+i+'"><span>'+String(i+1).padStart(2,"0")+'</span><code>'+esc(x)+'</code><i>EVENT</i></button>').join("")+'</div>',"wide")+crPanel("PROCESS / ENTITY TREE","CORRELATION",'<div class="cr-tree"><div>USER <b>→</b> EXPLORER / WINWORD</div><div class="indent">PROCESS <b>→</b> POWERSHELL / AGENT</div><div class="indent2">NETWORK <b>→</b> SIMULATED DESTINATION</div></div>')+crPanel("DETECTION CONTEXT","ANALYST VIEW",'<div class="cr-detection-context"><span>BASELINE</span><span>SEQUENCE</span><span>GAP</span><p>Correlate identity, process and network evidence before assigning a disposition.</p></div>')+'</div>';
-if(id==="cloud-iam-review")return '<div class="cr-workstation-grid">'+crPanel("IDENTITY GRAPH","IAM // SIMULATED",'<div class="cr-iam-graph"><span>analyst01<small>ReadOnly</small></span><i>→</i><span>deploy01<small>Deploy</small></span><i>→</i><span>Admin<small>AssumeRole</small></span></div>',"wide")+crPanel("AUDIT TRAIL","ACCESS EVENTS",evidence)+crPanel("LEAST PRIVILEGE","REVIEW",'<div class="cr-control"><b>QUESTION</b><p>Is each permission required by the documented workflow?</p><span>Compare role, source identity and change record.</span></div>')+'</div>';
-if(id==="container-security-room")return '<div class="cr-workstation-grid">'+crPanel("IMAGE MANIFEST","SUPPLY CHAIN // SIMULATED",'<div class="cr-manifest"><div><span>IMAGE</span><b>api:v4</b></div><div><span>DIGEST</span><b>sha256:LAB123</b></div><div><span>BASE</span><b>debian</b></div><div><span>USER</span><b>root</b></div></div>',"wide")+crPanel("RUNTIME ROOM","CONTAINER TELEMETRY",evidence)+crPanel("EXPOSURE MAP","SERVICE BOUNDARY",'<div class="cr-exposure"><span>HOST</span><i>↔</i><b>8080</b><i>↔</i><span>API CONTAINER</span></div>')+'</div>';
-if(id==="phishing-triage")return '<div class="cr-workstation-grid">'+crPanel("MAIL HEADER ANALYZER","MESSAGE // SIMULATED",'<div class="cr-mail"><div><span>VISIBLE FROM</span><b>payroll-update@payr0ll.example</b></div><div><span>RETURN-PATH</span><b>bounce@mailer.example</b></div><div><span>SPF</span><b class="good">PASS</b></div><div><span>DKIM</span><b class="good">PASS</b></div><div><span>DMARC</span><b class="warn">FAIL ALIGNMENT</b></div></div>',"wide")+crPanel("URL INSPECTOR","PASSIVE ANALYSIS",'<div class="cr-url"><span>DESTINATION</span><code>https://payr0ll.example/verify</code><p>No payload execution. Compare visible domain, authenticated domains and user context.</p></div>')+crPanel("TRIAGE SIGNAL","ANALYST VIEW",'<div class="cr-signal-grid"><span>IDENTITY</span><span>AUTHENTICATION</span><span>URL</span><span>CONTEXT</span></div>')+'</div>';
-if(id==="ai-prompt-defense")return '<div class="cr-workstation-grid">'+crPanel("PROMPT STACK","TRUST BOUNDARY // SIMULATED",'<div class="cr-prompt-stack">'+["SYSTEM POLICY","USER MESSAGE","UNTRUSTED TOOL RESULT","MODEL OUTPUT"].map((x,i)=>'<div class="layer layer-'+i+'"><span>0'+(i+1)+'</span><b>'+x+'</b><small>'+esc(e[i]||"Controlled observation")+'</small></div>').join("")+'</div>',"wide")+crPanel("TRUST BOUNDARY","AUTHORITY MODEL",'<div class="cr-trust-boundary"><span>SYSTEM</span><i>HIGHER AUTHORITY</i><span>USER / TOOL DATA</span><i>UNTRUSTED CONTENT</i><span>MODEL</span></div>')+crPanel("EVALUATION CONSOLE","DEFENSIVE TEST",'<div class="cr-eval"><div><b>CANARY</b><span>HIDDEN-LAB-SECRET</span></div><div><b>EXPECTED</b><span>REFUSE SECRET DISCLOSURE</span></div><div><b>OBSERVED</b><span>COMPARE MODEL OUTPUT</span></div></div>')+'</div>';
-return '<div class="cr-workstation-grid">'+crPanel("LAB TELEMETRY","CONTROLLED DATASET",evidence,"wide")+inspector+'</div>';}
-const views={
- home:()=>{
-  const p=overallPercent(), cp=courseProgress(2);
-  const activity=allLessons().filter(l=>state.completedLessons.includes(l.id)).slice(-3).reverse();
-  return `<section class="fade">
-   <div class="hero glass">
-    <span class="eyebrow">Capability platform</span>
-    <h1>Your capability.<br>Your path.<br>A safer tomorrow.</h1>
-    <p>${esc(COURSE.description)}</p>
-    <button class="cta" data-route="learn">Continue Learning →</button>
-   </div>
-   <div class="grid stats">
-    <div class="stat glass"><b>${p}%</b><span>Overall progress</span></div>
-    <div class="stat glass"><b>${completedCount()}</b><span>Lessons completed</span></div>
-    <div class="stat glass"><b>${labCompletedCount()}</b><span>Labs completed</span></div>
-    <div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div>
-   </div>
-   <div class="section card glass">
-    <div class="section-head"><h2>Learning path</h2><button data-route="learn">View all →</button></div>
-    <div class="path">${curriculum.map((c,i)=>`<div class="path-step ${courseProgress(i)===100?"done":i===1?"active":""}"><div class="path-dot">${courseProgress(i)===100?"✓":iconFor(i)}</div><div class="path-label">${c.title.replace("Security ","")}</div></div>`).join("")}</div>
-   </div>
-   <div class="section">
-    <div class="section-head"><h2>Continue learning</h2><button data-route="learn">See all →</button></div>
-    <button class="card glass learning-card clickable" data-course="2" data-lesson="0" style="width:100%">
-      <div class="course-icon">02</div><div class="course-main"><strong>${curriculum[2]?.title||"Networking & Network Security"}</strong><small>Lesson ${Math.min(5,(curriculum[2]?.lessons||[]).length)} · TCP/IP · traffic · segmentation</small><div class="progress"><i style="width:${cp||42}%"></i></div></div><b>${cp||42}%</b>
-    </button>
-   </div>
-   <div class="section grid quick-grid">
-    <button class="card glass quick clickable" data-route="learn"><span class="quick-icon">▤</span><span><strong>Learn</strong><small>Curriculum</small></span></button>
-    <button class="card glass quick clickable" data-route="labs"><span class="quick-icon">⌁</span><span><strong>Labs</strong><small>Hands-on</small></span></button>
-    <button class="card glass quick clickable" data-route="ai"><span class="quick-icon">✦</span><span><strong>AI Mentor</strong><small>Ask & learn</small></span></button>
-    <button class="card glass quick clickable" data-route="progress"><span class="quick-icon">◉</span><span><strong>Progress</strong><small>Track growth</small></span></button>
-   </div>
-   <div class="section grid activity-grid">
-    <div class="card glass"><div class="section-head"><h2>Recent activity</h2><button data-route="progress">View all →</button></div>
-     ${activity.length?activity.map(l=>`<div class="activity-item"><span class="activity-dot">✓</span><div><strong>${esc(l.title)}</strong><small>Completed · NorthStar curriculum</small></div></div>`).join(""):'<div class="empty">Your completed lessons will appear here.</div>'}
-    </div>
-    <div class="card glass"><div class="section-head"><h2>Skill matrix</h2><button data-route="progress">Details →</button></div>
-      ${skillRows()}
-    </div>
-   </div>
-   <div class="section quote glass"><strong>“Cybersecurity isn’t just a career. It’s a responsibility.”</strong></div>
-  </section>`;
- },
- learn:()=>{
-  const modules=curriculum.map((c,i)=>({
-    c,i,lessons:Array.isArray(c.lessons)?c.lessons:[],meta:c.meta&&typeof c.meta==="object"?c.meta:{}
-  })).sort((a,b)=>Number(a.c.code)-Number(b.c.code));
-  const categories=["All",...new Set(modules.map(x=>x.c.category).filter(Boolean))];
-  const activeFilter=state.filterExplicit&&categories.includes(state.filter)?state.filter:"All";
-  if(!state.filterExplicit||state.filter!==activeFilter)state.filter=activeFilter;
-  const filtered=activeFilter==="All"?modules:modules.filter(x=>x.c.category===activeFilter);
-  const total=modules.reduce((n,x)=>n+x.lessons.length,0);
-  const visibleTotal=filtered.reduce((n,x)=>n+x.lessons.length,0);
-  return `<section class="fade">
-   <span class="eyebrow">Academic learning path</span>
-   <h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">Build real capability.</h1>
-   <p class="subtitle">${modules.length} pathways · ${total} active lessons · ${esc(COURSE.workload||"Self-paced")} guided study · case analysis · applied practice · assessment evidence.</p>
-   <div class="module-summary glass">
-    <div><b>${filtered.length}</b><span>Modules shown</span></div>
-    <div><b>${visibleTotal}</b><span>Lessons in view</span></div>
-    <div><b>${total}</b><span>Lessons total</span></div>
-   </div>
-   <div class="tabs">${categories.map(x=>`<button class="chip ${activeFilter===x?"active":""}" data-filter="${x}">${x}</button>`).join("")}</div>
-   <div class="list section module-list">
-    ${filtered.map(({c,i,lessons:ls,meta:m})=>{
-      const p=courseProgress(i),next=ls.findIndex(l=>!state.completedLessons.includes(l.id));
-      return `<article class="card glass module-card">
-       <button class="school clickable" ${!ls.length?"disabled":`data-course="${i}" data-lesson="${next<0?0:next}"`}>
-        <div class="course-icon">${esc(c.code||String(i+1).padStart(2,"0"))}</div>
-        <div class="course-main">
-         <div class="module-title-row"><strong>${esc(c.title)}</strong><span class="badge ${p===100?"done":""}">${p===100?"Complete":esc(m.level||c.category||"Curriculum")}</span></div>
-         <p>${esc(m.focus||c.description||"")}</p>
-         <div class="progress"><i style="width:${p}%"></i></div>
-         <small><b>${ls.length} lessons</b> · ${esc(m.load||"Self-paced")} · ${p}% complete</small>
-        </div>
-       </button>
-       <details class="module-details" open>
-        <summary>Module outline & academic depth</summary>
-        <div class="module-detail-grid">
-         <div class="lesson-index">
-          <div class="lesson-index-head"><span class="eyebrow">Complete lesson index</span><strong>${ls.length} lessons</strong></div>
-          <div class="lesson-list">
-           ${ls.map((lesson,li)=>`<button class="lesson-index-row ${state.completedLessons.includes(lesson.id)?"done":""}" data-course="${i}" data-lesson="${li}"><span class="lesson-number">${String(li+1).padStart(2,"0")}</span><span class="lesson-index-main"><strong>${esc(lesson.title)}</strong><small>${esc(lesson.time||"Self-paced")} · ${state.completedLessons.includes(lesson.id)?"Completed":"Not started"}</small></span><span class="lesson-arrow">›</span></button>`).join("")}
-          </div>
-         </div>
-         <div><span class="eyebrow">Learning outcomes</span><ul>${(m.outcomes||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
-         <div><span class="eyebrow">Core topics</span><div class="topic-list">${(m.topics||[]).map(x=>`<span class="topic">${esc(x)}</span>`).join("")}</div></div>
-         <div><span class="eyebrow">Case analysis</span><p>${esc(m.case||"Applied case analysis.")}</p></div>
-         <div><span class="eyebrow">Assessment</span><p>${esc(m.assessment||"Knowledge check and applied exercise.")}</p></div>
-         <div><span class="eyebrow">Practical lab</span><p>${esc(m.lab||"Controlled practical exercise.")}</p></div>
-        </div>
-       </details>
-      </article>`;
-    }).join("")}
-   </div>
-   <div class="section card glass">
-    <span class="eyebrow">Academic design</span>
-    <h2>Learn → Apply → Analyze → Evidence</h2>
-    <p class="subtitle">NorthStar uses a postgraduate-style applied structure: conceptual foundations, case analysis, simulations or controlled exercises, and evidence-based assessment. The benchmark is informed by publicly described IIM Information Systems, analytics, digital transformation and cybersecurity teaching approaches; this is not an official IIM curriculum.</p>
-   </div>
-  </section>`;
- }, lesson:()=>{
-  const c=curriculum[state.selectedCourse],l=c?.lessons?.[state.selectedLesson];
-  if(!c||!l)return `<div class="empty card glass">Lesson unavailable.</div>`;
-  const done=state.completedLessons.includes(l.id);
-  const list=a=>Array.isArray(a)?a.filter(Boolean):[];
-  const paragraphs=String(l.read||"").split(/\\n\\n|\n\n/).filter(Boolean);
-  const highlights=list(l.highlights), sections=list(l.sections), notes=list(l.notes), takeaways=list(l.takeaways);
-  const examples=Array.isArray(l.examples)?l.examples:[], qas=Array.isArray(l.qa)?l.qa:[], plan=Array.isArray(l.studyPlan)?l.studyPlan:[];
-  const visual=l.visual, graph=l.graph;
-  const graphHtml=graph?`<div class="visual-card lesson-graph"><span class="eyebrow">${esc(graph.title||"Learning graph")}</span><p class="visual-caption">${esc(graph.caption||"Use the pattern to reason about the concept.")}</p><div class="graph-bars">${(graph.items||[]).map(x=>`<div class="graph-row"><div class="graph-label"><span>${esc(x.label)}</span><b>${esc(x.value)}</b></div><div class="graph-track"><i style="width:${Math.max(0,Math.min(100,Number(x.percent)||0))}%"></i></div></div>`).join("")}</div></div>`:"";
-  const visualHtml=visual?`<div class="visual-card"><span class="eyebrow">${esc(visual.title||"Visual model")}</span><p class="visual-caption">${esc(visual.caption||"")}</p><div class="visual-steps">${(visual.steps||[]).map((x,i)=>`<div class="visual-step"><span>${i+1}</span><strong>${esc(x)}</strong></div>`).join("")}</div></div>`:"";
-  let panel="";
-  if(state.lessonTab==="Read")panel=`<div class="lesson-stack">
-   <div class="lesson-meta"><span><b>Study time</b>${esc(l.time||"Self-paced")}</span><span><b>Prerequisite</b>${esc(l.prerequisite||"None")}</span></div>
-   ${l.learningGoal?`<div class="inset callout"><strong>Learning goal</strong><p class="subtitle">${esc(l.learningGoal)}</p></div>`:""}
-   ${l.why?`<div class="inset callout"><strong>Why this matters</strong><p class="subtitle">${esc(l.why)}</p></div>`:""}
-   ${l.competency?`<div class="inset"><strong>Competency target</strong><p class="subtitle">${esc(l.competency)}</p></div>`:""}
-   ${Array.isArray(l.deepDive)&&l.deepDive.length?`<div class="depth-grid">${l.deepDive.map((x,i)=>`<div class="depth-card"><span>${i+1}</span><div><b>${esc(x.title||"Deep dive")}</b><p>${esc(x.body||"")}</p></div></div>`).join("")}</div>`:""}
-   ${l.math?`<div class="inset example-card"><span class="eyebrow">${esc(l.math.title||"Mathematical foundation")}</span><h3>Intuition → formula → interpretation</h3><p class="subtitle">${esc(l.math.body||"")}</p><div class="answer-note"><b>How to study it</b><p>${esc(l.math.intuition||"Understand the quantities first, then calculate and interpret.")}</p></div></div>`:""}
-   ${l.dataQuality?`<div class="inset"><strong>${esc(l.dataQuality.title)}</strong><ul class="lesson-list">${(l.dataQuality.items||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
-   ${Array.isArray(l.modelWorkflow)&&l.modelWorkflow.length?`<div class="inset"><strong>Model development workflow</strong><ol class="practice-steps">${l.modelWorkflow.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`:""}
-   ${highlights.length?`<div class="depth-grid">${highlights.map((x,i)=>`<div class="depth-card highlight-card"><span>${i+1}</span><div><b>Key idea</b><p>${esc(x)}</p></div></div>`).join("")}</div>`:""}
-   ${plan.length?`<div class="inset lesson-roadmap"><div class="roadmap-head"><div><span class="eyebrow">Lesson roadmap</span><strong>How to use your study time</strong><p class="subtitle">These are the focused passes that make up this lesson. Open each block to study the material, work an example, practise, and check your understanding.</p></div><span class="badge">${plan.reduce((n,x)=>{const m=String(x[1]||"").match(/\d+/);return n+(m?Number(m[0]):0)},0)} min</span></div><div class="study-plan">${plan.map((x,i)=>`<div class="plan-row"><span>${i+1}</span><div><b>${esc(x[0])}</b><small>${esc(x[1])}</small></div><span class="roadmap-state">Expanded below</span></div>`).join("")}</div></div>`:""}${studyBlocksHtml(l)}
-   ${deepLessonBlocks(l)}
-   <div><h2>What to understand</h2>${paragraphs.map(x=>`<p class="subtitle lesson-paragraph">${esc(x)}</p>`).join("")}</div>
-   ${sections.map(s=>`<div class="inset"><strong>${esc(s.title)}</strong>${String(s.body||"").split(/\\n\\n|\n\n/).filter(Boolean).map(x=>`<p class="subtitle">${esc(x)}</p>`).join("")}</div>`).join("")}
-   ${(l.concepts||[]).length?`<div class="inset"><strong>Core concepts</strong><div class="topic-list">${(l.concepts||[]).map(x=>`<span class="topic">${esc(x)}</span>`).join("")}</div></div>`:""}
-   ${(l.glossary||[]).length?`<div class="inset"><strong>Beginner vocabulary</strong><div class="vocab-list">${(l.glossary||[]).map(x=>`<div><b>${esc(x[0])}</b><span>${esc(x[1])}</span></div>`).join("")}</div></div>`:""}
-   ${visualHtml}${graphHtml}
-   ${examples.length?examples.map((x,i)=>`<div class="inset example-card"><span class="eyebrow">Worked example ${i+1}</span><h3>${esc(x.title||"Example")}</h3><p class="subtitle">${esc(x.body||x)}</p>${x.answer?`<div class="answer-note"><b>Reasoning</b><p>${esc(x.answer)}</p></div>`:""}</div>`).join(""):`<div class="inset example-card"><strong>Worked example</strong><p class="subtitle">${esc(l.example||"Apply the concept to a realistic security scenario.")}</p></div>`}
-   ${l.case?`<div class="inset case-card"><span class="eyebrow">Case analysis</span><h3>${esc(l.caseTitle||"Case study")}</h3><p class="subtitle">${esc(l.case)}</p>${l.caseQuestions?`<ul class="lesson-list">${l.caseQuestions.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}</div>`:""}
-   ${notes.length?`<div class="note-card"><span class="eyebrow">Study notes</span>${notes.map(x=>`<div class="note-row"><span>✦</span><p>${esc(x)}</p></div>`).join("")}</div>`:""}
-   ${takeaways.length?`<div class="inset takeaway-card"><strong>Key takeaways</strong><ol>${takeaways.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`:""}
-   ${Array.isArray(l.assessmentRubric)&&l.assessmentRubric.length?`<div class="inset"><span class="eyebrow">Assessment standard</span><ul class="lesson-list">${l.assessmentRubric.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
-   ${Array.isArray(l.references)&&l.references.length?`<div class="inset"><span class="eyebrow">Academic references</span><div class="vocab-list">${l.references.map(x=>`<div><b>${esc(x.name)}</b><span><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">Open source ↗</a></span></div>`).join("")}</div></div>`:""}
-  </div>`;
-  else if(state.lessonTab==="Practice")panel=practicePanel(l);
-  else if(state.lessonTab==="Q&A")panel=qnaPanel(l);
-  else panel=checkPanel(l);
-  return `<section class="fade"><button class="back" data-route="learn">← Back to curriculum</button><div class="card glass lesson-card">
-   <span class="eyebrow">Lesson ${c.code} · ${esc(c.title)}</span><h1>${esc(l.title)}</h1><p class="subtitle">${esc(l.objective)}</p>
-   <div class="tabs">${["Read","Practice","Q&A","Check"].map(t=>`<button class="chip ${state.lessonTab===t?"active":""}" data-lesson-tab="${t}">${t}</button>`).join("")}</div>
-   <div class="section tab-panel">${panel}</div>
-   <div class="lesson-footer"><span class="status ${done?"success":""}">${done?"✓ Completed":"In progress"}</span><button class="chip active" data-complete-lesson>${done?"Completed":"Mark lesson complete"}</button></div>
-  </div></section>`;
- },
- labs:()=>{
-  const total=labs.length,done=labCompletedCount();
-  let h='<section class="fade lab-catalog"><div class="range-hero"><div><span class="eyebrow">CyberRange 2.0 · Adaptive practice</span><h1 class="title">Operate the range.</h1><p class="subtitle">From first principles to enterprise investigations. Every lab is controlled, evidence-driven and mapped to a practical security skill.</p></div><div class="range-stat"><b>'+done+'/'+total+'</b><span>labs completed</span></div></div><div class="range-rails"><div><b>FOUNDATION</b><span>Start with no prior security experience.</span></div><div><b>INVESTIGATE</b><span>Observe → correlate → hypothesize → report.</span></div><div><b>ADVANCED</b><span>Unknown scenarios test transfer, not memory.</span></div></div>';
-  LAB_TRACKS.forEach(track=>{const items=labs.filter(x=>x.track===track.id);if(!items.length)return;h+='<div class="lab-track"><div class="lab-track-head"><div><span class="eyebrow">'+esc(track.label)+'</span><h2>'+esc(track.label)+'</h2><p>'+esc(track.desc)+'</p></div><b>'+items.length+' LAB'+(items.length===1?"":"S")+'</b></div><div class="lab-grid">';
-   items.forEach(l=>{const i=labs.indexOf(l),st=state.labState[i]||"ready";h+='<article class="lab-card '+(st==="completed"?"completed":"")+'"><div class="lab-card-top"><span>LAB '+String(i+1).padStart(3,"0")+'</span><em>'+esc(l.level)+'</em></div><h3>'+esc(l.title)+'</h3><p>'+esc(l.subtitle)+'</p><div class="lab-meta"><span>'+esc(l.duration)+'</span>'+l.skills.slice(0,3).map(x=>'<i>'+esc(x)+'</i>').join("")+'</div><button data-lab="'+i+'">'+(st==="completed"?"Review":"Start Lab →")+'</button></article>'});
-   h+='</div></div>';
-  });
-  h+='<div class="range-safety"><span class="eyebrow">SAFETY BOUNDARY</span><h2>Controlled cyber range</h2><p>NorthStar labs use simulated evidence and local learner state. They do not scan, attack, connect to or modify external systems.</p></div></section>';
-  return h
- }, lab:()=>{const l=labs[state.selectedLab],d=getLabDetails(l.id),st=state.labState[state.selectedLab]||"ready",w=cyberToolState(l.id);const answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length;const note=String(w.note||"");const activeTool=state.labTool||"overview";const pct=Math.min(100,Math.round(answered/d.checkpoints.length*100));const tools=[["overview","Mission","⌁"],["workspace","Workspace","⌘"],["evidence","Evidence","◈"],["console","Terminal","$"],["analysis","Assessment","◎"],["timeline","Timeline","◷"],["findings","Report","✓"]],flow=[["Understand",answered>0||note.trim().length>0,"Scope"],["Analyze",answered>=1,"Inspect"],["Reason",answered>=2,"Hypothesize"],["Report",note.trim().length>=40,"Evidence artifact"]];let h='<section class="fade cyberrange-pro"><div class="cr-shell">'+cyberHeader(l)+crOperatorHud(l,d,w,answered,pct)+'<div class="cr-layout"><aside class="cr-rail"><div class="cr-mission"><span>MISSION</span><b>LAB '+String(state.selectedLab+1).padStart(3,"0")+'</b><small>'+esc(l.track||"Security Practice")+'</small></div><nav>';tools.forEach(t=>{h+='<button class="'+(activeTool===t[0]?"active":"")+'" data-lab-tool="'+t[0]+'"><i>'+t[2]+'</i>'+t[1]+'</button>'});h+='</nav><div class="cr-progress"><div><span>INVESTIGATION</span><b>'+answered+'/'+d.checkpoints.length+'</b></div><div class="cr-meter"><i style="width:'+pct+'%"></i></div></div><div class="cr-rail-foot">LOCAL EVIDENCE<br>NO EXTERNAL ACCESS</div></aside><main class="cr-main">';if(activeTool==="overview"){h+=crPanel("MISSION CONTROL","ACTIVE",'<div class="cr-brief"><div><span class="eyebrow">OBJECTIVE</span><h2>'+esc(l.objective)+'</h2><p>'+esc(d.scenario)+'</p></div><div class="cr-kpis"><div><b>'+d.evidence.length+'</b><span>Evidence</span></div><div><b>'+d.checkpoints.length+'</b><span>Checks</span></div><div><b>'+answered+'</b><span>Answered</span></div></div></div>');h+=crPanel("INVESTIGATION WORKFLOW","OPERATE THE RANGE",'<div class="cr-flow">'+flow.map((x,i)=>'<div class="'+(x[1]?"done":"")+'"><span>'+(x[1]?"✓":i+1)+'</span><b>'+x[0]+'</b><small>'+x[2]+'</small></div>').join("")+'</div>');h+=crInstrument(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="workspace"){h+=crInstrument(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="evidence"){h+=crPanel("EVIDENCE FEED","SIMULATED RECORDS",crEvidence(l,w));h+=crInspector(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="console"){h+=crTerminal(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="analysis"){h+=crPanel("ASSESSMENT CONSOLE",answered+"/"+d.checkpoints.length+" COMPLETE",'<div class="cr-checks">'+d.checkpoints.map((q,i)=>'<article class="'+(String(w.answers?.[i]||"").trim()?"done":"")+'"><header><span>Q0'+(i+1)+'</span><b>'+esc(q)+'</b></header><textarea data-lab-answer="'+i+'" placeholder="Record your reasoning...">'+esc(w.answers?.[i]||"")+'</textarea>'+((w.revealedHints||[]).includes(i)?'<div class="cr-hint">HINT // '+esc(d.hints[i])+'</div>':'<button class="chip" data-lab-hint="'+i+'">Request hint</button>')+'</article>').join("")+'</div>');}else if(activeTool==="timeline"){h+=crPanel("TIMELINE","CHRONOLOGICAL",'<div class="cr-timeline">'+d.evidence.map((x,i)=>'<button class="'+(i===w.selectedEvidence?"selected":"")+'" data-lab-select="'+i+'"><span>0'+(i+1)+'</span><i></i><code>'+esc(x)+'</code></button>').join("")+'</div>');h+=crInspector(l,w);}else{h+=crPanel("FINDINGS & EVIDENCE ARTIFACT","SUBMISSION",'<div class="cr-report"><div><span class="eyebrow">DELIVERABLE</span><h2>'+esc(d.deliverable)+'</h2><p>'+esc(d.success)+'</p></div><textarea data-lab-note="'+l.id+'" placeholder="Document observations, reasoning, conclusion, alternative explanation, uncertainty and next action...">'+esc(note)+'</textarea><div class="cr-report-foot"><span>LOCAL EVIDENCE STORE · '+note.trim().length+' CHARS</span><button class="cyber-submit" data-lab-complete>'+(st==="completed"?"✓ LAB COMPLETED":"SUBMIT INVESTIGATION")+'</button></div></div>');}h+='</main></div><div class="cr-stage"><span>STAGE</span>'+flow.map(x=>'<b class="'+(x[1]?"done":"")+'">'+x[0]+'</b>').join("")+'<em>CONTROLLED CYBER RANGE</em></div></div></section>';return h}, ai:()=>`<section class="fade">
-  <div class="section-head"><div><span class="eyebrow">AI companion</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">NorthStar AI Mentor</h1></div><button class="chip" data-clear-chat>Clear chat</button></div>
-  <p class="subtitle">A real local LLM running in your browser. No API key is embedded in NorthStar.</p>
-  <div class="tabs"><button class="chip" data-prompt="Explain TCP three-way handshake simply">Explain a concept</button><button class="chip" data-prompt="Give me a networking practice question">Practice question</button><button class="chip" data-prompt="What should I learn next in cybersecurity?">Next step</button></div>
-  <div class="section card glass chat">
-    <div class="ai-status ${aiError?"error":aiLoading?"loading":"ready"}">${aiLoading?`Loading local model… ${Math.round(aiProgress*100)}%`:aiError?esc(aiError):aiEngine?"● Local AI ready":"Local AI will initialize when you send your first message."}</div>
-    <div class="messages" id="messages">${state.messages.map((m,i)=>`<div class="msg ${m[0]==="user"?"user":""} ${i===state.messages.length-1&&m[0]==="ai"&&aiLoading?"ai-stream":""}">${esc(m[1])}</div>`).join("")}</div>
-    <form class="composer" id="chat"><input id="prompt" autocomplete="off" ${aiLoading?"disabled":""} placeholder="Ask NorthStar anything about cybersecurity"><button class="send" ${aiLoading?"disabled":""}>Send</button></form>
-  </div>
- </section>`,
- progress:()=>{const p=overallPercent();return `<section class="fade"><span class="eyebrow">Progress</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">See your evidence.</h1><div class="section grid two"><div class="card glass progress-card"><div class="ring" style="--p:${p}%"><span>${p}%</span></div><h2>Overall progress</h2><p class="subtitle">${completedCount()} of ${totalLessons()} lessons and ${labCompletedCount()} of ${labs.length} labs completed.</p></div><div class="card glass"><span class="eyebrow">Skill matrix</span>${skillRows()}</div></div><div class="section grid stats"><div class="stat glass"><b>${completedCount()}</b><span>Lessons complete</span></div><div class="stat glass"><b>${totalLessons()-completedCount()}</b><span>Lessons remaining</span></div><div class="stat glass"><b>${labCompletedCount()}</b><span>Labs complete</span></div><div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div></div></section>`}
-};
+function crEvidence(l,w){const data=Array.isArray(l?.evidence)?l:getLabDetails(l?.id);const q=w.query.toLowerCase();const rows=data.evidence.map((x,i)=>({x,i})).filter(o=>!q||o.x.toLowerCase().includes(q));return '<div class="cr-toolbar"><div class="cr-search"><span>⌕</span><input data-lab-query placeholder="Filter evidence…" value="'+esc(w.query)+'"></div><span class="cr-count">'+rows.length+'/'+data.evidence.length+' EVENTS</span></div><div class="cr-table">'+rows.map(o=>'<div class="cr-row-wrap"><button class="cr-row '+(o.i===w.selectedEvidence?"selected":"")+'" data-lab-select="'+o.i+'"><span>'+String(o.i+1).padStart(2,"0")+'</span><code>'+esc(o.x)+'</code><i>INSPECT</i></button><button class="cr-lock" data-lab-lock="'+o.i+'">'+((w.locker||[]).includes(o.i)?"UNLOCK":"LOCK")+'</button></div>').join("")+'</div>';};
 
 function practiceScenario(l){
  const title=String(l.title||"this lesson").trim();
@@ -530,9 +350,10 @@ function bind(){
  document.querySelectorAll("[data-lab-query]").forEach(el=>el.oninput=()=>{const l=labs[state.selectedLab],w=cyberToolState(l.id);w.query=el.value;saveLabWorkspace(l.id,w);render()});
  document.querySelectorAll("[data-lab-answer]").forEach(el=>el.oninput=()=>{const l=labs[state.selectedLab],w=labWorkspace(l.id);w.answers=Object.assign({},w.answers,{[el.dataset.labAnswer]:el.value});saveLabWorkspace(l.id,w);});
  document.querySelectorAll("[data-lab-note]").forEach(el=>el.oninput=()=>{const w=labWorkspace(el.dataset.labNote);w.note=el.value;saveLabWorkspace(el.dataset.labNote,w);});
+ document.querySelectorAll("[data-lab-finding]").forEach(el=>el.oninput=()=>{const l=labs[state.selectedLab],w=cyberToolState(l.id);w.finding=Object.assign({},w.finding,{[el.dataset.labFinding]:el.value});saveLabWorkspace(l.id,w);});
  document.querySelectorAll("[data-lab-hint]").forEach(b=>b.onclick=()=>{const l=labs[state.selectedLab],w=labWorkspace(l.id);w.revealedHints=Array.from(new Set([...(w.revealedHints||[]),Number(b.dataset.labHint)]));saveLabWorkspace(l.id,w);render();});
  const labComplete=document.querySelector("[data-lab-complete]");
- if(labComplete)labComplete.onclick=()=>{const l=labs[state.selectedLab],d=getLabDetails(l.id),w=labWorkspace(l.id);const answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length;if(answered<d.checkpoints.length||String(w.note||"").trim().length<40){alert("Complete all investigation checkpoints and write an evidence artifact before completing this lab.");return;}state.labState[state.selectedLab]="completed";persist();render()};
+ if(labComplete)labComplete.onclick=()=>{const l=labs[state.selectedLab],d=getLabDetails(l.id),w=cyberToolState(l.id),f=w.finding||{},answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length,score=labScore(l,d,w);const missing=[];if(answered<d.checkpoints.length)missing.push("all investigation checkpoints");if((w.locker||[]).length<2)missing.push("at least 2 locked evidence items");if(String(w.note||"").trim().length<120)missing.push("a 120+ character analyst narrative");if(!String(f.title||"").trim())missing.push("a finding title");if(!String(f.impact||"").trim())missing.push("impact / scope");if(!String(f.nextAction||"").trim())missing.push("a next action");if(score.total<70)missing.push("a readiness score of at least 70%");if(missing.length){alert("Complete before submission:\n• "+missing.join("\n• "));return;}state.labState[state.selectedLab]="completed";w.completedAt=new Date().toISOString();w.assessment=score;saveLabWorkspace(l.id,w);persist();render()};
  document.querySelectorAll("[data-prompt]").forEach(b=>b.onclick=()=>{const input=document.querySelector("#prompt");if(input){input.value=b.dataset.prompt;input.focus()}});
  const clear=document.querySelector("[data-clear-chat]");
  if(clear)clear.onclick=()=>{state.messages=[["ai","Chat cleared. I’m ready for your next cybersecurity question."]];persist();render()};
