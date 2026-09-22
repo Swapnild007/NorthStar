@@ -1,0 +1,27 @@
+window.NORTHSTAR_LAB_INTELLIGENCE={
+ version:"1.0",
+ scoring:{evidence:20,reasoning:35,artifact:20,finding:15,confidence:10},
+ masteryBands:[{min:0,label:"Not assessed"},{min:40,label:"Developing"},{min:70,label:"Functional"},{min:90,label:"Strong"},{min:100,label:"Demonstrated"}],
+ labs:{
+  "foundation-ip":{capabilities:["IPv4 addressing","Network identification","Evidence reading"],focus:"Separate host, network and gateway facts from assumptions.",remediation:"Revisit IPv4 address structure, subnet masks and default gateways."},
+  "foundation-tcp":{capabilities:["TCP state","Packet sequencing","Connection reasoning"],focus:"Reconstruct TCP state from observable flags and sequence.",remediation:"Revisit SYN, SYN-ACK, ACK and TCP state transitions."},
+  "foundation-dns":{capabilities:["DNS resolution","Query/response analysis","Caching"],focus:"Trace name resolution and distinguish authoritative evidence from cache behavior.",remediation:"Revisit recursive resolution, authoritative answers and TTL/caching."},
+  "linux-process":{capabilities:["Linux processes","Services","Permissions"],focus:"Connect process identity, service context and observable host behavior.",remediation:"Revisit PID, parent process, user identity, permissions and service ownership."},
+  "auth-boundary":{capabilities:["Authentication","Authorization","Access control"],focus:"Separate proof of identity from permission to access a resource.",remediation:"Revisit authentication factors, authorization decisions and HTTP access responses."},
+  "packet-recon":{capabilities:["Packet analysis","Protocols","Endpoints","Evidence handling"],focus:"Turn packet observations into a defensible network finding.",remediation:"Revisit Ethernet, IP, TCP/UDP, ports and packet-to-flow correlation."},
+  "web-surface":{capabilities:["Attack surface","HTTP","Trust boundaries"],focus:"Map a web surface and identify security-relevant boundaries.",remediation:"Revisit routes, HTTP semantics, authentication boundaries and exposure."},
+  "detection-drill":{capabilities:["Detection analysis","Signal vs noise","Disposition"],focus:"Correlate telemetry before assigning an alert disposition.",remediation:"Revisit detection logic, baselines, false positives and evidence correlation."},
+  "dns-hunt":{capabilities:["Threat hunting","DNS telemetry","Anomaly reasoning"],focus:"Use DNS observations to form and test a hunting hypothesis.",remediation:"Revisit DNS record types, normal resolver behavior and anomaly signals."},
+  "log-triage":{capabilities:["Log analysis","Timeline construction","Triage"],focus:"Build a chronological investigation from heterogeneous log evidence.",remediation:"Revisit event normalization, timestamps, source reliability and correlation."},
+  "incident-room":{capabilities:["Incident response","Containment reasoning","Reporting"],focus:"Move from observation to scoped incident response without overclaiming.",remediation:"Revisit identification, containment, evidence preservation and recovery."},
+  "mystery-investigation":{capabilities:["Open-ended investigation","Hypothesis testing","Analyst judgment"],focus:"Investigate incomplete evidence, track uncertainty and defend the final conclusion.",remediation:"Revisit hypothesis formation, evidence sufficiency and alternative explanations."},
+  "tls-inspector":{capabilities:["TLS","Certificates","Trust validation"],focus:"Trace the TLS handshake and verify certificate trust conditions.",remediation:"Revisit ClientHello, ServerHello, certificate chains, hostname validation and TLS 1.3."},
+  "http-request-lab":{capabilities:["HTTP","Headers","Cookies","Sessions"],focus:"Read HTTP transactions and reason about session and authorization boundaries.",remediation:"Revisit methods, status codes, cookies, headers and session boundaries."},
+  "windows-event-hunt":{capabilities:["Windows events","Authentication","Process correlation"],focus:"Correlate Windows event evidence into a defensible activity timeline.",remediation:"Revisit Event IDs, authentication types, process lineage and log correlation."},
+  "endpoint-process-hunt":{capabilities:["Process trees","EDR telemetry","Threat hunting"],focus:"Trace process lineage and distinguish suspicious sequences from normal activity.",remediation:"Revisit parent/child processes, command lines, execution context and network links."},
+  "cloud-iam-review":{capabilities:["Cloud IAM","Least privilege","Audit logs"],focus:"Evaluate identity relationships and privilege escalation paths from controlled evidence.",remediation:"Revisit principals, roles, AssumeRole, permission boundaries and audit trails."},
+  "container-security-room":{capabilities:["Container security","Image supply chain","Runtime exposure"],focus:"Assess image provenance, runtime identity and exposed services.",remediation:"Revisit image digests, base images, root/non-root runtime, ports and supply chain risk."},
+  "phishing-triage":{capabilities:["Email triage","SPF/DKIM/DMARC","URL analysis"],focus:"Combine sender identity, authentication signals, URL evidence and user context.",remediation:"Revisit envelope vs visible sender, alignment, DMARC and safe URL inspection."},
+  "ai-prompt-defense":{capabilities:["AI security","Prompt injection","Trust boundaries","Evaluation"],focus:"Reason about instruction authority and untrusted content without leaking protected data.",remediation:"Revisit system/user/tool trust boundaries, prompt injection patterns and defensive evaluation."}
+ }
+};
