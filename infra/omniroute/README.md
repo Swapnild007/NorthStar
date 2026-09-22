@@ -1,34 +1,88 @@
 # NorthStar OmniRoute Gateway
 
-This directory defines the model-routing service used by the NorthStar AI Mentor.
+This directory is the deployment layer for the model-routing service used by the NorthStar AI Mentor.
 
 ## Architecture
 
-NorthStar GitHub Pages -> NorthStar AI Gateway -> OmniRoute -> model providers
-
-OmniRoute is an OpenAI-compatible AI gateway with provider routing, fallback and model selection.
-
-## Run the router
-
-On a server with Docker:
-
-```bash
-docker compose up -d --build
+```text
+NorthStar GitHub Pages
+        |
+        v
+NorthStar AI Gateway (Cloudflare Worker)
+        |
+        | HTTPS + Bearer token
+        v
+OmniRoute
+        |
+        +--> Model provider A
+        +--> Model provider B
+        +--> Model provider C
 ```
 
-OmniRoute listens on port 20128 and exposes its OpenAI-compatible API under /v1.
+NorthStar owns the mentor product, curriculum, learner state, safety rules and context. OmniRoute handles model/provider routing.
 
-Then configure at least one provider and an OmniRoute endpoint/API key in the OmniRoute dashboard. Use auto for NorthStar so OmniRoute can select a connected route.
+## Why Railway
 
-## NorthStar Worker variables
+GitHub Pages cannot run a persistent Node.js service. OmniRoute needs a persistent server/container. Railway provides a public HTTPS service and persistent storage suitable for this deployment. Current OmniRoute documentation supports Docker on port `20128` and an OpenAI-compatible `/v1` API. citeturn0search8turn0search10
 
-Set these as Cloudflare Worker secrets/variables:
+## Deploy on Railway
 
-- OMNIROUTE_BASE_URL = http://<server>:20128 or your HTTPS reverse-proxy URL
-- OMNIROUTE_TOKEN = the OmniRoute endpoint token
+Create a Railway service from this directory:
 
-Do not put either value in the frontend.
+- Root directory: `infra/omniroute`
+- Dockerfile: `Dockerfile`
+- Public port: `20128`
+- Persistent volume: `/app/data`
 
-## Production requirement
+Set these Railway variables:
 
-Expose OmniRoute through HTTPS and restrict the /v1 API to authenticated requests. Keep the persistent /app/data volume because provider credentials, routing configuration and usage state belong to the gateway, not the learner device.
+- `JWT_SECRET` = long random value
+- `INITIAL_PASSWORD` = strong dashboard password
+- `API_KEY_SECRET` = long random value
+- `REQUIRE_API_KEY=true`
+- `DATA_DIR=/app/data`
+- `NODE_ENV=production`
+- `HOSTNAME=0.0.0.0`
+- `PORT=20128`
+
+Railway terminates HTTPS at the edge. The resulting public service URL becomes the OmniRoute base URL.
+
+### Configure providers
+
+Open the deployed OmniRoute dashboard, connect at least one model provider, then create an endpoint API key. OmniRoute exposes the OpenAI-compatible API under `/v1`. citeturn0search3
+
+Do not commit provider credentials or endpoint tokens to GitHub.
+
+## Connect NorthStar
+
+The NorthStar Worker needs:
+
+```text
+OMNIROUTE_BASE_URL=https://<your-railway-service>
+OMNIROUTE_TOKEN=<your-omniroute-endpoint-key>
+```
+
+These are Worker-side secrets/variables, never frontend values.
+
+The NorthStar deployment workflow is prepared to consume GitHub Actions secrets with these names and push them into the Worker during deployment.
+
+## Local Docker
+
+From this directory:
+
+```bash
+JWT_SECRET='change-me' \
+INITIAL_PASSWORD='change-me' \
+API_KEY_SECRET='change-me' \
+docker compose up -d
+```
+
+Then open `http://localhost:20128`.
+
+## Security
+
+- Never expose OmniRoute without authentication.
+- Never commit provider API keys.
+- Never put `OMNIROUTE_TOKEN` in `data/ai.js` or browser JavaScript.
+- Keep `/app/data` on persistent storage.
+- Use HTTPS for production.
