@@ -1,4 +1,4 @@
-const VERSION="0.9.0";
+const VERSION="1.0.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 const AI_CONFIG=window.NORTHSTAR_AI||{model:"Qwen3-0.6B-q4f16_1-MLC",provider:"WebLLM",mode:"local-browser"};
 
@@ -218,7 +218,7 @@ const views={
    ${l.dataQuality?`<div class="inset"><strong>${esc(l.dataQuality.title)}</strong><ul class="lesson-list">${(l.dataQuality.items||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
    ${Array.isArray(l.modelWorkflow)&&l.modelWorkflow.length?`<div class="inset"><strong>Model development workflow</strong><ol class="practice-steps">${l.modelWorkflow.map(x=>`<li>${esc(x)}</li>`).join("")}</ol></div>`:""}
    ${highlights.length?`<div class="depth-grid">${highlights.map((x,i)=>`<div class="depth-card highlight-card"><span>${i+1}</span><div><b>Key idea</b><p>${esc(x)}</p></div></div>`).join("")}</div>`:""}
-   ${plan.length?`<div class="inset lesson-roadmap"><div class="roadmap-head"><div><span class="eyebrow">Lesson roadmap</span><strong>How to use your study time</strong><p class="subtitle">These are time-boxed study blocks, not separate lessons. The actual teaching, examples, practice and assessment are provided in this lesson.</p></div><span class="badge">${plan.reduce((n,x)=>n+(Number(String(x[1]||"").match(/\\d+/)?.[0])||0),0)} min</span></div><div class="study-plan">${plan.map((x,i)=>`<div class="plan-row"><span>${i+1}</span><div><b>${esc(x[0])}</b><small>${esc(x[1])}</small></div><span class="roadmap-state">Study block</span></div>`).join("")}</div></div>`:""}
+   ${plan.length?`<div class="inset lesson-roadmap"><div class="roadmap-head"><div><span class="eyebrow">Lesson roadmap</span><strong>How to use your study time</strong><p class="subtitle">These are the focused passes that make up this lesson. Open each block to study the material, work an example, practise, and check your understanding.</p></div><span class="badge">${plan.reduce((n,x)=>n+(Number(String(x[1]||"").match(/\\d+/)?.[0])||0),0)} min</span></div><div class="study-plan">${plan.map((x,i)=>`<div class="plan-row"><span>${i+1}</span><div><b>${esc(x[0])}</b><small>${esc(x[1])}</small></div><span class="roadmap-state">Expanded below</span></div>`).join("")}</div></div>`:""}${studyBlocksHtml(l)}
    ${deepLessonBlocks(l)}
    <div><h2>What to understand</h2>${paragraphs.map(x=>`<p class="subtitle lesson-paragraph">${esc(x)}</p>`).join("")}</div>
    ${sections.map(s=>`<div class="inset"><strong>${esc(s.title)}</strong>${String(s.body||"").split(/\\n\\n|\n\n/).filter(Boolean).map(x=>`<p class="subtitle">${esc(x)}</p>`).join("")}</div>`).join("")}
@@ -266,6 +266,59 @@ const views={
  progress:()=>{const p=overallPercent();return `<section class="fade"><span class="eyebrow">Progress</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">See your evidence.</h1><div class="section grid two"><div class="card glass progress-card"><div class="ring" style="--p:${p}%"><span>${p}%</span></div><h2>Overall progress</h2><p class="subtitle">${completedCount()} of ${totalLessons()} lessons and ${labCompletedCount()} of ${labs.length} labs completed.</p></div><div class="card glass"><span class="eyebrow">Skill matrix</span>${skillRows()}</div></div><div class="section grid stats"><div class="stat glass"><b>${completedCount()}</b><span>Lessons complete</span></div><div class="stat glass"><b>${totalLessons()-completedCount()}</b><span>Lessons remaining</span></div><div class="stat glass"><b>${labCompletedCount()}</b><span>Labs complete</span></div><div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div></div></section>`}
 };
 
+function studyBlockContent(l,title,index){
+ const t=String(title||"").toLowerCase();
+ const list=a=>Array.isArray(a)?a.filter(Boolean):[];
+ const deep=list(l.deepDive), examples=list(l.examples), qas=list(l.qa), steps=list(l.practiceSteps);
+ let purpose="", principles=[], example=null, practice=[], check=null;
+ if(index===0 || /foundation|mental|concept|architecture|purpose|intro|overview|understand/.test(t)){
+  purpose=l.learningGoal||l.objective||"Build the mental model before memorising terminology.";
+  principles=list(l.concepts).slice(0,6); if(deep[0]) principles.push(deep[0].body||""); example=examples[0]||null;
+ }else if(/request|response|flow|process|how|mechanism|protocol|execution/.test(t)){
+  purpose=deep[0]?.body||l.read||"Trace the concept step by step and identify what changes at each stage.";
+  principles=deep.slice(0,3).map(x=>x.title+": "+x.body); example=examples[0]||null;
+ }else if(/security|risk|threat|boundary|control|defen|attack|privacy/.test(t)){
+  purpose=l.why||l.competency||"Connect the technical mechanism to its security consequences.";
+  principles=[...list(l.highlights).slice(0,4),...(l.case?[l.case]:[])];
+  example=examples.find(x=>/security|attack|risk|case/i.test(String(x.title||"")+" "+String(x.body||"")))||examples[0]||null;
+ }else if(/example|worked|case|scenario/.test(t)){
+  purpose="Work through a concrete scenario. State the evidence, reasoning and conclusion rather than only recalling a definition.";
+  principles=list(l.highlights).slice(0,4); example=examples[0]||null;
+  if(!example&&l.case) example={title:l.caseTitle||"Case study",body:l.case,answer:l.caseQuestions?.join(" ")};
+ }else if(/practice|exercise|lab|apply/.test(t)){
+  purpose=l.practice||"Apply the lesson independently and produce observable evidence of your reasoning.";
+  principles=steps.slice(0,5); practice=steps.length?steps:list(l.takeaways).slice(0,4);
+ }else if(/q&a|question|check|review|assess|recap/.test(t)){
+  purpose="Retrieve the concept from memory, explain it in your own words, then use the feedback to correct gaps.";
+  principles=qas.slice(0,3).map(x=>x.q); check=l.check||null;
+ }else{
+  purpose=l.competency||l.objective||"Study the concept from first principles, connect it to security practice, and test your understanding.";
+  principles=[...list(l.highlights).slice(0,4),...list(l.concepts).slice(0,4)].slice(0,6); example=examples[0]||null;
+ }
+ if(!practice.length&&index>=4) practice=list(l.takeaways).slice(0,3);
+ if(!check&&qas[index%Math.max(qas.length,1)]) check=qas[index%qas.length];
+ const principleHtml=principles.filter(Boolean).map(x=>`<li>${esc(String(x))}</li>`).join("");
+ const practiceHtml=practice.filter(Boolean).map(x=>`<li>${esc(String(x))}</li>`).join("");
+ return `<details class="study-block" ${index===0?"open":""}>
+  <summary><span class="study-block-num">${index+1}</span><span class="study-block-title"><b>${esc(title)}</b><small>First principles → explanation → application → evidence</small></span><span class="study-block-time">${esc(String((l.studyPlan||[])[index]?.[1]||""))}</span></summary>
+  <div class="study-block-body">
+   <div class="study-block-section"><span class="eyebrow">What you are learning</span><p>${esc(String(purpose))}</p></div>
+   ${principleHtml?`<div class="study-block-section"><span class="eyebrow">Core ideas</span><ul class="lesson-list">${principleHtml}</ul></div>`:""}
+   ${example?`<div class="study-block-section block-example"><span class="eyebrow">Worked example</span><strong>${esc(example.title||"Example")}</strong><p>${esc(example.body||String(example))}</p>${example.answer?`<div class="answer-note"><b>Reasoning</b><p>${esc(example.answer)}</p></div>`:""}</div>`:""}
+   ${practiceHtml?`<div class="study-block-section"><span class="eyebrow">Do this now</span><ol class="practice-steps">${practiceHtml}</ol></div>`:""}
+   ${check?`<div class="study-block-section block-check"><span class="eyebrow">Quick check</span><p><b>${esc(check.q||"Explain the idea in your own words.")}</b></p><details class="mini-answer"><summary>Reveal explanation</summary><p>${esc(check.a||check.why||check.explain||"Revisit the relevant section and explain the reasoning.")}</p></details></div>`:""}
+  </div>
+ </details>`;
+}
+function studyBlocksHtml(l){
+ const plan=Array.isArray(l.studyPlan)?l.studyPlan:[];
+ if(!plan.length)return "";
+ return `<div class="inset study-blocks-shell">
+  <div class="study-blocks-head"><div><span class="eyebrow">Deep study blocks</span><strong>Learn the lesson in focused passes</strong><p class="subtitle">Each time block now contains teaching material, first-principles context, examples, practice or retrieval. The blocks are parts of this lesson, not additional lessons.</p></div><div class="study-block-actions"><button type="button" class="mini-btn" data-study-expand>Expand all</button><button type="button" class="mini-btn" data-study-collapse>Collapse all</button></div></div>
+  <div class="study-block-list">${plan.map((x,i)=>studyBlockContent(l,String(x[0]||`Study block ${i+1}`),i)).join("")}</div>
+ </div>`;
+}
+
 function deepLessonBlocks(l){
  const esc2=esc;
  const deep=(l.deepDive||[]).map(x=>"<div class=\"inset depth-section\"><span class=\"eyebrow\">"+esc2(x.title)+"</span><p class=\"subtitle\">"+esc2(x.body)+"</p></div>").join("");
@@ -288,7 +341,7 @@ function bind(){
  document.querySelectorAll("[data-route]").forEach(b=>b.onclick=()=>go(b.dataset.route));
  document.querySelectorAll("[data-filter]").forEach(b=>b.onclick=()=>{state.filter=b.dataset.filter;state.filterExplicit=b.dataset.filter!=="All";render()});
  document.querySelectorAll("[data-course]").forEach(b=>b.onclick=()=>{state.selectedCourse=Number(b.dataset.course);state.selectedLesson=Number(b.dataset.lesson||0);state.lessonTab="Read";state.checkAnswer="";state.route="lesson";render()});
- document.querySelectorAll("[data-lesson-tab]").forEach(b=>b.onclick=()=>{state.lessonTab=b.dataset.lessonTab;render()});
+ document.querySelectorAll("[data-lesson-tab]").forEach(b=>b.onclick=()=>{state.lessonTab=b.dataset.lessonTab;render()});\n document.querySelectorAll("[data-study-expand]").forEach(b=>b.onclick=()=>{b.closest(".study-blocks-shell")?.querySelectorAll("details.study-block").forEach(d=>d.open=true)});\n document.querySelectorAll("[data-study-collapse]").forEach(b=>b.onclick=()=>{b.closest(".study-blocks-shell")?.querySelectorAll("details.study-block").forEach(d=>d.open=false)});
  document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{state.checkAnswer=b.dataset.answer;render()});
  const complete=document.querySelector("[data-complete-lesson]");
  if(complete)complete.onclick=()=>{
