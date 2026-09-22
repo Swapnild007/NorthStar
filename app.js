@@ -487,7 +487,7 @@ function studyBlockContent(l,title,index){
   if(dd(3))ideas.push(dd(3).body);
   ideas.push(...notes.slice(0,3));
   evidence.push(...mistakes.slice(0,3));
-  if(data.evidence)evidence.push("Evidence artifact: "+data.evidence);
+  if(l.evidence)evidence.push("Evidence artifact: "+l.evidence);
   check=qas[2]||qas[0];
  }else if(index===4){
   heading="Apply the lesson to a case";
@@ -502,7 +502,7 @@ function studyBlockContent(l,title,index){
   application.push(...steps.slice(0,6));
   if(l.reflection)application.push("Reflection: "+l.reflection);
   evidence.push(...takeaways.slice(0,3));
-  if(data.evidence)evidence.push("Evidence to produce: "+data.evidence);
+  if(l.evidence)evidence.push("Evidence to produce: "+l.evidence);
   check=qas[0]||l.check;
  }
  const ideaHtml=ideas.filter(Boolean).map(x=>`<li>${esc(String(x))}</li>`).join("");
