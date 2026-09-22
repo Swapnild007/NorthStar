@@ -30,9 +30,7 @@ function saveLabWorkspace(id,w){localStorage.setItem(labWorkspaceKey(id),JSON.st
 const nav=[["home","Home","⌂"],["learn","Learn","▤"],["ai","AI","✦"],["labs","Labs","⌁"],["progress","Progress","◉"]];
 const AI_MESSAGES_KEY="ns_ai_messages_v2";
 const savedAI=readStoredJSON(AI_MESSAGES_KEY,null);
-let aiEngine=null;
 let aiLoading=false;
-let aiProgress=0;
 let aiError="";
 const state={
  route:"home",filter:"All",completedLessons:Array.isArray(savedCompleted)?savedCompleted:[],
