@@ -651,13 +651,19 @@ function mentorClassification(q){
 }
 
 function mentorEndpoint(){
- return String(AI_CONFIG.endpoint||"").trim().replace(/\/$/,"");
+ const configured=String(AI_CONFIG.endpoint||"").trim().replace(/\/$/,"");
+ if(configured)return configured;
+ const local=String(AI_CONFIG.localEndpoint||"").trim().replace(/\/$/,"");
+ if(AI_CONFIG.allowLocalEndpoint && local && /^(localhost|127\\.0\\.0\\.1)$/.test(location.hostname)) return local;
+ return "";
 }
 
 async function askNorthStar(q){
  const endpoint=mentorEndpoint();
  if(!endpoint){
-  state.messages[state.messages.length-1][1]="The cloud mentor is not connected yet. Add the deployed NorthStar Worker URL to data/ai.js, then I’ll be ready.";
+  state.messages[state.messages.length-1][1]=/^(localhost|127\\.0\\.0\\.1)$/.test(location.hostname)
+   ? "OmniRoute is not detected. Start OmniRoute on this device, then try again."
+   : "NorthStar is configured for local OmniRoute. Open the NorthStar app locally on the same device where OmniRoute is running.";
   aiError="Cloud Mentor endpoint is not configured.";
   persist();render();return;
  }
