@@ -1,6 +1,6 @@
-const VERSION="3.4.0";
+const VERSION="3.5.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
-const AI_CONFIG=window.NORTHSTAR_AI||{model:"Qwen3-0.6B-q4f16_1-MLC",provider:"WebLLM",mode:"local-browser"};
+const AI_CONFIG=window.NORTHSTAR_AI||{version:"2.0.0",provider:"Cloudflare Workers AI",mode:"cloud",model:"@cf/qwen/qwen3.8-27b",endpoint:""};
 
 function readStoredJSON(key,fallback){
  try{
@@ -36,7 +36,7 @@ let aiError="";
 const state={
  route:"home",filter:"All",completedLessons:Array.isArray(savedCompleted)?savedCompleted:[],
  labState:typeof savedLabs==="object"&&savedLabs?savedLabs:{},
- messages:Array.isArray(savedAI)&&savedAI.length?savedAI:[["ai","I’m your NorthStar AI Mentor. I run locally in your browser, so your conversation does not need a NorthStar server."]],
+ messages:Array.isArray(savedAI)&&savedAI.length?savedAI:[["ai","Hi. I’m your NorthStar Mentor. I’m ready to teach, practice, review your reasoning, or coach you through a CyberRange investigation."]],
  selectedCourse:0,selectedLesson:0,selectedLab:0,lessonTab:"Read",checkAnswer:"",filterExplicit:false
 };
 const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
@@ -280,17 +280,63 @@ const views={
   });
   h+='<div class="range-safety"><span class="eyebrow">SAFETY BOUNDARY</span><h2>Controlled cyber range</h2><p>NorthStar labs use simulated evidence and local learner state. They do not scan, attack, connect to or modify external systems.</p></div></section>';
   return h
- }, lab:()=>{const l=labs[state.selectedLab],d=getLabDetails(l.id),st=state.labState[state.selectedLab]||"ready",w=cyberToolState(l.id);const answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length;const note=String(w.note||"");const activeTool=state.labTool||"overview";const pct=Math.min(100,Math.round(answered/d.checkpoints.length*100));const tools=[["overview","Mission","⌁"],["workspace","Workspace","⌘"],["evidence","Evidence","◈"],["console","Terminal","$"],["analysis","Assessment","◎"],["timeline","Timeline","◷"],["findings","Report","✓"]],flow=[["Understand",answered>0||note.trim().length>0,"Scope"],["Analyze",answered>=1,"Inspect"],["Reason",answered>=2,"Hypothesize"],["Report",note.trim().length>=40,"Evidence artifact"]];let h='<section class="fade cyberrange-pro"><div class="cr-shell">'+cyberHeader(l)+crOperatorHud(l,d,w,answered,pct)+'<div class="cr-layout"><aside class="cr-rail"><div class="cr-mission"><span>MISSION</span><b>LAB '+String(state.selectedLab+1).padStart(3,"0")+'</b><small>'+esc(l.track||"Security Practice")+'</small></div><nav>';tools.forEach(t=>{h+='<button class="'+(activeTool===t[0]?"active":"")+'" data-lab-tool="'+t[0]+'"><i>'+t[2]+'</i>'+t[1]+'</button>'});h+='</nav><div class="cr-progress"><div><span>INVESTIGATION</span><b>'+answered+'/'+d.checkpoints.length+'</b></div><div class="cr-meter"><i style="width:'+pct+'%"></i></div></div><div class="cr-rail-foot">LOCAL EVIDENCE<br>NO EXTERNAL ACCESS</div></aside><main class="cr-main">';if(activeTool==="overview"){h+=crPanel("MISSION CONTROL","ACTIVE",'<div class="cr-brief"><div><span class="eyebrow">OBJECTIVE</span><h2>'+esc(l.objective)+'</h2><p>'+esc(d.scenario)+'</p></div><div class="cr-kpis"><div><b>'+d.evidence.length+'</b><span>Evidence</span></div><div><b>'+d.checkpoints.length+'</b><span>Checks</span></div><div><b>'+answered+'</b><span>Answered</span></div></div></div>');h+=crPanel("INVESTIGATION WORKFLOW","OPERATE THE RANGE",'<div class="cr-flow">'+flow.map((x,i)=>'<div class="'+(x[1]?"done":"")+'"><span>'+(x[1]?"✓":i+1)+'</span><b>'+x[0]+'</b><small>'+x[2]+'</small></div>').join("")+'</div>');h+=crInstrument(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="workspace"){h+=crInstrument(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="evidence"){h+=crPanel("EVIDENCE FEED","SIMULATED RECORDS",crEvidence(l,w));h+=crInspector(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="console"){h+=crTerminal(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="analysis"){h+=crLabIntel(l,d,w);h+=crPanel("ASSESSMENT CONSOLE",answered+"/"+d.checkpoints.length+" COMPLETE",'<div class="cr-checks">'+d.checkpoints.map((q,i)=>'<article class="'+(String(w.answers?.[i]||"").trim()?"done":"")+'"><header><span>Q0'+(i+1)+'</span><b>'+esc(q)+'</b></header><textarea data-lab-answer="'+i+'" placeholder="Record your reasoning...">'+esc(w.answers?.[i]||"")+'</textarea>'+((w.revealedHints||[]).includes(i)?'<div class="cr-hint">HINT // '+esc(d.hints[i])+'</div>':'<button class="chip" data-lab-hint="'+i+'">Request hint</button>')+'</article>').join("")+'</div>');}else if(activeTool==="timeline"){h+=crPanel("TIMELINE","CHRONOLOGICAL",'<div class="cr-timeline">'+d.evidence.map((x,i)=>'<button class="'+(i===w.selectedEvidence?"selected":"")+'" data-lab-select="'+i+'"><span>0'+(i+1)+'</span><i></i><code>'+esc(x)+'</code></button>').join("")+'</div>');h+=crInspector(l,w);}else{h+=crLabFinding(l,d,w);h+=crPanel("FINDINGS & EVIDENCE ARTIFACT","SUBMISSION",'<div class="cr-report"><div><span class="eyebrow">DELIVERABLE</span><h2>'+esc(d.deliverable)+'</h2><p>'+esc(d.success)+'</p></div><textarea data-lab-note="'+l.id+'" placeholder="Document observations, reasoning, conclusion, alternative explanation, uncertainty and next action...">'+esc(note)+'</textarea><div class="cr-report-foot"><span>LOCAL EVIDENCE STORE · '+note.trim().length+' CHARS</span><button class="cyber-submit" data-lab-complete>'+(st==="completed"?"✓ LAB COMPLETED":"SUBMIT INVESTIGATION")+'</button></div></div>');}h+='</main></div><div class="cr-stage"><span>STAGE</span>'+flow.map(x=>'<b class="'+(x[1]?"done":"")+'">'+x[0]+'</b>').join("")+'<em>CONTROLLED CYBER RANGE</em></div></div></section>';return h}, ai:()=>`<section class="fade">
-  <div class="section-head"><div><span class="eyebrow">AI companion</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">NorthStar AI Mentor</h1></div><button class="chip" data-clear-chat>Clear chat</button></div>
-  <p class="subtitle">A real local LLM running in your browser. No API key is embedded in NorthStar.</p>
-  <div class="tabs"><button class="chip" data-prompt="Explain TCP three-way handshake simply">Explain a concept</button><button class="chip" data-prompt="Give me a networking practice question">Practice question</button><button class="chip" data-prompt="What should I learn next in cybersecurity?">Next step</button></div>
-  <div class="section card glass chat">
-    <div class="ai-status ${aiError?"error":aiLoading?"loading":"ready"}">${aiLoading?`Loading local model… ${Math.round(aiProgress*100)}%`:aiError?esc(aiError):aiEngine?"● Local AI ready":"Local AI will initialize when you send your first message."}</div>
-    <div class="messages" id="messages">${state.messages.map((m,i)=>`<div class="msg ${m[0]==="user"?"user":""} ${i===state.messages.length-1&&m[0]==="ai"&&aiLoading?"ai-stream":""}">${esc(m[1])}</div>`).join("")}</div>
-    <form class="composer" id="chat"><input id="prompt" autocomplete="off" ${aiLoading?"disabled":""} placeholder="Ask NorthStar anything about cybersecurity"><button class="send" ${aiLoading?"disabled":""}>Send</button></form>
+ }, lab:()=>{const l=labs[state.selectedLab],d=getLabDetails(l.id),st=state.labState[state.selectedLab]||"ready",w=cyberToolState(l.id);const answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length;const note=String(w.note||"");const activeTool=state.labTool||"overview";const pct=Math.min(100,Math.round(answered/d.checkpoints.length*100));const tools=[["overview","Mission","⌁"],["workspace","Workspace","⌘"],["evidence","Evidence","◈"],["console","Terminal","$"],["analysis","Assessment","◎"],["timeline","Timeline","◷"],["findings","Report","✓"]],flow=[["Understand",answered>0||note.trim().length>0,"Scope"],["Analyze",answered>=1,"Inspect"],["Reason",answered>=2,"Hypothesize"],["Report",note.trim().length>=40,"Evidence artifact"]];let h='<section class="fade cyberrange-pro"><div class="cr-shell">'+cyberHeader(l)+crOperatorHud(l,d,w,answered,pct)+'<div class="cr-layout"><aside class="cr-rail"><div class="cr-mission"><span>MISSION</span><b>LAB '+String(state.selectedLab+1).padStart(3,"0")+'</b><small>'+esc(l.track||"Security Practice")+'</small></div><nav>';tools.forEach(t=>{h+='<button class="'+(activeTool===t[0]?"active":"")+'" data-lab-tool="'+t[0]+'"><i>'+t[2]+'</i>'+t[1]+'</button>'});h+='</nav><div class="cr-progress"><div><span>INVESTIGATION</span><b>'+answered+'/'+d.checkpoints.length+'</b></div><div class="cr-meter"><i style="width:'+pct+'%"></i></div></div><div class="cr-rail-foot">LOCAL EVIDENCE<br>NO EXTERNAL ACCESS</div></aside><main class="cr-main">';if(activeTool==="overview"){h+=crPanel("MISSION CONTROL","ACTIVE",'<div class="cr-brief"><div><span class="eyebrow">OBJECTIVE</span><h2>'+esc(l.objective)+'</h2><p>'+esc(d.scenario)+'</p></div><div class="cr-kpis"><div><b>'+d.evidence.length+'</b><span>Evidence</span></div><div><b>'+d.checkpoints.length+'</b><span>Checks</span></div><div><b>'+answered+'</b><span>Answered</span></div></div></div>');h+=crPanel("INVESTIGATION WORKFLOW","OPERATE THE RANGE",'<div class="cr-flow">'+flow.map((x,i)=>'<div class="'+(x[1]?"done":"")+'"><span>'+(x[1]?"✓":i+1)+'</span><b>'+x[0]+'</b><small>'+x[2]+'</small></div>').join("")+'</div>');h+=crInstrument(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="workspace"){h+=crInstrument(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="evidence"){h+=crPanel("EVIDENCE FEED","SIMULATED RECORDS",crEvidence(l,w));h+=crInspector(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="console"){h+=crTerminal(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="analysis"){h+=crLabIntel(l,d,w);h+=crPanel("ASSESSMENT CONSOLE",answered+"/"+d.checkpoints.length+" COMPLETE",'<div class="cr-checks">'+d.checkpoints.map((q,i)=>'<article class="'+(String(w.answers?.[i]||"").trim()?"done":"")+'"><header><span>Q0'+(i+1)+'</span><b>'+esc(q)+'</b></header><textarea data-lab-answer="'+i+'" placeholder="Record your reasoning...">'+esc(w.answers?.[i]||"")+'</textarea>'+((w.revealedHints||[]).includes(i)?'<div class="cr-hint">HINT // '+esc(d.hints[i])+'</div>':'<button class="chip" data-lab-hint="'+i+'">Request hint</button>')+'</article>').join("")+'</div>');}else if(activeTool==="timeline"){h+=crPanel("TIMELINE","CHRONOLOGICAL",'<div class="cr-timeline">'+d.evidence.map((x,i)=>'<button class="'+(i===w.selectedEvidence?"selected":"")+'" data-lab-select="'+i+'"><span>0'+(i+1)+'</span><i></i><code>'+esc(x)+'</code></button>').join("")+'</div>');h+=crInspector(l,w);}else{h+=crLabFinding(l,d,w);h+=crPanel("FINDINGS & EVIDENCE ARTIFACT","SUBMISSION",'<div class="cr-report"><div><span class="eyebrow">DELIVERABLE</span><h2>'+esc(d.deliverable)+'</h2><p>'+esc(d.success)+'</p></div><textarea data-lab-note="'+l.id+'" placeholder="Document observations, reasoning, conclusion, alternative explanation, uncertainty and next action...">'+esc(note)+'</textarea><div class="cr-report-foot"><span>LOCAL EVIDENCE STORE · '+note.trim().length+' CHARS</span><button class="cyber-submit" data-lab-complete>'+(st==="completed"?"✓ LAB COMPLETED":"SUBMIT INVESTIGATION")+'</button></div></div>');}h+='</main></div><div class="cr-stage"><span>STAGE</span>'+flow.map(x=>'<b class="'+(x[1]?"done":"")+'">'+x[0]+'</b>').join("")+'<em>CONTROLLED CYBER RANGE</em></div></div></section>';return h}, ai:()=>`<section class="fade mentor-page">
+  <div class="mentor-hero">
+    <div class="mentor-identity">
+      <div class="mentor-avatar" aria-hidden="true"><span>✦</span><i></i></div>
+      <div>
+        <div class="mentor-eyebrow">NORTHSTAR INTELLIGENCE</div>
+        <h1>AI Mentor</h1>
+        <p>Your cybersecurity tutor, available when you need a second brain.</p>
+      </div>
+    </div>
+    <div class="mentor-connection ${AI_CONFIG.endpoint?"online":"setup"}"><i></i><span>${AI_CONFIG.endpoint?"ONLINE":"CONNECTING"}</span><small>${AI_CONFIG.endpoint?"CLOUD INFERENCE":"WORKER ENDPOINT REQUIRED"}</small></div>
   </div>
- </section>`,
- progress:()=>{const p=overallPercent();return `<section class="fade"><span class="eyebrow">Progress</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">See your evidence.</h1><div class="section grid two"><div class="card glass progress-card"><div class="ring" style="--p:${p}%"><span>${p}%</span></div><h2>Overall progress</h2><p class="subtitle">${completedCount()} of ${totalLessons()} lessons and ${labCompletedCount()} of ${labs.length} labs completed.</p></div><div class="card glass"><span class="eyebrow">Skill matrix</span>${skillRows()}</div></div><div class="section grid stats"><div class="stat glass"><b>${completedCount()}</b><span>Lessons complete</span></div><div class="stat glass"><b>${totalLessons()-completedCount()}</b><span>Lessons remaining</span></div><div class="stat glass"><b>${labCompletedCount()}</b><span>Labs complete</span></div><div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div></div></section>`}
+  <div class="mentor-mode-dock">
+    ${Object.entries({teacher:["Teacher","Learn it"],socratic:["Socratic","Think it"],practice:["Practice","Try it"],lab:["Lab Coach","Investigate"],reviewer:["Reviewer","Prove it"]}).map(([id,x])=>'<button class="mentor-mode-card '+((window.NORTHSTAR_MENTOR_UI?.getMode?.()||"teacher")===id?"active":"")+'" data-mentor-mode="'+id+'"><b>'+esc(x[0])+'</b><small>'+esc(x[1])+'</small></button>').join("")}
+  </div>
+  <div class="mentor-shell">
+    <aside class="mentor-profile-card">
+      <div class="mentor-avatar large"><span>✦</span><i></i></div>
+      <b>NorthStar Mentor</b>
+      <span>Cybersecurity learning companion</span>
+      <div class="mentor-profile-status"><i></i> Cloud AI · no model on device</div>
+      <div class="mentor-mini-stats">
+        <div><b>${overallMastery()}%</b><span>Mastery</span></div>
+        <div><b>${completedCount()}</b><span>Lessons</span></div>
+        <div><b>${labCompletedCount()}</b><span>Labs</span></div>
+      </div>
+      <button class="mentor-new-chat" data-clear-chat>New conversation</button>
+    </aside>
+    <section class="mentor-chat-panel">
+      <div class="mentor-chat-head">
+        <div><span class="mentor-live-dot"></span><div><b>NorthStar Mentor</b><small>${AI_CONFIG.endpoint?"Ready to help":"Connect the Cloudflare Worker to enable the mentor"}</small></div></div>
+        <span class="mentor-model-pill">${esc(AI_CONFIG.model||"Cloud model")}</span>
+      </div>
+      <div class="mentor-context-strip">
+        <span>ADAPTIVE</span>
+        <b>${(window.NORTHSTAR_MENTOR_UI?.diagnosis?.().band)||"Not assessed"}</b>
+        <small>Evidence drives progression, not completion alone.</small>
+      </div>
+      <div class="messages mentor-messages" id="messages">
+        ${state.messages.map((m,i)=>`<div class="mentor-message-row ${m[0]==="user"?"from-user":"from-ai"}"><div class="mentor-message-avatar">${m[0]==="user"?"NS":"✦"}</div><div class="msg ${m[0]==="user"?"user":""} ${i===state.messages.length-1&&m[0]==="ai"&&aiLoading?"ai-stream":""}">${esc(m[1])}</div></div>`).join("")}
+        ${aiLoading?'<div class="mentor-typing"><span></span><span></span><span></span><em>Mentor is thinking…</em></div>':""}
+      </div>
+      <div class="mentor-suggestions">
+        <button class="mentor-suggestion" data-prompt="Explain this from first principles with a simple example.">Explain simply</button>
+        <button class="mentor-suggestion" data-prompt="Give me one practice task. Do not give me the answer until I attempt it.">Practice with me</button>
+        <button class="mentor-suggestion" data-prompt="Diagnose what I understand and tell me the one prerequisite I should repair first.">Diagnose me</button>
+        <button class="mentor-suggestion" data-prompt="Review my reasoning for accuracy, evidence, assumptions, and uncertainty.">Review my reasoning</button>
+      </div>
+      <form class="composer mentor-composer" id="chat">
+        <input id="prompt" autocomplete="off" ${aiLoading?"disabled":""} placeholder="Message your mentor…" />
+        <button class="send mentor-send" ${aiLoading?"disabled":""} aria-label="Send message">↑</button>
+      </form>
+      <div class="mentor-footnote"><span>PRIVATE BY DESIGN</span> Conversation history stays in this browser. Inference runs in the cloud.</div>
+    </section>
+  </div>
+</section>`,
+progress:()=>{const p=overallPercent();return `<section class="fade"><span class="eyebrow">Progress</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">See your evidence.</h1><div class="section grid two"><div class="card glass progress-card"><div class="ring" style="--p:${p}%"><span>${p}%</span></div><h2>Overall progress</h2><p class="subtitle">${completedCount()} of ${totalLessons()} lessons and ${labCompletedCount()} of ${labs.length} labs completed.</p></div><div class="card glass"><span class="eyebrow">Skill matrix</span>${skillRows()}</div></div><div class="section grid stats"><div class="stat glass"><b>${completedCount()}</b><span>Lessons complete</span></div><div class="stat glass"><b>${totalLessons()-completedCount()}</b><span>Lessons remaining</span></div><div class="stat glass"><b>${labCompletedCount()}</b><span>Labs complete</span></div><div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div></div></section>`}
 };
 
 function practiceScenario(l){
@@ -554,58 +600,112 @@ function bind(){
    await askNorthStar(q);
  };
 }
-async function ensureAI(){
- if(aiEngine)return aiEngine;
- if(aiLoading)return null;
- aiLoading=true;aiError="";aiProgress=0;render();
- try{
-   const webllm=await import("https://esm.run/@mlc-ai/web-llm@0.2.82");
-   aiEngine=await webllm.CreateMLCEngine(AI_CONFIG.model,{
-     initProgressCallback:p=>{aiProgress=typeof p?.progress==="number"?p.progress:aiProgress;const el=document.querySelector(".ai-status");if(el)el.textContent=`Loading local model… ${Math.round(aiProgress*100)}%`;},
-   });
-   aiLoading=false;render();
-   return aiEngine;
- }catch(err){
-   aiLoading=false;
-   aiError="Local AI could not start. Use Chrome with WebGPU enabled and reload the page.";
-   console.error(err);
-   render();
-   return null;
- }
+function mentorMode(){
+ return window.NORTHSTAR_MENTOR_UI?.getMode?.()||"teacher";
 }
 
-function mentorSystem(){
- const pathSummary=curriculum.map(c=>c.title+": "+(c.lessons||[]).map(l=>l.title).join(", ")).join("\n");
+function mentorContextPayload(){
  const current=state.route==="lesson"?curriculum[state.selectedCourse]?.lessons?.[state.selectedLesson]:null;
- const currentContext=current?"Current lesson: "+current.title+". Objective: "+(current.objective||"Not specified")+". Concepts: "+(current.concepts||[]).join(", "):"No lesson is currently open.";
- const progress="Learner progress: "+completedCount()+" of "+totalLessons()+" lessons completed; concept mastery is "+overallMastery()+"%. Curriculum standard "+CURRICULUM_STANDARD.version+".";
- return "You are NorthStar AI Mentor, the cybersecurity tutor inside NorthStar.\nTeach clearly to a true beginner while remaining technically accurate. Never assume prior knowledge when the learner signals confusion.\n"+currentContext+"\n"+progress+"\nUse the NorthStar curriculum as the primary learning map:\n"+pathSummary+"\nTeaching protocol: diagnose what the learner understands; explain from first principles; use a concrete example; ask one short check question when useful; connect the concept to the next prerequisite or skill. Do not overwhelm the learner with unexplained jargon.\nFor labs, prefer hints and investigation questions before a complete solution. Distinguish simulated exercises from real execution.\nFocus on defensive security, secure engineering, authorized testing and controlled labs. For offensive-security questions, keep guidance scoped to systems the learner owns or is explicitly authorized to test; do not provide instructions that facilitate real-world compromise, credential theft, malware, persistence, evasion, or destructive activity.\nDo not claim access to NorthStar backend systems, private files, accounts, or external user data. The current AI runtime is "+(AI_CONFIG.mode||"local-browser")+" using "+(AI_CONFIG.model||"configured model")+"."; 
+ const learner=learnerState();
+ const mastery=current?lessonMastery(current.id):overallMastery();
+ const attempts=current?Number(learner.attempts?.[current.id]||0):Object.values(learner.attempts||{}).reduce((n,v)=>n+Number(v||0),0);
+ const checks=current?Number(learner.checks?.[current.id]||0):Object.keys(learner.checks||{}).length;
+ let lab=null,labScoreValue=0;
+ if(state.route==="lab"){
+  const l=labs[state.selectedLab];
+  if(l){
+   const d=getLabDetails(l.id),w=cyberToolState(l.id),s=labScore(l,d,w);
+   lab={id:l.id,title:l.title,track:l.track,checkpointCount:d.checkpoints.length,answeredCheckpoints:d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length,evidenceEntries:d.evidence.slice(0,8),lockedEvidence:(w.locker||[]).length,finding:w.finding||{}};
+   labScoreValue=s.total;
+  }
+ }
+ const context={
+  lesson:current?.title||"No active lesson",
+  module:curriculum[state.selectedCourse]?.title||"None",
+  objective:current?.objective||current?.learningGoal||"No active lesson objective",
+  prerequisite:current?.prerequisite||"Not specified",
+  concepts:Array.isArray(current?.concepts)?current.concepts.slice(0,8):[],
+  mastery,attempts,checks,labScore:labScoreValue
+ };
+ if(window.NORTHSTAR_MENTOR_ENGINE?.buildContext){
+  try{
+   const built=window.NORTHSTAR_MENTOR_ENGINE.buildContext({
+    lesson:current||null,
+    course:curriculum[state.selectedCourse]||null,
+    learner:{mastery,attempts,checks},
+    lab:state.route==="lab"?labs[state.selectedLab]:null,
+    labWorkspace:state.route==="lab"?labWorkspace(labs[state.selectedLab]?.id||""):null,
+    labDetails:state.route==="lab"?getLabDetails(labs[state.selectedLab]?.id||""):null
+   });
+   if(built?.lessonId)context.lessonId=built.lessonId;
+   if(built?.diagnosis)context.diagnosis=built.diagnosis;
+   if(built?.lab)context.lab=built.lab;
+  }catch(error){console.warn("NorthStar mentor context bridge skipped.",error)}
+ }
+ if(lab)context.lab=lab;
+ return context;
+}
+
+function mentorClassification(q){
+ return window.NORTHSTAR_MENTOR_ENGINE?.classify?.(q)||"general";
+}
+
+function mentorEndpoint(){
+ return String(AI_CONFIG.endpoint||"").trim().replace(/\\/$/,"");
 }
 
 async function askNorthStar(q){
- const engine=await ensureAI();
- if(!engine)return;
+ const endpoint=mentorEndpoint();
+ if(!endpoint){
+  state.messages[state.messages.length-1][1]="The cloud mentor is not connected yet. Add the deployed NorthStar Worker URL to data/ai.js, then I’ll be ready.";
+  aiError="Cloud Mentor endpoint is not configured.";
+  persist();render();return;
+ }
+ aiLoading=true;aiError="";render();
  const history=state.messages.slice(-14).map(m=>({role:m[0]==="user"?"user":"assistant",content:m[1]}));
- const system={role:"system",content:mentorSystem()};
- const target=document.querySelector(".ai-stream");
+ const mentor={mode:mentorMode(),classification:mentorClassification(q),context:mentorContextPayload()};
  try{
-   const stream=await engine.chat.completions.create({messages:[system,...history],temperature:.5,max_tokens:500,stream:true});
-   let reply="";
-   for await(const chunk of stream){
-     reply+=chunk.choices?.[0]?.delta?.content||"";
-     state.messages[state.messages.length-1][1]=reply;
-     const el=document.querySelector(".ai-stream");
-     if(el){el.textContent=reply;el.scrollIntoView({block:"nearest"});}
+  const response=await fetch(endpoint+"/v1/chat/completions",{
+   method:"POST",
+   headers:{"Content-Type":"application/json"},
+   body:JSON.stringify({messages:history,mentor})
+  });
+  if(!response.ok){
+   let detail="";
+   try{const e=await response.json();detail=e?.error||""}catch{}
+   throw new Error(detail||("Mentor gateway returned HTTP "+response.status));
+  }
+  if(!response.body)throw new Error("Mentor gateway returned no stream.");
+  const reader=response.body.getReader(),decoder=new TextDecoder();
+  let buffer="",reply="";
+  while(true){
+   const {value,done}=await reader.read();
+   if(done)break;
+   buffer+=decoder.decode(value,{stream:true});
+   const events=buffer.split(/\\r?\\n\\r?\\n/);buffer=events.pop()||"";
+   for(const event of events){
+    for(const line of event.split(/\\r?\\n/)){
+     if(!line.startsWith("data:"))continue;
+     const payload=line.slice(5).trim();
+     if(!payload||payload==="[DONE]")continue;
+     try{
+      const data=JSON.parse(payload);
+      const delta=data?.choices?.[0]?.delta?.content??data?.response??"";
+      if(delta){reply+=delta;state.messages[state.messages.length-1][1]=reply;const el=document.querySelector(".ai-stream");if(el)el.textContent=reply;}
+     }catch{}
+    }
    }
-   persist();aiError="";render();
+  }
+  if(!reply)throw new Error("The mentor returned an empty response.");
+  aiLoading=false;aiError="";persist();render();
  }catch(err){
-   console.error(err);
-   state.messages[state.messages.length-1][1]="I hit a local inference error. Reload the page and try again.";
-   aiError="Inference failed. Your model stays local; no API key was exposed.";
-   persist();render();
+  console.error("NorthStar cloud mentor error:",err);
+  aiLoading=false;
+  state.messages[state.messages.length-1][1]="I couldn’t reach the cloud mentor. Check the Worker connection and try again.";
+  aiError=err?.message||"Cloud mentor unavailable.";
+  persist();render();
  }
 }
-;
 
 // Boot the application after all view and event handlers are defined.
 function boot(){
