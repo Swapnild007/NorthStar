@@ -17,20 +17,16 @@ const NORTHSTAR_CURRICULUM = [
         "Read simple data tables and distinguish a value, field, record and dataset."
       ],
       "topics": [
-        "Binary and data representation",
         "Computer architecture",
-        "CPU and memory",
         "Operating systems",
-        "Processes and threads",
         "Filesystems",
-        "Storage",
-        "Virtualization",
-        "Networking",
+        "Processes & memory",
+        "Internet & routing",
         "DNS",
         "HTTP/HTTPS",
-        "Data representation",
-        "Algorithms and data structures",
-        "Digital safety"
+        "Identity & MFA",
+        "Digital safety",
+        "Data foundations"
       ],
       "case": "Case: a new employee receives a company laptop and must safely connect to the internet, access a web application and handle a customer CSV without exposing it.",
       "assessment": "Foundation concept checks + digital-safety review + simple data interpretation exercise",
@@ -54,74 +50,83 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Build a simple mental model of hardware, software, data and instructions.",
         "time": "75–90 minutes",
         "prerequisite": "None",
-        "read": "A computer is a machine that follows instructions to work with information. Start with four ideas: hardware, software, data and instructions. Hardware is the physical equipment such as processor, memory and storage. Software is the instructions that tell hardware what to do. Data is the information those instructions work on.\n\nThe CPU executes instructions. RAM holds information programs are actively using. Storage keeps information when power is off. Security begins here because later security work is about protecting hardware, software, data and the instructions that operate on them.",
+        "read": "A computer is a layered system of hardware, firmware, operating-system services, applications, data and users.\n\nTrace a photo from persistent storage into RAM, through CPU execution, to a display; distinguish data from instructions and identify each security boundary.\n\nSecurity questions change by state: a stored file, a running process and a network transmission require different controls.",
         "concepts": [
           "Hardware",
-          "Software",
+          "software",
           "CPU",
           "RAM",
-          "Storage",
-          "Data",
-          "Instructions"
+          "storage",
+          "instruction",
+          "input/output"
         ],
         "glossary": [
           [
             "Hardware",
-            "Physical components of a computing device."
+            "A foundational term used in What Is a Computer?."
           ],
           [
-            "Software",
-            "Instructions and programs."
+            "software",
+            "A foundational term used in What Is a Computer?."
           ],
           [
             "CPU",
-            "Processor that executes instructions."
+            "A foundational term used in What Is a Computer?."
           ],
           [
             "RAM",
-            "Working memory used by active programs."
+            "A foundational term used in What Is a Computer?."
           ],
           [
-            "Storage",
-            "Persistent space for data and programs."
+            "storage",
+            "A foundational term used in What Is a Computer?."
+          ],
+          [
+            "instruction",
+            "A foundational term used in What Is a Computer?."
+          ],
+          [
+            "input/output",
+            "A foundational term used in What Is a Computer?."
           ]
         ],
         "example": "A photo is stored on storage, opened by an application, loaded into RAM and processed by the CPU.",
         "visual": {
-          "title": "A computer mental model: Input",
-          "caption": "Instructional mental model for this lesson.",
+          "title": "What Is a Computer? — mental model",
+          "caption": "Foundation-first reasoning flow.",
           "steps": [
-            "A computer mental model: Input",
-            "CPU + RAM",
-            "Storage",
-            "Output"
+            "Hardware vs software",
+            "CPU execution",
+            "memory vs storage",
+            "input/output",
+            "physical attack surface"
           ]
         },
-        "case": "Case study — A company laptop is stolen while powered off. Identify the hardware asset, stored data, likely exposure, preventive control and evidence you would check.",
+        "case": "A stolen laptop is powered off. Identify what remains exposed, what encryption protects, and what evidence would establish the device state.",
         "mistakes": [
           "Memorizing terminology without understanding the relationship between concepts.",
           "Assuming one control solves every security problem.",
           "Ignoring context, evidence or the identity involved."
         ],
-        "practice": "Complete a short written exercise for \"What Is a Computer?\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-        "evidence": "A concise written explanation, one example and one evidence-based security question.",
+        "practice": "Practice What Is a Computer? using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "Which component primarily executes program instructions?",
+          "q": "Which approach best demonstrates real understanding of What Is a Computer??",
           "options": [
-            "CPU",
-            "SSD",
-            "Keyboard",
-            "Monitor"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "CPU",
-          "why": "The correct answer follows the beginner mental model introduced in this lesson."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "learningGoal": "Build a reliable mental model of a computer so later security, networking, Linux, programming and data-science concepts have a concrete foundation.",
         "highlights": [
-          "A computer repeatedly follows instructions over data; security protects the components, identities and boundaries involved in that process.",
-          "CPU, RAM and storage solve different problems: execution, active working space and persistence.",
-          "Software is not 'the computer'; it is instructions executed within hardware and operating-system constraints.",
-          "A security decision becomes easier when you can identify what is stored, what is executing, who controls it and where data moves."
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
         ],
         "studyPlan": [
           [
@@ -151,14 +156,14 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "examples": [
           {
-            "title": "Opening a photo",
-            "body": "A photo is stored persistently. When you open it, an application loads relevant information into working memory and the processor executes instructions that decode and display it.",
-            "answer": "The same data changes state as it moves through storage, memory, processing and output. Each state creates different security and privacy questions."
+            "title": "Worked example 1",
+            "body": "A laptop opens a photo",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
           },
           {
-            "title": "Running a password manager",
-            "body": "The application is stored on the device, executes as a process, uses memory while unlocked and accesses encrypted data.",
-            "answer": "A secure design must protect both the stored secrets and the running process."
+            "title": "Worked example 2",
+            "body": "a password manager unlocks encrypted records.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
           }
         ],
         "notes": [
@@ -168,65 +173,71 @@ const NORTHSTAR_CURRICULUM = [
           "Security boundaries can exist at hardware, operating-system, application and data layers."
         ],
         "takeaways": [
-          "Hardware executes and stores; software supplies instructions.",
-          "CPU, RAM and storage have different security properties.",
-          "Data can exist in several states during one operation.",
-          "Security analysis starts by identifying assets, execution and boundaries."
+          "A computer is a layered system of hardware, firmware, operating-system services, applications, data and users.",
+          "Trace a photo from persistent storage into RAM, through CPU execution, to a display; distinguish data from instructions and identify each security boundary.",
+          "Security questions change by state: a stored file, a running process and a network transmission require different controls.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
         ],
         "practiceSteps": [
-          "Explain What Is a Computer? in your own words without copying the definition.",
-          "Draw the main flow, relationship, architecture or statistical model.",
-          "Identify one normal condition and one failure or adversarial condition.",
-          "State the evidence you would collect before making a high-impact decision.",
-          "Apply the concept to the lesson case and document your reasoning.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "If a file is encrypted on storage but appears in readable form in memory while an application uses it, what new security question does that create?",
+        "reflection": "If your first explanation of What Is a Computer? were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "Why is RAM different from storage?",
-            "a": "RAM is working memory used by active programs, while storage retains information persistently.",
-            "why": "This difference affects performance, persistence and forensic/security considerations."
+            "q": "What is the central idea in What Is a Computer??",
+            "a": "A computer is a layered system of hardware, firmware, operating-system services, applications, data and users.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "Does HTTPS protect a laptop if the laptop is stolen?",
-            "a": "No.",
-            "why": "HTTPS protects network communication; it does not replace device and storage security."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "What is the most useful beginner question about any computer system?",
-            "a": "What data, instructions, identities and resources are involved, and where are the boundaries?",
-            "why": "It creates a repeatable analysis method."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does What Is a Computer? connect to cybersecurity?",
+            "a": "Security questions change by state: a stored file, a running process and a network transmission require different controls.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "1. Hardware: the physical foundation",
-            "body": "Hardware is the physical machinery that performs computation. A modern device contains a processor, memory, persistent storage, input/output components and communication interfaces. You do not need to memorize every component yet. What matters is understanding that software ultimately depends on physical resources.\n\nSecurity consequences follow directly from this. If an attacker gains physical access, software controls may be bypassed or weakened. If storage is lost without encryption, information may be exposed. If a device has an untrusted peripheral or firmware component, the security boundary may extend below the operating system."
+            "title": "1. First principles",
+            "body": "A computer is a layered system of hardware, firmware, operating-system services, applications, data and users."
           },
           {
-            "title": "2. CPU, RAM and storage",
-            "body": "The CPU executes instructions. RAM provides fast working space for programs and the data they currently need. Storage keeps programs and information available after power is removed. A file can therefore exist on storage, be loaded into RAM, and be processed by the CPU.\n\nThis distinction is essential when you later study malware, memory, forensics and incident response. A malicious program may leave evidence on disk, execute in memory, create processes, communicate over a network and modify data. Security analysts reason about these different states separately."
+            "title": "2. How it works",
+            "body": "Trace a photo from persistent storage into RAM, through CPU execution, to a display; distinguish data from instructions and identify each security boundary."
           },
           {
-            "title": "3. The security mental model",
-            "body": "For any computing system, ask four questions: What are the instructions? What data do they operate on? Which identity or process is allowed to act? What hardware and software boundary contains the activity?\n\nThis turns 'computer security' from a vague phrase into a set of observable relationships. Later modules will add networks, users, cryptography, cloud services and data pipelines to this model."
+            "title": "3. Security implications",
+            "body": "Security questions change by state: a stored file, a running process and a network transmission require different controls."
           },
           {
-            "title": "Mechanism and boundary",
-            "body": "Break What Is a Computer? into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "4. What to observe",
+            "body": "For What Is a Computer?, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns What Is a Computer? into a reusable professional skill."
           }
         ],
         "caseQuestions": [
           "What is the business or technical objective?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the working hypothesis?",
-          "Which control, analysis or next action is justified?",
-          "What limitation should be communicated to the reviewer?"
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "why": "Why this matters: What Is a Computer? is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -256,12 +267,12 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "Stanford Data Science",
-            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
           }
         ]
       },
@@ -271,73 +282,83 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand why an operating system exists and how it manages programs, users, files and hardware.",
         "time": "75–90 minutes",
         "prerequisite": "Computer basics",
-        "read": "An operating system is the main software layer that manages a computer and provides services to applications. Windows, macOS, Linux, Android and iOS are examples. Think of the OS as a manager between applications and hardware.\n\nApplications ask the OS to open files, use memory, create network connections and access devices. This separation also gives the OS a place to enforce security boundaries such as permissions and process isolation.",
+        "read": "An operating system coordinates hardware and provides controlled services to applications, while the kernel enforces privileged operations.\n\nFollow an application request from user space through an operating-system interface to a resource such as a file or network socket.\n\nUser accounts, permissions, process isolation and patching form important security boundaries; administrator/root access changes impact.",
         "concepts": [
           "Operating system",
-          "Application",
-          "Kernel",
-          "User account",
-          "Permission",
-          "Process"
+          "kernel",
+          "user space",
+          "system call",
+          "process",
+          "permission",
+          "privilege"
         ],
         "glossary": [
           [
             "Operating system",
-            "Core software that manages hardware and provides services."
+            "A foundational term used in Operating Systems: The Computer's Manager."
           ],
           [
-            "Application",
-            "A program designed to perform a task."
+            "kernel",
+            "A foundational term used in Operating Systems: The Computer's Manager."
           ],
           [
-            "Kernel",
-            "Privileged core of an operating system."
+            "user space",
+            "A foundational term used in Operating Systems: The Computer's Manager."
           ],
           [
-            "Permission",
-            "A rule describing allowed actions."
+            "system call",
+            "A foundational term used in Operating Systems: The Computer's Manager."
           ],
           [
-            "Process",
-            "A running instance of a program."
+            "process",
+            "A foundational term used in Operating Systems: The Computer's Manager."
+          ],
+          [
+            "permission",
+            "A foundational term used in Operating Systems: The Computer's Manager."
+          ],
+          [
+            "privilege",
+            "A foundational term used in Operating Systems: The Computer's Manager."
           ]
         ],
         "example": "A browser asks the operating system to create a downloaded file. The OS applies the relevant permissions and performs the storage operation.",
         "visual": {
-          "title": "User",
-          "caption": "Instructional mental model for this lesson.",
+          "title": "Operating Systems: The Computer's Manager — mental model",
+          "caption": "Foundation-first reasoning flow.",
           "steps": [
-            "User",
-            "Application",
-            "Operating system",
-            "Hardware"
+            "Kernel vs user space",
+            "processes",
+            "permissions",
+            "privilege",
+            "OS security updates"
           ]
         },
-        "case": "Case study — A shared workstation has a browser running under a standard user account and a separate administrator account. Explain why separating these identities changes the potential impact of a browser compromise.",
+        "case": "A vulnerable browser process attempts to access a protected company file. Explain which OS boundaries matter and what evidence you would inspect.",
         "mistakes": [
           "Memorizing terminology without understanding the relationship between concepts.",
           "Assuming one control solves every security problem.",
           "Ignoring context, evidence or the identity involved."
         ],
-        "practice": "Complete a short written exercise for \"Operating Systems: The Computer's Manager\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-        "evidence": "A concise written explanation, one example and one evidence-based security question.",
+        "practice": "Practice Operating Systems: The Computer's Manager using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "What is a major security role of an operating system?",
+          "q": "Which approach best demonstrates real understanding of Operating Systems: The Computer's Manager?",
           "options": [
-            "Managing access to resources and running programs",
-            "Replacing every application",
-            "Making all files public",
-            "Eliminating the need for users"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "Managing access to resources and running programs",
-          "why": "The correct answer follows the beginner mental model introduced in this lesson."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "learningGoal": "Understand the operating system as a security boundary that manages hardware, processes, files, users and permissions.",
         "highlights": [
-          "Applications normally request resources through the operating system rather than directly controlling hardware.",
-          "The kernel operates with greater privilege than ordinary applications.",
-          "Processes, users and permissions create boundaries that limit what software can do.",
-          "Operating-system security is foundational to endpoint, server and cloud security."
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
         ],
         "studyPlan": [
           [
@@ -367,14 +388,14 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "examples": [
           {
-            "title": "A text editor opening a file",
-            "body": "The application asks the OS to access a file. The OS evaluates the process identity and the file's permissions before allowing the operation.",
-            "answer": "The application does not need unrestricted hardware access to perform an ordinary editing task."
+            "title": "Worked example 1",
+            "body": "A text editor reads a document",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
           },
           {
-            "title": "A vulnerable application",
-            "body": "An application is compromised through a software flaw.",
-            "answer": "The impact depends partly on the permissions and isolation of the compromised process. Least privilege can reduce the blast radius."
+            "title": "Worked example 2",
+            "body": "a browser runs with a standard account.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
           }
         ],
         "notes": [
@@ -383,65 +404,71 @@ const NORTHSTAR_CURRICULUM = [
           "Operating systems differ in implementation but share many conceptual responsibilities."
         ],
         "takeaways": [
-          "The OS mediates access to computing resources.",
-          "Kernel and user-space separation is a major security boundary.",
-          "Process identity and permissions influence compromise impact.",
-          "Patching and least privilege protect the boundary."
+          "An operating system coordinates hardware and provides controlled services to applications, while the kernel enforces privileged operations.",
+          "Follow an application request from user space through an operating-system interface to a resource such as a file or network socket.",
+          "User accounts, permissions, process isolation and patching form important security boundaries; administrator/root access changes impact.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
         ],
         "practiceSteps": [
-          "Explain Operating Systems: The Computer's Manager in your own words without copying the definition.",
-          "Draw the main flow, relationship, architecture or statistical model.",
-          "Identify one normal condition and one failure or adversarial condition.",
-          "State the evidence you would collect before making a high-impact decision.",
-          "Apply the concept to the lesson case and document your reasoning.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "Why might running every application as an administrator make a vulnerability more dangerous?",
+        "reflection": "If your first explanation of Operating Systems: The Computer's Manager were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What is the kernel?",
-            "a": "The privileged core of an operating system that manages key system resources.",
-            "why": "It sits beneath ordinary applications and enforces many system-level boundaries."
+            "q": "What is the central idea in Operating Systems: The Computer's Manager?",
+            "a": "An operating system coordinates hardware and provides controlled services to applications, while the kernel enforces privileged operations.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "What determines the impact of a compromised process?",
-            "a": "Among other factors, its privileges, accessible resources, isolation and the data it can reach.",
-            "why": "Compromise impact depends on the boundary around the process."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "Is an operating system only a user interface?",
-            "a": "No.",
-            "why": "It manages resources, processes, devices, files, networking and security boundaries."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does Operating Systems: The Computer's Manager connect to cybersecurity?",
+            "a": "User accounts, permissions, process isolation and patching form important security boundaries; administrator/root access changes impact.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "1. Why an operating system exists",
-            "body": "Without an operating system, each application would need to manage hardware independently. The operating system provides common services for memory, files, devices, networking and process execution. It also coordinates competing programs so one application does not normally overwrite another application's memory or consume unlimited resources.\n\nThis makes the OS both a manager and a security boundary. When an application asks to read a file or open a network connection, the OS can apply policy around that request."
+            "title": "1. First principles",
+            "body": "An operating system coordinates hardware and provides controlled services to applications, while the kernel enforces privileged operations."
           },
           {
-            "title": "2. Kernel and user space",
-            "body": "The kernel is the privileged core of the operating system. Ordinary applications run with less privilege and request sensitive operations through controlled interfaces. This separation is not perfect, but it provides an important containment model.\n\nA vulnerability that lets untrusted code cross a privilege boundary can therefore have consequences far beyond a single application. Later security engineering will build on this idea."
+            "title": "2. How it works",
+            "body": "Follow an application request from user space through an operating-system interface to a resource such as a file or network socket."
           },
           {
-            "title": "3. Users, processes and permissions",
-            "body": "A process runs with an identity and a set of permissions. Files and resources can have access rules. The operating system uses these relationships to determine which actions are allowed.\n\nSecurity engineers try to minimize privilege, isolate processes where practical, patch vulnerable components and monitor security-relevant changes."
+            "title": "3. Security implications",
+            "body": "User accounts, permissions, process isolation and patching form important security boundaries; administrator/root access changes impact."
           },
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Operating Systems: The Computer's Manager into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "4. What to observe",
+            "body": "For Operating Systems: The Computer's Manager, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns Operating Systems: The Computer's Manager into a reusable professional skill."
           }
         ],
         "caseQuestions": [
           "What is the business or technical objective?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the working hypothesis?",
-          "Which control, analysis or next action is justified?",
-          "What limitation should be communicated to the reviewer?"
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "why": "Why this matters: Operating Systems: The Computer's Manager is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -471,12 +498,12 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "Stanford Data Science",
-            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
           }
         ]
       },
@@ -486,75 +513,89 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand how digital information is organized, stored and exposed through files and directories.",
         "time": "75–90 minutes",
         "prerequisite": "Operating systems",
-        "read": "A file is a named collection of digital information. A folder organizes files and other folders. The security questions are simple: where is the information, who can access it, and how long should it exist?\n\nData can also exist in backups, temporary files, browser caches, synchronization services and old copies. Security therefore considers the data lifecycle, not only the file visible on screen.",
+        "read": "Files are named data objects organized by a filesystem; storage devices provide persistence but do not by themselves define access policy.\n\nTrace a file through path resolution, filesystem metadata, permissions, storage blocks and backup copies.\n\nConfidentiality depends on permissions and encryption; integrity depends on write controls and trustworthy backups; deletion does not necessarily erase every copy.",
         "concepts": [
           "File",
-          "Directory",
-          "Path",
-          "Extension",
-          "Storage",
-          "Data classification",
-          "Backup"
+          "directory",
+          "path",
+          "filesystem",
+          "metadata",
+          "permission",
+          "backup",
+          "encryption"
         ],
         "glossary": [
           [
             "File",
-            "Named unit of stored information."
+            "A foundational term used in Files, Folders & Storage."
           ],
           [
-            "Directory",
-            "Container used to organize files."
+            "directory",
+            "A foundational term used in Files, Folders & Storage."
           ],
           [
-            "Path",
-            "Location of a file or directory."
+            "path",
+            "A foundational term used in Files, Folders & Storage."
           ],
           [
-            "Data classification",
-            "A rule describing sensitivity or importance."
+            "filesystem",
+            "A foundational term used in Files, Folders & Storage."
           ],
           [
-            "Backup",
-            "Separate copy used for recovery."
+            "metadata",
+            "A foundational term used in Files, Folders & Storage."
+          ],
+          [
+            "permission",
+            "A foundational term used in Files, Folders & Storage."
+          ],
+          [
+            "backup",
+            "A foundational term used in Files, Folders & Storage."
+          ],
+          [
+            "encryption",
+            "A foundational term used in Files, Folders & Storage."
           ]
         ],
         "example": "A customer CSV may exist in a primary folder, a backup and a synchronized copy. Access rules should cover the lifecycle.",
         "visual": {
-          "title": "Create",
-          "caption": "Instructional mental model for this lesson.",
+          "title": "Files, Folders & Storage — mental model",
+          "caption": "Foundation-first reasoning flow.",
           "steps": [
-            "Create",
-            "Store",
-            "Use",
-            "Copy",
-            "Retain or delete"
+            "Paths",
+            "metadata",
+            "permissions",
+            "persistence",
+            "backups",
+            "deletion vs erasure"
           ]
         },
-        "case": "Case study — A customer-data export was deleted from an analyst's laptop, but it had previously been synchronized and backed up. Map the remaining copies and propose verification steps.",
+        "case": "A shared folder contains customer records. Determine who should read/write it, what metadata matters, and how backups change the exposure.",
         "mistakes": [
           "Memorizing terminology without understanding the relationship between concepts.",
           "Assuming one control solves every security problem.",
           "Ignoring context, evidence or the identity involved."
         ],
-        "practice": "Complete a short written exercise for \"Files, Folders & Storage\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-        "evidence": "A concise written explanation, one example and one evidence-based security question.",
+        "practice": "Practice Files, Folders & Storage using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "Why is data classification useful?",
+          "q": "Which approach best demonstrates real understanding of Files, Folders & Storage?",
           "options": [
-            "It helps determine appropriate handling and access",
-            "It automatically encrypts every file",
-            "It makes files smaller",
-            "It removes the need for backups"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "It helps determine appropriate handling and access",
-          "why": "The correct answer follows the beginner mental model introduced in this lesson."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "learningGoal": "Understand the data lifecycle from creation to deletion and identify where copies and access paths create security exposure.",
         "highlights": [
-          "A file has a location, owner/context, permissions and lifecycle.",
-          "Deleting a visible file does not automatically mean every copy is gone.",
-          "Backups, synchronization, caches and temporary files can create additional data locations.",
-          "Classification helps determine how strongly information should be protected."
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
         ],
         "studyPlan": [
           [
@@ -584,14 +625,14 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "examples": [
           {
-            "title": "Employee spreadsheet",
-            "body": "A salary spreadsheet is saved locally, synchronized to cloud storage and included in nightly backups.",
-            "answer": "The security scope includes all three locations. Protecting only the visible local file is incomplete."
+            "title": "Worked example 1",
+            "body": "A payroll CSV is stored, edited, backed up and later deleted",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
           },
           {
-            "title": "Temporary export",
-            "body": "An analyst exports sensitive records to a temporary CSV for analysis.",
-            "answer": "The export creates a new asset that needs appropriate access control, retention and secure deletion."
+            "title": "Worked example 2",
+            "body": "a forensic copy may still contain information.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
           }
         ],
         "notes": [
@@ -601,65 +642,71 @@ const NORTHSTAR_CURRICULUM = [
           "Retention is a security decision, not merely a storage decision."
         ],
         "takeaways": [
-          "Follow information through its lifecycle.",
-          "Every copy can become an asset.",
-          "Backups need security controls and recovery testing.",
-          "Deletion claims should be supported by evidence."
+          "Files are named data objects organized by a filesystem; storage devices provide persistence but do not by themselves define access policy.",
+          "Trace a file through path resolution, filesystem metadata, permissions, storage blocks and backup copies.",
+          "Confidentiality depends on permissions and encryption; integrity depends on write controls and trustworthy backups; deletion does not necessarily erase every copy.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
         ],
         "practiceSteps": [
-          "Explain Files, Folders & Storage in your own words without copying the definition.",
-          "Draw the main flow, relationship, architecture or statistical model.",
-          "Identify one normal condition and one failure or adversarial condition.",
-          "State the evidence you would collect before making a high-impact decision.",
-          "Apply the concept to the lesson case and document your reasoning.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "Why can a backup be both a security control and a security exposure?",
+        "reflection": "If your first explanation of Files, Folders & Storage were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "Does deleting one copy delete all copies?",
-            "a": "Not necessarily.",
-            "why": "Synchronization, backups, caches and exports can create independent copies."
+            "q": "What is the central idea in Files, Folders & Storage?",
+            "a": "Files are named data objects organized by a filesystem; storage devices provide persistence but do not by themselves define access policy.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "What is data classification for?",
-            "a": "To communicate how information should be handled based on sensitivity or importance.",
-            "why": "Classification helps connect information to appropriate controls."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "What should you verify after a deletion request?",
-            "a": "Which systems and copies are in scope and whether their retention/deletion processes completed as expected.",
-            "why": "A visible deletion is not proof of complete lifecycle handling."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does Files, Folders & Storage connect to cybersecurity?",
+            "a": "Confidentiality depends on permissions and encryption; integrity depends on write controls and trustworthy backups; deletion does not necessarily erase every copy.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "1. Files are more than icons",
-            "body": "A file has content plus metadata and a location. The same content may be represented in a local path, a cloud-synchronized folder, a backup, an email attachment or an application cache. Security analysis therefore follows information rather than only visible filenames.\n\nA useful beginner habit is to ask: where did the data originate, where is it now, who can access it, where has it been copied, and when should it stop being retained?"
+            "title": "1. First principles",
+            "body": "Files are named data objects organized by a filesystem; storage devices provide persistence but do not by themselves define access policy."
           },
           {
-            "title": "2. The data lifecycle",
-            "body": "A simple lifecycle is create → store → use → share → archive or delete. Different controls apply at different stages. Encryption may protect stored data, access control limits use, secure transfer protects sharing, backups support recovery and retention rules control how long information remains available.\n\nThis lifecycle becomes important for privacy, incident response and compliance because organizations need to know not only what data they have but why they retain it and who can reach it."
+            "title": "2. How it works",
+            "body": "Trace a file through path resolution, filesystem metadata, permissions, storage blocks and backup copies."
           },
           {
-            "title": "3. Backups are security boundaries too",
-            "body": "Backups improve availability but also create another copy of the information. A backup repository with weak access controls can become an attractive target. Good backup design considers authentication, authorization, encryption, retention, integrity and recovery testing."
+            "title": "3. Security implications",
+            "body": "Confidentiality depends on permissions and encryption; integrity depends on write controls and trustworthy backups; deletion does not necessarily erase every copy."
           },
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Files, Folders & Storage into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "4. What to observe",
+            "body": "For Files, Folders & Storage, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns Files, Folders & Storage into a reusable professional skill."
           }
         ],
         "caseQuestions": [
           "What is the business or technical objective?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the working hypothesis?",
-          "Which control, analysis or next action is justified?",
-          "What limitation should be communicated to the reviewer?"
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "why": "Why this matters: Files, Folders & Storage is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -689,12 +736,12 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "Stanford Data Science",
-            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
           }
         ]
       },
@@ -704,70 +751,83 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand the difference between a program and a running process and why process identity matters to security.",
         "time": "75–90 minutes",
         "prerequisite": "Operating systems",
-        "read": "A program is stored instructions. A process is a running instance of a program. One program can create several processes. Security controls often apply to the running process and its identity.\n\nMemory is the active workspace used by running programs. If a process has too much authority, a compromise can have a larger impact. The key mental model is: stored instructions become running processes, processes consume resources, and identity and permissions limit actions.",
+        "read": "Programs are passive instructions; a process is a running instance with state, resources, identity and execution context.\n\nExplain process creation, memory allocation, CPU scheduling, handles/resources and termination at a beginner level.\n\nSecurity impact depends on what a process can access, which identity it runs as, and whether another process can influence it.",
         "concepts": [
           "Program",
-          "Process",
-          "Parent process",
-          "Memory",
-          "Process identity",
-          "Privilege"
+          "process",
+          "thread",
+          "virtual memory",
+          "heap",
+          "stack",
+          "scheduler"
         ],
         "glossary": [
           [
             "Program",
-            "Stored instructions."
+            "A foundational term used in Programs, Processes & Memory."
           ],
           [
-            "Process",
-            "Running instance of a program."
+            "process",
+            "A foundational term used in Programs, Processes & Memory."
           ],
           [
-            "Memory",
-            "Working space used by active programs."
+            "thread",
+            "A foundational term used in Programs, Processes & Memory."
           ],
           [
-            "Privilege",
-            "Authority available to an identity or process."
+            "virtual memory",
+            "A foundational term used in Programs, Processes & Memory."
+          ],
+          [
+            "heap",
+            "A foundational term used in Programs, Processes & Memory."
+          ],
+          [
+            "stack",
+            "A foundational term used in Programs, Processes & Memory."
+          ],
+          [
+            "scheduler",
+            "A foundational term used in Programs, Processes & Memory."
           ]
         ],
         "example": "A web server process runs under a dedicated identity. Its permissions influence what a compromise could reach.",
         "visual": {
-          "title": "Program on disk",
-          "caption": "Instructional mental model for this lesson.",
+          "title": "Programs, Processes & Memory — mental model",
+          "caption": "Foundation-first reasoning flow.",
           "steps": [
-            "Program on disk",
-            "Process starts",
-            "Identity + memory",
-            "Actions",
-            "Permissions"
+            "Process vs program",
+            "memory regions",
+            "scheduling",
+            "isolation",
+            "process identity"
           ]
         },
-        "case": "Case study — An endpoint alert shows a document application spawning an unexpected command interpreter. Do not assume compromise; identify what evidence you would collect first.",
+        "case": "A suspicious process appears after a user opens a document. Decide which process attributes and evidence are useful for triage.",
         "mistakes": [
           "Memorizing terminology without understanding the relationship between concepts.",
           "Assuming one control solves every security problem.",
           "Ignoring context, evidence or the identity involved."
         ],
-        "practice": "Complete a short written exercise for \"Programs, Processes & Memory\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-        "evidence": "A concise written explanation, one example and one evidence-based security question.",
+        "practice": "Practice Programs, Processes & Memory using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "Which statement is correct?",
+          "q": "Which approach best demonstrates real understanding of Programs, Processes & Memory?",
           "options": [
-            "A process is a running instance of a program",
-            "A process is always a file on disk",
-            "A program can never create a process",
-            "Memory is the same as storage"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "A process is a running instance of a program",
-          "why": "The correct answer follows the beginner mental model introduced in this lesson."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "learningGoal": "Distinguish programs, processes and memory, then connect process identity and privilege to security impact.",
         "highlights": [
-          "A program is stored code; a process is an executing instance.",
-          "One program can have multiple processes or threads.",
-          "A process consumes resources and acts with an identity and permissions.",
-          "Security monitoring often observes process creation, ancestry, memory and privilege changes."
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
         ],
         "studyPlan": [
           [
@@ -797,14 +857,14 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "examples": [
           {
-            "title": "Browser process tree",
-            "body": "A browser may use multiple processes for tabs, rendering, networking or other functions.",
-            "answer": "Process isolation can reduce the impact of a fault in one component, although the exact architecture depends on the browser and platform."
+            "title": "Worked example 1",
+            "body": "A browser has multiple processes",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
           },
           {
-            "title": "Service account",
-            "body": "A background service runs with a highly privileged account even though it only needs to read a small set of files.",
-            "answer": "Reducing the service identity's privileges can reduce potential compromise impact."
+            "title": "Worked example 2",
+            "body": "a compromised renderer should not automatically control the entire device.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
           }
         ],
         "notes": [
@@ -814,65 +874,71 @@ const NORTHSTAR_CURRICULUM = [
           "Context reduces false positives."
         ],
         "takeaways": [
-          "Program ≠ process.",
-          "Processes execute with identity, resources and permissions.",
-          "Memory contains active state.",
-          "Process relationships can support detection and investigation."
+          "Programs are passive instructions; a process is a running instance with state, resources, identity and execution context.",
+          "Explain process creation, memory allocation, CPU scheduling, handles/resources and termination at a beginner level.",
+          "Security impact depends on what a process can access, which identity it runs as, and whether another process can influence it.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
         ],
         "practiceSteps": [
-          "Explain Programs, Processes & Memory in your own words without copying the definition.",
-          "Draw the main flow, relationship, architecture or statistical model.",
-          "Identify one normal condition and one failure or adversarial condition.",
-          "State the evidence you would collect before making a high-impact decision.",
-          "Apply the concept to the lesson case and document your reasoning.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "Why might the same executable be low-risk under one identity and high-risk under another?",
+        "reflection": "If your first explanation of Programs, Processes & Memory were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What is a process?",
-            "a": "A running instance of a program.",
-            "why": "The distinction helps explain execution, resource use and monitoring."
+            "q": "What is the central idea in Programs, Processes & Memory?",
+            "a": "Programs are passive instructions; a process is a running instance with state, resources, identity and execution context.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "Why does process identity matter?",
-            "a": "It influences what resources and actions the process can access.",
-            "why": "Privilege affects potential impact."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "Is an unusual parent-child process relationship proof of malware?",
-            "a": "No.",
-            "why": "It is a signal that requires context and evidence."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does Programs, Processes & Memory connect to cybersecurity?",
+            "a": "Security impact depends on what a process can access, which identity it runs as, and whether another process can influence it.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "1. Stored code becomes execution",
-            "body": "A program is a set of stored instructions. When the operating system starts it, the system creates a process with an execution context. That process receives resources such as memory and an identity.\n\nThis distinction matters because the same program can behave differently depending on its inputs, configuration, user identity and environment."
+            "title": "1. First principles",
+            "body": "Programs are passive instructions; a process is a running instance with state, resources, identity and execution context."
           },
           {
-            "title": "2. Process identity and privilege",
-            "body": "A process normally acts on behalf of an account or service identity. Its permissions determine which files, devices, network resources and system functions it can access. A process with excessive privilege has a larger potential impact if compromised.\n\nSecurity monitoring can therefore treat process identity and parent-child relationships as useful evidence. An unexpected process launched by an unusual parent can warrant investigation, although context is always required."
+            "title": "2. How it works",
+            "body": "Explain process creation, memory allocation, CPU scheduling, handles/resources and termination at a beginner level."
           },
           {
-            "title": "3. Memory as active state",
-            "body": "Running programs use memory for instructions, variables, buffers and temporary data. Some sensitive information may exist in memory while a process is running. This is one reason endpoint security and digital forensics distinguish persistent storage from volatile state."
+            "title": "3. Security implications",
+            "body": "Security impact depends on what a process can access, which identity it runs as, and whether another process can influence it."
           },
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Programs, Processes & Memory into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "4. What to observe",
+            "body": "For Programs, Processes & Memory, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns Programs, Processes & Memory into a reusable professional skill."
           }
         ],
         "caseQuestions": [
           "What is the business or technical objective?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the working hypothesis?",
-          "Which control, analysis or next action is justified?",
-          "What limitation should be communicated to the reviewer?"
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "why": "Why this matters: Programs, Processes & Memory is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -902,12 +968,12 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "Stanford Data Science",
-            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
           }
         ]
       },
@@ -917,79 +983,84 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Build a beginner mental model of devices, networks, IP addresses and data moving between systems.",
         "time": "90–120 minutes",
         "prerequisite": "Computer basics",
-        "read": "The internet is a network of networks. Your device connects to a local network, which connects through routers and service providers to other networks. Data is exchanged between endpoints using protocols.\n\nAn IP address identifies a network endpoint. Routers use IP information to decide where packets should go. DNS helps translate human-friendly names into addressing information. Ports help identify transport endpoints associated with services.",
+        "read": "The internet is an interconnected system of networks using common protocols rather than one single network.\n\nTrace a request across a local device, access network, router, ISP and destination network; distinguish local addressing from end-to-end communication.\n\nRouting, naming, transport and application protocols create observable boundaries. Security depends on where traffic is trusted, inspected or transformed.",
         "concepts": [
-          "Network",
-          "Router",
-          "IP address",
-          "Packet",
-          "DNS",
-          "Port",
-          "Endpoint"
+          "Internet",
+          "packet",
+          "router",
+          "ISP",
+          "routing",
+          "protocol",
+          "endpoint"
         ],
         "glossary": [
           [
-            "Network",
-            "Connected systems that exchange information."
+            "Internet",
+            "A foundational term used in How the Internet Works."
           ],
           [
-            "Router",
-            "System that forwards traffic between networks."
+            "packet",
+            "A foundational term used in How the Internet Works."
           ],
           [
-            "IP address",
-            "Network-layer address for an endpoint."
+            "router",
+            "A foundational term used in How the Internet Works."
           ],
           [
-            "Packet",
-            "Unit of network data."
+            "ISP",
+            "A foundational term used in How the Internet Works."
           ],
           [
-            "DNS",
-            "Naming and lookup system."
+            "routing",
+            "A foundational term used in How the Internet Works."
           ],
           [
-            "Port",
-            "Transport endpoint number."
+            "protocol",
+            "A foundational term used in How the Internet Works."
+          ],
+          [
+            "endpoint",
+            "A foundational term used in How the Internet Works."
           ]
         ],
         "example": "Your device connects to a local network, then routers and service providers carry traffic toward the destination.",
         "visual": {
-          "title": "Your device",
-          "caption": "Instructional mental model for this lesson.",
+          "title": "How the Internet Works — mental model",
+          "caption": "Foundation-first reasoning flow.",
           "steps": [
-            "Your device",
-            "Local network",
-            "ISP",
-            "Other networks",
-            "Destination server"
+            "Packets",
+            "routing",
+            "gateways",
+            "endpoints",
+            "protocol layers",
+            "troubleshooting"
           ]
         },
-        "case": "Case study — A company laptop communicates with an external IP every five minutes. Build an evidence plan before labeling the traffic malicious.",
+        "case": "A user reports that one website is unreachable. Build a layered troubleshooting hypothesis without immediately blaming the firewall.",
         "mistakes": [
           "Memorizing terminology without understanding the relationship between concepts.",
           "Assuming one control solves every security problem.",
           "Ignoring context, evidence or the identity involved."
         ],
-        "practice": "Complete a short written exercise for \"How the Internet Works\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-        "evidence": "A concise written explanation, one example and one evidence-based security question.",
+        "practice": "Practice How the Internet Works using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "What is the main purpose of DNS at a beginner level?",
+          "q": "Which approach best demonstrates real understanding of How the Internet Works?",
           "options": [
-            "Help translate human-friendly names into network addressing information",
-            "Encrypt every file",
-            "Replace the CPU",
-            "Store every website"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "Help translate human-friendly names into network addressing information",
-          "why": "The correct answer follows the beginner mental model introduced in this lesson."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "learningGoal": "Build a packet-level mental model of the Internet, from endpoint to local network, router, provider and destination.",
         "highlights": [
-          "The Internet is an interconnected collection of networks.",
-          "Routers forward packets between networks using addressing and routing information.",
-          "Applications use protocols with defined rules rather than sending arbitrary bytes without structure.",
-          "Network security depends on understanding where traffic originates, travels and terminates."
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
         ],
         "studyPlan": [
           [
@@ -1019,14 +1090,14 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "examples": [
           {
-            "title": "Opening a website",
-            "body": "Your device resolves the destination, establishes the necessary network connections and exchanges application data with the server.",
-            "answer": "Different protocol layers contribute different functions; security controls can exist at each layer."
+            "title": "Worked example 1",
+            "body": "A phone requests a website over Wi-Fi",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
           },
           {
-            "title": "Unexpected outbound traffic",
-            "body": "A workstation repeatedly contacts an unfamiliar external destination.",
-            "answer": "The observation is a starting point. The analyst should identify the process, destination, timing, protocol and expected business purpose before concluding what happened."
+            "title": "Worked example 2",
+            "body": "a corporate laptop reaches a cloud service through a gateway.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
           }
         ],
         "notes": [
@@ -1035,65 +1106,71 @@ const NORTHSTAR_CURRICULUM = [
           "Network evidence must be interpreted with host and application context."
         ],
         "takeaways": [
-          "Internet traffic crosses multiple networks.",
-          "Packets carry information needed for forwarding and protocol processing.",
-          "Network security uses layered controls.",
-          "Traffic observations require endpoint and business context."
+          "The internet is an interconnected system of networks using common protocols rather than one single network.",
+          "Trace a request across a local device, access network, router, ISP and destination network; distinguish local addressing from end-to-end communication.",
+          "Routing, naming, transport and application protocols create observable boundaries. Security depends on where traffic is trusted, inspected or transformed.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
         ],
         "practiceSteps": [
-          "Explain How the Internet Works in your own words without copying the definition.",
-          "Draw the main flow, relationship, architecture or statistical model.",
-          "Identify one normal condition and one failure or adversarial condition.",
-          "State the evidence you would collect before making a high-impact decision.",
-          "Apply the concept to the lesson case and document your reasoning.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "Why is knowing the destination IP alone rarely enough to determine whether traffic is malicious?",
+        "reflection": "If your first explanation of How the Internet Works were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What does a router do?",
-            "a": "It forwards traffic between networks according to routing information.",
-            "why": "Routers connect different network segments."
+            "q": "What is the central idea in How the Internet Works?",
+            "a": "The internet is an interconnected system of networks using common protocols rather than one single network.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "Is the Internet one network?",
-            "a": "No. It is a network of interconnected networks.",
-            "why": "Different organizations and networks interoperate through common protocols."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "Why is context important in network detection?",
-            "a": "The same destination or protocol can be legitimate or suspicious depending on process, user, timing and business purpose.",
-            "why": "Security signals are rarely self-interpreting."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does How the Internet Works connect to cybersecurity?",
+            "a": "Routing, naming, transport and application protocols create observable boundaries. Security depends on where traffic is trusted, inspected or transformed.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "1. Network of networks",
-            "body": "Your phone or laptop normally connects to a local network, which connects through a router or access point to an upstream network. Internet service providers interconnect with other networks so traffic can reach remote destinations.\n\nThere is no single machine called 'the Internet'. It is a distributed system of networks, devices, protocols and organizations."
+            "title": "1. First principles",
+            "body": "The internet is an interconnected system of networks using common protocols rather than one single network."
           },
           {
-            "title": "2. Packets and routing",
-            "body": "Data is divided into packets so network devices can move pieces of information through the system. Each packet carries addressing information needed by the relevant protocol layers. Routers examine network-layer information and select a next hop according to routing decisions.\n\nThis is why network security analysts care about source, destination, protocol, timing and path. These attributes help explain what happened."
+            "title": "2. How it works",
+            "body": "Trace a request across a local device, access network, router, ISP and destination network; distinguish local addressing from end-to-end communication."
           },
           {
-            "title": "3. Security at multiple points",
-            "body": "Traffic can be controlled at endpoints, local networks, firewalls, proxies, cloud boundaries and application layers. Encryption may protect content, while metadata such as destination and timing can remain observable.\n\nA secure network therefore uses layered controls rather than assuming one firewall solves every problem."
+            "title": "3. Security implications",
+            "body": "Routing, naming, transport and application protocols create observable boundaries. Security depends on where traffic is trusted, inspected or transformed."
           },
           {
-            "title": "Mechanism and boundary",
-            "body": "Break How the Internet Works into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "4. What to observe",
+            "body": "For How the Internet Works, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns How the Internet Works into a reusable professional skill."
           }
         ],
         "caseQuestions": [
           "What is the business or technical objective?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the working hypothesis?",
-          "Which control, analysis or next action is justified?",
-          "What limitation should be communicated to the reviewer?"
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "why": "Why this matters: How the Internet Works is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -1123,12 +1200,12 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "Stanford Data Science",
-            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
           }
         ]
       },
@@ -1138,70 +1215,89 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Connect names, IP addresses, ports and services into one usable mental model.",
         "time": "90–120 minutes",
         "prerequisite": "How the Internet Works",
-        "read": "A network connection needs a destination and a service. The destination is associated with an IP address. The service endpoint is associated with a port. DNS helps an application find addressing information from a name.\n\nPorts are not literal doors, but the analogy can help: a port identifies a transport endpoint associated with a service. Security teams care about exposed ports because unnecessary services increase attack surface.",
+        "read": "DNS maps names to resource records while IP addresses identify network interfaces/endpoints and ports identify services at the transport layer.\n\nResolve a hostname conceptually, distinguish DNS from IP routing, and explain why 443 identifies a service endpoint rather than a complete security policy.\n\nDNS can be abused or misconfigured; exposed ports expand attack surface; IP addresses alone do not prove identity.",
         "concepts": [
-          "Domain",
-          "DNS lookup",
-          "IPv4 address",
-          "IPv6 address",
-          "TCP/UDP port",
-          "Service endpoint"
+          "DNS",
+          "resolver",
+          "record",
+          "IPv4",
+          "IPv6",
+          "port",
+          "socket",
+          "service"
         ],
         "glossary": [
           [
-            "Domain",
-            "Human-friendly network name."
+            "DNS",
+            "A foundational term used in DNS, IP Addresses & Ports."
           ],
           [
-            "IP address",
-            "Network-layer endpoint address."
+            "resolver",
+            "A foundational term used in DNS, IP Addresses & Ports."
           ],
           [
-            "Port",
-            "Number identifying a transport endpoint."
+            "record",
+            "A foundational term used in DNS, IP Addresses & Ports."
           ],
           [
-            "Service endpoint",
-            "Network-accessible service destination."
+            "IPv4",
+            "A foundational term used in DNS, IP Addresses & Ports."
+          ],
+          [
+            "IPv6",
+            "A foundational term used in DNS, IP Addresses & Ports."
+          ],
+          [
+            "port",
+            "A foundational term used in DNS, IP Addresses & Ports."
+          ],
+          [
+            "socket",
+            "A foundational term used in DNS, IP Addresses & Ports."
+          ],
+          [
+            "service",
+            "A foundational term used in DNS, IP Addresses & Ports."
           ]
         ],
         "example": "A public web service may need one port exposed while an unrelated administrative service should remain restricted.",
         "visual": {
-          "title": "Domain",
-          "caption": "Instructional mental model for this lesson.",
+          "title": "DNS, IP Addresses & Ports — mental model",
+          "caption": "Foundation-first reasoning flow.",
           "steps": [
-            "Domain",
-            "DNS lookup",
-            "IP address",
-            "Port",
-            "Application service"
+            "Name resolution",
+            "addressing",
+            "ports",
+            "sockets",
+            "service exposure",
+            "DNS evidence"
           ]
         },
-        "case": "Case study — A new server has 12 listening services, but the application requires only three. Decide what evidence you need before reducing exposure.",
+        "case": "A company sees unexpected outbound DNS requests. Separate normal resolution from suspicious behavior using source, destination, frequency and context.",
         "mistakes": [
           "Memorizing terminology without understanding the relationship between concepts.",
           "Assuming one control solves every security problem.",
           "Ignoring context, evidence or the identity involved."
         ],
-        "practice": "Complete a short written exercise for \"DNS, IP Addresses & Ports\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-        "evidence": "A concise written explanation, one example and one evidence-based security question.",
+        "practice": "Practice DNS, IP Addresses & Ports using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "What does a port primarily help identify?",
+          "q": "Which approach best demonstrates real understanding of DNS, IP Addresses & Ports?",
           "options": [
-            "A transport endpoint associated with a service",
-            "The physical size of a server",
-            "A user's password",
-            "The brand of a router"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "A transport endpoint associated with a service",
-          "why": "The correct answer follows the beginner mental model introduced in this lesson."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "learningGoal": "Connect DNS names, IP addresses, transport ports and application services into one coherent network model.",
         "highlights": [
-          "DNS maps names to addressing information through a distributed naming system.",
-          "An IP address identifies a network-layer endpoint; a port identifies a transport endpoint.",
-          "A service can expose one or more network endpoints.",
-          "Exposed services increase attack surface and should have a business reason."
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
         ],
         "studyPlan": [
           [
@@ -1231,14 +1327,14 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "examples": [
           {
-            "title": "Web application",
-            "body": "A user enters a domain, DNS provides addressing information, and the browser connects to the appropriate service endpoint.",
-            "answer": "Each stage creates different evidence: DNS records, connection metadata and application logs."
+            "title": "Worked example 1",
+            "body": "A browser resolves example.com and connects to TCP 443",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
           },
           {
-            "title": "Unnecessary administrative service",
-            "body": "A server exposes a management service to a broad network even though administrators only need internal access.",
-            "answer": "Network restriction reduces exposure without necessarily removing the service."
+            "title": "Worked example 2",
+            "body": "a DNS answer can be cached.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
           }
         ],
         "notes": [
@@ -1247,65 +1343,71 @@ const NORTHSTAR_CURRICULUM = [
           "IPv4 and IPv6 are different addressing systems but serve the same broad network-layer purpose."
         ],
         "takeaways": [
-          "DNS helps translate names into addressing information.",
-          "IP addresses and ports identify network destinations at different layers.",
-          "Services should have an explicit business purpose.",
-          "Attack surface is managed through exposure, controls and monitoring."
+          "DNS maps names to resource records while IP addresses identify network interfaces/endpoints and ports identify services at the transport layer.",
+          "Resolve a hostname conceptually, distinguish DNS from IP routing, and explain why 443 identifies a service endpoint rather than a complete security policy.",
+          "DNS can be abused or misconfigured; exposed ports expand attack surface; IP addresses alone do not prove identity.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
         ],
         "practiceSteps": [
-          "Explain DNS, IP Addresses & Ports in your own words without copying the definition.",
-          "Draw the main flow, relationship, architecture or statistical model.",
-          "Identify one normal condition and one failure or adversarial condition.",
-          "State the evidence you would collect before making a high-impact decision.",
-          "Apply the concept to the lesson case and document your reasoning.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "Why can reducing network exposure be a security improvement even when no vulnerability has been found?",
+        "reflection": "If your first explanation of DNS, IP Addresses & Ports were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What does a port identify?",
-            "a": "A transport-layer endpoint associated with a service.",
-            "why": "Ports allow multiple services to use network addresses."
+            "q": "What is the central idea in DNS, IP Addresses & Ports?",
+            "a": "DNS maps names to resource records while IP addresses identify network interfaces/endpoints and ports identify services at the transport layer.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "Does an open port prove a server is compromised?",
-            "a": "No.",
-            "why": "Exposure is an attack-surface property, not proof of compromise."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "Why does DNS matter to security analysts?",
-            "a": "It connects human-readable names with network destinations and provides useful evidence about requested infrastructure.",
-            "why": "Names, records and destinations can reveal different aspects of activity."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does DNS, IP Addresses & Ports connect to cybersecurity?",
+            "a": "DNS can be abused or misconfigured; exposed ports expand attack surface; IP addresses alone do not prove identity.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "1. DNS is a naming system",
-            "body": "Humans prefer names such as example.com; networks need addressing information. DNS provides a distributed system for resolving names into records. Resolution can involve caches, recursive resolvers and authoritative servers.\n\nSecurity analysts therefore distinguish the name requested, the DNS response, the final address and the application connection."
+            "title": "1. First principles",
+            "body": "DNS maps names to resource records while IP addresses identify network interfaces/endpoints and ports identify services at the transport layer."
           },
           {
-            "title": "2. IP address versus port",
-            "body": "An IP address identifies a network-layer endpoint. TCP and UDP use port numbers to identify transport endpoints. Together, an address and port help identify where a service can be reached.\n\nThe common 'house and room' analogy can help, but remember that a port is a protocol concept, not a literal physical opening."
+            "title": "2. How it works",
+            "body": "Resolve a hostname conceptually, distinguish DNS from IP routing, and explain why 443 identifies a service endpoint rather than a complete security policy."
           },
           {
-            "title": "3. Attack surface",
-            "body": "Every reachable service represents potential attack surface. Reducing unnecessary services, restricting exposure, patching software and monitoring access are basic security practices.\n\nThe goal is not to close everything. Organizations need services to perform business functions. The security decision is whether exposure is necessary, controlled and monitored."
+            "title": "3. Security implications",
+            "body": "DNS can be abused or misconfigured; exposed ports expand attack surface; IP addresses alone do not prove identity."
           },
           {
-            "title": "Mechanism and boundary",
-            "body": "Break DNS, IP Addresses & Ports into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "4. What to observe",
+            "body": "For DNS, IP Addresses & Ports, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns DNS, IP Addresses & Ports into a reusable professional skill."
           }
         ],
         "caseQuestions": [
           "What is the business or technical objective?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the working hypothesis?",
-          "Which control, analysis or next action is justified?",
-          "What limitation should be communicated to the reviewer?"
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "why": "Why this matters: DNS, IP Addresses & Ports is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -1335,12 +1437,12 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "Stanford Data Science",
-            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
           }
         ]
       },
@@ -1350,80 +1452,89 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand the basic browser-to-web-server request flow and why HTTPS matters.",
         "time": "90–120 minutes",
         "prerequisite": "DNS, IP Addresses & Ports",
-        "read": "A browser is a client. A web server or application receives requests and returns responses. HTTP defines web request and response structure.\n\nHTTPS means HTTP is protected by TLS. TLS provides encryption in transit and helps the client verify the intended server when certificates are validated correctly. HTTPS protects communication; it does not automatically make the application secure or authorize users correctly.",
+        "read": "HTTP is an application protocol for exchanging requests and responses; HTTPS is HTTP protected by TLS.\n\nWalk through a browser request: DNS, connection establishment, TLS negotiation, HTTP request, response and browser rendering.\n\nTLS provides confidentiality and integrity in transit and authenticates a server through certificates, but it does not make the endpoint or application trustworthy.",
         "concepts": [
-          "Client",
-          "Server",
           "HTTP",
           "HTTPS",
+          "request",
+          "response",
+          "header",
+          "cookie",
           "TLS",
-          "Request",
-          "Response",
-          "Certificate"
+          "certificate"
         ],
         "glossary": [
           [
-            "Client",
-            "System that requests a service."
-          ],
-          [
-            "Server",
-            "System that provides a service."
-          ],
-          [
             "HTTP",
-            "Web communication protocol."
+            "A foundational term used in Websites, HTTP & HTTPS."
           ],
           [
             "HTTPS",
-            "HTTP protected using TLS."
+            "A foundational term used in Websites, HTTP & HTTPS."
+          ],
+          [
+            "request",
+            "A foundational term used in Websites, HTTP & HTTPS."
+          ],
+          [
+            "response",
+            "A foundational term used in Websites, HTTP & HTTPS."
+          ],
+          [
+            "header",
+            "A foundational term used in Websites, HTTP & HTTPS."
+          ],
+          [
+            "cookie",
+            "A foundational term used in Websites, HTTP & HTTPS."
           ],
           [
             "TLS",
-            "Protocol providing cryptographic protection."
+            "A foundational term used in Websites, HTTP & HTTPS."
           ],
           [
-            "Certificate",
-            "Digital credential used in TLS server authentication."
+            "certificate",
+            "A foundational term used in Websites, HTTP & HTTPS."
           ]
         ],
         "example": "HTTPS can protect a login request while it travels across the network, but the server still needs correct authentication and authorization.",
         "visual": {
-          "title": "Browser",
-          "caption": "Instructional mental model for this lesson.",
+          "title": "Websites, HTTP & HTTPS — mental model",
+          "caption": "Foundation-first reasoning flow.",
           "steps": [
-            "Browser",
-            "DNS/network",
+            "Request/response",
+            "methods",
+            "status codes",
+            "headers",
             "TLS",
-            "HTTPS request",
-            "Server response"
+            "certificates"
           ]
         },
-        "case": "Case study — An internal application uses HTTPS but allows every authenticated employee to download every customer record. Identify what HTTPS protects and what it does not.",
+        "case": "A user sees a certificate warning. Explain what the warning means and what evidence is needed before proceeding.",
         "mistakes": [
           "Memorizing terminology without understanding the relationship between concepts.",
           "Assuming one control solves every security problem.",
           "Ignoring context, evidence or the identity involved."
         ],
-        "practice": "Complete a short written exercise for \"Websites, HTTP & HTTPS\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-        "evidence": "A concise written explanation, one example and one evidence-based security question.",
+        "practice": "Practice Websites, HTTP & HTTPS using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "What is HTTPS primarily adding to HTTP?",
+          "q": "Which approach best demonstrates real understanding of Websites, HTTP & HTTPS?",
           "options": [
-            "TLS-based protection for the communication channel",
-            "Automatic administrator privileges",
-            "A larger screen",
-            "A replacement for authorization"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "TLS-based protection for the communication channel",
-          "why": "The correct answer follows the beginner mental model introduced in this lesson."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "learningGoal": "Understand a complete browser-to-web-server exchange and the security guarantees and limits of HTTPS/TLS.",
         "highlights": [
-          "HTTP defines request/response communication; HTTPS adds TLS protection.",
-          "TLS helps provide confidentiality and integrity in transit and server authentication through certificate validation.",
-          "HTTPS does not automatically secure application logic, authorization, endpoints or stored data.",
-          "A web request crosses multiple layers: browser, DNS, network, TLS and application."
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
         ],
         "studyPlan": [
           [
@@ -1453,14 +1564,14 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "examples": [
           {
-            "title": "Login page",
-            "body": "A browser sends credentials over an HTTPS connection.",
-            "answer": "TLS protects the connection in transit, but the application still needs secure authentication, session management, storage and authorization."
+            "title": "Worked example 1",
+            "body": "A login form submits credentials over HTTPS",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
           },
           {
-            "title": "Certificate warning",
-            "body": "A browser reports that it cannot validate the site's certificate.",
-            "answer": "The warning indicates that an important trust assumption has failed. A beginner should not simply bypass it without understanding the reason."
+            "title": "Worked example 2",
+            "body": "a secure connection can still carry malicious or vulnerable application behavior.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
           }
         ],
         "notes": [
@@ -1469,65 +1580,71 @@ const NORTHSTAR_CURRICULUM = [
           "Authentication answers who you are; authorization answers what you may do."
         ],
         "takeaways": [
-          "HTTP is the web communication model; HTTPS adds TLS.",
-          "TLS protects communication under defined trust assumptions.",
-          "Application security requires controls beyond transport encryption.",
-          "Web security is a layered system."
+          "HTTP is an application protocol for exchanging requests and responses; HTTPS is HTTP protected by TLS.",
+          "Walk through a browser request: DNS, connection establishment, TLS negotiation, HTTP request, response and browser rendering.",
+          "TLS provides confidentiality and integrity in transit and authenticates a server through certificates, but it does not make the endpoint or application trustworthy.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
         ],
         "practiceSteps": [
-          "Explain Websites, HTTP & HTTPS in your own words without copying the definition.",
-          "Draw the main flow, relationship, architecture or statistical model.",
-          "Identify one normal condition and one failure or adversarial condition.",
-          "State the evidence you would collect before making a high-impact decision.",
-          "Apply the concept to the lesson case and document your reasoning.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "If an attacker already controls the user's browser, what can HTTPS no longer guarantee?",
+        "reflection": "If your first explanation of Websites, HTTP & HTTPS were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What is HTTPS?",
-            "a": "HTTP carried over a TLS-protected connection.",
-            "why": "TLS provides cryptographic protection for the communication channel."
+            "q": "What is the central idea in Websites, HTTP & HTTPS?",
+            "a": "HTTP is an application protocol for exchanging requests and responses; HTTPS is HTTP protected by TLS.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "Does HTTPS prove the user is authorized to access a record?",
-            "a": "No.",
-            "why": "Authorization is an application-level decision."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "What is a certificate used for in TLS?",
-            "a": "It provides information used to authenticate the server under the certificate trust model.",
-            "why": "The client uses certificate validation as part of establishing trust."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does Websites, HTTP & HTTPS connect to cybersecurity?",
+            "a": "TLS provides confidentiality and integrity in transit and authenticates a server through certificates, but it does not make the endpoint or application trustworthy.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "1. Browser, server and HTTP",
-            "body": "A browser acts as a client. A web server or application receives HTTP requests and returns responses. Requests can contain methods, paths, headers and bodies; responses contain status information, headers and content.\n\nThis structure gives security teams observable points such as authentication headers, cookies, status codes and application logs."
+            "title": "1. First principles",
+            "body": "HTTP is an application protocol for exchanging requests and responses; HTTPS is HTTP protected by TLS."
           },
           {
-            "title": "2. What TLS adds",
-            "body": "TLS creates a cryptographically protected channel between endpoints. It helps prevent unauthorized parties on the network from reading or modifying protected traffic and provides a mechanism for authenticating the server through certificates.\n\nThe guarantee depends on correct implementation, certificate validation, endpoint security and protocol configuration."
+            "title": "2. How it works",
+            "body": "Walk through a browser request: DNS, connection establishment, TLS negotiation, HTTP request, response and browser rendering."
           },
           {
-            "title": "3. What HTTPS does not solve",
-            "body": "HTTPS cannot stop a vulnerable application from accepting unauthorized actions. It does not automatically prevent SQL injection, broken access control, malicious browser extensions, stolen sessions or compromised endpoints.\n\nSecurity is therefore layered: transport protection is one control among many."
+            "title": "3. Security implications",
+            "body": "TLS provides confidentiality and integrity in transit and authenticates a server through certificates, but it does not make the endpoint or application trustworthy."
           },
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Websites, HTTP & HTTPS into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "4. What to observe",
+            "body": "For Websites, HTTP & HTTPS, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns Websites, HTTP & HTTPS into a reusable professional skill."
           }
         ],
         "caseQuestions": [
           "What is the business or technical objective?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the working hypothesis?",
-          "Which control, analysis or next action is justified?",
-          "What limitation should be communicated to the reviewer?"
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "why": "Why this matters: Websites, HTTP & HTTPS is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -1557,12 +1674,12 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "Stanford Data Science",
-            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
           }
         ]
       },
@@ -1572,69 +1689,88 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Understand authentication, passwords, password managers and multi-factor authentication.",
         "time": "90–120 minutes",
         "prerequisite": "Operating systems + web basics",
-        "read": "Authentication asks how a system gains confidence that an identity is really you. A password is one factor based on something you know. Other factors include something you have or something you are.\n\nMFA combines different factor categories. It reduces the chance that one stolen secret is enough for access, but recovery processes, phishing and stolen sessions still matter. Unique passwords and password managers reduce reuse risk.",
+        "read": "Authentication answers who a subject is; authorization answers what that subject may do; MFA adds independent evidence of identity.\n\nCompare passwords, possession factors and inherence factors; explain sessions, recovery flows and least privilege.\n\nMFA reduces credential-theft risk but does not remove phishing, session theft, recovery abuse or authorization flaws.",
         "concepts": [
-          "Authentication",
-          "Password",
-          "Password manager",
+          "Identity",
+          "authentication",
+          "authorization",
+          "factor",
           "MFA",
-          "Recovery",
-          "Phishing"
+          "session",
+          "privilege",
+          "recovery"
         ],
         "glossary": [
           [
-            "Authentication",
-            "Process for establishing confidence in identity."
+            "Identity",
+            "A foundational term used in Accounts, Passwords & Multi-Factor Authentication."
+          ],
+          [
+            "authentication",
+            "A foundational term used in Accounts, Passwords & Multi-Factor Authentication."
+          ],
+          [
+            "authorization",
+            "A foundational term used in Accounts, Passwords & Multi-Factor Authentication."
+          ],
+          [
+            "factor",
+            "A foundational term used in Accounts, Passwords & Multi-Factor Authentication."
           ],
           [
             "MFA",
-            "Authentication using different factor categories."
+            "A foundational term used in Accounts, Passwords & Multi-Factor Authentication."
           ],
           [
-            "Password manager",
-            "Tool for storing and generating credentials."
+            "session",
+            "A foundational term used in Accounts, Passwords & Multi-Factor Authentication."
           ],
           [
-            "Recovery",
-            "Process for regaining access after loss or compromise."
+            "privilege",
+            "A foundational term used in Accounts, Passwords & Multi-Factor Authentication."
+          ],
+          [
+            "recovery",
+            "A foundational term used in Accounts, Passwords & Multi-Factor Authentication."
           ]
         ],
         "example": "A stolen password is less useful when a separate authentication factor is required.",
         "visual": {
-          "title": "Know",
-          "caption": "Instructional mental model for this lesson.",
+          "title": "Accounts, Passwords & Multi-Factor Authentication — mental model",
+          "caption": "Foundation-first reasoning flow.",
           "steps": [
-            "Know",
-            "Have",
-            "Be",
-            "MFA combines different categories"
+            "Authentication vs authorization",
+            "factor independence",
+            "sessions",
+            "recovery",
+            "least privilege"
           ]
         },
-        "case": "Case study — An employee loses a phone that contains an authentication app. Design a recovery path that restores access without making recovery weaker than the original authentication.",
+        "case": "A compromised password is paired with a valid second factor. Identify which boundary still needs protection.",
         "mistakes": [
           "Memorizing terminology without understanding the relationship between concepts.",
           "Assuming one control solves every security problem.",
           "Ignoring context, evidence or the identity involved."
         ],
-        "practice": "Complete a short written exercise for \"Accounts, Passwords & Multi-Factor Authentication\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-        "evidence": "A concise written explanation, one example and one evidence-based security question.",
+        "practice": "Practice Accounts, Passwords & Multi-Factor Authentication using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "What makes MFA multi-factor?",
+          "q": "Which approach best demonstrates real understanding of Accounts, Passwords & Multi-Factor Authentication?",
           "options": [
-            "Using different categories of authentication factors",
-            "Using two passwords",
-            "Using a longer username",
-            "Logging in twice"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "Using different categories of authentication factors",
-          "why": "The correct answer follows the beginner mental model introduced in this lesson."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "learningGoal": "Understand authentication factors, password security, MFA and account recovery as a complete identity-protection system.",
         "highlights": [
-          "Authentication establishes confidence in identity; authorization determines permitted actions.",
-          "Strong authentication considers different factor categories and the threat model.",
-          "Password reuse turns one compromise into many potential compromises.",
-          "MFA reduces dependence on one secret but does not eliminate phishing, session theft or recovery risks."
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
         ],
         "studyPlan": [
           [
@@ -1664,44 +1800,44 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "sections": [
           {
-            "title": "1. Authentication factors",
-            "body": "Common factor categories include something you know, something you have and something you are. MFA combines different categories rather than simply asking for two passwords.\n\nThe security value depends on how independently the factors resist the same attack. A second factor that an attacker can steal through the same phishing flow may provide less protection than users assume."
+            "title": "1. First principles",
+            "body": "Authentication answers who a subject is; authorization answers what that subject may do; MFA adds independent evidence of identity."
           },
           {
-            "title": "2. Passwords and password managers",
-            "body": "Passwords should be unique and difficult to guess. Reuse is dangerous because a compromise at one service can be tried elsewhere. Password managers help generate and store unique credentials so the user does not need to memorize dozens of secrets.\n\nOrganizations should also protect password storage appropriately and monitor authentication anomalies."
+            "title": "2. How it works",
+            "body": "Compare passwords, possession factors and inherence factors; explain sessions, recovery flows and least privilege."
           },
           {
-            "title": "3. Recovery and sessions",
-            "body": "Account recovery can become an alternate authentication path. Security design therefore considers recovery identity proofing, support processes, backup factors and notifications. After authentication, a session token may represent the user's established access; protecting that session matters too."
+            "title": "3. Security implications",
+            "body": "MFA reduces credential-theft risk but does not remove phishing, session theft, recovery abuse or authorization flaws."
           },
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Accounts, Passwords & Multi-Factor Authentication into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "4. What to observe",
+            "body": "For Accounts, Passwords & Multi-Factor Authentication, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns Accounts, Passwords & Multi-Factor Authentication into a reusable professional skill."
           }
         ],
         "examples": [
           {
-            "title": "Reused password",
-            "body": "A user reuses one password across email and a shopping site. The shopping site suffers a breach.",
-            "answer": "An attacker who obtains the reused credential may attempt it against the email account. Unique passwords reduce this cascade."
+            "title": "Worked example 1",
+            "body": "A banking service uses a password plus authenticator-app code",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
           },
           {
-            "title": "MFA prompt",
-            "body": "A user receives an unexpected MFA approval request after entering credentials nowhere.",
-            "answer": "The request is a warning signal. The user should reject it and report the event rather than approving an unfamiliar login."
+            "title": "Worked example 2",
+            "body": "an employee receives role-based access after login.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
           }
         ],
         "caseQuestions": [
           "What is the business or technical objective?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the working hypothesis?",
-          "Which control, analysis or next action is justified?",
-          "What limitation should be communicated to the reviewer?"
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "notes": [
           "MFA is not a magic shield.",
@@ -1710,35 +1846,41 @@ const NORTHSTAR_CURRICULUM = [
           "Use independently verified support channels for sensitive recovery."
         ],
         "takeaways": [
-          "Authentication and authorization are different.",
-          "Unique passwords reduce credential reuse risk.",
-          "MFA adds another factor category.",
-          "Recovery and session handling are security boundaries too."
+          "Authentication answers who a subject is; authorization answers what that subject may do; MFA adds independent evidence of identity.",
+          "Compare passwords, possession factors and inherence factors; explain sessions, recovery flows and least privilege.",
+          "MFA reduces credential-theft risk but does not remove phishing, session theft, recovery abuse or authorization flaws.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
         ],
         "practiceSteps": [
-          "Explain Accounts, Passwords & Multi-Factor Authentication in your own words without copying the definition.",
-          "Draw the main flow, relationship, architecture or statistical model.",
-          "Identify one normal condition and one failure or adversarial condition.",
-          "State the evidence you would collect before making a high-impact decision.",
-          "Apply the concept to the lesson case and document your reasoning.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "Why should an organization threat-model account recovery just as seriously as login?",
+        "reflection": "If your first explanation of Accounts, Passwords & Multi-Factor Authentication were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "Is two passwords MFA?",
-            "a": "No.",
-            "why": "MFA requires different factor categories, not simply multiple secrets of the same type."
+            "q": "What is the central idea in Accounts, Passwords & Multi-Factor Authentication?",
+            "a": "Authentication answers who a subject is; authorization answers what that subject may do; MFA adds independent evidence of identity.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "What does a password manager help with?",
-            "a": "Generating, storing and using unique credentials.",
-            "why": "It reduces password reuse and memory burden."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "Can a successfully authenticated user still be unauthorized?",
-            "a": "Yes.",
-            "why": "Authentication establishes identity confidence; authorization controls permitted actions."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does Accounts, Passwords & Multi-Factor Authentication connect to cybersecurity?",
+            "a": "MFA reduces credential-theft risk but does not remove phishing, session theft, recovery abuse or authorization flaws.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "why": "Why this matters: Accounts, Passwords & Multi-Factor Authentication is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
@@ -1769,12 +1911,12 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "Stanford Data Science",
-            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
           }
         ]
       },
@@ -1784,66 +1926,83 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Recognize common social-engineering and unsafe-download patterns without relying on fear or guesswork.",
         "time": "90–120 minutes",
         "prerequisite": "Accounts, Passwords & MFA",
-        "read": "Social engineering uses manipulation to influence behavior. Examples include fake login pages, urgent payment requests, malicious attachments and impersonation.\n\nThe goal is not to distrust everything. Pause, inspect, verify through a known channel, then act. A familiar logo or name is not proof of identity. Reporting suspicious messages is part of a healthy security culture.",
+        "read": "Social engineering exploits human decision-making and context; unsafe links/downloads create technical and human attack paths.\n\nInspect sender identity, destination, context, file type, requested action and urgency without trusting appearance alone.\n\nSecurity awareness works best when paired with technical controls such as filtering, sandboxing, safe browsing, attachment controls and reporting mechanisms.",
         "concepts": [
-          "Social engineering",
           "Phishing",
-          "Impersonation",
-          "Malicious attachment",
-          "Trusted channel",
-          "Reporting"
+          "pretexting",
+          "attachment",
+          "URL",
+          "domain",
+          "social engineering",
+          "sandbox"
         ],
         "glossary": [
           [
             "Phishing",
-            "Deceptive attempt to obtain information or cause an unsafe action."
+            "A foundational term used in Digital Safety: Downloads, Links & Social Engineering."
           ],
           [
-            "Social engineering",
-            "Manipulation of people to influence security-relevant behavior."
+            "pretexting",
+            "A foundational term used in Digital Safety: Downloads, Links & Social Engineering."
           ],
           [
-            "Trusted channel",
-            "Independently verified communication method."
+            "attachment",
+            "A foundational term used in Digital Safety: Downloads, Links & Social Engineering."
+          ],
+          [
+            "URL",
+            "A foundational term used in Digital Safety: Downloads, Links & Social Engineering."
+          ],
+          [
+            "domain",
+            "A foundational term used in Digital Safety: Downloads, Links & Social Engineering."
+          ],
+          [
+            "social engineering",
+            "A foundational term used in Digital Safety: Downloads, Links & Social Engineering."
+          ],
+          [
+            "sandbox",
+            "A foundational term used in Digital Safety: Downloads, Links & Social Engineering."
           ]
         ],
         "example": "A message claims to be from finance and requests an urgent transfer. Verify it through a known phone number or workflow instead of replying to the message.",
         "visual": {
-          "title": "Pause",
-          "caption": "Instructional mental model for this lesson.",
+          "title": "Digital Safety: Downloads, Links & Social Engineering — mental model",
+          "caption": "Foundation-first reasoning flow.",
           "steps": [
-            "Pause",
-            "Inspect",
-            "Verify",
-            "Act",
-            "Report"
+            "Sender verification",
+            "domain inspection",
+            "attachment risk",
+            "verification channels",
+            "reporting"
           ]
         },
-        "case": "Case study — A convincing message targets 200 employees. Design a response that protects users without blaming the person who clicked.",
+        "case": "A finance employee receives a convincing vendor email requesting a bank-account change. Define a safe verification workflow.",
         "mistakes": [
           "Memorizing terminology without understanding the relationship between concepts.",
           "Assuming one control solves every security problem.",
           "Ignoring context, evidence or the identity involved."
         ],
-        "practice": "Complete a short written exercise for \"Digital Safety: Downloads, Links & Social Engineering\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-        "evidence": "A concise written explanation, one example and one evidence-based security question.",
+        "practice": "Practice Digital Safety: Downloads, Links & Social Engineering using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "What is a safer response to an urgent payment request from an unexpected message?",
+          "q": "Which approach best demonstrates real understanding of Digital Safety: Downloads, Links & Social Engineering?",
           "options": [
-            "Verify it through a known trusted channel",
-            "Reply immediately",
-            "Click the link and enter credentials",
-            "Forward it to everyone"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "Verify it through a known trusted channel",
-          "why": "The correct answer follows the beginner mental model introduced in this lesson."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "learningGoal": "Recognize social-engineering patterns and use a calm verification workflow instead of relying on appearance or urgency.",
         "highlights": [
-          "Social engineering targets human decisions, not only technical vulnerabilities.",
-          "Urgency, authority, secrecy and unexpected requests are common manipulation patterns.",
-          "Verification should use an independently known channel.",
-          "Reporting suspicious activity can limit harm and improve organizational detection."
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
         ],
         "studyPlan": [
           [
@@ -1873,44 +2032,44 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "sections": [
           {
-            "title": "1. Why social engineering works",
-            "body": "People make decisions under time pressure, incomplete information and social expectations. An attacker may exploit authority, urgency, fear, curiosity or helpfulness. This is why security awareness should teach decision processes rather than simply showing a list of scary examples.\n\nThe objective is not paranoia. It is disciplined verification when a request has security or financial consequences."
+            "title": "1. First principles",
+            "body": "Social engineering exploits human decision-making and context; unsafe links/downloads create technical and human attack paths."
           },
           {
-            "title": "2. Inspect before acting",
-            "body": "A suspicious message can be examined for unexpected requests, mismatched destinations, unusual language, context gaps and pressure to bypass normal procedures. None of these alone proves malicious intent.\n\nWhen the requested action matters, verify through a known channel such as a previously stored phone number, official portal or established internal workflow."
+            "title": "2. How it works",
+            "body": "Inspect sender identity, destination, context, file type, requested action and urgency without trusting appearance alone."
           },
           {
-            "title": "3. Reporting is a control",
-            "body": "Reporting helps security teams correlate similar attempts and protect other users. A good reporting process should be simple, non-punitive for honest mistakes and connected to triage."
+            "title": "3. Security implications",
+            "body": "Security awareness works best when paired with technical controls such as filtering, sandboxing, safe browsing, attachment controls and reporting mechanisms."
           },
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Digital Safety: Downloads, Links & Social Engineering into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "4. What to observe",
+            "body": "For Digital Safety: Downloads, Links & Social Engineering, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns Digital Safety: Downloads, Links & Social Engineering into a reusable professional skill."
           }
         ],
         "examples": [
           {
-            "title": "Urgent finance request",
-            "body": "A message appears to come from a senior manager asking for an immediate payment to a new account.",
-            "answer": "Do not rely on display name or urgency. Verify the request through a known channel and follow the organization's payment-control process."
+            "title": "Worked example 1",
+            "body": "A fake invoice asks for an urgent password reset",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
           },
           {
-            "title": "Unexpected login link",
-            "body": "A user receives an email claiming their account will be disabled unless they log in immediately.",
-            "answer": "Navigate through a known service entry point instead of trusting the supplied link, then report the message if appropriate."
+            "title": "Worked example 2",
+            "body": "a downloaded document launches a protected viewer.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
           }
         ],
         "caseQuestions": [
           "What is the business or technical objective?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the working hypothesis?",
-          "Which control, analysis or next action is justified?",
-          "What limitation should be communicated to the reviewer?"
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "notes": [
           "Visual polish is not identity proof.",
@@ -1919,35 +2078,41 @@ const NORTHSTAR_CURRICULUM = [
           "Use known-good channels for verification."
         ],
         "takeaways": [
-          "Social engineering manipulates decisions.",
-          "Verify important requests independently.",
-          "Do not treat one suspicious clue as conclusive proof.",
-          "Reporting is part of defense."
+          "Social engineering exploits human decision-making and context; unsafe links/downloads create technical and human attack paths.",
+          "Inspect sender identity, destination, context, file type, requested action and urgency without trusting appearance alone.",
+          "Security awareness works best when paired with technical controls such as filtering, sandboxing, safe browsing, attachment controls and reporting mechanisms.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
         ],
         "practiceSteps": [
-          "Explain Digital Safety: Downloads, Links & Social Engineering in your own words without copying the definition.",
-          "Draw the main flow, relationship, architecture or statistical model.",
-          "Identify one normal condition and one failure or adversarial condition.",
-          "State the evidence you would collect before making a high-impact decision.",
-          "Apply the concept to the lesson case and document your reasoning.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "How can a security program reduce social-engineering success without expecting users to become security experts?",
+        "reflection": "If your first explanation of Digital Safety: Downloads, Links & Social Engineering were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What is phishing?",
-            "a": "A deceptive attempt to obtain information or cause an unsafe action.",
-            "why": "The technique manipulates a recipient into performing an action."
+            "q": "What is the central idea in Digital Safety: Downloads, Links & Social Engineering?",
+            "a": "Social engineering exploits human decision-making and context; unsafe links/downloads create technical and human attack paths.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "What is an independent verification channel?",
-            "a": "A communication path already known to be legitimate and not supplied solely by the suspicious request.",
-            "why": "It avoids trusting the attacker's chosen channel."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "Should a user hide an honest mistake?",
-            "a": "No.",
-            "why": "Fast reporting can reduce impact and provide useful evidence."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does Digital Safety: Downloads, Links & Social Engineering connect to cybersecurity?",
+            "a": "Security awareness works best when paired with technical controls such as filtering, sandboxing, safe browsing, attachment controls and reporting mechanisms.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "why": "Why this matters: Digital Safety: Downloads, Links & Social Engineering is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
@@ -1978,12 +2143,12 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "Stanford Data Science",
-            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
           }
         ]
       },
@@ -1993,77 +2158,89 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Build the vocabulary needed for SQL, data science and security analytics.",
         "time": "90–120 minutes",
         "prerequisite": "Files, folders and basic computer concepts",
-        "read": "A dataset is a collection of data. A table organizes data into rows and columns. A column or field represents an attribute such as date or username. A row or record represents one observation.\n\nSecurity teams use these ideas constantly. Logs are datasets. Detection rules query fields. Analysts group records, compare values and look for patterns. Statistics and machine learning later build on this foundation.",
+        "read": "A dataset is structured information; fields describe attributes and records represent observations. Data types and quality determine what analysis is valid.\n\nDistinguish categorical, numeric, temporal and identifier fields; identify missing, duplicate, inconsistent and impossible values.\n\nSecurity analytics depends on reliable data lineage, timestamps, identifiers and context; a visually convincing chart can still encode bad evidence.",
         "concepts": [
           "Dataset",
-          "Table",
-          "Row",
-          "Column",
-          "Field",
-          "Record",
-          "Value",
-          "Data type"
+          "record",
+          "field",
+          "schema",
+          "datatype",
+          "null",
+          "duplicate",
+          "data quality"
         ],
         "glossary": [
           [
             "Dataset",
-            "Collection of related data."
+            "A foundational term used in Data Basics: Tables, Fields, Records & Datasets."
           ],
           [
-            "Field",
-            "Named attribute represented by a column."
+            "record",
+            "A foundational term used in Data Basics: Tables, Fields, Records & Datasets."
           ],
           [
-            "Record",
-            "Observation represented by a row."
+            "field",
+            "A foundational term used in Data Basics: Tables, Fields, Records & Datasets."
           ],
           [
-            "Value",
-            "Actual data stored for a field."
+            "schema",
+            "A foundational term used in Data Basics: Tables, Fields, Records & Datasets."
           ],
           [
-            "Data type",
-            "Kind of value such as number, text or date."
+            "datatype",
+            "A foundational term used in Data Basics: Tables, Fields, Records & Datasets."
+          ],
+          [
+            "null",
+            "A foundational term used in Data Basics: Tables, Fields, Records & Datasets."
+          ],
+          [
+            "duplicate",
+            "A foundational term used in Data Basics: Tables, Fields, Records & Datasets."
+          ],
+          [
+            "data quality",
+            "A foundational term used in Data Basics: Tables, Fields, Records & Datasets."
           ]
         ],
         "example": "A login table can contain timestamp, username, source IP and result. Each row represents one login event.",
         "visual": {
-          "title": "Event",
-          "caption": "Instructional mental model for this lesson.",
+          "title": "Data Basics: Tables, Fields, Records & Datasets — mental model",
+          "caption": "Foundation-first reasoning flow.",
           "steps": [
-            "Event",
-            "Log record",
-            "Fields",
-            "Records",
-            "Table",
-            "Analysis"
+            "Schema",
+            "data types",
+            "nulls",
+            "duplicates",
+            "lineage",
+            "quality checks"
           ]
         },
-        "case": "Case study — A SOC receives 10 million authentication records but only 40% contain consistent timestamps. Decide whether a detection result can be trusted and what data-quality work should happen first.",
+        "case": "An analyst sees a spike in failed logins. Test whether it is a real event or a data-quality artifact.",
         "mistakes": [
           "Memorizing terminology without understanding the relationship between concepts.",
           "Assuming one control solves every security problem.",
           "Ignoring context, evidence or the identity involved."
         ],
-        "practice": "Complete a short written exercise for \"Data Basics: Tables, Fields, Records & Datasets\". Explain the concept in your own words, give one real-world example and identify one security question it helps you answer.",
-        "evidence": "A concise written explanation, one example and one evidence-based security question.",
+        "practice": "Practice Data Basics: Tables, Fields, Records & Datasets using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "In a table, what is a row usually used to represent?",
+          "q": "Which approach best demonstrates real understanding of Data Basics: Tables, Fields, Records & Datasets?",
           "options": [
-            "A record or observation",
-            "A column name",
-            "A database server",
-            "A password policy"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "A record or observation",
-          "why": "The correct answer follows the beginner mental model introduced in this lesson."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "learningGoal": "Understand datasets as structured observations so you can later read logs, write SQL, calculate statistics and build security analytics.",
         "highlights": [
-          "A dataset contains observations; fields describe attributes of those observations.",
-          "Data types determine what operations and comparisons make sense.",
-          "Security logs are datasets that capture events from systems and applications.",
-          "Good analysis depends on data quality, context, timestamps and clear definitions."
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
         ],
         "studyPlan": [
           [
@@ -2093,44 +2270,44 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "sections": [
           {
-            "title": "1. Tables and records",
-            "body": "A table organizes observations into rows and attributes into columns. For example, an authentication table might contain timestamp, username, source IP, result and application. One row represents one observed event under the dataset's definition.\n\nThis simple structure becomes the bridge from beginner computing to SQL, statistics, machine learning and security analytics."
+            "title": "1. First principles",
+            "body": "A dataset is structured information; fields describe attributes and records represent observations. Data types and quality determine what analysis is valid."
           },
           {
-            "title": "2. Data types matter",
-            "body": "Numbers, text, dates, booleans and categorical values behave differently. A timestamp stored as text may sort incorrectly. A numeric status code may be treated as a category. A missing value may mean unknown rather than zero.\n\nAnalysts therefore define fields before drawing conclusions. Data cleaning is not cosmetic; it can change the meaning of analysis."
+            "title": "2. How it works",
+            "body": "Distinguish categorical, numeric, temporal and identifier fields; identify missing, duplicate, inconsistent and impossible values."
           },
           {
-            "title": "3. Security telemetry",
-            "body": "Logs are records of observed activity. Different systems record different fields and levels of detail. Analysts often normalize timestamps, identities, hostnames and event types so records from multiple sources can be compared.\n\nThe quality of a detection or model cannot exceed the quality and context of the data feeding it."
+            "title": "3. Security implications",
+            "body": "Security analytics depends on reliable data lineage, timestamps, identifiers and context; a visually convincing chart can still encode bad evidence."
           },
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Data Basics: Tables, Fields, Records & Datasets into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "4. What to observe",
+            "body": "For Data Basics: Tables, Fields, Records & Datasets, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns Data Basics: Tables, Fields, Records & Datasets into a reusable professional skill."
           }
         ],
         "examples": [
           {
-            "title": "Authentication table",
-            "body": "Imagine fields: time, user, source_ip, application, result. You can count failures by user, compare times, group by source and investigate unusual patterns.",
-            "answer": "The analysis is meaningful only if the fields are defined consistently and timestamps use a known time basis."
+            "title": "Worked example 1",
+            "body": "An authentication table contains user_id, timestamp, source_ip, outcome and device_id",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
           },
           {
-            "title": "Missing value",
-            "body": "An event has no source IP because the logging component did not record it.",
-            "answer": "Do not automatically replace the missing value with '0' or 'unknown attacker'. Preserve the distinction between absent data and observed values."
+            "title": "Worked example 2",
+            "body": "a missing timestamp can break a timeline.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
           }
         ],
         "caseQuestions": [
           "What is the business or technical objective?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the working hypothesis?",
-          "Which control, analysis or next action is justified?",
-          "What limitation should be communicated to the reviewer?"
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "notes": [
           "A row is not automatically a complete truth about an event.",
@@ -2139,35 +2316,41 @@ const NORTHSTAR_CURRICULUM = [
           "Definitions belong in the data dictionary."
         ],
         "takeaways": [
-          "Tables organize observations and attributes.",
-          "Data types affect analysis.",
-          "Logs are security datasets.",
-          "Data quality is part of security reasoning."
+          "A dataset is structured information; fields describe attributes and records represent observations. Data types and quality determine what analysis is valid.",
+          "Distinguish categorical, numeric, temporal and identifier fields; identify missing, duplicate, inconsistent and impossible values.",
+          "Security analytics depends on reliable data lineage, timestamps, identifiers and context; a visually convincing chart can still encode bad evidence.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
         ],
         "practiceSteps": [
-          "Explain Data Basics: Tables, Fields, Records & Datasets in your own words without copying the definition.",
-          "Draw the main flow, relationship, architecture or statistical model.",
-          "Identify one normal condition and one failure or adversarial condition.",
-          "State the evidence you would collect before making a high-impact decision.",
-          "Apply the concept to the lesson case and document your reasoning.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "Why can a technically correct SQL query still produce a misleading security conclusion?",
+        "reflection": "If your first explanation of Data Basics: Tables, Fields, Records & Datasets were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What is a record?",
-            "a": "A row representing one observation under the dataset's definition.",
-            "why": "The definition determines what one row means."
+            "q": "What is the central idea in Data Basics: Tables, Fields, Records & Datasets?",
+            "a": "A dataset is structured information; fields describe attributes and records represent observations. Data types and quality determine what analysis is valid.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "Why are timestamps important in security analytics?",
-            "a": "They allow events to be ordered and correlated across systems.",
-            "why": "Without reliable time, investigation timelines can become misleading."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "Does missing data mean zero?",
-            "a": "No.",
-            "why": "Missing means the value was not observed or recorded; zero is an actual value."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does Data Basics: Tables, Fields, Records & Datasets connect to cybersecurity?",
+            "a": "Security analytics depends on reliable data lineage, timestamps, identifiers and context; a visually convincing chart can still encode bad evidence.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "why": "Why this matters: Data Basics: Tables, Fields, Records & Datasets is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
@@ -2198,12 +2381,12 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "Carnegie Mellon MSIS",
-            "url": "https://www.cmu.edu/ini/academics/msis/curriculum_ms38.html"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "Stanford Data Science",
-            "url": "https://datasciencemajor.stanford.edu/academics/data-science-bs"
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
+            "url": "https://cybered.hosting.acm.org/wp/"
           }
         ]
       }
@@ -2222,33 +2405,35 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Build a consistent mental model for assets, threats, vulnerabilities, controls and risk.",
         "time": "2–2.5 hours",
         "prerequisite": "None",
-        "read": "Security work starts by separating five ideas that are often mixed together. An asset is something valuable to a person or organization. A threat is a potential cause of harm. A vulnerability is a weakness that can be exploited or abused. A control is a safeguard intended to prevent, detect or reduce harm. Risk is the relationship between what can happen, how likely or exposed it is, and the consequence if it occurs. The same technical weakness can represent very different business risk depending on the asset, exposure and impact.",
+        "read": "Security analysis starts by identifying assets, subjects, actions, boundaries and objectives rather than starting with a product or attack name.\n\nUse an asset→actor→action→boundary→evidence model to analyze a small system.\n\nA useful mental model must support both prevention and investigation; it should expose assumptions and show where a control actually operates.",
         "concepts": [
           "Asset",
-          "Threat",
-          "Vulnerability",
-          "Control",
-          "Risk"
+          "actor",
+          "action",
+          "trust boundary",
+          "attack surface",
+          "control",
+          "evidence"
         ],
         "example": "A customer portal stores personal data. The data is the asset; unauthorized disclosure is a threat scenario; an overly broad database role is a vulnerability; least-privilege access and monitoring are controls. The analyst should describe the chain rather than simply calling the system “insecure.”",
-        "case": "Case — Customer portal exposure: identify the two most valuable assets, two plausible threat scenarios, two vulnerabilities that could enable them, and two controls. State one assumption you would verify before making a risk decision.",
+        "case": "Map a simple employee portal and identify three trust boundaries and the evidence each boundary should produce.",
         "mistakes": [
           "Treating a threat and a vulnerability as the same thing.",
           "Calling every vulnerability high risk without considering exposure and impact.",
           "Jumping to a control before understanding the asset and threat scenario."
         ],
-        "practice": "Create a five-column table for the fictional customer portal: Asset → Threat → Vulnerability → Control → Expected risk reduction. Then choose one row and explain what evidence would validate it.",
-        "evidence": "A completed risk chain with explicit assumptions and one evidence source for each important claim.",
+        "practice": "Practice Security Mental Models using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "Which chain correctly connects the core security concepts?",
+          "q": "Which approach best demonstrates real understanding of Security Mental Models?",
           "options": [
-            "Asset → Threat → Vulnerability → Control → Risk",
-            "Control → Logo → Threat → Asset → Password",
-            "Vulnerability → Office → Control → Asset → Theme",
-            "Risk → Screen → Threat → Printer → Control"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "Asset → Threat → Vulnerability → Control → Risk",
-          "why": "The chain moves from what has value, through a harmful scenario and enabling weakness, to a safeguard and the resulting risk decision."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "why": "Why this matters: Security Mental Models is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -2278,57 +2463,139 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "CSEC2017",
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
             "url": "https://cybered.hosting.acm.org/wp/"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Security Mental Models scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the business or technical objective?",
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "practiceSteps": [
-          "Explain Security Mental Models in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Security Mental Models was wrong?",
+        "reflection": "If your first explanation of Security Mental Models were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What is the core idea behind Security Mental Models?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central idea in Security Mental Models?",
+            "a": "Security analysis starts by identifying assets, subjects, actions, boundaries and objectives rather than starting with a product or attack name.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does Security Mental Models connect to cybersecurity?",
+            "a": "A useful mental model must support both prevention and investigation; it should expose assumptions and show where a control actually operates.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Security Mental Models into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Security analysis starts by identifying assets, subjects, actions, boundaries and objectives rather than starting with a product or attack name."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. How it works",
+            "body": "Use an asset→actor→action→boundary→evidence model to analyze a small system."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "A useful mental model must support both prevention and investigation; it should expose assumptions and show where a control actually operates."
+          },
+          {
+            "title": "4. What to observe",
+            "body": "For Security Mental Models, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
+          },
+          {
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns Security Mental Models into a reusable professional skill."
           }
-        ]
+        ],
+        "glossary": [
+          [
+            "Asset",
+            "A foundational term used in Security Mental Models."
+          ],
+          [
+            "actor",
+            "A foundational term used in Security Mental Models."
+          ],
+          [
+            "action",
+            "A foundational term used in Security Mental Models."
+          ],
+          [
+            "trust boundary",
+            "A foundational term used in Security Mental Models."
+          ],
+          [
+            "attack surface",
+            "A foundational term used in Security Mental Models."
+          ],
+          [
+            "control",
+            "A foundational term used in Security Mental Models."
+          ],
+          [
+            "evidence",
+            "A foundational term used in Security Mental Models."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example 1",
+            "body": "A payroll application contains sensitive records, employee identities and an administrator interface.",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
+          },
+          {
+            "title": "Worked example 2",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
+          }
+        ],
+        "takeaways": [
+          "Security analysis starts by identifying assets, subjects, actions, boundaries and objectives rather than starting with a product or attack name.",
+          "Use an asset→actor→action→boundary→evidence model to analyze a small system.",
+          "A useful mental model must support both prevention and investigation; it should expose assumptions and show where a control actually operates.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
+        ],
+        "highlights": [
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
+        ],
+        "visual": {
+          "title": "Security Mental Models — mental model",
+          "caption": "Foundation-first reasoning flow.",
+          "steps": [
+            "Assets",
+            "actors",
+            "boundaries",
+            "controls",
+            "evidence"
+          ]
+        }
       },
       {
         "id": "sf-02",
@@ -2336,33 +2603,34 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Use confidentiality, integrity and availability to classify security objectives and trade-offs.",
         "time": "2–2.5 hours",
         "prerequisite": "Security Mental Models",
-        "read": "The CIA triad is a compact way to describe three security objectives. Confidentiality limits unauthorized disclosure. Integrity protects information and system behavior from unauthorized or unintended alteration. Availability keeps systems and services usable when needed. Real incidents can affect more than one objective, so classify the primary impact first and then record secondary effects. Security decisions also involve trade-offs: stronger controls can introduce friction, latency or operational complexity.",
+        "read": "Confidentiality limits unauthorized disclosure, integrity protects correctness and trustworthiness, and availability protects timely access.\n\nAnalyze a ransomware event, altered transaction and public data leak to see which objectives are affected and why trade-offs can exist.\n\nCIA is a foundation, not a complete security model; authenticity, accountability, privacy and resilience may also matter.",
         "concepts": [
           "Confidentiality",
-          "Integrity",
-          "Availability",
-          "Primary vs secondary impact",
-          "Security trade-offs"
+          "integrity",
+          "availability",
+          "authenticity",
+          "accountability",
+          "resilience"
         ],
         "example": "If an attacker changes a beneficiary bank account, integrity is the immediate security objective affected. If the same incident also exposes customer records, confidentiality is affected too. A good analyst records both instead of forcing every event into one category.",
-        "case": "Case — Online claims platform: a deployment accidentally makes customer records readable to unauthorized users for 20 minutes, while the application remains available. Identify the primary CIA impact, a secondary business consequence, and one control that would reduce recurrence.",
+        "case": "For a hospital scheduling system, prioritize security objectives for three scenarios and justify the difference.",
         "mistakes": [
           "Using availability to mean performance in every situation.",
           "Assuming an incident can affect only one CIA property.",
           "Confusing confidentiality with authentication."
         ],
-        "practice": "Classify five fictional incidents as C, I, A, or multiple objectives. For each, write one sentence explaining why the classification matters to the business.",
-        "evidence": "A classification table with a primary impact, secondary impact where applicable, and one business consequence per scenario.",
+        "practice": "Practice CIA Triad & Security Objectives using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "A database record is modified without authorization. Which security objective is directly affected?",
+          "q": "Which approach best demonstrates real understanding of CIA Triad & Security Objectives?",
           "options": [
-            "Confidentiality",
-            "Integrity",
-            "Availability",
-            "Latency"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "Integrity",
-          "why": "Unauthorized modification changes the correctness or trustworthiness of information, which is an integrity concern."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "why": "Why this matters: CIA Triad & Security Objectives is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -2392,57 +2660,136 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "CSEC2017",
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
             "url": "https://cybered.hosting.acm.org/wp/"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this CIA Triad & Security Objectives scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the business or technical objective?",
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "practiceSteps": [
-          "Explain CIA Triad & Security Objectives in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of CIA Triad & Security Objectives was wrong?",
+        "reflection": "If your first explanation of CIA Triad & Security Objectives were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What is the core idea behind CIA Triad & Security Objectives?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central idea in CIA Triad & Security Objectives?",
+            "a": "Confidentiality limits unauthorized disclosure, integrity protects correctness and trustworthiness, and availability protects timely access.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does CIA Triad & Security Objectives connect to cybersecurity?",
+            "a": "CIA is a foundation, not a complete security model; authenticity, accountability, privacy and resilience may also matter.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break CIA Triad & Security Objectives into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Confidentiality limits unauthorized disclosure, integrity protects correctness and trustworthiness, and availability protects timely access."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. How it works",
+            "body": "Analyze a ransomware event, altered transaction and public data leak to see which objectives are affected and why trade-offs can exist."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "CIA is a foundation, not a complete security model; authenticity, accountability, privacy and resilience may also matter."
+          },
+          {
+            "title": "4. What to observe",
+            "body": "For CIA Triad & Security Objectives, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
+          },
+          {
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns CIA Triad & Security Objectives into a reusable professional skill."
           }
-        ]
+        ],
+        "glossary": [
+          [
+            "Confidentiality",
+            "A foundational term used in CIA Triad & Security Objectives."
+          ],
+          [
+            "integrity",
+            "A foundational term used in CIA Triad & Security Objectives."
+          ],
+          [
+            "availability",
+            "A foundational term used in CIA Triad & Security Objectives."
+          ],
+          [
+            "authenticity",
+            "A foundational term used in CIA Triad & Security Objectives."
+          ],
+          [
+            "accountability",
+            "A foundational term used in CIA Triad & Security Objectives."
+          ],
+          [
+            "resilience",
+            "A foundational term used in CIA Triad & Security Objectives."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example 1",
+            "body": "A payment record is modified without authorization",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
+          },
+          {
+            "title": "Worked example 2",
+            "body": "a service is unavailable during business hours.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
+          }
+        ],
+        "takeaways": [
+          "Confidentiality limits unauthorized disclosure, integrity protects correctness and trustworthiness, and availability protects timely access.",
+          "Analyze a ransomware event, altered transaction and public data leak to see which objectives are affected and why trade-offs can exist.",
+          "CIA is a foundation, not a complete security model; authenticity, accountability, privacy and resilience may also matter.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
+        ],
+        "highlights": [
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
+        ],
+        "visual": {
+          "title": "CIA Triad & Security Objectives — mental model",
+          "caption": "Foundation-first reasoning flow.",
+          "steps": [
+            "CIA",
+            "trade-offs",
+            "authenticity",
+            "accountability",
+            "resilience"
+          ]
+        }
       },
       {
         "id": "sf-03",
@@ -2450,34 +2797,36 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Distinguish identification, authentication, authorization, accounting and least privilege.",
         "time": "2–2.5 hours",
         "prerequisite": "Security Mental Models + CIA Triad",
-        "read": "Identity and access management answers four practical questions: which identity is requesting access, how that identity is authenticated, what it is authorized to do, and what activity is recorded for accountability. Authentication establishes identity; authorization determines permitted actions; accounting or audit records help reconstruct activity. Least privilege means granting only the access required for a defined task, for only as long as it is needed.",
+        "read": "Identity and access management connects people, services and devices to permitted actions on resources.\n\nSeparate identification, authentication, authorization, accounting and access review; explain roles, groups, service identities and least privilege.\n\nExcess privilege increases blast radius; weak lifecycle processes create orphaned accounts and stale access.",
         "concepts": [
-          "Identification",
-          "Authentication",
-          "Authorization",
-          "Accounting / audit",
-          "Least privilege",
-          "Role-based access"
+          "IAM",
+          "identity",
+          "authentication",
+          "authorization",
+          "role",
+          "group",
+          "least privilege",
+          "access review"
         ],
         "example": "A support analyst may need to view a customer's case but not export the entire customer database. Authentication proves which analyst is signed in; authorization limits the actions available to that analyst; audit records can show what was accessed.",
-        "case": "Case — Support operations: design a role for a support analyst who handles customer tickets. Specify what the role can read, what it can change, what it must never access, and what activity should be logged.",
+        "case": "Audit a hypothetical employee lifecycle from joiner to leaver and identify control points.",
         "mistakes": [
           "Treating successful login as proof that every action is authorized.",
           "Giving broad admin rights because they are convenient.",
           "Ignoring service accounts and machine identities."
         ],
-        "practice": "Create a least-privilege role matrix with three columns: task, required permission, and audit requirement. Include one temporary elevated action and explain how it should be controlled.",
-        "evidence": "A role matrix that maps business tasks to permissions and identifies an auditable control for elevated access.",
+        "practice": "Practice Identity & Access Fundamentals using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "What does authorization answer?",
+          "q": "Which approach best demonstrates real understanding of Identity & Access Fundamentals?",
           "options": [
-            "Who are you?",
-            "What are you allowed to do?",
-            "When did the system start?",
-            "How fast is the network?"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "What are you allowed to do?",
-          "why": "Authorization evaluates the permissions or actions available to an already identified and authenticated identity."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "why": "Why this matters: Identity & Access Fundamentals is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -2507,57 +2856,143 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "CSEC2017",
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
             "url": "https://cybered.hosting.acm.org/wp/"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Identity & Access Fundamentals scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the business or technical objective?",
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "practiceSteps": [
-          "Explain Identity & Access Fundamentals in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Identity & Access Fundamentals was wrong?",
+        "reflection": "If your first explanation of Identity & Access Fundamentals were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What is the core idea behind Identity & Access Fundamentals?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central idea in Identity & Access Fundamentals?",
+            "a": "Identity and access management connects people, services and devices to permitted actions on resources.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does Identity & Access Fundamentals connect to cybersecurity?",
+            "a": "Excess privilege increases blast radius; weak lifecycle processes create orphaned accounts and stale access.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Identity & Access Fundamentals into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Identity and access management connects people, services and devices to permitted actions on resources."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. How it works",
+            "body": "Separate identification, authentication, authorization, accounting and access review; explain roles, groups, service identities and least privilege."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Excess privilege increases blast radius; weak lifecycle processes create orphaned accounts and stale access."
+          },
+          {
+            "title": "4. What to observe",
+            "body": "For Identity & Access Fundamentals, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
+          },
+          {
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns Identity & Access Fundamentals into a reusable professional skill."
           }
-        ]
+        ],
+        "glossary": [
+          [
+            "IAM",
+            "A foundational term used in Identity & Access Fundamentals."
+          ],
+          [
+            "identity",
+            "A foundational term used in Identity & Access Fundamentals."
+          ],
+          [
+            "authentication",
+            "A foundational term used in Identity & Access Fundamentals."
+          ],
+          [
+            "authorization",
+            "A foundational term used in Identity & Access Fundamentals."
+          ],
+          [
+            "role",
+            "A foundational term used in Identity & Access Fundamentals."
+          ],
+          [
+            "group",
+            "A foundational term used in Identity & Access Fundamentals."
+          ],
+          [
+            "least privilege",
+            "A foundational term used in Identity & Access Fundamentals."
+          ],
+          [
+            "access review",
+            "A foundational term used in Identity & Access Fundamentals."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example 1",
+            "body": "An employee changes teams and should lose old access while gaining new permissions.",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
+          },
+          {
+            "title": "Worked example 2",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
+          }
+        ],
+        "takeaways": [
+          "Identity and access management connects people, services and devices to permitted actions on resources.",
+          "Separate identification, authentication, authorization, accounting and access review; explain roles, groups, service identities and least privilege.",
+          "Excess privilege increases blast radius; weak lifecycle processes create orphaned accounts and stale access.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
+        ],
+        "highlights": [
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
+        ],
+        "visual": {
+          "title": "Identity & Access Fundamentals — mental model",
+          "caption": "Foundation-first reasoning flow.",
+          "steps": [
+            "Joiner-mover-leaver",
+            "RBAC",
+            "service accounts",
+            "privileged access",
+            "reviews"
+          ]
+        }
       },
       {
         "id": "sf-04",
@@ -2565,34 +3000,35 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Map trust boundaries, entry points, assets and abuse cases before selecting mitigations.",
         "time": "2–2.5 hours",
         "prerequisite": "Security Mental Models + Identity & Access Fundamentals",
-        "read": "Threat modeling is structured reasoning about how a system could be misused or fail. Start with the system boundary and major components, then identify assets, entry points, trust boundaries, identities and important data flows. Convert plausible misuse into abuse cases and ask which controls prevent, detect or limit the scenario. A threat model is not a prediction of exactly what an attacker will do; it is a way to make assumptions explicit and prioritize analysis.",
+        "read": "Threat modeling is a structured way to anticipate unwanted outcomes before or during system design.\n\nDefine assets, entry points, trust boundaries, threats, mitigations and residual risk; use a simple data-flow diagram.\n\nThreat models are hypotheses, not predictions. Their value depends on scope, assumptions, evidence and whether the model is updated as the system changes.",
         "concepts": [
-          "System boundary",
-          "Trust boundary",
-          "Entry point",
-          "Data flow",
-          "Abuse case",
-          "Mitigation"
+          "Threat",
+          "vulnerability",
+          "attack surface",
+          "trust boundary",
+          "mitigation",
+          "residual risk",
+          "data flow"
         ],
         "example": "For Browser → API → Database, the browser is an untrusted client, the API is a control boundary, and the database contains protected assets. The API should validate requests and enforce authorization rather than trusting client-side claims.",
-        "case": "Case — Customer portal: draw Browser → CDN/WAF → API → Database. Mark the trust boundaries, two entry points, two assets and three abuse cases. For each abuse case, name one preventive and one detective control.",
+        "case": "Threat-model a document-upload feature and identify abuse cases without performing exploitation.",
         "mistakes": [
           "Starting with a list of vulnerabilities instead of understanding the system.",
           "Treating the client as a trusted authority for authorization decisions.",
           "Drawing components without showing trust boundaries or data flows."
         ],
-        "practice": "Produce a one-page threat model for a browser, API and database. Label every trust boundary and write three abuse cases in the form: actor + action + target + consequence.",
-        "evidence": "A diagram plus three structured abuse cases and control mappings.",
+        "practice": "Practice Threat Modeling Basics using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "What should be identified early in a threat model?",
+          "q": "Which approach best demonstrates real understanding of Threat Modeling Basics?",
           "options": [
-            "Trust boundaries",
-            "Office seating",
-            "Logo colors",
-            "Printer models"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "Trust boundaries",
-          "why": "Trust boundaries show where assumptions about identity, data or control change and therefore where security controls deserve explicit attention."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "why": "Why this matters: Threat Modeling Basics is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -2622,57 +3058,141 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "CSEC2017",
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
             "url": "https://cybered.hosting.acm.org/wp/"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Threat Modeling Basics scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the business or technical objective?",
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "practiceSteps": [
-          "Explain Threat Modeling Basics in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Threat Modeling Basics was wrong?",
+        "reflection": "If your first explanation of Threat Modeling Basics were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What is the core idea behind Threat Modeling Basics?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central idea in Threat Modeling Basics?",
+            "a": "Threat modeling is a structured way to anticipate unwanted outcomes before or during system design.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does Threat Modeling Basics connect to cybersecurity?",
+            "a": "Threat models are hypotheses, not predictions. Their value depends on scope, assumptions, evidence and whether the model is updated as the system changes.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Threat Modeling Basics into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Threat modeling is a structured way to anticipate unwanted outcomes before or during system design."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. How it works",
+            "body": "Define assets, entry points, trust boundaries, threats, mitigations and residual risk; use a simple data-flow diagram."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Threat models are hypotheses, not predictions. Their value depends on scope, assumptions, evidence and whether the model is updated as the system changes."
+          },
+          {
+            "title": "4. What to observe",
+            "body": "For Threat Modeling Basics, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
+          },
+          {
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns Threat Modeling Basics into a reusable professional skill."
           }
-        ]
+        ],
+        "glossary": [
+          [
+            "Threat",
+            "A foundational term used in Threat Modeling Basics."
+          ],
+          [
+            "vulnerability",
+            "A foundational term used in Threat Modeling Basics."
+          ],
+          [
+            "attack surface",
+            "A foundational term used in Threat Modeling Basics."
+          ],
+          [
+            "trust boundary",
+            "A foundational term used in Threat Modeling Basics."
+          ],
+          [
+            "mitigation",
+            "A foundational term used in Threat Modeling Basics."
+          ],
+          [
+            "residual risk",
+            "A foundational term used in Threat Modeling Basics."
+          ],
+          [
+            "data flow",
+            "A foundational term used in Threat Modeling Basics."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example 1",
+            "body": "A web app accepts customer uploads and sends them to a processing service",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
+          },
+          {
+            "title": "Worked example 2",
+            "body": "each boundary creates distinct questions.",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
+          }
+        ],
+        "takeaways": [
+          "Threat modeling is a structured way to anticipate unwanted outcomes before or during system design.",
+          "Define assets, entry points, trust boundaries, threats, mitigations and residual risk; use a simple data-flow diagram.",
+          "Threat models are hypotheses, not predictions. Their value depends on scope, assumptions, evidence and whether the model is updated as the system changes.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
+        ],
+        "highlights": [
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
+        ],
+        "visual": {
+          "title": "Threat Modeling Basics — mental model",
+          "caption": "Foundation-first reasoning flow.",
+          "steps": [
+            "Scope",
+            "data flows",
+            "entry points",
+            "threats",
+            "mitigations",
+            "residual risk"
+          ]
+        }
       },
       {
         "id": "sf-05",
@@ -2680,34 +3200,36 @@ const NORTHSTAR_CURRICULUM = [
         "objective": "Separate events, alerts, incidents, findings and evidence so investigations stay precise.",
         "time": "2 hours",
         "prerequisite": "Threat Modeling Basics",
-        "read": "Security operations depends on precise language. An event is an observed occurrence. An alert is a signal generated because an event or pattern may require attention. An incident is a confirmed or suspected security situation that requires response according to organizational criteria. A finding is an analyst conclusion or observation supported by evidence. Evidence is information preserved or referenced to support an investigation, decision or conclusion. These terms describe different stages and purposes; they should not be used interchangeably.",
+        "read": "Security vocabulary is useful only when terms are connected to observable actions, evidence and decisions.\n\nDistinguish event, alert, incident, vulnerability, threat, risk, control, asset and finding.\n\nOperational teams need shared definitions so escalation, measurement and reporting are consistent.",
         "concepts": [
           "Event",
-          "Alert",
-          "Incident",
-          "Finding",
-          "Evidence",
-          "Triage"
+          "alert",
+          "incident",
+          "vulnerability",
+          "threat",
+          "risk",
+          "control",
+          "finding"
         ],
         "example": "A failed login is an event. A rule detecting 50 failures followed by a success may create an alert. After investigation shows the activity violates policy or indicates compromise, it may be handled as an incident. The analyst's documented conclusion is a finding supported by relevant evidence.",
-        "case": "Case — Suspicious authentication sequence: an alert shows repeated failures followed by a successful login from an unusual location. Identify the initial event, the alert, the questions needed for triage, the evidence to collect, and the conditions that would justify incident escalation.",
+        "case": "Given five observations, classify each and explain what evidence is still missing.",
         "mistakes": [
           "Calling every alert an incident.",
           "Writing conclusions without preserving supporting evidence.",
           "Treating a single log record as proof of intent."
         ],
-        "practice": "Take the suspicious-login scenario and write an investigation note with five headings: Signal, Context, Evidence, Finding, Decision. Clearly mark anything still uncertain.",
-        "evidence": "A concise investigation note that separates observed facts from analyst interpretation and records uncertainty.",
+        "practice": "Practice Defense in Depth, Zero Trust & Security Architecture using a controlled scenario. Explain the mechanism in your own words, draw or write the main flow, identify one normal state and one abnormal state, and document the evidence you would collect before making a high-impact decision.",
+        "evidence": "Produce a small evidence artifact containing scope, assumptions, observations, conclusion and limitations.",
         "check": {
-          "q": "What is evidence used for?",
+          "q": "Which approach best demonstrates real understanding of Defense in Depth, Zero Trust & Security Architecture?",
           "options": [
-            "Supporting an investigation or conclusion",
-            "Replacing all logs",
-            "Increasing CPU speed",
-            "Changing a password automatically"
+            "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+            "Memorize the definition only",
+            "Choose a tool before defining the problem",
+            "Assume the first explanation is correct"
           ],
-          "answer": "Supporting an investigation or conclusion",
-          "why": "Evidence gives an investigation a defensible basis for observations, conclusions and decisions."
+          "answer": "Explain the mechanism, apply it to a case and justify the conclusion with evidence",
+          "why": "Foundational competence means being able to explain, apply and inspect a concept."
         },
         "why": "Why this matters: Security Operations Vocabulary is a reusable capability. You should understand its mechanism, boundaries, assumptions, evidence and trade-offs—not only its definition.",
         "competency": "Explain → model → apply → analyze → produce evidence → communicate.",
@@ -2737,57 +3259,143 @@ const NORTHSTAR_CURRICULUM = [
         ],
         "references": [
           {
-            "name": "NIST CSF 2.0",
-            "url": "https://www.nist.gov/cyberframework"
+            "name": "NIST NICE Framework",
+            "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
           },
           {
-            "name": "CSEC2017",
+            "name": "ACM/IEEE/AIS/IFIP CSEC2017",
             "url": "https://cybered.hosting.acm.org/wp/"
           }
         ],
         "caseQuestions": [
-          "What is the objective in this Security Operations Vocabulary scenario?",
-          "Which facts are known and which are assumptions?",
-          "What evidence would confirm or falsify the current explanation?",
-          "What is the smallest defensible next action?",
-          "What limitation must be communicated?"
+          "What is the business or technical objective?",
+          "Which facts are directly known and which are assumptions?",
+          "Which boundary, identity, resource or data flow is most important?",
+          "What evidence would confirm or falsify the leading explanation?",
+          "What is the smallest defensible next action?"
         ],
         "practiceSteps": [
-          "Explain Security Operations Vocabulary in your own words.",
-          "Draw the main flow, relationship or boundary.",
-          "Identify one normal and one abnormal condition.",
-          "List the evidence you would collect.",
-          "Apply the concept to the case and justify the result.",
+          "Explain the lesson without copying its definition.",
+          "Draw the main flow, boundary or relationship.",
+          "Identify one expected and one abnormal behavior.",
+          "List evidence required to distinguish them.",
+          "Apply the model to the case and write your reasoning.",
           "State one limitation and one follow-up question."
         ],
-        "reflection": "What observation would most quickly tell you that your first explanation of Security Operations Vocabulary was wrong?",
+        "reflection": "If your first explanation of Defense in Depth, Zero Trust & Security Architecture were wrong, which observation would you want recorded so you could correct your reasoning quickly?",
         "qa": [
           {
-            "q": "What is the core idea behind Security Operations Vocabulary?",
-            "a": "Understand the mechanism, boundaries and evidence well enough to apply the concept to a new situation.",
-            "why": "Transfer is a stronger test than vocabulary recall."
+            "q": "What is the central idea in Defense in Depth, Zero Trust & Security Architecture?",
+            "a": "Security vocabulary is useful only when terms are connected to observable actions, evidence and decisions.",
+            "why": "This is the mechanism the lesson builds on."
           },
           {
-            "q": "What is a common mistake?",
-            "a": "Jumping from a symptom to a conclusion without checking assumptions and evidence.",
-            "why": "Professional analysis separates observation, hypothesis and conclusion."
+            "q": "Why is evidence important?",
+            "a": "Because observations, hypotheses and conclusions are different things; evidence lets another person inspect the reasoning.",
+            "why": "Professional security work must be reproducible and auditable."
           },
           {
-            "q": "How do you demonstrate mastery?",
-            "a": "Explain it, apply it, produce evidence, and state limitations.",
-            "why": "That sequence tests knowledge, skill and judgment."
+            "q": "What should you do when evidence is incomplete?",
+            "a": "State the uncertainty, collect the highest-value missing evidence, and avoid overstating the conclusion.",
+            "why": "Good analysis is explicit about uncertainty."
+          },
+          {
+            "q": "How does Defense in Depth, Zero Trust & Security Architecture connect to cybersecurity?",
+            "a": "Operational teams need shared definitions so escalation, measurement and reporting are consistent.",
+            "why": "This explains why the foundation matters later."
           }
         ],
         "sections": [
           {
-            "title": "Mechanism and boundary",
-            "body": "Break Defense in Depth, Zero Trust & Security Architecture into the smallest useful steps. Identify the trust boundary, privilege boundary, data boundary or statistical assumption that changes the conclusion."
+            "title": "1. First principles",
+            "body": "Security vocabulary is useful only when terms are connected to observable actions, evidence and decisions."
           },
           {
-            "title": "Decision and evidence",
-            "body": "A professional answer should name the decision, the evidence supporting it, the uncertainty that remains and the observation that would change the decision."
+            "title": "2. How it works",
+            "body": "Distinguish event, alert, incident, vulnerability, threat, risk, control, asset and finding."
+          },
+          {
+            "title": "3. Security implications",
+            "body": "Operational teams need shared definitions so escalation, measurement and reporting are consistent."
+          },
+          {
+            "title": "4. What to observe",
+            "body": "For Defense in Depth, Zero Trust & Security Architecture, identify the actors, resources, state changes, boundaries and observable evidence. Record what is directly observed, what is inferred, and what remains unknown. A strong analysis explains not only what happened but why the evidence supports that explanation."
+          },
+          {
+            "title": "5. Professional reasoning",
+            "body": "Use this sequence: define the objective → identify scope → trace the mechanism → identify failure modes → collect evidence → compare explanations → choose a proportionate action → record limitations. This turns Defense in Depth, Zero Trust & Security Architecture into a reusable professional skill."
           }
-        ]
+        ],
+        "glossary": [
+          [
+            "Event",
+            "A foundational term used in Defense in Depth, Zero Trust & Security Architecture."
+          ],
+          [
+            "alert",
+            "A foundational term used in Defense in Depth, Zero Trust & Security Architecture."
+          ],
+          [
+            "incident",
+            "A foundational term used in Defense in Depth, Zero Trust & Security Architecture."
+          ],
+          [
+            "vulnerability",
+            "A foundational term used in Defense in Depth, Zero Trust & Security Architecture."
+          ],
+          [
+            "threat",
+            "A foundational term used in Defense in Depth, Zero Trust & Security Architecture."
+          ],
+          [
+            "risk",
+            "A foundational term used in Defense in Depth, Zero Trust & Security Architecture."
+          ],
+          [
+            "control",
+            "A foundational term used in Defense in Depth, Zero Trust & Security Architecture."
+          ],
+          [
+            "finding",
+            "A foundational term used in Defense in Depth, Zero Trust & Security Architecture."
+          ]
+        ],
+        "examples": [
+          {
+            "title": "Worked example 1",
+            "body": "A scanner reports a vulnerability",
+            "answer": "State the system boundary first, then trace the mechanism and identify the evidence that supports the explanation."
+          },
+          {
+            "title": "Worked example 2",
+            "body": "a SIEM produces an alert",
+            "answer": "Do not jump from a symptom to a conclusion. Compare normal behavior, alternative explanations and available evidence."
+          }
+        ],
+        "takeaways": [
+          "Security vocabulary is useful only when terms are connected to observable actions, evidence and decisions.",
+          "Distinguish event, alert, incident, vulnerability, threat, risk, control, asset and finding.",
+          "Operational teams need shared definitions so escalation, measurement and reporting are consistent.",
+          "Separate observation, inference and conclusion.",
+          "Use boundaries, identities and evidence to make the concept operational."
+        ],
+        "highlights": [
+          "Understand the mechanism before memorizing terminology.",
+          "Identify the boundary and evidence before choosing a control.",
+          "Separate what is observed from what is inferred.",
+          "Connect technical behavior to business impact and operational constraints."
+        ],
+        "visual": {
+          "title": "Defense in Depth, Zero Trust & Security Architecture — mental model",
+          "caption": "Foundation-first reasoning flow.",
+          "steps": [
+            "Vocabulary",
+            "operational states",
+            "escalation",
+            "evidence"
+          ]
+        }
       }
     ],
     "meta": {
@@ -2801,16 +3409,18 @@ const NORTHSTAR_CURRICULUM = [
         "Distinguish events, alerts, incidents, findings and evidence."
       ],
       "topics": [
-        "CIA and security objectives",
-        "AAA / IAM",
-        "Assets and attack surface",
-        "Threats, vulnerabilities and adversaries",
-        "Risk and controls",
+        "CIA",
+        "AAA/IAM",
+        "Assets",
+        "Attack surface",
+        "Threats",
+        "Vulnerabilities",
+        "Risk",
+        "Controls",
         "Threat modeling",
         "Defense in depth",
         "Zero trust concepts",
-        "Security architecture",
-        "NIST CSF 2.0"
+        "Security operations"
       ],
       "case": "Case: customer portal exposure — identify business assets, trust boundaries, likely threats and control gaps.",
       "assessment": "Concept checks + threat-model exercise + short case analysis",
