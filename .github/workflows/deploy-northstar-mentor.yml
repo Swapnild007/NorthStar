@@ -9,15 +9,21 @@ on:
       - ".github/workflows/deploy-northstar-mentor.yml"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     defaults:
       run:
         working-directory: workers/mentor
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v5
@@ -29,3 +35,46 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Resolve workers.dev endpoint
+        id: endpoint
+        working-directory: .
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          SUBDOMAIN="$(curl --fail --silent --show-error \
+            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/workers/subdomain" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const j=JSON.parse(s);if(!j.success||!j.result?.subdomain)process.exit(1);process.stdout.write(j.result.subdomain)})')"
+          ENDPOINT="https://northstar-ai-mentor.${SUBDOMAIN}.workers.dev"
+          echo "endpoint=${ENDPOINT}" >> "$GITHUB_OUTPUT"
+          echo "NorthStar Mentor endpoint: ${ENDPOINT}"
+
+      - name: Configure frontend endpoint
+        working-directory: .
+        env:
+          ENDPOINT: ${{ steps.endpoint.outputs.endpoint }}
+        run: |
+          node - <<'NODE'
+          const fs = require("fs");
+          const path = "data/ai.js";
+          const endpoint = process.env.ENDPOINT;
+          const src = fs.readFileSync(path, "utf8");
+          const next = src.replace(/endpoint:"[^"]*"/, 'endpoint:"' + endpoint + '"');
+          if (src === next) throw new Error("Could not locate endpoint setting in data/ai.js");
+          fs.writeFileSync(path, next);
+          NODE
+
+      - name: Commit endpoint configuration
+        working-directory: .
+        run: |
+          if git diff --quiet -- data/ai.js; then
+            echo "Endpoint already configured."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ai.js
+          git commit -m "chore: configure deployed AI mentor endpoint"
+          git push
