@@ -661,10 +661,10 @@ function mentorEndpoint(){
 async function askNorthStar(q){
  const endpoint=mentorEndpoint();
  if(!endpoint){
-  state.messages[state.messages.length-1][1]=/^(localhost|127\\.0\\.0\\.1)$/.test(location.hostname)
+  state.messages[state.messages.length-1][1]=/^(localhost|127\\.0\\.1)$/.test(location.hostname)
    ? "OmniRoute is not detected. Start OmniRoute on this device, then try again."
-   : "NorthStar is configured for local OmniRoute. Open the NorthStar app locally on the same device where OmniRoute is running.";
-  aiError="Cloud Mentor endpoint is not configured.";
+   : "NorthStar is configured for local OmniRoute. Run NorthStar locally on this device while OmniRoute is running.";
+  aiError="Local OmniRoute endpoint is not available.";
   persist();render();return;
  }
  aiLoading=true;aiError="";render();
@@ -680,46 +680,64 @@ async function askNorthStar(q){
     if(omniKey)sessionStorage.setItem("ns_omniroute_key",omniKey);
    }
   }
+  if(localMode && !omniKey)throw new Error("OmniRoute API key is required for local NorthStar.");
   const headers={"Content-Type":"application/json"};
   if(omniKey)headers.Authorization="Bearer "+omniKey;
   const response=await fetch(endpoint+"/v1/chat/completions",{
    method:"POST",
    headers,
-   body:JSON.stringify({messages:history,mentor})
+   body:JSON.stringify({
+    model:String(AI_CONFIG.model||"cloudflare-ai/@cf/meta/llama-3.1-8b-instruct-fp8"),
+    messages:history,
+    stream:true,
+    temperature:0.2
+   })
   });
   if(!response.ok){
    let detail="";
-   try{const e=await response.json();detail=e?.error||""}catch{}
-   throw new Error(detail||("Mentor gateway returned HTTP "+response.status));
+   try{const e=await response.json();detail=e?.error?.message||e?.error||""}catch{}
+   throw new Error(detail||("OmniRoute returned HTTP "+response.status));
   }
-  if(!response.body)throw new Error("Mentor gateway returned no stream.");
+  if(!response.body)throw new Error("OmniRoute returned no response body.");
   const reader=response.body.getReader(),decoder=new TextDecoder();
   let buffer="",reply="";
+  const consumePayload=payload=>{
+   if(!payload||payload==="[DONE]")return;
+   try{
+    const data=JSON.parse(payload);
+    const delta=data?.choices?.[0]?.delta?.content??data?.choices?.[0]?.message?.content??data?.response??"";
+    if(delta){
+     reply+=delta;
+     state.messages[state.messages.length-1][1]=reply;
+     const el=document.querySelector(".ai-stream");
+     if(el)el.textContent=reply;
+    }
+   }catch{}
+  };
   while(true){
    const {value,done}=await reader.read();
    if(done)break;
    buffer+=decoder.decode(value,{stream:true});
-   const events=buffer.split(/\\r?\\n\\r?\\n/);buffer=events.pop()||"";
+   const events=buffer.split(/\\r?\\n\\r?\\n/);
+   buffer=events.pop()||"";
    for(const event of events){
     for(const line of event.split(/\\r?\\n/)){
-     if(!line.startsWith("data:"))continue;
-     const payload=line.slice(5).trim();
-     if(!payload||payload==="[DONE]")continue;
-     try{
-      const data=JSON.parse(payload);
-      const delta=data?.choices?.[0]?.delta?.content??data?.response??"";
-      if(delta){reply+=delta;state.messages[state.messages.length-1][1]=reply;const el=document.querySelector(".ai-stream");if(el)el.textContent=reply;}
-     }catch{}
+     if(line.startsWith("data:"))consumePayload(line.slice(5).trim());
     }
    }
   }
-  if(!reply)throw new Error("The mentor returned an empty response.");
+  if(buffer.trim()){
+   for(const line of buffer.split(/\\r?\\n/)){
+    if(line.startsWith("data:"))consumePayload(line.slice(5).trim());
+   }
+  }
+  if(!reply)throw new Error("The OmniRoute mentor returned an empty response.");
   aiLoading=false;aiError="";persist();render();
  }catch(err){
-  console.error("NorthStar cloud mentor error:",err);
+  console.error("NorthStar OmniRoute mentor error:",err);
   aiLoading=false;
-  state.messages[state.messages.length-1][1]="I couldn’t reach the cloud mentor. Check the Worker connection and try again.";
-  aiError=err?.message||"Cloud mentor unavailable.";
+  state.messages[state.messages.length-1][1]="I couldn’t reach the NorthStar Mentor through OmniRoute. Check that OmniRoute is running and try again.";
+  aiError=err?.message||"OmniRoute unavailable.";
   persist();render();
  }
 }
