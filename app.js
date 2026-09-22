@@ -1,4 +1,4 @@
-const VERSION="2.2.0";
+const VERSION="2.3.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 const AI_CONFIG=window.NORTHSTAR_AI||{model:"Qwen3-0.6B-q4f16_1-MLC",provider:"WebLLM",mode:"local-browser"};
 
