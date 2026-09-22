@@ -1,1 +1,18 @@
-window.NORTHSTAR_AI={version:"1.0.0",provider:"WebLLM",mode:"local-browser",model:"Qwen3-0.6B-q4f16_1-MLC",architecture:"local-first",roles:["Teacher","Socratic Tutor","Lab Mentor","Code Mentor","Examiner","Security Analyst"],roadmap:["Learner model","Knowledge graph","Curriculum-aware RAG","Adaptive assessment","Controlled lab tool interface","Optional cloud model gateway"],privacy:{apiKeyInFrontend:false,conversationStorage:"localStorage",backendRequired:false},labPolicy:"Controlled and authorized environments only"};
+window.NORTHSTAR_AI={
+ version:"2.0.0",
+ provider:"Cloudflare Workers AI",
+ mode:"cloud",
+ model:"@cf/qwen/qwen3.8-27b",
+ endpoint:"",
+ architecture:"cloud-gateway",
+ localModel:false,
+ deviceModelStorage:false,
+ roles:["Teacher","Socratic Tutor","Lab Mentor","Code Mentor","Examiner","Security Analyst"],
+ privacy:{
+  apiKeyInFrontend:false,
+  modelStoredOnDevice:false,
+  conversationStorage:"localStorage",
+  backendRequired:true
+ },
+ labPolicy:"Controlled and authorized environments only"
+};
