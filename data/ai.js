@@ -1,10 +1,10 @@
 window.NORTHSTAR_AI={
- version:"4.0.0",
- provider:"OmniRoute + Cloudflare Workers AI fallback",
+ version:"4.1.0",
+ provider:"OmniRoute",
  mode:"cloud-gateway",
- model:"@cf/qwen/qwen3.8-27b",
+ model:"auto",
  endpoint:"",
- architecture:"github-pages -> cloudflare-worker -> omniroute-or-workers-ai -> cloud-model",
+ architecture:"github-pages -> northstar-ai-gateway -> omniroute -> model-provider",
  localModel:false,
  deviceModelStorage:false,
  roles:["Teacher","Socratic Tutor","Lab Mentor","Code Mentor","Examiner","Security Analyst"],
@@ -15,9 +15,9 @@ window.NORTHSTAR_AI={
   backendRequired:true
  },
  routing:{
-  strategy:"omniroute-first",
-  fallback:"cloudflare-workers-ai",
-  providerSelection:"gateway-controlled",
+  strategy:"omniroute",
+  fallback:"omniroute",
+  providerSelection:"OmniRoute",
   compression:"gateway-controlled"
  },
  labPolicy:"Controlled and authorized environments only"
