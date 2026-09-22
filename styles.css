@@ -358,3 +358,18 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
 .graph-track i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,#2563eb,#06b6d4,#8b5cf6);transition:width .5s cubic-bezier(.22,1,.36,1)}
 .lesson-graph{background:linear-gradient(145deg,rgba(239,246,255,.9),rgba(245,243,255,.76))}
 @media(max-width:700px){.depth-grid{grid-template-columns:1fr}}
+
+
+/* Curriculum integrity + module count presentation. */
+.module-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:14px;padding:0;overflow:hidden}
+.module-summary>div{padding:13px 14px;background:rgba(255,255,255,.58);text-align:center}
+.module-summary b{display:block;font-size:20px;letter-spacing:-.04em}
+.module-summary span{display:block;margin-top:3px;color:#64748b;font-size:10px;font-weight:800}
+.module-list{gap:12px}
+.module-card .school{padding:2px 0}
+.module-card .school small b{color:#0f172a}
+@media(max-width:700px){
+ .module-summary>div{padding:11px 7px}
+ .module-summary b{font-size:17px}
+ .module-summary span{font-size:9px}
+}
