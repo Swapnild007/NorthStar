@@ -71,7 +71,7 @@ const iconFor=i=>["◈","◎","☁","◉","⌁","◇"][i]||"•";
 function render(){
  const app=document.querySelector("#app");
  const active=(r)=>state.route===r||((state.route==="lesson")&&r==="learn")||((state.route==="lab")&&r==="labs");
- app.innerHTML=`<div class="app-shell">
+ app.innerHTML=`<div class="app-shell ${state.route==="lab"?"lab-mode":""}">
    <aside class="desktop-rail">
     <div class="rail-brand"><span class="brand-mark">N</span><span>NorthStar</span></div>
     <div class="rail-links">${nav.map(n=>`<button class="${active(n[0])?"active":""}" data-route="${n[0]}"><span>${n[2]}</span>${n[1]}</button>`).join("")}</div>
