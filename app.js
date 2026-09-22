@@ -653,7 +653,7 @@ function mentorClassification(q){
 }
 
 function mentorEndpoint(){
- return String(AI_CONFIG.endpoint||"").trim().replace(/\\/$/,"");
+ return String(AI_CONFIG.endpoint||"").trim().replace(/\/$/,"");
 }
 
 async function askNorthStar(q){
