@@ -141,7 +141,7 @@ const views={
  learn:()=>{
   const modules=curriculum.map((c,i)=>({
     c,i,lessons:Array.isArray(c.lessons)?c.lessons:[],meta:c.meta&&typeof c.meta==="object"?c.meta:{}
-  }));
+  })).sort((a,b)=>Number(a.c.code)-Number(b.c.code));
   const categories=["All",...new Set(modules.map(x=>x.c.category).filter(Boolean))];
   const activeFilter=categories.includes(state.filter)?state.filter:"All";
   if(state.filter!==activeFilter)state.filter=activeFilter;
@@ -174,6 +174,12 @@ const views={
        <details class="module-details">
         <summary>Module outline & academic depth</summary>
         <div class="module-detail-grid">
+         <div class="lesson-index">
+          <div class="lesson-index-head"><span class="eyebrow">Complete lesson index</span><strong>${ls.length} lessons</strong></div>
+          <div class="lesson-list">
+           ${ls.map((lesson,li)=>`<button class="lesson-index-row ${state.completedLessons.includes(lesson.id)?"done":""}" data-course="${i}" data-lesson="${li}"><span class="lesson-number">${String(li+1).padStart(2,"0")}</span><span class="lesson-index-main"><strong>${esc(lesson.title)}</strong><small>${esc(lesson.time||"Self-paced")} · ${state.completedLessons.includes(lesson.id)?"Completed":"Not started"}</small></span><span class="lesson-arrow">›</span></button>`).join("")}
+          </div>
+         </div>
          <div><span class="eyebrow">Learning outcomes</span><ul>${(m.outcomes||[]).map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
          <div><span class="eyebrow">Core topics</span><div class="topic-list">${(m.topics||[]).map(x=>`<span class="topic">${esc(x)}</span>`).join("")}</div></div>
          <div><span class="eyebrow">Case analysis</span><p>${esc(m.case||"Applied case analysis.")}</p></div>
