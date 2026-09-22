@@ -1,4 +1,4 @@
-const DEFAULT_MODEL = "@cf/qwen/qwen3.8-27b";
+const DEFAULT_MODEL = "auto";
 const ALLOWED_ORIGIN = "https://swapnild007.github.io";
 const MAX_BODY_BYTES = 120000;
 const MAX_MESSAGES = 18;
@@ -112,7 +112,7 @@ export default {
 
     const url = new URL(request.url);
     if (url.pathname === "/health") {
-      return json({ ok: true, service: "northstar-ai-mentor", model: DEFAULT_MODEL, gateway: omniBase(env) ? "OmniRoute" : "Cloudflare Workers AI", inference: "cloud" }, 200, origin);
+      return json({ ok: true, service: "northstar-ai-mentor", model: DEFAULT_MODEL, gateway: omniBase(env) ? "OmniRoute" : "unconfigured", inference: "cloud" }, 200, origin);
     }
 
     if (url.pathname !== "/v1/chat/completions" || request.method !== "POST") {
@@ -165,24 +165,6 @@ export default {
         headers.set("Cache-Control", "no-cache, no-transform");
         headers.set("X-Content-Type-Options", "nosniff");
         return new Response(upstream.body, { status: upstream.status, statusText: upstream.statusText, headers });
-      }
-
-      if (env.AI) {
-        const stream = await env.AI.run(DEFAULT_MODEL, {
-          messages: modelMessages,
-          stream: true,
-          temperature: 0.4,
-          max_tokens: 900,
-        });
-        return new Response(stream, {
-          status: 200,
-          headers: {
-            ...corsHeaders(origin),
-            "Content-Type": "text/event-stream",
-            "Cache-Control": "no-cache, no-transform",
-            "X-Content-Type-Options": "nosniff",
-          },
-        });
       }
 
       return json({ error: "No cloud AI provider is configured on the Worker." }, 503, origin);
