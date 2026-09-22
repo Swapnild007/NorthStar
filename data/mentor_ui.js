@@ -42,15 +42,15 @@ function patchAI(){
  if(!host)return;
  const head=host.querySelector(".section-head")||host.firstElementChild;
  const bar=document.createElement("div");
- bar.className="mentor-mode-bar";
+ bar.className="mentor-mode-bar mentor-ui-injected";
  bar.innerHTML=Object.entries(modes).map(([id,m])=>'<button type="button" class="mentor-mode '+(s.mode===id?"active":"")+'" data-mentor-ui-mode="'+id+'"><b>'+esc(m[0])+'</b><small>'+esc(m[1])+'</small></button>').join("");
  host.insertBefore(bar,host.querySelector(".chat")||host.firstChild);
  const ctx=document.createElement("div");
- ctx.className="mentor-context";
+ ctx.className="mentor-context mentor-ui-injected";
  ctx.innerHTML='<div><span>CONTEXT</span><b>'+esc(c.title)+'</b><small>'+esc(c.objective||"Local learner context")+'</small></div><div><span>MODE</span><b>'+esc(modes[s.mode]?.[0]||"Teacher")+'</b><small>Context is prepared locally in this browser.</small></div>';
  host.insertBefore(ctx,host.querySelector(".chat")||null);
  const actions=document.createElement("div");
- actions.className="mentor-actions";
+ actions.className="mentor-actions mentor-ui-injected";
  ["Explain this from first principles","Quiz me one question at a time","Give me a short practice task","Review my reasoning"].forEach(q=>{
   const b=document.createElement("button");b.type="button";b.className="chip";b.textContent=q;
   b.addEventListener("click",()=>{const input=root.querySelector("#prompt");if(input){input.value=q;input.focus()}});
@@ -61,7 +61,7 @@ function patchAI(){
  if(form){
   form.addEventListener("submit",()=>{const input=form.querySelector("#prompt");if(input&&input.value.trim())input.value=promptFor(modeState().mode,input.value.trim())},{capture:true});
  }
- bar.querySelectorAll("[data-mentor-ui-mode]").forEach(b=>b.onclick=()=>{write(KEY,{mode:b.dataset.mentorUiMode});root.dataset.mentorPatched="";patchAI()});
+ bar.querySelectorAll("[data-mentor-ui-mode]").forEach(b=>b.onclick=()=>{write(KEY,{mode:b.dataset.mentorUiMode});root.querySelectorAll(".mentor-ui-injected").forEach(x=>x.remove());root.dataset.mentorPatched="";patchAI()});
 }
 function run(){captureContext();patchAI()}
 new MutationObserver(run).observe(document.body,{subtree:true,childList:true});
