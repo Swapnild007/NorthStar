@@ -286,7 +286,7 @@ const views={
       <div>
         <div class="mentor-eyebrow">NORTHSTAR INTELLIGENCE</div>
         <h1>AI Mentor</h1>
-        <p>Your cybersecurity tutor, available when you need a second brain.</p>
+        <p>Your cybersecurity tutor, routed through OmniRoute. No LLM is stored on your device.</p>
       </div>
     </div>
     <div class="mentor-connection ${AI_CONFIG.endpoint?"online":"setup"}"><i></i><span>${AI_CONFIG.endpoint?"ONLINE":"CONNECTING"}</span><small>${AI_CONFIG.endpoint?"CLOUD INFERENCE":"WORKER ENDPOINT REQUIRED"}</small></div>
@@ -299,7 +299,7 @@ const views={
       <div class="mentor-avatar large"><span>✦</span><i></i></div>
       <b>NorthStar Mentor</b>
       <span>Cybersecurity learning companion</span>
-      <div class="mentor-profile-status"><i></i> Cloud AI · no model on device</div>
+      <div class="mentor-profile-status"><i></i> OmniRoute Cloud · no model on device</div>
       <div class="mentor-mini-stats">
         <div><b>${overallMastery()}%</b><span>Mastery</span></div>
         <div><b>${completedCount()}</b><span>Lessons</span></div>
@@ -309,8 +309,8 @@ const views={
     </aside>
     <section class="mentor-chat-panel">
       <div class="mentor-chat-head">
-        <div><span class="mentor-live-dot"></span><div><b>NorthStar Mentor</b><small>${AI_CONFIG.endpoint?"Ready to help":"Connect the Cloudflare Worker to enable the mentor"}</small></div></div>
-        <span class="mentor-model-pill">${esc(AI_CONFIG.model||"Cloud model")}</span>
+        <div><span class="mentor-live-dot"></span><div><b>NorthStar Mentor</b><small>${AI_CONFIG.endpoint?"Ready to help":"Connect the NorthStar AI Worker to enable the mentor"}</small></div></div>
+        <span class="mentor-model-pill">OMNIROUTE · ${esc(AI_CONFIG.model||"AUTO")}</span>
       </div>
       <div class="mentor-context-strip">
         <span>ADAPTIVE</span>
