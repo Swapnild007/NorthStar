@@ -267,46 +267,93 @@ const views={
 };
 
 function studyBlockContent(l,title,index){
+ const plan=Array.isArray(l.studyPlan)?l.studyPlan:[];
+ const sections=Array.isArray(l.sections)?l.sections.filter(Boolean):[];
+ const deep=Array.isArray(l.deepDive)?l.deepDive.filter(Boolean):[];
+ const examples=Array.isArray(l.examples)?l.examples.filter(Boolean):[];
+ const qas=Array.isArray(l.qa)?l.qa.filter(Boolean):[];
+ const steps=Array.isArray(l.practiceSteps)?l.practiceSteps.filter(Boolean):[];
+ const highlights=Array.isArray(l.highlights)?l.highlights.filter(Boolean):[];
+ const mistakes=Array.isArray(l.mistakes)?l.mistakes.filter(Boolean):[];
+ const takeaways=Array.isArray(l.takeaways)?l.takeaways.filter(Boolean):[];
+ const caseQuestions=Array.isArray(l.caseQuestions)?l.caseQuestions.filter(Boolean):[];
+ const notes=Array.isArray(l.notes)?l.notes.filter(Boolean):[];
+ const refs=Array.isArray(l.references)?l.references.filter(Boolean):[];
  const t=String(title||"").toLowerCase();
- const list=a=>Array.isArray(a)?a.filter(Boolean):[];
- const deep=list(l.deepDive), examples=list(l.examples), qas=list(l.qa), steps=list(l.practiceSteps);
- let purpose="", principles=[], example=null, practice=[], check=null;
- if(index===0 || /foundation|mental|concept|architecture|purpose|intro|overview|understand/.test(t)){
-  purpose=l.learningGoal||l.objective||"Build the mental model before memorising terminology.";
-  principles=list(l.concepts).slice(0,6); if(deep[0]) principles.push(deep[0].body||""); example=examples[0]||null;
- }else if(/request|response|flow|process|how|mechanism|protocol|execution/.test(t)){
-  purpose=deep[0]?.body||l.read||"Trace the concept step by step and identify what changes at each stage.";
-  principles=deep.slice(0,3).map(x=>x.title+": "+x.body); example=examples[0]||null;
- }else if(/security|risk|threat|boundary|control|defen|attack|privacy/.test(t)){
-  purpose=l.why||l.competency||"Connect the technical mechanism to its security consequences.";
-  principles=[...list(l.highlights).slice(0,4),...(l.case?[l.case]:[])];
-  example=examples.find(x=>/security|attack|risk|case/i.test(String(x.title||"")+" "+String(x.body||"")))||examples[0]||null;
- }else if(/example|worked|case|scenario/.test(t)){
-  purpose="Work through a concrete scenario. State the evidence, reasoning and conclusion rather than only recalling a definition.";
-  principles=list(l.highlights).slice(0,4); example=examples[0]||null;
-  if(!example&&l.case) example={title:l.caseTitle||"Case study",body:l.case,answer:l.caseQuestions?.join(" ")};
- }else if(/practice|exercise|lab|apply/.test(t)){
-  purpose=l.practice||"Apply the lesson independently and produce observable evidence of your reasoning.";
-  principles=steps.slice(0,5); practice=steps.length?steps:list(l.takeaways).slice(0,4);
- }else if(/q&a|question|check|review|assess|recap/.test(t)){
-  purpose="Retrieve the concept from memory, explain it in your own words, then use the feedback to correct gaps.";
-  principles=qas.slice(0,3).map(x=>x.q); check=l.check||null;
+ const sec=(i)=>sections[i]||null;
+ const dd=(i)=>deep[i]||null;
+ const ex=(i)=>examples[i]||null;
+ let lead=l.learningGoal||l.objective||"Build the concept from first principles and connect it to observable security practice.";
+ let ideas=[];
+ let application=[];
+ let evidence=[];
+ let example=null;
+ let check=null;
+ let heading="First principles";
+ if(index===0){
+  heading="Build the mental model";
+  if(sec(0))ideas.push(sec(0).body);
+  if(dd(0))ideas.push(dd(0).body);
+  if(l.concepts?.length)ideas.push("Core vocabulary: "+l.concepts.slice(0,8).join(", ")+".");
+  example=ex(0);
+  check=qas[0]||l.check;
+ }else if(index===1){
+  heading="Understand the mechanism";
+  if(sec(1))ideas.push(sec(1).body);
+  if(dd(1))ideas.push(dd(1).body);
+  if(l.read)ideas.push(String(l.read).split(/\\n\\n|\n\n/).filter(Boolean)[1]||String(l.read).split(/\\n\\n|\n\n/).filter(Boolean)[0]);
+  example=ex(0)||ex(1);
+  check=qas[1]||qas[0];
+ }else if(index===2){
+  heading="Connect it to security";
+  if(sec(2))ideas.push(sec(2).body);
+  if(dd(2))ideas.push(dd(2).body);
+  ideas.push(...highlights.slice(0,3));
+  if(l.why)application.push(l.why);
+  if(l.case)application.push("Case: "+l.case);
+  example=ex(1)||ex(0);
+  check=qas[3]||qas[0];
+ }else if(index===3){
+  heading="Reason about evidence and failure";
+  if(sec(3))ideas.push(sec(3).body);
+  if(dd(3))ideas.push(dd(3).body);
+  ideas.push(...notes.slice(0,3));
+  evidence.push(...mistakes.slice(0,3));
+  if(l.evidence)evidence.push("Evidence artifact: "+l.evidence);
+  check=qas[2]||qas[0];
+ }else if(index===4){
+  heading="Apply the lesson to a case";
+  if(sec(4))ideas.push(sec(4).body);
+  if(l.case)application.push(l.case);
+  application.push(...caseQuestions.slice(0,5));
+  example=ex(1)||ex(0);
+  check=qas[3]||qas[0];
  }else{
-  purpose=l.competency||l.objective||"Study the concept from first principles, connect it to security practice, and test your understanding.";
-  principles=[...list(l.highlights).slice(0,4),...list(l.concepts).slice(0,4)].slice(0,6); example=examples[0]||null;
+  heading="Practice, retrieve and prove mastery";
+  application.push(l.practice||"Apply the lesson independently.");
+  application.push(...steps.slice(0,6));
+  if(l.reflection)application.push("Reflection: "+l.reflection);
+  evidence.push(...takeaways.slice(0,3));
+  if(l.evidence)evidence.push("Evidence to produce: "+l.evidence);
+  check=qas[0]||l.check;
  }
- if(!practice.length&&index>=4) practice=list(l.takeaways).slice(0,3);
- if(!check&&qas[index%Math.max(qas.length,1)]) check=qas[index%qas.length];
- const principleHtml=principles.filter(Boolean).map(x=>`<li>${esc(String(x))}</li>`).join("");
- const practiceHtml=practice.filter(Boolean).map(x=>`<li>${esc(String(x))}</li>`).join("");
+ const ideaHtml=ideas.filter(Boolean).map(x=>`<li>${esc(String(x))}</li>`).join("");
+ const appHtml=application.filter(Boolean).map(x=>`<li>${esc(String(x))}</li>`).join("");
+ const evidenceHtml=evidence.filter(Boolean).map(x=>`<li>${esc(String(x))}</li>`).join("");
+ const rubric=(Array.isArray(l.assessmentRubric)?l.assessmentRubric:[]).slice(0,4).map(x=>`<li>${esc(String(x))}</li>`).join("");
+ const refHtml=refs.slice(0,2).map(x=>`<li><a href="${esc(x.url||"#")}" target="_blank" rel="noopener">${esc(x.name||"Reference")}</a></li>`).join("");
+ const time=plan[index]?.[1]||"";
  return `<details class="study-block" ${index===0?"open":""}>
-  <summary><span class="study-block-num">${index+1}</span><span class="study-block-title"><b>${esc(title)}</b><small>First principles → explanation → application → evidence</small></span><span class="study-block-time">${esc(String((l.studyPlan||[])[index]?.[1]||""))}</span></summary>
+  <summary><span class="study-block-num">${index+1}</span><span class="study-block-title"><b>${esc(title)}</b><small>First principles → explanation → application → evidence</small></span><span class="study-block-time">${esc(String(time))}</span></summary>
   <div class="study-block-body">
-   <div class="study-block-section"><span class="eyebrow">What you are learning</span><p>${esc(String(purpose))}</p></div>
-   ${principleHtml?`<div class="study-block-section"><span class="eyebrow">Core ideas</span><ul class="lesson-list">${principleHtml}</ul></div>`:""}
+   <div class="study-block-section"><span class="eyebrow">${esc(heading)}</span><p>${esc(String(lead))}</p></div>
+   ${ideaHtml?`<div class="study-block-section"><span class="eyebrow">Teaching material</span><ul class="lesson-list">${ideaHtml}</ul></div>`:""}
    ${example?`<div class="study-block-section block-example"><span class="eyebrow">Worked example</span><strong>${esc(example.title||"Example")}</strong><p>${esc(example.body||String(example))}</p>${example.answer?`<div class="answer-note"><b>Reasoning</b><p>${esc(example.answer)}</p></div>`:""}</div>`:""}
-   ${practiceHtml?`<div class="study-block-section"><span class="eyebrow">Do this now</span><ol class="practice-steps">${practiceHtml}</ol></div>`:""}
-   ${check?`<div class="study-block-section block-check"><span class="eyebrow">Quick check</span><p><b>${esc(check.q||"Explain the idea in your own words.")}</b></p><details class="mini-answer"><summary>Reveal explanation</summary><p>${esc(check.a||check.why||check.explain||"Revisit the relevant section and explain the reasoning.")}</p></details></div>`:""}
+   ${appHtml?`<div class="study-block-section"><span class="eyebrow">Apply it</span><ol class="practice-steps">${appHtml}</ol></div>`:""}
+   ${evidenceHtml?`<div class="study-block-section"><span class="eyebrow">Evidence and pitfalls</span><ul class="lesson-list">${evidenceHtml}</ul></div>`:""}
+   ${rubric&&index===5?`<div class="study-block-section"><span class="eyebrow">Mastery standard</span><ul class="lesson-list">${rubric}</ul></div>`:""}
+   ${refHtml&&index===5?`<div class="study-block-section"><span class="eyebrow">References</span><ul class="lesson-list">${refHtml}</ul></div>`:""}
+   ${check?`<div class="study-block-section block-check"><span class="eyebrow">Quick check</span><p><b>${esc(check.q||"Explain the idea in your own words.")}</b></p>${Array.isArray(check.options)?`<ul class="lesson-list">${check.options.map(o=>`<li>${esc(o)}</li>`).join("")}</ul>`:""}<details class="mini-answer"><summary>Reveal explanation</summary><p>${esc(check.a||check.answer||check.why||check.explain||"Revisit the relevant section and explain the reasoning.")}</p></details></div>`:""}
   </div>
  </details>`;
 }
