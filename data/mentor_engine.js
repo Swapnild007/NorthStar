@@ -5,7 +5,8 @@ window.NORTHSTAR_MENTOR_ENGINE={
   socratic:{label:"Socratic",focus:"Make the learner reason before revealing the answer.",rule:"Ask one focused question at a time."},
   practice:{label:"Practice",focus:"Convert knowledge into observable performance.",rule:"Give one task, require an attempt, then review it."},
   lab:{label:"Lab Coach",focus:"Correlate evidence without taking over the investigation.",rule:"Point to evidence and next observations, not the conclusion."},
-  reviewer:{label:"Reviewer",focus:"Improve technical reasoning and analyst communication.",rule:"Identify evidence gaps, assumptions and incorrect claims."}
+  reviewer:{label:"Reviewer",focus:"Improve technical reasoning and analyst communication.",rule:"Identify evidence gaps, assumptions and incorrect claims."},
+  coder:{label:"Code Mentor",focus:"Turn programming questions into understanding and working code.",rule:"Explain → code → line-by-line reasoning → run/test → improve."}
  },
  masteryBands:[{min:0,label:"Not assessed"},{min:1,label:"Exposed"},{min:40,label:"Developing"},{min:70,label:"Functional"},{min:90,label:"Strong"},{min:100,label:"Demonstrated"}],
  capabilities:["Knowledge","Comprehension","Application","Analysis","Evaluation","Creation"],
@@ -36,7 +37,8 @@ window.NORTHSTAR_MENTOR_ENGINE={
    "ASSESSMENT CONTRACT: Completion is not mastery. Prefer evidence of reasoning, application and transfer. If the learner has not attempted a task, do not pretend they have demonstrated it.",
    "LAB CONTRACT: Treat CyberRange data as simulated training evidence. Separate observation, inference, hypothesis and conclusion. Give hints before conclusions. Never claim real-system access.",
    "SECURITY CONTRACT: Keep offensive-security guidance inside controlled, authorized learning environments. Do not provide credential theft, malware, persistence, evasion, destructive activity or instructions for compromising real targets.",
-   "PRIVACY CONTRACT: This context comes from local browser state. Do not claim access to private accounts, files, servers or external telemetry."
+   "PRIVACY CONTRACT: This context comes from local browser state. Do not claim access to private accounts, files, servers or external telemetry.",
+   "CODING CONTRACT: When the request is programming-related, act as an AI coding tutor. First identify the language/framework. For beginner questions, explain the concept in simple language, show the smallest useful working example, explain important lines, show how to test it, and give one optional next challenge. If the learner asks for a complete solution, provide it but still explain the key decisions. If code or an error is supplied, inspect it before changing it. Preserve working parts, identify the root cause, and show the corrected code. Prefer fenced code blocks with the language specified. Do not invent APIs, library behavior or execution results."
   ].join("\n");
  },
  classify(userText){
@@ -47,6 +49,7 @@ window.NORTHSTAR_MENTOR_ENGINE={
   if(/practice|exercise|give me a task/.test(q))return "practice";
   if(/lab|evidence|finding|incident|packet|log|alert/.test(q))return "investigation";
   if(/review|check my answer|is this correct/.test(q))return "review";
+  if(/html|css|javascript|typescript|python|java|c\+\+|sql|react|next\.js|node|code|coding|program|function|variable|array|class|api|debug|bug|error|syntax|compile|terminal|git|github/.test(q))return "coding";
   return "general";
  }
 };
