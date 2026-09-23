@@ -228,7 +228,7 @@ Where appropriate for the learner's progression:
 
 ## Current curriculum gap audit
 
-The current 14-pathway / 124-lesson structure is a strong skeleton, but it is **not yet academically complete**.
+The current 16-pathway / 140-core-lesson structure is supplemented by 7 targeted competency-completion lessons covering the remaining material gaps. The programme is designed to close genuine competency gaps rather than inflate lesson counts.
 
 The most important missing or under-deep areas identified by the benchmark are:
 
@@ -248,7 +248,7 @@ The most important missing or under-deep areas identified by the benchmark are:
 14. Security economics and investment decisions
 15. Research methodology and technical communication
 
-These should be added only where they represent a genuine competency gap; lesson-count inflation is not a goal.
+The current release addresses the most important uncovered areas through targeted additions: digital forensics, malware analysis foundations, database security, API security, cyber law/ethics, mobile security, and security research/technical communication. Remaining depth should be improved through enrichment and practical evidence rather than arbitrary lesson-count inflation.
 
 ## Assessment architecture
 
