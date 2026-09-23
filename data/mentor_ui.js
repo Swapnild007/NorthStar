@@ -5,7 +5,8 @@ const MODES={
  socratic:["Socratic","One focused question → your reasoning"],
  practice:["Practice","One task → your attempt → feedback"],
  lab:["Lab Coach","Evidence → correlation → next observation"],
- reviewer:["Reviewer","Accuracy → evidence → assumptions"]
+ reviewer:["Reviewer","Accuracy → evidence → assumptions"],
+ coder:["Code Mentor","Explain → code → test → improve"]
 };
 const read=(k,f)=>{try{const x=localStorage.getItem(k);return x===null?f:JSON.parse(x)}catch{return f}};
 const write=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
