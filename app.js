@@ -386,6 +386,8 @@ progress:()=>{
  </section>`;
 }
 
+};
+
 function practiceScenario(l){
  const title=String(l.title||"this lesson").trim();
  const concepts=(l.concepts||[]).filter(Boolean).slice(0,6);
