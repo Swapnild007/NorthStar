@@ -22,7 +22,14 @@ for(const file of ["app.js",...jsFiles]) {
  if(status!==0) throw new Error("Syntax failure in "+file+"\n"+stderr);
 }
 
-const context={window:{}};
+const storage=new Map();
+const context={
+  window:{},
+  localStorage:{getItem:key=>storage.has(key)?storage.get(key):null,setItem:(key,value)=>storage.set(key,String(value)),removeItem:key=>storage.delete(key)},
+  document:{querySelector:()=>null,querySelectorAll:()=>[]},
+  location:{hostname:"127.0.0.1",protocol:"http:"},
+  console
+};
 vm.createContext(context);
 for(const file of [
  "data/course.js","data/ai.js","data/mentor.js","data/mentor_engine.js","data/mentor_ui.js",
