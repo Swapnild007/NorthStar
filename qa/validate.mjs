@@ -10,46 +10,64 @@ const required=[
 ];
 for(const file of required)if(!fs.existsSync(path.join(root,file)))throw new Error("Missing required file: "+file);
 
+const curriculumSource=fs.readFileSync(path.join(root,"data/curriculum.js"),"utf8");
+const additionsSource=fs.readFileSync(path.join(root,"data/competency_completion.js"),"utf8");
+const labsSource=fs.readFileSync(path.join(root,"data/cyberrange.js"),"utf8");
+const advancedSource=fs.readFileSync(path.join(root,"data/advanced_labs.js"),"utf8");
+const capstoneSource=fs.readFileSync(path.join(root,"data/capstone.js"),"utf8");
+
+const parseArray=(source,startToken)=>{
+ const start=source.indexOf(startToken);
+ if(start<0)throw new Error("Missing array token: "+startToken);
+ const open=source.indexOf("[",start);
+ const end=source.indexOf("];",open);
+ if(open<0||end<0)throw new Error("Malformed array: "+startToken);
+ return new Function("return "+source.slice(open,end+1))();
+};
+const parseWindowObject=(source,name)=>{
+ const start=source.indexOf(name+"=");
+ if(start<0)throw new Error("Missing object: "+name);
+ const open=source.indexOf("{",start);
+ const end=source.lastIndexOf("};");
+ if(open<0||end<0)throw new Error("Malformed object: "+name);
+ return new Function("return "+source.slice(open,end+1))();
+};
+
+const base=parseArray(curriculumSource,"const NORTHSTAR_CURRICULUM");
+const additions=parseArray(additionsSource,"window.NORTHSTAR_COMPETENCY_COMPLETION");
+const baseLabs=parseArray(labsSource,"window.NORTHSTAR_LABS");
+const advancedLabs=parseArray(advancedSource,"window.NORTHSTAR_ADVANCED_LABS");
+const capstone=parseWindowObject(capstoneSource,"window.NORTHSTAR_CAPSTONE");
+
+if(!Array.isArray(base)||base.length!==16)throw new Error("Expected 16 core pathways; found "+(base?.length||0));
+const coreLessons=base.reduce((n,c)=>n+(Array.isArray(c.lessons)?c.lessons.length:0),0);
+if(coreLessons!==140)throw new Error("Expected 140 core lessons; found "+coreLessons);
+if(!Array.isArray(additions)||additions.length!==7)throw new Error("Expected 7 competency-completion lessons; found "+(additions?.length||0));
+const allLessons=[...base.flatMap(c=>c.lessons||[]),...additions];
+const ids=allLessons.map(l=>l.id);
+const duplicateIds=ids.filter((id,i)=>ids.indexOf(id)!==i);
+if(duplicateIds.length)throw new Error("Duplicate lesson ids: "+duplicateIds.join(", "));
+for(const lesson of allLessons)if(!lesson.id||!lesson.title||!lesson.objective)throw new Error("Incomplete lesson: "+JSON.stringify(lesson.id));
+
+if(baseLabs.length!==12)throw new Error("Expected 12 base labs; found "+baseLabs.length);
+if(advancedLabs.length!==5)throw new Error("Expected 5 advanced labs; found "+advancedLabs.length);
+if(!capstone||capstone.stages?.length!==8||capstone.rubric?.length!==7)throw new Error("Capstone contract incomplete.");
+
 const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
+for(const src of [...html.matchAll(/<script[^>]+src="([^"]+)"/g)].map(m=>m[1])){
+ const clean=src.split("?")[0].replace(/^\.\//,"");
+ if(!fs.existsSync(path.join(root,clean)))throw new Error("Broken script asset: "+src);
+}
 const app=fs.readFileSync(path.join(root,"app.js"),"utf8");
-const curriculum=fs.readFileSync(path.join(root,"data/curriculum.js"),"utf8");
-const additions=fs.readFileSync(path.join(root,"data/competency_completion.js"),"utf8");
-const labs=fs.readFileSync(path.join(root,"data/cyberrange.js"),"utf8");
-const advancedLabs=fs.readFileSync(path.join(root,"data/advanced_labs.js"),"utf8");
-const capstone=fs.readFileSync(path.join(root,"data/capstone.js"),"utf8");
-const assessment=fs.readFileSync(path.join(root,"data/assessment_engine.js"),"utf8");
-const ai=fs.readFileSync(path.join(root,"data/ai.js"),"utf8");
-
-const scriptRefs=[...html.matchAll(/<script[^>]+src="([^"]+)"/g)].map(m=>m[1].split("?")[0].replace(/^\.\//,""));
-for(const ref of scriptRefs)if(!fs.existsSync(path.join(root,ref)))throw new Error("Broken script asset: "+ref);
-
-const coreLessonIds=(curriculum.match(/"id":\s*"[^"]+"/g)||[]).length;
-const completionLessons=(additions.match(/id:"supp-/g)||[]).length;
-const advancedLabCount=(advancedLabs.match(/id:"[^"]+"/g)||[]).length;
-const capstoneStageCount=(capstone.match(/id:"[^"]+"/g)||[]).length;
-const baseLabCount=(labs.match(/id:"[^"]+"/g)||[]).length;
-
-if(coreLessonIds<140)throw new Error("Core curriculum invariant failed: fewer than 140 lesson records.");
-if(completionLessons!==7)throw new Error("Competency completion invariant failed: expected 7.");
-if(advancedLabCount!==5)throw new Error("Advanced lab invariant failed: expected 5.");
-if(baseLabCount!==12)throw new Error("Base lab invariant failed: expected 12.");
-if(capstoneStageCount<8)throw new Error("Capstone stage invariant failed.");
 if(!app.includes("capstone:()=>"))throw new Error("Capstone route is not wired.");
 if(!app.includes("data-capstone-stage"))throw new Error("Capstone workspace is not wired.");
 if(!app.includes("window.NORTHSTAR_ASSESSMENT"))throw new Error("Assessment engine is not wired.");
 if(!app.includes("data-practice-response"))throw new Error("Practice evidence capture is not wired.");
 if(app.includes("data.evidence||"))throw new Error("Stale practice-panel reference remains.");
+const ai=fs.readFileSync(path.join(root,"data/ai.js"),"utf8");
 if(!ai.includes('provider:"OmniRoute"')||!ai.includes('localModel:false')||!ai.includes('deviceModelStorage:false'))throw new Error("AI architecture contract failed.");
 if(html.includes("workers/mentor"))throw new Error("Obsolete worker gateway reference remains in index.html.");
-if(!html.includes("competency_completion.js")||!html.includes("advanced_labs.js")||!html.includes("capstone.js")||!html.includes("assessment_engine.js"))throw new Error("Final release assets are not loaded.");
+for(const requiredAsset of ["competency_completion.js","advanced_labs.js","capstone.js","assessment_engine.js"])if(!html.includes(requiredAsset))throw new Error("Missing final release asset: "+requiredAsset);
 
 console.log("NorthStar final QA: OK");
-console.log(JSON.stringify({
- coreLessonRecords:coreLessonIds,
- completionLessons,
- baseLabs:baseLabCount,
- advancedLabs:advancedLabCount,
- capstoneStages:capstoneStageCount,
- ai:"OmniRoute -> cloud model",
- localModel:false
-},null,2));
+console.log(JSON.stringify({corePathways:base.length,coreLessons,completionLessons:additions.length,totalLessons:allLessons.length,baseLabs:baseLabs.length,advancedLabs:advancedLabs.length,capstoneStages:capstone.stages.length},null,2));
