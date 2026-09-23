@@ -19,10 +19,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
-      - name: Validate JavaScript
+      - name: Validate JavaScript and release structure
         run: |
           node --check app.js
-          node --check data/curriculum.js
+          for file in data/*.js; do node --check "$file"; done
+          node qa/validate.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v6
       - name: Upload artifact
