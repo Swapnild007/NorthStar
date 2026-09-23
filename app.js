@@ -1,4 +1,4 @@
-const VERSION="3.5.0";
+const VERSION="4.0.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 const AI_CONFIG=window.NORTHSTAR_AI||{version:"2.0.0",provider:"Cloudflare Workers AI",mode:"cloud",model:"@cf/qwen/qwen3.8-27b",endpoint:""};
 
@@ -16,10 +16,14 @@ const savedCompleted=readStoredJSON("ns_completed_lessons",[]);
 const savedLabs=readStoredJSON("ns_lab_state",{});
 const LAB_INTELLIGENCE=window.NORTHSTAR_LAB_INTELLIGENCE||{version:"1.0",scoring:{evidence:20,reasoning:35,artifact:20,finding:15,confidence:10},labs:{}};
 
-const curriculum=(Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[]).map(c=>({...c,lessons:(c.lessons||[]).map(l=>({...l,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[l.id]||{})}))}));
-const labs=window.NORTHSTAR_LABS||[];
-const LAB_DETAILS=window.NORTHSTAR_LAB_DETAILS||{};
-const LAB_TRACKS=window.NORTHSTAR_LAB_TRACKS||[];
+const BASE_CURRICULUM=(Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[]).map(c=>({...c,lessons:(c.lessons||[]).map(l=>({...l,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[l.id]||{})}))}));
+const curriculum=BASE_CURRICULUM.map(c=>{
+ const additions=(window.NORTHSTAR_COMPETENCY_COMPLETION||[]).filter(l=>String(l.course)===String(c.code));
+ return additions.length?{...c,lessons:[...(c.lessons||[]),...additions]}:c;
+});
+const labs=[...(window.NORTHSTAR_LABS||[]),...(window.NORTHSTAR_ADVANCED_LABS||[])];
+const LAB_DETAILS={...(window.NORTHSTAR_LAB_DETAILS||{}),...(window.NORTHSTAR_ADVANCED_LAB_DETAILS||{})};
+const LAB_TRACKS=[...(window.NORTHSTAR_LAB_TRACKS||[]),...(window.NORTHSTAR_ADVANCED_LAB_TRACKS||[])];
 const getLabDetails=id=>{const d=LAB_DETAILS?.[id];return d&&Array.isArray(d.checkpoints)&&Array.isArray(d.evidence)?d:{scenario:"Controlled cybersecurity investigation.",evidence:["No scenario evidence loaded. Reload the current application bundle."],checkpoints:["Describe the observation available in the lab.","Identify what evidence is missing.","State the next safe investigation step."],hints:["Start with observable facts.","Separate evidence from inference.","Choose a controlled next observation."],deliverable:"Document observations, reasoning and next action.",success:"Produce an evidence-backed investigation note."};};
 function labWorkspaceKey(id){return "ns_lab_workspace_"+id}
 function labWorkspace(id){
@@ -70,7 +74,7 @@ const iconFor=i=>["◈","◎","☁","◉","⌁","◇"][i]||"•";
 
 function render(){
  const app=document.querySelector("#app");
- const active=(r)=>state.route===r||((state.route==="lesson")&&r==="learn")||((state.route==="lab")&&r==="labs");
+ const active=(r)=>state.route===r||((state.route==="lesson")&&r==="learn")||((state.route==="lab"||state.route==="capstone")&&r==="labs");
  app.innerHTML=`<div class="app-shell ${state.route==="lab"?"lab-mode":""}">
    <aside class="desktop-rail">
     <div class="rail-brand"><span class="brand-mark">N</span><span>NorthStar</span></div>
@@ -122,6 +126,31 @@ if(id==="container-security-room")return '<div class="cr-workstation-grid">'+crP
 if(id==="phishing-triage")return '<div class="cr-workstation-grid">'+crPanel("MAIL HEADER ANALYZER","MESSAGE // SIMULATED",'<div class="cr-mail"><div><span>VISIBLE FROM</span><b>payroll-update@payr0ll.example</b></div><div><span>RETURN-PATH</span><b>bounce@mailer.example</b></div><div><span>SPF</span><b class="good">PASS</b></div><div><span>DKIM</span><b class="good">PASS</b></div><div><span>DMARC</span><b class="warn">FAIL ALIGNMENT</b></div></div>',"wide")+crPanel("URL INSPECTOR","PASSIVE ANALYSIS",'<div class="cr-url"><span>DESTINATION</span><code>https://payr0ll.example/verify</code><p>No payload execution. Compare visible domain, authenticated domains and user context.</p></div>')+crPanel("TRIAGE SIGNAL","ANALYST VIEW",'<div class="cr-signal-grid"><span>IDENTITY</span><span>AUTHENTICATION</span><span>URL</span><span>CONTEXT</span></div>')+'</div>';
 if(id==="ai-prompt-defense")return '<div class="cr-workstation-grid">'+crPanel("PROMPT STACK","TRUST BOUNDARY // SIMULATED",'<div class="cr-prompt-stack">'+["SYSTEM POLICY","USER MESSAGE","UNTRUSTED TOOL RESULT","MODEL OUTPUT"].map((x,i)=>'<div class="layer layer-'+i+'"><span>0'+(i+1)+'</span><b>'+x+'</b><small>'+esc(e[i]||"Controlled observation")+'</small></div>').join("")+'</div>',"wide")+crPanel("TRUST BOUNDARY","AUTHORITY MODEL",'<div class="cr-trust-boundary"><span>SYSTEM</span><i>HIGHER AUTHORITY</i><span>USER / TOOL DATA</span><i>UNTRUSTED CONTENT</i><span>MODEL</span></div>')+crPanel("EVALUATION CONSOLE","DEFENSIVE TEST",'<div class="cr-eval"><div><b>CANARY</b><span>HIDDEN-LAB-SECRET</span></div><div><b>EXPECTED</b><span>REFUSE SECRET DISCLOSURE</span></div><div><b>OBSERVED</b><span>COMPARE MODEL OUTPUT</span></div></div>')+'</div>';
 return '<div class="cr-workstation-grid">'+crPanel("LAB TELEMETRY","CONTROLLED DATASET",evidence,"wide")+inspector+'</div>';}
+
+function capstoneWorkspace(){
+ const fallback={artifacts:{},defense:"",updated:null};
+ try{
+  const saved=JSON.parse(localStorage.getItem("ns_capstone_workspace")||"null");
+  return saved&&typeof saved==="object"?{...fallback,...saved,artifacts:typeof saved.artifacts==="object"&&saved.artifacts?saved.artifacts:{}}:fallback;
+ }catch{return fallback}
+}
+function saveCapstoneWorkspace(w){localStorage.setItem("ns_capstone_workspace",JSON.stringify(w))}
+function capstoneScore(w){
+ const stages=window.NORTHSTAR_CAPSTONE?.stages||[],completed=stages.filter(s=>String(w.artifacts?.[s.id]||"").trim().length>=120).length;
+ const stageScore=stages.length?completed/stages.length*70:0;
+ const defenseText=String(w.defense||"").trim();
+ const defense=defenseText.length>=300?20:defenseText.length>=120?12:0;
+ const completeness=completed===stages.length?10:Math.round((completed/Math.max(1,stages.length))*10);
+ return {score:Math.min(100,Math.round(stageScore+defense+completeness)),completed,total:stages.length,defense,ready:completed===stages.length&&defense>=12};
+}
+function assessmentForLesson(l,completedOverride){
+ const id=l?.id||"",check=checkData(l)?.check||{},note=localStorage.getItem("ns_check_note_"+id)||"",practice=localStorage.getItem("ns_practice_response_"+id)||"";
+ const correct=Boolean(state.checkAnswer&&check.answer&&state.checkAnswer===check.answer);
+ const completed=typeof completedOverride==="boolean"?completedOverride:state.completedLessons.includes(id);
+ return window.NORTHSTAR_ASSESSMENT?.evaluateLesson
+  ? window.NORTHSTAR_ASSESSMENT.evaluateLesson({correct,reasoningChars:note.length,practiceChars:practice.length,completed})
+  : {mastery:completed?15:0,knowledge:correct?100:0,reasoning:0,application:0,completion:completed?100:0,band:completed?"Exposed":"Not assessed"};
+}
 const views={
  home:()=>{
   const p=overallPercent(), cp=courseProgress(2);
@@ -277,9 +306,20 @@ const views={
    items.forEach(l=>{const i=labs.indexOf(l),st=state.labState[i]||"ready";h+='<article class="lab-card '+(st==="completed"?"completed":"")+'"><div class="lab-card-top"><span>LAB '+String(i+1).padStart(3,"0")+'</span><em>'+esc(l.level)+'</em></div><h3>'+esc(l.title)+'</h3><p>'+esc(l.subtitle)+'</p><div class="lab-meta"><span>'+esc(l.duration)+'</span>'+l.skills.slice(0,3).map(x=>'<i>'+esc(x)+'</i>').join("")+'</div><button data-lab="'+i+'">'+(st==="completed"?"Review":"Start Lab →")+'</button></article>'});
    h+='</div></div>';
   });
-  h+='<div class="range-safety"><span class="eyebrow">SAFETY BOUNDARY</span><h2>Controlled cyber range</h2><p>NorthStar labs use simulated evidence and local learner state. They do not scan, attack, connect to or modify external systems.</p></div></section>';
+  h+='<div class="section card glass" style="margin-top:28px"><div class="section-head"><div><span class="eyebrow">Enterprise capstone</span><h2>Design → investigate → defend</h2><p class="subtitle">Eight-stage simulated enterprise engagement integrating technical, analytical and governance capability.</p></div><button class="cta" data-route="capstone">Open Capstone →</button></div></div>';h+='<div class="range-safety"><span class="eyebrow">SAFETY BOUNDARY</span><h2>Controlled cyber range</h2><p>NorthStar labs use simulated evidence and local learner state. They do not scan, attack, connect to or modify external systems.</p></div></section>';
   return h
- }, lab:()=>{const l=labs[state.selectedLab],d=getLabDetails(l.id),st=state.labState[state.selectedLab]||"ready",w=cyberToolState(l.id);const answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length;const note=String(w.note||"");const activeTool=state.labTool||"overview";const pct=Math.min(100,Math.round(answered/d.checkpoints.length*100));const tools=[["overview","Mission","⌁"],["workspace","Workspace","⌘"],["evidence","Evidence","◈"],["console","Terminal","$"],["analysis","Assessment","◎"],["timeline","Timeline","◷"],["findings","Report","✓"]],flow=[["Understand",answered>0||note.trim().length>0,"Scope"],["Analyze",answered>=1,"Inspect"],["Reason",answered>=2,"Hypothesize"],["Report",note.trim().length>=40,"Evidence artifact"]];let h='<section class="fade cyberrange-pro"><div class="cr-shell">'+cyberHeader(l)+crOperatorHud(l,d,w,answered,pct)+'<div class="cr-layout"><aside class="cr-rail"><div class="cr-mission"><span>MISSION</span><b>LAB '+String(state.selectedLab+1).padStart(3,"0")+'</b><small>'+esc(l.track||"Security Practice")+'</small></div><nav>';tools.forEach(t=>{h+='<button class="'+(activeTool===t[0]?"active":"")+'" data-lab-tool="'+t[0]+'"><i>'+t[2]+'</i>'+t[1]+'</button>'});h+='</nav><div class="cr-progress"><div><span>INVESTIGATION</span><b>'+answered+'/'+d.checkpoints.length+'</b></div><div class="cr-meter"><i style="width:'+pct+'%"></i></div></div><div class="cr-rail-foot">LOCAL EVIDENCE<br>NO EXTERNAL ACCESS</div></aside><main class="cr-main">';if(activeTool==="overview"){h+=crPanel("MISSION CONTROL","ACTIVE",'<div class="cr-brief"><div><span class="eyebrow">OBJECTIVE</span><h2>'+esc(l.objective)+'</h2><p>'+esc(d.scenario)+'</p></div><div class="cr-kpis"><div><b>'+d.evidence.length+'</b><span>Evidence</span></div><div><b>'+d.checkpoints.length+'</b><span>Checks</span></div><div><b>'+answered+'</b><span>Answered</span></div></div></div>');h+=crPanel("INVESTIGATION WORKFLOW","OPERATE THE RANGE",'<div class="cr-flow">'+flow.map((x,i)=>'<div class="'+(x[1]?"done":"")+'"><span>'+(x[1]?"✓":i+1)+'</span><b>'+x[0]+'</b><small>'+x[2]+'</small></div>').join("")+'</div>');h+=crInstrument(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="workspace"){h+=crInstrument(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="evidence"){h+=crPanel("EVIDENCE FEED","SIMULATED RECORDS",crEvidence(l,w));h+=crInspector(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="console"){h+=crTerminal(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="analysis"){h+=crLabIntel(l,d,w);h+=crPanel("ASSESSMENT CONSOLE",answered+"/"+d.checkpoints.length+" COMPLETE",'<div class="cr-checks">'+d.checkpoints.map((q,i)=>'<article class="'+(String(w.answers?.[i]||"").trim()?"done":"")+'"><header><span>Q0'+(i+1)+'</span><b>'+esc(q)+'</b></header><textarea data-lab-answer="'+i+'" placeholder="Record your reasoning...">'+esc(w.answers?.[i]||"")+'</textarea>'+((w.revealedHints||[]).includes(i)?'<div class="cr-hint">HINT // '+esc(d.hints[i])+'</div>':'<button class="chip" data-lab-hint="'+i+'">Request hint</button>')+'</article>').join("")+'</div>');}else if(activeTool==="timeline"){h+=crPanel("TIMELINE","CHRONOLOGICAL",'<div class="cr-timeline">'+d.evidence.map((x,i)=>'<button class="'+(i===w.selectedEvidence?"selected":"")+'" data-lab-select="'+i+'"><span>0'+(i+1)+'</span><i></i><code>'+esc(x)+'</code></button>').join("")+'</div>');h+=crInspector(l,w);}else{h+=crLabFinding(l,d,w);h+=crPanel("FINDINGS & EVIDENCE ARTIFACT","SUBMISSION",'<div class="cr-report"><div><span class="eyebrow">DELIVERABLE</span><h2>'+esc(d.deliverable)+'</h2><p>'+esc(d.success)+'</p></div><textarea data-lab-note="'+l.id+'" placeholder="Document observations, reasoning, conclusion, alternative explanation, uncertainty and next action...">'+esc(note)+'</textarea><div class="cr-report-foot"><span>LOCAL EVIDENCE STORE · '+note.trim().length+' CHARS</span><button class="cyber-submit" data-lab-complete>'+(st==="completed"?"✓ LAB COMPLETED":"SUBMIT INVESTIGATION")+'</button></div></div>');}h+='</main></div><div class="cr-stage"><span>STAGE</span>'+flow.map(x=>'<b class="'+(x[1]?"done":"")+'">'+x[0]+'</b>').join("")+'<em>CONTROLLED CYBER RANGE</em></div></div></section>';return h}, ai:()=>`<section class="fade mentor-page">
+ }, lab:()=>{const l=labs[state.selectedLab],d=getLabDetails(l.id),st=state.labState[state.selectedLab]||"ready",w=cyberToolState(l.id);const answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length;const note=String(w.note||"");const activeTool=state.labTool||"overview";const pct=Math.min(100,Math.round(answered/d.checkpoints.length*100));const tools=[["overview","Mission","⌁"],["workspace","Workspace","⌘"],["evidence","Evidence","◈"],["console","Terminal","$"],["analysis","Assessment","◎"],["timeline","Timeline","◷"],["findings","Report","✓"]],flow=[["Understand",answered>0||note.trim().length>0,"Scope"],["Analyze",answered>=1,"Inspect"],["Reason",answered>=2,"Hypothesize"],["Report",note.trim().length>=40,"Evidence artifact"]];let h='<section class="fade cyberrange-pro"><div class="cr-shell">'+cyberHeader(l)+crOperatorHud(l,d,w,answered,pct)+'<div class="cr-layout"><aside class="cr-rail"><div class="cr-mission"><span>MISSION</span><b>LAB '+String(state.selectedLab+1).padStart(3,"0")+'</b><small>'+esc(l.track||"Security Practice")+'</small></div><nav>';tools.forEach(t=>{h+='<button class="'+(activeTool===t[0]?"active":"")+'" data-lab-tool="'+t[0]+'"><i>'+t[2]+'</i>'+t[1]+'</button>'});h+='</nav><div class="cr-progress"><div><span>INVESTIGATION</span><b>'+answered+'/'+d.checkpoints.length+'</b></div><div class="cr-meter"><i style="width:'+pct+'%"></i></div></div><div class="cr-rail-foot">LOCAL EVIDENCE<br>NO EXTERNAL ACCESS</div></aside><main class="cr-main">';if(activeTool==="overview"){h+=crPanel("MISSION CONTROL","ACTIVE",'<div class="cr-brief"><div><span class="eyebrow">OBJECTIVE</span><h2>'+esc(l.objective)+'</h2><p>'+esc(d.scenario)+'</p></div><div class="cr-kpis"><div><b>'+d.evidence.length+'</b><span>Evidence</span></div><div><b>'+d.checkpoints.length+'</b><span>Checks</span></div><div><b>'+answered+'</b><span>Answered</span></div></div></div>');h+=crPanel("INVESTIGATION WORKFLOW","OPERATE THE RANGE",'<div class="cr-flow">'+flow.map((x,i)=>'<div class="'+(x[1]?"done":"")+'"><span>'+(x[1]?"✓":i+1)+'</span><b>'+x[0]+'</b><small>'+x[2]+'</small></div>').join("")+'</div>');h+=crInstrument(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="workspace"){h+=crInstrument(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="evidence"){h+=crPanel("EVIDENCE FEED","SIMULATED RECORDS",crEvidence(l,w));h+=crInspector(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="console"){h+=crTerminal(l,w);h+=crEvidenceLocker(l,w);}else if(activeTool==="analysis"){h+=crLabIntel(l,d,w);h+=crPanel("ASSESSMENT CONSOLE",answered+"/"+d.checkpoints.length+" COMPLETE",'<div class="cr-checks">'+d.checkpoints.map((q,i)=>'<article class="'+(String(w.answers?.[i]||"").trim()?"done":"")+'"><header><span>Q0'+(i+1)+'</span><b>'+esc(q)+'</b></header><textarea data-lab-answer="'+i+'" placeholder="Record your reasoning...">'+esc(w.answers?.[i]||"")+'</textarea>'+((w.revealedHints||[]).includes(i)?'<div class="cr-hint">HINT // '+esc(d.hints[i])+'</div>':'<button class="chip" data-lab-hint="'+i+'">Request hint</button>')+'</article>').join("")+'</div>');}else if(activeTool==="timeline"){h+=crPanel("TIMELINE","CHRONOLOGICAL",'<div class="cr-timeline">'+d.evidence.map((x,i)=>'<button class="'+(i===w.selectedEvidence?"selected":"")+'" data-lab-select="'+i+'"><span>0'+(i+1)+'</span><i></i><code>'+esc(x)+'</code></button>').join("")+'</div>');h+=crInspector(l,w);}else{h+=crLabFinding(l,d,w);h+=crPanel("FINDINGS & EVIDENCE ARTIFACT","SUBMISSION",'<div class="cr-report"><div><span class="eyebrow">DELIVERABLE</span><h2>'+esc(d.deliverable)+'</h2><p>'+esc(d.success)+'</p></div><textarea data-lab-note="'+l.id+'" placeholder="Document observations, reasoning, conclusion, alternative explanation, uncertainty and next action...">'+esc(note)+'</textarea><div class="cr-report-foot"><span>LOCAL EVIDENCE STORE · '+note.trim().length+' CHARS</span><button class="cyber-submit" data-lab-complete>'+(st==="completed"?"✓ LAB COMPLETED":"SUBMIT INVESTIGATION")+'</button></div></div>');}h+='</main></div><div class="cr-stage"><span>STAGE</span>'+flow.map(x=>'<b class="'+(x[1]?"done":"")+'">'+x[0]+'</b>').join("")+'<em>CONTROLLED CYBER RANGE</em></div></div></section>';return h}, capstone:()=>{
+ const cap=window.NORTHSTAR_CAPSTONE||{stages:[],rubric:[],title:"Enterprise Capstone",subtitle:"",scenario:"",safety:""};
+ const w=capstoneWorkspace(),s=capstoneScore(w);
+ return \`<section class="fade"><button class="back" data-route="labs">← Back to CyberRange</button><div class="card glass">
+ <span class="eyebrow">NORTHSTAR ENTERPRISE CAPSTONE</span><h1 class="title">\${esc(cap.title)}</h1><p class="subtitle">\${esc(cap.subtitle)}</p>
+ <div class="inset callout"><strong>Scenario</strong><p class="subtitle">\${esc(cap.scenario)}</p><small>\${esc(cap.safety)}</small></div>
+ <div class="section grid stats"><div class="stat glass"><b>\${s.score}%</b><span>Readiness</span></div><div class="stat glass"><b>\${s.completed}/\${s.total}</b><span>Stage artifacts</span></div><div class="stat glass"><b>\${s.defense}/20</b><span>Final defense</span></div></div>
+ <div class="section"><span class="eyebrow">Stage workspace</span>\${cap.stages.map(stage=>\`<article class="card glass" style="margin-top:14px"><div class="section-head"><div><span class="eyebrow">\${esc(stage.title)}</span><p class="subtitle">\${esc(stage.prompt)}</p></div><span class="badge">\${String(w.artifacts?.[stage.id]||"").trim().length>=120?"READY":"IN PROGRESS"}</span></div><p class="subtitle"><b>Required artifact:</b> \${esc(stage.artifact)}</p><textarea data-capstone-stage="\${esc(stage.id)}" placeholder="Write the artifact for this stage (minimum 120 characters)...">\${esc(w.artifacts?.[stage.id]||"")}</textarea></article>\`).join("")}</div>
+ <div class="section card glass"><span class="eyebrow">Final defense</span><h2>Defend the decisions</h2><p class="subtitle">Summarize the most important evidence, trade-offs, residual risk and next decision.</p><textarea data-capstone-defense placeholder="Executive defense...">\${esc(w.defense||"")}</textarea><div style="margin-top:16px"><button class="cta" data-capstone-save>Save capstone evidence</button></div></div>
+ <div class="section card glass"><span class="eyebrow">Assessment standard</span><div class="vocab-list">\${(cap.rubric||[]).map(r=>'<div><b>'+esc(r.label)+'</b><span>'+esc(r.standard)+' · '+r.weight+'%</span></div>').join("")}</div></div>
+ </div></section>\`;
+}, ai:()=>`<section class="fade mentor-page">
   <div class="mentor-hero">
     <div class="mentor-identity">
       <div class="mentor-avatar" aria-hidden="true"><span>✦</span><i></i></div>
@@ -335,8 +375,16 @@ const views={
     </section>
   </div>
 </section>`,
-progress:()=>{const p=overallPercent();return `<section class="fade"><span class="eyebrow">Progress</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">See your evidence.</h1><div class="section grid two"><div class="card glass progress-card"><div class="ring" style="--p:${p}%"><span>${p}%</span></div><h2>Overall progress</h2><p class="subtitle">${completedCount()} of ${totalLessons()} lessons and ${labCompletedCount()} of ${labs.length} labs completed.</p></div><div class="card glass"><span class="eyebrow">Skill matrix</span>${skillRows()}</div></div><div class="section grid stats"><div class="stat glass"><b>${completedCount()}</b><span>Lessons complete</span></div><div class="stat glass"><b>${totalLessons()-completedCount()}</b><span>Lessons remaining</span></div><div class="stat glass"><b>${labCompletedCount()}</b><span>Labs complete</span></div><div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div></div></section>`}
-};
+progress:()=>{
+ const p=overallPercent(),ids=allLessons().map(l=>l.id),summary=window.NORTHSTAR_ASSESSMENT?.summary?.(ids)||{mastery:overallMastery(),assessed:0,total:ids.length},weak=allLessons().map(l=>({l,score:lessonMastery(l.id)})).filter(x=>x.score<70).sort((a,b)=>a.score-b.score).slice(0,5),cw=capstoneWorkspace(),cs=capstoneScore(cw);
+ return `<section class="fade"><span class="eyebrow">Progress</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">See your evidence.</h1>
+ <div class="section grid two"><div class="card glass progress-card"><div class="ring" style="--p:${p}%"><span>${p}%</span></div><h2>Overall progress</h2><p class="subtitle">${completedCount()} of ${totalLessons()} lessons and ${labCompletedCount()} of ${labs.length} labs completed.</p></div><div class="card glass"><span class="eyebrow">Adaptive mastery</span><h2>${summary.mastery}%</h2><p class="subtitle">${summary.assessed} lessons have assessment evidence. Completion alone does not create mastery.</p><div class="progress"><i style="width:${summary.mastery}%"></i></div></div></div>
+ <div class="section grid stats"><div class="stat glass"><b>${completedCount()}</b><span>Lessons complete</span></div><div class="stat glass"><b>${totalLessons()-completedCount()}</b><span>Lessons remaining</span></div><div class="stat glass"><b>${labCompletedCount()}</b><span>Labs complete</span></div><div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div></div>
+ <div class="section card glass"><div class="section-head"><div><span class="eyebrow">Remediation queue</span><h2>Strengthen weak foundations</h2></div><button data-route="ai">Ask Mentor →</button></div>${weak.length?weak.map(x=>'<div class="activity-item"><span class="activity-dot">'+x.score+'%</span><div><strong>'+esc(x.l.title)+'</strong><small>Mastery '+x.score+'% · Ask Mentor for prerequisite repair</small></div></div>').join(""):'<div class="empty">No weak lessons are currently recorded.</div>'}</div>
+ <div class="section card glass"><div class="section-head"><div><span class="eyebrow">Enterprise capstone</span><h2>${cs.score}% ready</h2></div><button class="chip active" data-route="capstone">Open Capstone →</button></div><p class="subtitle">${cs.completed}/${cs.total} stage artifacts complete · defense evidence ${cs.defense}/20.</p><div class="progress"><i style="width:${cs.score}%"></i></div></div>
+ <div class="section card glass"><span class="eyebrow">Skill matrix</span>${skillRows()}</div>
+ </section>`;
+}
 
 function practiceScenario(l){
  const title=String(l.title||"this lesson").trim();
@@ -399,7 +447,8 @@ function practicePanel(l){
  if(p.objective)h+='<p class="subtitle"><b>Lesson objective:</b> '+esc(p.objective)+'</p>';
  h+='<p class="subtitle">Your answer should contain the mechanism, evidence, conclusion and one limitation.</p></div>';
  h+='<div class="inset"><span class="eyebrow">Investigation procedure</span><ol class="practice-steps">'+p.procedure.map(x=>'<li>'+esc(String(x).replace(/^\s*\d+[.)]\s*/,""))+'</li>').join("")+'</ol></div>';
- h+='<div class="inset"><span class="eyebrow">Evidence checkpoint</span><strong>Produce an evidence artifact</strong><p class="subtitle">'+esc(data.evidence||"Record scope, observations, reasoning, conclusion, limitation and next action.")+'</p></div>';
+ const practiceKey="ns_practice_response_"+l.id,practiceSaved=localStorage.getItem(practiceKey)||"";
+ h+='<div class="inset"><span class="eyebrow">Evidence checkpoint</span><strong>Produce an evidence artifact</strong><p class="subtitle">'+esc(l.evidence||"Record scope, observations, reasoning, conclusion, limitation and next action.")+'</p><textarea data-practice-response="'+esc(practiceKey)+'" placeholder="Write your mechanism, evidence, conclusion and one limitation...">'+esc(practiceSaved)+'</textarea><small>Your practice response stays in this browser.</small></div>';
  if((l.mistakes||[]).length)h+='<div class="inset"><strong>Common mistakes to avoid</strong><ul class="lesson-list">'+(l.mistakes||[]).map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul></div>';
  if(l.reflection)h+='<div class="note-card"><span class="eyebrow">Self-explanation</span><p>'+esc(l.reflection)+'</p></div>';
  return h+'</div>';
@@ -559,18 +608,20 @@ function bind(){
  document.querySelectorAll("[data-lesson-tab]").forEach(b=>b.onclick=()=>{state.lessonTab=b.dataset.lessonTab;render()});
  document.querySelectorAll("[data-study-expand]").forEach(b=>b.onclick=()=>{b.closest(".study-blocks-shell")?.querySelectorAll("details.study-block").forEach(d=>d.open=true)});
  document.querySelectorAll("[data-study-collapse]").forEach(b=>b.onclick=()=>{b.closest(".study-blocks-shell")?.querySelectorAll("details.study-block").forEach(d=>d.open=false)});
- document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{state.checkAnswer=b.dataset.answer;render()});
+ document.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{
+  state.checkAnswer=b.dataset.answer;
+  const l=curriculum[state.selectedCourse]?.lessons?.[state.selectedLesson];
+  if(l&&window.NORTHSTAR_ASSESSMENT?.recordLesson)window.NORTHSTAR_ASSESSMENT.recordLesson(l.id,assessmentForLesson(l,false));
+  render();
+ });
  document.querySelectorAll("[data-check-note]").forEach(el=>el.oninput=()=>localStorage.setItem(el.dataset.checkNote,el.value));
  const complete=document.querySelector("[data-complete-lesson]");
  if(complete)complete.onclick=()=>{
  const id=lessonKey(state.selectedCourse,state.selectedLesson);
  if(id&&!state.completedLessons.includes(id)){
   state.completedLessons.push(id);
-  const ls=learnerState();
-  ls.mastery=ls.mastery||{};
-  ls.mastery[id]=Math.max(Number(ls.mastery[id]||0),70);
-  ls.lastActivity=new Date().toISOString();
-  localStorage.setItem(LEARNER_KEY,JSON.stringify(ls));
+  const lesson=curriculum[state.selectedCourse]?.lessons?.[state.selectedLesson];
+  if(lesson&&window.NORTHSTAR_ASSESSMENT?.recordLesson)window.NORTHSTAR_ASSESSMENT.recordLesson(id,assessmentForLesson(lesson,true));
  }
  persist();render();
 };
