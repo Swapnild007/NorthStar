@@ -40,7 +40,7 @@ const state={
  route:"home",filter:"All",completedLessons:Array.isArray(savedCompleted)?savedCompleted:[],
  labState:typeof savedLabs==="object"&&savedLabs?savedLabs:{},
  messages:Array.isArray(savedAI)&&savedAI.length?savedAI:[["ai","Hi. I’m your NorthStar Mentor. I’m ready to teach, practice, review your reasoning, or coach you through a CyberRange investigation."]],
- selectedCourse:0,selectedLesson:0,selectedLab:0,lessonTab:"Read",checkAnswer:"",filterExplicit:false
+ selectedCourse:0,selectedLesson:0,selectedLab:0,lessonTab:"Read",checkAnswer:"",filterExplicit:false,codeLanguage:"html",codeSource:"",codeOutput:"",codeConsole:[]
 };
 const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
 const allLessons=()=>curriculum.flatMap(c=>Array.isArray(c.lessons)?c.lessons:[]);
@@ -72,6 +72,15 @@ const persist=()=>{
 const go=r=>{state.route=r;window.scrollTo({top:0,behavior:"smooth"});render()};
 const iconFor=i=>["◈","◎","☁","◉","⌁","◇"][i]||"•";
 
+function codingState(){
+ const d=window.NORTHSTAR_CODING_LAB||{templates:{},starter:"html"};
+ const tpl=d.templates?.[state.codeLanguage]||d.templates?.[d.starter];
+ if(!state.codeSource&&tpl)state.codeSource=tpl.html;
+ return {language:state.codeLanguage,source:state.codeSource||""};
+}
+function codingRun(){const w=codingState(),out=document.querySelector("#code-preview");if(out)out.srcdoc="<!doctype html><html><head><meta charset=\"utf-8\"><style>body{font-family:system-ui,sans-serif;padding:20px;color:#0f172a}button{padding:10px 16px;border-radius:10px;border:0;background:#2563eb;color:#fff}</style></head><body>"+w.source+"</body></html>";}
+function codingTemplate(lang){const d=window.NORTHSTAR_CODING_LAB||{templates:{}},tpl=d.templates?.[lang];if(tpl){state.codeLanguage=lang;state.codeSource=tpl.html;state.codeConsole=[];render();}}
+function codingAsk(){const q="Review this code from the NorthStar Coding Lab. Explain what it does, identify bugs or risks, and suggest one improvement.\n\n"+state.codeSource;state.route="ai";render();const input=document.querySelector("#prompt");if(input){input.value=q;input.focus();}}
 function render(){
  const app=document.querySelector("#app");
  const active=(r)=>state.route===r||((state.route==="lesson")&&r==="learn")||((state.route==="lab"||state.route==="capstone")&&r==="labs");
@@ -100,6 +109,7 @@ function render(){
  }
  document.querySelector("#view").innerHTML=viewHTML;
  bind();
+ if(state.route==="ai"&&document.querySelector("#code-preview"))codingRun();
 }
 
 function cyberToolState(id){const w=labWorkspace(id);return {...w,selectedEvidence:Number.isInteger(w.selectedEvidence)?w.selectedEvidence:0,query:String(w.query||""),locker:Array.isArray(w.locker)?w.locker:[],terminalHistory:Array.isArray(w.terminalHistory)?w.terminalHistory:[],finding:w.finding&&typeof w.finding==="object"?w.finding:{title:"",impact:"",severity:"Medium",confidence:"Medium",nextAction:"",alternative:""}};}
@@ -374,6 +384,12 @@ const views={
       <div class="mentor-footnote"><span>PRIVATE BY DESIGN</span> Conversation history stays in this browser. Inference runs in the cloud.</div>
     </section>
   </div>
+  <section class="coding-studio card glass">
+    <div class="section-head"><div><span class="eyebrow">NORTHSTAR CODING LAB</span><h2>Build, run, inspect, improve.</h2><p class="subtitle">A safe browser-based workspace for HTML, CSS and JavaScript practice.</p></div></div>
+    <div class="coding-toolbar"><button class="mini-btn" data-code-template="html">HTML Starter</button><button class="mini-btn" data-code-template="js">JavaScript</button><button class="mini-btn" data-code-template="css">CSS</button><button class="mini-btn" data-code-template="python">Python</button><span class="badge">BROWSER SANDBOX</span><button class="cta" data-code-run>▶ Run</button><button class="mini-btn" data-code-reset>Reset</button><button class="mini-btn" data-code-ask>Ask Mentor</button></div>
+    <div class="coding-grid"><div class="coding-pane"><div class="coding-pane-head"><span>EDITOR</span><small>Ctrl/⌘ + Enter to run</small></div><textarea id="code-editor" spellcheck="false" aria-label="Code editor">${esc(codingState().source)}</textarea></div><div class="coding-pane"><div class="coding-pane-head"><span>LIVE PREVIEW</span><small>Sandboxed</small></div><iframe id="code-preview" title="Coding lab live preview" sandbox="allow-scripts"></iframe></div></div>
+    <div class="coding-challenge inset"><span class="eyebrow">NEXT CHALLENGE</span><p><b>Change the button text, then make it update the heading when clicked.</b> Ask Mentor if you get stuck.</p></div>
+  </section>
 </section>`,
 progress:()=>{
  const p=overallPercent(),ids=allLessons().map(l=>l.id),summary=window.NORTHSTAR_ASSESSMENT?.summary?.(ids)||{mastery:overallMastery(),assessed:0,total:ids.length},weak=allLessons().map(l=>({l,score:lessonMastery(l.id)})).filter(x=>x.score<70).sort((a,b)=>a.score-b.score).slice(0,5),cw=capstoneWorkspace(),cs=capstoneScore(cw);
@@ -641,6 +657,11 @@ function bind(){
  const labComplete=document.querySelector("[data-lab-complete]");
  if(labComplete)labComplete.onclick=()=>{const l=labs[state.selectedLab],d=getLabDetails(l.id),w=cyberToolState(l.id),f=w.finding||{},answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length,score=labScore(l,d,w);const missing=[];if(answered<d.checkpoints.length)missing.push("all investigation checkpoints");if((w.locker||[]).length<2)missing.push("at least 2 locked evidence items");if(String(w.note||"").trim().length<120)missing.push("a 120+ character analyst narrative");if(!String(f.title||"").trim())missing.push("a finding title");if(!String(f.impact||"").trim())missing.push("impact / scope");if(!String(f.nextAction||"").trim())missing.push("a next action");if(score.total<70)missing.push("a readiness score of at least 70%");if(missing.length){alert("Complete before submission:\n• "+missing.join("\n• "));return;}state.labState[state.selectedLab]="completed";w.completedAt=new Date().toISOString();w.assessment=score;saveLabWorkspace(l.id,w);persist();render()};
  document.querySelectorAll("[data-mentor-mode]").forEach(b=>b.onclick=()=>{if(window.NORTHSTAR_MENTOR_UI?.setMode?.(b.dataset.mentorMode)){render()}});
+ document.querySelectorAll("[data-code-template]").forEach(b=>b.onclick=()=>codingTemplate(b.dataset.codeTemplate));
+ const editor=document.querySelector("#code-editor");if(editor){editor.oninput=()=>{state.codeSource=editor.value};editor.onkeydown=e=>{if((e.ctrlKey||e.metaKey)&&e.key==="Enter"){e.preventDefault();codingRun()}}}
+ const run=document.querySelector("[data-code-run]");if(run)run.onclick=()=>codingRun();
+ const reset=document.querySelector("[data-code-reset]");if(reset)reset.onclick=()=>{const t=(window.NORTHSTAR_CODING_LAB||{}).templates?.[state.codeLanguage];if(t){state.codeSource=t.html;render();}};
+ const askCode=document.querySelector("[data-code-ask]");if(askCode)askCode.onclick=()=>codingAsk();
  document.querySelectorAll("[data-prompt]").forEach(b=>b.onclick=()=>{const input=document.querySelector("#prompt");if(input){input.value=b.dataset.prompt;input.focus()}});
  const clear=document.querySelector("[data-clear-chat]");
  if(clear)clear.onclick=()=>{state.messages=[["ai","Chat cleared. I’m ready for your next cybersecurity question."]];persist();render()};
