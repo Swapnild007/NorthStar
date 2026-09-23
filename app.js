@@ -616,6 +616,7 @@ function bind(){
   render();
  });
  document.querySelectorAll("[data-check-note]").forEach(el=>el.oninput=()=>localStorage.setItem(el.dataset.checkNote,el.value));
+ document.querySelectorAll("[data-practice-response]").forEach(el=>el.oninput=()=>localStorage.setItem(el.dataset.practiceResponse,el.value));
  const complete=document.querySelector("[data-complete-lesson]");
  if(complete)complete.onclick=()=>{
  const id=lessonKey(state.selectedCourse,state.selectedLesson);
