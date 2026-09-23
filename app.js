@@ -1,4 +1,4 @@
-const VERSION="4.0.0";
+const VERSION="4.1.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 const AI_CONFIG=window.NORTHSTAR_AI||{version:"2.0.0",provider:"Cloudflare Workers AI",mode:"cloud",model:"@cf/qwen/qwen3.8-27b",endpoint:""};
 
