@@ -72,13 +72,14 @@ const persist=()=>{
 const go=r=>{state.route=r;window.scrollTo({top:0,behavior:"smooth"});render()};
 const iconFor=i=>["◈","◎","☁","◉","⌁","◇"][i]||"•";
 
+window.addEventListener("message",e=>{if(e.data?.source==="northstar-code"){state.codeConsole=Array.isArray(state.codeConsole)?state.codeConsole:[];state.codeConsole.push({type:e.data.type,args:e.data.args||[]});const box=document.querySelector("#code-console");if(box)box.textContent=state.codeConsole.map(x=>"["+x.type+"] "+x.args.join(" ")).join("\n")||"No console output.";}});
 function codingState(){
  const d=window.NORTHSTAR_CODING_LAB||{templates:{},starter:"html"};
  const tpl=d.templates?.[state.codeLanguage]||d.templates?.[d.starter];
  if(!state.codeSource&&tpl)state.codeSource=tpl.html;
  return {language:state.codeLanguage,source:state.codeSource||""};
 }
-function codingRun(){const w=codingState(),out=document.querySelector("#code-preview");if(out)out.srcdoc="<!doctype html><html><head><meta charset=\"utf-8\"><style>body{font-family:system-ui,sans-serif;padding:20px;color:#0f172a}button{padding:10px 16px;border-radius:10px;border:0;background:#2563eb;color:#fff}</style></head><body>"+w.source+"</body></html>";}
+function codingRun(){const w=codingState(),out=document.querySelector("#code-preview");if(out){const boot="<script>(function(){const o=console.log;console.log=function(){parent.postMessage({source:\"northstar-code\",type:\"log\",args:Array.from(arguments).map(String)},\"*\");o.apply(console,arguments)};window.onerror=function(m,s,l,c,e){parent.postMessage({source:\"northstar-code\",type:\"error\",args:[String(m)+\" (line \"+l+\")\"]},\"*\")}})()<\\/script>";out.srcdoc="<!doctype html><html><head><meta charset=\"utf-8\"><style>body{font-family:system-ui,sans-serif;padding:20px;color:#0f172a}button{padding:10px 16px;border-radius:10px;border:0;background:#2563eb;color:#fff}</style></head><body>"+boot+w.source+"</body></html>";}state.codeConsole=[];const box=document.querySelector("#code-console");if(box)box.textContent="Running…";}
 function codingTemplate(lang){const d=window.NORTHSTAR_CODING_LAB||{templates:{}},tpl=d.templates?.[lang];if(tpl){state.codeLanguage=lang;state.codeSource=tpl.html;state.codeConsole=[];render();}}
 function codingAsk(){const q="Review this code from the NorthStar Coding Lab. Explain what it does, identify bugs or risks, and suggest one improvement.\n\n"+state.codeSource;state.route="ai";render();const input=document.querySelector("#prompt");if(input){input.value=q;input.focus();}}
 function render(){
@@ -388,6 +389,7 @@ const views={
     <div class="section-head"><div><span class="eyebrow">NORTHSTAR CODING LAB</span><h2>Build, run, inspect, improve.</h2><p class="subtitle">A safe browser-based workspace for HTML, CSS and JavaScript practice.</p></div></div>
     <div class="coding-toolbar"><button class="mini-btn" data-code-template="html">HTML Starter</button><button class="mini-btn" data-code-template="js">JavaScript</button><button class="mini-btn" data-code-template="css">CSS</button><button class="mini-btn" data-code-template="python">Python</button><span class="badge">BROWSER SANDBOX</span><button class="cta" data-code-run>▶ Run</button><button class="mini-btn" data-code-reset>Reset</button><button class="mini-btn" data-code-ask>Ask Mentor</button></div>
     <div class="coding-grid"><div class="coding-pane"><div class="coding-pane-head"><span>EDITOR</span><small>Ctrl/⌘ + Enter to run</small></div><textarea id="code-editor" spellcheck="false" aria-label="Code editor">${esc(codingState().source)}</textarea></div><div class="coding-pane"><div class="coding-pane-head"><span>LIVE PREVIEW</span><small>Sandboxed</small></div><iframe id="code-preview" title="Coding lab live preview" sandbox="allow-scripts"></iframe></div></div>
+    <div class="coding-console"><div class="coding-pane-head"><span>CONSOLE</span><small>Runtime output</small></div><pre id="code-console">Run the project to see console output.</pre></div>
     <div class="coding-challenge inset"><span class="eyebrow">NEXT CHALLENGE</span><p><b>Change the button text, then make it update the heading when clicked.</b> Ask Mentor if you get stuck.</p></div>
   </section>
 </section>`,
