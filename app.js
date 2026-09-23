@@ -331,7 +331,7 @@ const views={
     <div class="mentor-connection ${AI_CONFIG.endpoint?"online":"setup"}"><i></i><span>${AI_CONFIG.endpoint?"ONLINE":"CONNECTING"}</span><small>${AI_CONFIG.endpoint?"CLOUD INFERENCE":"WORKER ENDPOINT REQUIRED"}</small></div>
   </div>
   <div class="mentor-mode-dock">
-    ${Object.entries({teacher:["Teacher","Learn it"],socratic:["Socratic","Think it"],practice:["Practice","Try it"],lab:["Lab Coach","Investigate"],reviewer:["Reviewer","Prove it"]}).map(([id,x])=>'<button class="mentor-mode-card '+((window.NORTHSTAR_MENTOR_UI?.getMode?.()||"teacher")===id?"active":"")+'" data-mentor-mode="'+id+'"><b>'+esc(x[0])+'</b><small>'+esc(x[1])+'</small></button>').join("")}
+    ${Object.entries({teacher:["Teacher","Learn it"],socratic:["Socratic","Think it"],practice:["Practice","Try it"],coder:["Code Mentor","Build it"],lab:["Lab Coach","Investigate"],reviewer:["Reviewer","Prove it"]}).map(([id,x])=>'<button class="mentor-mode-card '+((window.NORTHSTAR_MENTOR_UI?.getMode?.()||"teacher")===id?"active":"")+'" data-mentor-mode="'+id+'"><b>'+esc(x[0])+'</b><small>'+esc(x[1])+'</small></button>').join("")}
   </div>
   <div class="mentor-shell">
     <aside class="mentor-profile-card">
@@ -365,6 +365,7 @@ const views={
         <button class="mentor-suggestion" data-prompt="Give me one practice task. Do not give me the answer until I attempt it.">Practice with me</button>
         <button class="mentor-suggestion" data-prompt="Diagnose what I understand and tell me the one prerequisite I should repair first.">Diagnose me</button>
         <button class="mentor-suggestion" data-prompt="Review my reasoning for accuracy, evidence, assumptions, and uncertainty.">Review my reasoning</button>
+        <button class="mentor-suggestion" data-prompt="How do I create a button in HTML? Explain it like I am a complete beginner, show the code, explain the important lines, and give me one small challenge.">Learn coding</button>
       </div>
       <form class="composer mentor-composer" id="chat">
         <input id="prompt" autocomplete="off" ${aiLoading?"disabled":""} placeholder="Message your mentor…" />
@@ -656,6 +657,10 @@ function bind(){
 function mentorMode(){
  return window.NORTHSTAR_MENTOR_UI?.getMode?.()||"teacher";
 }
+function codingIntent(q){
+ const t=String(q||"").toLowerCase();
+ return /html|css|javascript|typescript|python|java|c\\+\\+|sql|react|next\\.js|node|code|coding|program|function|variable|array|class|api|debug|bug|error|syntax|compile|terminal|git|github/.test(t);
+}
 
 function mentorContextPayload(){
  const current=state.route==="lesson"?curriculum[state.selectedCourse]?.lessons?.[state.selectedLesson]:null;
@@ -725,6 +730,7 @@ async function askNorthStar(q){
  const history=state.messages.slice(-14).map(m=>({role:m[0]==="user"?"user":"assistant",content:m[1]}));
  const mentor=mentorContextPayload();
  const classification=mentorClassification(q);
+  const isCoding=codingIntent(q);
  try{
   const localMode=Boolean(AI_CONFIG.allowLocalEndpoint && /^(localhost|127\.0\.0\.1)$/.test(location.hostname));
   let omniKey="";
