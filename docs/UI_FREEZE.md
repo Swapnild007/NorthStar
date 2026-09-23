@@ -23,8 +23,8 @@ The approved NorthStar visual direction is the **NorthStar glass learning dashbo
 - Progress
 
 ### Data contract
-The curriculum is loaded from `data/curriculum.js` and contains 16 pathways / 140 lessons. The current workload is approximately 261–329 study hours, calculated from lesson-level study-time ranges.
-The current academic architecture includes lesson-level theory, mechanisms, worked examples, case analysis, guided practice, evidence checkpoints, Q&A, knowledge checks, mathematical foundations where relevant, and academic references. Progress is stored locally using the existing `ns_completed_lessons` and `ns_lab_state` keys.
+The curriculum is loaded from `data/curriculum.js` and contains 16 core pathways / 140 core lessons plus 7 competency-completion lessons. The current workload is approximately 261–329 study hours, calculated from lesson-level study-time ranges.
+The current academic architecture includes lesson-level theory, mechanisms, worked examples, case analysis, guided practice, evidence checkpoints, Q&A, knowledge checks, adaptive mastery evidence, targeted competency-completion lessons, advanced CyberRange labs, an enterprise capstone, mathematical foundations where relevant, and academic references. Progress is stored locally using the existing `ns_completed_lessons` and `ns_lab_state` keys.
 
 ### Academic curriculum benchmark
 The learning architecture is benchmarked against publicly documented cybersecurity and data-science curricula and professional frameworks, including NIST NICE v2.2.0, NIST CSF 2.0, CSEC2017, Carnegie Mellon MSIS, Georgia Tech Cybersecurity, UC Berkeley Data Science, Stanford Statistics/Data Science, and IIM Calcutta cybersecurity/analytics material. NorthStar is not an official university or IIM curriculum.
