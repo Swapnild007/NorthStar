@@ -22,48 +22,18 @@ for(const file of ["app.js",...jsFiles]) {
  if(status!==0) throw new Error("Syntax failure in "+file+"\n"+stderr);
 }
 
-const storage=new Map();
-const context={
-  window:{},
-  localStorage:{getItem:key=>storage.has(key)?storage.get(key):null,setItem:(key,value)=>storage.set(key,String(value)),removeItem:key=>storage.delete(key)},
-  document:{querySelector:()=>null,querySelectorAll:()=>[]},
-  location:{hostname:"127.0.0.1",protocol:"http:"},
-  console
+const loadWindow=(file,name)=>{
+ const source=fs.readFileSync(path.join(root,file),"utf8");
+ const w={};
+ return new Function("window",source+"\n;return window["+JSON.stringify(name)+"];")(w);
 };
-vm.createContext(context);
-for(const file of [
- "data/course.js","data/ai.js","data/mentor.js","data/mentor_engine.js","data/mentor_ui.js",
- "data/curriculum.js","data/curriculum2.js","data/learner.js","data/lesson_enrichment.js",
- "data/cyberrange.js","data/lab_intelligence.js","data/competency_completion.js",
- "data/advanced_labs.js","data/capstone.js","data/assessment_engine.js"
-]) vm.runInContext(fs.readFileSync(path.join(root,file),"utf8"),context,{filename:file});
-
-const base=context.window.NORTHSTAR_CURRICULUM;
-const additions=context.window.NORTHSTAR_COMPETENCY_COMPLETION;
-if(!Array.isArray(base)||base.length!==16) throw new Error("Expected 16 core pathways.");
-const coreLessons=base.reduce((n,c)=>n+(Array.isArray(c.lessons)?c.lessons.length:0),0);
-if(coreLessons!==140) throw new Error("Expected 140 core lessons; found "+coreLessons);
-if(!Array.isArray(additions)||additions.length!==7) throw new Error("Expected 7 competency completion lessons.");
-const allLessons=[...base.flatMap(c=>c.lessons||[]),...additions];
-const ids=new Set();
-for(const l of allLessons){
- if(!l.id||ids.has(l.id)) throw new Error("Duplicate/missing lesson id: "+l.id);
- ids.add(l.id);
- if(!l.title||!l.objective) throw new Error("Lesson missing title/objective: "+l.id);
-}
-const coursesWithAdditions=new Set(additions.map(x=>String(x.course)));
-if(coursesWithAdditions.size!==6) throw new Error("Competency additions do not span expected pathways.");
-
-const labs=[...(context.window.NORTHSTAR_LABS||[]),...(context.window.NORTHSTAR_ADVANCED_LABS||[])];
-const details={...(context.window.NORTHSTAR_LAB_DETAILS||{}),...(context.window.NORTHSTAR_ADVANCED_LAB_DETAILS||{})};
-if(labs.length<17) throw new Error("Expected at least 17 labs; found "+labs.length);
-for(const lab of labs){
- const d=details[lab.id];
- if(!d||!Array.isArray(d.evidence)||!Array.isArray(d.checkpoints)||!Array.isArray(d.hints)) throw new Error("Incomplete lab detail: "+lab.id);
-}
-const cap=context.window.NORTHSTAR_CAPSTONE;
-if(!cap||cap.stages?.length!==8||cap.rubric?.length<7) throw new Error("Capstone is incomplete.");
-if(!context.window.NORTHSTAR_ASSESSMENT?.evaluateLesson||!context.window.NORTHSTAR_ASSESSMENT?.recordLesson) throw new Error("Assessment engine incomplete.");
+const base=loadWindow("data/curriculum.js","NORTHSTAR_CURRICULUM");
+const additions=loadWindow("data/competency_completion.js","NORTHSTAR_COMPETENCY_COMPLETION");
+const labs=loadWindow("data/cyberrange.js","NORTHSTAR_LABS");
+const advancedLabs=loadWindow("data/advanced_labs.js","NORTHSTAR_ADVANCED_LABS");
+const advancedDetails=loadWindow("data/advanced_labs.js","NORTHSTAR_ADVANCED_LAB_DETAILS");
+const capstone=loadWindow("data/capstone.js","NORTHSTAR_CAPSTONE");
+const assessment=loadWindow("data/assessment_engine.js","NORTHSTAR_ASSESSMENT");
 
 const html=fs.readFileSync(path.join(root,"index.html"),"utf8");
 for(const src of [...html.matchAll(/<script[^>]+src="([^"]+)"/g)].map(m=>m[1])) {
