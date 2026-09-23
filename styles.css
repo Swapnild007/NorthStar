@@ -776,3 +776,17 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
 @media(max-width:760px){.coding-grid{grid-template-columns:1fr}.coding-toolbar .badge{margin-right:0}.coding-studio{padding:14px}#code-editor,#code-preview{min-height:300px;height:300px}}
 
 .coding-console{margin-top:12px;overflow:hidden;border:1px solid rgba(15,23,42,.08);border-radius:18px;background:#0b1220;color:#cbd5e1}.coding-console pre{margin:0;min-height:100px;max-height:220px;overflow:auto;padding:14px;font:12px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap}
+
+
+/* AI connection controls + coding runtime status. */
+.mentor-connection-actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;margin:-3px 0 12px}
+.mentor-connection-actions .mini-btn:disabled{opacity:.45;cursor:not-allowed}
+#code-status{display:inline-flex;align-items:center;min-height:30px;padding:7px 10px;border-radius:10px;background:#f1f5f9;color:#64748b}
+#code-status[data-state="running"]{background:#eff6ff;color:#2563eb}
+#code-status[data-state="ready"]{background:#ecfdf5;color:#047857}
+#code-status[data-state="error"]{background:#fef2f2;color:#b91c1c}
+.coding-toolbar .mini-btn.active{background:#dbeafe;color:#1d4ed8;border-color:rgba(37,99,235,.22)}
+@media(max-width:760px){
+ .mentor-connection-actions{justify-content:flex-start}
+ #code-status{order:5;width:100%;justify-content:center}
+}
