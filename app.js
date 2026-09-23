@@ -688,11 +688,13 @@ function mentorClassification(q){
  return window.NORTHSTAR_MENTOR_ENGINE?.classify?.(q)||"general";
 }
 
-function configuredAiEndpoint(){const stored=String(localStorage.getItem("ns_ai_endpoint")||"").trim().replace(/\/$/,"");return stored||String(AI_CONFIG.endpoint||"").trim().replace(/\/$/,"");}
-function mentorEndpoint(){const configured=configuredAiEndpoint();if(configured)return configured;const local=String(AI_CONFIG.localEndpoint||"").trim().replace(/\/$/,"");if(AI_CONFIG.allowLocalEndpoint&&local&&location.protocol==="http:"&&location.hostname!=="swapnild007.github.io")return local;return "";}
-function aiConnectionState(){const endpoint=configuredAiEndpoint();return endpoint?{state:"configured",label:"READY",detail:"AI ENDPOINT CONFIGURED",endpoint}:{state:"offline",label:"OFFLINE",detail:"WORKER ENDPOINT NOT CONFIGURED",endpoint:""};}
-function configureAiEndpoint(){const current=configuredAiEndpoint();const value=window.prompt("NorthStar AI Worker endpoint\n\nUse the base URL only. NorthStar will call /v1/chat/completions.",current||"");if(value===null)return;const clean=String(value).trim().replace(/\/$/,"");if(clean)localStorage.setItem("ns_ai_endpoint",clean);else localStorage.removeItem("ns_ai_endpoint");render();}
-async function testAiConnection(){const endpoint=mentorEndpoint();if(!endpoint){alert("Configure the NorthStar AI Worker endpoint first.");return;}const button=document.querySelector("[data-ai-test]");if(button){button.disabled=true;button.textContent="Testing…";}try{const response=await fetch(endpoint+"/v1/models",{headers:{"Accept":"application/json"}});if(!response.ok)throw new Error("HTTP "+response.status);alert("NorthStar AI endpoint is reachable.");}catch(error){alert("AI endpoint test failed.\n\n"+String(error?.message||error));}finally{render();}}
+function omniRouteKey(){return String(sessionStorage.getItem("ns_omniroute_key")||"").trim();}
+function configuredAiEndpoint(){const stored=String(localStorage.getItem("ns_ai_endpoint")||"").trim().replace(/\/$/,"");return stored||String(AI_CONFIG.endpoint||"").trim().replace(/\/$/,"")||String(AI_CONFIG.localEndpoint||"").trim().replace(/\/$/,"");}
+function mentorEndpoint(){return configuredAiEndpoint();}
+function endpointIsLocal(endpoint){try{const h=new URL(endpoint).hostname;return /^(localhost|127\.0\.0\.1)$/.test(h)}catch{return false}}
+function aiConnectionState(){const endpoint=mentorEndpoint();if(!endpoint)return {state:"offline",label:"OFFLINE",detail:"OMNIROUTE ENDPOINT NOT CONFIGURED",endpoint:""};if(endpointIsLocal(endpoint))return {state:"local",label:"LOCAL OMNIROUTE",detail:"127.0.0.1:20128 · API",endpoint};return {state:"configured",label:"READY",detail:"REMOTE AI ENDPOINT",endpoint};}
+function configureAiEndpoint(){const current=mentorEndpoint();const value=window.prompt("OmniRoute API base URL\n\nDefault: http://127.0.0.1:20128\nNorthStar calls /v1/chat/completions.",current||"http://127.0.0.1:20128");if(value===null)return;const clean=String(value).trim().replace(/\/$/,"");if(clean)localStorage.setItem("ns_ai_endpoint",clean);else localStorage.removeItem("ns_ai_endpoint");if(endpointIsLocal(clean)){const key=window.prompt("Optional local OmniRoute API key\n\nLeave blank if REQUIRE_API_KEY is disabled. The key is stored only for this browser session.",omniRouteKey());if(key!==null){const k=String(key).trim();if(k)sessionStorage.setItem("ns_omniroute_key",k);else sessionStorage.removeItem("ns_omniroute_key");}}render();}
+async function testAiConnection(){const endpoint=mentorEndpoint();if(!endpoint){alert("Configure OmniRoute first.");return;}const button=document.querySelector("[data-ai-test]");if(button){button.disabled=true;button.textContent="Testing…";}try{let key=omniRouteKey();let response=await fetch(endpoint+"/v1/models",{headers:{Accept:"application/json",...(key?{Authorization:"Bearer "+key}:{})}});if(response.status===401&&endpointIsLocal(endpoint)){const entered=window.prompt("OmniRoute returned 401. Enter the API key from OmniRoute → Endpoints.");if(entered!==null&&String(entered).trim()){key=String(entered).trim();sessionStorage.setItem("ns_omniroute_key",key);response=await fetch(endpoint+"/v1/models",{headers:{Accept:"application/json",Authorization:"Bearer "+key}});}}if(!response.ok)throw new Error("HTTP "+response.status);alert("OmniRoute is reachable and the NorthStar connection is ready.");}catch(error){const msg=String(error?.message||error);alert("OmniRoute connection failed.\n\n"+(msg==="Failed to fetch"?"The local server is unreachable or its CORS policy does not allow https://swapnild007.github.io.":"")+msg);}finally{render();}}
 async function askNorthStar(q){
  const endpoint=mentorEndpoint();
  if(!endpoint){
@@ -708,14 +710,11 @@ async function askNorthStar(q){
  const classification=mentorClassification(q);
   const isCoding=codingIntent(q);
  try{
-  const localMode=Boolean(AI_CONFIG.allowLocalEndpoint && /^(localhost|127\.0\.0\.1)$/.test(location.hostname));
-  let omniKey="";
-  if(localMode){
-   omniKey=String(sessionStorage.getItem("ns_omniroute_key")||"");
-   if(!omniKey){
-    omniKey=String(window.prompt("Enter your local OmniRoute API key. It will be kept only for this browser session.")||"").trim();
-    if(omniKey)sessionStorage.setItem("ns_omniroute_key",omniKey);
-   }
+  const localMode=endpointIsLocal(endpoint);
+  let omniKey=omniRouteKey();
+  if(localMode&&!omniKey){
+   omniKey=String(window.prompt("Enter your local OmniRoute API key.\n\nLeave blank only if REQUIRE_API_KEY is disabled.")||"").trim();
+   if(omniKey)sessionStorage.setItem("ns_omniroute_key",omniKey);
   }
   if(localMode && !omniKey)throw new Error("OmniRoute API key is required for local NorthStar.");
 
