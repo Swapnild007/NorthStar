@@ -26,7 +26,7 @@ recordLesson(id,result){
  return raw;
 },
 summary(ids=[]){
- const raw=(()=>{try{return JSON.parse(localStorage.getItem("ns_learner_model")||"{}")}catch{return{}})();
+ const raw=(()=>{try{return JSON.parse(localStorage.getItem("ns_learner_model")||"{}")}catch{return{}}})();
  const values=ids.map(id=>Number(raw.mastery?.[id]||0));
  const assessed=values.filter(v=>v>0);
  return {mastery:assessed.length?Math.round(assessed.reduce((a,b)=>a+b,0)/assessed.length):0,assessed:assessed.length,total:ids.length};
