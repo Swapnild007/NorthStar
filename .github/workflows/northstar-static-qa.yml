@@ -2,22 +2,24 @@ name: NorthStar Static QA
 
 on:
   push:
-    branches: ["main", "feat/ai-mentor-omniroute"]
+    branches: ["main"]
     paths:
       - "app.js"
+      - "index.html"
       - "data/**/*.js"
-      - "workers/mentor/**/*.js"
+      - "qa/**"
       - ".github/workflows/northstar-static-qa.yml"
   pull_request:
     paths:
       - "app.js"
+      - "index.html"
       - "data/**/*.js"
-      - "workers/mentor/**/*.js"
+      - "qa/**"
       - ".github/workflows/northstar-static-qa.yml"
   workflow_dispatch:
 
 jobs:
-  syntax:
+  quality:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -29,4 +31,5 @@ jobs:
           set -e
           node --check app.js
           for file in data/*.js; do node --check "$file"; done
-          node --check workers/mentor/src/index.js
+      - name: Run NorthStar structural QA
+        run: node qa/validate.mjs
