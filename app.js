@@ -597,6 +597,7 @@ function bind(){
  const editor=document.querySelector("#code-editor");if(editor){editor.oninput=()=>{state.codeSource=editor.value};editor.onkeydown=e=>{if((e.ctrlKey||e.metaKey)&&e.key==="Enter"){e.preventDefault();codingRun()}}}
  const run=document.querySelector("[data-code-run]");if(run)run.onclick=()=>codingRun();
  const reset=document.querySelector("[data-code-reset]");if(reset)reset.onclick=()=>{codingRemember();const t=(window.NORTHSTAR_CODING_LAB||{}).templates?.[state.codeLanguage];if(t){localStorage.removeItem("ns_code_source_"+state.codeLanguage);state.codeSource=t.html;codingConsole([]);render();}};
+}
 
 // Boot the application after all view and event handlers are defined.
 function boot(){
