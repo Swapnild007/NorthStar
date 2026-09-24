@@ -671,3 +671,13 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
 @media(max-width:760px){
  #code-status{order:5;width:100%;justify-content:center}
 }
+
+
+/* Mobile safe-area and fixed-tab clearance for Android/iOS WebView. */
+@media(max-width:759px){
+  .main{
+    padding-top:calc(18px + max(env(safe-area-inset-top, 0px), 24px));
+    padding-bottom:calc(156px + max(env(safe-area-inset-bottom, 0px), 8px));
+  }
+  .nav{bottom:calc(12px + env(safe-area-inset-bottom, 0px));}
+}
