@@ -1,6 +1,5 @@
-const VERSION="4.1.0";
+const VERSION="4.3.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
-const AI_CONFIG=window.NORTHSTAR_AI||{version:"2.0.0",provider:"Cloudflare Workers AI",mode:"cloud",model:"@cf/qwen/qwen3.8-27b",endpoint:""};
 
 function readStoredJSON(key,fallback){
  try{
@@ -31,11 +30,7 @@ function labWorkspace(id){
  return {...fallback,...readStoredJSON(labWorkspaceKey(id),fallback)};
 }
 function saveLabWorkspace(id,w){localStorage.setItem(labWorkspaceKey(id),JSON.stringify(w))}
-const nav=[["home","Home","⌂"],["learn","Learn","▤"],["ai","AI","✦"],["labs","Labs","⌁"],["progress","Progress","◉"]];
-const AI_MESSAGES_KEY="ns_ai_messages_v2";
-const savedAI=readStoredJSON(AI_MESSAGES_KEY,null);
-let aiLoading=false;
-let aiError="";
+const nav=[["home","Home","⌂"],["learn","Learn","▤"],["coding","Code Lab","⌘"],["labs","Labs","⌁"],["progress","Progress","◉"]];
 const state={
  route:"home",filter:"All",completedLessons:Array.isArray(savedCompleted)?savedCompleted:[],
  labState:typeof savedLabs==="object"&&savedLabs?savedLabs:{},
@@ -67,7 +62,6 @@ const courseProgress=i=>{const ls=curriculum[i]?.lessons||[];return ls.length?Ma
 const persist=()=>{
  localStorage.setItem("ns_completed_lessons",JSON.stringify(state.completedLessons));
  localStorage.setItem("ns_lab_state",JSON.stringify(state.labState));
- localStorage.setItem(AI_MESSAGES_KEY,JSON.stringify(state.messages.slice(-40)));
 };
 const go=r=>{state.route=r;window.scrollTo({top:0,behavior:"smooth"});render()};
 const iconFor=i=>["◈","◎","☁","◉","⌁","◇"][i]||"•";
@@ -82,7 +76,6 @@ function codingPreviewHTML(source){const boot="<script>(function(){window.addEve
 async function loadPyodideRuntime(){if(pyodidePromise)return pyodidePromise;if(window.loadPyodide)return pyodidePromise=window.loadPyodide({indexURL:PYODIDE_INDEX});pyodidePromise=new Promise((resolve,reject)=>{const existing=document.querySelector('script[data-northstar-pyodide]');if(existing){existing.addEventListener("load",()=>resolve(window.loadPyodide({indexURL:PYODIDE_INDEX})),{once:true});existing.addEventListener("error",()=>reject(new Error("Python runtime failed to load.")),{once:true});return;}const script=document.createElement("script");script.src=PYODIDE_INDEX+"pyodide.js";script.async=true;script.dataset.northstarPyodide="true";script.onload=()=>window.loadPyodide({indexURL:PYODIDE_INDEX}).then(resolve,reject);script.onerror=()=>reject(new Error("Python runtime failed to load from the Pyodide CDN."));document.head.appendChild(script);});return pyodidePromise;}
 async function codingRun(){const w=codingState();codingConsole([]);codingStatus("Running…","running");const out=document.querySelector("#code-preview");if(w.language==="python"){if(out)out.srcdoc="<html><body style='font-family:system-ui;padding:24px;color:#334155'><b>Python runtime</b><p>Loading CPython in the browser…</p></body></html>";try{const py=await loadPyodideRuntime();const output=[];py.setStdout({batched:msg=>output.push(String(msg))});py.setStderr({batched:msg=>output.push("stderr: "+String(msg))});const result=await py.runPythonAsync(w.source,{filename:"northstar.py"});if(result!==undefined&&result!==null)output.push("=> "+String(result));codingConsole(output.map((x,i)=>({type:i===output.length-1&&String(x).startsWith("=>")?"result":"log",args:[x]})));if(out)out.srcdoc="<html><body style='font-family:ui-monospace,monospace;padding:24px;color:#0f172a;background:#fff'><h3 style='font-family:system-ui'>Python output</h3><pre style='white-space:pre-wrap'>"+esc(output.join("\n"))+"</pre></body></html>";codingStatus("Python 3.14 · Ready","ready");}catch(error){const detail=String(error?.message||error).replace(/</g,"&lt;").replace(/>/g,"&gt;");codingConsole([{type:"error",args:[detail]}]);if(out)out.srcdoc="<html><body style='font-family:ui-monospace,monospace;padding:24px;color:#991b1b;background:#fff'><h3 style='font-family:system-ui'>Python error</h3><pre style='white-space:pre-wrap'>"+detail+"</pre></body></html>";codingStatus("Python error · inspect console","error");}return;}if(!out){codingStatus("Preview unavailable","error");return;}out.onload=()=>codingStatus("Execution complete","ready");out.srcdoc=codingPreviewHTML(w.source);codingConsole([{type:"system",args:["Running "+w.language+" in a sandboxed browser preview…"]}]);}
 function codingTemplate(lang){codingRemember();const d=window.NORTHSTAR_CODING_LAB||{templates:{}},tpl=d.templates?.[lang];if(tpl){state.codeLanguage=lang;const saved=localStorage.getItem("ns_code_source_"+lang);state.codeSource=saved!==null?saved:tpl.html;state.codeConsole=[];render();}}
-function codingAsk(){codingRemember();const q="Review this code from the NorthStar Coding Lab. Explain what it does, identify bugs or risks, and suggest one improvement.\n\nLanguage: "+state.codeLanguage+"\n\n"+state.codeSource;state.route="ai";render();const input=document.querySelector("#prompt");if(input){input.value=q;input.focus();}}
 function render(){
  const app=document.querySelector("#app");
  const active=(r)=>state.route===r||((state.route==="lesson")&&r==="learn")||((state.route==="lab"||state.route==="capstone")&&r==="labs");
@@ -111,7 +104,7 @@ function render(){
  }
  document.querySelector("#view").innerHTML=viewHTML;
  bind();
- if(state.route==="ai"&&document.querySelector("#code-preview"))codingStatus(state.codeLanguage==="python"?"Python runtime loads on Run":"Ready · click Run to execute","idle");
+ if(state.route==="coding"&&document.querySelector("#code-preview"))codingStatus(state.codeLanguage==="python"?"Python runtime loads on Run":"Ready · click Run to execute","idle");
 }
 
 function cyberToolState(id){const w=labWorkspace(id);return {...w,selectedEvidence:Number.isInteger(w.selectedEvidence)?w.selectedEvidence:0,query:String(w.query||""),locker:Array.isArray(w.locker)?w.locker:[],terminalHistory:Array.isArray(w.terminalHistory)?w.terminalHistory:[],finding:w.finding&&typeof w.finding==="object"?w.finding:{title:"",impact:"",severity:"Medium",confidence:"Medium",nextAction:"",alternative:""}};}
@@ -193,7 +186,7 @@ const views={
    <div class="section grid quick-grid">
     <button class="card glass quick clickable" data-route="learn"><span class="quick-icon">▤</span><span><strong>Learn</strong><small>Curriculum</small></span></button>
     <button class="card glass quick clickable" data-route="labs"><span class="quick-icon">⌁</span><span><strong>Labs</strong><small>Hands-on</small></span></button>
-    <button class="card glass quick clickable" data-route="ai"><span class="quick-icon">✦</span><span><strong>AI Mentor</strong><small>Ask & learn</small></span></button>
+    <button class="card glass quick clickable" data-route="coding"><span class="quick-icon">⌘</span><span><strong>Code Lab</strong><small>Build & run</small></span></button>
     <button class="card glass quick clickable" data-route="progress"><span class="quick-icon">◉</span><span><strong>Progress</strong><small>Track growth</small></span></button>
    </div>
    <div class="section grid activity-grid">
@@ -330,28 +323,16 @@ const views={
  }).join("");
  const rubric=(cap.rubric||[]).map(r=>'<div><b>'+esc(r.label)+'</b><span>'+esc(r.standard)+' · '+r.weight+'%</span></div>').join("");
  return '<section class="fade"><button class="back" data-route="labs">← Back to CyberRange</button><div class="card glass"><span class="eyebrow">NORTHSTAR ENTERPRISE CAPSTONE</span><h1 class="title">'+esc(cap.title)+'</h1><p class="subtitle">'+esc(cap.subtitle)+'</p><div class="inset callout"><strong>Scenario</strong><p class="subtitle">'+esc(cap.scenario)+'</p><small>'+esc(cap.safety)+'</small></div><div class="section grid stats"><div class="stat glass"><b>'+score.score+'%</b><span>Readiness</span></div><div class="stat glass"><b>'+score.completed+'/'+score.total+'</b><span>Stage artifacts</span></div><div class="stat glass"><b>'+score.defense+'/20</b><span>Final defense</span></div></div><div class="section"><span class="eyebrow">Stage workspace</span>'+stages+'</div><div class="section card glass"><span class="eyebrow">Final defense</span><h2>Defend the decisions</h2><p class="subtitle">Summarize the most important evidence, trade-offs, residual risk and next decision.</p><textarea data-capstone-defense placeholder="Executive defense...">'+esc(w.defense||"")+'</textarea><div style="margin-top:16px"><button class="cta" data-capstone-save>Save capstone evidence</button></div></div><div class="section card glass"><span class="eyebrow">Assessment standard</span><div class="vocab-list">'+rubric+'</div></div></div></section>';
-}, ai:()=>{const conn=aiConnectionState();return `<section class="fade mentor-page">
-  <div class="mentor-hero"><div class="mentor-identity"><div class="mentor-avatar" aria-hidden="true"><span>✦</span><i></i></div><div><div class="mentor-eyebrow">NORTHSTAR INTELLIGENCE</div><h1>AI Mentor</h1><p>Your cybersecurity tutor, routed through your Cloudflare AI Gateway. No LLM is stored on your device.</p></div></div><div class="mentor-connection ${conn.endpoint?"online":"setup"}"><i></i><span>${conn.label}</span><small>${conn.detail}</small></div></div>
-  <div class="mentor-connection-actions"><button class="mini-btn" data-ai-config>${conn.endpoint?"Change gateway":"Configure AI Gateway"}</button><button class="mini-btn" data-ai-test ${conn.endpoint?"":"disabled"}>Test Gateway</button>${conn.endpoint?'<button class="mini-btn" data-ai-clear>Clear endpoint</button>':""}</div>
-  <div class="mentor-mode-dock">${Object.entries({teacher:["Teacher","Learn it"],socratic:["Socratic","Think it"],practice:["Practice","Try it"],coder:["Code Mentor","Build it"],lab:["Lab Coach","Investigate"],reviewer:["Reviewer","Prove it"]}).map(([id,x])=>'<button class="mentor-mode-card '+((window.NORTHSTAR_MENTOR_UI?.getMode?.()||"teacher")===id?"active":"")+'" data-mentor-mode="'+id+'"><b>'+esc(x[0])+'</b><small>'+esc(x[1])+'</small></button>').join("")}</div>
-  <div class="mentor-shell"><aside class="mentor-profile-card"><div class="mentor-avatar large"><span>✦</span><i></i></div><b>NorthStar Mentor</b><span>Cybersecurity learning companion</span><div class="mentor-profile-status"><i style="background:${conn.endpoint?"#22c55e":"#f59e0b"}"></i> ${conn.endpoint?"Cloudflare AI Gateway · no model on device":"Offline · endpoint required"}</div><div class="mentor-mini-stats"><div><b>${overallMastery()}%</b><span>Mastery</span></div><div><b>${completedCount()}</b><span>Lessons</span></div><div><b>${labCompletedCount()}</b><span>Labs</span></div></div><button class="mentor-new-chat" data-clear-chat>New conversation</button></aside>
-  <section class="mentor-chat-panel"><div class="mentor-chat-head"><div><span class="mentor-live-dot" style="${conn.endpoint?"":"background:#f59e0b"}"></span><div><b>NorthStar Mentor</b><small>${conn.endpoint?"Ready to help":"Configure the Cloudflare AI Gateway to enable live inference"}</small></div></div><span class="mentor-model-pill">CLOUDFLARE · ${esc(AI_CONFIG.model||"AUTO")}</span></div>
-  <div class="mentor-context-strip"><span>ADAPTIVE</span><b>${(window.NORTHSTAR_MENTOR_UI?.diagnosis?.().band)||"Not assessed"}</b><small>Evidence drives progression, not completion alone.</small></div>
-  <div class="messages mentor-messages" id="messages">${state.messages.map((m,i)=>`<div class="mentor-message-row ${m[0]==="user"?"from-user":"from-ai"}"><div class="mentor-message-avatar">${m[0]==="user"?"NS":"✦"}</div><div class="msg ${m[0]==="user"?"user":""} ${i===state.messages.length-1&&m[0]==="ai"&&aiLoading?"ai-stream":""}">${esc(m[1])}</div></div>`).join("")}${aiLoading?'<div class="mentor-typing"><span></span><span></span><span></span><em>Mentor is thinking…</em></div>':""}</div>
-  <div class="mentor-suggestions"><button class="mentor-suggestion" data-prompt="Explain this from first principles with a simple example.">Explain simply</button><button class="mentor-suggestion" data-prompt="Give me one practice task. Do not give me the answer until I attempt it.">Practice with me</button><button class="mentor-suggestion" data-prompt="Diagnose what I understand and tell me the one prerequisite I should repair first.">Diagnose me</button><button class="mentor-suggestion" data-prompt="Review my reasoning for accuracy, evidence, assumptions, and uncertainty.">Review my reasoning</button><button class="mentor-suggestion" data-prompt="How do I create a button in HTML? Explain it like I am a complete beginner, show the code, explain the important lines, and give me one small challenge.">Learn coding</button></div>
-  <form class="composer mentor-composer" id="chat"><input id="prompt" autocomplete="off" ${aiLoading||!conn.endpoint?"disabled":""} placeholder="${conn.endpoint?"Message your mentor…":"Configure AI Gateway to start chatting…"}" /><button class="send mentor-send" ${aiLoading||!conn.endpoint?"disabled":""} aria-label="Send message">↑</button></form>
-  <div class="mentor-footnote"><span>PRIVATE BY DESIGN</span> Conversation history stays in this browser. Inference runs through your configured AI endpoint.</div></section></div>
-  <section class="coding-studio card glass"><div class="section-head"><div><span class="eyebrow">NORTHSTAR CODING LAB</span><h2>Build, run, inspect, improve.</h2><p class="subtitle">HTML, CSS and JavaScript execute in a sandboxed browser preview. Python runs with Pyodide in the browser.</p></div></div>
-  <div class="coding-toolbar">${["html","js","css","python"].map(k=>'<button class="mini-btn '+(state.codeLanguage===k?"active":"")+'" data-code-template="'+k+'">'+esc((window.NORTHSTAR_CODING_LAB?.templates?.[k]?.label)||k)+'</button>').join("")}<span class="badge" id="code-status" data-state="idle">${state.codeLanguage==="python"?"PYTHON RUNTIME ON RUN":"BROWSER SANDBOX"}</span><button class="cta" data-code-run>▶ Run</button><button class="mini-btn" data-code-reset>Reset</button><button class="mini-btn" data-code-ask>Ask Mentor</button></div>
+}, coding:()=>{return `<section class="fade">  <section class="coding-studio card glass"><div class="section-head"><div><span class="eyebrow">NORTHSTAR CODING LAB</span><h2>Build, run, inspect, improve.</h2><p class="subtitle">HTML, CSS and JavaScript execute in a sandboxed browser preview. Python runs with Pyodide in the browser.</p></div></div>
+  <div class="coding-toolbar">${["html","js","css","python"].map(k=>'<button class="mini-btn '+(state.codeLanguage===k?"active":"")+'" data-code-template="'+k+'">'+esc((window.NORTHSTAR_CODING_LAB?.templates?.[k]?.label)||k)+'</button>').join("")}<span class="badge" id="code-status" data-state="idle">${state.codeLanguage==="python"?"PYTHON RUNTIME ON RUN":"BROWSER SANDBOX"}</span><button class="cta" data-code-run>▶ Run</button><button class="mini-btn" data-code-reset>Reset</button></div>
   <div class="coding-grid"><div class="coding-pane"><div class="coding-pane-head"><span>EDITOR · ${esc(state.codeLanguage.toUpperCase())}</span><small>Ctrl/⌘ + Enter to run</small></div><textarea id="code-editor" spellcheck="false" aria-label="Code editor">${esc(codingState().source)}</textarea></div><div class="coding-pane"><div class="coding-pane-head"><span>LIVE PREVIEW / OUTPUT</span><small>${state.codeLanguage==="python"?"Pyodide":"Sandboxed iframe"}</small></div><iframe id="code-preview" title="Coding lab live preview" sandbox="allow-scripts"></iframe></div></div>
   <div class="coding-console"><div class="coding-pane-head"><span>CONSOLE</span><small>Runtime output</small></div><pre id="code-console">Ready. Run the project to see output.</pre></div>
-  <div class="coding-challenge inset"><span class="eyebrow">NEXT CHALLENGE</span><p><b>${state.codeLanguage==="python"?"Create a function that accepts a list of numbers and returns the largest value. Print the result for [4, 9, 2, 7].":"Change the button text, then make it update the heading when clicked."}</b> Ask Mentor if you get stuck.</p></div></section>
-</section>`}, progress:()=>{
+  <div class="coding-challenge inset"><span class="eyebrow">NEXT CHALLENGE</span><p><b>${state.codeLanguage==="python"?"Create a function that accepts a list of numbers and returns the largest value. Print the result for [4, 9, 2, 7].":"Change the button text, then make it update the heading when clicked."}</b> Use the lesson material and your own debugging notes if you get stuck.</p></div></section></section>`}, progress:()=>{
  const p=overallPercent(),ids=allLessons().map(l=>l.id),summary=window.NORTHSTAR_ASSESSMENT?.summary?.(ids)||{mastery:overallMastery(),assessed:0,total:ids.length},weak=allLessons().map(l=>({l,score:lessonMastery(l.id)})).filter(x=>x.score<70).sort((a,b)=>a.score-b.score).slice(0,5),cw=capstoneWorkspace(),cs=capstoneScore(cw);
  return `<section class="fade"><span class="eyebrow">Progress</span><h1 class="title" style="font-size:42px;letter-spacing:-.055em;margin:8px 0">See your evidence.</h1>
  <div class="section grid two"><div class="card glass progress-card"><div class="ring" style="--p:${p}%"><span>${p}%</span></div><h2>Overall progress</h2><p class="subtitle">${completedCount()} of ${totalLessons()} lessons and ${labCompletedCount()} of ${labs.length} labs completed.</p></div><div class="card glass"><span class="eyebrow">Adaptive mastery</span><h2>${summary.mastery}%</h2><p class="subtitle">${summary.assessed} lessons have assessment evidence. Completion alone does not create mastery.</p><div class="progress"><i style="width:${summary.mastery}%"></i></div></div></div>
  <div class="section grid stats"><div class="stat glass"><b>${completedCount()}</b><span>Lessons complete</span></div><div class="stat glass"><b>${totalLessons()-completedCount()}</b><span>Lessons remaining</span></div><div class="stat glass"><b>${labCompletedCount()}</b><span>Labs complete</span></div><div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div></div>
- <div class="section card glass"><div class="section-head"><div><span class="eyebrow">Remediation queue</span><h2>Strengthen weak foundations</h2></div><button data-route="ai">Ask Mentor →</button></div>${weak.length?weak.map(x=>'<div class="activity-item"><span class="activity-dot">'+x.score+'%</span><div><strong>'+esc(x.l.title)+'</strong><small>Mastery '+x.score+'% · Ask Mentor for prerequisite repair</small></div></div>').join(""):'<div class="empty">No weak lessons are currently recorded.</div>'}</div>
+ <div class="section card glass"><div class="section-head"><div><span class="eyebrow">Remediation queue</span><h2>Strengthen weak foundations</h2></div><button data-route="learn">Review lessons →</button></div>${weak.length?weak.map(x=>'<div class="activity-item"><span class="activity-dot">'+x.score+'%</span><div><strong>'+esc(x.l.title)+'</strong><small>Mastery '+x.score+'% · revisit prerequisite lessons for repair</small></div></div>').join(""):'<div class="empty">No weak lessons are currently recorded.</div>'}</div>
  <div class="section card glass"><div class="section-head"><div><span class="eyebrow">Enterprise capstone</span><h2>${cs.score}% ready</h2></div><button class="chip active" data-route="capstone">Open Capstone →</button></div><p class="subtitle">${cs.completed}/${cs.total} stage artifacts complete · defense evidence ${cs.defense}/20.</p><div class="progress"><i style="width:${cs.score}%"></i></div></div>
  <div class="section card glass"><span class="eyebrow">Skill matrix</span>${skillRows()}</div>
  </section>`;
@@ -611,238 +592,10 @@ function bind(){
  document.querySelectorAll("[data-lab-hint]").forEach(b=>b.onclick=()=>{const l=labs[state.selectedLab],w=labWorkspace(l.id);w.revealedHints=Array.from(new Set([...(w.revealedHints||[]),Number(b.dataset.labHint)]));saveLabWorkspace(l.id,w);render();});
  const labComplete=document.querySelector("[data-lab-complete]");
  if(labComplete)labComplete.onclick=()=>{const l=labs[state.selectedLab],d=getLabDetails(l.id),w=cyberToolState(l.id),f=w.finding||{},answered=d.checkpoints.filter((_,i)=>String(w.answers?.[i]||"").trim()).length,score=labScore(l,d,w);const missing=[];if(answered<d.checkpoints.length)missing.push("all investigation checkpoints");if((w.locker||[]).length<2)missing.push("at least 2 locked evidence items");if(String(w.note||"").trim().length<120)missing.push("a 120+ character analyst narrative");if(!String(f.title||"").trim())missing.push("a finding title");if(!String(f.impact||"").trim())missing.push("impact / scope");if(!String(f.nextAction||"").trim())missing.push("a next action");if(score.total<70)missing.push("a readiness score of at least 70%");if(missing.length){alert("Complete before submission:\n• "+missing.join("\n• "));return;}state.labState[state.selectedLab]="completed";w.completedAt=new Date().toISOString();w.assessment=score;saveLabWorkspace(l.id,w);persist();render()};
- const aiConfig=document.querySelector("[data-ai-config]");if(aiConfig)aiConfig.onclick=configureAiEndpoint;
- const aiTest=document.querySelector("[data-ai-test]");if(aiTest)aiTest.onclick=testAiConnection;
- const aiClear=document.querySelector("[data-ai-clear]");if(aiClear)aiClear.onclick=()=>{localStorage.removeItem("ns_ai_endpoint");render()};
- document.querySelectorAll("[data-mentor-mode]").forEach(b=>b.onclick=()=>{if(window.NORTHSTAR_MENTOR_UI?.setMode?.(b.dataset.mentorMode)){render()}});
  document.querySelectorAll("[data-code-template]").forEach(b=>b.onclick=()=>codingTemplate(b.dataset.codeTemplate));
  const editor=document.querySelector("#code-editor");if(editor){editor.oninput=()=>{state.codeSource=editor.value};editor.onkeydown=e=>{if((e.ctrlKey||e.metaKey)&&e.key==="Enter"){e.preventDefault();codingRun()}}}
  const run=document.querySelector("[data-code-run]");if(run)run.onclick=()=>codingRun();
  const reset=document.querySelector("[data-code-reset]");if(reset)reset.onclick=()=>{codingRemember();const t=(window.NORTHSTAR_CODING_LAB||{}).templates?.[state.codeLanguage];if(t){localStorage.removeItem("ns_code_source_"+state.codeLanguage);state.codeSource=t.html;codingConsole([]);render();}};
- const askCode=document.querySelector("[data-code-ask]");if(askCode)askCode.onclick=()=>codingAsk();
- document.querySelectorAll("[data-prompt]").forEach(b=>b.onclick=()=>{const input=document.querySelector("#prompt");if(input){input.value=b.dataset.prompt;input.focus()}});
- const clear=document.querySelector("[data-clear-chat]");
- if(clear)clear.onclick=()=>{state.messages=[["ai","Chat cleared. I’m ready for your next cybersecurity question."]];persist();render()};
- const form=document.querySelector("#chat");
- if(form)form.onsubmit=async e=>{
-   e.preventDefault();
-   const input=document.querySelector("#prompt"),q=input?.value.trim();
-   if(!q||aiLoading)return;
-   state.messages.push(["user",q],["ai",""]);
-   persist();render();
-   await askNorthStar(q);
- };
-}
-function mentorMode(){
- return window.NORTHSTAR_MENTOR_UI?.getMode?.()||"teacher";
-}
-function codingIntent(q){
- const t=String(q||"").toLowerCase();
- return /html|css|javascript|typescript|python|java|c\\+\\+|sql|react|next\\.js|node|code|coding|program|function|variable|array|class|api|debug|bug|error|syntax|compile|terminal|git|github/.test(t);
-}
-
-function mentorContextPayload(){
- const current=state.route==="lesson"?curriculum[state.selectedCourse]?.lessons?.[state.selectedLesson]:null;
- const learner=learnerState();
- const currentId=current?.id||"";
- const mastery=Number(learner.mastery?.[currentId]||0);
- const attempts=Number(learner.attempts?.[currentId]||0);
- const checks=Number(learner.checks?.[currentId]?.score||learner.checks?.[currentId]||0);
- let lab=null,labWorkspace=null,labDetails=null;
- if(state.route==="lab"){
-  lab=labs[state.selectedLab]||null;
-  if(lab){
-   labWorkspace=cyberToolState(lab.id);
-   labDetails=getLabDetails(lab.id);
-  }
- }
- if(window.NORTHSTAR_MENTOR_ENGINE?.buildContext){
-  try{
-   return window.NORTHSTAR_MENTOR_ENGINE.buildContext({
-    lesson:current||null,
-    course:curriculum[state.selectedCourse]||null,
-    learner:{
-     mastery:{[currentId]:mastery},
-     attempts:{[currentId]:attempts},
-     checks:{[currentId]:checks}
-    },
-    lab,
-    labWorkspace,
-    labDetails
-   });
-  }catch(error){
-   console.warn("NorthStar mentor context engine fallback.",error);
-  }
- }
- return {
-  lessonId:currentId||null,
-  module:curriculum[state.selectedCourse]?.title||"",
-  lesson:current?.title||"No active lesson",
-  objective:current?.objective||current?.learningGoal||"",
-  prerequisite:current?.prerequisite||"",
-  concepts:Array.isArray(current?.concepts)?current.concepts.slice(0,10):[],
-  mastery,attempts,checks,labScore:Number(labWorkspace?.assessment?.total||0)
- };
-}
-function mentorClassification(q){
- return window.NORTHSTAR_MENTOR_ENGINE?.classify?.(q)||"general";
-}
-
-function configuredAiEndpoint(){
- const stored=String(localStorage.getItem("ns_ai_endpoint")||"").trim().replace(/\/$/,"");
- return stored||String(AI_CONFIG.endpoint||"").trim().replace(/\/$/,"");
-}
-function mentorEndpoint(){return configuredAiEndpoint();}
-function aiConnectionState(){
- const endpoint=mentorEndpoint();
- if(!endpoint)return {state:"offline",label:"NOT CONNECTED",detail:"CLOUDFLARE AI GATEWAY ENDPOINT REQUIRED",endpoint:""};
- return {state:"configured",label:"CLOUDFLARE AI",detail:"REMOTE GATEWAY · NO MODEL ON DEVICE",endpoint};
-}
-function configureAiEndpoint(){
- const current=mentorEndpoint();
- const value=window.prompt(
-  "NorthStar AI Gateway URL\n\nEnter your deployed Cloudflare Worker URL.\nExample: https://northstar-ai-gateway.your-subdomain.workers.dev",
-  current||""
- );
- if(value===null)return;
- const clean=String(value).trim().replace(/\/$/,"");
- if(clean)localStorage.setItem("ns_ai_endpoint",clean);
- else localStorage.removeItem("ns_ai_endpoint");
- render();
-}
-async function testAiConnection(){
- const endpoint=mentorEndpoint();
- if(!endpoint){alert("Configure the Cloudflare AI Gateway first.");return;}
- const button=document.querySelector("[data-ai-test]");
- if(button){button.disabled=true;button.textContent="Testing…";}
- try{
-  const response=await fetch(endpoint+"/health",{headers:{Accept:"application/json"}});
-  if(!response.ok)throw new Error("HTTP "+response.status);
-  const data=await response.json().catch(()=>({}));
-  if(data?.service&&data.service!=="NorthStar AI Gateway")throw new Error("Unexpected gateway response");
-  alert("NorthStar AI Gateway is reachable.");
- }catch(error){
-  const msg=String(error?.message||error);
-  alert("Cloudflare AI Gateway connection failed.\n\n"+(msg==="Failed to fetch"?"Check the Worker URL and CORS configuration.":msg));
- }finally{render();}
-}
-async function askNorthStar(q){
- const endpoint=mentorEndpoint();
- if(!endpoint){
-  state.messages[state.messages.length-1][1]=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)
-   ? "Cloudflare AI Gateway is not configured. Open AI Mentor and configure your deployed Worker URL."
-   : "NorthStar needs the deployed Cloudflare AI Gateway URL. Configure it from the AI Mentor connection controls.";
-  aiError="Cloudflare AI Gateway endpoint is not configured.";
-  persist();render();return;
- }
- aiLoading=true;aiError="";render();
- const history=state.messages.slice(-14).map(m=>({role:m[0]==="user"?"user":"assistant",content:m[1]}));
- const mentor=mentorContextPayload();
- const classification=mentorClassification(q);
-  const isCoding=codingIntent(q);
- try{
-  const systemPrompt=window.NORTHSTAR_MENTOR_ENGINE?.system
-   ? window.NORTHSTAR_MENTOR_ENGINE.system({mode:mentorMode(),context:{...mentor,classification}})
-   : [
-      "You are NorthStar Mentor, a rigorous cybersecurity tutor.",
-      "Teach from first principles, diagnose misconceptions, and use safe authorized labs.",
-      "Current NorthStar learning context: "+JSON.stringify({...mentor,classification})
-     ].join("\n");
-
-  const headers={"Content-Type":"application/json"};
-  const response=await fetch(endpoint+"/v1/chat/completions",{
-   method:"POST",
-   headers,
-   body:JSON.stringify({
-    model:String(AI_CONFIG.model||"cloudflare-ai/@cf/meta/llama-3.1-8b-instruct-fp8"),
-    messages:[{role:"system",content:systemPrompt},...history],
-    stream:false,
-    temperature:0.2
-   })
-  });
-
-  if(!response.ok){
-   let detail="";
-   try{
-    const e=await response.json();
-    detail=typeof e?.error==="string"?e.error:(e?.error?.message||"");
-   }catch{}
-   throw new Error(detail||("Cloudflare AI Gateway returned HTTP "+response.status));
-  }
-
-  const contentType=String(response.headers.get("content-type")||"").toLowerCase();
-  let reply="";
-
-  const appendReply=delta=>{
-   if(!delta)return;
-   reply+=String(delta);
-   state.messages[state.messages.length-1][1]=reply;
-   const el=document.querySelector(".ai-stream");
-   if(el)el.textContent=reply;
-  };
-
-  const consumePayload=payload=>{
-   const p=String(payload||"").trim();
-   if(!p||p==="[DONE]")return;
-   try{
-    const data=JSON.parse(p);
-    const delta=data?.choices?.[0]?.delta?.content
-      ??data?.choices?.[0]?.message?.content
-      ??data?.response
-      ??data?.content
-      ??"";
-    appendReply(delta);
-   }catch{}
-  };
-
-  if(!response.body)throw new Error("Cloudflare AI Gateway returned no response body.");
-
-  if(contentType.includes("text/event-stream")){
-   const reader=response.body.getReader();
-   const decoder=new TextDecoder();
-   let buffer="";
-   while(true){
-    const {value,done}=await reader.read();
-    if(done)break;
-    buffer+=decoder.decode(value,{stream:true});
-    const events=buffer.split(/\r?\n\r?\n/);
-    buffer=events.pop()||"";
-    for(const event of events){
-     for(const line of event.split(/\r?\n/)){
-      if(line.trim().startsWith("data:"))consumePayload(line.slice(line.indexOf("data:")+5).trim());
-     }
-    }
-   }
-   buffer+=decoder.decode();
-   if(buffer.trim()){
-    for(const event of buffer.split(/\r?\n\r?\n/)){
-     for(const line of event.split(/\r?\n/)){
-      if(line.trim().startsWith("data:"))consumePayload(line.slice(line.indexOf("data:")+5).trim());
-     }
-    }
-   }
-  }else{
-   const data=await response.json();
-   appendReply(
-    data?.choices?.[0]?.message?.content
-    ??data?.choices?.[0]?.delta?.content
-    ??data?.response
-    ??data?.content
-    ??""
-   );
-  }
-
-  if(!reply)throw new Error("The Cloudflare AI Gateway mentor returned an empty response.");
-  aiLoading=false;aiError="";persist();render();
- }catch(err){
-  console.error("NorthStar Cloudflare AI Gateway mentor error:",err);
-  aiLoading=false;
-  const safeDetail=String(err?.message||"Cloudflare AI Gateway unavailable.").replace(/Bearer\s+[A-Za-z0-9._-]+/gi,"Bearer [redacted]");
-  state.messages[state.messages.length-1][1]="NorthStar Mentor connection failed. Check the Cloudflare AI Gateway and try again.\n\nConnection detail: "+safeDetail;
-  aiError=safeDetail;
-  persist();render();
- }
-}
 
 // Boot the application after all view and event handlers are defined.
 function boot(){
