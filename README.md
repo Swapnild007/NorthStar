@@ -22,15 +22,9 @@ The academic design is informed by public curriculum and workforce references in
 
 The approved NorthStar glass/iOS-inspired UI is frozen. Future work should deepen content, functionality and evidence without replacing the visual system unless explicitly approved.
 
-## AI architecture
+## AI and cloud services
 
-The browser Mentor uses a local-first routing architecture:
-
-NorthStar local web app → OmniRoute on the same device → cloud model provider.
-
-The current configured provider is Cloudflare Workers AI through OmniRoute. No model weights are stored on the device. The local OmniRoute API key is kept only in the browser session.
-
-GitHub Pages hosts the static learning interface. GitHub Pages is not the AI gateway.
+The AI Mentor and all model-provider integrations have been removed. NorthStar does not require an LLM, AI gateway, API key or AI backend. The independent Coding Lab remains available for hands-on HTML, CSS, JavaScript and Python practice; its browser-based Python runtime may require an internet connection to load Pyodide on first use.
 
 ## Release architecture
 
@@ -40,8 +34,9 @@ GitHub Pages hosts the static learning interface. GitHub Pages is not the AI gat
 - Adaptive learner assessment and remediation queue.
 - Eight-stage enterprise capstone.
 - Mobile-first glass/iOS UI remains frozen.
+- No AI Mentor, model integration, API key or AI backend.
 - Static QA validates JavaScript syntax, data contracts, asset references and release invariants.
 
 ## Deployment
 
-GitHub Pages is the deployment target. The project remains dependency-free at build time and uses relative asset paths for project hosting. Local OmniRoute is required for the AI Mentor when using the local architecture.
+GitHub Pages is the deployment target. The project remains dependency-free at build time and uses relative asset paths for project hosting. No AI service is required.
