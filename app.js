@@ -331,15 +331,15 @@ const views={
  const rubric=(cap.rubric||[]).map(r=>'<div><b>'+esc(r.label)+'</b><span>'+esc(r.standard)+' · '+r.weight+'%</span></div>').join("");
  return '<section class="fade"><button class="back" data-route="labs">← Back to CyberRange</button><div class="card glass"><span class="eyebrow">NORTHSTAR ENTERPRISE CAPSTONE</span><h1 class="title">'+esc(cap.title)+'</h1><p class="subtitle">'+esc(cap.subtitle)+'</p><div class="inset callout"><strong>Scenario</strong><p class="subtitle">'+esc(cap.scenario)+'</p><small>'+esc(cap.safety)+'</small></div><div class="section grid stats"><div class="stat glass"><b>'+score.score+'%</b><span>Readiness</span></div><div class="stat glass"><b>'+score.completed+'/'+score.total+'</b><span>Stage artifacts</span></div><div class="stat glass"><b>'+score.defense+'/20</b><span>Final defense</span></div></div><div class="section"><span class="eyebrow">Stage workspace</span>'+stages+'</div><div class="section card glass"><span class="eyebrow">Final defense</span><h2>Defend the decisions</h2><p class="subtitle">Summarize the most important evidence, trade-offs, residual risk and next decision.</p><textarea data-capstone-defense placeholder="Executive defense...">'+esc(w.defense||"")+'</textarea><div style="margin-top:16px"><button class="cta" data-capstone-save>Save capstone evidence</button></div></div><div class="section card glass"><span class="eyebrow">Assessment standard</span><div class="vocab-list">'+rubric+'</div></div></div></section>';
 }, ai:()=>{const conn=aiConnectionState();return `<section class="fade mentor-page">
-  <div class="mentor-hero"><div class="mentor-identity"><div class="mentor-avatar" aria-hidden="true"><span>✦</span><i></i></div><div><div class="mentor-eyebrow">NORTHSTAR INTELLIGENCE</div><h1>AI Mentor</h1><p>Your cybersecurity tutor, routed through your OmniRoute gateway. No LLM is stored on your device.</p></div></div><div class="mentor-connection ${conn.endpoint?"online":"setup"}"><i></i><span>${conn.label}</span><small>${conn.detail}</small></div></div>
-  <div class="mentor-connection-actions"><button class="mini-btn" data-ai-config>${conn.state==="local"?"Reconnect OmniRoute":conn.endpoint?"Change endpoint":"Connect OmniRoute"}</button><button class="mini-btn" data-ai-test ${conn.endpoint?"":"disabled"}>Test OmniRoute</button>${conn.endpoint?'<button class="mini-btn" data-ai-clear>Clear endpoint</button>':""}</div>
+  <div class="mentor-hero"><div class="mentor-identity"><div class="mentor-avatar" aria-hidden="true"><span>✦</span><i></i></div><div><div class="mentor-eyebrow">NORTHSTAR INTELLIGENCE</div><h1>AI Mentor</h1><p>Your cybersecurity tutor, routed through your Cloudflare AI Gateway. No LLM is stored on your device.</p></div></div><div class="mentor-connection ${conn.endpoint?"online":"setup"}"><i></i><span>${conn.label}</span><small>${conn.detail}</small></div></div>
+  <div class="mentor-connection-actions"><button class="mini-btn" data-ai-config>${conn.endpoint?"Change gateway":"Configure AI Gateway"}</button><button class="mini-btn" data-ai-test ${conn.endpoint?"":"disabled"}>Test Gateway</button>${conn.endpoint?'<button class="mini-btn" data-ai-clear>Clear endpoint</button>':""}</div>
   <div class="mentor-mode-dock">${Object.entries({teacher:["Teacher","Learn it"],socratic:["Socratic","Think it"],practice:["Practice","Try it"],coder:["Code Mentor","Build it"],lab:["Lab Coach","Investigate"],reviewer:["Reviewer","Prove it"]}).map(([id,x])=>'<button class="mentor-mode-card '+((window.NORTHSTAR_MENTOR_UI?.getMode?.()||"teacher")===id?"active":"")+'" data-mentor-mode="'+id+'"><b>'+esc(x[0])+'</b><small>'+esc(x[1])+'</small></button>').join("")}</div>
-  <div class="mentor-shell"><aside class="mentor-profile-card"><div class="mentor-avatar large"><span>✦</span><i></i></div><b>NorthStar Mentor</b><span>Cybersecurity learning companion</span><div class="mentor-profile-status"><i style="background:${conn.endpoint?"#22c55e":"#f59e0b"}"></i> ${conn.endpoint?"OmniRoute gateway · no model on device":"Offline · endpoint required"}</div><div class="mentor-mini-stats"><div><b>${overallMastery()}%</b><span>Mastery</span></div><div><b>${completedCount()}</b><span>Lessons</span></div><div><b>${labCompletedCount()}</b><span>Labs</span></div></div><button class="mentor-new-chat" data-clear-chat>New conversation</button></aside>
-  <section class="mentor-chat-panel"><div class="mentor-chat-head"><div><span class="mentor-live-dot" style="${conn.endpoint?"":"background:#f59e0b"}"></span><div><b>NorthStar Mentor</b><small>${conn.endpoint?"Ready to help":"Configure an AI Worker endpoint to enable live inference"}</small></div></div><span class="mentor-model-pill">OMNIROUTE · ${esc(AI_CONFIG.model||"AUTO")}</span></div>
+  <div class="mentor-shell"><aside class="mentor-profile-card"><div class="mentor-avatar large"><span>✦</span><i></i></div><b>NorthStar Mentor</b><span>Cybersecurity learning companion</span><div class="mentor-profile-status"><i style="background:${conn.endpoint?"#22c55e":"#f59e0b"}"></i> ${conn.endpoint?"Cloudflare AI Gateway · no model on device":"Offline · endpoint required"}</div><div class="mentor-mini-stats"><div><b>${overallMastery()}%</b><span>Mastery</span></div><div><b>${completedCount()}</b><span>Lessons</span></div><div><b>${labCompletedCount()}</b><span>Labs</span></div></div><button class="mentor-new-chat" data-clear-chat>New conversation</button></aside>
+  <section class="mentor-chat-panel"><div class="mentor-chat-head"><div><span class="mentor-live-dot" style="${conn.endpoint?"":"background:#f59e0b"}"></span><div><b>NorthStar Mentor</b><small>${conn.endpoint?"Ready to help":"Configure the Cloudflare AI Gateway to enable live inference"}</small></div></div><span class="mentor-model-pill">CLOUDFLARE · ${esc(AI_CONFIG.model||"AUTO")}</span></div>
   <div class="mentor-context-strip"><span>ADAPTIVE</span><b>${(window.NORTHSTAR_MENTOR_UI?.diagnosis?.().band)||"Not assessed"}</b><small>Evidence drives progression, not completion alone.</small></div>
   <div class="messages mentor-messages" id="messages">${state.messages.map((m,i)=>`<div class="mentor-message-row ${m[0]==="user"?"from-user":"from-ai"}"><div class="mentor-message-avatar">${m[0]==="user"?"NS":"✦"}</div><div class="msg ${m[0]==="user"?"user":""} ${i===state.messages.length-1&&m[0]==="ai"&&aiLoading?"ai-stream":""}">${esc(m[1])}</div></div>`).join("")}${aiLoading?'<div class="mentor-typing"><span></span><span></span><span></span><em>Mentor is thinking…</em></div>':""}</div>
   <div class="mentor-suggestions"><button class="mentor-suggestion" data-prompt="Explain this from first principles with a simple example.">Explain simply</button><button class="mentor-suggestion" data-prompt="Give me one practice task. Do not give me the answer until I attempt it.">Practice with me</button><button class="mentor-suggestion" data-prompt="Diagnose what I understand and tell me the one prerequisite I should repair first.">Diagnose me</button><button class="mentor-suggestion" data-prompt="Review my reasoning for accuracy, evidence, assumptions, and uncertainty.">Review my reasoning</button><button class="mentor-suggestion" data-prompt="How do I create a button in HTML? Explain it like I am a complete beginner, show the code, explain the important lines, and give me one small challenge.">Learn coding</button></div>
-  <form class="composer mentor-composer" id="chat"><input id="prompt" autocomplete="off" ${aiLoading||!conn.endpoint?"disabled":""} placeholder="${conn.endpoint?"Message your mentor…":"Connect OmniRoute to start chatting…"}" /><button class="send mentor-send" ${aiLoading||!conn.endpoint?"disabled":""} aria-label="Send message">↑</button></form>
+  <form class="composer mentor-composer" id="chat"><input id="prompt" autocomplete="off" ${aiLoading||!conn.endpoint?"disabled":""} placeholder="${conn.endpoint?"Message your mentor…":"Configure AI Gateway to start chatting…"}" /><button class="send mentor-send" ${aiLoading||!conn.endpoint?"disabled":""} aria-label="Send message">↑</button></form>
   <div class="mentor-footnote"><span>PRIVATE BY DESIGN</span> Conversation history stays in this browser. Inference runs through your configured AI endpoint.</div></section></div>
   <section class="coding-studio card glass"><div class="section-head"><div><span class="eyebrow">NORTHSTAR CODING LAB</span><h2>Build, run, inspect, improve.</h2><p class="subtitle">HTML, CSS and JavaScript execute in a sandboxed browser preview. Python runs with Pyodide in the browser.</p></div></div>
   <div class="coding-toolbar">${["html","js","css","python"].map(k=>'<button class="mini-btn '+(state.codeLanguage===k?"active":"")+'" data-code-template="'+k+'">'+esc((window.NORTHSTAR_CODING_LAB?.templates?.[k]?.label)||k)+'</button>').join("")}<span class="badge" id="code-status" data-state="idle">${state.codeLanguage==="python"?"PYTHON RUNTIME ON RUN":"BROWSER SANDBOX"}</span><button class="cta" data-code-run>▶ Run</button><button class="mini-btn" data-code-reset>Reset</button><button class="mini-btn" data-code-ask>Ask Mentor</button></div>
@@ -730,9 +730,9 @@ async function askNorthStar(q){
  const endpoint=mentorEndpoint();
  if(!endpoint){
   state.messages[state.messages.length-1][1]=/^(localhost|127\.0\.0\.1)$/.test(location.hostname)
-   ? "OmniRoute is not detected. Start OmniRoute on this device, then try again."
-   : "NorthStar is configured for local OmniRoute. Run NorthStar locally on this device while OmniRoute is running.";
-  aiError="Local OmniRoute endpoint is not available.";
+   ? "Cloudflare AI Gateway is not configured. Open AI Mentor and configure your deployed Worker URL."
+   : "NorthStar needs the deployed Cloudflare AI Gateway URL. Configure it from the AI Mentor connection controls.";
+  aiError="Cloudflare AI Gateway endpoint is not configured.";
   persist();render();return;
  }
  aiLoading=true;aiError="";render();
@@ -741,14 +741,6 @@ async function askNorthStar(q){
  const classification=mentorClassification(q);
   const isCoding=codingIntent(q);
  try{
-  const localMode=endpointIsLocal(endpoint);
-  let omniKey=omniRouteKey();
-  if(localMode&&!omniKey){
-   omniKey=String(window.prompt("Enter your local OmniRoute API key.\n\nLeave blank only if REQUIRE_API_KEY is disabled.")||"").trim();
-   if(omniKey)sessionStorage.setItem("ns_omniroute_key",omniKey);
-  }
-  if(localMode && !omniKey)throw new Error("OmniRoute API key is required for local NorthStar.");
-
   const systemPrompt=window.NORTHSTAR_MENTOR_ENGINE?.system
    ? window.NORTHSTAR_MENTOR_ENGINE.system({mode:mentorMode(),context:{...mentor,classification}})
    : [
@@ -758,7 +750,6 @@ async function askNorthStar(q){
      ].join("\n");
 
   const headers={"Content-Type":"application/json"};
-  if(omniKey)headers.Authorization="Bearer "+omniKey;
   const response=await fetch(endpoint+"/v1/chat/completions",{
    method:"POST",
    headers,
@@ -804,7 +795,7 @@ async function askNorthStar(q){
    }catch{}
   };
 
-  if(!response.body)throw new Error("OmniRoute returned no response body.");
+  if(!response.body)throw new Error("Cloudflare AI Gateway returned no response body.");
 
   if(contentType.includes("text/event-stream")){
    const reader=response.body.getReader();
@@ -841,12 +832,12 @@ async function askNorthStar(q){
    );
   }
 
-  if(!reply)throw new Error("The OmniRoute mentor returned an empty response.");
+  if(!reply)throw new Error("The Cloudflare AI Gateway mentor returned an empty response.");
   aiLoading=false;aiError="";persist();render();
  }catch(err){
-  console.error("NorthStar OmniRoute mentor error:",err);
+  console.error("NorthStar Cloudflare AI Gateway mentor error:",err);
   aiLoading=false;
-  const safeDetail=String(err?.message||"OmniRoute unavailable.").replace(/Bearer\s+[A-Za-z0-9._-]+/gi,"Bearer [redacted]");
+  const safeDetail=String(err?.message||"Cloudflare AI Gateway unavailable.").replace(/Bearer\s+[A-Za-z0-9._-]+/gi,"Bearer [redacted]");
   state.messages[state.messages.length-1][1]="NorthStar Mentor connection failed. Check the Cloudflare AI Gateway and try again.\n\nConnection detail: "+safeDetail;
   aiError=safeDetail;
   persist();render();
