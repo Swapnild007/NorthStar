@@ -36,7 +36,6 @@ const nav=[["home","Home","⌂"],["learn","Learn","▤"],["coding","Code Lab","�
 const state={
  route:"home",filter:"All",completedLessons:Array.isArray(savedCompleted)?savedCompleted:[],
  labState:typeof savedLabs==="object"&&savedLabs?savedLabs:{},
- messages:Array.isArray(savedAI)&&savedAI.length?savedAI:[["ai","Hi. I’m your NorthStar Mentor. I’m ready to teach, practice, review your reasoning, or coach you through a CyberRange investigation."]],
  selectedCourse:0,selectedLesson:0,selectedLab:0,lessonTab:"Read",checkAnswer:"",filterExplicit:false,codeLanguage:"html",codeSource:"",codeOutput:"",codeConsole:[]
 };
 const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
