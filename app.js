@@ -103,7 +103,7 @@ function render(){
   console.error("NorthStar view render failure:",error);
   viewHTML=`<section class="fade"><div class="card glass" style="padding:28px"><span class="eyebrow">NorthStar recovery</span><h1 class="title">Learning is still here.</h1><p class="subtitle">The lesson data loaded, but this screen encountered a rendering error. Refreshing with the new application bundle should restore the learning view.</p><button class="cta" onclick="location.reload()">Reload NorthStar</button></div></section>`;
  }
- document.querySelector("#view").innerHTML=viewHTML;
+ document.querySelector("#view").innerHTML=viewHTML+'<footer class="ownership-credit" aria-label="App ownership"><span class="ownership-mark">N</span><span><b>NorthStar</b><small>Designed and developed by Swapnil Dalvi</small></span><em>© 2026 Swapnil Dalvi</em></footer>';
  bind();
  if(state.route==="coding"&&document.querySelector("#code-preview"))codingStatus(state.codeLanguage==="python"?"Python runtime loads on Run":"Ready · click Run to execute","idle");
 }
