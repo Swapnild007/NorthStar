@@ -1,12 +1,10 @@
 window.NORTHSTAR_AI={
- version:"4.2.0",
- provider:"OmniRoute",
- mode:"local-omniroute",
- model:"cloudflare-ai/@cf/meta/llama-3.1-8b-instruct-fp8",
+ version:"5.0.0",
+ provider:"Cloudflare Workers AI + AI Gateway",
+ mode:"cloudflare-worker-gateway",
+ model:"@cf/meta/llama-3.1-8b-instruct",
  endpoint:"",
- localEndpoint:"http://127.0.0.1:20128",
- allowLocalEndpoint:true,
- architecture:"NorthStar -> OmniRoute -> model-provider",
+ allowLocalEndpoint:false,
  localModel:false,
  deviceModelStorage:false,
  roles:["Teacher","Socratic Tutor","Lab Mentor","Code Mentor","Examiner","Security Analyst"],
@@ -14,12 +12,12 @@ window.NORTHSTAR_AI={
   apiKeyInFrontend:false,
   modelStoredOnDevice:false,
   conversationStorage:"localStorage",
-  backendRequired:false
+  backendRequired:true
  },
  routing:{
-  strategy:"omniroute",
-  fallback:"omniroute",
-  providerSelection:"OmniRoute",
+  strategy:"cloudflare-ai-gateway",
+  fallback:"cloudflare-workers-ai",
+  providerSelection:"Cloudflare AI Gateway",
   compression:"gateway-controlled"
  },
  labPolicy:"Controlled and authorized environments only"
