@@ -1,6 +1,8 @@
 const VERSION="4.3.0";
 const COURSE=window.NORTHSTAR_COURSE||{title:"Cyber Security Management & Data Science",shortTitle:"CYBER SECURITY · MANAGEMENT · DATA SCIENCE"};
 
+try{["ns_ai_endpoint","ns_ai_messages_v2","ns_mentor_ui_state","ns_mentor_context","ns_mentor_diagnosis"].forEach(key=>localStorage.removeItem(key));}catch{}
+
 function readStoredJSON(key,fallback){
  try{
   const raw=localStorage.getItem(key);
