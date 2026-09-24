@@ -681,3 +681,12 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
   }
   .nav{bottom:calc(12px + env(safe-area-inset-bottom, 0px));}
 }
+
+
+/* Persistent creator attribution / ownership mark. */
+.ownership-credit{display:flex;align-items:center;gap:10px;margin:28px 0 18px;padding:14px 2px 18px;border-top:1px solid rgba(100,116,139,.16);color:#64748b;font-size:12px;}
+.ownership-mark{display:grid;place-items:center;width:30px;height:30px;flex:0 0 30px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#6d28d9);color:#fff;font-weight:900;font-size:15px;}
+.ownership-credit b{display:block;color:#334155;font-size:12px;letter-spacing:.02em;}
+.ownership-credit small{display:block;margin-top:2px;color:#64748b;font-size:10px;}
+.ownership-credit em{margin-left:auto;font-style:normal;font-size:10px;text-align:right;}
+@media(max-width:520px){.ownership-credit{margin-top:20px;padding-bottom:22px}.ownership-credit em{max-width:90px;line-height:1.4}}
