@@ -1,0 +1,8 @@
+{
+  "appId": "com.swapnild.northstar",
+  "appName": "NorthStar",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  }
+}
