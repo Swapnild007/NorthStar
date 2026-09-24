@@ -688,13 +688,44 @@ function mentorClassification(q){
  return window.NORTHSTAR_MENTOR_ENGINE?.classify?.(q)||"general";
 }
 
-function omniRouteKey(){return String(sessionStorage.getItem("ns_omniroute_key")||"").trim();}
-function configuredAiEndpoint(){const stored=String(localStorage.getItem("ns_ai_endpoint")||"").trim().replace(/\/$/,"");return stored||String(AI_CONFIG.endpoint||"").trim().replace(/\/$/,"")||String(AI_CONFIG.localEndpoint||"").trim().replace(/\/$/,"");}
+function configuredAiEndpoint(){
+ const stored=String(localStorage.getItem("ns_ai_endpoint")||"").trim().replace(/\/$/,"");
+ return stored||String(AI_CONFIG.endpoint||"").trim().replace(/\/$/,"");
+}
 function mentorEndpoint(){return configuredAiEndpoint();}
-function endpointIsLocal(endpoint){try{const h=new URL(endpoint).hostname;return /^(localhost|127\.0\.0\.1)$/.test(h)}catch{return false}}
-function aiConnectionState(){const endpoint=mentorEndpoint();if(!endpoint)return {state:"offline",label:"OFFLINE",detail:"OMNIROUTE ENDPOINT NOT CONFIGURED",endpoint:""};if(endpointIsLocal(endpoint))return {state:"local",label:"LOCAL OMNIROUTE",detail:"127.0.0.1:20128 · API",endpoint};return {state:"configured",label:"READY",detail:"REMOTE AI ENDPOINT",endpoint};}
-function configureAiEndpoint(){const current=mentorEndpoint();const value=window.prompt("OmniRoute API base URL\n\nDefault: http://127.0.0.1:20128\nNorthStar calls /v1/chat/completions.",current||"http://127.0.0.1:20128");if(value===null)return;const clean=String(value).trim().replace(/\/$/,"");if(clean)localStorage.setItem("ns_ai_endpoint",clean);else localStorage.removeItem("ns_ai_endpoint");if(endpointIsLocal(clean)){const key=window.prompt("Optional local OmniRoute API key\n\nLeave blank if REQUIRE_API_KEY is disabled. The key is stored only for this browser session.",omniRouteKey());if(key!==null){const k=String(key).trim();if(k)sessionStorage.setItem("ns_omniroute_key",k);else sessionStorage.removeItem("ns_omniroute_key");}}render();}
-async function testAiConnection(){const endpoint=mentorEndpoint();if(!endpoint){alert("Configure OmniRoute first.");return;}const button=document.querySelector("[data-ai-test]");if(button){button.disabled=true;button.textContent="Testing…";}try{let key=omniRouteKey();let response=await fetch(endpoint+"/v1/models",{headers:{Accept:"application/json",...(key?{Authorization:"Bearer "+key}:{})}});if(response.status===401&&endpointIsLocal(endpoint)){const entered=window.prompt("OmniRoute returned 401. Enter the API key from OmniRoute → Endpoints.");if(entered!==null&&String(entered).trim()){key=String(entered).trim();sessionStorage.setItem("ns_omniroute_key",key);response=await fetch(endpoint+"/v1/models",{headers:{Accept:"application/json",Authorization:"Bearer "+key}});}}if(!response.ok)throw new Error("HTTP "+response.status);alert("OmniRoute is reachable and the NorthStar connection is ready.");}catch(error){const msg=String(error?.message||error);alert("OmniRoute connection failed.\n\n"+(msg==="Failed to fetch"?"The local server is unreachable or its CORS policy does not allow https://swapnild007.github.io.":"")+msg);}finally{render();}}
+function aiConnectionState(){
+ const endpoint=mentorEndpoint();
+ if(!endpoint)return {state:"offline",label:"NOT CONNECTED",detail:"CLOUDFLARE AI GATEWAY ENDPOINT REQUIRED",endpoint:""};
+ return {state:"configured",label:"CLOUDFLARE AI",detail:"REMOTE GATEWAY · NO MODEL ON DEVICE",endpoint};
+}
+function configureAiEndpoint(){
+ const current=mentorEndpoint();
+ const value=window.prompt(
+  "NorthStar AI Gateway URL\n\nEnter your deployed Cloudflare Worker URL.\nExample: https://northstar-ai-gateway.your-subdomain.workers.dev",
+  current||""
+ );
+ if(value===null)return;
+ const clean=String(value).trim().replace(/\/$/,"");
+ if(clean)localStorage.setItem("ns_ai_endpoint",clean);
+ else localStorage.removeItem("ns_ai_endpoint");
+ render();
+}
+async function testAiConnection(){
+ const endpoint=mentorEndpoint();
+ if(!endpoint){alert("Configure the Cloudflare AI Gateway first.");return;}
+ const button=document.querySelector("[data-ai-test]");
+ if(button){button.disabled=true;button.textContent="Testing…";}
+ try{
+  const response=await fetch(endpoint+"/health",{headers:{Accept:"application/json"}});
+  if(!response.ok)throw new Error("HTTP "+response.status);
+  const data=await response.json().catch(()=>({}));
+  if(data?.service&&data.service!=="NorthStar AI Gateway")throw new Error("Unexpected gateway response");
+  alert("NorthStar AI Gateway is reachable.");
+ }catch(error){
+  const msg=String(error?.message||error);
+  alert("Cloudflare AI Gateway connection failed.\n\n"+(msg==="Failed to fetch"?"Check the Worker URL and CORS configuration.":msg));
+ }finally{render();}
+}
 async function askNorthStar(q){
  const endpoint=mentorEndpoint();
  if(!endpoint){
@@ -734,7 +765,7 @@ async function askNorthStar(q){
    body:JSON.stringify({
     model:String(AI_CONFIG.model||"cloudflare-ai/@cf/meta/llama-3.1-8b-instruct-fp8"),
     messages:[{role:"system",content:systemPrompt},...history],
-    stream:true,
+    stream:false,
     temperature:0.2
    })
   });
@@ -745,7 +776,7 @@ async function askNorthStar(q){
     const e=await response.json();
     detail=typeof e?.error==="string"?e.error:(e?.error?.message||"");
    }catch{}
-   throw new Error(detail||("OmniRoute returned HTTP "+response.status));
+   throw new Error(detail||("Cloudflare AI Gateway returned HTTP "+response.status));
   }
 
   const contentType=String(response.headers.get("content-type")||"").toLowerCase();
@@ -816,7 +847,7 @@ async function askNorthStar(q){
   console.error("NorthStar OmniRoute mentor error:",err);
   aiLoading=false;
   const safeDetail=String(err?.message||"OmniRoute unavailable.").replace(/Bearer\s+[A-Za-z0-9._-]+/gi,"Bearer [redacted]");
-  state.messages[state.messages.length-1][1]="NorthStar Mentor connection failed. Check OmniRoute and try again.\n\nConnection detail: "+safeDetail;
+  state.messages[state.messages.length-1][1]="NorthStar Mentor connection failed. Check the Cloudflare AI Gateway and try again.\n\nConnection detail: "+safeDetail;
   aiError=safeDetail;
   persist();render();
  }
