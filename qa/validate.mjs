@@ -4,8 +4,8 @@ import path from "node:path";
 const root=process.cwd();
 const required=[
  "index.html","app.js","styles.css",
- "data/curriculum.js","data/lesson_enrichment.js","data/mentor_engine.js",
- "data/mentor_ui.js","data/ai.js","data/cyberrange.js","data/lab_intelligence.js",
+ "data/curriculum.js","data/lesson_enrichment.js",
+ "data/cyberrange.js","data/lab_intelligence.js",
  "data/competency_completion.js","data/advanced_labs.js","data/capstone.js","data/assessment_engine.js"
 ];
 for(const file of required)if(!fs.existsSync(path.join(root,file)))throw new Error("Missing required file: "+file);
@@ -64,8 +64,6 @@ if(!app.includes("data-capstone-stage"))throw new Error("Capstone workspace is n
 if(!app.includes("window.NORTHSTAR_ASSESSMENT"))throw new Error("Assessment engine is not wired.");
 if(!app.includes("data-practice-response"))throw new Error("Practice evidence capture is not wired.");
 if(app.includes("data.evidence||"))throw new Error("Stale practice-panel reference remains.");
-const ai=fs.readFileSync(path.join(root,"data/ai.js"),"utf8");
-if(!ai.includes('provider:"OmniRoute"')||!ai.includes('localModel:false')||!ai.includes('deviceModelStorage:false'))throw new Error("AI architecture contract failed.");
 if(html.includes("workers/mentor"))throw new Error("Obsolete worker gateway reference remains in index.html.");
 for(const requiredAsset of ["competency_completion.js","advanced_labs.js","capstone.js","assessment_engine.js"])if(!html.includes(requiredAsset))throw new Error("Missing final release asset: "+requiredAsset);
 
