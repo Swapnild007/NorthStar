@@ -188,7 +188,7 @@ jobs:
           marker = "</body>"
           if marker not in html:
               raise SystemExit("Expected closing body tag in bundled index.html")
-          html = html.replace(marker, '<script src="./apk-intro.js"></script>\\n' + marker, 1)
+          html = html.replace(marker, '<script src="./apk-intro.js"></script>\\n' + chr(10) + marker, 1)
           p.write_text(html, encoding="utf-8")
           PY
           test -s www/apk-intro.js
