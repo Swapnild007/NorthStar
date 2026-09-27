@@ -1997,4 +1997,5 @@ window.NORTHSTAR_2_0_AUTHORED = {
       "why": "Reports should separate tool leads from verified conditions and bound conclusions to actual evidence."
     }
   }
+}
 };
