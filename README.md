@@ -10,7 +10,7 @@ NorthStar is a mobile-first, evidence-driven learning platform designed to take 
 
 The curriculum is built progressively rather than padded with shallow lessons. The current release closes the major identified competency gaps through targeted completion lessons instead of indiscriminate lesson-count inflation. The sequence starts with **Computer & Digital Foundations**, then moves through cybersecurity foundations, networking, Linux/systems, programming, statistics/data science, machine learning, defensive/offensive security, cloud/DevSecOps, cybersecurity management and an enterprise capstone.
 
-Current release: **v1.0.0** — 16 core pathways / 140 core lessons plus 7 competency-completion lessons, with adaptive assessment, advanced CyberRange labs and an enterprise capstone.
+Current app release: **v1.0.0**. Curriculum 2.0 adds eight detailed competency-completion chapters to the existing seven, for 16 core pathways / 140 core lessons plus 15 supplemental completion lessons, with adaptive assessment, advanced CyberRange labs and an enterprise capstone.
 
 ## Teaching model
 
@@ -29,7 +29,7 @@ The AI Mentor and all model-provider integrations have been removed. NorthStar d
 ## Release architecture
 
 - 16 core pathways / 140 core lessons.
-- 7 targeted competency-completion lessons.
+- 15 targeted competency-completion lessons (7 existing + 8 added in the Curriculum 2.0 expansion).
 - 17+ controlled CyberRange labs, including advanced evidence exercises.
 - Adaptive learner assessment and remediation queue.
 - Eight-stage enterprise capstone.
