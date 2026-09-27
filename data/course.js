@@ -98,7 +98,7 @@ window.NORTHSTAR_COURSE={
     }
   ],
   "pathways": 16,
-  "activeLessons": 140,
+  "activeLessons": 187,
   "workload": "261–329 hours",
   "academicNote": "IIM-benchmarked structure uses case analysis, applied exercises, simulation and evidence-based assessment. NorthStar is not an official IIM curriculum."
 };

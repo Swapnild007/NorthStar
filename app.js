@@ -18,7 +18,8 @@ const savedLabs=readStoredJSON("ns_lab_state",{});
 const LAB_INTELLIGENCE=window.NORTHSTAR_LAB_INTELLIGENCE||{version:"1.0",scoring:{evidence:20,reasoning:35,artifact:20,finding:15,confidence:10},labs:{}};
 
 function applyChapterExpansion(lesson){
- const merged={...lesson,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[lesson.id]||{})};
+ const merged={...lesson,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[lesson.id]||{}),...(window.NORTHSTAR_2_0_AUTHORED?.[lesson.id]||{})};
+ if(!merged.visual&&window.NORTHSTAR_2_0_VISUALS?.[lesson.id])merged.visual={...window.NORTHSTAR_2_0_VISUALS[lesson.id]};
  const expansion=window.NORTHSTAR_CHAPTER_EXPANSION?.[lesson.id]||{};
  const appendKeys=["notes","deepDive","examples","caseQuestions","practiceSteps","mistakes","takeaways","assessmentRubric","qa"];
  for(const key of appendKeys){
@@ -36,7 +37,7 @@ function applyChapterExpansion(lesson){
 }
 const BASE_CURRICULUM=(Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[]).map(c=>({...c,lessons:(c.lessons||[]).map(applyChapterExpansion)}));
 const curriculum=BASE_CURRICULUM.map(c=>{
- const additions=[...(window.NORTHSTAR_COMPETENCY_COMPLETION||[]),...(window.NORTHSTAR_2_0_ADDITIONS||[]),...(window.NORTHSTAR_AGENT_SECURITY||[])].filter(l=>String(l.course)===String(c.code));
+ const additions=[...(window.NORTHSTAR_COMPETENCY_COMPLETION||[]),...(window.NORTHSTAR_2_0_ADDITIONS||[]),...(window.NORTHSTAR_AGENT_SECURITY||[]),...(window.NORTHSTAR_OS_PLATFORM_CURRICULUM||[])].filter(l=>String(l.course)===String(c.code));
  return additions.length?{...c,lessons:[...(c.lessons||[]),...additions]}:c;
 });
 const labs=[...(window.NORTHSTAR_LABS||[]),...(window.NORTHSTAR_ADVANCED_LABS||[])];
@@ -188,6 +189,7 @@ const views={
    <div class="grid stats">
     <div class="stat glass"><b>${p}%</b><span>Overall progress</span></div>
     <div class="stat glass"><b>${completedCount()}</b><span>Lessons completed</span></div>
+    <div class="stat glass"><b>${totalLessons()}</b><span>Lessons in curriculum</span></div>
     <div class="stat glass"><b>${labCompletedCount()}</b><span>Labs completed</span></div>
     <div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div>
    </div>
@@ -286,7 +288,7 @@ const views={
   const examples=Array.isArray(l.examples)?l.examples:[], qas=Array.isArray(l.qa)?l.qa:[], plan=Array.isArray(l.studyPlan)?l.studyPlan:[];
   const visual=l.visual, graph=l.graph;
   const graphHtml=graph?`<div class="visual-card lesson-graph"><span class="eyebrow">${esc(graph.title||"Learning graph")}</span><p class="visual-caption">${esc(graph.caption||"Use the pattern to reason about the concept.")}</p><div class="graph-bars">${(graph.items||[]).map(x=>`<div class="graph-row"><div class="graph-label"><span>${esc(x.label)}</span><b>${esc(x.value)}</b></div><div class="graph-track"><i style="width:${Math.max(0,Math.min(100,Number(x.percent)||0))}%"></i></div></div>`).join("")}</div></div>`:"";
-  const visualHtml=visual?`<div class="visual-card"><span class="eyebrow">${esc(visual.title||"Visual model")}</span><p class="visual-caption">${esc(visual.caption||"")}</p><div class="visual-steps">${(visual.steps||[]).map((x,i)=>`<div class="visual-step"><span>${i+1}</span><strong>${esc(x)}</strong></div>`).join("")}</div></div>`:"";
+  const visualHtml=visual?`<div class="visual-card"><span class="eyebrow">${esc(visual.title||"Visual model")}</span><p class="visual-caption">${esc(visual.caption||"")}</p><div class="visual-flow" role="img" aria-label="${esc((visual.steps||[]).join(" then "))}">${(visual.steps||[]).map((x,i)=>`${i?`<span class="visual-arrow" aria-hidden="true">→</span>`:""}<div class="visual-step"><span>${i+1}</span><strong>${esc(x)}</strong></div>`).join("")}</div>${visual.image?`<figure class="lesson-illustration"><img src="${esc(visual.image)}" alt="${esc(visual.imageAlt||"Conceptual cybersecurity illustration")}" loading="lazy"><figcaption>${esc(visual.imageCaption||"")}</figcaption></figure>`:""}</div>`:"";
   let panel="";
   if(state.lessonTab==="Read")panel=`<div class="lesson-stack">
    <div class="lesson-meta"><span><b>Study time</b>${esc(l.time||"Self-paced")}</span><span><b>Prerequisite</b>${esc(l.prerequisite||"None")}</span></div>
