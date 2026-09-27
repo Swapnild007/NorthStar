@@ -222,5 +222,373 @@ window.NORTHSTAR_2_0_AUTHORED = {
   "assessmentRubric":["Tool schemas are narrow, typed and deny unknown or out-of-scope parameters.","Authorization is independently checked before execution and scoped to the initiating user.","High-impact approval is explicit, time-limited and bound to exact action parameters.","Runtime limits, retry/idempotency behavior, safe audit events and negative tests are specified."],
   "qa":[{"q":"The model returns a JSON tool call with an 'approved': true field. Is that sufficient authorization?","a":"No. The trusted application must independently validate authorization and any required approval.","why":"The model-generated payload is untrusted and cannot grant itself authority."},{"q":"A user approves a payment preview, but the amount changes before execution. What should happen?","a":"Invalidate the approval and require a new approval for the changed normalized transaction.","why":"Approval must be bound to the exact action and parameters, not a general intent."}],
   "check":{"q":"An agent proposes deleting a production resource. What is the correct execution design?","options":["Execute if the model expresses high confidence","Trust a natural-language user request as blanket approval","Validate identity and policy, preview the exact target/action, require the appropriate approval, then re-check before execution","Run the delete and rely on logs to reverse it"],"answer":"Validate identity and policy, preview the exact target/action, require the appropriate approval, then re-check before execution","why":"Sensitive side effects require independent policy enforcement and approval bound to the exact operation."}
- }
+ },
+  {
+    "cf-02": {
+      "objective": "Trace how an application requests an OS-managed resource and explain how privilege, identity and permissions constrain that request.",
+      "learningGoal": "Distinguish user space from kernel space, process identity from user identity, and authentication from authorization in a concrete OS access flow.",
+      "read": "An operating system (OS) coordinates hardware and offers services that applications use. The kernel manages privileged operations such as memory, scheduling and device access; applications normally run in user space and request services through defined interfaces. An application does not simply take control of a file or device: the OS mediates access according to the process's security context and the resource's policy.\\n\\nFor example, when a text editor opens a protected file, it asks the OS to resolve the path and open the file. The OS checks the caller's identity and applicable permissions, then either returns a usable handle or denies the request. A successful login alone does not grant every permission. Administrator/root privileges expand the impact of mistakes or compromise, so use least privilege and elevation only when required.\\n\\nWhen investigating an access problem, record the account, process, resource, time, operation and result. Check policy and logs before assuming malware or a broken OS. Updates address known defects, but patching does not replace access control, isolation or monitoring.",
+      "concepts": [
+        "kernel",
+        "user space",
+        "system call",
+        "process security context",
+        "access control",
+        "least privilege",
+        "privilege elevation",
+        "patch management"
+      ],
+      "qa": [
+        {
+          "q": "What mediates an application's request to open a protected file?",
+          "a": "The operating system checks the process's security context against the resource's access policy.",
+          "why": "The OS provides the enforcement boundary between application requests and protected resources."
+        },
+        {
+          "q": "Does successful authentication mean a user can read every file?",
+          "a": "No. Authentication establishes identity; authorization determines which operations that identity may perform.",
+          "why": "Identity and permission are separate control decisions."
+        }
+      ],
+      "check": {
+        "q": "A standard user launches an editor and requests a restricted file. What should you inspect first?",
+        "options": [
+          "The account/process context, file policy and access result",
+          "Immediately grant administrator rights",
+          "Assume the file is encrypted",
+          "Disable the OS access controls"
+        ],
+        "answer": "The account/process context, file policy and access result",
+        "why": "Start with observable identity, policy and outcome; avoid unnecessary privilege changes."
+      },
+      "practice": "On a device you own or are authorized to administer, compare the access result for a normal user and an administrator against a harmless test file. Record the account, file permissions, operation attempted and observed result. Do not change protections on production data."
+    },
+    "cf-03": {
+      "objective": "Explain how filesystems name, organize, protect and persist data, and distinguish deletion from verified secure erasure.",
+      "learningGoal": "Use paths, metadata, access permissions and backup knowledge to assess a file's exposure and recovery risk.",
+      "read": "A file is a named data object managed by a filesystem. A path locates it in a directory hierarchy; metadata can describe ownership, timestamps, size and permissions. The filesystem maps logical file content to storage, while the operating system enforces access decisions. A storage device provides persistence, not a complete security policy.\\n\\nA shared-folder review should identify the data owner, intended readers and writers, inherited permissions, sharing links and backup locations. Apply least privilege, and check effective access rather than relying only on a folder's visible settings. Encryption at rest can reduce exposure if a device or media is lost, but it does not prevent an authorized, compromised account from reading data while it is available.\\n\\nDeleting a file usually removes or changes references to it; copies may remain in recycle bins, snapshots, synced devices, backups or recoverable storage blocks. Secure disposal therefore depends on the medium, encryption design, retention rules and verified sanitization process. Preserve evidence and follow approved retention and disposal procedures.",
+      "concepts": [
+        "filesystem",
+        "path",
+        "metadata",
+        "ownership",
+        "effective permissions",
+        "persistence",
+        "snapshot",
+        "backup",
+        "secure erasure"
+      ],
+      "qa": [
+        {
+          "q": "Why is a storage device not enough to determine who can access a file?",
+          "a": "Access depends on the filesystem, OS enforcement, identity, permissions and any additional sharing or encryption controls.",
+          "why": "Storage and authorization are different layers."
+        },
+        {
+          "q": "Does deleting a file prove that every copy is gone?",
+          "a": "No. Backups, snapshots, synced copies and recoverable storage may retain data.",
+          "why": "Deletion and secure sanitization are distinct operations."
+        }
+      ],
+      "check": {
+        "q": "A confidential file was deleted from a shared folder. What is the sound conclusion?",
+        "options": [
+          "Deletion alone does not establish that all copies were erased",
+          "The data is certainly unrecoverable",
+          "The folder permissions no longer matter",
+          "Backups are automatically deleted too"
+        ],
+        "answer": "Deletion alone does not establish that all copies were erased",
+        "why": "A defensible conclusion accounts for secondary copies and the actual sanitization method."
+      },
+      "practice": "Create a small test folder with two harmless text files. Inspect the path, owner and permissions; document which test account can read or write each file. Then list plausible secondary copies that would need checking before claiming a file was fully removed."
+    },
+    "cf-04": {
+      "objective": "Differentiate a stored program from a running process and identify the process attributes relevant to a security investigation.",
+      "learningGoal": "Relate process identity, memory, resources and lifecycle to isolation and potential impact.",
+      "read": "A program is a set of instructions stored on a device. A process is an executing instance with a lifecycle, memory mappings, open resources and a security context. One program can have several processes, and a process can create child processes. A process is not the same thing as a user account: it runs under an identity and may also have specific privileges or restrictions.\\n\\nThe OS allocates virtual memory and schedules execution. Virtual memory gives processes separated address spaces; it does not make every process harmless or guarantee that vulnerabilities cannot cross boundaries. Applications also hold resources such as file handles and network sockets. When a process exits, some resources are released, while logs and other evidence may persist.\\n\\nFor triage, correlate process name and path with process ID, parent process, start time, user, command line, signature or hash where available, network activity and endpoint alerts. A familiar name is not proof of legitimacy, and an unfamiliar name alone is not proof of compromise. Capture evidence before terminating a process when policy and safety allow.",
+      "concepts": [
+        "program",
+        "process",
+        "PID",
+        "parent process",
+        "virtual memory",
+        "scheduler",
+        "handle",
+        "security context",
+        "process isolation"
+      ],
+      "qa": [
+        {
+          "q": "What makes a process different from a program?",
+          "a": "A program is stored instructions; a process is an executing instance with state, resources and a security context.",
+          "why": "The distinction helps explain runtime behavior and evidence."
+        },
+        {
+          "q": "Why is a process name alone weak evidence?",
+          "a": "Names can be copied or misleading; path, parent, identity, timing, behavior and corroborating telemetry add context.",
+          "why": "Investigation requires multiple observable attributes."
+        }
+      ],
+      "check": {
+        "q": "An unknown process has a common system-like name. Which next step is most evidence-based?",
+        "options": [
+          "Correlate its path, parent, user, start time and behavior",
+          "Declare it malicious from the name alone",
+          "Delete the executable before recording details",
+          "Assume the operating system generated it"
+        ],
+        "answer": "Correlate its path, parent, user, start time and behavior",
+        "why": "A contextual process record supports a reproducible assessment."
+      },
+      "practice": "Using a trusted process viewer on your own computer, choose one ordinary application process. Record its PID, parent, executable path, user and a visible resource or network attribute. Explain which observations establish normal context and what would still require corroboration."
+    },
+    "cf-05": {
+      "objective": "Trace a basic internet request across interconnected networks and identify where routing and trust boundaries appear.",
+      "learningGoal": "Describe the roles of the local device, gateway, ISP, destination network and protocols without confusing routing with identity.",
+      "read": "The internet is a network of networks that exchange traffic using common protocols. A device sends traffic through a local network and gateway; routers forward packets toward destination networks, often across an ISP and intermediate networks. The route can change, and the path is not necessarily a single fixed chain.\\n\\nA typical web request also depends on several distinct functions: naming resolves a domain to an address, transport provides communication between endpoints, and the application protocol defines the request and response. IP routing moves packets; it does not by itself prove who controls the destination or whether the application is trustworthy. Local addresses, public addresses and translated addresses can describe different points in the flow.\\n\\nFor a connectivity or security question, define the source device and time, destination name/address, protocol and expected behavior. Use approved network configuration and logs to compare expected with observed traffic. A traceroute or packet capture is a partial observation, not a complete map of every network or a guarantee about ownership. Capture only traffic you are authorized to inspect.",
+      "concepts": [
+        "internet",
+        "packet",
+        "router",
+        "gateway",
+        "ISP",
+        "routing",
+        "local address",
+        "public address",
+        "protocol",
+        "network boundary"
+      ],
+      "qa": [
+        {
+          "q": "What does a router primarily do in this model?",
+          "a": "It forwards packets between networks according to routing information.",
+          "why": "Routing describes packet forwarding, not application trust or user identity."
+        },
+        {
+          "q": "Does an IP route prove the identity of the destination operator?",
+          "a": "No. Address and routing observations need separate ownership and application-context evidence.",
+          "why": "Network reachability is not identity verification."
+        }
+      ],
+      "check": {
+        "q": "A packet capture shows traffic to a public IP address. What can you conclude from that fact alone?",
+        "options": [
+          "Traffic was observed to that address at the capture point",
+          "The address owner is necessarily the sender's intended service",
+          "The application is safe",
+          "The full end-to-end route is known"
+        ],
+        "answer": "Traffic was observed to that address at the capture point",
+        "why": "State the observation precisely and avoid claims beyond the capture's vantage point."
+      },
+      "practice": "Draw a labeled request path from a home laptop to a web service, including local gateway, ISP and destination network. Mark where DNS, routing, transport and application behavior occur, and note two facts the diagram cannot establish without additional evidence."
+    },
+    "cf-06": {
+      "objective": "Distinguish DNS names, IP addresses and transport ports, and use them carefully when describing a network service.",
+      "learningGoal": "Interpret a basic connection tuple and recognize the limits of address- and port-based attribution.",
+      "read": "A domain name is a human-readable label. DNS can return records that help a client locate a service, while IP addresses identify network interfaces or endpoints within an addressing context. A port number identifies a transport-layer endpoint on a host; it is not a globally unique service identity. TCP and UDP use separate port spaces.\\n\\nA useful connection record includes source IP and port, destination IP and port, transport protocol and time. DNS answers may be cached, load-balanced or changed; one name can map to multiple addresses, and one address can host multiple services. Network address translation can also cause logs at different points to show different address/port pairs.\\n\\nPorts can suggest what service might be present, but services can use nonstandard ports and port numbers can be reused. Confirm with authorized service inventory, endpoint telemetry, protocol evidence and configuration. Do not treat an IP address as proof of a person or organization. When reviewing suspicious DNS, compare query name, response, client, timing, frequency and baseline; retain uncertainty where resolver or sensor visibility is incomplete.",
+      "concepts": [
+        "DNS",
+        "A/AAAA record",
+        "resolver",
+        "IP address",
+        "TCP port",
+        "UDP port",
+        "socket",
+        "connection tuple",
+        "NAT",
+        "service attribution"
+      ],
+      "qa": [
+        {
+          "q": "What information does a five-part connection tuple commonly capture?",
+          "a": "Source address and port, destination address and port, and transport protocol.",
+          "why": "These fields distinguish a flow at a particular observation point."
+        },
+        {
+          "q": "Does destination port 443 prove the traffic is safe HTTPS?",
+          "a": "No. Port conventions are hints; verify the actual protocol and certificate/application context.",
+          "why": "Port numbers alone do not establish service behavior."
+        }
+      ],
+      "check": {
+        "q": "A host makes repeated DNS queries for a newly observed domain. Which assessment is justified first?",
+        "options": [
+          "Record the client, queried name, response, timing and baseline for investigation",
+          "Attribute the domain to a specific person immediately",
+          "Assume every new domain is malicious",
+          "Block all DNS traffic without checking impact"
+        ],
+        "answer": "Record the client, queried name, response, timing and baseline for investigation",
+        "why": "Contextual evidence supports triage while limiting false attribution."
+      },
+      "practice": "Interpret a synthetic flow record with source 10.0.0.8:51520, destination 203.0.113.20:443, TCP. State what each field means, what the port suggests but cannot prove, and what additional evidence would confirm the application protocol."
+    },
+    "cf-07": {
+      "objective": "Explain the browser-to-server request sequence and distinguish transport protection from endpoint and application security.",
+      "learningGoal": "Identify what DNS, connection setup, TLS and HTTP each contribute, and interpret the limits of a certificate warning.",
+      "read": "When a user opens a website, the browser may first resolve its hostname through DNS, then establish a network connection to a server. With HTTPS, TLS negotiates cryptographic parameters and authenticates the server using certificate validation before HTTP data is exchanged inside the protected channel. The browser then interprets the HTTP response and renders content. Actual connection details vary with protocol versions, proxies, caches and browser behavior.\\n\\nHTTP requests include a method, target and headers, and may include a body. Responses include a status code, headers and optional body. HTTPS protects data in transit against many forms of interception and tampering and helps authenticate the server name, provided validation succeeds. It does not certify that a website is honest, that its code is free of vulnerabilities, or that the user's device is uncompromised.\\n\\nA certificate warning means the browser could not validate an expected security property, such as trust chain, name or validity period. Do not bypass it for sensitive activity. Verify the URL through a trusted channel, check device time and approved network conditions, and report persistent warnings to the service owner or support team.",
+      "concepts": [
+        "HTTP",
+        "request",
+        "response",
+        "method",
+        "status code",
+        "header",
+        "HTTPS",
+        "TLS",
+        "certificate",
+        "server-name validation"
+      ],
+      "qa": [
+        {
+          "q": "What does HTTPS protect, and what does it not guarantee?",
+          "a": "It protects the connection's data in transit and supports server authentication; it does not guarantee the site or endpoint is trustworthy.",
+          "why": "Transport security and application security are separate."
+        },
+        {
+          "q": "What is a safe response to an unexpected certificate warning?",
+          "a": "Do not proceed with sensitive activity; verify the address and investigate the validation issue through a trusted channel.",
+          "why": "A warning indicates a failed or uncertain security check."
+        }
+      ],
+      "check": {
+        "q": "A page uses a valid HTTPS certificate but asks for a password unexpectedly. What does the certificate establish?",
+        "options": [
+          "A validated encrypted connection to the named server, not that the request is legitimate",
+          "That the page is free of phishing",
+          "That the site's code has no vulnerabilities",
+          "That the user's device is uncompromised"
+        ],
+        "answer": "A validated encrypted connection to the named server, not that the request is legitimate",
+        "why": "TLS validation does not assess the business legitimacy of page content."
+      },
+      "practice": "Sketch a browser request sequence from hostname lookup through HTTPS response. Label the role of DNS, connection setup, TLS validation and HTTP. Add one threat TLS helps mitigate and two threats it does not eliminate."
+    },
+    "cf-08": {
+      "objective": "Differentiate authentication, authorization and MFA, and identify common weaknesses in account and recovery workflows.",
+      "learningGoal": "Explain factors, sessions, least privilege and account recovery as connected but distinct controls.",
+      "read": "Authentication establishes confidence in a claimed identity; authorization determines which actions that identity may perform. A password is a knowledge factor. A possession factor (such as a registered security key) and an inherence factor (such as a biometric) are different categories, but two passwords are not two independent factors. MFA combines factors from distinct categories.\\n\\nAfter authentication, a service often issues a session token so the user does not need to re-enter credentials for every request. Protecting the session matters: theft or misuse of a valid token can bypass the need to replay a password. Recovery flows are also part of the identity boundary; weak recovery can undermine strong login controls.\\n\\nUse unique passwords stored in a reputable password manager, phishing-resistant MFA where supported, and least-privilege access. Keep recovery methods current and protected. Organizations should monitor unusual sign-ins and changes to factors or recovery details, and provide a clear way to report suspected account compromise. MFA lowers risk but cannot eliminate phishing, session theft, social engineering or excessive authorization.",
+      "concepts": [
+        "authentication",
+        "authorization",
+        "knowledge factor",
+        "possession factor",
+        "inherence factor",
+        "MFA",
+        "session token",
+        "recovery",
+        "least privilege",
+        "phishing-resistant MFA"
+      ],
+      "qa": [
+        {
+          "q": "Why are two passwords not normally considered two-factor authentication?",
+          "a": "Both are knowledge factors, so they do not provide independent evidence from different factor categories.",
+          "why": "MFA requires distinct factor types, not merely multiple prompts."
+        },
+        {
+          "q": "Why must session protection be included in account security?",
+          "a": "A stolen valid session token may let an attacker act without repeating the password or MFA challenge.",
+          "why": "Authentication is not the only point where account access can be abused."
+        }
+      ],
+      "check": {
+        "q": "An employee has a strong password and MFA, but a recovery email account is compromised. Which area needs review?",
+        "options": [
+          "The recovery path and linked account protections",
+          "Only the password length",
+          "The employee's monitor resolution",
+          "No review; MFA makes recovery irrelevant"
+        ],
+        "answer": "The recovery path and linked account protections",
+        "why": "Recovery mechanisms can become alternate routes into an account."
+      },
+      "practice": "Map a fictional work account's sign-in, session and recovery paths. Mark the factor types, the permissions granted after login, and at least three points where monitoring or user verification could reduce risk."
+    },
+    "cf-09": {
+      "objective": "Evaluate suspicious messages and downloads using observable indicators and a safe verification workflow.",
+      "learningGoal": "Separate evidence-based suspicion from appearance-based assumptions and identify layered controls for social engineering.",
+      "read": "Social engineering manipulates context, trust or urgency to influence a person into disclosing information or taking an action. Messages can arrive through email, chat, phone or collaboration tools. A polished logo, familiar display name or grammatical error is not conclusive evidence either way.\\n\\nAssess the sender and reply path, actual link destination, attachment type, requested action, timing, context and whether the request matches an approved process. Avoid opening unexpected attachments or entering credentials through a message link. Verify sensitive requests—especially payments, account changes and credential resets—using a separately obtained, trusted contact method. Report suspicious messages through the organization's approved channel and preserve relevant details.\\n\\nTechnical safeguards reduce exposure: filtering, safe browsing, attachment scanning, sandboxing, restricted macros, MFA and clear reporting procedures. No single control catches every attempt. If a file may have been opened, do not conceal it or perform improvised cleanup; follow the incident-reporting process so responders can preserve evidence and assess scope.",
+      "concepts": [
+        "social engineering",
+        "pretext",
+        "urgency cue",
+        "sender verification",
+        "link destination",
+        "attachment",
+        "out-of-band verification",
+        "sandboxing",
+        "reporting"
+      ],
+      "qa": [
+        {
+          "q": "Why should a sensitive bank-account change be verified outside the message thread?",
+          "a": "A separately sourced contact path reduces reliance on potentially compromised sender details or conversation context.",
+          "why": "Independent verification helps defeat impersonation and thread hijacking."
+        },
+        {
+          "q": "Is a misspelling sufficient proof that a message is malicious?",
+          "a": "No. It may be a clue, but decisions should use multiple indicators and trusted verification.",
+          "why": "Single superficial signals can produce false positives and false negatives."
+        }
+      ],
+      "check": {
+        "q": "A familiar vendor emails a new payment account and says the change is urgent. What should happen next?",
+        "options": [
+          "Verify the change through a known, separate contact channel and follow approval controls",
+          "Reply to the same email asking if it is real",
+          "Change the payment details immediately",
+          "Forward the message to colleagues and ask them to click the link"
+        ],
+        "answer": "Verify the change through a known, separate contact channel and follow approval controls",
+        "why": "High-impact requests need independent verification and established authorization."
+      },
+      "practice": "Review a fictional message requesting a password reset and an urgent payment change. List observable facts, potential warning signs and unknowns. Write a safe verification and reporting sequence without clicking links or opening files."
+    },
+    "cf-10": {
+      "objective": "Identify fields, records, data types and quality problems that can distort security analysis.",
+      "learningGoal": "Assess a small dataset's schema and provenance before drawing conclusions from counts, trends or charts.",
+      "read": "A dataset is an organized collection of information. A table contains records (rows) and fields (columns); a field has a meaning and expected data type, such as categorical, numeric, timestamp or identifier. A schema documents those expectations. Identifiers should be treated carefully: an account ID, IP address or device ID is not necessarily a real-world identity.\\n\\nBefore analyzing security events, inspect the source, collection method, time zone, timestamp precision, field definitions, missing values, duplicates and known retention gaps. Check whether records are normalized consistently and whether clocks or pipelines may delay or reorder events. A count can change because of collection coverage or parsing changes rather than an actual change in attacker behavior.\\n\\nKeep data lineage and transformations documented so another analyst can reproduce the result. Charts are useful summaries, but validate the underlying rows and denominators before escalating a finding. Protect sensitive data, restrict access to the dataset and minimize what is copied into reports or practice materials.",
+      "concepts": [
+        "dataset",
+        "table",
+        "record",
+        "field",
+        "schema",
+        "data type",
+        "identifier",
+        "missingness",
+        "duplicate",
+        "timestamp",
+        "lineage",
+        "denominator"
+      ],
+      "qa": [
+        {
+          "q": "Why should an analyst check timestamp meaning and time zone?",
+          "a": "Incorrect or mixed time interpretation can misorder events and distort timelines or correlations.",
+          "why": "Temporal integrity is essential to reconstructing activity."
+        },
+        {
+          "q": "Can a rise in logged events automatically prove an increase in attacks?",
+          "a": "No. Collection coverage, parsing, duplication and other data-quality changes can also affect counts.",
+          "why": "Validate data provenance and measurement before interpreting a trend."
+        }
+      ],
+      "check": {
+        "q": "A dashboard shows twice as many failed logins after a logging pipeline update. What should you validate?",
+        "options": [
+          "Collection coverage, parsing, duplicates, time handling and the underlying event records",
+          "Assume the attack rate doubled",
+          "Delete the earlier data to make the chart consistent",
+          "Ignore the pipeline change"
+        ],
+        "answer": "Collection coverage, parsing, duplicates, time handling and the underlying event records",
+        "why": "A measurement change is a competing explanation that must be tested."
+      },
+      "practice": "Build a tiny synthetic login-event table with timestamp, user ID, source IP, result and collection source. Add one missing timestamp and one duplicate row. Describe validation checks and explain why a trend claim should wait until these issues are resolved."
+    }
+  }
 };
