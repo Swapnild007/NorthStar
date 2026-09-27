@@ -17,7 +17,7 @@ const savedCompleted=readStoredJSON("ns_completed_lessons",[]);
 const savedLabs=readStoredJSON("ns_lab_state",{});
 const LAB_INTELLIGENCE=window.NORTHSTAR_LAB_INTELLIGENCE||{version:"1.0",scoring:{evidence:20,reasoning:35,artifact:20,finding:15,confidence:10},labs:{}};
 
-const BASE_CURRICULUM=(Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[]).map(c=>({...c,lessons:(c.lessons||[]).map(l=>({...l,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[l.id]||{})}))}));
+const BASE_CURRICULUM=(Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[]).map(c=>({...c,lessons:(c.lessons||[]).map(l=>({...l,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[l.id]||{}),...(window.NORTHSTAR_CHAPTER_EXPANSION?.[l.id]||{})}))}));
 const curriculum=BASE_CURRICULUM.map(c=>{
  const additions=[...(window.NORTHSTAR_COMPETENCY_COMPLETION||[]),...(window.NORTHSTAR_2_0_ADDITIONS||[])].filter(l=>String(l.course)===String(c.code));
  return additions.length?{...c,lessons:[...(c.lessons||[]),...additions]}:c;
