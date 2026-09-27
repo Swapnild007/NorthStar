@@ -29,7 +29,7 @@ The AI Mentor and all model-provider integrations have been removed. NorthStar d
 ## Release architecture
 
 - 16 core pathways / 140 core lessons.
-- 15 targeted competency-completion lessons (7 existing + 8 added in the Curriculum 2.0 expansion).
+- 15 targeted competency-completion lessons (7 existing + 8 added in the Curriculum 2.0 expansion). A 2.0 chapter-completion layer supplements all 140 core lessons with additional guided explanations, worked examples, case questions, evidence practice, assessment criteria and reflection, while preserving existing authored fields.
 - 17+ controlled CyberRange labs, including advanced evidence exercises.
 - Adaptive learner assessment and remediation queue.
 - Eight-stage enterprise capstone.
