@@ -1027,5 +1027,245 @@ window.NORTHSTAR_2_0_AUTHORED = {
       "why": "Capture location, timing and encryption constrain what can be concluded."
     },
     "practice": "In an authorized lab, capture a short DNS lookup and connection attempt. Record the question, interface, timestamps, relevant packets and corroborating endpoint configuration; state at least two limitations and redact any sensitive fields before sharing."
+  },
+  "sc-01": {
+    "objective": "Explain how Linux identities, ownership, permissions and privileged commands constrain access to files and system functions.",
+    "learningGoal": "Read a basic access-control situation and propose least-privilege, auditable administration rather than relying on root access by default.",
+    "time": "50–65 min",
+    "prerequisite": "Computer & Digital Foundations; Security Mental Models",
+    "read": "Linux is a multiuser operating system. The kernel mediates access to system resources, while user-space tools and services operate with particular identities and privileges. A user account has a UID; groups provide a way to assign shared access. The root account has broad administrative authority, so routine work should use a named account and elevate only the specific command or task that requires it.\\n\\nTraditional file permissions describe read, write and execute rights for the owner, group and other users. For directories, read permits listing names, write permits changing directory entries, and execute permits traversing/searching the directory. Ownership and mode bits are only part of the access model: ACLs, mount options, capabilities, mandatory access controls and service-specific policy may also matter. A displayed permission string is evidence about one layer, not a complete proof of effective access.\\n\\nUse sudo according to an approved policy, with narrow command authorization and logging. Avoid shared administrator accounts, broad writable paths and unnecessary setuid or elevated services. For an access issue, establish the target path, identity, groups, parent-directory permissions, ACLs and relevant security policy before changing anything. Preserve a record of the original state and validate the least-privilege fix.",
+    "concepts": [
+      "Linux kernel",
+      "user space",
+      "UID",
+      "GID",
+      "owner/group/other",
+      "read/write/execute",
+      "root",
+      "sudo",
+      "ACL",
+      "least privilege"
+    ],
+    "glossary": [
+      [
+        "UID",
+        "A numeric identifier associated with a Linux user account."
+      ],
+      [
+        "GID",
+        "A numeric identifier associated with a group."
+      ],
+      [
+        "sudo",
+        "A mechanism for running permitted commands with elevated privileges."
+      ],
+      [
+        "ACL",
+        "An access control list that can express permissions beyond basic owner/group/other mode bits."
+      ]
+    ],
+    "example": "A service account needs read access to one application configuration file but should not be able to modify it or read unrelated users' home directories.",
+    "case": "A deployment script fails to read `/etc/example/app.conf`. Before changing permissions, identify the service's effective user and groups, inspect the file and directory access path, and determine whether the service should read this file at all. Propose a narrow correction and an audit record.",
+    "check": {
+      "q": "A service only needs to read one configuration file. Which approach follows least privilege?",
+      "options": [
+        "Grant its dedicated identity read access to that file and only the required path traversal",
+        "Make the file world-writable to avoid future errors",
+        "Run the service permanently as root",
+        "Disable all access controls"
+      ],
+      "answer": "Grant its dedicated identity read access to that file and only the required path traversal",
+      "why": "Access should be limited to the identity and resources needed for the service's function."
+    },
+    "practice": "In a disposable Linux lab, inspect a test user's identity and groups, then examine a test directory and file's ownership and permissions. Explain the effective access, make one minimal approved change, and verify both the intended access and a denied unneeded action."
+  },
+  "sc-02": {
+    "objective": "Distinguish processes from services and use process ancestry, identity, executable and network-listener context to investigate system activity.",
+    "learningGoal": "Build a reproducible host-triage snapshot while separating unusual observations from confirmed malicious behavior.",
+    "time": "50–65 min",
+    "prerequisite": "Linux Security Fundamentals; TCP/IP Mental Model",
+    "read": "A process is a running instance of a program with its own process ID (PID), execution state, memory and security context. Processes may create child processes; parent-child relationships form a process tree. A service is a function provided by a program or group of processes, often managed by an init or service manager. A daemon is a common term for a background process, but not every background process is a managed service.\\n\\nTo understand a process, correlate its PID and parent PID with the executable path, command line, start time, effective user, open files, resource use and service manager state. A name alone is weak evidence: legitimate software can have unfamiliar names, and malicious software can imitate trusted names. Likewise, a listener indicates a process is bound to a network endpoint, not that it is reachable from every network or exploitable.\\n\\nInvestigate unexpected ancestry, persistence mechanisms, privilege changes, unusual execution paths and new listeners in context. Compare against an approved baseline and change records. Collect read-only observations first, note timestamps and tool versions, and preserve relevant logs. Avoid killing a process or disabling a service before understanding operational impact and evidence-preservation needs.",
+    "concepts": [
+      "process",
+      "PID",
+      "PPID",
+      "process tree",
+      "service manager",
+      "daemon",
+      "effective user",
+      "executable path",
+      "listener",
+      "persistence"
+    ],
+    "glossary": [
+      [
+        "PID",
+        "The operating system's process identifier."
+      ],
+      [
+        "PPID",
+        "The process identifier of a process's parent."
+      ],
+      [
+        "Listener",
+        "A process endpoint waiting for incoming network or local connections."
+      ]
+    ],
+    "example": "A web service manager launches a worker process under a dedicated account; the worker opens a configured listening socket and writes logs to an application directory.",
+    "case": "A monitoring alert reports a new process running as root with a parent that is not typical for the host role. Record the triage questions and evidence needed to distinguish an authorized maintenance task from suspicious execution; include service ownership and business impact.",
+    "check": {
+      "q": "What does finding an unexpected listening port establish by itself?",
+      "options": [
+        "A process is bound to an endpoint at the observation time, but reachability and intent need more evidence",
+        "The host is compromised",
+        "The service is exposed to the public internet",
+        "The process is definitely malicious"
+      ],
+      "answer": "A process is bound to an endpoint at the observation time, but reachability and intent need more evidence",
+      "why": "A listener is an observation that must be correlated with network path, process and expected configuration."
+    },
+    "practice": "Use a lab host or supplied process snapshot to create a table of PID, parent, user, executable, service association and listener (if any). Flag anomalies as hypotheses, cite supporting evidence and list one benign explanation to test."
+  },
+  "sc-03": {
+    "objective": "Compare virtual machines, containers and cloud service models, and map security responsibilities to the actual deployment boundary.",
+    "learningGoal": "Identify which party configures, operates and verifies each security control for a specified workload rather than assuming the provider handles all security.",
+    "time": "55–70 min",
+    "prerequisite": "Linux Security Fundamentals; Networking & Network Security",
+    "read": "Virtualization allows multiple guest systems to share physical infrastructure through a hypervisor. A virtual machine typically includes a guest operating system and its own kernel. Containers package an application and dependencies while sharing the host kernel, using isolation features such as namespaces and control groups; they are not simply small virtual machines. Both approaches require secure images, configuration, access controls, patching and monitoring. Isolation strength depends on implementation and configuration.\\n\\nCloud service models shift operational responsibilities. In Infrastructure as a Service (IaaS), customers commonly manage guest operating systems, applications, identities, data and many network controls, while the provider manages underlying facilities and virtualization. Platform as a Service (PaaS) abstracts more of the runtime and infrastructure, but customers still configure applications, data, identities and service settings. Software as a Service (SaaS) places more application operations with the provider, while customers remain responsible for appropriate user access, data handling, endpoint use and configuration choices. Exact boundaries vary by provider, product and contract.\\n\\nBuild a responsibility matrix for the specific service: control, responsible party, evidence, review frequency and escalation path. Shared responsibility does not mean shared ambiguity. Verify provider documentation and contractual commitments, then test customer-owned controls such as access policy, logging, backups and data classification.",
+    "concepts": [
+      "hypervisor",
+      "virtual machine",
+      "container",
+      "host kernel",
+      "IaaS",
+      "PaaS",
+      "SaaS",
+      "shared responsibility",
+      "control owner",
+      "service configuration"
+    ],
+    "glossary": [
+      [
+        "Hypervisor",
+        "Software or firmware that creates and manages virtual machines."
+      ],
+      [
+        "Container",
+        "An isolated application environment that generally shares the host operating-system kernel."
+      ],
+      [
+        "Shared responsibility",
+        "The division of security and operational duties between a cloud provider and its customer."
+      ]
+    ],
+    "example": "A team deploys a database on a customer-managed virtual machine in IaaS: the provider secures the underlying cloud infrastructure, while the customer must maintain the guest OS, database configuration, identities, data safeguards and workload monitoring.",
+    "case": "A company moves a customer portal from a self-managed VM to a managed application platform. Create a before/after responsibility matrix for patching, runtime configuration, identity, data protection, logging, backup and incident response. Mark each item as provider, customer or contract-specific, and name the evidence needed to confirm it.",
+    "check": {
+      "q": "When adopting a managed cloud platform, what should the customer do about security responsibilities?",
+      "options": [
+        "Map duties to the specific service and verify provider and customer controls with evidence",
+        "Assume the provider now owns every security task",
+        "Assume the customer must manage the provider's physical datacenter",
+        "Use the service model name alone as proof of control coverage"
+      ],
+      "answer": "Map duties to the specific service and verify provider and customer controls with evidence",
+      "why": "Responsibility boundaries depend on the actual service, configuration and agreement."
+    },
+    "practice": "Choose a fictional IaaS, PaaS or SaaS workload. Fill a responsibility matrix for identity, patching, network, application, data, logging and recovery. For each row, identify the owner, evidence artifact and verification cadence."
+  },
+  "sc-04": {
+    "objective": "Develop a secure configuration baseline, validate it against business requirements and manage configuration drift and exceptions safely.",
+    "learningGoal": "Turn broad hardening guidance into controlled, testable configuration changes with rollback and evidence.",
+    "time": "55–70 min",
+    "prerequisite": "Linux Security Fundamentals; Processes, Services & Isolation",
+    "read": "Hardening reduces unnecessary exposure by configuring a system to meet a defined security baseline while retaining required functionality. Begin with an accurate asset inventory and workload role: a database server, developer workstation and internet-facing proxy have different requirements. Select an appropriate benchmark or internal standard, record the version and scope, and map each requirement to a concrete setting or verification method. A benchmark is a starting point, not an automatic fit for every environment.\\n\\nA safe change process includes a documented rationale, owner, risk assessment, test environment where feasible, approval, maintenance window, backup or rollback plan and post-change validation. Validate the actual effective state, not only the desired configuration file. Monitor for configuration drift caused by manual changes, automation failures or software updates. Exceptions should have a named approver, business justification, compensating controls, expiration or review date and tracking record.\\n\\nAvoid blind hardening: disabling a service, protocol or account without tracing dependencies can cause outages or remove necessary recovery access. Prioritize exposed and high-impact settings, use configuration management where suitable, and retain evidence such as scan results, policy reports, change tickets and verification logs. Reassess after material changes to the system role or threat environment.",
+    "concepts": [
+      "hardening",
+      "baseline",
+      "benchmark",
+      "asset inventory",
+      "configuration drift",
+      "change control",
+      "validation",
+      "rollback",
+      "exception",
+      "compensating control"
+    ],
+    "glossary": [
+      [
+        "Baseline",
+        "A documented set of approved configuration requirements for a defined system or role."
+      ],
+      [
+        "Configuration drift",
+        "A difference between the approved desired configuration and the system's observed state."
+      ],
+      [
+        "Compensating control",
+        "An alternative safeguard used when a specified control cannot be implemented as designed."
+      ]
+    ],
+    "example": "A Linux server baseline may require disabling unused network services, restricting remote administration, applying supported updates and ensuring audit logs are forwarded to a protected destination.",
+    "case": "A hardening scan flags a legacy service as enabled on a production host, but an application owner says a nightly job depends on it. Plan a decision workflow that verifies the dependency, evaluates exposure, tests a replacement or restriction, and documents any time-limited exception.",
+    "check": {
+      "q": "What is an essential part of a safe hardening change?",
+      "options": [
+        "Test the change, validate effective state and maintain a rollback or recovery plan",
+        "Apply every benchmark setting without considering workload needs",
+        "Disable any flagged service immediately on production",
+        "Treat a passed scan as permanent proof of compliance"
+      ],
+      "answer": "Test the change, validate effective state and maintain a rollback or recovery plan",
+      "why": "Hardening must reduce risk without creating uncontrolled operational failures."
+    },
+    "practice": "Draft five baseline checks for a fictional server role. For each, specify desired state, verification evidence, responsible owner and drift response. Include one exception record with compensating control and review date."
+  },
+  "sc-05": {
+    "objective": "Differentiate human identities, workload identities, roles, tokens and secrets, and apply controlled issuance, use, rotation and revocation.",
+    "learningGoal": "Design a least-privilege credential lifecycle for an automated workload and show how access can be monitored and safely removed.",
+    "time": "55–70 min",
+    "prerequisite": "Identity & Access Fundamentals; Cloud Shared Responsibility",
+    "read": "Cloud IAM determines which identities can perform which actions on which resources under defined conditions. Human identities represent people; workload identities represent applications, services or compute workloads. A role is a set of permissions that can be assigned or assumed according to policy. A token is a credential-like artifact presented to a service, often short-lived; a secret is sensitive material such as an API key, password or private key. These terms are related but not interchangeable.\\n\\nPrefer workload identity mechanisms that issue short-lived, scoped credentials over embedding long-lived keys in source code, images, scripts or configuration repositories. Store unavoidable secrets in an approved secrets manager, restrict retrieval to the intended workload, encrypt them in transit and at rest, and audit access. Avoid sharing one credential across unrelated services. Apply least privilege to actions, resources and duration, and separate deployment authority from runtime access where feasible.\\n\\nA credential lifecycle includes owner and purpose, secure provisioning, access review, rotation or renewal, monitoring, incident response and revocation/decommissioning. Rotation is not sufficient if copies remain active or an exposed credential has already been used; investigate access logs and revoke compromised material promptly. Test emergency procedures, service continuity and dependency updates so credential changes do not cause outages. Never paste live credentials into learning materials or tickets.",
+    "concepts": [
+      "cloud IAM",
+      "human identity",
+      "workload identity",
+      "role",
+      "token",
+      "secret",
+      "secrets manager",
+      "short-lived credential",
+      "rotation",
+      "revocation",
+      "audit log"
+    ],
+    "glossary": [
+      [
+        "Workload identity",
+        "An identity assigned to an application, service or compute workload for authenticated access."
+      ],
+      [
+        "Token",
+        "A credential artifact used to present or convey authorization, often with a limited lifetime."
+      ],
+      [
+        "Secret",
+        "Sensitive authentication material such as an API key, password or private key."
+      ]
+    ],
+    "example": "A scheduled data-export job uses a dedicated workload identity with permission to read one source bucket and write to one destination, rather than a developer's broad personal access key.",
+    "case": "A repository scan discovers a long-lived cloud API key in a test script. Outline containment and remediation: determine scope and owner, revoke or rotate the credential, inspect audit activity, remove copies from active code and history according to policy, replace it with workload identity or managed secret retrieval, and verify least privilege.",
+    "check": {
+      "q": "Which design reduces the risk of a leaked automation credential?",
+      "options": [
+        "Use a dedicated workload identity with narrow permissions and short-lived credentials where supported",
+        "Embed a shared administrator key in the application image",
+        "Give every workload the same permanent access key",
+        "Disable audit logging to avoid exposing credential use"
+      ],
+      "answer": "Use a dedicated workload identity with narrow permissions and short-lived credentials where supported",
+      "why": "Scoped, short-lived credentials limit exposure and blast radius; monitoring supports detection."
+    },
+    "practice": "Design a credential lifecycle for a fictional scheduled cloud job. Document identity type, exact resource permissions, provisioning method, storage or federation approach, audit signals, rotation/renewal, revocation and an operational test."
   }
 };
