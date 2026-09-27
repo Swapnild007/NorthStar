@@ -1,6 +1,6 @@
 # NorthStar 2.0 — Legacy Curriculum Mechanical Audit
 
-**Source:** `data/curriculum.js` on `northstar-2.0/content-standard`. **Inventory:** 140 lessons across 16 courses.
+**Source:** `data/curriculum.js` plus the supplemental arrays assembled by `app.js` on `northstar-2.0/content-standard`. **Base inventory:** 140 lessons across 16 courses. **Verified assembled catalog:** 187 lesson records across 16 courses, with 187 unique IDs. See the [assembled catalog reconciliation](NORTHSTAR_2_0_ASSEMBLED_CATALOG_RECONCILIATION.md).
 
 This report records source inventory and exact normalized text repeat candidates. It is not a semantic review: same wording can be intentional, and exact repeats in answer keys/options can be necessary. Paraphrase overlap and instructional quality require editorial review.
 
