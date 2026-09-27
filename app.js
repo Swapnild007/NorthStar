@@ -19,7 +19,7 @@ const LAB_INTELLIGENCE=window.NORTHSTAR_LAB_INTELLIGENCE||{version:"1.0",scoring
 
 const BASE_CURRICULUM=(Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[]).map(c=>({...c,lessons:(c.lessons||[]).map(l=>({...l,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[l.id]||{})}))}));
 const curriculum=BASE_CURRICULUM.map(c=>{
- const additions=(window.NORTHSTAR_COMPETENCY_COMPLETION||[]).filter(l=>String(l.course)===String(c.code));
+ const additions=[...(window.NORTHSTAR_COMPETENCY_COMPLETION||[]),...(window.NORTHSTAR_2_0_ADDITIONS||[])].filter(l=>String(l.course)===String(c.code));
  return additions.length?{...c,lessons:[...(c.lessons||[]),...additions]}:c;
 });
 const labs=[...(window.NORTHSTAR_LABS||[]),...(window.NORTHSTAR_ADVANCED_LABS||[])];
