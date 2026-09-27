@@ -694,3 +694,30 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
 .ownership-credit small{display:block;margin-top:2px;color:#64748b;font-size:10px;}
 .ownership-credit em{margin-left:auto;font-style:normal;font-size:10px;text-align:right;}
 @media(max-width:520px){.ownership-credit{margin-top:20px;padding-bottom:22px}.ownership-credit em{max-width:90px;line-height:1.4}}
+
+/* NorthStar 2.0 cybersecurity operating environment */
+.ops-home{display:flex;flex-direction:column;gap:2px}
+.ops-hero{background:radial-gradient(circle at 86% 20%,rgba(56,189,248,.22),transparent 24%),linear-gradient(135deg,#101b30,#172b46 58%,#1e3a5f);color:#f8fafc;border:1px solid rgba(125,211,252,.18);box-shadow:0 20px 55px rgba(2,8,23,.18)}
+.ops-hero:before{background:linear-gradient(155deg,#38bdf8,#2563eb 55%,#4f46e5);opacity:.18}
+.ops-hero:after{background:rgba(56,189,248,.09);border:1px solid rgba(125,211,252,.18)}
+.ops-hero .eyebrow{color:#7dd3fc}.ops-hero p{color:#cbd5e1;max-width:480px}.ops-hero .cta{background:linear-gradient(135deg,#0284c7,#2563eb)}
+.ops-console{margin-top:14px;border-color:rgba(59,130,246,.17);background:linear-gradient(145deg,rgba(15,23,42,.97),rgba(20,36,60,.95));color:#e2e8f0}
+.ops-console-head,.ops-console-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.ops-console-head h2,.ops-mission h2{margin:4px 0 0;font-size:20px;letter-spacing:-.035em}
+.ops-kicker{font-size:9px;font-weight:900;letter-spacing:.14em;text-transform:uppercase;color:#60a5fa}
+.ops-sim{font-size:8px;font-weight:900;letter-spacing:.07em;color:#fbbf24;border:1px solid rgba(251,191,36,.25);padding:6px 8px;border-radius:8px}
+.ops-sim i,.ops-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#fbbf24;margin-right:5px;vertical-align:middle}
+.ops-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 16px}
+.ops-metric{min-width:0;padding:12px;border:1px solid rgba(148,163,184,.15);border-radius:12px;background:rgba(255,255,255,.035)}
+.ops-metric small,.ops-sub{display:block;color:#94a3b8;font-size:10px}
+.ops-metric strong{display:block;margin:7px 0 4px;font-size:25px;letter-spacing:-.05em;color:#f8fafc}
+.ops-metric em{font-style:normal;font-size:10px;font-weight:600;color:#94a3b8;letter-spacing:0}
+.ops-meter{height:4px;background:rgba(148,163,184,.2);border-radius:99px;overflow:hidden;margin-top:10px}.ops-meter i{display:block;height:100%;background:linear-gradient(90deg,#38bdf8,#818cf8);border-radius:99px}
+.ops-console-foot{border-top:1px solid rgba(148,163,184,.14);padding-top:11px;color:#94a3b8;font-size:9px}.ops-dot{background:#34d399}
+.ops-workspaces{margin-top:22px}.ops-workspace-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ops-workspace{display:flex;align-items:center;gap:11px;text-align:left;min-width:0;min-height:78px;padding:13px}
+.ops-workspace-icon{display:grid;place-items:center;flex:0 0 38px;height:38px;border-radius:11px;background:rgba(37,99,235,.1);color:#3b82f6;font-size:19px;font-weight:800}
+.ops-workspace-copy{min-width:0;flex:1}.ops-workspace-copy strong{display:block;font-size:12px}.ops-workspace-copy small{display:block;color:var(--muted);font-size:9px;margin-top:4px;line-height:1.4}.ops-arrow{color:#64748b;font-size:15px}
+.ops-feed-item{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.ops-feed-mark{display:grid;place-items:center;width:23px;height:23px;border-radius:7px;background:rgba(16,185,129,.12);color:#059669;font-weight:900}.ops-feed-item strong,.ops-feed-item small{display:block}.ops-feed-item strong{font-size:11px}.ops-feed-item small{font-size:9px;color:var(--muted);margin-top:3px}
+.ops-mission{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}.ops-mission p{margin:6px 0 0;color:var(--muted);font-size:11px;line-height:1.5}.ops-mission .cta{margin:0;white-space:nowrap}
+@media(max-width:420px){.ops-metrics{gap:6px}.ops-metric{padding:9px}.ops-metric strong{font-size:21px}.ops-metric small{font-size:9px}.ops-sim{font-size:7px}.ops-workspace{padding:10px;gap:8px}.ops-workspace-icon{flex-basis:32px;height:32px}.ops-workspace-copy strong{font-size:10px}}
