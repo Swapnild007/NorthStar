@@ -26,7 +26,7 @@ Scope: repository curriculum architecture and the available NorthStar 2.0 lesson
 
 - The course inventory has been represented as 171 chapter entries across the core and additional/specialization content.
 - `data/chapter_expansion.js` generates generic enrichment fields for core lessons. Its fallback practice, rubric, questions and study guidance are structurally reusable, but they are not a substitute for individually written subject matter.
-- The branch contains four individually authored AI-agent-security lessons (`agentsec-01` through `agentsec-04`) and flow visuals for those four lessons; three have original SVG illustrations. This is a pilot, not full-curriculum completion.
+- The branch contains five individually authored AI-agent-security lessons (`agentsec-01` through `agentsec-05`) and flow visuals for those five lessons; three have original SVG illustrations. This is a pilot, not full-curriculum completion.
 - The 2.0 editorial standard explicitly says that the inventory should only be called fully authored after every chapter passes the checklist.
 
 ## Freeze gate
@@ -49,7 +49,7 @@ A chapter passes only when all applicable gates are evidenced. Any missing evide
 - Curriculum inventory: **171 listed entries (not a completion status).**
 - Fully authored and individually audited chapters: **not yet established**.
 - Freeze decision: **blocked**.
-- Immediate work: continue the AI Agent Security batch, add/verify primary references and assessment depth, then replace generic generated filler in further subject-area batches and run the full register and browser/regression checks.
+- Immediate work: continue the AI Agent Security batch beyond `agentsec-05`, add/verify primary references and assessment depth, then replace generic generated filler in further subject-area batches and run the full register and browser/regression checks.
 
 ## Incident case-study addition
 
