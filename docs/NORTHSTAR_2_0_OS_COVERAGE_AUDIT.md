@@ -81,9 +81,36 @@ Do not create duplicate lessons just to satisfy a checklist. Prefer one canonica
 - Platform-specific troubleshooting
 - Version-aware source references and end-of-support handling
 
+## Supplemental OS curriculum added
+
+A dedicated supplemental pack has now been added and loaded by the web app. These are new lessons, not replacements for or a verified mapping of the original curriculum entries.
+
+| New lesson ID | Coverage |
+|---|---|
+| `ns20-os-foundations` | OS architecture, privilege boundaries, kernel/user space, isolation |
+| `ns20-os-linux-core` | Linux administration and host security |
+| `ns20-os-linux-distro` | Debian/Ubuntu, RHEL-family, SUSE, specialist distro differences |
+| `ns20-os-windows` | Windows client/server security operations |
+| `ns20-os-ad` | Active Directory identity, policy and monitoring |
+| `ns20-os-macos` | macOS security architecture and administration |
+| `ns20-os-mobile` | Android and iOS/iPadOS security models |
+| `ns20-os-chromeos` | ChromeOS integrity and managed-device controls |
+| `ns20-os-bsd-unix` | BSD and enterprise Unix fundamentals |
+| `ns20-os-network-appliance` | Network OS and firewall appliance security |
+| `ns20-os-mainframe` | Mainframe and legacy enterprise environments |
+| `ns20-os-embedded-rtos` | Embedded systems, RTOS and firmware lifecycle |
+| `ns20-os-hypervisors` | Hypervisors and VM host security |
+| `ns20-os-containers` | Container host and runtime security |
+| `ns20-os-kubernetes` | Kubernetes control plane, nodes and workloads |
+| `ns20-os-cloud-guest` | Cloud instance OS and image lifecycle |
+
+Each lesson includes topic-specific instruction, practical application, a case/scenario, guided practice, assessment criteria, knowledge checks with rationales and authoritative reference links. All exercises are limited to synthetic evidence or owned, isolated environments.
+
+The pack is linked into `index.html` after the existing curriculum additions and before `app.js`, so the app's existing additive lesson pipeline can include it. The original curriculum inventory still needs inspection to identify overlap and avoid duplicate learning paths; therefore the existing baseline rows remain **Unverified** until that mapping and a render/progress regression check are completed.
+
 ## Next audit action
 
-The repository's primary `data/curriculum.js` is approximately 1.5 MB and the connected GitHub file retrieval did not return its contents in the latest inspection. Therefore, lesson IDs cannot yet be mapped reliably. Retrieve the inventory through a working repository/runtime route, export IDs, titles, course/category and source content, then fill this matrix from evidence. Until then all rows remain **Unverified** and no OS completeness claim should be made.
+The repository's primary `data/curriculum.js` is approximately 1.5 MB and connected GitHub retrieval still returns metadata but no file content. A 16-lesson OS supplement has been added independently (see table above), but existing curriculum IDs cannot yet be mapped reliably for overlap and gap analysis. Keep the original coverage rows **Unverified** until the actual inventory is inspected and the integrated app is tested.
 
 ## Completion record
 
