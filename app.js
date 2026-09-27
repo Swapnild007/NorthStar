@@ -37,7 +37,7 @@ function applyChapterExpansion(lesson){
 }
 const BASE_CURRICULUM=(Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[]).map(c=>({...c,lessons:(c.lessons||[]).map(applyChapterExpansion)}));
 const curriculum=BASE_CURRICULUM.map(c=>{
- const additions=[...(window.NORTHSTAR_COMPETENCY_COMPLETION||[]),...(window.NORTHSTAR_2_0_ADDITIONS||[]),...(window.NORTHSTAR_AGENT_SECURITY||[]),...(window.NORTHSTAR_OS_PLATFORM_CURRICULUM||[])].filter(l=>String(l.course)===String(c.code));
+ const additions=[...(window.NORTHSTAR_COMPETENCY_COMPLETION||[]),...(window.NORTHSTAR_2_0_ADDITIONS||[]),...(window.NORTHSTAR_AGENT_SECURITY||[])].filter(l=>String(l.course)===String(c.code));
  return additions.length?{...c,lessons:[...(c.lessons||[]),...additions]}:c;
 });
 const labs=[...(window.NORTHSTAR_LABS||[]),...(window.NORTHSTAR_ADVANCED_LABS||[])];
