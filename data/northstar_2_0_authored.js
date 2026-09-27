@@ -798,5 +798,234 @@ window.NORTHSTAR_2_0_AUTHORED = {
       "why": "Network location is not sufficient proof of identity, device state or resource authorization."
     },
     "practice": "Draw a layered architecture for a fictional remote-access application. Mark the policy decision and enforcement points, at least four complementary controls, telemetry for each critical boundary, and the safe behavior if an identity or policy service is unavailable."
+  },
+  "ns-01": {
+    "objective": "Trace how application data moves through the TCP/IP stack and explain the role of encapsulation, addressing and protocol layers.",
+    "learningGoal": "Use a layered network model to locate where a communication problem or security control applies.",
+    "time": "45–60 min",
+    "prerequisite": "Computer & Digital Foundations; Security Mental Models",
+    "read": "A network exchange is easier to reason about when separated into layers. The application creates data for a service; transport provides communication between processes; the internet layer addresses and forwards packets between networks; link and physical technologies move frames or signals across a local medium. TCP/IP is a practical model, not a claim that every implementation maps neatly to one textbook diagram.\\n\\nEncapsulation means each layer adds information needed by the next stage. For example, an application request may be carried in a TCP segment, inside an IP packet, inside a link-layer frame. At the receiver, the layers process and remove their corresponding headers. Routers generally forward based on network-layer information; switches commonly use link-layer addressing within a LAN.\\n\\nSecurity analysis starts by asking what layer is in scope and what evidence is available: packet capture, host socket state, firewall logs, application logs or configuration. A packet capture can show observed traffic, but encryption may hide application contents and a single capture point may not reveal the entire path.",
+    "concepts": [
+      "TCP/IP",
+      "encapsulation",
+      "application layer",
+      "transport layer",
+      "internet layer",
+      "link layer",
+      "packet",
+      "frame",
+      "network boundary"
+    ],
+    "glossary": [
+      [
+        "Encapsulation",
+        "Wrapping data with protocol information as it moves through network layers."
+      ],
+      [
+        "Packet",
+        "A network-layer data unit, commonly an IP packet."
+      ],
+      [
+        "Frame",
+        "A link-layer unit used to deliver data over a local link."
+      ]
+    ],
+    "example": "A browser request is formed by the application, carried by a transport protocol, addressed at the internet layer and transmitted over a local link.",
+    "case": "A user reports that a web application is unreachable. Map the path from browser to server and list one observable artifact at the client, network and server layers before deciding where the fault lies.",
+    "check": {
+      "q": "What does encapsulation describe?",
+      "options": [
+        "Adding layer-specific protocol information as data moves through the stack",
+        "Encrypting every packet automatically",
+        "Replacing IP addresses with domain names",
+        "Guaranteeing delivery without loss"
+      ],
+      "answer": "Adding layer-specific protocol information as data moves through the stack",
+      "why": "Encapsulation explains how protocol layers package and interpret data."
+    },
+    "practice": "Sketch a client-to-server exchange with application data, transport segment, IP packet and link frame. Label the source and destination information visible at each layer and note what a router uses to forward."
+  },
+  "ns-02": {
+    "objective": "Interpret IPv4 and IPv6 addresses, prefixes and subnet boundaries, and calculate basic network membership.",
+    "learningGoal": "Read addressing plans and explain how prefix length separates network bits from host/interface bits.",
+    "time": "50–65 min",
+    "prerequisite": "ns-01 TCP/IP Mental Model",
+    "read": "An IP address identifies an interface in an internet-layer addressing scheme; it is not necessarily a permanent identifier for a person or device. IPv4 uses 32 bits, commonly written as four decimal octets. IPv6 uses 128 bits and is written in hexadecimal groups, with compression rules for runs of zeros. Both use a prefix length to indicate how many leading bits identify the network portion.\\n\\nIn IPv4, /24 means 24 network bits and 8 remaining bits. A subnet mask such as 255.255.255.0 expresses the same boundary. To decide whether two addresses are in the same subnet, compare their network portions using the prefix. Do not assume every subnet uses /24; the prefix is part of the configuration. IPv6 uses the same prefix concept, although its address format and operational conventions differ.\\n\\nAddressing plans should document assigned ranges, gateways, reserved addresses, routing boundaries and ownership. Private IPv4 ranges are not globally routed by default, but private addressing is not itself a security control. IPv6 can be present even when teams focus on IPv4, so inventory and firewall policy should account for both.",
+    "concepts": [
+      "IPv4",
+      "IPv6",
+      "prefix length",
+      "subnet mask",
+      "network portion",
+      "host portion",
+      "private address",
+      "default gateway"
+    ],
+    "glossary": [
+      [
+        "Prefix length",
+        "The number of leading address bits used to identify a network."
+      ],
+      [
+        "Subnet mask",
+        "An IPv4 bit mask that marks the network portion of an address."
+      ],
+      [
+        "Default gateway",
+        "The next-hop router a host uses for destinations outside its local subnet."
+      ]
+    ],
+    "example": "For 192.0.2.37/24, the first 24 bits are the network prefix; the address belongs to 192.0.2.0/24.",
+    "case": "A small office has 192.0.2.0/24 and 192.0.3.0/24 configured on separate VLANs. Determine whether 192.0.2.45 and 192.0.3.45 are in the same subnet, then identify which device or route is needed for communication between them.",
+    "check": {
+      "q": "What does /24 mean in an IPv4 CIDR address?",
+      "options": [
+        "The first 24 bits are the network prefix",
+        "The address has 24 octets",
+        "The host has exactly 24 devices",
+        "The address is encrypted"
+      ],
+      "answer": "The first 24 bits are the network prefix",
+      "why": "CIDR prefix length specifies the number of leading network bits."
+    },
+    "practice": "For 198.51.100.77/26, identify the subnet boundary and network address. Explain your bit or block-size method, then compare it with 198.51.100.120/26."
+  },
+  "ns-03": {
+    "objective": "Differentiate TCP and UDP and connect ports and application protocols to host communication.",
+    "learningGoal": "Interpret a socket endpoint and explain what transport protocol and port information can—and cannot—prove.",
+    "time": "45–60 min",
+    "prerequisite": "ns-01 and ns-02",
+    "read": "Transport protocols support communication between application processes. TCP provides a connection-oriented byte stream with sequencing, retransmission and flow/congestion mechanisms. UDP sends datagrams without TCP's built-in delivery and ordering guarantees; applications may add their own reliability or use UDP where low overhead and timing behavior matter. Neither protocol is inherently secure.\\n\\nA port is a transport-layer number used to direct traffic to an application endpoint on a host. A socket is commonly described using protocol, IP address and port; a connection may be distinguished by source and destination endpoints plus protocol. Well-known port conventions help identify likely services, but a port number alone does not prove which application is running or that a service is reachable.\\n\\nApplication protocols define message semantics, such as HTTP requests, DNS queries or SSH sessions. A firewall rule that permits a port is not equivalent to validating the application or user. For troubleshooting, combine socket listings, packet observations, service configuration and application logs. Avoid exposing a service simply because its default port is familiar.",
+    "concepts": [
+      "TCP",
+      "UDP",
+      "port",
+      "socket",
+      "connection",
+      "application protocol",
+      "listening service",
+      "transport security"
+    ],
+    "glossary": [
+      [
+        "TCP",
+        "A connection-oriented transport protocol providing an ordered byte stream and retransmission."
+      ],
+      [
+        "UDP",
+        "A datagram transport protocol without TCP's built-in reliability and ordering."
+      ],
+      [
+        "Socket endpoint",
+        "A protocol, address and port combination used to identify a communication endpoint."
+      ]
+    ],
+    "example": "A server may listen on TCP port 443 for HTTPS, but confirming the actual service and its security requires more than observing the port number.",
+    "case": "An inventory scan reports TCP/22 open on a host. Explain what this observation suggests, what it does not establish, and which authorized checks could confirm the service, owner and exposure requirement.",
+    "check": {
+      "q": "Which statement accurately distinguishes TCP from UDP?",
+      "options": [
+        "TCP provides an ordered byte stream; UDP sends datagrams without TCP's built-in delivery guarantees",
+        "UDP always encrypts data and TCP never does",
+        "TCP is only for web traffic and UDP only for DNS",
+        "A port number guarantees the service identity"
+      ],
+      "answer": "TCP provides an ordered byte stream; UDP sends datagrams without TCP's built-in delivery guarantees",
+      "why": "Transport behavior differs; security and application semantics require additional context."
+    },
+    "practice": "Inspect a sample host socket inventory or a provided lab capture. Record protocol, local address, local port, remote endpoint if present, process/service owner and one limitation of your interpretation."
+  },
+  "ns-04": {
+    "objective": "Explain routing, NAT, firewall policy and segmentation as distinct mechanisms that shape network reachability.",
+    "learningGoal": "Trace a packet path and reason about permitted flows, translation and containment without treating any one control as complete protection.",
+    "time": "55–70 min",
+    "prerequisite": "ns-01 to ns-03",
+    "read": "Routing selects a next hop toward a destination network using routing information. A default route is used when no more specific route matches. Network address translation (NAT) modifies address information as traffic crosses a boundary; common home and small-office configurations translate many private source addresses to a public address. NAT can affect reachability, but it is not a substitute for a stateful firewall or a deliberate access policy.\\n\\nA firewall enforces rules about traffic, often using source/destination addresses, protocol, ports, connection state and sometimes application or identity context. Rules should be scoped to business need, ordered and documented, and tested from relevant network locations. Segmentation separates systems into zones or security domains and restricts flows between them. VLANs alone do not guarantee isolation if routing and enforcement allow unrestricted communication.\\n\\nFor a path analysis, mark client, gateway, routing hops, translation points, firewall enforcement and destination. Check both directions where stateful behavior or asymmetric routing matters. Capture rule IDs and configuration versions as evidence. Design for management-plane access, logging, change review and failure behavior; avoid broad allow rules as a shortcut.",
+    "concepts": [
+      "routing table",
+      "next hop",
+      "default route",
+      "NAT",
+      "firewall",
+      "stateful inspection",
+      "segmentation",
+      "east-west traffic",
+      "least privilege"
+    ],
+    "glossary": [
+      [
+        "Routing",
+        "Selecting a next hop to move packets toward a destination network."
+      ],
+      [
+        "NAT",
+        "Translation of address information as traffic crosses a network boundary."
+      ],
+      [
+        "Segmentation",
+        "Separating systems into zones and controlling communication between them."
+      ]
+    ],
+    "example": "A guest Wi-Fi network may use a separate subnet and firewall policy that permits internet access while denying access to internal business networks.",
+    "case": "A workstation in the user VLAN can reach a database subnet that should be restricted to an application server. Map the likely control points and propose a narrowly scoped flow policy plus a test that demonstrates the intended denial and required allowed path.",
+    "check": {
+      "q": "Which statement best describes NAT?",
+      "options": [
+        "It translates address information and does not by itself define a complete security policy",
+        "It encrypts all traffic between networks",
+        "It guarantees that internal hosts cannot be attacked",
+        "It replaces routing and firewalling"
+      ],
+      "answer": "It translates address information and does not by itself define a complete security policy",
+      "why": "NAT and security policy solve different problems; reachability must be explicitly controlled."
+    },
+    "practice": "Draw a three-zone network (user, application, database). Define only the necessary allowed flows, identify routing/NAT/firewall points, and specify positive and negative connectivity tests."
+  },
+  "ns-05": {
+    "objective": "Describe DNS and DHCP roles and follow a safe, evidence-based workflow for authorized packet analysis.",
+    "learningGoal": "Correlate name resolution, address configuration and observed packets while protecting sensitive data and respecting scope.",
+    "time": "55–70 min",
+    "prerequisite": "ns-01 to ns-04",
+    "read": "DNS maps names to records such as addresses and service information through a distributed, hierarchical system. A client may consult a configured recursive resolver, which can use cached data or query other DNS servers. A successful DNS response does not prove the destination service is healthy, trustworthy or authorized. DHCP commonly provides hosts with network configuration such as an IP address, prefix/mask, gateway and DNS resolver; static configuration and IPv6 address-configuration mechanisms may also be in use.\\n\\nPacket analysis begins with a question and a defined capture scope—not with collecting everything. Record the host, interface, time window, expected traffic and authorization. Use a suitable capture point, preserve the original file, document tool/version and filters, and minimize collection of credentials or personal content. Filters can reduce noise but may also hide relevant evidence; retain enough context to explain the selection.\\n\\nCorrelate packet timestamps with endpoint and resolver logs, account for clock skew and network address translation, and distinguish observation from inference. A capture shows traffic visible at that location and time; it may miss encrypted payloads, packets on other paths or activity outside the window. Redact sensitive data before sharing and retain evidence according to the approved process.",
+    "concepts": [
+      "DNS",
+      "recursive resolver",
+      "cache",
+      "DHCP",
+      "lease",
+      "network configuration",
+      "packet capture",
+      "capture filter",
+      "display filter",
+      "evidence handling"
+    ],
+    "glossary": [
+      [
+        "DNS",
+        "A distributed naming system that returns records associated with domain names."
+      ],
+      [
+        "DHCP",
+        "A protocol commonly used to lease IP configuration to hosts."
+      ],
+      [
+        "Packet capture",
+        "A recorded view of network packets observed at a particular capture point."
+      ]
+    ],
+    "example": "If a laptop resolves a service name to an unexpected address, compare its configured resolver, DNS response and cache state with approved records before concluding that DNS was maliciously changed.",
+    "case": "An analyst investigates intermittent access to an internal service. Build a collection plan that checks DHCP lease/configuration, DNS answers and a time-bounded packet capture, with scope, privacy safeguards and cross-source correlation.",
+    "check": {
+      "q": "What is a key limitation of a packet capture?",
+      "options": [
+        "It only shows traffic visible at its capture point and during its collection window",
+        "It always contains the full contents of encrypted sessions",
+        "It proves the identity of every endpoint user",
+        "It replaces endpoint and resolver logs"
+      ],
+      "answer": "It only shows traffic visible at its capture point and during its collection window",
+      "why": "Capture location, timing and encryption constrain what can be concluded."
+    },
+    "practice": "In an authorized lab, capture a short DNS lookup and connection attempt. Record the question, interface, timestamps, relevant packets and corroborating endpoint configuration; state at least two limitations and redact any sensitive fields before sharing."
   }
 };
