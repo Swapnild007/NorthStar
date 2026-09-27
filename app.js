@@ -189,6 +189,7 @@ const views={
    <div class="grid stats">
     <div class="stat glass"><b>${p}%</b><span>Overall progress</span></div>
     <div class="stat glass"><b>${completedCount()}</b><span>Lessons completed</span></div>
+    <div class="stat glass"><b>${totalLessons()}</b><span>Lessons in curriculum</span></div>
     <div class="stat glass"><b>${labCompletedCount()}</b><span>Labs completed</span></div>
     <div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div>
    </div>
