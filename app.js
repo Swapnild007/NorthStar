@@ -19,6 +19,7 @@ const LAB_INTELLIGENCE=window.NORTHSTAR_LAB_INTELLIGENCE||{version:"1.0",scoring
 
 function applyChapterExpansion(lesson){
  const merged={...lesson,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[lesson.id]||{})};
+ if(!merged.visual&&window.NORTHSTAR_2_0_VISUALS?.[lesson.id])merged.visual={...window.NORTHSTAR_2_0_VISUALS[lesson.id]};
  const expansion=window.NORTHSTAR_CHAPTER_EXPANSION?.[lesson.id]||{};
  const appendKeys=["notes","deepDive","examples","caseQuestions","practiceSteps","mistakes","takeaways","assessmentRubric","qa"];
  for(const key of appendKeys){
