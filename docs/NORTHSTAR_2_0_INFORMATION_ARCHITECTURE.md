@@ -132,7 +132,7 @@ Relationships should be explicit: prerequisites, explains, references, practices
 ## 8. Audit and implementation sequence
 
 ### Phase A — inventory (next)
-1. Export the actual 171 lesson IDs, titles, domain tags and existing content sources from the repository.
+1. Export the actual 171 lesson IDs, titles, domain tags and existing content sources from the repository. Use the checklist in `docs/NORTHSTAR_2_0_OS_COVERAGE_AUDIT.md` for platform coverage.
 2. Map each item to one primary domain and any secondary tags.
 3. Compare existing content against the taxonomy and identify missing, duplicate, misplaced and overly broad entries.
 4. Produce an evidence-based coverage matrix; do not mark unknowns as complete.
