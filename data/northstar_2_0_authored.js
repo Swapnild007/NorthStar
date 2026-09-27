@@ -1,5 +1,154 @@
 /* NorthStar 2.0 · first authored lesson */
 window.NORTHSTAR_2_0_AUTHORED = {
+  "cf-01": {
+  "objective": "Explain what a computer does by tracing input, processing, memory, storage and output, then identify the security boundary relevant to a simple device scenario.",
+  "learningGoal": "Build one reusable model of a computer: components exchange data and instructions, while software and users interact through defined interfaces and permissions.",
+  "time": "35–45 min",
+  "prerequisite": "None",
+  "read": "A computer is an electronic system that accepts input, processes data according to instructions, stores information and produces output. It is not just the CPU: it is a coordinated set of hardware, firmware, operating-system services, applications, data and people.\n\nA useful mental model is a photo opened on a laptop. The photo persists on storage. The application requests it; the operating system manages access and loads the needed data into RAM. The CPU executes instructions that transform or interpret the data, and the graphics/display path presents the result. Input devices let a person interact; output devices return results. Exact details vary by device and operating system.\n\nSecurity depends on what is happening and where. A stored file, a running application and data sent over a network have different exposure points and need different protections. First identify the asset, state, actor and boundary; then ask what evidence supports a conclusion.",
+  "concepts": [
+    "Input",
+    "Processing",
+    "Output",
+    "Hardware",
+    "Software",
+    "CPU",
+    "RAM",
+    "Persistent storage"
+  ],
+  "glossary": [
+    [
+      "Computer",
+      "A system that accepts input, processes data using instructions, stores information and produces output."
+    ],
+    [
+      "Hardware",
+      "Physical components such as the CPU, memory, storage, keyboard and display."
+    ],
+    [
+      "Software",
+      "Programs and operating-system services that provide instructions and coordinate tasks."
+    ],
+    [
+      "CPU",
+      "The processor that executes program instructions."
+    ],
+    [
+      "RAM",
+      "Fast working memory used by active programs and data; typically volatile."
+    ],
+    [
+      "Persistent storage",
+      "A device or medium that retains data when power is off, such as an SSD."
+    ],
+    [
+      "Operating system",
+      "System software that manages resources and provides controlled services to applications."
+    ]
+  ],
+  "example": "When you open a photo, the application asks the operating system to read the file. Data is brought from storage into RAM; the CPU executes instructions and the display system renders the image. This is a simplified model: actual systems may cache, decode and process data across several components.",
+  "visual": {
+    "title": "From input to output",
+    "caption": "Follow data and instructions through a typical computer; components and exact paths vary.",
+    "steps": [
+      "Input: user action or sensor",
+      "Software requests a task",
+      "OS coordinates access and resources",
+      "CPU executes instructions using working data in RAM",
+      "Storage retains files; output presents results"
+    ]
+  },
+  "case": "A laptop is reported stolen while powered off. The owner says the drive is encrypted. Identify what encryption may protect, what remains at risk, and what evidence is needed before making a claim about the device.",
+  "caseQuestions": [
+    "Which asset and device state are in scope?",
+    "What does full-disk encryption protect when the laptop is powered off, and what does it not establish?",
+    "Which facts need verification, such as encryption status, key protection and last known device state?",
+    "What safe next steps and records would support the incident response?"
+  ],
+  "mistakes": [
+    "Calling the CPU the whole computer.",
+    "Treating RAM and persistent storage as interchangeable.",
+    "Assuming encryption proves the device is safe or that every data copy is protected.",
+    "Presenting an assumption as an observed fact."
+  ],
+  "practice": "Create a one-page system sketch for the photo example. Label the main components, show the simplified data path, and annotate one boundary where access is controlled.",
+  "evidence": "Submit a labeled input-processing-storage-output sketch and a short note separating observed facts, assumptions and unknowns in the stolen-laptop case.",
+  "check": {
+    "q": "A laptop is powered off and its storage is confirmed to use full-disk encryption. Which conclusion is justified?",
+    "options": [
+      "All information is guaranteed safe in every situation.",
+      "Encryption can help protect stored data while the device is off, but device state and other exposure paths still need verification.",
+      "The CPU encrypts every network transmission automatically.",
+      "The laptop cannot be compromised."
+    ],
+    "answer": "Encryption can help protect stored data while the device is off, but device state and other exposure paths still need verification.",
+    "why": "A control has a defined scope. Verify the encryption configuration and consider other copies, credentials and device states before concluding."
+  },
+  "highlights": [
+    "A computer combines hardware, software, data and users.",
+    "Trace one task to understand how components cooperate.",
+    "Match security controls to the asset, state and boundary."
+  ],
+  "notes": [
+    "RAM is typically volatile; persistent storage is designed to retain data without power.",
+    "The operating system mediates many resource and permission decisions, but firmware and hardware also matter."
+  ],
+  "takeaways": [
+    "Input, processing, storage and output describe a useful basic computer model.",
+    "A CPU is one component within a larger system.",
+    "Security analysis starts by defining the asset, actor, state and boundary."
+  ],
+  "practiceSteps": [
+    "Sketch the photo task from user input to visible output.",
+    "Label CPU, RAM, storage, operating system and application where they participate.",
+    "Mark where access to the file is mediated and what changes when the application runs.",
+    "For the stolen-laptop case, list verified facts separately from assumptions.",
+    "Write one cautious conclusion and the evidence needed to strengthen it."
+  ],
+  "reflection": "Which part of your computer model was easiest to confuse with another component, and what example helped distinguish them?",
+  "qa": [
+    {
+      "q": "Is a computer just a CPU?",
+      "a": "No. The CPU executes instructions as part of a system that also includes memory, storage, input/output, software and users.",
+      "why": "A task requires components to cooperate."
+    },
+    {
+      "q": "How are RAM and storage different?",
+      "a": "RAM is working memory for active tasks and is typically volatile; persistent storage retains files when power is off.",
+      "why": "The distinction helps explain both performance and data exposure."
+    },
+    {
+      "q": "Does encryption alone prove a stolen laptop is safe?",
+      "a": "No. Verify the encryption state and consider keys, unlocked states, synced data, backups and other access paths.",
+      "why": "Controls protect specific assets under specific conditions."
+    }
+  ],
+  "sections": [],
+  "why": "This model supports later lessons on operating systems, files, networks, programming and cybersecurity controls.",
+  "competency": "Describe the components and trace a simple task; identify a relevant security boundary and distinguish evidence from assumptions.",
+  "deepDive": [
+    {
+      "title": "Instruction and data",
+      "body": "Instructions describe operations; data is what those operations act on. In practice, both are represented as bits, but software, formats and execution context give them meaning."
+    },
+    {
+      "title": "State changes and security",
+      "body": "A powered-off device, an unlocked session and an application transmitting data expose different attack surfaces. Identify the current state before selecting controls or interpreting evidence."
+    }
+  ],
+  "assessmentRubric": [
+    "Correctly distinguishes CPU, RAM, storage, OS and application roles.",
+    "Shows a coherent simplified task flow.",
+    "Identifies a relevant security boundary.",
+    "Separates verified facts from assumptions and states a limitation."
+  ],
+  "references": [
+    {
+      "name": "NIST NICE Framework Resource Center",
+      "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
+    }
+  ]
+},
  "agentsec-01": {
   "learningGoal":"Trace an agent request through its runtime components and identify where identity, authorization and audit controls must operate.",
   "read":"An AI agent is a software system that uses a model to interpret a goal and select actions through an orchestrator and connected tools. Review the model separately from the surrounding application: the model may propose an action, but application code must enforce identity, authorization, input validation, action limits and logging. A model response is not an authorization decision.\n\nA typical request enters through an authenticated user or service, is normalized by the application, and is passed to an orchestrator with bounded context. The orchestrator calls a model, validates any structured response, checks whether a proposed tool call is permitted, invokes the tool using a scoped identity, and returns a filtered result. Each transition is a trust boundary. Record what data crosses it, which principal acts, and what evidence is retained.\n\nSome agents also use retrieval, persistent memory, delegation or multi-step loops. These features add state transitions and data paths. Document the actual deployed design rather than assuming all agents share one architecture.",
