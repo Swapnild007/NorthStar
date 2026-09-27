@@ -18,7 +18,7 @@ const savedLabs=readStoredJSON("ns_lab_state",{});
 const LAB_INTELLIGENCE=window.NORTHSTAR_LAB_INTELLIGENCE||{version:"1.0",scoring:{evidence:20,reasoning:35,artifact:20,finding:15,confidence:10},labs:{}};
 
 function applyChapterExpansion(lesson){
- const merged={...lesson,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[lesson.id]||{})};
+ const merged={...lesson,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[lesson.id]||{}),...(window.NORTHSTAR_2_0_AUTHORED?.[lesson.id]||{})};
  if(!merged.visual&&window.NORTHSTAR_2_0_VISUALS?.[lesson.id])merged.visual={...window.NORTHSTAR_2_0_VISUALS[lesson.id]};
  const expansion=window.NORTHSTAR_CHAPTER_EXPANSION?.[lesson.id]||{};
  const appendKeys=["notes","deepDive","examples","caseQuestions","practiceSteps","mistakes","takeaways","assessmentRubric","qa"];
