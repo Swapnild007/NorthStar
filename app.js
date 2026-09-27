@@ -17,7 +17,24 @@ const savedCompleted=readStoredJSON("ns_completed_lessons",[]);
 const savedLabs=readStoredJSON("ns_lab_state",{});
 const LAB_INTELLIGENCE=window.NORTHSTAR_LAB_INTELLIGENCE||{version:"1.0",scoring:{evidence:20,reasoning:35,artifact:20,finding:15,confidence:10},labs:{}};
 
-const BASE_CURRICULUM=(Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[]).map(c=>({...c,lessons:(c.lessons||[]).map(l=>({...l,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[l.id]||{}),...(window.NORTHSTAR_CHAPTER_EXPANSION?.[l.id]||{})}))}));
+function applyChapterExpansion(lesson){
+ const merged={...lesson,...(window.NORTHSTAR_LESSON_ENRICHMENT?.[lesson.id]||{})};
+ const expansion=window.NORTHSTAR_CHAPTER_EXPANSION?.[lesson.id]||{};
+ const appendKeys=["notes","deepDive","examples","caseQuestions","practiceSteps","mistakes","takeaways","assessmentRubric","qa"];
+ for(const key of appendKeys){
+  if(!Array.isArray(expansion[key])||!expansion[key].length)continue;
+  const existing=Array.isArray(merged[key])?merged[key]:[];
+  const seen=new Set(existing.map(x=>typeof x==="string"?x:JSON.stringify(x)));
+  merged[key]=[...existing,...expansion[key].filter(x=>{const id=typeof x==="string"?x:JSON.stringify(x);if(seen.has(id))return false;seen.add(id);return true;})];
+ }
+ for(const key of ["learningGoal","studyPlan","case","practice","reflection","check"]){
+  const value=merged[key];
+  const missing=value===undefined||value===null||(typeof value==="string"&&!value.trim())||(Array.isArray(value)&&!value.length);
+  if(missing&&expansion[key]!==undefined)merged[key]=expansion[key];
+ }
+ return merged;
+}
+const BASE_CURRICULUM=(Array.isArray(window.NORTHSTAR_CURRICULUM)?window.NORTHSTAR_CURRICULUM:[]).map(c=>({...c,lessons:(c.lessons||[]).map(applyChapterExpansion)}));
 const curriculum=BASE_CURRICULUM.map(c=>{
  const additions=[...(window.NORTHSTAR_COMPETENCY_COMPLETION||[]),...(window.NORTHSTAR_2_0_ADDITIONS||[])].filter(l=>String(l.course)===String(c.code));
  return additions.length?{...c,lessons:[...(c.lessons||[]),...additions]}:c;
