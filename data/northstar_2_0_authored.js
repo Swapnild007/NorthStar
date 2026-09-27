@@ -61,9 +61,8 @@ window.NORTHSTAR_2_0_AUTHORED = {
   "case": "A laptop is reported stolen while powered off. The owner says the drive is encrypted. Identify what encryption may protect, what remains at risk, and what evidence is needed before making a claim about the device.",
   "caseQuestions": [
     "Which asset and device state are in scope?",
-    "What does full-disk encryption protect when the laptop is powered off, and what does it not establish?",
-    "Which facts need verification, such as encryption status, key protection and last known device state?",
-    "What safe next steps and records would support the incident response?"
+    "What does full-disk encryption protect, and which facts still need verification?",
+    "What evidence and safe next steps would support the incident response?"
   ],
   "mistakes": [
     "Calling the CPU the whole computer.",
@@ -84,26 +83,18 @@ window.NORTHSTAR_2_0_AUTHORED = {
     "answer": "Encryption can help protect stored data while the device is off, but device state and other exposure paths still need verification.",
     "why": "A control has a defined scope. Verify the encryption configuration and consider other copies, credentials and device states before concluding."
   },
-  "highlights": [
-    "A computer combines hardware, software, data and users.",
-    "Trace one task to understand how components cooperate.",
-    "Match security controls to the asset, state and boundary."
-  ],
-  "notes": [
-    "RAM is typically volatile; persistent storage is designed to retain data without power.",
-    "The operating system mediates many resource and permission decisions, but firmware and hardware also matter."
-  ],
+  "highlights": [],
+  "notes": [],
   "takeaways": [
-    "Input, processing, storage and output describe a useful basic computer model.",
-    "A CPU is one component within a larger system.",
-    "Security analysis starts by defining the asset, actor, state and boundary."
+    "Input, processing, storage and output form a useful basic model.",
+    "The CPU is one component within a larger system.",
+    "Security analysis starts with the asset, actor, state and boundary."
   ],
   "practiceSteps": [
-    "Sketch the photo task from user input to visible output.",
-    "Label CPU, RAM, storage, operating system and application where they participate.",
-    "Mark where access to the file is mediated and what changes when the application runs.",
-    "For the stolen-laptop case, list verified facts separately from assumptions.",
-    "Write one cautious conclusion and the evidence needed to strengthen it."
+    "Sketch the photo task from input to output; label the CPU, RAM, storage, OS and application.",
+    "Mark where file access is controlled and what changes when the application runs.",
+    "List verified facts separately from assumptions in the stolen-laptop case.",
+    "Write a cautious conclusion, one limitation and the evidence needed to strengthen it."
   ],
   "reflection": "Which part of your computer model was easiest to confuse with another component, and what example helped distinguish them?",
   "qa": [
@@ -116,15 +107,10 @@ window.NORTHSTAR_2_0_AUTHORED = {
       "q": "How are RAM and storage different?",
       "a": "RAM is working memory for active tasks and is typically volatile; persistent storage retains files when power is off.",
       "why": "The distinction helps explain both performance and data exposure."
-    },
-    {
-      "q": "Does encryption alone prove a stolen laptop is safe?",
-      "a": "No. Verify the encryption state and consider keys, unlocked states, synced data, backups and other access paths.",
-      "why": "Controls protect specific assets under specific conditions."
     }
   ],
   "sections": [],
-  "why": "This model supports later lessons on operating systems, files, networks, programming and cybersecurity controls.",
+  "why": "",
   "competency": "Describe the components and trace a simple task; identify a relevant security boundary and distinguish evidence from assumptions.",
   "deepDive": [
     {
@@ -147,6 +133,24 @@ window.NORTHSTAR_2_0_AUTHORED = {
       "name": "NIST NICE Framework Resource Center",
       "url": "https://www.nist.gov/itl/applied-cybersecurity/nice/nice-framework-resource-center/about"
     }
+  ],
+  "studyPlan": [
+    [
+      "Core model",
+      10
+    ],
+    [
+      "Photo data flow",
+      10
+    ],
+    [
+      "Security boundary case",
+      10
+    ],
+    [
+      "Sketch + check",
+      10
+    ]
   ]
 },
  "agentsec-01": {
