@@ -179,45 +179,43 @@ const views={
  home:()=>{
   const p=overallPercent(), cp=courseProgress(2);
   const activity=allLessons().filter(l=>state.completedLessons.includes(l.id)).slice(-3).reverse();
-  return `<section class="fade">
-   <div class="hero glass">
-    <span class="eyebrow">Capability platform</span>
-    <h1>Your capability.<br>Your path.<br>A safer tomorrow.</h1>
-    <p>${esc(COURSE.description)}</p>
-    <button class="cta" data-route="learn">Continue Learning →</button>
+  const recent=activity.length?activity.map(l=>`<div class="ops-feed-item"><span class="ops-feed-mark">✓</span><span><strong>${esc(l.title)}</strong><small>Learning record · completed</small></span></div>`).join(""):'<div class="empty">Your completed lessons and lab activity will appear here.</div>';
+  return `<section class="fade ops-home">
+   <div class="hero glass ops-hero">
+    <span class="eyebrow">NorthStar 2.0 · Cybersecurity OS</span>
+    <h1>Cyber operations.<br>One connected workspace.</h1>
+    <p>Learn, investigate, practice, and track your security capabilities from a single command center.</p>
+    <button class="cta" data-route="learn">Resume mission →</button>
    </div>
-   <div class="grid stats">
-    <div class="stat glass"><b>${p}%</b><span>Overall progress</span></div>
-    <div class="stat glass"><b>${completedCount()}</b><span>Lessons completed</span></div>
-    <div class="stat glass"><b>${totalLessons()}</b><span>Lessons in curriculum</span></div>
-    <div class="stat glass"><b>${labCompletedCount()}</b><span>Labs completed</span></div>
-    <div class="stat glass"><b>${curriculum.length}</b><span>Learning paths</span></div>
+   <div class="ops-console card glass">
+    <div class="ops-console-head">
+     <div><span class="ops-kicker">Command center</span><h2>Operational overview</h2></div>
+     <span class="ops-sim"><i></i> TRAINING ENVIRONMENT · SIMULATED</span>
+    </div>
+    <div class="ops-metrics">
+     <div class="ops-metric"><small>Readiness progress</small><strong>${p}%</strong><div class="ops-meter"><i style="width:${p}%"></i></div></div>
+     <div class="ops-metric"><small>Curriculum</small><strong>${totalLessons()} <em>lessons</em></strong><span class="ops-sub">Across ${curriculum.length} learning paths</span></div>
+     <div class="ops-metric"><small>Practice labs</small><strong>${labCompletedCount()} <em>completed</em></strong><span class="ops-sub">Hands-on learning record</span></div>
+    </div>
+    <div class="ops-console-foot"><span><b class="ops-dot"></b> Local learning state</span><span>No live network telemetry connected</span></div>
    </div>
-   <div class="section card glass">
-    <div class="section-head"><h2>Learning path</h2><button data-route="learn">View all →</button></div>
-    <div class="path">${curriculum.map((c,i)=>`<div class="path-step ${courseProgress(i)===100?"done":i===1?"active":""}"><div class="path-dot">${courseProgress(i)===100?"✓":iconFor(i)}</div><div class="path-label">${c.title.replace("Security ","")}</div></div>`).join("")}</div>
-   </div>
-   <div class="section">
-    <div class="section-head"><h2>Continue learning</h2><button data-route="learn">See all →</button></div>
-    <button class="card glass learning-card clickable" data-course="2" data-lesson="0" style="width:100%">
-      <div class="course-icon">02</div><div class="course-main"><strong>${curriculum[2]?.title||"Networking & Network Security"}</strong><small>Lesson ${Math.min(5,(curriculum[2]?.lessons||[]).length)} · TCP/IP · traffic · segmentation</small><div class="progress"><i style="width:${cp||42}%"></i></div></div><b>${cp||42}%</b>
-    </button>
-   </div>
-   <div class="section grid quick-grid">
-    <button class="card glass quick clickable" data-route="learn"><span class="quick-icon">▤</span><span><strong>Learn</strong><small>Curriculum</small></span></button>
-    <button class="card glass quick clickable" data-route="labs"><span class="quick-icon">⌁</span><span><strong>Labs</strong><small>Hands-on</small></span></button>
-    <button class="card glass quick clickable" data-route="coding"><span class="quick-icon">⌘</span><span><strong>Code Lab</strong><small>Build & run</small></span></button>
-    <button class="card glass quick clickable" data-route="progress"><span class="quick-icon">◉</span><span><strong>Progress</strong><small>Track growth</small></span></button>
+   <div class="section ops-workspaces">
+    <div class="section-head"><div><span class="ops-kicker">Workspaces</span><h2>Choose your next operation</h2></div></div>
+    <div class="ops-workspace-grid">
+     <button class="card glass ops-workspace clickable" data-route="learn"><span class="ops-workspace-icon">⌘</span><span class="ops-workspace-copy"><strong>Learning Academy</strong><small>Structured lessons · ${totalLessons()} topics</small></span><span class="ops-arrow">↗</span></button>
+     <button class="card glass ops-workspace clickable" data-route="labs"><span class="ops-workspace-icon">▣</span><span class="ops-workspace-copy"><strong>Cyber Range</strong><small>Guided labs and safe practice</small></span><span class="ops-arrow">↗</span></button>
+     <button class="card glass ops-workspace clickable" data-route="coding"><span class="ops-workspace-icon">⌨</span><span class="ops-workspace-copy"><strong>Code Workshop</strong><small>Build and test technical skills</small></span><span class="ops-arrow">↗</span></button>
+     <button class="card glass ops-workspace clickable" data-route="progress"><span class="ops-workspace-icon">◫</span><span class="ops-workspace-copy"><strong>Skills & Progress</strong><small>Review milestones and skill matrix</small></span><span class="ops-arrow">↗</span></button>
+    </div>
    </div>
    <div class="section grid activity-grid">
-    <div class="card glass"><div class="section-head"><h2>Recent activity</h2><button data-route="progress">View all →</button></div>
-     ${activity.length?activity.map(l=>`<div class="activity-item"><span class="activity-dot">✓</span><div><strong>${esc(l.title)}</strong><small>Completed · NorthStar curriculum</small></div></div>`).join(""):'<div class="empty">Your completed lessons will appear here.</div>'}
-    </div>
-    <div class="card glass"><div class="section-head"><h2>Skill matrix</h2><button data-route="progress">Details →</button></div>
-      ${skillRows()}
-    </div>
+    <div class="card glass"><div class="section-head"><h2>Activity log</h2><button data-route="progress">View all →</button></div>${recent}</div>
+    <div class="card glass"><div class="section-head"><h2>Skill matrix</h2><button data-route="progress">Details →</button></div>${skillRows()}</div>
    </div>
-   <div class="section quote glass"><strong>“Cybersecurity isn’t just a career. It’s a responsibility.”</strong></div>
+   <div class="section card glass ops-mission">
+    <div><span class="ops-kicker">Suggested next step</span><h2>Continue the network security path</h2><p>Build foundational understanding of TCP/IP, traffic analysis, and segmentation.</p></div>
+    <button class="cta" data-course="2" data-lesson="0">Open lesson →</button>
+   </div>
   </section>`;
  },
  learn:()=>{
