@@ -7,9 +7,9 @@ This report records source inventory and exact normalized text repeat candidates
 
 ## Editorial pass progress
 
-- **Authored revisions:** `cf-01` through `cf-10` (Computer & Digital Foundations) and `sf-01` through `sf-05` (Cybersecurity Foundations) have authored override entries on this branch.
+- **Authored revisions:** `cf-01` through `cf-10` (Computer & Digital Foundations), `sf-01` through `sf-05` (Cybersecurity Foundations), and `ns-01` through `ns-05` (Networking & Network Security) have authored override entries on this branch.
 - These are focused lesson rewrites that retain the stable lesson IDs and include learning content, case/practice material and knowledge checks where specified in the override.
-- **Not yet certified:** no full browser/mobile rendering pass or complete lesson-by-lesson semantic review of the remaining 172 lessons has been completed. The mechanical repeat counts below remain candidate flags, not editorial findings.
+- **Not yet certified:** no full browser/mobile rendering pass or complete lesson-by-lesson semantic review of the remaining 167 lessons has been completed. The mechanical repeat counts below remain candidate flags, not editorial findings.
 
 ## Per-lesson inventory
 
