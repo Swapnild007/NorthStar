@@ -1642,5 +1642,359 @@ window.NORTHSTAR_2_0_AUTHORED = {
       "answer": "The authorized team has validated restoration from a trusted state, relevant controls and monitoring, and documented residual risk.",
       "why": "Availability alone does not establish security. Recovery requires trusted restoration, control validation, monitoring and an accountable record of remaining risk."
     }
+  },
+"os-01": {
+    "objective": "Describe an authorized security test from scope and rules of engagement through safe validation, reporting and retesting.",
+    "learningGoal": "Apply permission, bounded methods, evidence discipline and clear communication throughout an offensive assessment.",
+    "time": "45–60 min",
+    "prerequisite": "Cybersecurity and networking foundations",
+    "read": "Offensive security evaluates safeguards through controlled, explicitly authorized testing. Before technical work, document the target assets, purpose, dates, allowed methods, exclusions, test accounts, data-handling rules, contacts and stop conditions. Written authorization and rules of engagement define the boundary; public exposure or a general request is not permission to test connected systems. Translate objectives into testable questions and plan low-impact validation using staging environments and synthetic data where possible. If activity crosses scope, exposes sensitive information or causes unexpected impact, stop and notify the agreed contact. Record observed facts, evidence provenance and limitations. Report reproducible findings with affected asset, conditions, demonstrated impact, remediation and retest criteria. Do not overstate severity or claim access beyond what was observed.",
+    "concepts": [
+      "Written authorization",
+      "Scope and exclusions",
+      "Rules of engagement",
+      "Safe validation",
+      "Evidence minimization",
+      "Reporting and retesting"
+    ],
+    "glossary": [
+      [
+        "Rules of engagement",
+        "Agreed constraints and procedures governing an authorized test."
+      ],
+      [
+        "Scope",
+        "Explicitly authorized systems, methods and time window."
+      ],
+      [
+        "Stop condition",
+        "A circumstance requiring testing to pause or stop."
+      ],
+      [
+        "Finding",
+        "An evidence-supported issue with context and remediation."
+      ]
+    ],
+    "example": "A staging portal is in scope but its production identity provider is excluded. Use supplied staging accounts and stop if a redirect reaches production; notify the engagement contact rather than probing it.",
+    "visual": {
+      "title": "Authorized assessment lifecycle",
+      "steps": [
+        "Confirm authorization, scope and exclusions",
+        "Agree methods, schedule, contacts and stop conditions",
+        "Plan tests against objectives",
+        "Validate only within the approved boundary",
+        "Record minimal reproducible evidence",
+        "Report and retest agreed fixes"
+      ]
+    },
+    "case": "An in-scope staging app links to an excluded production host. Document the staging observation without interacting with production; seek explicit authorization before any further testing.",
+    "caseQuestions": [
+      "What must be checked before requesting the production host?",
+      "Who should be notified and what facts recorded?",
+      "How can the observation be reported without probing out of scope?"
+    ],
+    "mistakes": [
+      "Assuming general permission covers connected assets.",
+      "Continuing after a stop condition.",
+      "Collecting unnecessary sensitive data.",
+      "Presenting suspected impact as confirmed."
+    ],
+    "practice": "Create rules of engagement for a fictional staging app: assets, exclusions, methods, window, test accounts, data safeguards, contacts and stop conditions.",
+    "evidence": "Submit the scope checklist and a sample finding template distinguishing facts, inference, limitations and remediation.",
+    "check": {
+      "q": "A staging test unexpectedly redirects to an excluded production host. What should happen?",
+      "options": [
+        "Continue because the redirect originated in scope.",
+        "Send harmless probes to production.",
+        "Stop interacting with the excluded host, preserve staging evidence and notify the designated contact.",
+        "Assume production is compromised."
+      ],
+      "answer": "Stop interacting with the excluded host, preserve staging evidence and notify the designated contact.",
+      "why": "Scope remains binding when a technical path crosses a boundary."
+    }
+  },
+"os-02": {
+    "objective": "Map an application's reachable components, identities, data flows and trust boundaries to define its authorized attack surface.",
+    "learningGoal": "Use architecture and approved observation to identify entry points and security decisions for scoped testing.",
+    "time": "45–60 min",
+    "prerequisite": "HTTP basics; authorized assessment methodology",
+    "read": "An application's attack surface includes reachable pages, APIs, authentication and recovery flows, uploads, administrative functions, integrations, background jobs and deployment interfaces. Start with an architecture model: clients, roles, services, data stores, identity providers and third parties. Trace data flows and mark trust boundaries where data or authority changes hands. For each entry point, record purpose, required identity, accepted input, sensitive actions, dependencies and expected authorization checks. Distinguish observed facts from documentation-based assumptions. Compare role capabilities and identify sensitive state-changing operations, but keep inventory and requests within approved scope. Endpoint discovery is not permission to test an asset. Date the inventory because applications change.",
+    "concepts": [
+      "Components and interfaces",
+      "Roles and privileges",
+      "API inventory",
+      "Data-flow mapping",
+      "Trust boundaries",
+      "Scope-aware testing"
+    ],
+    "glossary": [
+      [
+        "Attack surface",
+        "Reachable interfaces and behaviors through which an application may be influenced."
+      ],
+      [
+        "Trust boundary",
+        "A point where data, identity or authority crosses security domains."
+      ],
+      [
+        "Entry point",
+        "An interface through which an actor supplies input or requests an action."
+      ],
+      [
+        "State-changing operation",
+        "An action that modifies application or system state."
+      ]
+    ],
+    "example": "For a customer portal, list role-specific routes and APIs, mark billing and profile changes, and trace the portal's connection to its identity provider and billing service.",
+    "visual": {
+      "title": "Attack-surface mapping",
+      "steps": [
+        "List approved hosts and environments",
+        "Identify users, roles and service identities",
+        "Inventory routes, APIs and sensitive actions",
+        "Trace data flows and integrations",
+        "Mark trust boundaries and authorization checks",
+        "Prioritize safe tests and coverage gaps"
+      ]
+    },
+    "case": "A customer menu hides an admin link, but an API exists. In the designated test tenant, assess whether server-side authorization protects the operation.",
+    "caseQuestions": [
+      "Which interfaces and roles are in scope?",
+      "What evidence shows server-side enforcement?",
+      "How will testing avoid other tenants and production?"
+    ],
+    "mistakes": [
+      "Assuming hidden UI controls enforce permissions.",
+      "Treating endpoint discovery as authorization.",
+      "Ignoring integrations and APIs.",
+      "Labeling inferred architecture as verified."
+    ],
+    "practice": "Draw a portal map with three roles, two APIs, a data store and a third-party integration; label sensitive operations and boundaries.",
+    "evidence": "Submit diagram and inventory table with role, data sensitivity, scope and planned safe test.",
+    "check": {
+      "q": "A sensitive action is absent from a user's menu. What is justified?",
+      "options": [
+        "It is securely restricted.",
+        "No user can access it.",
+        "The UI hides it; server-side authorization still needs scoped verification.",
+        "Any related production API may now be tested."
+      ],
+      "answer": "The UI hides it; server-side authorization still needs scoped verification.",
+      "why": "Client-side presentation does not prove server-side access control."
+    }
+  },
+"os-03": {
+    "objective": "Explain untrusted input, injection and output-context risks, and select safe validation, query and encoding controls.",
+    "learningGoal": "Recognize input-handling failure modes and apply layered defenses in an authorized lab.",
+    "time": "45–60 min",
+    "prerequisite": "Application attack surface; HTTP",
+    "read": "Applications accept data from forms, APIs, files, headers and integrations. Treat boundary-crossing data as untrusted. Injection occurs when data is interpreted as instructions or syntax by a downstream component such as a database, command processor, template engine or browser. Avoid universal blacklists. Validate type, format and business constraints at the appropriate boundary, and use APIs that keep data separate from instructions. Database queries should bind values through parameterized interfaces rather than concatenate user input. Avoid building shell commands from untrusted strings; prefer safe library interfaces and least privilege. Output protection is context-specific: HTML text, attributes, URLs, JavaScript and CSS have different rules. Prefer framework context-aware escaping and safe DOM APIs; HTML escaping alone is not universal protection. Test with benign synthetic inputs in a designated lab, and review server-side controls rather than relying only on client-side checks.",
+    "concepts": [
+      "Untrusted input",
+      "Interpreter boundaries",
+      "Validation",
+      "Parameterized queries",
+      "Contextual output encoding",
+      "Least privilege"
+    ],
+    "glossary": [
+      [
+        "Injection",
+        "A flaw where data is interpreted as syntax or instructions."
+      ],
+      [
+        "Input validation",
+        "Checking data against defined type, format and business rules."
+      ],
+      [
+        "Parameterized query",
+        "A query that binds values separately from query structure."
+      ],
+      [
+        "Output encoding",
+        "Transforming data for safe handling in a specific output context."
+      ]
+    ],
+    "example": "A search term should be passed to a parameterized database query. If echoed into a page, the rendering layer separately needs context-aware output handling.",
+    "visual": {
+      "title": "Safe input-to-output path",
+      "steps": [
+        "Receive data at a defined boundary",
+        "Validate type and business rules",
+        "Use safe APIs to pass data",
+        "Limit downstream privileges",
+        "Handle output for its exact context",
+        "Test safely with synthetic inputs"
+      ]
+    },
+    "case": "A support form uses client-side filtering, stores display names and later renders them in an internal dashboard. Review server-side validation and the dashboard's rendering context.",
+    "caseQuestions": [
+      "Why is client-only filtering insufficient?",
+      "Which server-side and storage decisions matter?",
+      "What output context is used and what protection fits it?"
+    ],
+    "mistakes": [
+      "Relying on a blacklist.",
+      "Confusing validation with parameterization.",
+      "Using HTML escaping for every context.",
+      "Testing with real data without authorization."
+    ],
+    "practice": "Map four fictional input fields to constraints, downstream interpreters, safe APIs and output contexts.",
+    "evidence": "Submit the boundary table and explain how parameterization and contextual output handling address different risks.",
+    "check": {
+      "q": "A validated string is concatenated into SQL text. What remains true?",
+      "options": [
+        "Validation guarantees safety.",
+        "Validation and safe query construction differ; use parameterized queries.",
+        "Client-side validation is enough.",
+        "HTML escaping fixes SQL construction."
+      ],
+      "answer": "Validation and safe query construction differ; use parameterized queries.",
+      "why": "Validation checks business rules; parameterization separates values from query syntax."
+    }
+  },
+"os-04": {
+    "objective": "Differentiate authentication, authorization and sessions; review recovery, issuance, renewal and revocation controls.",
+    "learningGoal": "Assess identity flows as a lifecycle and verify server-side permissions for each protected resource.",
+    "time": "45–60 min",
+    "prerequisite": "Identity fundamentals; web application attack surface",
+    "read": "Authentication verifies an identity claim; authorization decides what that identity may do to a resource. Session management maintains continuity after sign-in, commonly through cookies or tokens. A successful login does not grant blanket access. Review enrollment, MFA, recovery, session creation, renewal, privilege changes, logout, timeout and revocation. Recovery must not bypass the assurance of normal sign-in. Browser cookies may use Secure, HttpOnly and SameSite attributes as appropriate, alongside expiry and rotation. Token designs require validation of issuer, audience, expiry and integrity, plus suitable revocation or short lifetimes. Enforce authorization on the server for every protected operation and object, including APIs. Apply least privilege and deny by default. Test with approved roles and synthetic records; do not access another real user's data without explicit authorization.",
+    "concepts": [
+      "Authentication vs authorization",
+      "Session lifecycle",
+      "Recovery assurance",
+      "Cookie and token controls",
+      "Object-level authorization",
+      "Role test matrix"
+    ],
+    "glossary": [
+      [
+        "Authentication",
+        "Verification of an identity claim."
+      ],
+      [
+        "Authorization",
+        "Decision whether an identity may act on a resource."
+      ],
+      [
+        "Session",
+        "Maintained context for an authenticated interaction."
+      ],
+      [
+        "Session revocation",
+        "Invalidating a session or token."
+      ],
+      [
+        "Object-level authorization",
+        "Checking access to a specific resource, not merely an endpoint."
+      ]
+    ],
+    "example": "A customer may view their own invoice but not another customer's. Use synthetic accounts and verify the server checks ownership for each invoice request.",
+    "visual": {
+      "title": "Identity and session lifecycle",
+      "steps": [
+        "Enroll identity and recovery methods",
+        "Authenticate with suitable assurance",
+        "Issue protected session or token",
+        "Authorize each action and resource",
+        "Renew or elevate sessions safely",
+        "Expire or revoke and monitor credentials"
+      ]
+    },
+    "case": "After logout, an old tab still shows sensitive content. Determine whether this is cached display or an accepted server session using an approved test account.",
+    "caseQuestions": [
+      "What evidence distinguishes cache from a valid session?",
+      "Which revocation and cache controls need review?",
+      "How can this be tested safely with synthetic data?"
+    ],
+    "mistakes": [
+      "Treating login as blanket authorization.",
+      "Checking only UI permissions.",
+      "Ignoring recovery and renewal.",
+      "Assuming visual logout proves revocation."
+    ],
+    "practice": "Build a lifecycle checklist and role matrix covering sign-in, MFA, recovery, sensitive actions, privilege changes, logout and expiry.",
+    "evidence": "Submit flow diagram and permission matrix with expected outcomes and evidence fields.",
+    "check": {
+      "q": "A customer is authenticated and calls an invoice API. What must be checked?",
+      "options": [
+        "Authentication proves ownership of every invoice.",
+        "The UI hides invoice identifiers.",
+        "The server authorizes that specific invoice and action on each request.",
+        "Only cookie age matters."
+      ],
+      "answer": "The server authorizes that specific invoice and action on each request.",
+      "why": "Identity verification and resource authorization are distinct."
+    }
+  },
+"os-05": {
+    "objective": "Write an evidence-based security test report with reproducible findings, impact, limitations, remediation and retest outcomes.",
+    "learningGoal": "Turn authorized observations into actionable work without overstating certainty.",
+    "time": "40–55 min",
+    "prerequisite": "Authorized testing methodology; application security testing",
+    "read": "A useful finding identifies the affected asset, tested environment, preconditions, observed behavior, expected behavior and supporting evidence. Include a concise reproduction path within scope and use synthetic or redacted data. Explain impact in system context, separating demonstrated consequences from plausible risk; state assumptions and limitations. Apply the organization's severity method and consider exposure, privileges, affected data or operations and mitigations rather than copying a scanner's default score. Recommend root-cause remediation and define acceptance criteria. A report may include summary, scope and methods, findings, evidence, risk rationale, recommendations, limitations and appendices. Assign owners and dates through normal risk processes. Retest the original condition and relevant adjacent cases, record build/version and outcome, and distinguish fixed, partially fixed, not fixed and unable to verify. A clean retest supports only a bounded conclusion about tested cases, not a guarantee of application-wide security.",
+    "concepts": [
+      "Reproducibility",
+      "Redacted evidence",
+      "Impact and assumptions",
+      "Severity method",
+      "Root-cause remediation",
+      "Retest status"
+    ],
+    "glossary": [
+      [
+        "Demonstrated impact",
+        "A consequence directly supported by collected evidence."
+      ],
+      [
+        "Remediation",
+        "A change intended to remove or reduce a weakness."
+      ],
+      [
+        "Retest",
+        "A bounded follow-up test after remediation."
+      ],
+      [
+        "Limitation",
+        "A constraint on what can be concluded from an assessment."
+      ]
+    ],
+    "example": "For an object-level access issue, state the test tenant, roles, expected denial, observed response and redacted evidence; recommend server-side ownership checks and define a two-account retest.",
+    "visual": {
+      "title": "Finding-to-fix workflow",
+      "steps": [
+        "Record scope and test conditions",
+        "Capture minimal redacted evidence",
+        "Compare observed and expected behavior",
+        "State impact, assumptions and limitations",
+        "Recommend fix and acceptance criteria",
+        "Retest and record version and outcome"
+      ]
+    },
+    "case": "A scanner reports a critical issue, but the route appears disabled in the tested release. Validate component and version applicability; report the scanner lead separately from confirmed observations.",
+    "caseQuestions": [
+      "What confirms component and release applicability?",
+      "How should uncertainty be stated?",
+      "What should a retest verify after a relevant change?"
+    ],
+    "mistakes": [
+      "Publishing unvalidated scanner output as confirmed.",
+      "Confusing possible and demonstrated impact.",
+      "Offering symptom-only fixes.",
+      "Marking fixed without retest conditions."
+    ],
+    "practice": "Draft a synthetic-data finding report for an authorized access-control issue, including summary, scope, steps, evidence, impact, limitations, remediation and retest criteria.",
+    "evidence": "Submit a redacted finding report and retest record with build, roles, test cases, result and uncertainty.",
+    "check": {
+      "q": "A scanner flags a vulnerability but the route is absent in the tested release. What should the report do?",
+      "options": [
+        "Call it confirmed critical without qualification.",
+        "Ignore the signal and discard evidence.",
+        "Record the signal, validate applicability, and distinguish confirmed facts from unverified items.",
+        "Claim the entire application is secure."
+      ],
+      "answer": "Record the signal, validate applicability, and distinguish confirmed facts from unverified items.",
+      "why": "Reports should separate tool leads from verified conditions and bound conclusions to actual evidence."
+    }
   }
 };
