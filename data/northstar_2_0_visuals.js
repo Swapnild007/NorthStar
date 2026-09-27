@@ -1,0 +1,1 @@
+window.NORTHSTAR_2_0_VISUALS = {"agentsec-01":{"title":"Agent request lifecycle","caption":"Conceptual system flow and enforcement points.","steps":["User request","Identity and scope validation","Orchestrator builds bounded context","Model proposes tool call","Application policy validates action","Scoped tool executes and logs outcome","Result returns to user"]}};
