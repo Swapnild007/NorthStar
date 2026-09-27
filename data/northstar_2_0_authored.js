@@ -1267,5 +1267,380 @@ window.NORTHSTAR_2_0_AUTHORED = {
       "why": "Scoped, short-lived credentials limit exposure and blast radius; monitoring supports detection."
     },
     "practice": "Design a credential lifecycle for a fictional scheduled cloud job. Document identity type, exact resource permissions, provisioning method, storage or federation approach, audit signals, rotation/renewal, revocation and an operational test."
+  },
+"ds-01": {
+    "objective": "Explain how security logs are produced, transported, retained and queried, and select telemetry that can support a defined detection or investigation.",
+    "learningGoal": "Treat logging as an evidence pipeline: identify the event source, fields, time context, collection path, retention and access controls before relying on an event.",
+    "time": "40–50 min",
+    "prerequisite": "Computer, networking and cybersecurity foundations",
+    "read": "A log is a time-oriented record of an event observed by a system or application. Examples include an authentication result, process start, firewall decision, administrative change or cloud API call. Logs are not a complete record of reality: they reflect what a source was configured and able to observe, and may be missing, delayed, duplicated or altered.\\n\\nDesign logging from a question, not from a wish to collect everything. For a suspected account takeover, useful sources may include identity-provider sign-ins, MFA outcomes, session creation, endpoint activity and relevant network events. Record the source and its limitations. Establish synchronized time, stable identifiers, useful context, retention periods and role-based access. Protect logs against unauthorized change and deletion, and monitor the health of the collection pipeline itself.\\n\\nCollection has costs and risks. Excessive telemetry increases storage and analyst workload; sensitive fields can expose personal or business data. Define purpose, minimization, access, retention and disposal. Separate an absence of evidence from evidence that an event did not occur: an unconfigured source or broken forwarder can create blind spots.",
+    "concepts": [
+      "Event source and event type",
+      "Timestamp and clock synchronization",
+      "Structured fields and identifiers",
+      "Collection, forwarding and parsing",
+      "Retention and integrity",
+      "Coverage gaps and privacy"
+    ],
+    "glossary": [
+      [
+        "Security log",
+        "A record emitted by a system or application about an observed event."
+      ],
+      [
+        "Telemetry",
+        "Operational observations collected from systems, applications or networks."
+      ],
+      [
+        "Forwarder",
+        "A component that transports events from a source to a central system."
+      ],
+      [
+        "Retention",
+        "The period for which collected data is kept and accessible."
+      ],
+      [
+        "Coverage gap",
+        "A missing or unreliable observation path that limits detection or investigation."
+      ]
+    ],
+    "example": "For failed-login detection, document which identity systems emit failures, whether events include account and source context, how quickly they arrive, and how long they remain searchable. Test with an approved test account and compare source events with the central record.",
+    "visual": {
+      "title": "Logging evidence pipeline",
+      "caption": "A conceptual path; deployments may combine or reorder components.",
+      "steps": [
+        "System or application emits an event",
+        "Agent or native integration collects it",
+        "Transport and buffering move the event",
+        "Parser normalizes fields and time",
+        "Storage applies access, retention and integrity controls",
+        "Analyst queries the event with source limitations in mind"
+      ]
+    },
+    "case": "A SOC sees no endpoint events from a critical server for six hours. The server owner says there was no suspicious activity. Treat the missing telemetry as a visibility incident until collection health and alternate evidence are checked.",
+    "caseQuestions": [
+      "What source, host and time window are affected?",
+      "Which collection and forwarding health signals can confirm where the gap began?",
+      "What alternate evidence is available, and how will the gap be recorded and escalated?"
+    ],
+    "mistakes": [
+      "Assuming a log proves the event was harmless or malicious without corroboration.",
+      "Treating missing events as proof that nothing happened.",
+      "Ignoring time zones, clock drift or delayed ingestion.",
+      "Collecting sensitive data without purpose and access controls."
+    ],
+    "practice": "Write a telemetry plan for detecting suspicious administrative sign-ins. Specify sources, minimum fields, expected delivery delay, retention rationale, access restrictions and one health check.",
+    "evidence": "Submit a source-to-storage diagram and a table mapping each detection question to its required event fields and known blind spots.",
+    "check": {
+      "q": "A central log search returns no events for a server. What is the sound first interpretation?",
+      "options": [
+        "The server had no relevant activity.",
+        "The central system proves the host is clean.",
+        "There may be a visibility or collection gap; check source and pipeline health and seek corroborating evidence.",
+        "Delete and reinstall the logging platform."
+      ],
+      "answer": "There may be a visibility or collection gap; check source and pipeline health and seek corroborating evidence.",
+      "why": "A query result only describes the data available to that query. Validate source generation, transport, parsing, time range and access before inferring that an event did not occur."
+    }
+  },
+"ds-02": {
+    "objective": "Turn a testable threat hypothesis into a detection specification with observable signals, logic, context, validation and maintenance criteria.",
+    "learningGoal": "Build detections as engineered controls that are measurable, tested against representative activity and continuously tuned—not as isolated alert rules.",
+    "time": "45–60 min",
+    "prerequisite": "Logging for Detection",
+    "read": "Detection engineering connects a threat hypothesis to telemetry and an operational response. Begin with a concrete behavior and scope: for example, an account authenticates from an unusual source and then performs a sensitive administrative action. State what behavior is in scope, what is out of scope, and what evidence could support or weaken the hypothesis.\\n\\nMap the hypothesis to available sources and fields. Specify event selection, joins or correlation keys, time windows, thresholds, exclusions and required context. Avoid brittle indicators when behavior-based evidence is available, but do not treat an anomaly as proof of compromise. Include expected benign explanations and the action an analyst should take.\\n\\nValidate with known benign and approved simulated events, historical samples where authorized, and adversarial test cases. Measure detection coverage, precision/false-positive burden, latency and analyst usefulness. Version the rule, record its owner and dependencies, review it when schemas or systems change, and disable or roll back safely if it creates harmful noise. A detection without reliable telemetry or a response path is not operationally complete.",
+    "concepts": [
+      "Hypothesis and scope",
+      "Telemetry mapping",
+      "Selection and correlation logic",
+      "Thresholds and time windows",
+      "Tuning and exclusions",
+      "Testing and lifecycle"
+    ],
+    "glossary": [
+      [
+        "Detection hypothesis",
+        "A falsifiable statement about activity that telemetry may reveal."
+      ],
+      [
+        "Correlation",
+        "Relating events using shared identity, host, session or time context."
+      ],
+      [
+        "False positive",
+        "An alert that meets rule logic but does not represent the targeted harmful behavior."
+      ],
+      [
+        "Detection latency",
+        "Elapsed time between relevant activity and a usable alert."
+      ],
+      [
+        "Rule tuning",
+        "Adjusting logic and context to improve usefulness while preserving intended coverage."
+      ]
+    ],
+    "example": "A rule for repeated failed sign-ins should define the identity source, count threshold, time window, account/source grouping, service-account handling, alert context and triage steps. Test ordinary mistyped-password patterns and approved attack simulations before production.",
+    "visual": {
+      "title": "Detection engineering loop",
+      "caption": "Each stage should leave a reviewable artifact.",
+      "steps": [
+        "Define threat behavior and scope",
+        "Map behavior to reliable telemetry",
+        "Specify logic, context and response",
+        "Test against benign and simulated cases",
+        "Deploy with owner and monitoring",
+        "Measure, tune and retest after change"
+      ]
+    },
+    "case": "A new rule flags every employee who authenticates while traveling. Analysts report high alert volume and missed coverage for token abuse. Review the hypothesis, available context and exclusions without simply suppressing all travel-related activity.",
+    "caseQuestions": [
+      "What behavior is the rule actually detecting versus what was intended?",
+      "Which additional context could distinguish legitimate travel from suspicious session behavior?",
+      "What tests and metrics are required before changing the rule?"
+    ],
+    "mistakes": [
+      "Using an indicator without defining the threat behavior it represents.",
+      "Tuning away a noisy alert without checking lost coverage.",
+      "Deploying without a response owner or test plan.",
+      "Treating an alert as a confirmed incident."
+    ],
+    "practice": "Draft a detection specification for an approved lab scenario: repeated failed logins followed by a successful login. Include fields, grouping, time window, false-positive cases, validation steps and analyst actions.",
+    "evidence": "Submit a one-page rule specification plus a test matrix with at least three benign and three simulated cases and expected outcomes.",
+    "check": {
+      "q": "What makes a detection rule ready for operational use?",
+      "options": [
+        "It produces the largest possible number of alerts.",
+        "It is based on a testable hypothesis, uses validated telemetry, has documented response steps and is measured and maintained.",
+        "It uses a single indicator that never changes.",
+        "It has no exclusions or context."
+      ],
+      "answer": "It is based on a testable hypothesis, uses validated telemetry, has documented response steps and is measured and maintained.",
+      "why": "Operational readiness requires both technical validity and an owned workflow: reliable data, tested logic, understandable context, response actions and ongoing measurement."
+    }
+  },
+"ds-03": {
+    "objective": "Conduct a repeatable SIEM investigation by validating the alert, scoping related activity, preserving evidence and documenting a defensible conclusion.",
+    "learningGoal": "Use the SIEM as an investigative workspace while retaining awareness of data provenance, query limitations and the distinction between leads and verified facts.",
+    "time": "45–60 min",
+    "prerequisite": "Logging for Detection; Detection Engineering Basics",
+    "read": "A SIEM centralizes and correlates security events to support detection and investigation. An alert is a lead, not a verdict. Start by recording the alert identifier, rule version, affected entities, event time and ingestion time. Confirm the query's time zone, data sources, parsing and access scope.\\n\\nBuild a timeline around the triggering event. Pivot using stable identifiers such as account, host, session, process or source address, and widen the time window deliberately. Correlate identity, endpoint, network and cloud evidence where available. Check whether events are duplicates, delayed, normalized incorrectly or generated by expected automation. Record each query's purpose and key results so another analyst can reproduce the work.\\n\\nScope the incident carefully: identify potentially affected accounts, systems, data and time period; distinguish confirmed observations from hypotheses and gaps. Preserve relevant evidence according to organizational procedure, limit access to sensitive records, and coordinate containment with authorized owners. Close with a concise finding, confidence and rationale, unresolved questions, actions taken and follow-up detection or control work.",
+    "concepts": [
+      "Alert validation",
+      "Entity pivots and correlation",
+      "Timeline construction",
+      "Query scope and data quality",
+      "Evidence preservation",
+      "Finding and handoff"
+    ],
+    "glossary": [
+      [
+        "SIEM",
+        "A platform that collects, searches and correlates security event data."
+      ],
+      [
+        "Pivot",
+        "A query step that follows an entity or attribute from one event to related evidence."
+      ],
+      [
+        "Ingestion time",
+        "When an event entered the central platform, distinct from its source event time."
+      ],
+      [
+        "Timeline",
+        "An ordered account of relevant events with source and time context."
+      ],
+      [
+        "Provenance",
+        "Information about where evidence came from and how it was handled."
+      ]
+    ],
+    "example": "For an unusual sign-in alert, validate the identity event and its timestamp, then pivot to MFA result, session issuance, device posture and subsequent sensitive actions. Verify whether the account is a test or service identity and document any source not available to the investigation.",
+    "visual": {
+      "title": "SIEM investigation workflow",
+      "caption": "Maintain an auditable chain from alert to conclusion.",
+      "steps": [
+        "Record alert and scope",
+        "Validate source event and timestamps",
+        "Pivot across identity, endpoint, network and cloud",
+        "Build timeline and check benign explanations",
+        "Preserve relevant evidence and coordinate response",
+        "Document conclusion, confidence, gaps and follow-up"
+      ]
+    },
+    "case": "An alert reports a successful login from a new country followed by a privileged action. The IP geolocation is based on a third-party database and the endpoint log is delayed. Avoid treating either signal as conclusive; correlate independent evidence and note uncertainty.",
+    "caseQuestions": [
+      "Which details are directly observed and which are derived or delayed?",
+      "What corroborating events could validate the session and privileged action?",
+      "How should confidence, evidence gaps and next steps be recorded?"
+    ],
+    "mistakes": [
+      "Assuming IP geolocation identifies a person's physical location.",
+      "Mixing source event time with ingestion time.",
+      "Treating an alert's severity as proof of impact.",
+      "Failing to record queries, evidence provenance or unknowns."
+    ],
+    "practice": "Using a synthetic or authorized lab dataset, investigate a suspicious sign-in alert. Create a timeline with event time, ingestion time, source, entity and interpretation; include at least one benign explanation and one unresolved gap.",
+    "evidence": "Submit reproducible query notes, a scoped event timeline and a short investigation summary separating facts, inferences and unknowns.",
+    "check": {
+      "q": "An alert is based on a single unusual IP geolocation field. What should the analyst do?",
+      "options": [
+        "Declare the account compromised immediately.",
+        "Dismiss the alert because geolocation is imperfect.",
+        "Treat it as a lead and corroborate with independent identity, device and activity evidence while documenting data limitations.",
+        "Change the user's password without following response procedure."
+      ],
+      "answer": "Treat it as a lead and corroborate with independent identity, device and activity evidence while documenting data limitations.",
+      "why": "Derived location data can be inaccurate. Investigation should test the hypothesis against other evidence and follow the organization's authorized response process."
+    }
+  },
+"ds-04": {
+    "objective": "Triage a reported security event by establishing scope, validating evidence, assessing impact and urgency, and selecting an authorized escalation path.",
+    "learningGoal": "Apply a consistent triage method that separates severity from confidence and supports proportionate, documented response.",
+    "time": "40–50 min",
+    "prerequisite": "Logging for Detection; SIEM Investigation Workflow",
+    "read": "Incident triage is the initial structured assessment of a suspected security event. It determines what is known, what may be affected, how quickly action is needed and who should respond. Capture the report source, time, systems and accounts involved, observed indicators, business context and immediate safety or service concerns.\\n\\nAssess impact using organizational criteria: confidentiality, integrity and availability; data sensitivity; privilege; exposure; affected population; operational criticality; and potential spread. Assess confidence separately: source reliability, corroboration, telemetry completeness and plausible benign explanations. A high-impact possibility with incomplete evidence may require urgent escalation while remaining explicitly unconfirmed.\\n\\nUse the approved severity matrix and escalation contacts. Preserve evidence and coordinate containment with authorized incident commanders, system owners and legal/privacy functions as appropriate. Avoid destructive or broad actions that could disrupt critical services or destroy evidence. Record decisions, timestamps, rationale, owner and next review point. Reassess as facts change; initial severity is provisional, not a permanent label.",
+    "concepts": [
+      "Event versus incident",
+      "Impact dimensions",
+      "Confidence and uncertainty",
+      "Severity matrix",
+      "Escalation and ownership",
+      "Proportionate containment"
+    ],
+    "glossary": [
+      [
+        "Triage",
+        "A time-bounded initial assessment that prioritizes investigation and response."
+      ],
+      [
+        "Impact",
+        "The actual or plausible harm to people, data, systems or operations."
+      ],
+      [
+        "Confidence",
+        "How strongly available evidence supports an assessment."
+      ],
+      [
+        "Severity",
+        "A priority classification based on defined organizational impact and urgency criteria."
+      ],
+      [
+        "Escalation",
+        "Routing an event to the designated authority or specialist response team."
+      ]
+    ],
+    "example": "A privileged account has an unexpected sign-in, but logs are incomplete. Record confirmed account and event details, identify the systems and privileges involved, check for corroborating activity, and escalate promptly under the organization's matrix if the potential impact is high.",
+    "visual": {
+      "title": "Triage decision path",
+      "caption": "Impact and confidence are separate inputs; apply local severity criteria.",
+      "steps": [
+        "Capture report, time and affected entities",
+        "Validate initial evidence and telemetry health",
+        "Assess potential impact and operational criticality",
+        "Assess confidence and unresolved uncertainty",
+        "Apply severity matrix and escalate to owner",
+        "Document safe next actions and reassess"
+      ]
+    },
+    "case": "A monitoring alert suggests ransomware behavior on a production file server, but the endpoint agent stopped reporting shortly before the alert. The service supports critical operations. Triage must account for possible high impact and the visibility gap without claiming encryption has been confirmed.",
+    "caseQuestions": [
+      "What facts support the alert and what evidence is missing?",
+      "Which business owner and response authority must be engaged immediately?",
+      "What containment options are authorized and least likely to destroy evidence or disrupt critical operations?"
+    ],
+    "mistakes": [
+      "Equating high severity with high confidence.",
+      "Waiting for perfect evidence before escalating a credible high-impact concern.",
+      "Taking unilateral disruptive action outside authority.",
+      "Failing to record why severity was assigned or changed."
+    ],
+    "practice": "Create a triage worksheet for three synthetic cases: suspicious admin sign-in, malware alert on a standard workstation, and possible ransomware on a critical server. Score impact and confidence separately, then map each to an example escalation decision using a clearly stated hypothetical matrix.",
+    "evidence": "Submit completed triage records showing facts, uncertainty, impact rationale, provisional priority, escalation owner and next review time.",
+    "check": {
+      "q": "A possible incident has potentially severe impact but incomplete telemetry. Which response best reflects sound triage?",
+      "options": [
+        "Lower severity because confidence is not certain.",
+        "Treat impact and confidence separately, escalate according to the approved matrix, and document evidence gaps.",
+        "Wait until every log source is restored before notifying anyone.",
+        "Declare confirmed compromise based only on the possibility."
+      ],
+      "answer": "Treat impact and confidence separately, escalate according to the approved matrix, and document evidence gaps.",
+      "why": "Urgency can be driven by plausible impact even when confidence is limited. Triage should preserve that distinction and use established escalation criteria."
+    }
+  },
+"ds-05": {
+    "objective": "Build a defensible incident timeline, preserve evidence through approved procedures, and plan recovery with validation and post-incident learning.",
+    "learningGoal": "Connect investigation, evidence handling, restoration and improvement while maintaining traceability and minimizing additional harm.",
+    "time": "45–60 min",
+    "prerequisite": "SIEM Investigation Workflow; Incident Triage & Severity",
+    "read": "An incident timeline is a sourced sequence of relevant observations and response actions. Keep source event time distinct from analyst discovery, ingestion and response-action times; record time zone and known clock uncertainty. Label facts, interpretations and unknowns separately. A timeline should be updated as new evidence arrives, with corrections traceable rather than silently overwriting earlier conclusions.\\n\\nEvidence handling follows organizational policy and applicable legal or regulatory requirements. Identify the evidence, source, collector, acquisition time, method, integrity checks where appropriate, storage location, access and transfers. Preserve originals when feasible, work from controlled copies, restrict access and document every handling step. Do not collect more personal or sensitive data than the investigation requires.\\n\\nRecovery is more than turning a service back on. Confirm containment and eradication criteria, restore from trusted sources, validate system integrity and security controls, rotate or revoke exposed credentials and tokens as applicable, and monitor for recurrence. Coordinate restoration with service owners and business continuity plans. Record residual risk and formal acceptance by the authorized owner. Conduct a post-incident review focused on contributing conditions, response effectiveness, control gaps and measurable follow-up actions; avoid unsupported attribution or blame.",
+    "concepts": [
+      "Timeline and time sources",
+      "Evidence identification and integrity",
+      "Chain of custody",
+      "Controlled access and minimization",
+      "Recovery validation",
+      "Lessons learned and corrective actions"
+    ],
+    "glossary": [
+      [
+        "Chain of custody",
+        "A documented record of who handled evidence, when, why and how."
+      ],
+      [
+        "Integrity check",
+        "A method, such as a cryptographic hash, used to detect changes to a digital evidence item."
+      ],
+      [
+        "Eradication",
+        "Removing the cause and persistence mechanisms of an incident."
+      ],
+      [
+        "Recovery validation",
+        "Checks that restored services and controls operate as intended and are not still compromised."
+      ],
+      [
+        "Post-incident review",
+        "A structured assessment that converts incident findings into owned improvements."
+      ]
+    ],
+    "example": "For a compromised server, preserve relevant logs and disk or memory evidence only under approved procedures, record collection metadata and integrity checks, then rebuild or restore from a trusted baseline. Validate patching, identity controls, monitoring and business function before returning it to service.",
+    "visual": {
+      "title": "Evidence-to-recovery lifecycle",
+      "caption": "Follow local policy and authorized incident command at every stage.",
+      "steps": [
+        "Construct sourced timeline; note clock and ingestion differences",
+        "Identify and preserve relevant evidence",
+        "Record acquisition, integrity and each transfer",
+        "Contain and eradicate under approved authority",
+        "Restore from trusted state and validate controls",
+        "Monitor, document residual risk and assign improvements"
+      ]
+    },
+    "case": "A business unit wants a server restored immediately after suspected compromise. Some logs are volatile and the restoration could overwrite evidence. The incident lead must coordinate evidence preservation and operational recovery priorities with authorized stakeholders.",
+    "caseQuestions": [
+      "Which evidence is time-sensitive or at risk of being overwritten?",
+      "Who has authority to approve acquisition, containment and restoration decisions?",
+      "What security and business checks must pass before service is declared recovered?"
+    ],
+    "mistakes": [
+      "Changing or wiping systems before considering evidence preservation.",
+      "Treating a hash alone as proof that evidence collection was complete or lawful.",
+      "Restoring without validating identity, configuration and monitoring controls.",
+      "Closing the incident without documenting residual risk and accountable follow-up."
+    ],
+    "practice": "Draft an incident timeline and evidence register for a synthetic case. Include event/action timestamps, time zone, source, collector, integrity status, access history, recovery criteria and three owned post-incident actions.",
+    "evidence": "Submit a sourced timeline, evidence-handling record, recovery validation checklist and after-action table with owner, due date and success measure.",
+    "check": {
+      "q": "What is essential before declaring a compromised service recovered?",
+      "options": [
+        "The service responds to a ping.",
+        "The original alert has been closed.",
+        "The authorized team has validated restoration from a trusted state, relevant controls and monitoring, and documented residual risk.",
+        "All logs can be deleted to reduce storage."
+      ],
+      "answer": "The authorized team has validated restoration from a trusted state, relevant controls and monitoring, and documented residual risk.",
+      "why": "Availability alone does not establish security. Recovery requires trusted restoration, control validation, monitoring and an accountable record of remaining risk."
+    }
   }
 };
