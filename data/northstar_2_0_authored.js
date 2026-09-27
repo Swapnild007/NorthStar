@@ -588,5 +588,215 @@ window.NORTHSTAR_2_0_AUTHORED = {
       "why": "A measurement change is a competing explanation that must be tested."
     },
     "practice": "Build a tiny synthetic login-event table with timestamp, user ID, source IP, result and collection source. Add one missing timestamp and one duplicate row. Describe validation checks and explain why a trend claim should wait until these issues are resolved."
+  },
+  "sf-01": {
+    "objective": "Apply a repeatable model to identify assets, actors, actions, trust boundaries and evidence in a small system.",
+    "learningGoal": "Build a system map that supports both threat analysis and incident investigation, while labeling assumptions and unknowns.",
+    "read": "Begin with the system's purpose and the asset that matters: data, service, identity, device or business process. Identify the actors that interact with it, the actions they can take, and the boundaries where authority or data crosses from one trust domain to another. A boundary is meaningful when it changes who can act, what can be accessed, or which controls apply.\\n\\nFor an employee portal, map the employee browser, identity provider, application service and data store. Mark sign-in, session creation, data requests and administrative operations. At each boundary, ask what is authenticated, what is authorized, what is logged, and what could fail. The diagram is a model, not a complete representation of production; note excluded systems and assumptions.\\n\\nKeep observations separate from hypotheses. A log entry may establish that a request occurred, but not necessarily who physically initiated it or why. Use corroborating records and state uncertainty. This same model helps design prevention controls and structure an investigation.",
+    "concepts": [
+      "asset",
+      "actor",
+      "action",
+      "trust boundary",
+      "attack surface",
+      "control",
+      "evidence",
+      "assumption"
+    ],
+    "case": "Map a fictional employee portal with browser, identity provider, application and database. Identify three trust boundaries and name one useful evidence source at each.",
+    "qa": [
+      {
+        "q": "What makes a boundary important in a system map?",
+        "a": "It marks a change in trust, authority, data exposure or applicable control.",
+        "why": "Security controls often enforce rules at transitions between components or trust domains."
+      },
+      {
+        "q": "Does a log entry prove who physically initiated an action?",
+        "a": "Not by itself; it is an observation that may need corroboration and context.",
+        "why": "Evidence must support the specific claim being made."
+      },
+      {
+        "q": "How should a threat model handle unknowns?",
+        "a": "Record assumptions and gaps explicitly, then identify evidence that could resolve high-impact uncertainty.",
+        "why": "Visible uncertainty is safer and more useful than hidden assumptions."
+      }
+    ],
+    "check": {
+      "q": "A portal logs a successful data request under an employee account. What does that establish most directly?",
+      "options": [
+        "A request was recorded as successful for that account",
+        "The employee personally initiated it",
+        "The account was not compromised",
+        "The data was used for an approved business purpose"
+      ],
+      "answer": "A request was recorded as successful for that account",
+      "why": "The event supports a limited account-level observation, not physical attribution or intent."
+    },
+    "practice": "Draw a data-flow map for a fictional employee portal. Mark assets, actors, actions and at least three trust boundaries. For each boundary, specify a control and an evidence source; label one assumption that needs validation."
+  },
+  "sf-02": {
+    "objective": "Classify security impacts using confidentiality, integrity and availability, and explain when additional objectives matter.",
+    "learningGoal": "Use a scenario to identify affected security objectives and articulate the trade-offs among them.",
+    "read": "Confidentiality concerns preventing unauthorized disclosure; integrity concerns preserving correctness and preventing unauthorized or improper modification; availability concerns timely and reliable access. An event can affect more than one objective, and the impact depends on the asset and business context.\\n\\nA public leak primarily affects confidentiality. An unauthorized change to a payment record affects integrity and may also affect confidentiality or availability. Ransomware that prevents access to scheduling records affects availability; if data is also exfiltrated or altered, confidentiality and integrity are implicated too. Describe the observed impact rather than assigning a label based only on the attack name.\\n\\nCIA is a useful starting model, not a complete security program. Authenticity, accountability, privacy, safety and resilience may be essential in a particular system. Controls can involve trade-offs: strict access checks may reduce disclosure risk but introduce friction or availability dependencies. Record the system's required service levels and recovery objectives when weighing those trade-offs.",
+    "concepts": [
+      "confidentiality",
+      "integrity",
+      "availability",
+      "authenticity",
+      "accountability",
+      "privacy",
+      "resilience",
+      "trade-off"
+    ],
+    "case": "For a hospital scheduling system, compare a data leak, an altered appointment and a service outage. State the primary objective affected in each and what additional impact evidence you would seek.",
+    "qa": [
+      {
+        "q": "Can one incident affect all three CIA objectives?",
+        "a": "Yes. For example, ransomware may deny access, while associated theft or tampering may also affect confidentiality or integrity.",
+        "why": "Classify the actual impacts, not just the incident label."
+      },
+      {
+        "q": "Why might CIA not fully describe a system's security needs?",
+        "a": "Some systems also require authenticity, accountability, privacy, safety or resilience.",
+        "why": "The model is foundational but does not cover every security property."
+      }
+    ],
+    "check": {
+      "q": "An attacker changes a supplier's bank details in an approved payment record. Which CIA objective is directly implicated?",
+      "options": [
+        "Integrity",
+        "Availability only",
+        "Confidentiality only",
+        "None, because the record remains accessible"
+      ],
+      "answer": "Integrity",
+      "why": "The correctness and trustworthiness of the record have been altered."
+    },
+    "practice": "Create a three-row impact table for a fictional clinic: data disclosure, unauthorized record modification and appointment-system outage. For each, identify CIA impact, business consequence, one relevant control and one piece of evidence needed to verify the impact."
+  },
+  "sf-03": {
+    "objective": "Distinguish identification, authentication, authorization and accounting, and apply least privilege across an account lifecycle.",
+    "learningGoal": "Trace how a person or service receives, uses, reviews and loses access to a resource.",
+    "read": "Identity and access management (IAM) connects people, services and devices to permitted actions on resources. Identification states which identity is being claimed; authentication verifies evidence for that claim; authorization determines the allowed operations; accounting records relevant activity. These are related steps, not synonyms. A role or group can simplify permission assignment, but effective access still depends on the policies and memberships that apply.\\n\\nLeast privilege grants only the access needed for an assigned task, for only as long as it is needed. Joiner-mover-leaver processes should provision approved access, adjust it when responsibilities change, and revoke it promptly when access is no longer justified. Service identities need owners, limited scopes, protected credentials and periodic review. Stale accounts and broad group membership can create avoidable exposure.\\n\\nA sound access review checks the resource, account owner, business justification, effective permissions, last use and approval evidence. Authentication success does not mean the action was authorized, and a recorded action does not by itself prove it was appropriate. Preserve that distinction when investigating access.",
+    "concepts": [
+      "IAM",
+      "identification",
+      "authentication",
+      "authorization",
+      "accounting",
+      "role",
+      "group",
+      "least privilege",
+      "access review",
+      "service identity"
+    ],
+    "case": "Audit a fictional employee lifecycle from hiring through role change and departure. Identify which access decisions require approval and which evidence should show timely revocation.",
+    "qa": [
+      {
+        "q": "What is the difference between authentication and authorization?",
+        "a": "Authentication verifies a claimed identity; authorization decides what that identity may do.",
+        "why": "A verified identity can still lack permission for a requested action."
+      },
+      {
+        "q": "Why review service identities as well as employee accounts?",
+        "a": "They can retain broad or ownerless access and often operate without ordinary interactive sign-in.",
+        "why": "Non-human identities are part of the access boundary and need lifecycle governance."
+      }
+    ],
+    "check": {
+      "q": "A former employee's account still belongs to a privileged group. Which control failure is most directly indicated?",
+      "options": [
+        "Access revocation and lifecycle review did not remove stale privilege",
+        "The employee's password was too long",
+        "The system has too much availability",
+        "Accounting logs were encrypted"
+      ],
+      "answer": "Access revocation and lifecycle review did not remove stale privilege",
+      "why": "Leaver controls should remove access that no longer has a valid owner or business need."
+    },
+    "practice": "Build a joiner-mover-leaver access matrix for a fictional analyst. Include account identity, role/group, resource, approver, review interval and revocation evidence. Identify one stale-access scenario and a measurable check that would detect it."
+  },
+  "sf-04": {
+    "objective": "Create a scoped threat model that maps assets, entry points, data flows, trust boundaries, abuse cases and mitigations.",
+    "learningGoal": "Prioritize plausible threats using stated assumptions and connect each mitigation to a specific risk path.",
+    "read": "Threat modeling is a structured design and review activity for anticipating unwanted outcomes. First define scope: system purpose, components, data, actors, external dependencies and exclusions. Draw a simple data-flow diagram showing entry points, stores, processes and trust boundaries. Identify valuable assets and the security properties they require.\\n\\nFor each flow or boundary, ask how an actor could misuse it, what could go wrong, and what conditions would make the outcome possible. An abuse case describes an unwanted action in context; a vulnerability is a weakness that could enable it; a threat is a potential cause of harm; and risk combines likelihood and impact under stated assumptions. Do not confuse a threat hypothesis with a confirmed defect.\\n\\nChoose mitigations that interrupt a specific path, such as server-side authorization, upload validation, rate limiting or audit logging. Record residual risk, owner and verification method. Revisit the model when architecture or dependencies change. Threat models are not predictions or proof of security; they are scoped reasoning artifacts that help teams ask better questions and test controls.",
+    "concepts": [
+      "scope",
+      "data-flow diagram",
+      "entry point",
+      "trust boundary",
+      "abuse case",
+      "threat",
+      "vulnerability",
+      "risk",
+      "mitigation",
+      "residual risk"
+    ],
+    "case": "Threat-model a fictional document-upload feature. Map the browser, upload service, file storage and reviewer workflow; identify abuse cases and mitigations without performing exploitation.",
+    "qa": [
+      {
+        "q": "Why define scope and assumptions before listing threats?",
+        "a": "They establish which components, actors and conditions the model actually covers.",
+        "why": "Unstated boundaries make conclusions misleading and difficult to review."
+      },
+      {
+        "q": "Does a threat model prove that a vulnerability exists?",
+        "a": "No. It records plausible scenarios and assumptions; suspected weaknesses need validation through authorized review and evidence.",
+        "why": "Modeling, testing and confirmed findings are distinct activities."
+      }
+    ],
+    "check": {
+      "q": "A model lists 'malicious upload' as a threat but gives no system path or conditions. What is the key gap?",
+      "options": [
+        "It needs a scoped data flow or abuse case that explains the path and assumptions",
+        "It needs a more dramatic threat name",
+        "It proves the upload service is vulnerable",
+        "It should be converted directly into an incident"
+      ],
+      "answer": "It needs a scoped data flow or abuse case that explains the path and assumptions",
+      "why": "A useful threat statement connects an actor, action, asset and system condition."
+    },
+    "practice": "Produce a one-page threat model for a fictional document-upload service: scope, data-flow diagram, assets, trust boundaries, three abuse cases, matching mitigations, residual risk and a verification test for each mitigation."
+  },
+  "sf-05": {
+    "objective": "Explain defense in depth, zero trust and security architecture, and distinguish these design approaches from operational event terminology.",
+    "learningGoal": "Design layered controls around explicit access decisions and identify where continuous verification and telemetry belong.",
+    "read": "Security architecture describes how components, identities, data and controls fit together to meet security objectives. Defense in depth uses multiple, complementary safeguards so that one failed control does not automatically expose the asset. Layers might include identity verification, least-privilege authorization, endpoint protection, network segmentation, encryption, monitoring and tested recovery. Layers should be selected for the threat paths they address, not added as a checklist without ownership or validation.\\n\\nZero trust is an approach that avoids granting implicit trust solely because a user or device is inside a network perimeter. Access decisions should consider the identity, device or workload context, requested resource, policy and relevant risk signals; permissions should be narrow and re-evaluated as appropriate. It is not a single product and does not mean that every request can be perfectly verified. Architecture should also plan for policy-service outages, emergency access and recovery.\\n\\nMake the design testable: document trust boundaries, policy decision and enforcement points, privileged paths, telemetry, failure behavior and control owners. Events, alerts, incidents, vulnerabilities and findings are operational terms used by security teams; they are not substitutes for an architecture model. Define them consistently in procedures and reporting.",
+    "concepts": [
+      "security architecture",
+      "defense in depth",
+      "zero trust",
+      "policy decision point",
+      "policy enforcement point",
+      "segmentation",
+      "least privilege",
+      "telemetry",
+      "resilience"
+    ],
+    "case": "Design layered protections for a fictional remote-access business application. Show identity, device posture, authorization, segmentation, logging and recovery controls, and explain the failure each layer is intended to limit.",
+    "qa": [
+      {
+        "q": "What is the purpose of defense in depth?",
+        "a": "To use complementary safeguards so that failure of one control does not automatically defeat protection.",
+        "why": "Layering reduces single points of control failure when layers address distinct paths."
+      },
+      {
+        "q": "Does zero trust mean buying one product or trusting nothing under any circumstances?",
+        "a": "No. It is an architecture approach based on explicit, contextual access decisions rather than implicit network location.",
+        "why": "It requires coordinated policy, enforcement, identity and monitoring design."
+      }
+    ],
+    "check": {
+      "q": "A remote employee is on the corporate VPN. Under a zero-trust approach, what should that location alone imply?",
+      "options": [
+        "No automatic entitlement; the requested resource still needs an explicit access decision",
+        "Unrestricted access to every internal system",
+        "That the device is fully healthy",
+        "That the user's actions need not be logged"
+      ],
+      "answer": "No automatic entitlement; the requested resource still needs an explicit access decision",
+      "why": "Network location is not sufficient proof of identity, device state or resource authorization."
+    },
+    "practice": "Draw a layered architecture for a fictional remote-access application. Mark the policy decision and enforcement points, at least four complementary controls, telemetry for each critical boundary, and the safe behavior if an identity or policy service is unavailable."
   }
 };
