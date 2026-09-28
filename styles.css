@@ -953,3 +953,16 @@ body:before{display:none}
 .win11-shell .os-terminal-prompt,.win11-shell .os-terminal-status{color:#475569!important}
 .win11-shell .os-welcome-line h1{color:#172033!important}
 .win11-shell .os-welcome-line p,.win11-shell .os-readiness span,.win11-shell .os-readiness small{color:#64748b!important}
+
+/* Home is a desktop workspace: use its own app launcher and taskbar only. */
+.win11-shell.os-home>.desktop-rail{display:none!important}
+.win11-shell.os-home>.main{margin-left:0!important;width:100%!important}
+.win11-shell.os-home>.main>.nav{display:none!important}
+@media(min-width:1024px){
+ .win11-shell.os-home>.main{margin-left:0!important;width:100%!important;padding:16px 24px 28px}
+ .win11-shell.os-home>.main>.topbar{margin:-16px -24px 20px;padding:12px 24px}
+}
+@media(max-width:1023px){
+ .win11-shell.os-home>.main{padding:0 12px 14px}
+ .win11-shell.os-home>.main>.nav{display:none!important}
+}
