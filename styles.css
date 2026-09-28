@@ -966,3 +966,30 @@ body:before{display:none}
  .win11-shell.os-home>.main{padding:0 12px 14px}
  .win11-shell.os-home>.main>.nav{display:none!important}
 }
+
+/* Final navigation/layout correction: one navigation system per viewport. */
+.win11-shell{background:#f3f6fc!important;color:#1e293b!important;font-family:"Segoe UI Variable","Segoe UI",system-ui,sans-serif!important}
+.win11-shell .desktop-rail{background:#f7f9fd!important;border-right:1px solid #dce4ef!important}
+.win11-shell .main{background:transparent!important;color:#1e293b!important}
+.win11-shell .topbar{background:rgba(249,251,255,.92)!important;border-bottom:1px solid #dce4ef!important;box-shadow:0 1px 5px rgba(15,23,42,.03)!important}
+.win11-shell .nav{background:rgba(248,250,255,.92)!important;border:1px solid #dce4ef!important;box-shadow:0 10px 30px rgba(30,41,59,.12)!important}
+.win11-shell .nav button{color:#475569!important}
+.win11-shell .nav button.active{background:#e6efff!important;color:#1d4ed8!important}
+.win11-shell .card,.win11-shell .glass,.win11-shell .module-summary,.win11-shell .module-card{background:rgba(255,255,255,.9)!important;border-color:#dce5f0!important;color:#1e293b!important;box-shadow:0 8px 26px rgba(30,41,59,.06)!important}
+.win11-shell input,.win11-shell select,.win11-shell textarea{background:#fff!important;color:#1e293b!important;border-color:#cbd5e1!important}
+.win11-shell .os-home>.main>.nav,.win11-shell.os-home>.main>.nav{display:none!important;visibility:hidden!important;height:0!important;min-height:0!important;max-height:0!important;overflow:hidden!important;pointer-events:none!important}
+.win11-shell.os-home>.desktop-rail{display:none!important}
+.win11-shell.os-home>.main{margin-left:0!important;width:100%!important}
+.win11-shell.os-home .os-launcher{width:58px!important;min-width:58px!important}
+.win11-shell.os-home .os-taskbar{position:sticky!important;bottom:0!important;z-index:15!important;display:flex!important}
+.win11-shell.os-home .os-desktop{overflow:visible}
+@media(min-width:1024px){
+ .win11-shell:not(.os-home)>.desktop-rail{display:flex!important}
+ .win11-shell:not(.os-home)>.main>.nav{position:fixed!important;left:calc(50% + 112px)!important;bottom:14px!important;transform:translateX(-50%)!important;z-index:40!important;margin:0!important}
+}
+@media(max-width:1023px){
+ .win11-shell:not(.os-home)>.desktop-rail{display:none!important}
+ .win11-shell:not(.os-home)>.main>.nav{display:grid!important;visibility:visible!important;height:auto!important;max-height:none!important;overflow:visible!important;pointer-events:auto!important;position:fixed!important;left:50%!important;bottom:calc(8px + env(safe-area-inset-bottom,0px))!important;transform:translateX(-50%)!important;z-index:50!important}
+ .win11-shell.os-home>.main>.nav{display:none!important}
+ .win11-shell.os-home .os-taskbar{position:sticky!important;bottom:auto!important}
+}
