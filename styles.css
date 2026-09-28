@@ -757,3 +757,31 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
 .os-taskbar{height:48px;flex:0 0 48px;background:#091522;border-top:1px solid #20364a;display:flex;align-items:center;justify-content:space-between;padding:0 13px;gap:10px}.os-taskbar-start{display:flex;align-items:center;gap:7px;font-size:9px;color:#adc2d5}.os-taskbar-apps{display:flex;align-items:center;gap:5px}.os-taskbar-apps button{display:flex;align-items:center;gap:5px;background:transparent;color:#8ca4ba;border:1px solid transparent;border-radius:6px;padding:6px 8px;font:11px ui-monospace,monospace}.os-taskbar-apps button.active,.os-taskbar-apps button:hover{background:#142b40;border-color:#25445d;color:#d7faff}.os-taskbar-apps small{font:7px system-ui,sans-serif}.os-taskbar-clock{font:7px ui-monospace,monospace;letter-spacing:.06em;color:#7792aa}.os-taskbar-clock span{color:#42d4da;margin:0 3px}
 @media(max-width:760px){.os-desktop{border-radius:12px;min-height:calc(100vh - 165px)}.os-menubar{padding:0 10px}.os-menu-center{display:none}.os-main-area{padding:17px 11px 18px}.os-welcome-line h1{font-size:21px}.os-readiness{gap:5px}.os-readiness>div{padding:7px}.os-readiness strong{font-size:18px}.os-readiness small{font-size:6px}.os-readiness span{font-size:6px}.os-lower-grid{grid-template-columns:1fr}.os-taskbar{padding:0 7px}.os-taskbar-start b,.os-taskbar-clock{display:none}.os-taskbar-apps{margin:0 auto}.os-taskbar-apps button{padding:6px 9px}}
 @media(max-width:390px){.os-sys-tray{font-size:7px;gap:5px}.os-app-grid{grid-template-columns:1fr}.os-app-card{padding:10px}.os-taskbar-apps{gap:1px}.os-taskbar-apps button{padding:6px}.os-taskbar-apps small{font-size:6px}}
+
+/* Complete OS shell treatment: darken the app chrome around the command center. */
+.app-shell.os-mode{background:#07111e;color:#dce9f7;min-height:100vh}
+.app-shell.os-mode .main{background:transparent;color:#dce9f7}
+.app-shell.os-mode .topbar{background:#091522;border:1px solid #1c3044;border-radius:12px;padding:10px 13px;margin-bottom:12px;color:#dce9f7}
+.app-shell.os-mode .brand-copy{color:#e5f2ff}
+.app-shell.os-mode .brand-copy small{color:#7290aa}
+.app-shell.os-mode .profile{background:#14283c;border-color:#2a4760;color:#dce9f7}
+.app-shell.os-mode .ownership-credit{background:#091522;border:1px solid #1c3044;border-radius:10px;color:#9ab0c5}
+.app-shell.os-mode .ownership-credit small,.app-shell.os-mode .ownership-credit em{color:#718aa2}
+.app-shell.os-mode .desktop-rail{background:#081522;border-color:#1c3044;color:#dce9f7}
+.app-shell.os-mode .rail-brand{color:#e5f2ff}
+.app-shell.os-mode .rail-links button{color:#91a8bd}
+.app-shell.os-mode .rail-links button.active,.app-shell.os-mode .rail-links button:hover{background:#122a40;color:#bffaff;box-shadow:none}
+.app-shell.os-mode .rail-note{color:#7089a1}
+@media(max-width:1023px){
+ .app-shell.os-mode .main{padding-bottom:20px}
+ .app-shell.os-mode .nav{display:none!important}
+ .app-shell.os-mode .topbar{margin:0 0 10px;border-radius:0;border-left:0;border-right:0;border-top:0;padding:9px 2px}
+ .app-shell.os-mode .os-desktop{min-height:calc(100dvh - 115px);border-radius:10px}
+ .app-shell.os-mode .os-taskbar{position:sticky;bottom:0}
+}
+@media(max-width:520px){
+ .app-shell.os-mode .main{padding:0 8px 10px}
+ .app-shell.os-mode .topbar{padding:8px 4px}
+ .app-shell.os-mode .os-desktop{min-height:calc(100dvh - 100px)}
+ .app-shell.os-mode .os-main-area{padding:14px 9px}
+}
