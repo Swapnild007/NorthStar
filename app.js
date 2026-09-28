@@ -177,45 +177,48 @@ function assessmentForLesson(l,completedOverride){
 }
 const views={
  home:()=>{
-  const p=overallPercent(), cp=courseProgress(2);
-  const activity=allLessons().filter(l=>state.completedLessons.includes(l.id)).slice(-3).reverse();
-  const recent=activity.length?activity.map(l=>`<div class="ops-feed-item"><span class="ops-feed-mark">✓</span><span><strong>${esc(l.title)}</strong><small>Learning record · completed</small></span></div>`).join(""):'<div class="empty">Your completed lessons and lab activity will appear here.</div>';
-  return `<section class="fade ops-home">
-   <div class="hero glass ops-hero">
-    <span class="eyebrow">NorthStar 2.0 · Cybersecurity OS</span>
-    <h1>Cyber operations.<br>One connected workspace.</h1>
-    <p>Learn, investigate, practice, and track your security capabilities from a single command center.</p>
-    <button class="cta" data-route="learn">Resume mission →</button>
-   </div>
-   <div class="ops-console card glass">
-    <div class="ops-console-head">
-     <div><span class="ops-kicker">Command center</span><h2>Operational overview</h2></div>
-     <span class="ops-sim"><i></i> TRAINING ENVIRONMENT · SIMULATED</span>
+  const p=overallPercent();
+  const activity=allLessons().filter(l=>state.completedLessons.includes(l.id)).slice(-4).reverse();
+  const recent=activity.length?activity.map(l=>`<div class="os-log-row"><span class="os-log-time">DONE</span><span class="os-log-message">${esc(l.title)}</span><span class="os-log-state">COMPLETE</span></div>`).join(""):'<div class="os-empty">No completed items yet. Start a learning path to populate your activity log.</div>';
+  return `<section class="fade os-desktop">
+   <header class="os-menubar">
+    <div class="os-menu-brand"><span class="os-mini-mark">N</span><b>NorthStar OS</b><span class="os-version">2.0</span></div>
+    <div class="os-menu-center"><span>WORKSPACE</span><b>Security Operations</b></div>
+    <div class="os-sys-tray"><span class="os-live-dot"></span><span>LOCAL SESSION</span><span class="os-tray-sep"></span><span>TRAINING MODE</span><span class="os-user-chip">SD</span></div>
+   </header>
+   <div class="os-workarea">
+    <aside class="os-launcher" aria-label="Workspace launcher">
+     <span class="os-launcher-label">APPS</span>
+     <button data-route="learn" title="Learning Academy"><span class="os-app-glyph">▤</span><small>Academy</small></button>
+     <button data-route="labs" title="Cyber Range"><span class="os-app-glyph">⌘</span><small>Range</small></button>
+     <button data-route="coding" title="Code Workshop"><span class="os-app-glyph">&lt;/&gt;</span><small>Code</small></button>
+     <button data-route="progress" title="Skills & Progress"><span class="os-app-glyph">▥</span><small>Skills</small></button>
+    </aside>
+    <div class="os-main-area">
+     <div class="os-welcome-line"><div><span class="os-path">/home/analyst/overview</span><h1>Good to see you, Analyst.</h1><p>Your security learning environment is ready.</p></div><span class="os-session-badge"><i></i> SANDBOXED SESSION</span></div>
+     <div class="os-window os-terminal-window">
+      <div class="os-window-bar"><span class="os-window-lights"><i></i><i></i><i></i></span><b>northstar://system/overview</b><span class="os-window-menu">•••</span></div>
+      <div class="os-terminal-content">
+       <div class="os-terminal-prompt"><span>analyst@northstar</span>:<b>~</b>$ system status --summary</div>
+       <div class="os-terminal-status"><span class="os-status-ok">●</span> Environment: <b>TRAINING / SIMULATED</b><span class="os-status-divider">|</span> Telemetry: <b>NOT CONNECTED</b></div>
+       <div class="os-terminal-prompt os-prompt-next"><span>analyst@northstar</span>:<b>~</b>$ cat readiness.json</div>
+       <div class="os-readiness"><div><small>LEARNING PROGRESS</small><strong>${p}<em>%</em></strong><div class="os-progress-track"><i style="width:${p}%"></i></div></div><div><small>CURRICULUM INDEX</small><strong>${totalLessons()} <em>lessons</em></strong><span>Across ${curriculum.length} learning paths</span></div><div><small>LAB RECORD</small><strong>${labCompletedCount()} <em>completed</em></strong><span>Practice activity saved locally</span></div></div>
+      </div>
+     </div>
+     <div class="os-section-title"><span>APPLICATIONS</span><small>SELECT A WORKSPACE TO OPEN</small></div>
+     <div class="os-app-grid">
+      <button class="os-app-card" data-route="learn"><span class="os-app-icon academy">▤</span><span><b>Learning Academy</b><small>Lessons, reference and guided study</small></span><span class="os-app-open">↗</span></button>
+      <button class="os-app-card" data-route="labs"><span class="os-app-icon range">⌘</span><span><b>Cyber Range</b><small>Safe, guided hands-on exercises</small></span><span class="os-app-open">↗</span></button>
+      <button class="os-app-card" data-route="coding"><span class="os-app-icon code">&lt;/&gt;</span><span><b>Code Workshop</b><small>Build and test technical skills</small></span><span class="os-app-open">↗</span></button>
+      <button class="os-app-card" data-route="progress"><span class="os-app-icon skills">▥</span><span><b>Skills & Progress</b><small>Milestones and capability matrix</small></span><span class="os-app-open">↗</span></button>
+     </div>
+     <div class="os-lower-grid">
+      <section class="os-window"><div class="os-window-bar"><span class="os-window-lights"><i></i><i></i><i></i></span><b>activity.log</b><button data-route="progress">OPEN LOG ↗</button></div><div class="os-log-list">${recent}</div></section>
+      <section class="os-window os-next-window"><div class="os-window-bar"><span class="os-window-lights"><i></i><i></i><i></i></span><b>next_operation.md</b></div><div class="os-next-body"><small>RECOMMENDED TASK</small><h2>Continue the network security path</h2><p>Explore TCP/IP, traffic analysis, and segmentation fundamentals.</p><button class="os-run-button" data-course="2" data-lesson="0">RUN LESSON <span>→</span></button></div></section>
+     </div>
     </div>
-    <div class="ops-metrics">
-     <div class="ops-metric"><small>Readiness progress</small><strong>${p}%</strong><div class="ops-meter"><i style="width:${p}%"></i></div></div>
-     <div class="ops-metric"><small>Curriculum</small><strong>${totalLessons()} <em>lessons</em></strong><span class="ops-sub">Across ${curriculum.length} learning paths</span></div>
-     <div class="ops-metric"><small>Practice labs</small><strong>${labCompletedCount()} <em>completed</em></strong><span class="ops-sub">Hands-on learning record</span></div>
-    </div>
-    <div class="ops-console-foot"><span><b class="ops-dot"></b> Local learning state</span><span>No live network telemetry connected</span></div>
    </div>
-   <div class="section ops-workspaces">
-    <div class="section-head"><div><span class="ops-kicker">Workspaces</span><h2>Choose your next operation</h2></div></div>
-    <div class="ops-workspace-grid">
-     <button class="card glass ops-workspace clickable" data-route="learn"><span class="ops-workspace-icon">⌘</span><span class="ops-workspace-copy"><strong>Learning Academy</strong><small>Structured lessons · ${totalLessons()} topics</small></span><span class="ops-arrow">↗</span></button>
-     <button class="card glass ops-workspace clickable" data-route="labs"><span class="ops-workspace-icon">▣</span><span class="ops-workspace-copy"><strong>Cyber Range</strong><small>Guided labs and safe practice</small></span><span class="ops-arrow">↗</span></button>
-     <button class="card glass ops-workspace clickable" data-route="coding"><span class="ops-workspace-icon">⌨</span><span class="ops-workspace-copy"><strong>Code Workshop</strong><small>Build and test technical skills</small></span><span class="ops-arrow">↗</span></button>
-     <button class="card glass ops-workspace clickable" data-route="progress"><span class="ops-workspace-icon">◫</span><span class="ops-workspace-copy"><strong>Skills & Progress</strong><small>Review milestones and skill matrix</small></span><span class="ops-arrow">↗</span></button>
-    </div>
-   </div>
-   <div class="section grid activity-grid">
-    <div class="card glass"><div class="section-head"><h2>Activity log</h2><button data-route="progress">View all →</button></div>${recent}</div>
-    <div class="card glass"><div class="section-head"><h2>Skill matrix</h2><button data-route="progress">Details →</button></div>${skillRows()}</div>
-   </div>
-   <div class="section card glass ops-mission">
-    <div><span class="ops-kicker">Suggested next step</span><h2>Continue the network security path</h2><p>Build foundational understanding of TCP/IP, traffic analysis, and segmentation.</p></div>
-    <button class="cta" data-course="2" data-lesson="0">Open lesson →</button>
-   </div>
+   <footer class="os-taskbar"><div class="os-taskbar-start"><span class="os-mini-mark">N</span><b>NorthStar</b></div><div class="os-taskbar-apps"><button data-route="home" class="active">⌂ <small>Overview</small></button><button data-route="learn">▤ <small>Academy</small></button><button data-route="labs">⌘ <small>Range</small></button><button data-route="coding">&lt;/&gt; <small>Code</small></button><button data-route="progress">▥ <small>Skills</small></button></div><div class="os-taskbar-clock">NORTHSTAR 2.0 <span>·</span> READY</div></footer>
   </section>`;
  },
  learn:()=>{
