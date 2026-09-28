@@ -98,7 +98,7 @@ function codingTemplate(lang){codingRemember();const d=window.NORTHSTAR_CODING_L
 function render(){
  const app=document.querySelector("#app");
  const active=(r)=>state.route===r||((state.route==="lesson")&&r==="learn")||((state.route==="lab"||state.route==="capstone")&&r==="labs");
- app.innerHTML=`<div class="app-shell win11-shell ${state.route==="lab"?"lab-mode":""}">
+ app.innerHTML=`<div class="app-shell win11-shell ${state.route==="lab"?"lab-mode":""} ${state.route==="home"?"os-home":""}">
    <aside class="desktop-rail">
     <div class="rail-brand"><span class="brand-mark">N</span><span>NorthStar</span></div>
     <div class="rail-links">${nav.map(n=>`<button class="${active(n[0])?"active":""}" data-route="${n[0]}"><span>${n[2]}</span>${n[1]}</button>`).join("")}</div>
