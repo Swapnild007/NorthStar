@@ -993,3 +993,29 @@ body:before{display:none}
  .win11-shell.os-home>.main>.nav{display:none!important}
  .win11-shell.os-home .os-taskbar{position:sticky!important;bottom:auto!important}
 }
+
+/* Single-surface desktop: remove the legacy website header/rail around the OS home. */
+.win11-shell.os-home{min-height:100dvh;background:#eef3fa!important;color:#1e293b}
+.win11-shell.os-home>.desktop-rail{display:none!important}
+.win11-shell.os-home>.main{max-width:none!important;width:100%!important;margin:0!important;padding:0 0 12px!important}
+.win11-shell.os-home>.main>.topbar{display:none!important}
+.win11-shell.os-home>.main>#view{margin:0!important;padding:0!important}
+.win11-shell.os-home .os-desktop{width:100%;min-height:calc(100dvh - 12px)!important;margin:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden;background:#f3f6fc!important;color:#1e293b!important}
+.win11-shell.os-home .os-menubar{background:rgba(255,255,255,.86)!important;border-bottom:1px solid #dbe4ef!important;color:#334155!important}
+.win11-shell.os-home .os-menu-brand,.win11-shell.os-home .os-menu-center b,.win11-shell.os-home .os-sys-tray{color:#334155!important}
+.win11-shell.os-home .os-menu-center span,.win11-shell.os-home .os-sys-tray{color:#64748b!important}
+.win11-shell.os-home .os-workarea{background:#f3f6fc!important}
+.win11-shell.os-home .os-launcher{background:#eaf0f8!important;border-right:1px solid #dbe4ef!important}
+.win11-shell.os-home .os-launcher-label{color:#64748b!important}
+.win11-shell.os-home .os-launcher button{color:#53657c!important}
+.win11-shell.os-home .os-launcher button:hover,.win11-shell.os-home .os-launcher button:focus-visible{background:#dce9fb!important;color:#1d4ed8!important}
+.win11-shell.os-home .os-main-area{background:#f3f6fc!important;color:#1e293b!important}
+.win11-shell.os-home .os-taskbar{background:rgba(255,255,255,.9)!important;border-top:1px solid #dbe4ef!important;color:#334155!important;backdrop-filter:blur(24px) saturate(150%);-webkit-backdrop-filter:blur(24px) saturate(150%)}
+.win11-shell.os-home .os-taskbar-start,.win11-shell.os-home .os-taskbar-clock{color:#475569!important}
+.win11-shell.os-home .os-taskbar-apps button{color:#475569!important}
+.win11-shell.os-home .os-taskbar-apps button.active,.win11-shell.os-home .os-taskbar-apps button:hover{background:#e3edfb!important;border-color:#cfdef2!important;color:#1d4ed8!important}
+@media(max-width:1023px){
+ .win11-shell.os-home>.main{padding:0!important}
+ .win11-shell.os-home .os-desktop{min-height:calc(100dvh - env(safe-area-inset-bottom,0px))!important}
+ .win11-shell.os-home .os-taskbar{position:sticky!important;bottom:0!important;z-index:20!important}
+}
