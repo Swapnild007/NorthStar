@@ -785,3 +785,76 @@ button:focus-visible,input:focus-visible{outline:3px solid rgba(37,99,235,.22);o
  .app-shell.os-mode .os-desktop{min-height:calc(100dvh - 100px)}
  .app-shell.os-mode .os-main-area{padding:14px 9px}
 }
+
+/* NorthStar universal Windows 11 light-mode shell — applied across every route. */
+:root{--bg:#f3f6fb;--text:#1b1f28;--muted:#64748b;--blue:#2563eb;--shadow:0 8px 28px rgba(31,41,55,.08);--radius:18px}
+body{background:#f3f6fb;color:#1b1f28;font-family:"Segoe UI Variable","Segoe UI",system-ui,-apple-system,sans-serif}
+body:before{display:none}
+.win11-shell{min-height:100vh;background:linear-gradient(180deg,#f8faff,#eef3fa 75%,#eaf0f8);color:#1b1f28}
+.win11-shell .main{max-width:none;width:100%;padding:16px 22px 104px}
+.win11-shell .topbar{position:sticky;top:0;z-index:20;margin:-16px -22px 18px;padding:12px 22px;background:rgba(249,251,255,.82);border-bottom:1px solid rgba(148,163,184,.2);backdrop-filter:blur(22px) saturate(150%);-webkit-backdrop-filter:blur(22px) saturate(150%)}
+.win11-shell .brand-copy,.win11-shell .brand{color:#1e293b}
+.win11-shell .brand-copy small{color:#64748b}
+.win11-shell .profile{background:#e7edf7;border:1px solid #d7e0ed;color:#334155}
+.win11-shell .desktop-rail{background:rgba(246,249,254,.86);border-right:1px solid #dce4ef;color:#334155}
+.win11-shell .rail-brand{color:#1e293b}
+.win11-shell .rail-links button{color:#53657c;border-radius:10px}
+.win11-shell .rail-links button.active,.win11-shell .rail-links button:hover{background:#e5edf9;color:#1d4ed8;box-shadow:inset 3px 0 #2563eb}
+.win11-shell .rail-note{color:#718096}
+.win11-shell .glass,.win11-shell .card{background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.95);box-shadow:0 8px 28px rgba(31,41,55,.07),inset 0 1px 0 rgba(255,255,255,.95);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%)}
+.win11-shell .nav{background:rgba(249,251,255,.88);border:1px solid rgba(255,255,255,.96);border-radius:16px;box-shadow:0 12px 34px rgba(31,41,55,.14);backdrop-filter:blur(24px) saturate(155%);-webkit-backdrop-filter:blur(24px) saturate(155%)}
+.win11-shell .nav button{border-radius:10px;color:#53657c}
+.win11-shell .nav button.active{background:#e5edf9;color:#1d4ed8;box-shadow:inset 0 0 0 1px #d7e4f7}
+.win11-shell .ownership-credit{background:rgba(255,255,255,.58);border:1px solid #e1e8f1;border-radius:12px;color:#475569}
+.win11-shell .ownership-credit small,.win11-shell .ownership-credit em{color:#64748b}
+/* Bring the embedded command-center desktop into Windows 11 light mode too. */
+.win11-shell .os-desktop{--os-bg:#f1f5fb;--os-panel:#fff;--os-panel2:#f6f9fe;--os-line:#dce5f0;--os-text:#1e293b;--os-muted:#64748b;--os-cyan:#2563eb;--os-green:#16a34a;background:linear-gradient(145deg,#f7faff,#eaf1fa);color:#1e293b;border:1px solid #dbe4ef;box-shadow:0 18px 46px rgba(30,41,59,.10)}
+.win11-shell .os-menubar,.win11-shell .os-taskbar{background:rgba(255,255,255,.78);border-color:#dce5f0;color:#334155}
+.win11-shell .os-menu-brand,.win11-shell .os-sys-tray,.win11-shell .os-taskbar-start,.win11-shell .os-taskbar-clock{color:#64748b}
+.win11-shell .os-version{color:#2563eb;border-color:#d5e2f5}
+.win11-shell .os-menu-center b{color:#334155}
+.win11-shell .os-tray-sep{background:#dbe4ef}
+.win11-shell .os-user-chip{background:#e7edf7;color:#334155;border-color:#d5e0ed}
+.win11-shell .os-launcher{background:rgba(238,243,250,.78);border-color:#dce5f0}
+.win11-shell .os-launcher-label{color:#64748b}
+.win11-shell .os-launcher button{color:#53657c}
+.win11-shell .os-launcher button:hover,.win11-shell .os-launcher button:focus-visible{background:#e5edf9;border-color:#d3e1f5;color:#1d4ed8}
+.win11-shell .os-app-glyph,.win11-shell .os-path{color:#2563eb}
+.win11-shell .os-welcome-line h1{color:#1e293b}
+.win11-shell .os-welcome-line p{color:#64748b}
+.win11-shell .os-session-badge{background:#ecfdf5;border-color:#bbf7d0;color:#15803d}
+.win11-shell .os-window{background:rgba(255,255,255,.82);border-color:#dce5f0;box-shadow:0 5px 18px rgba(31,41,55,.05)}
+.win11-shell .os-window-head{background:#f5f8fd;border-color:#dce5f0;color:#64748b}
+.win11-shell .os-window h2,.win11-shell .os-window h3,.win11-shell .os-window strong{color:#1e293b}
+.win11-shell .os-window p,.win11-shell .os-window small,.win11-shell .os-window label{color:#64748b}
+.win11-shell .os-readiness>div,.win11-shell .os-app-card,.win11-shell .os-terminal,.win11-shell .os-next-card{background:#f7faff;border-color:#dce5f0;color:#334155}
+.win11-shell .os-readiness strong{color:#1e293b}
+.win11-shell .os-readiness small,.win11-shell .os-readiness span,.win11-shell .os-log-state{color:#64748b}
+.win11-shell .os-run-button{background:#e5efff;border-color:#c9dcfb;color:#1d4ed8}
+.win11-shell .os-taskbar-apps button{color:#53657c}
+.win11-shell .os-taskbar-apps button.active,.win11-shell .os-taskbar-apps button:hover{background:#e5edf9;border-color:#d3e1f5;color:#1d4ed8}
+.win11-shell .ops-console{background:rgba(255,255,255,.78);color:#1e293b;border-color:#dce5f0}
+.win11-shell .ops-console-head h2,.win11-shell .ops-metric strong{color:#1e293b}
+.win11-shell .ops-metric{background:#f6f9fe;border-color:#e1e8f1}
+.win11-shell .ops-metric small,.win11-shell .ops-sub,.win11-shell .ops-console-foot{color:#64748b}
+.win11-shell .ops-metric em{color:#64748b}
+.win11-shell .ops-meter{background:#dce5f0}
+.win11-shell .ops-sim{color:#946200;background:#fff9e8;border-color:#f2dfaa}
+.win11-shell .ops-workspace-icon{background:#e7efff;color:#2563eb}
+.win11-shell .ops-feed-item{border-color:#e5ebf3}
+.win11-shell .ops-feed-item strong{color:#1e293b}
+.win11-shell .ops-mission p{color:#64748b}
+@media(max-width:1023px){
+ .win11-shell .main{padding:0 12px 14px}
+ .win11-shell .topbar{margin:0 -12px 12px;padding:10px 14px}
+ .win11-shell .desktop-rail{display:none!important}
+ .win11-shell .nav{display:grid!important;bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+ .win11-shell .os-desktop{min-height:calc(100dvh - 120px)}
+}
+@media(min-width:1024px){
+ .win11-shell .app-shell{display:block}
+ .win11-shell .desktop-rail{display:flex;position:fixed;inset:0 auto 0 0;width:224px;padding:18px 14px;flex-direction:column;border-right:1px solid #dce4ef}
+ .win11-shell .main{margin-left:224px;width:calc(100% - 224px);padding:16px 24px 32px}
+ .win11-shell .topbar{margin:-16px -24px 20px;padding:12px 24px}
+ .win11-shell .nav{position:static;transform:none;width:fit-content;margin:20px auto 0}
+}
