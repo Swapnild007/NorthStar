@@ -1019,3 +1019,34 @@ body:before{display:none}
  .win11-shell.os-home .os-desktop{min-height:calc(100dvh - env(safe-area-inset-bottom,0px))!important}
  .win11-shell.os-home .os-taskbar{position:sticky!important;bottom:0!important;z-index:20!important}
 }
+
+/* UX pass: remove the second navigation rail and make the workspace read as one Windows app. */
+.win11-shell.os-home .os-workarea{display:block!important;min-height:0!important;flex:1 0 auto!important}
+.win11-shell.os-home .os-launcher{display:none!important}
+.win11-shell.os-home .os-main-area{width:100%!important;max-width:1440px!important;margin:0 auto!important;padding:clamp(16px,2.2vw,30px)!important}
+.win11-shell.os-home .os-welcome-line{margin-bottom:20px!important}
+.win11-shell.os-home .os-window{border-radius:14px!important}
+.win11-shell.os-home .os-window-bar{height:36px!important;background:#f7f9fc!important;color:#475569!important;border-bottom:1px solid #e2e8f0!important}
+.win11-shell.os-home .os-terminal-content{background:#fff!important;color:#334155!important}
+.win11-shell.os-home .os-terminal-prompt{color:#2563eb!important}
+.win11-shell.os-home .os-taskbar{height:58px!important;min-height:58px!important;flex:0 0 58px!important;justify-content:center!important;position:sticky!important;bottom:0!important;padding:0 14px!important;background:rgba(248,250,255,.88)!important;border-top:1px solid #dce4ef!important;box-shadow:0 -8px 24px rgba(30,41,59,.06)!important;backdrop-filter:blur(26px) saturate(160%)!important;-webkit-backdrop-filter:blur(26px) saturate(160%)!important}
+.win11-shell.os-home .os-taskbar-start{position:absolute!important;left:14px!important;width:30px;height:30px;justify-content:center!important;border-radius:9px;background:#e5efff!important;color:#2563eb!important}
+.win11-shell.os-home .os-taskbar-start b{display:none!important}
+.win11-shell.os-home .os-taskbar-apps{justify-content:center!important;gap:6px!important}
+.win11-shell.os-home .os-taskbar-apps button{min-width:44px!important;min-height:40px!important;justify-content:center!important;flex-direction:column!important;gap:2px!important;padding:5px 9px!important;border-radius:10px!important;font:14px "Segoe UI",system-ui,sans-serif!important;color:#475569!important}
+.win11-shell.os-home .os-taskbar-apps small{font:9px "Segoe UI",system-ui,sans-serif!important}
+.win11-shell.os-home .os-taskbar-apps button.active{background:#e4edfb!important;color:#1d4ed8!important;border-color:#d5e3f7!important}
+.win11-shell.os-home .os-taskbar-clock{position:absolute!important;right:14px!important;font:10px "Segoe UI",system-ui,sans-serif!important;color:#64748b!important}
+.win11-shell.os-home .os-menu-center span{letter-spacing:.04em}
+.win11-shell.os-home .os-app-card{min-height:76px!important}
+@media(max-width:600px){
+ .win11-shell.os-home .os-main-area{padding:15px 12px 18px!important}
+ .win11-shell.os-home .os-welcome-line{align-items:flex-start!important}
+ .win11-shell.os-home .os-session-badge{font-size:7px!important;padding:5px 6px!important}
+ .win11-shell.os-home .os-taskbar{height:56px!important;min-height:56px!important;flex-basis:56px!important;padding:0 48px!important}
+ .win11-shell.os-home .os-taskbar-start{left:8px!important}
+ .win11-shell.os-home .os-taskbar-clock{right:8px!important;font-size:8px!important}
+ .win11-shell.os-home .os-taskbar-apps{gap:2px!important}
+ .win11-shell.os-home .os-taskbar-apps button{min-width:36px!important;padding:4px 5px!important}
+ .win11-shell.os-home .os-taskbar-apps small{font-size:8px!important}
+}
