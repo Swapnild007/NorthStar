@@ -858,3 +858,98 @@ body:before{display:none}
  .win11-shell .topbar{margin:-16px -24px 20px;padding:12px 24px}
  .win11-shell .nav{position:static;transform:none;width:fit-content;margin:20px auto 0}
 }
+
+/* Cross-route Windows 11 Fluent light surfaces: learning, range, lesson, progress and code screens. */
+.win11-shell #view{color:#1e293b}
+.win11-shell #view .card,
+.win11-shell #view .glass,
+.win11-shell #view .module-summary,
+.win11-shell #view .course-main,
+.win11-shell #view .module-details,
+.win11-shell #view .lesson-index,
+.win11-shell #view .lesson-index-row,
+.win11-shell #view .note-card,
+.win11-shell #view .visual-card,
+.win11-shell #view .depth-card,
+.win11-shell #view .roadmap-state,
+.win11-shell #view .plan-row,
+.win11-shell #view .cr-panel,
+.win11-shell #view .cr-inspector,
+.win11-shell #view .cr-locker,
+.win11-shell #view .cr-capture-head,
+.win11-shell #view .cr-packet-detail,
+.win11-shell #view .cr-telemetry,
+.win11-shell #view .cr-detection-context,
+.win11-shell #view .cr-control,
+.win11-shell #view .cr-manifest,
+.win11-shell #view .cr-exposure,
+.win11-shell #view .cr-mail,
+.win11-shell #view .cr-facts,
+.win11-shell #view .cr-eval,
+.win11-shell #view .cr-trust-boundary{
+ background:rgba(255,255,255,.84)!important;
+ color:#1e293b!important;
+ border-color:#dce5f0!important;
+ box-shadow:0 5px 18px rgba(31,41,55,.055),inset 0 1px 0 rgba(255,255,255,.9)!important;
+}
+.win11-shell #view .title,
+.win11-shell #view h1,.win11-shell #view h2,.win11-shell #view h3,
+.win11-shell #view .module-title-row,
+.win11-shell #view .course-main strong,
+.win11-shell #view .lesson-index-main,
+.win11-shell #view .cr-header,
+.win11-shell #view .cr-intel-head{color:#172033}
+.win11-shell #view .subtitle,
+.win11-shell #view .module-details,
+.win11-shell #view .lesson-meta,
+.win11-shell #view .visual-caption,
+.win11-shell #view .note-row,
+.win11-shell #view .cr-kicker,
+.win11-shell #view .cr-count,
+.win11-shell #view .cr-score-label,
+.win11-shell #view .cr-empty-locker{color:#64748b}
+.win11-shell #view .chip,
+.win11-shell #view .badge,
+.win11-shell #view .lesson-number,
+.win11-shell #view .cr-toolbar,
+.win11-shell #view .cr-row,
+.win11-shell #view .cr-locker-item,
+.win11-shell #view .packet-row,
+.win11-shell #view .hud-cell,
+.win11-shell #view .cr-capabilities,
+.win11-shell #view .cr-remediation,
+.win11-shell #view .cr-report-fields,
+.win11-shell #view .cr-score-grid,
+.win11-shell #view .cr-facts,
+.win11-shell #view .cr-signal-grid,
+.win11-shell #view .cr-workstation-grid{
+ background:#f4f7fc!important;color:#334155!important;border-color:#e1e8f1!important
+}
+.win11-shell #view input,.win11-shell #view textarea,.win11-shell #view select,
+.win11-shell #view .cr-search,.win11-shell #view .cr-terminal-form input{
+ background:#fff!important;color:#1e293b!important;border:1px solid #cbd5e1!important;box-shadow:inset 0 1px 2px rgba(15,23,42,.04)
+}
+.win11-shell #view button:not(.cta):not(.os-run-button):not(.cr-run-button){
+ color:#334155
+}
+.win11-shell #view button:not(.cta):not(.os-run-button):not(.cr-run-button):hover{
+ background:#eaf1fb;border-color:#cbdcf3
+}
+.win11-shell #view .cta,.win11-shell #view .back,.win11-shell #view .os-run-button{
+ border-radius:9px
+}
+.win11-shell #view .progress,.win11-shell #view .progress-track,
+.win11-shell #view .cr-progress-track{background:#e2e8f0}
+.win11-shell #view .cr-terminal,.win11-shell #view .terminal,.win11-shell #view pre,
+.win11-shell #view .code-editor,.win11-shell #view .code-output{
+ color:#dbeafe;background:#172334;border-color:#263b52
+}
+.win11-shell .os-desktop{background:linear-gradient(180deg,#f9fbff,#edf3fa)!important;color:#1e293b!important;border-color:#dce5f0!important;box-shadow:0 16px 42px rgba(31,41,55,.09)!important}
+.win11-shell .os-menubar,.win11-shell .os-taskbar{background:rgba(255,255,255,.88)!important;border-color:#dce5f0!important;color:#334155!important}
+.win11-shell .os-launcher{background:rgba(242,246,252,.9)!important;border-color:#dce5f0!important}
+.win11-shell .os-window,.win11-shell .os-readiness>div,.win11-shell .os-app-card,.win11-shell .os-next-body{background:rgba(255,255,255,.9)!important;border-color:#dce5f0!important;color:#1e293b!important}
+.win11-shell .os-window-bar{background:#f1f5fb!important;border-color:#dce5f0!important;color:#64748b!important}
+.win11-shell .os-terminal-content{background:#fff!important;color:#334155!important}
+.win11-shell .os-terminal-prompt,.win11-shell .os-terminal-status{color:#475569!important}
+.win11-shell .os-welcome-line h1{color:#172033!important}
+.win11-shell .os-welcome-line p,.win11-shell .os-readiness span,.win11-shell .os-readiness small{color:#64748b!important}
