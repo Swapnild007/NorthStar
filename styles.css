@@ -1050,3 +1050,14 @@ body:before{display:none}
  .win11-shell.os-home .os-taskbar-apps button{min-width:36px!important;padding:4px 5px!important}
  .win11-shell.os-home .os-taskbar-apps small{font-size:8px!important}
 }
+
+/* Navigation contract: desktop uses the app's left rail; compact screens use its bottom bar.
+   The Home desktop has its own Windows taskbar navigation, so it never stacks either one. */
+@media(min-width:1024px){
+ .win11-shell:not(.os-home)>.main>.nav{display:none!important;visibility:hidden!important}
+ .win11-shell:not(.os-home)>.desktop-rail{display:flex!important}
+}
+@media(max-width:1023px){
+ .win11-shell:not(.os-home)>.desktop-rail{display:none!important}
+ .win11-shell:not(.os-home)>.main>.nav{display:grid!important}
+}
